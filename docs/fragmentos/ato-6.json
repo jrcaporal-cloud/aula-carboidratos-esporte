@@ -1,0 +1,132 @@
+[
+  {
+    "id": 100,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "Gainesville, 1965",
+    "subtitle": "Uma pergunta de nefrologia virou a bebida esportiva mais famosa",
+    "content": "[[COMP:GatoradeSim]]<h4>Fontes</h4><ul><li>University of Florida Research (research.ufl.edu, artigo histórico) e UF Health, “Profiles in history: Dr. Robert Cade” (history.med.ufl.edu) — agosto de 1965, Douglas → Shires → Cade; a pergunta “Why didn't football players urinate after a game?”; 1º teste em 01/10/1965 com os calouros; no dia seguinte Flórida 14 × 7 LSU (5ª do ranking); licença à Stokely-Van Camp em 1967; mais de US$ 280 milhões à UF desde 1972. Fonte institucional, não revisada por pares. O “Orange Bowl 1967” não aparece nessas fontes e não entra.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 101,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "82% dos Ensaios",
+    "subtitle": "O carboidrato durante a prova funciona; a formulação decide quanto",
+    "content": "[[COMP:DuringForestSim]]<h4>Fontes</h4><ul><li>Stellingwerff T, Cox GR. Systematic review: Carbohydrate supplementation on exercise performance or capacity of varying durations. Appl Physiol Nutr Metab 2014;39(9):998-1011. DOI 10.1139/apnm-2014-0027 · PMID 24951297 — 61 ECRs com placebo de água (n = 679): 82% (50) com benefício, 18% sem mudança; ganho correlacionado com a duração (p = 0,0036); ~1 h = mecanismo oral/central, > 2 h = entrega e oxidação altas. Revisão sistemática sem meta-análise (conta estudos).</li><li>Vandenbogaerde TJ, Hopkins WG. Effects of acute carbohydrate supplementation on endurance performance: a meta-analysis. Sports Med 2011;41(9):773-792. DOI 10.2165/11590520-000000000-00000 · PMID 21846165 — 88 estudos e 155 estimativas: efeitos de +6% a −2% na potência do contrarrelógio conforme a formulação.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 102,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "A Curva de Smith",
+    "subtitle": "Mais carboidrato rende mais, até ~78 g/h; depois, menos por grama",
+    "content": "[[COMP:DoseResponseSim]]<h4>Fontes</h4><ul><li>Smith JW, Pascoe DD, Passe DH, et al. Curvilinear dose-response relationship of carbohydrate (0-120 g·h−1) and performance. Med Sci Sports Exerc 2013;45(2):336-341. DOI 10.1249/MSS.0b013e31827205d1 · PMID 22968309 — ECR duplo-cego, 4 centros, 51 ciclistas e triatletas; 12 doses de 10 a 120 g/h + placebo, cada sujeito fez só 4 ensaios; 2 h de carga + 20 km contra o relógio; ganhos estimados de 1,0/2,0/3,0/4,0/4,7% a 9/19/31/48/78 g/h, decrescentes acima. Primeiro autor afiliado ao Gatorade Sports Science Institute.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 103,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Teto de um Grama",
+    "subtitle": "Com uma fonte só, a oxidação para em ~1 g/min. Onde está o gargalo?",
+    "content": "[[COMP:CeilingSim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — oxidação exógena de fonte única satura em ~1,0–1,1 g/min; o limite é absorção intestinal e fígado, não o músculo.</li><li>Hulston CJ, Wallis GA, Jeukendrup AE. Exogenous CHO oxidation with glucose plus fructose intake during exercise. Med Sci Sports Exerc 2009;41(2):357-363. DOI 10.1249/MSS.0b013e3181857ee6 · PMID 19127189 — glicose a 48 g/h: pico de 0,60 g/min (≈ 36 g/h, cálculo × 60).</li><li>Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 · PMID 15946410 — glicose a 72 g/h (1,2 g/min): pico de 1,06 g/min (≈ 64 g/h, cálculo).</li><li>Jentjens RL, Achten J, Jeukendrup AE. High oxidation rates from combined carbohydrates ingested during exercise. Med Sci Sports Exerc 2004;36(9):1551-1558. DOI 10.1249/01.MSS.0000139796.07843.1D · PMID 15354037 — glicose a 144 g/h (2,4 g/min): pico de 1,18 g/min (≈ 71 g/h; 49% do ingerido e ~73 g/h “no caminho” são cálculo).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 104,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "Quebrando o Teto",
+    "subtitle": "A frutose abre uma segunda pista no intestino e a oxidação passa de 1,75 g/min",
+    "content": "[[COMP:MixSim]]<h4>Fontes</h4><ul><li>Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 · PMID 15946410 — glicose + frutose 1:1 a 144 g/h: pico de 1,75 g/min × 1,06 só glicose (n = 8).</li><li>Hulston CJ, Wallis GA, Jeukendrup AE. Exogenous CHO oxidation with glucose plus fructose intake during exercise. Med Sci Sports Exerc 2009;41(2):357-363. DOI 10.1249/MSS.0b013e3181857ee6 · PMID 19127189 — a ~48 g/h, mistura 0,57 × glicose 0,60 g/min: sem vantagem (n = 7).</li><li>Currell K, Jeukendrup AE. Superior endurance performance with ingestion of multiple transportable carbohydrates. Med Sci Sports Exerc 2008;40(2):275-281. DOI 10.1249/mss.0b013e31815adf19 · PMID 18202575 — 108 g/h, glicose + frutose 2:1: contrarrelógio 8% mais rápido que glicose e 19% que água (n = 8; tempos do abstract parecem trocados, só os %).</li><li>O'Brien WJ, Rowlands DS. Fructose-maltodextrin ratio in a carbohydrate-electrolyte solution differentially affects exogenous carbohydrate oxidation rate, gut comfort, and performance. Am J Physiol Gastrointest Liver Physiol 2011;300(1):G181-9. DOI 10.1152/ajpgi.00419.2010 · PMID 21071509 — frutose:maltodextrina 0,8:1 com a maior oxidação exógena e menos desconforto.</li><li>O'Brien WJ, Stannard SR, Clarke JA, Rowlands DS. Fructose-maltodextrin ratio governs exogenous and other CHO oxidation and performance. Med Sci Sports Exerc 2013;45(9):1814-1824. DOI 10.1249/MSS.0b013e31828e12d4 · PMID 23949097 — 0,8:1 com oxidação exógena total 18% maior que 0,5:1.</li><li>A linha da mistura entre os pontos medidos é ilustrativa. Tecla 3: modelo 3D do enterócito.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 105,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "120 g/h: o Que se Sabe",
+    "subtitle": "Entra mais e oxida mais; o ganho de desempenho ainda não foi demonstrado",
+    "content": "[[COMP:HighDoseSim]]<h4>Fontes</h4><ul><li>Ravikanti S, Silang KG, Martyn HJ, et al. 13C-labelled glucose-fructose show greater exogenous and whole-body CHO oxidation and lower O2 cost of running at 120 versus 60 and 90 g·h−1 in elite male marathoners. J Appl Physiol 2025;139(6):1581-1595. DOI 10.1152/japplphysiol.00665.2025 · PMID 41191077 — 8 maratonistas de elite, cruzado com 13C: exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h; sintomas GI moderados/graves frequentes em todas as doses, pico nos 120 g/h; sem prova de desempenho.</li><li>Podlogar T, Bokal Š, Cirnski S, Wallis GA. Increased exogenous but unaltered endogenous carbohydrate oxidation with combined fructose-maltodextrin ingested at 120 g h−1 versus 90 g h−1 at different ratios. Eur J Appl Physiol 2022;122(11):2393-2401. DOI 10.1007/s00421-022-05019-w · PMID 35951130 — 11 ciclistas, 120 × 90 g/h: exógena 1,51 × 1,29 g/min; endógena igual (2,15 × 2,20).</li><li>Viribay A, Arribalzaga S, Mielgo-Ayuso J, et al. Effects of 120 g/h of Carbohydrates Intake during a Mountain Marathon on Exercise-Induced Muscle Damage in Elite Runners. Nutrients 2020;12(5):1367. DOI 10.3390/nu12051367 · PMID 32403259 — ECR paralelo, 20 corredores (~6–7 por grupo) em maratona de montanha: mediu carga interna (PSE) e marcadores de dano, não o tempo de prova.</li><li>Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — 120–200 g/h: “efficacy not yet substantiated”.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 106,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Pelotão na Frente da Ciência",
+    "subtitle": "Os profissionais comiam ~94 g/h em 1989; a diretriz chegou aos 90 g/h em 2011",
+    "content": "[[COMP:PelotonSim]]<h4>Fontes</h4><ul><li>Saris WH, van Erp-Baart MA, Brouns F, Westerterp KR, ten Hoor F. Study on food intake and energy expenditure during extreme sustained exercise: the Tour de France. Int J Sports Med 1989;10(Suppl 1):S26-31. DOI 10.1055/s-2007-1024951 · PMID 2744926 — Tour de France, 5 ciclistas, 22 dias: 49% da energia ingerida durante a etapa ≈ 94 g/h de carboidrato.</li><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — teto de oxidação de ~1,0–1,1 g/min com uma fonte só.</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — consenso do COI: provas > 2,5 h, até 90 g/h com misturas.</li><li>Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — teto atual pode subir de 90 para 120 g/h em treinados; eficácia de 120–200 g/h não comprovada. Relatos de jornalismo do Tour não entram.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 108,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "Formato e Hidrogel",
+    "subtitle": "Gel, bebida, goma ou hidrogel: o formato muda a oxidação ou a prova?",
+    "content": "[[COMP:HydrogelSim]]<h4>Fontes</h4><ul><li>Hearris MA, Pugh JN, Langan-Evans C, et al. 13C-glucose-fructose labeling reveals comparable exogenous CHO oxidation during exercise when consuming 120 g/h in fluid, gel, jelly chew, or coingestion. J Appl Physiol 2022;132(6):1394-1406. DOI 10.1152/japplphysiol.00091.2022 · PMID 35446596 — 120 g/h em bebida, gel, goma ou combinação: pico de 1,56/1,58/1,59/1,66 g/min (ns); n = 9.</li><li>Pfeiffer B, Stellingwerff T, Zaltas E, Jeukendrup AE. CHO oxidation from a CHO gel compared with a drink during exercise. Med Sci Sports Exerc 2010;42(11):2038-2045. DOI 10.1249/MSS.0b013e3181e0efe6 · PMID 20404763 — gel + água × bebida a 108 g/h: 1,44 × 1,42 g/min (p = 0,40).</li><li>Sutehall S et al. Med Sci Sports Exerc 2020. PMID 32079920 — hidrogel: meia-vida de esvaziamento gástrico 21 × 37 min, em repouso (dossiê 03, tabela K).</li><li>Sutehall S, Muniz-Pardos B, Bosch A, Pitsiladis Y. The Effect of Sodium Alginate and Pectin Added to a Carbohydrate Beverage on Endurance Performance, Substrate Oxidation and Blood Glucose Concentration: A Systematic Review and Meta-analysis. Sports Med Open 2022;8(1):82. DOI 10.1186/s40798-022-00472-5 · PMID 35727377 — meta-análise × controle isocalórico: desempenho p = 0,59 (5 estudos, I² = 0%), oxidação p = 0,71, glicemia p = 0,66.</li><li>Rowe JT, King RFGJ, King AJ, et al. Glucose and Fructose Hydrogel Enhances Running Performance, Exogenous Carbohydrate Oxidation, and Gastrointestinal Tolerance. Med Sci Sports Exerc 2022;54(1):129-140. DOI 10.1249/MSS.0000000000002764 · PMID 34334720 — o positivo isolado: hidrogel 2,1% mais rápido que solução comum nos 5 km (n = 11, duplo-cego).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 109,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Intestino Treina",
+    "subtitle": "Duas semanas de treino intestinal reduzem sintomas; o ganho em prova varia",
+    "content": "[[COMP:GutTrainingSim]]<h4>Fontes</h4><ul><li>Costa RJS, Miall A, Khoo A, et al. Gut-training: the impact of two weeks repetitive gut-challenge during exercise on gastrointestinal status, glucose availability, fuel kinetics, and running performance. Appl Physiol Nutr Metab 2017;42(5):547-557. DOI 10.1139/apnm-2016-0453 · PMID 28177715 — ECR paralelo, 25 corredores: 2 semanas de desafio com gel a 90 g/h; sintomas GI −60%, H₂ 6 × 12 ppm (gel × placebo), distância em 1 h +5,2% (placebo −2,1%).</li><li>Cox GR, Clark SA, Cox AJ, et al. Daily training with high carbohydrate availability increases exogenous carbohydrate oxidation during endurance cycling. J Appl Physiol 2010;109(1):126-134. DOI 10.1152/japplphysiol.00950.2009 · PMID 20466803 — 28 dias de CHO alto nos treinos: oxidação exógena 54,6 → 63,6 g; desempenho igual entre os grupos.</li><li>King AJ, Etxebarria N, Ross ML, et al. Short-Term Very High Carbohydrate Diet and Gut-Training Have Minor Effects on Gastrointestinal Status and Performance in Highly Trained Endurance Athletes. Nutrients 2022;14(9):1929. DOI 10.3390/nu14091929 · PMID 35565896 — atletas de elite (AIS): treino intestinal + CHO alto sem vantagem extra; mais sintomas GI na 2ª metade.</li><li>Diego é personagem fictício.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 110,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Bochecho",
+    "subtitle": "Glicose na veia não muda a prova de 1 h; o bochecho cuspido muda",
+    "content": "[[COMP:MouthRinseSim]]<h4>Fontes</h4><ul><li>Carter JM, Jeukendrup AE, Mann CH, Jones DA. The effect of glucose infusion on glucose kinetics during a 1-h time trial. Med Sci Sports Exerc 2004;36(9):1543-1550. DOI 10.1249/01.MSS.0000139892.69410.D8 · PMID 15354036 — glicose IV a 1 g/min, n = 6: glicemia 12,4 × 5,9 mmol/L; contrarrelógio 59,90 × 60,04 min.</li><li>Carter JM, Jeukendrup AE, Jones DA. The effect of carbohydrate mouth rinse on 1-h cycle time trial performance. Med Sci Sports Exerc 2004;36(12):2107-2111. DOI 10.1249/01.MSS.0000147585.65709.6F · PMID 15570147 — bochecho de 5 s com maltodextrina a 6,4%, cuspido, n = 9: 59,57 × 61,37 min (~2,9%, cálculo); placebo de água.</li><li>Chambers ES, Bridge MW, Jones DA. Carbohydrate sensing in the human mouth: effects on exercise performance and brain activity. J Physiol 2009;587(Pt 8):1779-1794. DOI 10.1113/jphysiol.2008.164285 · PMID 19237430 — fMRI: glicose e maltodextrina (sem gosto doce) ativam áreas de recompensa; sacarina não. O cérebro do slide é esquema.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 111,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Tamanho Real do Bochecho",
+    "subtitle": "Efeito real, pequeno, maior em jejum, e nem sempre presente",
+    "content": "[[COMP:RinseMetaSim]]<h4>Fontes</h4><ul><li>Brietzke C, Franco-Alvarenga PE, Coelho-Júnior HJ, et al. Effects of Carbohydrate Mouth Rinse on Cycling Time Trial Performance: A Systematic Review and Meta-Analysis. Sports Med 2019;49(1):57-66. DOI 10.1007/s40279-018-1029-7 · PMID 30488186 — 13 estudos (16 ensaios): potência SMD 0,25 (0,04 a 0,46; I² = 0%); tempo SMD −0,13 (−0,36 a 0,10; p = 0,25).</li><li>Lane SC, Bird SR, Burke LM, Hawley JA. Effect of a carbohydrate mouth rinse on simulated cycling time-trial performance commenced in a fed or fasted state. Appl Physiol Nutr Metab 2013;38(2):134-139. DOI 10.1139/apnm-2012-0300 · PMID 23438223 — n = 12, duplo-cego: +3,4% em jejum (282 × 273 W) e +1,8% alimentado (286 × 281 W).</li><li>Trommelen J, Beelen M, Mullers M, et al. A Sucrose Mouth Rinse Does Not Improve 1-hr Cycle Time Trial Performance When Performed in the Fasted or Fed State. Int J Sport Nutr Exerc Metab 2015;25(6):576-583. DOI 10.1123/ijsnem.2015-0094 · PMID 26132895 — n = 14, duplo-cego, sacarose × placebo adoçado: sem efeito (p = 0,277).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 112,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Relógio da Prova",
+    "subtitle": "Quanto carboidrato por hora depende de quanto a prova dura",
+    "content": "[[COMP:DurationClockSim]]<h4>Fontes</h4><ul><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — ~1 h: pequenas quantidades, inclusive bochecho; provas mais longas: 30–60 g/h; > 2,5 h: até 90 g/h com misturas.</li><li>Stellingwerff T, Cox GR. Systematic review: Carbohydrate supplementation on exercise performance or capacity of varying durations. Appl Physiol Nutr Metab 2014;39(9):998-1011. DOI 10.1139/apnm-2014-0027 · PMID 24951297 — ~1 h = mecanismo oral/central; > 2 h = combustível.</li><li>Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — 120 g/h como fronteira em treinados, sem ganho de desempenho comprovado. As faixas intermediárias de Jeukendrup 2014 (Fig. 1) não foram confirmadas e não entram.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 113,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "A Vida Real do Intestino",
+    "subtitle": "Na prova de verdade, a maioria come bem menos que a diretriz",
+    "content": "[[COMP:GIRealitySim]]<h4>Fontes</h4><ul><li>Pfeiffer B, Stellingwerff T, Hodgson AB, et al. Nutritional intake and gastrointestinal problems during competitive endurance events. Med Sci Sports Exerc 2012;44(2):344-351. DOI 10.1249/MSS.0b013e31822dc809 · PMID 21775906 — 221 atletas: médias de 62/71/65/53/35 g/h (IM Havaí, IM Alemanha, 70.3, ciclismo, maratona); faixa individual 6–136 g/h; sintomas graves ~31% Ironman, 14% 70.3, 4% ciclismo e maratona. Observacional, recordatório pós-prova.</li><li>de Oliveira EP, Burini RC, Jeukendrup A. Gastrointestinal complaints during exercise: prevalence, etiology, and nutritional recommendations. Sports Med 2014;44(Suppl 1):S79-85. DOI 10.1007/s40279-014-0153-2 · PMID 24791919 — 30–50% dos atletas com queixas GI no exercício.</li><li>Arribalzaga S et al. Int J Environ Res Public Health 2021;18(11):5737. PMID 34071815 — ultra-trail, 8 estudos: a maioria não atinge 90 g/h; sintomas GI em 65–82%.</li></ul>",
+    "cards": []
+  }
+]

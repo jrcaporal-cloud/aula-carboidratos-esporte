@@ -1,0 +1,92 @@
+[
+  {
+    "id": 20,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Da Glicose ao Amido",
+    "subtitle": "As mesmas peças, montadas de jeitos diferentes, chegam ao sangue em velocidades diferentes",
+    "content": "[[COMP:SugarFamilySim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-24. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — frutose, galactose e amilose oxidadas 25–50% menos que glicose, maltodextrina e amilopectina.</li><li>Chi C, Shi M, Zhao Y, et al. Dietary compounds slow starch enzymatic digestion: a review. Front Nutr 2022;9:1004966. DOI 10.3389/fnut.2022.1004966 · PMID 36185656 — amilose × amilopectina; a arquitetura do amido muda a velocidade de digestão.</li><li>Roach PJ, Depaoli-Roach AA, Hurley TD, Tagliabracci VS. Glycogen and its metabolism: some new developments and old themes. Biochem J 2012;441(3):763-87. DOI 10.1042/BJ20111416 · PMID 22248338 — ligações α-1,4 e α-1,6; glicogenina no centro do glicogênio.</li><li>Tappy L, Lê KA. Metabolic effects of fructose and the worldwide increase in obesity. Physiol Rev 2010;90(1):23-46. DOI 10.1152/physrev.00019.2009 · PMID 20086073 — glicose e frutose têm a mesma fórmula (C₆H₁₂O₆) e metabolismos diferentes.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 21,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "O Açúcar que o Fígado Fabrica",
+    "subtitle": "Como um cão sem açúcar no prato levou Claude Bernard ao glicogênio e ao meio interno",
+    "content": "[[COMP:BernardSim]]<h4>Fontes</h4><ul><li>Jörgens V, Grüsser M. Happy birthday, Claude Bernard. Diabetes 2013;62(7):2181-2. DOI 10.2337/db13-0700 · PMID 23801718 · PMC3712027 — açúcar no sangue do cão (1848), anotação no caderno, isolamento do glicogênio em fevereiro de 1855 e publicação em 1857.</li><li>Habert R. Claude Bernard, the founder of modern medicine. Cells 2022;11(10):1702. DOI 10.3390/cells11101702 · PMID 35626738 · PMC9139283 — datas e publicações de 1848 e 1857.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 22,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "A Árvore de Glicose",
+    "subtitle": "Um grânulo de até 12 camadas guarda metade da glicose na casca externa",
+    "content": "[[COMP:GranuleSim]]<h4>Fontes</h4><ul><li>Roach PJ, Depaoli-Roach AA, Hurley TD, Tagliabracci VS. Glycogen and its metabolism: some new developments and old themes. Biochem J 2012;441(3):763-87. DOI 10.1042/BJ20111416 · PMID 22248338 · PMC4945249 — cadeias de ~13 glicoses, modelo de camadas, máximo de 12 camadas (~55.000 glicoses, ~44 nm), média de ~25 nm no músculo, camada externa com 50% da glicose, glicogenina.</li><li>Marchand I, Chorneyko K, Tarnopolsky M, et al. Quantification of subcellular glycogen in resting human muscle: granule size, number, and location. J Appl Physiol 2002;93(5):1598-607. DOI 10.1152/japplphysiol.00585.2001 · PMID 12381743 — partículas de 10 a 44 nm num contínuo (MET, 11 homens).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 23,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Síntese não é Quebra ao Contrário",
+    "subtitle": "Duas enzimas, dois sentidos, dois controles: por isso dá para frear uma e soltar a outra",
+    "content": "[[COMP:LeloirSim]]<h4>Fontes</h4><ul><li>Cori CF, Schmidt G, Cori GT. The synthesis of a polysaccharide from glucose-1-phosphate in muscle extract. Science 1939;89(2316):464-5. DOI 10.1126/science.89.2316.464 · PMID 17731092 — a fosforilase monta polissacarídeo no tubo de ensaio.</li><li>Leloir LF, Olavarría JM, Goldemberg SH, Carminatti H. Biosynthesis of glycogen from uridine diphosphate glucose. Arch Biochem Biophys 1959;81(2):508-20. DOI 10.1016/0003-9861(59)90232-2 · PMID 13638016 — síntese de glicogênio a partir de UDP-glicose.</li><li>Leloir LF, Goldemberg SH. Synthesis of glycogen from uridine diphosphate glucose in liver. J Biol Chem 1960;235:919-23. PMID 14415527 — a mesma via no fígado.</li><li>Nobel de Fisiologia ou Medicina 1947 (Carl e Gerty Cori, metade; Bernardo Houssay, metade) e Nobel de Química 1970 (Luis F. Leloir) — nobelprize.org.</li><li>Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — Ca²⁺ ativa a fosforilase quinase via calmodulina.</li><li>Jensen J, Rustad PI, Kolnes AJ, Lai YC. The role of skeletal muscle glycogen breakdown for regulation of insulin sensitivity by exercise. Front Physiol 2011;2:112. DOI 10.3389/fphys.2011.00112 · PMID 22232606 — glicogênio cheio inibe a glicogênio sintase por retroalimentação.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 24,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Quanto Cabe no Corpo",
+    "subtitle": "4 g no sangue, ~100 g no fígado, ~400–500 g no músculo: pouco perto da gordura",
+    "content": "[[COMP:StoresSim]]<h4>Fontes</h4><ul><li>Wasserman DH. Four grams of glucose. Am J Physiol Endocrinol Metab 2009;296(1):E11-21. DOI 10.1152/ajpendo.90563.2008 · PMID 18840763 — ~4 g de glicose circulando numa pessoa de 70 kg.</li><li>Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — ~100 g no fígado e ~400 g no músculo.</li><li>Jensen J, Rustad PI, Kolnes AJ, Lai YC. The role of skeletal muscle glycogen breakdown for regulation of insulin sensitivity by exercise. Front Physiol 2011;2:112. DOI 10.3389/fphys.2011.00112 · PMID 22232606 — ~500 g no músculo e ~100 g no fígado.</li><li>Cálculo da aula: 4 kcal/g de carboidrato; gordura de uma pessoa de 70 kg com 15% de gordura (10,5 kg × 9 kcal/g ≈ 94.500 kcal), só para escala.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 25,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Da Boca ao Sangue",
+    "subtitle": "Só monossacarídeo atravessa: duas portas de entrada, uma de saída, e o fígado logo depois",
+    "content": "[[COMP:DigestionSim]]<h4>Fontes</h4><ul><li>Chi C, Shi M, Zhao Y, et al. Dietary compounds slow starch enzymatic digestion: a review. Front Nutr 2022;9:1004966. DOI 10.3389/fnut.2022.1004966 · PMID 36185656 — amilases salivar e pancreática; maltase-glicoamilase e sacarase-isomaltase na borda em escova; maltose da amilose e dextrinas ramificadas da amilopectina.</li><li>Wright EM, Loo DD, Hirayama BA. Biology of human sodium glucose transporters. Physiol Rev 2011;91(2):733-94. DOI 10.1152/physrev.00055.2009 · PMID 21527736 — SGLT1 usa o gradiente de Na⁺; glicose e galactose dividem a porta.</li><li>Ferraris RP, Choe JY, Patel CR. Intestinal absorption of fructose. Annu Rev Nutr 2018;38:41-67. DOI 10.1146/annurev-nutr-082117-051707 · PMID 29751733 — frutose entra pelo GLUT5 apical; GLUT2 basolateral leva frutose, glicose e galactose.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 26,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Duas Pistas no Intestino",
+    "subtitle": "O teto de ~1 g/min é da porta de entrada, não do músculo: com duas portas, passa disso",
+    "content": "[[COMP:TwoLanesSim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-24. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — oxidação exógena de uma fonte só para em ~1,0–1,1 g/min; limite no intestino e/ou fígado.</li><li>Jentjens RL, Moseley L, Waring RH, Harding LK, Jeukendrup AE. Oxidation of combined ingestion of glucose and fructose during exercise. J Appl Physiol 2004;96(4):1277-84. DOI 10.1152/japplphysiol.00974.2003 · PMID 14657042 — cruzado randomizado, n = 8 ciclistas: pico de 1,26 g/min (glicose 1,2 + frutose 0,6) × 0,80 (glicose 1,2) e 0,83 g/min (glicose 1,8); sem teste de desempenho.</li><li>Röder PV, Geillinger KE, Zietek TS, et al. The role of SGLT1 and GLUT2 in intestinal glucose transport and sensing. PLoS One 2014;9(2):e89977. DOI 10.1371/journal.pone.0089977 · PMID 24587162 — camundongo knockout: sem SGLT1 a retenção de glicose cai drasticamente; GLUT2 apical era contaminação de membrana basolateral.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 27,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "O Caminho da Frutose e da Galactose",
+    "subtitle": "Frutose e galactose chegam ao músculo de carona: o intestino e o fígado passam na frente",
+    "content": "[[COMP:FructosePathSim]]<h4>Fontes</h4><ul><li>Sun SZ, Empie MW. Fructose metabolism in humans — what isotopic tracer studies tell us. Nutr Metab (Lond) 2012;9(1):89. DOI 10.1186/1743-7075-9-89 · PMID 23031075 — ~45% oxidada, ~41% convertida em glicose, ~¼ em lactato (frações que se sobrepõem). Autores ligados à indústria de adoçantes: conflito de interesse a conferir.</li><li>Lecoultre V, Benoit R, Carrel G, et al. Fructose and glucose co-ingestion during prolonged exercise increases lactate and glucose fluxes and oxidation compared with an equimolar intake of glucose. Am J Clin Nutr 2010;92(5):1071-9. DOI 10.3945/ajcn.2010.29566 · PMID 20826630 — cruzado, n = 7: a oxidação da frutose se explicou meio a meio por lactato e por glicose derivados dela.</li><li>Jang C, Hui S, Lu W, et al. The small intestine converts dietary fructose into glucose and organic acids. Cell Metab 2018;27(2):351-61.e3. DOI 10.1016/j.cmet.2017.12.016 · PMID 29414685 — camundongo: ~90% de dose baixa depurada no intestino; doses ≥1 g/kg saturam e chegam ao fígado.</li><li>Leijssen DP, Saris WH, Jeukendrup AE, Wagenmakers AJ. Oxidation of exogenous [¹³C]galactose and [¹³C]glucose during exercise. J Appl Physiol 1995;79(3):720-5. DOI 10.1152/jappl.1995.79.3.720 · PMID 8567509 — cruzado randomizado, n = 8: pico 0,41 (galactose) × 0,85 g/min (glicose).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 29,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Índice Glicêmico: o Que Ele Mede",
+    "subtitle": "O IG mede a glicemia de quem está parado, em jejum; a prova é outra pergunta",
+    "content": "[[COMP:GlycemicIndexSim]]<h4>Fontes</h4><ul><li>Jenkins DJ, Wolever TM, Taylor RH, et al. Glycemic index of foods: a physiological basis for carbohydrate exchange. Am J Clin Nutr 1981;34(3):362-6. DOI 10.1093/ajcn/34.3.362 · PMID 6259925 — glicemia por 2 h em jejum × a mesma quantidade de CHO como glicose; cereais matinais 65 ± 5%, leguminosas secas 31 ± 3%; gordura e proteína reduzem a resposta.</li><li>Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021: a systematic review. Am J Clin Nutr 2021;114(5):1625-32. DOI 10.1093/ajcn/nqab233 · PMID 34258626 — o IG é do produto e do processamento.</li><li>Burdon CA, Spronk I, Cheng HL, O'Connor HT. Effect of glycemic index of a pre-exercise meal on endurance exercise performance: a systematic review and meta-analysis. Sports Med 2017;47(6):1087-101. DOI 10.1007/s40279-016-0632-8 · PMID 27677914 — faixas de IG baixo (≤55) e alto (≥70).</li><li>Curvas da tela ilustrativas; carga glicêmica calculada pela definição (IG × g de CHO ÷ 100).</li></ul>",
+    "cards": []
+  }
+]

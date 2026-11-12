@@ -1,0 +1,132 @@
+[
+  {
+    "id": 180,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "A Régua das Diretrizes",
+    "subtitle": "Quanto carboidrato por dia? Depende da carga de treino, e as faixas se cobrem.",
+    "content": "[[COMP:GuidelineRulerSim]]<h4>Fontes</h4><ul><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — faixas diárias 3–5 / 5–7 / 6–10 / 8–12 g/kg/d (lidas em tabelas que reproduzem o original).</li><li>Thomas DT, Erdman KA, Burke LM. American College of Sports Medicine Joint Position Statement. Nutrition and Athletic Performance. Med Sci Sports Exerc 2016;48(3):543-568. DOI 10.1249/MSS.0000000000000852 — repete as mesmas faixas.</li><li>Gramas por peso (58, 70 e 85 kg): cálculo próprio (g/kg × peso).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 181,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "A Diretriz Brasileira Parou em 2009",
+    "subtitle": "A SBME ainda fala em % da energia e em teto de 80 g/h; a ciência já tinha andado.",
+    "content": "[[COMP:SbmeSim]]<h4>Fontes</h4><ul><li>Hernandez AJ, Nahas RM (eds.). Modificações dietéticas, reposição hídrica, suplementos alimentares e drogas: comprovação de ação ergogênica e potenciais riscos para a saúde. Diretriz da SBME. Rev Bras Med Esporte 2009;15(3 supl.):2-12. DOI 10.1590/S1517-86922009000400001 — 60–70% da energia, 5–8 g/kg/d, “não deve exceder 80g/hora”.</li><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 — ~1,0–1,1 g/min com uma fonte.</li><li>Jentjens RL, Moseley L, Waring RH, Harding LK, Jeukendrup AE. Oxidation of combined ingestion of glucose and fructose during exercise. J Appl Physiol 2004;96(4):1277-1284. DOI 10.1152/japplphysiol.00974.2003 — 1,26 × 0,83 g/min.</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — g/kg por carga; até 90 g/h com mistura em provas > 2,5 h.</li><li>Conversões (g/min → g/h; 60% de 2.000 e 4.000 kcal) são cálculo próprio.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 182,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Que os Atletas Comem",
+    "subtitle": "Entre a régua e o prato: quem atinge a meta de carboidrato?",
+    "content": "[[COMP:IntakeRealitySim]]<h4>Fontes</h4><ul><li>Masson G, Lamarche B. Many non-elite multisport endurance athletes do not meet sports nutrition recommendations for carbohydrates. Appl Physiol Nutr Metab 2016;41(7):728-734. DOI 10.1139/apnm-2015-0599 — 45,7% atingiam a meta; 87,1% ≥ 1,2 g/kg/d de proteína.</li><li>Raizel R et al. Pre-season dietary intake of professional soccer players. Nutr Health 2017;23(4):215-222. DOI 10.1177/0260106017737014 — 5,44 g/kg/d de CHO com energia adequada.</li><li>Anderson L et al. Energy Intake and Expenditure of Professional Soccer Players of the English Premier League: Evidence of Carbohydrate Periodization. Int J Sport Nutr Exerc Metab 2017;27(3):228-238. DOI 10.1123/ijsnem.2016-0259 — 6,4 × 4,2 g/kg (jogo × treino).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 183,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Como se Mede o Glicogênio",
+    "subtitle": "Biópsia, ressonância e ultrassom: qual instrumento enxerga o tanque?",
+    "content": "[[COMP:MethodsSim]]<h4>Fontes</h4><ul><li>Taylor R, Price TB, Rothman DL, Shulman RG, Shulman GI. Validation of 13C NMR measurement of human skeletal muscle glycogen by direct biochemical assay of needle biopsy samples. Magn Reson Med 1992;27(1):13-20. DOI 10.1002/mrm.1910270103 — CV 4,3% × 9,3%; R = 0,95.</li><li>Hill JC, San Millán I. Validation of musculoskeletal ultrasound to assess and quantify muscle glycogen content. Phys Sportsmed 2014;42(3):45-52. DOI 10.3810/psm.2014.09.2075 — r = 0,93 (criadores da tecnologia).</li><li>Routledge HE et al. Ultrasound Does Not Detect Acute Changes in Glycogen in Vastus Lateralis of Man. Med Sci Sports Exerc 2019;51(11):2286-2293. DOI 10.1249/MSS.0000000000002052 — 443 → 271 mmol/kg ps; escore 47 → 49 (P = 0,4).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 184,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Calorimetria e Isótopos",
+    "subtitle": "Como se sabe quanto carboidrato o músculo queimou, e onde a conta falha?",
+    "content": "[[COMP:GasExchangeSim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Wallis GA. Measurement of substrate oxidation during exercise by means of gas exchange measurements. Int J Sports Med 2005;26(Suppl 1):S28-37. DOI 10.1055/s-2004-830512 — bicarbonato invalida a conta em alta intensidade (só o princípio; sem coeficientes).</li><li>González-Haro C. Concordance between 13C:12C ratio technique respect to indirect calorimetry… Physiol Rep 2019;7(8):e14053. DOI 10.14814/phy2.14053 — ±0,308 g/min de CHO.</li><li>Saris WH et al. Exogenous carbohydrate oxidation from different carbohydrate sources during exercise. J Appl Physiol 1993;75(5):2168-2172. DOI 10.1152/jappl.1993.75.5.2168 — 13C natural do milho; 0,84 × 0,50 g/min.</li><li>±18 g/h: cálculo próprio (0,3 g/min × 60).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 185,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Glicose Contínua em Atleta",
+    "subtitle": "O CGM chegou ao pelotão. Já dá para interpretar a curva de um atleta saudável?",
+    "content": "[[COMP:CgmSim]]<h4>Fontes</h4><ul><li>Thomas F, Pretty CG, Desaive T, Chase JG. Blood Glucose Levels of Subelite Athletes During 6 Days of Free Living. J Diabetes Sci Technol 2016;10(6):1335-1343. DOI 10.1177/1932296816648344 — 4/10 > 70% do tempo acima de 6,0 mmol/L; 3/10 jejum na faixa de pré-diabetes.</li><li>Bowler AM, Burke LM, Coffey VG, Cox GR. Day-to-Day Glycemic Variability Using Continuous Glucose Monitors in Endurance Athletes. J Diabetes Sci Technol 2025;19(6):1538-1545. DOI 10.1177/19322968241250355 — média 102,6 mg/dL; MAGE 36 mg/dL.</li><li>Matkin-Hussey PA et al. Evaluating CGM-Derived Glucose Variability in Athletes Clinically Diagnosed With REDs. Eur J Sport Sci 2026;26(6):e70186. DOI 10.1002/ejsc.70186 — P = 0,21 e 0,92.</li><li>Flockhart M, Larsen FJ. Continuous Glucose Monitoring in Endurance Athletes. Sports Med 2024;54(2):247-255. DOI 10.1007/s40279-023-01910-4 — sem consenso de interpretação.</li><li>Curva de 24 h do passo 1: ilustrativa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 186,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Desenho Decide o Efeito",
+    "subtitle": "O mesmo carboidrato parece grande num teste e some no outro. Por quê?",
+    "content": "[[COMP:DesignSim]]<h4>Fontes</h4><ul><li>Jeukendrup A, Saris WH, Brouns F, Kester AD. A new validated endurance performance test. Med Sci Sports Exerc 1996;28(2):266-270. DOI 10.1097/00005768-199602000-00017 — CV 26,6% (TTE) × 3,35% (contrarrelógio).</li><li>Colombani PC, Mannhart C, Mettler S. Carbohydrates and exercise performance in non-fasted athletes: a systematic review of studies mimicking real-life. Nutr J 2013;12:16. DOI 10.1186/1475-2891-12-16 — metade sem melhora; 1 de 5 até ~70 min; 10 de 17 de 70 a 241 min.</li><li>Vandenbogaerde TJ, Hopkins WG. Effects of acute carbohydrate supplementation on endurance performance: a meta-analysis. Sports Med 2011;41(9):773-792. DOI 10.2165/11590520-000000000-00000 — jejum prévio aumenta o benefício aparente.</li><li>Curvas de distribuição e efeito de 5%: ilustrativos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 187,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Placebo que Pedalou Mais",
+    "subtitle": "Num contrarrelógio de 1 h, a crença valeu mais que o carboidrato.",
+    "content": "[[COMP:PlaceboSim]]<h4>Fontes</h4><ul><li>Clark VR, Hopkins WG, Hawley JA, Burke LM. Placebo effect of carbohydrate feedings during a 40-km cycling time trial. Med Sci Sports Exerc 2000;32(9):1642-1647. DOI 10.1097/00005768-200009000-00019 — +4,3% / +0,5% / −1,1% pelo que ouviram; efeito real −0,3%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 188,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Quem Paga o Estudo",
+    "subtitle": "Financiamento da indústria: descartar o estudo ou aprender a lê-lo?",
+    "content": "[[COMP:FundingSim]]<h4>Fontes</h4><ul><li>Heneghan C et al. The evidence underpinning sports performance products: a systematic assessment. BMJ Open 2012;2(4):e001702. DOI 10.1136/bmjopen-2012-001702 — 431 alegações, 104 produtos, 52,8% dos sites sem referência, 3 de 74 (2,7%) de alta qualidade, 84% com alto risco de viés.</li><li>Smith JW et al. Curvilinear dose-response relationship of carbohydrate (0-120 g·h−1) and performance. Med Sci Sports Exerc 2013;45(2):336-341. DOI 10.1249/MSS.0b013e31827205d1 — 1º autor afiliado ao Gatorade Sports Science Institute; duplo-cego, 4 centros, n = 51.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 189,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Mito ou Verdade?",
+    "subtitle": "As oito afirmações do início da aula, agora com veredito e fonte.",
+    "content": "[[COMP:MythVerdictSim]]<h4>Fontes</h4><ul><li>Burdon CA et al. Effect of Glycemic Index of a Pre-exercise Meal on Endurance Exercise Performance: A Systematic Review and Meta-analysis. Sports Med 2017;47(6):1087-1101. DOI 10.1007/s40279-016-0632-8.</li><li>Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 — 1,75 × 1,06 g/min.</li><li>Rowlands DS et al. Fructose-Glucose Composite Carbohydrates and Endurance Performance: Critical Review and Future Perspectives. Sports Med 2015;45(11):1561-1576. DOI 10.1007/s40279-015-0381-0 — potência +1 a 9% vs glicose isocalórica.</li><li>Bussau VA et al. Carbohydrate loading in human muscle: an improved 1 day protocol. Eur J Appl Physiol 2002;87(3):290-295. DOI 10.1007/s00421-002-0621-5 — 95 → 180 mmol/kg ww em 1 dia.</li><li>Sherman WM, Costill DL, Fink WJ, Miller JM. Effect of exercise-diet manipulation on muscle glycogen and its subsequent utilization during performance. Int J Sports Med 1981;2(2):114-118. DOI 10.1055/s-2008-1034594 — sem diferença em 20,9 km.</li><li>Koopman R et al. Coingestion of carbohydrate with protein does not further augment postexercise muscle protein synthesis. Am J Physiol Endocrinol Metab 2007;293(3):E833-42. DOI 10.1152/ajpendo.00135.2007 — FSR 0,10 / 0,10 / 0,11 %/h.</li><li>Burke LM et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/JP273230 — +6,6% × −1,6%; replicado em Burke LM et al. PLoS One 2020;15(6):e0234027.</li><li>Moseley L, Lancaster GI, Jeukendrup AE. Effects of timing of pre-exercise ingestion of carbohydrate on subsequent metabolism and cycling performance. Eur J Appl Physiol 2003;88(4-5):453-458. DOI 10.1007/s00421-002-0728-8 — 268 / 269 / 276 W.</li><li>James AP et al. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 — mulheres 108 → 193; homens 109 → 183 mmol/kg ww.</li><li>Votos da turma: os do slide 13 nesta sessão do navegador.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 190,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Cinco Atletas, Cinco Planos",
+    "subtitle": "Do dilema ao plano: o que cada um come por dia, antes, durante e depois.",
+    "content": "[[COMP:CasePlansSim]]<h4>Fontes</h4><ul><li>Casos fictícios. Faixas diárias: Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473; gramas: cálculo próprio (g/kg × peso).</li><li>Marina: Bussau 2002 (carga de 1 dia); Schabort EJ et al. Med Sci Sports Exerc 1999;31(3):464-471. DOI 10.1097/00005768-199903000-00017 (café 3 h antes); Parkin JA et al. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009.</li><li>Diego: Coyle EF et al. Substrate usage during prolonged exercise following a preexercise meal. J Appl Physiol 1985;59(2):429-433. DOI 10.1152/jappl.1985.59.2.429 (refeição 4 h antes); Costa RJS et al. Appl Physiol Nutr Metab 2017;42(5):547-557. DOI 10.1139/apnm-2016-0453 (treino intestinal); Jentjens R, Jeukendrup A. Sports Med 2003;33(2):117-144. DOI 10.2165/00007256-200333020-00004; Morton JP et al. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442.</li><li>Lara: Anderson 2017; Leatt PB, Jacobs I. Effect of glucose polymer ingestion on glycogen depletion during a soccer match. Can J Sport Sci 1989;14(2):112-116. PMID 2736440 (111 × 181 mmol/kg); Krustrup P et al. Eur J Appl Physiol 2011;111(12):2987-2995. DOI 10.1007/s00421-011-1919-y (−27% em 24 h).</li><li>Tiago: Foo WL et al. Int J Sport Nutr Exerc Metab 2022;32(4):256-264. DOI 10.1123/ijsnem.2021-0324; Kondo E et al. BMC Sports Sci Med Rehabil 2021;13(1):96. DOI 10.1186/s13102-021-00325-w; Reale R et al. Int J Sport Nutr Exerc Metab 2016;26(6):525-530. DOI 10.1123/ijsnem.2015-0359; CDC. MMWR 1998;47(6):105-108. PMID 9480411.</li><li>Paulo: Henselmans M et al. Nutrients 2022;14(4):856. DOI 10.3390/nu14040856; Koopman 2007; Henselmans M, Vårvik FT, Izquierdo M. Sports Med 2026;56(3):691-702. DOI 10.1007/s40279-025-02341-z (SMD 0,15).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 191,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Que Levar para a Segunda-feira",
+    "subtitle": "Seis mensagens, cada uma presa ao número que a sustenta.",
+    "content": "[[COMP:TakeawaysSim]]<h4>Fontes</h4><ul><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 — 21,1 × 19,6 kJ/L de O₂.</li><li>Smyth B. How recreational marathon runners hit the wall. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 — 28% × 17%.</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — 30–60 g/h; até 90 g/h > 2,5 h.</li><li>Parkin JA, Carey MF, Martin IK, Stojanovska L, Febbraio MA. Muscle glycogen storage following prolonged exercise: effect of timing of ingestion of high glycemic index food. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009 · PMID 9044226 — sem diferença às 8 e 24 h.</li><li>Impey SG et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 — 73% sinalização × 37% desempenho.</li><li>Jeukendrup A, Saris WH, Brouns F, Kester AD. A new validated endurance performance test. Med Sci Sports Exerc 1996;28(2):266-270. DOI 10.1097/00005768-199602000-00017 · PMID 8775164 — CV 26,6% × 3,35%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 199,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "",
+    "subtitle": "",
+    "content": "<p class=\"quote-text reveal\">O <span class=\"hl-glucose\">carboidrato</span> não ganha a prova. Ele decide se você vai estar <span class=\"hl-glycogen\">inteiro</span> para disputá-la no fim.</p>",
+    "cards": []
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 160,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "47% das Fibras",
+    "subtitle": "O glicogênio médio do músculo engana: o fim do jogo mora nas fibras que esvaziaram",
+    "content": "[[COMP:SoccerFibersSim]]<h4>Fontes</h4><ul><li>Krustrup P, Mohr M, Steensberg A, et al. Muscle and blood metabolites during a soccer game: implications for sprint performance. Med Sci Sports Exerc 2006;38(6):1165-1174. DOI 10.1249/01.mss.0000222845.89262.cd · PMID 16775559 — 449 → 255 mmol/kg ps; 47% das fibras vazias ou quase vazias; tiro de 30 m 2,8% mais lento (n = 31, 3 amistosos). Queda da média (−43%) e distância na chegada (~0,8 m): cálculos nossos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 161,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "CHO no Jogo",
+    "subtitle": "O carboidrato poupa o músculo e sustenta os tiros; na jogada, o efeito encolhe",
+    "content": "[[COMP:TeamSportSim]]<h4>Fontes</h4><ul><li>Leatt PB, Jacobs I. Effect of glucose polymer ingestion on glycogen depletion during a soccer match. Can J Sport Sci 1989;14(2):112-116. PMID 2736440 — 111 × 181 mmol/kg ps de glicogênio gasto com × sem CHO a 7% (5 + 5 jogadores); −39%: cálculo nosso.</li><li>Balsom PD, Gaitanos GC, Söderlund K, Ekblom B. High-intensity exercise and muscle glycogen availability in humans. Acta Physiol Scand 1999;165(4):337-345. DOI 10.1046/j.1365-201x.1999.00517.x · PMID 10350228 — 111 × 294 tiros de 6 s com glicogênio baixo × alto (n = 7); razão 2,6×: cálculo nosso.</li><li>Xie S, Wen X. Acute caffeine and carbohydrate strategies for fatigue-related sport-specific performance in team-sport athletes: a systematic review and multilevel meta-analysis. J Int Soc Sports Nutr 2026;23(1):2731524. DOI 10.1080/15502783.2026.2731524 · PMID 42908119 — CHO na habilidade/decisão sob fadiga: g = 0,256 (IC 95% −0,094 a 0,605), certeza GRADE muito baixa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 162,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Paulo e o Carbo Pós-Treino",
+    "subtitle": "Uma sessão de força gasta parte do tanque; o carbo extra não trouxe mais força nem músculo",
+    "content": "[[COMP:StrengthSim]]<h4>Fontes</h4><ul><li>MacDougall JD, Ray S, Sale DG, et al. Muscle substrate utilization and lactate production. Can J Appl Physiol 1999;24(3):209-215. DOI 10.1139/h99-017 · PMID 10364416 — rosca a 80% 1RM: glicogênio do bíceps −12% (1 série) e −24% (3 séries); n = 4 por condição.</li><li>Koopman R, Manders RJ, Jonkers RA, et al. Intramyocellular lipid and glycogen content are reduced following resistance exercise in untrained healthy males. Eur J Appl Physiol 2006;96(5):525-534. DOI 10.1007/s00421-005-0118-0 · PMID 16369816 — glicogênio −23% (tipo I), −40% (IIa), −44% (IIx) em ~45 min.</li><li>Henselmans M, Bjørnsen T, Hedderman R, Vårvik FT. The Effect of Carbohydrate Intake on Strength and Resistance Training Performance: A Systematic Review. Nutrients 2022;14(4):856. DOI 10.3390/nu14040856 · PMID 35215506 — estudos agudos: 13 nulos × 6 positivos (sobretudo com controle em jejum e >10 séries).</li><li>Henselmans M, Vårvik FT, Izquierdo M. The Effect of Carbohydrate Intake on Muscle Hypertrophy: A Systematic Review and Meta-analysis. Sports Med 2026;56(3):691-702. DOI 10.1007/s40279-025-02341-z · PMID 41712097 — SMD 0,15 (p = 0,23), 11 ECRs isonitrogenados, GRADE baixa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 163,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Insulina Sobe, Síntese Não",
+    "subtitle": "Com proteína suficiente, o pico de insulina do carboidrato não acrescenta síntese",
+    "content": "[[COMP:MpsSim]]<h4>Fontes</h4><ul><li>Koopman R, Beelen M, Stellingwerff T, et al. Coingestion of carbohydrate with protein does not further augment postexercise muscle protein synthesis. Am J Physiol Endocrinol Metab 2007;293(3):E833-E842. DOI 10.1152/ajpendo.00135.2007 · PMID 17609259 — 0,3 g/kg/h de proteína com 0, 0,15 ou 0,6 g/kg/h de CHO: insulina 1,5 / 3,7 / 18,4 U·6h/L; FSR 0,10 / 0,10 / 0,11 %/h (n = 10). Razão ~12×: cálculo nosso.</li><li>Staples AW, Burd NA, West DW, et al. Carbohydrate does not augment exercise-induced protein accretion versus protein alone. Med Sci Sports Exerc 2011;43(7):1154-1161. DOI 10.1249/mss.0b013e31820751cb · PMID 21131864 — 25 g whey ± 50 g de maltodextrina: insulina 5× maior, síntese igual (n = 9).</li><li>Glynn EL, Fry CS, Drummond MJ, et al. Muscle protein breakdown has a minor role in the protein anabolic response to essential amino acid and carbohydrate intake following resistance exercise. Am J Physiol Regul Integr Comp Physiol 2010;299(2):R533-R540. DOI 10.1152/ajpregu.00077.2010 · PMID 20519362 — aminoácidos + 30 × 90 g de CHO: síntese e quebra iguais (n = 13).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 164,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "A Balança e a Água",
+    "subtitle": "O glicogênio sai da balança com água, mas essa água não protege da desidratação",
+    "content": "[[COMP:WeightCutSim]]<h4>Fontes</h4><ul><li>Fernández-Elías VE, Ortega JF, Nelson RK, Mora-Rodriguez R. Relationship between muscle water and glycogen recovery after prolonged exercise in the heat in humans. Eur J Appl Physiol 2015;115(9):1919-1926. DOI 10.1007/s00421-015-3175-z · PMID 25911631 — razão glicogênio:água de 1:3 (pouca água) a 1:17 (água plena); cruzado, n = 9.</li><li>King RFGJ, Jones B, O'Hara JP. The availability of water associated with glycogen during dehydration: a reservoir or raindrop? Eur J Appl Physiol 2018;118(2):283-290. DOI 10.1007/s00421-017-3768-9 · PMID 29196846 — perda de 2 L de suor: glicogênio cheio devolve ~55 mL ao plasma.</li><li>Foo WL, Harrison JD, Mhizha FT, et al. A Short-Term Low-Fiber Diet Reduces Body Mass in Healthy Young Men: Implications for Weight-Sensitive Sports. Int J Sport Nutr Exerc Metab 2022;32(4):256-264. DOI 10.1123/ijsnem.2021-0324 · PMID 35313275 — <10 g de fibra/d por 4 dias: −0,74% da massa (n = 19, não atletas). Aplicação ao Tiago: cálculo nosso, caso fictício.</li><li>Reale R, Slater G, Burke LM. Individualised dietary strategies for Olympic combat sports: Acute weight loss, recovery and competition nutrition. Eur J Sport Sci 2017;17(6):727-740. DOI 10.1080/17461391.2017.1297489 · PMID 28316263 — perda aguda via água corporal e conteúdo intestinal.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 165,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Depois da Pesagem",
+    "subtitle": "O regulamento da pesagem decide quanto tempo há para repor, e o que a reposição vale",
+    "content": "[[COMP:RefeedSim]]<h4>Fontes</h4><ul><li>Kondo E, Shiose K, Osawa T, et al. Effects of an overnight high-carbohydrate meal on muscle glycogen after rapid weight loss in male collegiate wrestlers. BMC Sports Sci Med Rehabil 2021;13(1):96. DOI 10.1186/s13102-021-00325-w · PMID 34416921 — −6% em 53 h, glicogênio −36,5%; 7,1 g/kg de CHO em 5 h; 13 h depois ainda abaixo da base (n = 10). Forma da curva: ilustrativa.</li><li>Reale R, Cox GR, Slater G, Burke LM. Regain in Body Mass After Weigh-In is Linked to Success in Real Life Judo Competition. Int J Sport Nutr Exerc Metab 2016;26(6):525-530. DOI 10.1123/ijsnem.2015-0359 · PMID 27206272 — pesagem 15–20 h antes; medalhistas reganharam 1,4 ponto % a mais (n = 86).</li><li>Reale R, Cox GR, Slater G, Burke LM. Weight Regain: No Link to Success in a Real-Life Multiday Boxing Tournament. Int J Sports Physiol Perform 2017;12(7):856-863. DOI 10.1123/ijspp.2016-0311 · PMID 27834565 — reganho sem relação com vencer (n = 100).</li><li>CDC. Hyperthermia and dehydration-related deaths associated with intentional rapid weight loss in three collegiate wrestlers — North Carolina, Wisconsin, and Michigan, November–December 1997. MMWR 1998;47(6):105-108. PMID 9480411 — três mortes entre 7/11 e 9/12/1997.</li><li>Oppliger RA, Utter AC, Scott JR, et al. NCAA rule change improves weight loss among national championship wrestlers. Med Sci Sports Exerc 2006;38(5):963-970. DOI 10.1249/01.mss.0000218143.69719.b4 · PMID 16672852 — 1999–2004: perda nas 20 h antes da pesagem de 1,7% (811 lutadores).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 166,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Calor e Altitude",
+    "subtitle": "Calor e altitude mudam o que o músculo queima, e não do jeito que o rótulo do gel promete",
+    "content": "[[COMP:HeatAltitudeSim]]<h4>Fontes</h4><ul><li>Jentjens RL, Wagenmakers AJ, Jeukendrup AE. Heat stress increases muscle glycogen use but reduces the oxidation of ingested carbohydrates during exercise. J Appl Physiol 2002;92(4):1562-1572. DOI 10.1152/japplphysiol.00482.2001 · PMID 11896023 — 35 × 16 °C: glicogênio 2,07 × 1,66 g/min; glicose ingerida 0,76 × 0,84 g/min (n = 9). +25% e −10%: cálculos nossos.</li><li>Febbraio MA, Murton P, Selig SE, et al. Effect of CHO ingestion on exercise metabolism and performance in different ambient temperatures. Med Sci Sports Exerc 1996;28(11):1380-1387. DOI 10.1097/00005768-199611000-00006 · PMID 8933488 — a 33 °C nenhuma solução (4,2%, 7%, 14%) aumentou o tempo até a fadiga; a 5 °C, 7% > placebo.</li><li>Péronnet F, Massicotte D, Folch N, et al. Substrate utilization during prolonged exercise with ingestion of 13C-glucose in acute hypobaric hypoxia (4,300 m). Eur J Appl Physiol 2006;97(5):527-534. DOI 10.1007/s00421-006-0164-2 · PMID 16775741 — CHO 92,0% da energia em hipóxia × 78,1% (mesma carga relativa); glicose exógena 17,2 × 20,2 g (n = 5).</li><li>Braun B, Mawson JT, Muza SR, et al. Women at altitude: carbohydrate utilization during exercise at 4,300 m. J Appl Physiol 2000;88(1):246-256. DOI 10.1152/jappl.2000.88.1.246 · PMID 10642387 — em 16 mulheres, oxidação de CHO −23,2% na altitude.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 167,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Mulheres e Jovens",
+    "subtitle": "Sexo e idade mudam menos do que se diz, até o contexto virar o resultado",
+    "content": "[[COMP:WomenYouthSim]]<h4>Fontes</h4><ul><li>Wallis GA, Dawson R, Achten J, Webber J, Jeukendrup AE. Metabolic response to carbohydrate ingestion during exercise in males and females. Am J Physiol Endocrinol Metab 2006;290(4):E708-E715. DOI 10.1152/ajpendo.00357.2005 · PMID 16278245 — pico de oxidação exógena 0,70 (H) × 0,65 g/min (M) com 90 g/h.</li><li>McNulty KL, Elliott-Sale KJ, Dolan E, et al. The Effects of Menstrual Cycle Phase on Exercise Performance in Eumenorrheic Women: A Systematic Review and Meta-Analysis. Sports Med 2020;50(10):1813-1827. DOI 10.1007/s40279-020-01319-3 · PMID 32661839 — ES0,5 −0,06 (ICr95% −0,16 a 0,04), 78 estudos.</li><li>James AP, Lorraine M, Cullen D, et al. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 · PMID 11718281 — 12 g/kg de massa magra/d: mulheres 108 → 193, homens 109 → 183 mmol/kg pu.</li><li>Tarnopolsky MA, Zawada C, Richmond LB, et al. Gender differences in carbohydrate loading are related to energy intake. J Appl Physiol 2001;91(1):225-230. DOI 10.1152/jappl.2001.91.1.225 · PMID 11408434 — mulheres só carregaram com CHO + energia (contexto do erro de 1995, PMID 7615443).</li><li>Timmons BW, Bar-Or O, Riddell MC. Oxidation rate of exogenous carbohydrate during exercise is higher in boys than in men. J Appl Physiol 2003;94(1):278-284. DOI 10.1152/japplphysiol.00140.2002 · PMID 12391100 — 8,8 × 6,2 mg/kg/min (meninos × homens); +42%: cálculo nosso.</li><li>Leites GT, Cunha GS, Chu L, Meyer F, Timmons BW. Energy substrate utilization with and without exogenous carbohydrate intake in boys and men exercising in the heat. J Appl Physiol 2016;121(5):1127-1134. DOI 10.1152/japplphysiol.00535.2016 · PMID 27609200 — a 38 °C: 2,0 × 2,5 mg/kg de massa magra/min (meninos × homens).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 169,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Diabetes Tipo 1 em Campo",
+    "subtitle": "No atleta com DM1, o carboidrato vira dose de correção guiada pela seta do sensor",
+    "content": "[[COMP:T1DSim]]<h4>Fontes</h4><ul><li>Moser O, Zaharieva DP, Adolfsson P, et al. The use of automated insulin delivery around physical activity and exercise in type 1 diabetes: a position statement of the European Association for the Study of Diabetes (EASD) and the International Society for Pediatric and Adolescent Diabetes (ISPAD). Diabetologia 2025;68(2):255-280. DOI 10.1007/s00125-024-06308-z · PMID 39653802 — bolus −25 a −33% se exercício < 2 h após a refeição; lanche de 10–20 g se < 5,0 mmol/L; durante, < 7,0 mmol/L: 3–6, 6–9, 9–12 e 12–20 g conforme a seta; reavaliar em 20–30 min. Consenso para usuários de AID, não prescrição individual.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 170,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Preço no Sorriso",
+    "subtitle": "Quem prescreve carboidrato o dia todo também prescreve um risco para os dentes",
+    "content": "[[COMP:DentalSim]]<h4>Fontes</h4><ul><li>Needleman I, Ashley P, Petrie A, et al. Oral health and impact on performance of athletes participating in the London 2012 Olympic Games: a cross-sectional study. Br J Sports Med 2013;47(16):1054-1058. DOI 10.1136/bjsports-2013-092891 · PMID 24068332 — erosão dentária em 45% (278 atletas examinados; viés de seleção).</li><li>Gallagher J, Ashley P, Petrie A, Needleman I. Oral health and performance impacts in elite and professional athletes. Community Dent Oral Epidemiol 2018;46(6):563-568. DOI 10.1111/cdoe.12392 · PMID 29938820 — erosão 2,0× mais provável em esporte coletivo que em endurance (IC 95% 1,3–3,1); 352 atletas.</li><li>Gallagher J, Ashley P, Petrie A, Needleman I. Oral health-related behaviours reported by elite and professional athletes. Br Dent J 2019;227(4):276-280. DOI 10.1038/s41415-019-0617-8 · PMID 31444443 — 80% usam bebida esportiva; 94% escovam 2×/dia.</li></ul>",
+    "cards": []
+  }
+]

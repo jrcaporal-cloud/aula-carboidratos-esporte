@@ -1,0 +1,972 @@
+[
+  {
+    "id": 0,
+    "sectionName": "Ato I · Abertura",
+    "number": "Nutrição esportiva",
+    "layout": "prose",
+    "title": "Carboidratos no Esporte",
+    "subtitle": "Do grânulo de glicogênio à linha de chegada: o que a bioquímica e os ensaios clínicos dizem.",
+    "content": "<p class=\"reveal delay-2\" style=\"position: absolute; bottom: var(--slide-padding); right: var(--slide-padding); font-size: var(--small-size);\">Rinaldo Caporal · Nutricionista · CRN6-21717</p>",
+    "cards": []
+  },
+  {
+    "id": 10,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Km 32",
+    "subtitle": "Ritmo de relógio até o km 30, queda no 32: o que acabou?",
+    "content": "[[COMP:WallSim]]<h4>Fontes</h4><ul><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — estoques médios de glicogênio: músculo ~500 g (300–700 g) e fígado ~80 g (0–160 g) (Tabela 1, adaptada de Hargreaves 2012).</li><li>Smyth B. How recreational marathon runners hit the wall: a large-scale data analysis of late-race pacing collapse in the marathon. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — 28% dos homens × 17% das mulheres batem no muro (N = 1.928.813); quem bate desacelera ~40% por ~10 km. Observacional: o muro é inferido pelo ritmo, sem medir glicogênio.</li><li>Marina é personagem fictícia; a curva de ritmo e o nível dos tanques são ilustrativos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 11,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Três Papéis de uma Molécula",
+    "subtitle": "A mesma glicose é combustível, sinal e escolha: o fio da aula",
+    "content": "[[COMP:ThreeRolesSim]]<h4>Fontes</h4><ul><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 · PMC3345970 — 1 L de O₂ rende ~21,1 kJ oxidando glicose e ~19,6 kJ oxidando gordura; +7,7% é cálculo nosso (21,1 ÷ 19,6). A tabela primária (Péronnet & Massicotte 1991) não foi lida.</li><li>Impey SG, Hearris MA, Hammond KM, et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031–1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — nos estudos de train low, sinalização aumentada em 73% (de 11) e desempenho melhor em 37% (de 11).</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17–27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — faixas diárias 3–5 / 5–7 / 6–10 / 8–12 g/kg/d conforme a carga (lidas em tabela secundária: PMC6950062, PMC6019055).</li><li>Thomas DT, Erdman KA, Burke LM. American College of Sports Medicine Joint Position Statement. Nutrition and Athletic Performance. Med Sci Sports Exerc 2016;48(3):543–568. DOI 10.1249/MSS.0000000000000852 · PMID 26891166 — repete as mesmas faixas diárias.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 12,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Cinco Atletas, Cinco Tanques",
+    "subtitle": "Cinco esportes, cinco jeitos de esvaziar o mesmo tanque",
+    "content": "[[COMP:CastSim]]<h4>Fontes</h4><ul><li>Casos fictícios criados para a aula (Marina, Diego, Lara, Tiago e Paulo). O nível de cada tanque é ilustrativo: mostra a forma do problema, não uma medida. Os números de cada caso aparecem, com fonte, no ato em que o personagem volta.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 13,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Que a Turma Já Acha",
+    "subtitle": "Oito afirmações para votar agora; as respostas ficam para o fim da aula",
+    "content": "[[COMP:MythVoteSim]]<h4>Fontes</h4><ul><li>Votação da turma no chat da chamada; os votos ficam guardados na sessão do navegador. Os vereditos e as fontes de cada afirmação estão no slide 189 (Ato X).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 14,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Mapa da Aula",
+    "subtitle": "Dez atos, um percurso: da largada à decisão no consultório",
+    "content": "[[COMP:CourseMapSim]]<h4>Fontes</h4><ul><li>Estrutura da aula: os 10 atos e a pergunta de cada um (roteiro da aula).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 20,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Da Glicose ao Amido",
+    "subtitle": "As mesmas peças, montadas de jeitos diferentes, chegam ao sangue em velocidades diferentes",
+    "content": "[[COMP:SugarFamilySim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-24. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — frutose, galactose e amilose oxidadas 25–50% menos que glicose, maltodextrina e amilopectina.</li><li>Chi C, Shi M, Zhao Y, et al. Dietary compounds slow starch enzymatic digestion: a review. Front Nutr 2022;9:1004966. DOI 10.3389/fnut.2022.1004966 · PMID 36185656 — amilose × amilopectina; a arquitetura do amido muda a velocidade de digestão.</li><li>Roach PJ, Depaoli-Roach AA, Hurley TD, Tagliabracci VS. Glycogen and its metabolism: some new developments and old themes. Biochem J 2012;441(3):763-87. DOI 10.1042/BJ20111416 · PMID 22248338 — ligações α-1,4 e α-1,6; glicogenina no centro do glicogênio.</li><li>Tappy L, Lê KA. Metabolic effects of fructose and the worldwide increase in obesity. Physiol Rev 2010;90(1):23-46. DOI 10.1152/physrev.00019.2009 · PMID 20086073 — glicose e frutose têm a mesma fórmula (C₆H₁₂O₆) e metabolismos diferentes.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 21,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "O Açúcar que o Fígado Fabrica",
+    "subtitle": "Como um cão sem açúcar no prato levou Claude Bernard ao glicogênio e ao meio interno",
+    "content": "[[COMP:BernardSim]]<h4>Fontes</h4><ul><li>Jörgens V, Grüsser M. Happy birthday, Claude Bernard. Diabetes 2013;62(7):2181-2. DOI 10.2337/db13-0700 · PMID 23801718 · PMC3712027 — açúcar no sangue do cão (1848), anotação no caderno, isolamento do glicogênio em fevereiro de 1855 e publicação em 1857.</li><li>Habert R. Claude Bernard, the founder of modern medicine. Cells 2022;11(10):1702. DOI 10.3390/cells11101702 · PMID 35626738 · PMC9139283 — datas e publicações de 1848 e 1857.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 22,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "A Árvore de Glicose",
+    "subtitle": "Um grânulo de até 12 camadas guarda metade da glicose na casca externa",
+    "content": "[[COMP:GranuleSim]]<h4>Fontes</h4><ul><li>Roach PJ, Depaoli-Roach AA, Hurley TD, Tagliabracci VS. Glycogen and its metabolism: some new developments and old themes. Biochem J 2012;441(3):763-87. DOI 10.1042/BJ20111416 · PMID 22248338 · PMC4945249 — cadeias de ~13 glicoses, modelo de camadas, máximo de 12 camadas (~55.000 glicoses, ~44 nm), média de ~25 nm no músculo, camada externa com 50% da glicose, glicogenina.</li><li>Marchand I, Chorneyko K, Tarnopolsky M, et al. Quantification of subcellular glycogen in resting human muscle: granule size, number, and location. J Appl Physiol 2002;93(5):1598-607. DOI 10.1152/japplphysiol.00585.2001 · PMID 12381743 — partículas de 10 a 44 nm num contínuo (MET, 11 homens).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 23,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Síntese não é Quebra ao Contrário",
+    "subtitle": "Duas enzimas, dois sentidos, dois controles: por isso dá para frear uma e soltar a outra",
+    "content": "[[COMP:LeloirSim]]<h4>Fontes</h4><ul><li>Cori CF, Schmidt G, Cori GT. The synthesis of a polysaccharide from glucose-1-phosphate in muscle extract. Science 1939;89(2316):464-5. DOI 10.1126/science.89.2316.464 · PMID 17731092 — a fosforilase monta polissacarídeo no tubo de ensaio.</li><li>Leloir LF, Olavarría JM, Goldemberg SH, Carminatti H. Biosynthesis of glycogen from uridine diphosphate glucose. Arch Biochem Biophys 1959;81(2):508-20. DOI 10.1016/0003-9861(59)90232-2 · PMID 13638016 — síntese de glicogênio a partir de UDP-glicose.</li><li>Leloir LF, Goldemberg SH. Synthesis of glycogen from uridine diphosphate glucose in liver. J Biol Chem 1960;235:919-23. PMID 14415527 — a mesma via no fígado.</li><li>Nobel de Fisiologia ou Medicina 1947 (Carl e Gerty Cori, metade; Bernardo Houssay, metade) e Nobel de Química 1970 (Luis F. Leloir) — nobelprize.org.</li><li>Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — Ca²⁺ ativa a fosforilase quinase via calmodulina.</li><li>Jensen J, Rustad PI, Kolnes AJ, Lai YC. The role of skeletal muscle glycogen breakdown for regulation of insulin sensitivity by exercise. Front Physiol 2011;2:112. DOI 10.3389/fphys.2011.00112 · PMID 22232606 — glicogênio cheio inibe a glicogênio sintase por retroalimentação.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 24,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Quanto Cabe no Corpo",
+    "subtitle": "4 g no sangue, ~100 g no fígado, ~400–500 g no músculo: pouco perto da gordura",
+    "content": "[[COMP:StoresSim]]<h4>Fontes</h4><ul><li>Wasserman DH. Four grams of glucose. Am J Physiol Endocrinol Metab 2009;296(1):E11-21. DOI 10.1152/ajpendo.90563.2008 · PMID 18840763 — ~4 g de glicose circulando numa pessoa de 70 kg.</li><li>Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — ~100 g no fígado e ~400 g no músculo.</li><li>Jensen J, Rustad PI, Kolnes AJ, Lai YC. The role of skeletal muscle glycogen breakdown for regulation of insulin sensitivity by exercise. Front Physiol 2011;2:112. DOI 10.3389/fphys.2011.00112 · PMID 22232606 — ~500 g no músculo e ~100 g no fígado.</li><li>Cálculo da aula: 4 kcal/g de carboidrato; gordura de uma pessoa de 70 kg com 15% de gordura (10,5 kg × 9 kcal/g ≈ 94.500 kcal), só para escala.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 25,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Da Boca ao Sangue",
+    "subtitle": "Só monossacarídeo atravessa: duas portas de entrada, uma de saída, e o fígado logo depois",
+    "content": "[[COMP:DigestionSim]]<h4>Fontes</h4><ul><li>Chi C, Shi M, Zhao Y, et al. Dietary compounds slow starch enzymatic digestion: a review. Front Nutr 2022;9:1004966. DOI 10.3389/fnut.2022.1004966 · PMID 36185656 — amilases salivar e pancreática; maltase-glicoamilase e sacarase-isomaltase na borda em escova; maltose da amilose e dextrinas ramificadas da amilopectina.</li><li>Wright EM, Loo DD, Hirayama BA. Biology of human sodium glucose transporters. Physiol Rev 2011;91(2):733-94. DOI 10.1152/physrev.00055.2009 · PMID 21527736 — SGLT1 usa o gradiente de Na⁺; glicose e galactose dividem a porta.</li><li>Ferraris RP, Choe JY, Patel CR. Intestinal absorption of fructose. Annu Rev Nutr 2018;38:41-67. DOI 10.1146/annurev-nutr-082117-051707 · PMID 29751733 — frutose entra pelo GLUT5 apical; GLUT2 basolateral leva frutose, glicose e galactose.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 26,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Duas Pistas no Intestino",
+    "subtitle": "O teto de ~1 g/min é da porta de entrada, não do músculo: com duas portas, passa disso",
+    "content": "[[COMP:TwoLanesSim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-24. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — oxidação exógena de uma fonte só para em ~1,0–1,1 g/min; limite no intestino e/ou fígado.</li><li>Jentjens RL, Moseley L, Waring RH, Harding LK, Jeukendrup AE. Oxidation of combined ingestion of glucose and fructose during exercise. J Appl Physiol 2004;96(4):1277-84. DOI 10.1152/japplphysiol.00974.2003 · PMID 14657042 — cruzado randomizado, n = 8 ciclistas: pico de 1,26 g/min (glicose 1,2 + frutose 0,6) × 0,80 (glicose 1,2) e 0,83 g/min (glicose 1,8); sem teste de desempenho.</li><li>Röder PV, Geillinger KE, Zietek TS, et al. The role of SGLT1 and GLUT2 in intestinal glucose transport and sensing. PLoS One 2014;9(2):e89977. DOI 10.1371/journal.pone.0089977 · PMID 24587162 — camundongo knockout: sem SGLT1 a retenção de glicose cai drasticamente; GLUT2 apical era contaminação de membrana basolateral.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 27,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "O Caminho da Frutose e da Galactose",
+    "subtitle": "Frutose e galactose chegam ao músculo de carona: o intestino e o fígado passam na frente",
+    "content": "[[COMP:FructosePathSim]]<h4>Fontes</h4><ul><li>Sun SZ, Empie MW. Fructose metabolism in humans — what isotopic tracer studies tell us. Nutr Metab (Lond) 2012;9(1):89. DOI 10.1186/1743-7075-9-89 · PMID 23031075 — ~45% oxidada, ~41% convertida em glicose, ~¼ em lactato (frações que se sobrepõem). Autores ligados à indústria de adoçantes: conflito de interesse a conferir.</li><li>Lecoultre V, Benoit R, Carrel G, et al. Fructose and glucose co-ingestion during prolonged exercise increases lactate and glucose fluxes and oxidation compared with an equimolar intake of glucose. Am J Clin Nutr 2010;92(5):1071-9. DOI 10.3945/ajcn.2010.29566 · PMID 20826630 — cruzado, n = 7: a oxidação da frutose se explicou meio a meio por lactato e por glicose derivados dela.</li><li>Jang C, Hui S, Lu W, et al. The small intestine converts dietary fructose into glucose and organic acids. Cell Metab 2018;27(2):351-61.e3. DOI 10.1016/j.cmet.2017.12.016 · PMID 29414685 — camundongo: ~90% de dose baixa depurada no intestino; doses ≥1 g/kg saturam e chegam ao fígado.</li><li>Leijssen DP, Saris WH, Jeukendrup AE, Wagenmakers AJ. Oxidation of exogenous [¹³C]galactose and [¹³C]glucose during exercise. J Appl Physiol 1995;79(3):720-5. DOI 10.1152/jappl.1995.79.3.720 · PMID 8567509 — cruzado randomizado, n = 8: pico 0,41 (galactose) × 0,85 g/min (glicose).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 29,
+    "sectionName": "Ato II · A Molécula",
+    "number": "",
+    "layout": "prose",
+    "title": "Índice Glicêmico: o Que Ele Mede",
+    "subtitle": "O IG mede a glicemia de quem está parado, em jejum; a prova é outra pergunta",
+    "content": "[[COMP:GlycemicIndexSim]]<h4>Fontes</h4><ul><li>Jenkins DJ, Wolever TM, Taylor RH, et al. Glycemic index of foods: a physiological basis for carbohydrate exchange. Am J Clin Nutr 1981;34(3):362-6. DOI 10.1093/ajcn/34.3.362 · PMID 6259925 — glicemia por 2 h em jejum × a mesma quantidade de CHO como glicose; cereais matinais 65 ± 5%, leguminosas secas 31 ± 3%; gordura e proteína reduzem a resposta.</li><li>Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021: a systematic review. Am J Clin Nutr 2021;114(5):1625-32. DOI 10.1093/ajcn/nqab233 · PMID 34258626 — o IG é do produto e do processamento.</li><li>Burdon CA, Spronk I, Cheng HL, O'Connor HT. Effect of glycemic index of a pre-exercise meal on endurance exercise performance: a systematic review and meta-analysis. Sports Med 2017;47(6):1087-101. DOI 10.1007/s40279-016-0632-8 · PMID 27677914 — faixas de IG baixo (≤55) e alto (≥70).</li><li>Curvas da tela ilustrativas; carga glicêmica calculada pela definição (IG × g de CHO ÷ 100).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 40,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "Duas Chaves para a Mesma Porta",
+    "subtitle": "Insulina e contração abrem o GLUT4 por vias diferentes, e as duas somam.",
+    "content": "[[COMP:Glut4Sim]]<h4>Fontes</h4><ul><li>Lund S, Holman GD, Schmitz O, Pedersen O. Contraction stimulates translocation of glucose transporter GLUT4 in skeletal muscle through a mechanism distinct from that of insulin. Proc Natl Acad Sci USA 1995;92(13):5817-21. DOI 10.1073/pnas.92.13.5817 · PMID 7597034 — wortmanina: insulina 8,8 → 1,4, contração 4,4 → 4,1; soma 11,5 × 5,6 e 9,0 µmol·mL⁻¹·h⁻¹ (sóleo de rato isolado).</li><li>Sylow L, Kleinert M, Richter EA, Jensen TE. Exercise-stimulated glucose uptake — regulation and implications for glycaemic control. Nat Rev Endocrinol 2017;13(3):133-48. DOI 10.1038/nrendo.2016.162 · PMID 27739515 — captação até 50× no exercício.</li><li>Sylow L, Møller LLV, Kleinert M, et al. Rac1 and AMPK account for the majority of muscle glucose uptake stimulated by ex vivo contraction but not in vivo exercise. Diabetes 2017;66(6):1548-59. DOI 10.2337/db16-1138 · PMID 28389470 — debate AMPK × Rac1 (camundongo).</li><li>O'Neill HM, Maarbjerg SJ, Crane JD, et al. AMPK β1β2 muscle null mice reveal an essential role for AMPK in maintaining mitochondrial content and glucose uptake during exercise. Proc Natl Acad Sci USA 2011;108(38):16092-7. DOI 10.1073/pnas.1105062108 · PMID 21896769 — o outro lado do debate.</li><li>Mikines KJ, Sonne B, Farrell PA, Tronier B, Galbo H. Effect of physical exercise on sensitivity and responsiveness to insulin in humans. Am J Physiol 1988;254(3 Pt 1):E248-59. DOI 10.1152/ajpendo.1988.254.3.E248 · PMID 3126668 — Km 52 → 40 µU/mL às 48 h; efeito ausente em 5 dias (n = 3).</li><li>Richter EA, Mikines KJ, Galbo H, Kiens B. Effect of exercise on insulin action in human skeletal muscle. J Appl Physiol 1989;66(2):876-85. DOI 10.1152/jappl.1989.66.2.876 · PMID 2496078 — efeito local, só na coxa exercitada (n = 6).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 42,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "A Escada da Glicólise",
+    "subtitle": "Da glicose ao piruvato, com a PFK no portão e duas saídas no fim.",
+    "content": "[[COMP:GlycolysisSim]]<h4>Fontes</h4><ul><li>Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — PFK como enzima limitante, ativada por ADP, AMP e Pi.</li><li>Brooks GA. The science and translation of lactate shuttle theory. Cell Metab 2018;27(4):757-85. DOI 10.1016/j.cmet.2018.03.008 · PMID 29617642 — lactato se forma continuamente em aerobiose.</li><li>Hinkle PC. P/O ratios of mitochondrial oxidative phosphorylation. Biochim Biophys Acta 2005;1706(1-2):1-11. DOI 10.1016/j.bbabio.2004.09.004 · PMID 15620362 — razões P/O; o total de ~30–32 ATP por glicose é cálculo derivado (rotulado).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 43,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "Lactato é Moeda, não Lixo",
+    "subtitle": "O lactato circula entre fibras, coração e fígado como combustível e matéria-prima.",
+    "content": "[[COMP:LactateCurrencySim]]<h4>Fontes</h4><ul><li>Brooks GA. The science and translation of lactate shuttle theory. Cell Metab 2018;27(4):757-85. DOI 10.1016/j.cmet.2018.03.008 · PMID 29617642 — lançadeira: fonte de energia, precursor gliconeogênico, sinalizador.</li><li>Hui S, Ghergurovich JM, Morscher RJ, et al. Glucose feeds the TCA cycle via circulating lactate. Nature 2017;551(7678):115-8. DOI 10.1038/nature24057 · PMID 29045397 — fluxo de lactato 1,1× (alimentado) e 2,5× (jejum) o da glicose; camundongo, repouso.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 44,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "O Cruzamento",
+    "subtitle": "Quanto mais intenso o esforço, mais carboidrato. E onde entra o treino?",
+    "content": "[[COMP:CrossoverSim]]<h4>Fontes</h4><ul><li>Brooks GA, Mercier J. Balance of carbohydrate and lipid utilization during exercise: the \"crossover\" concept. J Appl Physiol 1994;76(6):2253-61. DOI 10.1152/jappl.1994.76.6.2253 · PMID 7928844 — o modelo do cruzamento (forma do gráfico; valores ilustrativos).</li><li>Romijn JA, Coyle EF, Sidossis LS, et al. Regulation of endogenous fat and carbohydrate metabolism in relation to exercise intensity and duration. Am J Physiol 1993;265(3 Pt 1):E380-91. DOI 10.1152/ajpendo.1993.265.3.E380 · PMID 8214047 — ordem das 4 fontes a 25, 65 e 85% VO₂máx (n = 5).</li><li>van Loon LJ, Greenhaff PL, Constantin-Teodosiu D, Saris WH, Wagenmakers AJ. The effects of increasing exercise intensity on muscle fuel utilisation in humans. J Physiol 2001;536(Pt 1):295-304. DOI 10.1111/j.1469-7793.2001.00295.x · PMID 11579177 — gordura 32 → 19 kJ/min de 55% para 75% Wmáx (n = 8).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 45,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "Por que a Gordura Trava no Alto",
+    "subtitle": "No esforço intenso, o carboidrato não só ganha: ele fecha a porta da gordura.",
+    "content": "[[COMP:FatBrakeSim]]<h4>Fontes</h4><ul><li>van Loon LJ, Greenhaff PL, Constantin-Teodosiu D, Saris WH, Wagenmakers AJ. The effects of increasing exercise intensity on muscle fuel utilisation in humans. J Physiol 2001;536(Pt 1):295-304. DOI 10.1111/j.1469-7793.2001.00295.x · PMID 11579177 — PDH mais ativa, carnitina livre em queda, gordura 32 → 19 kJ/min (CPT-I não medida).</li><li>Howlett RA, Parolin ML, Dyck DJ, et al. Regulation of skeletal muscle glycogen phosphorylase and PDH at varying exercise power outputs. Am J Physiol 1998;275(2):R418-25. DOI 10.1152/ajpregu.1998.275.2.R418 · PMID 9688676 — PDH ativa 0,53 / 1,60 / 2,77 / 3,33 mmol·kg ww⁻¹·min⁻¹; fosforilase a 21,4–29,6%, 15,3% aos 10 min a 90% (n = 7).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 46,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "O Preço do Oxigênio",
+    "subtitle": "O mesmo litro de O₂ rende mais energia queimando carboidrato do que gordura.",
+    "content": "[[COMP:OxygenPriceSim]]<h4>Fontes</h4><ul><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 · PMC3345970 — 1 L de O₂ ≈ 21,1 kJ (glicose) × 19,6 kJ (gordura); ~7,7% é cálculo nosso.</li><li>Plews DJ, Booth PD, Krieger T, Maunder E. Fuelled or fooled? Examining the evidence and mechanisms behind ultra-high carbohydrate intake in endurance athletes. Sports Med 2026;56(10):2367-88. DOI 10.1007/s40279-026-02462-z · PMID 42258036 — 5,05 × 4,69 kcal por litro de O₂.</li><li>Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-807. DOI 10.1113/JP273230 · PMID 28012184 — LCHF aumentou o custo de O₂ no ritmo de prova (gancho para o slide do Supernova).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 47,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "Quem Defende os 4 Gramas",
+    "subtitle": "O fígado repõe a glicose do sangue e, no esforço intenso, passa do ponto.",
+    "content": "[[COMP:LiverTapSim]]<h4>Fontes</h4><ul><li>Wasserman DH. Four grams of glucose. Am J Physiol Endocrinol Metab 2009;296(1):E11-21. DOI 10.1152/ajpendo.90563.2008 · PMID 18840763 — ~4 g de glicose no sangue de uma pessoa de 70 kg.</li><li>Marliss EB, Vranic M. Intense exercise has unique effects on both insulin release and its roles in glucoregulation: implications for diabetes. Diabetes 2002;51(Suppl 1):S271-83. DOI 10.2337/diabetes.51.2007.S271 · PMID 11815492 — produção hepática ≤2× (<60% VO₂máx) e 7–8× (>80%), utilização 3–4×; insulina sobe 40–60 min após a exaustão.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 48,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "Boston, 1923",
+    "subtitle": "A primeira pista de que a fadiga da maratona passava pelo sangue.",
+    "content": "[[COMP:Boston1923Sim]]<h4>Fontes</h4><ul><li>Levine SA, Gordon B, Derick CL. Some changes in the chemical constituents of the blood following a marathon race. JAMA 1924;82(22):1778-9. DOI 10.1001/jama.1924.02650480034015 — original NÃO lido; citado em Hearris 2018 (glicemia < 4 mmol/L na chegada).</li><li>Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — revisão que cita Levine 1924.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 49,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "O Resgate pela Veia",
+    "subtitle": "Glicose na veia devolve 43 min a ciclistas exaustos sem tocar no glicogênio.",
+    "content": "[[COMP:RescueSim]]<h4>Fontes</h4><ul><li>Coggan AR, Coyle EF. Reversal of fatigue during prolonged exercise by carbohydrate infusion or ingestion. J Appl Physiol 1987;63(6):2388-95. DOI 10.1152/jappl.1987.63.6.2388 · PMID 3325488 — ~170 min; glicose 5,0 → 3,1 mM; placebo 10, oral 26, IV 43 min (1,13 g/min); glicogênio ~40 mmol/kg inalterado (n = 7).</li><li>Christensen EH, Hansen O. Hypoglykämie, Arbeitsfähigkeit und Ermüdung. Skand Arch Physiol 1939;81:172-9. DOI 10.1111/j.1748-1716.1939.tb01321.x — original não lido; 200 g de glicose em 2 atletas exaustos, ~+1 h, segundo Noakes 2022 (via Bergström 1967 para o contexto).</li><li>Noakes TD. What is the evidence that dietary macronutrient composition influences exercise performance? A narrative review. Nutrients 2022;14(4):862. DOI 10.3390/nu14040862 · PMID 35215511 — fonte do relato de 1939.</li><li>Nybo L. CNS fatigue and prolonged exercise: effect of glucose supplementation. Med Sci Sports Exerc 2003;35(4):589-94. DOI 10.1249/01.MSS.0000058433.85789.66 · PMID 12673141 — força 248 / 222 / 197 N; ativação central menor com placebo (glicemia 3,0 mM; n = 8).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 51,
+    "sectionName": "Ato III · O Motor",
+    "number": "",
+    "layout": "prose",
+    "title": "",
+    "subtitle": "",
+    "content": "<p class=\"quote-text reveal\">A <span class=\"hl-glucose\">intensidade</span> escolhe o combustível; o treino só desloca a <span class=\"hl-fat\">fronteira</span>.</p>",
+    "cards": []
+  },
+  {
+    "id": 60,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "A Agulha que Veio da Nefrologia",
+    "subtitle": "O glicogênio virou protagonista por causa de uma ferramenta feita para outra pergunta.",
+    "content": "[[COMP:NeedleSim]]<h4>Fontes</h4><ul><li>Stout JR, Kreider RB, Candow DG et al. The birth of modern sports nutrition: tracing the path from muscle biopsies to creatine supplementation — a narrative review. J Int Soc Sports Nutr 2025;22(sup1):2463373. DOI 10.1080/15502783.2025.2463373 · PMID 39964101 — Bergström, nefrologista, cria a agulha em 1959 para estudar eletrólitos com diuréticos; artigo de 1962; encontro com a dosagem de Hultman (relato de Roger Harris).</li><li>Ekblom B. The muscle biopsy technique. Historical and methodological considerations. Scand J Med Sci Sports 2017;27(5):458–461. DOI 10.1111/sms.12808 · PMID 28033689 — a agulha de Bergström como instrumento de referência.</li><li>Bergström J. Percutaneous needle biopsy of skeletal muscle in physiological and clinical research. Scand J Clin Lab Invest 1975;35(7):609–616. DOI 10.1080/00365517509095787 · PMID 1108172 — descrição da técnica.</li><li>Bergström J. Muscle electrolytes in man: determined by neutron activation analysis on needle biopsy specimens. Scand J Clin Lab Invest 1962;14(Suppl 68) — o artigo dos eletrólitos (não lido; páginas não confirmadas).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 61,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Dois Cientistas, uma Bicicleta",
+    "subtitle": "Se só a perna que pedalou supercompensa, a carga de carboidrato é um fenômeno local.",
+    "content": "[[COMP:OneLegSim]]<h4>Fontes</h4><ul><li>Bergström J, Hultman E. Muscle glycogen synthesis after exercise: an enhancing factor localized to the muscle cells in man. Nature 1966;210(5033):309–310. DOI 10.1038/210309a0 · PMID 5954569 — modelo de uma perna, n = 2 (os autores); original não lido.</li><li>Stout JR, Kreider RB, Candow DG et al. The birth of modern sports nutrition: tracing the path from muscle biopsies to creatine supplementation — a narrative review. J Int Soc Sports Nutr 2025;22(sup1):2463373. DOI 10.1080/15502783.2025.2463373 · PMID 39964101 — os dois em lados opostos do mesmo cicloergômetro; perna exercitada 50–60% acima da parada no 3º dia (relato de Harris).</li><li>Solem K, Clauss M, Jensen J. Glycogen supercompensation in skeletal muscle after cycling or running followed by a high carbohydrate intake the following days: a systematic review and meta-analysis. Front Physiol 2025;16:1620943. DOI 10.3389/fphys.2025.1620943 · PMID 40901614 — confirma no texto completo: supercompensação só na perna exercitada.</li><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — conclusão original: o aumento da síntese é localizado nos músculos que trabalharam.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 62,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Três Dietas, Nove Estudantes",
+    "subtitle": "O glicogênio inicial prevê o tempo até a exaustão. Prevê; não prova que causa.",
+    "content": "[[COMP:ThreeDietsSim]]<h4>Fontes</h4><ul><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — lido no original (Tabela III): 0,63 / 1,75 / 3,31 g/100 g e 57 / 114 / 167 min a 75% do VO₂máx; r = 0,92; os 3 sem a fase gordurosa: 2,10–3,00 g/100 g e 119–124 min; cruzado, não cego, n = 9.</li><li>Noakes TD. What is the evidence that dietary macronutrient composition influences exercise performance? A narrative review. Nutrients 2022;14(4):862. DOI 10.3390/nu14040862 · PMID 35215511 — crítica: associação, não causa; hipoglicemia presente nos testes.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 63,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Quanto é \"Normal\"",
+    "subtitle": "Uma régua para ler biópsias: o normal, a carga, a depleção e o que o treino muda.",
+    "content": "[[COMP:GlycogenRulerSim]]<h4>Fontes</h4><ul><li>Areta JL, Hopkins WG. Skeletal muscle glycogen content at rest and during endurance exercise in humans: a meta-analysis. Sports Med 2018;48(9):2091–2102. DOI 10.1007/s40279-018-0941-1 · PMID 29923148 — 462 ± 132 mmol/kg dw; +102 com carga; −253 com depleção; +67 por +10 mL/kg/min de VO₂máx; limiares 25/75/150/250.</li><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g (300–700), fígado ~80 g (0–160).</li><li>Phillips SM, Green HJ, Tarnopolsky MA et al. Effects of training duration on substrate turnover and oxidation during exercise. J Appl Physiol 1996;81(5):2182–2191. DOI 10.1152/jappl.1996.81.5.2182 · PMID 9053394 — −16% de oxidação de glicogênio após 5 dias de treino.</li><li>Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Liver glycogen metabolism during and after prolonged endurance-type exercise. Am J Physiol Endocrinol Metab 2016;311(3):E543–E553. DOI 10.1152/ajpendo.00232.2016 · PMID 27436612 — treinados não têm glicogênio hepático basal maior.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 64,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Quem Esvazia Primeiro",
+    "subtitle": "O músculo não esvazia por igual: a intensidade escolhe quais fibras se apagam.",
+    "content": "[[COMP:FiberOrderSim]]<h4>Fontes</h4><ul><li>Gollnick PD, Piehl K, Saltin B. Selective glycogen depletion pattern in human muscle fibres after exercise of varying intensity and at varying pedalling rates. J Physiol 1974;241(1):45–57. DOI 10.1113/jphysiol.1974.sp010639 · PMID 4278539 — esvaziamento 2,7× e 7,4× a 64% e 84% vs 31% do VO₂máx; lentas primeiro no submáximo; PAS + ATPase.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 65,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Três Endereços na Fibra",
+    "subtitle": "Onde o glicogênio fica importa tanto quanto a quantidade.",
+    "content": "[[COMP:GlycogenPoolsSim]]<h4>Fontes</h4><ul><li>Nielsen J, Holmberg HC, Schrøder HD, Saltin B, Ørtenblad N. Human skeletal muscle glycogen utilization in exhaustive exercise: role of subcellular localization and fibre type. J Physiol 2011;589(Pt 11):2871–2885. DOI 10.1113/jphysiol.2010.204487 · PMID 21486810 — três compartimentos; o intramiofibrilar esvazia mais e, só com água, custa a voltar; n = 10 atletas de elite.</li><li>Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — intramiofibrilar = 10–15% do total.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 66,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Cálcio que Falha",
+    "subtitle": "Pouco glicogênio na miofibrila anda junto com menos cálcio liberado. Junto não é causa.",
+    "content": "[[COMP:CalciumReleaseSim]]<h4>Fontes</h4><ul><li>Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — braço a 31% e Ca²⁺ a 85%; +4 h com CHO 59% e Ca²⁺ normal; só água 29% e 77%; perna 71%, Ca²⁺ sem mudança; n = 10.</li><li>Gejl KD, Hvid LG, Frandsen U, Jensen K, Sahlin K, Ørtenblad N. Muscle glycogen content modifies SR Ca²⁺ release rate in elite endurance athletes. Med Sci Sports Exerc 2014;46(3):496–505. DOI 10.1249/MSS.0000000000000132 · PMID 24091991 — 32% e 86%; r = 0,30; n = 14 triatletas.</li><li>Ørtenblad N, Westerblad H, Nielsen J. Muscle glycogen stores and fatigue. J Physiol 2013;591(18):4405–4413. DOI 10.1113/jphysiol.2013.251629 · PMID 23652590 — causa e efeito ainda não estabelecidos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 67,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Fígado, o Segundo Limite",
+    "subtitle": "O carboidrato na prova protege o fígado e a glicemia; o músculo, quase nada.",
+    "content": "[[COMP:TwoTanksSim]]<h4>Fontes</h4><ul><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g, fígado ~80 g.</li><li>Coyle EF, Coggan AR, Hemmert MK, Ivy JL. Muscle glycogen utilization during prolonged strenuous exercise when fed carbohydrate. J Appl Physiol 1986;61(1):165–172. DOI 10.1152/jappl.1986.61.1.165 · PMID 3525502 — fadiga 3,02 × 4,02 h; glicose 2,5 × 4,2–5,2 mM; uso de glicogênio igual nas 3 primeiras horas; n = 7.</li><li>Gonzalez JT, Fuchs CJ, Smith FE et al. Ingestion of glucose or sucrose prevents liver but not muscle glycogen depletion during prolonged endurance-type exercise in trained cyclists. Am J Physiol Endocrinol Metab 2015;309(12):E1032–E1039. DOI 10.1152/ajpendo.00376.2015 · PMID 26487008 — fígado 325 → 345 e músculo 101 → 60 mmol/L com glicose; água (n = 4) fígado 454 → 283.</li><li>Rothschild JA, Dudley-Rode H, Carpenter H et al. Carbohydrate ingestion during prolonged exercise and net skeletal muscle glycogen utilization: a meta-analysis. J Appl Physiol 2026;140(1):76–87. DOI 10.1152/japplphysiol.00861.2025 · PMID 41363659 — SMD −0,16; ~24 mmol/kg dw poupados; 31 estudos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 68,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Muro em Números",
+    "subtitle": "Um em cada quatro maratonistas homens desaba no fim, e quem arrisca o ritmo desaba mais.",
+    "content": "[[COMP:WallStatsSim]]<h4>Fontes</h4><ul><li>Smyth B. How recreational marathon runners hit the wall: a large-scale data analysis of late-race pacing collapse in the marathon. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — 28% × 17% (OR 1,43; N = 1.928.813); ~40% mais lento por ~10 km; risco maior perto do recorde pessoal; glicogênio não medido.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 69,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Glicogênio Também Fala",
+    "subtitle": "O estoque baixo aumenta o sinal de adaptação. Sinal maior não garante prova melhor.",
+    "content": "[[COMP:GlycogenSignalSim]]<h4>Fontes</h4><ul><li>Bartlett JD, Louhelainen J, Iqbal Z et al. Reduced carbohydrate availability enhances exercise-induced p53 signaling in human skeletal muscle: implications for mitochondrial biogenesis. Am J Physiol Regul Integr Comp Physiol 2013;304(6):R450–R458. DOI 10.1152/ajpregu.00498.2012 · PMID 23364526 — glicogênio 467 × 103; ACC 2,9 × 1,4; p53 2,6 × 0,9; PGC-1α ~3× nos dois; n = 8.</li><li>Hansen AK, Fischer CP, Plomgaard P et al. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93–99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — o train low original, modelo de uma perna, n = 7 não treinados.</li><li>Impey SG, Hearris MA, Hammond KM et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031–1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — sinalização em 73% de 11 estudos; desempenho em 37%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 70,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "",
+    "subtitle": "",
+    "content": "<p class=\"quote-text reveal\">Tanque cheio não ganha prova; <span class=\"hl-glycogen\">tanque vazio perde</span>.</p>",
+    "cards": []
+  },
+  {
+    "id": 80,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "A Dieta Escandinava",
+    "subtitle": "Precisa esvaziar o tanque para enchê-lo mais?",
+    "content": "[[COMP:LoadingHistorySim]]<h4>Fontes</h4><ul><li>Sherman WM, Costill DL, Fink WJ, Miller JM. Effect of exercise-diet manipulation on muscle glycogen and its subsequent utilization during performance. Int J Sports Med 1981;2(2):114-118. DOI 10.1055/s-2008-1034594 · PMID 7333741 — cruzado, 3 regimes de 6 dias em corredores treinados: depleção (15% de CHO) + carga (70%) = 207; dieta mista (50%) + carga = 203; só mista = 159 mmol/kg de peso úmido; sem diferença na corrida de 20,9 km. O n não consta no abstract.</li><li>Não usado: o relato de Ron Hill (só fonte secundária) e os tempos de Karlsson & Saltin 1971 (não confirmados).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 81,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Carga em 24 Horas",
+    "subtitle": "Encher o tanque precisa de uma semana, ou de um dia?",
+    "content": "[[COMP:OneDayLoadSim]]<h4>Fontes</h4><ul><li>Bussau VA, Fairchild TJ, Rao A, Steele P, Fournier PA. Carbohydrate loading in human muscle: an improved 1 day protocol. Eur J Appl Physiol 2002;87(3):290-295. DOI 10.1007/s00421-002-0621-5 · PMID 12111292 — n = 8 homens treinados, 10 g/kg/d de CHO de alto IG em repouso: 95 → 180 mmol/kg ww após 1 dia, estável nos dias 2–3.</li><li>Fairchild TJ, Fletcher S, Steele P, Goodman C, Dawson B, Fournier PA. Rapid carbohydrate loading after a short bout of near maximal-intensity exercise. Med Sci Sports Exerc 2002;34(6):980-986. DOI 10.1097/00005768-200206000-00012 · PMID 12048325 — n = 7; 150 s a 130% do VO2pico + 30 s máximos e 24 h com ~10,3 g/kg: 109,1 → 198,2 mmol/kg ww.</li><li>Solem K, Clauss M, Jensen J. Glycogen supercompensation in skeletal muscle after cycling or running followed by a high carbohydrate intake the following days: a systematic review and meta-analysis. Front Physiol 2025;16:1620943. DOI 10.3389/fphys.2025.1620943 · PMID 40901614 — 30 estudos, 319 pessoas (48 mulheres): +269,7 mmol/kg dw após ciclismo × +156,5 após corrida.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 82,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Quanto a Carga Rende",
+    "subtitle": "Em que prova a carga muda o cronômetro, e em qual não muda?",
+    "content": "[[COMP:LoadingGainSim]]<h4>Fontes</h4><ul><li>Hawley JA, Schabort EJ, Noakes TD, Dennis SC. Carbohydrate-loading and exercise performance. An update. Sports Med 1997;24(2):73-81. DOI 10.2165/00007256-199724020-00001 · PMID 9291549 — revisão narrativa (não meta-análise): >90 min, +2–3% no contrarrelógio; ~20% é tempo até a exaustão.</li><li>Sherman WM, Costill DL, Fink WJ, Miller JM. Effect of exercise-diet manipulation on muscle glycogen and its subsequent utilization during performance. Int J Sports Med 1981;2(2):114-118. DOI 10.1055/s-2008-1034594 · PMID 7333741 — 20,9 km (~1h20): tempo igual entre os regimes.</li><li>McLay RT, Thomson CD, Williams SM, Rehrer NJ. Carbohydrate loading and female endurance athletes: effect of menstrual-cycle phase. Int J Sport Nutr Exerc Metab 2007;17(2):189-205. DOI 10.1123/ijsnem.17.2.189 · PMID 17507743 — 9 mulheres; contrarrelógio de 16 km após 75 min intermitentes: 26,10 × 26,16 min (P = 0,494).</li><li>Burke LM, Hawley JA, Schabort EJ, St Clair Gibson A, Mujika I, Noakes TD. Carbohydrate loading failed to improve 100-km cycling performance in a placebo-controlled trial. J Appl Physiol 2000;88(4):1284-1290. DOI 10.1152/jappl.2000.88.4.1284 · PMID 10749820 — ECR cruzado com placebo, n = 7; 9 × 6 g/kg/d por 3 dias, CHO durante nas duas condições: glicogênio 572 × 485 mmol/kg dw; 147,5 × 149,1 min (P = 0,4).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 83,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Mito da Mulher que Não Carrega",
+    "subtitle": "O limite era o sexo, ou a dose prescrita em % da energia?",
+    "content": "[[COMP:WomenLoadingSim]]<h4>Fontes</h4><ul><li>Tarnopolsky MA, Atkinson SA, Phillips SM, MacDougall JD. Carbohydrate loading and metabolism during exercise in men and women. J Appl Physiol 1995;78(4):1360-1368. DOI 10.1152/jappl.1995.78.4.1360 · PMID 7615443 — 7 homens e 8 mulheres; CHO a 75% da energia por 4 dias: glicogênio +41% × 0%.</li><li>James AP, Lorraine M, Cullen D, Goodman C, Dawson B, Palmer TN, Fournier PA. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 · PMID 11718281 — 12 g/kg de massa magra/d por 3 dias: mulheres 108 → 193 (pós-menstrual) e 111 → 202 (pré-menstrual); homens 109 → 183 mmol/kg ww.</li><li>Tarnopolsky MA, Zawada C, Richmond LB, Carter S, Shearer J, Graham T, Phillips SM. Gender differences in carbohydrate loading are related to energy intake. J Appl Physiol 2001;91(1):225-230. DOI 10.1152/jappl.2001.91.1.225 · PMID 11408434 — cruzado, 6 + 6: as mulheres só aumentaram o glicogênio com CHO + ~34% de energia.</li><li>As barras de energia do passo 2 são ilustrativas.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 84,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "A Refeição de 3–4 Horas",
+    "subtitle": "O que a refeição de horas antes enche, e para que prova ela rende?",
+    "content": "[[COMP:PreMealSim]]<h4>Fontes</h4><ul><li>Coyle EF, Coggan AR, Hemmert MK, Lowe RC, Walters TJ. Substrate usage during prolonged exercise following a preexercise meal. J Appl Physiol 1985;59(2):429-433. DOI 10.1152/jappl.1985.59.2.429 · PMID 3897180 — cruzado, n = 7; refeição 4 h antes × jejum de 16 h: glicogênio do vasto lateral +42% no início (nível dos tanques ilustrativo).</li><li>Sherman WM, Brodowicz G, Wright DA, Allen WK, Simonsen J, Dernbach A. Effects of 4 h preexercise carbohydrate feedings on cycling performance. Med Sci Sports Exerc 1989;21(5):598-604. DOI 10.1249/00005768-198910000-00017 · PMID 2691821 — 0, 45, 156 ou 312 g 4 h antes: só 312 g, +15% de desempenho × placebo.</li><li>Schabort EJ, Bosch AN, Weltan SM, Noakes TD. The effect of a preexercise meal on time to fatigue during prolonged cycling exercise. Med Sci Sports Exerc 1999;31(3):464-471. DOI 10.1097/00005768-199903000-00017 · PMID 10188753 — cruzado, n = 7; 100 g de CHO 3 h antes × jejum: 136 × 109 min até a fadiga, glicogênio muscular igual.</li><li>Aird TP, Davies RW, Carson BP. Effects of fasted vs fed-state exercise on performance and post-exercise metabolism: a systematic review and meta-analysis. Scand J Med Sci Sports 2018;28(5):1476-1493. DOI 10.1111/sms.13054 · PMID 29315892 — 46 estudos: alimentado melhora o aeróbio prolongado (P = 0,012), não o curto (P = 0,687).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 85,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Fantasma do Rebote",
+    "subtitle": "A glicose na última hora derruba o desempenho?",
+    "content": "[[COMP:ReboundSim]]<h4>Fontes</h4><ul><li>Foster C, Costill DL, Fink WJ. Effects of preexercise feedings on endurance performance. Med Sci Sports 1979;11(1):1-5. PMID 582616 — cruzado, 8 estudantes; 75 g de glicose 30–45 min antes: 53,2 → 43,2 min até a exaustão a 80% (−19%).</li><li>Moseley L, Lancaster GI, Jeukendrup AE. Effects of timing of pre-exercise ingestion of carbohydrate on subsequent metabolism and cycling performance. Eur J Appl Physiol 2003;88(4-5):453-458. DOI 10.1007/s00421-002-0728-8 · PMID 12527977 — cruzado, n = 8; 75 g de glicose 15, 45 ou 75 min antes: glicemia de largada 6,6 / 4,5 / 3,7 mmol/L, diferenças somem em 10 min; hipoglicemia em 2 / 3 / 5; 268 / 269 / 276 W. A forma das curvas entre 0 e 10 min é ilustrativa.</li><li>Kuipers H, Fransen EJ, Keizer HA. Pre-exercise ingestion of carbohydrate and transient hypoglycemia during exercise. Int J Sports Med 1999;20(4):227-231. DOI 10.1055/s-2007-971122 · PMID 10376478 — 6 de 19 ciclistas (32%) com glicemia transitória < 3,0 mmol/L (notas).</li><li>Jeukendrup AE, Killer SC. The myths surrounding pre-exercise carbohydrate feeding. Ann Nutr Metab 2010;57(Suppl 2):18-25. DOI 10.1159/000322698 · PMID 21346333 — revisão narrativa: evitar CHO na hora anterior é infundado.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 86,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "IG Antes do Treino",
+    "subtitle": "O índice glicêmico da refeição pré muda o desempenho?",
+    "content": "[[COMP:PreGISim]]<h4>Fontes</h4><ul><li>Thomas DE, Brotherhood JR, Brand JC. Carbohydrate feeding before exercise: effect of glycemic index. Int J Sports Med 1991;12(2):180-186. DOI 10.1055/s-2007-1024664 · PMID 1860741 — cruzado, n = 8; lentilha × batata 1 h antes: +20 min até a exaustão.</li><li>Burdon CA, Spronk I, Cheng HL, O'Connor HT. Effect of glycemic index of a pre-exercise meal on endurance exercise performance: a systematic review and meta-analysis. Sports Med 2017;47(6):1087-1101. DOI 10.1007/s40279-016-0632-8 · PMID 27677914 — 19 estudos, 188 participantes (91% homens): nenhum efeito agrupado significativo; nenhum modificador. Os quadrados são só contagem de estudos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 87,
+    "sectionName": "Ato V · Antes da Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Marina, Três Dias Antes",
+    "subtitle": "Do macarrão da véspera à carga em g/kg, em comida de verdade",
+    "content": "[[COMP:MarinaPlanSim]]<h4>Fontes</h4><ul><li>Marina é personagem fictícia (58 kg); as gramas são cálculo com a Tabela Brasileira de Composição de Alimentos (TACO): 10 g/kg × 58 kg = 580 g/d; cardápio de ~578 g; café de ~100 g (1,7 g/kg).</li><li>Bussau VA, Fairchild TJ, Rao A, Steele P, Fournier PA. Carbohydrate loading in human muscle: an improved 1 day protocol. Eur J Appl Physiol 2002;87(3):290-295. DOI 10.1007/s00421-002-0621-5 · PMID 12111292 — 10 g/kg em 1 dia, atleta em repouso.</li><li>Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — 8–12 g/kg/d para maximizar os estoques.</li><li>Schabort EJ, Bosch AN, Weltan SM, Noakes TD. The effect of a preexercise meal on time to fatigue during prolonged cycling exercise. Med Sci Sports Exerc 1999;31(3):464-471. DOI 10.1097/00005768-199903000-00017 · PMID 10188753 — café com 100 g de CHO 3 h antes.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 100,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "Gainesville, 1965",
+    "subtitle": "Uma pergunta de nefrologia virou a bebida esportiva mais famosa",
+    "content": "[[COMP:GatoradeSim]]<h4>Fontes</h4><ul><li>University of Florida Research (research.ufl.edu, artigo histórico) e UF Health, “Profiles in history: Dr. Robert Cade” (history.med.ufl.edu) — agosto de 1965, Douglas → Shires → Cade; a pergunta “Why didn't football players urinate after a game?”; 1º teste em 01/10/1965 com os calouros; no dia seguinte Flórida 14 × 7 LSU (5ª do ranking); licença à Stokely-Van Camp em 1967; mais de US$ 280 milhões à UF desde 1972. Fonte institucional, não revisada por pares. O “Orange Bowl 1967” não aparece nessas fontes e não entra.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 101,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "82% dos Ensaios",
+    "subtitle": "O carboidrato durante a prova funciona; a formulação decide quanto",
+    "content": "[[COMP:DuringForestSim]]<h4>Fontes</h4><ul><li>Stellingwerff T, Cox GR. Systematic review: Carbohydrate supplementation on exercise performance or capacity of varying durations. Appl Physiol Nutr Metab 2014;39(9):998-1011. DOI 10.1139/apnm-2014-0027 · PMID 24951297 — 61 ECRs com placebo de água (n = 679): 82% (50) com benefício, 18% sem mudança; ganho correlacionado com a duração (p = 0,0036); ~1 h = mecanismo oral/central, > 2 h = entrega e oxidação altas. Revisão sistemática sem meta-análise (conta estudos).</li><li>Vandenbogaerde TJ, Hopkins WG. Effects of acute carbohydrate supplementation on endurance performance: a meta-analysis. Sports Med 2011;41(9):773-792. DOI 10.2165/11590520-000000000-00000 · PMID 21846165 — 88 estudos e 155 estimativas: efeitos de +6% a −2% na potência do contrarrelógio conforme a formulação.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 102,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "A Curva de Smith",
+    "subtitle": "Mais carboidrato rende mais, até ~78 g/h; depois, menos por grama",
+    "content": "[[COMP:DoseResponseSim]]<h4>Fontes</h4><ul><li>Smith JW, Pascoe DD, Passe DH, et al. Curvilinear dose-response relationship of carbohydrate (0-120 g·h−1) and performance. Med Sci Sports Exerc 2013;45(2):336-341. DOI 10.1249/MSS.0b013e31827205d1 · PMID 22968309 — ECR duplo-cego, 4 centros, 51 ciclistas e triatletas; 12 doses de 10 a 120 g/h + placebo, cada sujeito fez só 4 ensaios; 2 h de carga + 20 km contra o relógio; ganhos estimados de 1,0/2,0/3,0/4,0/4,7% a 9/19/31/48/78 g/h, decrescentes acima. Primeiro autor afiliado ao Gatorade Sports Science Institute.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 103,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Teto de um Grama",
+    "subtitle": "Com uma fonte só, a oxidação para em ~1 g/min. Onde está o gargalo?",
+    "content": "[[COMP:CeilingSim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — oxidação exógena de fonte única satura em ~1,0–1,1 g/min; o limite é absorção intestinal e fígado, não o músculo.</li><li>Hulston CJ, Wallis GA, Jeukendrup AE. Exogenous CHO oxidation with glucose plus fructose intake during exercise. Med Sci Sports Exerc 2009;41(2):357-363. DOI 10.1249/MSS.0b013e3181857ee6 · PMID 19127189 — glicose a 48 g/h: pico de 0,60 g/min (≈ 36 g/h, cálculo × 60).</li><li>Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 · PMID 15946410 — glicose a 72 g/h (1,2 g/min): pico de 1,06 g/min (≈ 64 g/h, cálculo).</li><li>Jentjens RL, Achten J, Jeukendrup AE. High oxidation rates from combined carbohydrates ingested during exercise. Med Sci Sports Exerc 2004;36(9):1551-1558. DOI 10.1249/01.MSS.0000139796.07843.1D · PMID 15354037 — glicose a 144 g/h (2,4 g/min): pico de 1,18 g/min (≈ 71 g/h; 49% do ingerido e ~73 g/h “no caminho” são cálculo).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 104,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "Quebrando o Teto",
+    "subtitle": "A frutose abre uma segunda pista no intestino e a oxidação passa de 1,75 g/min",
+    "content": "[[COMP:MixSim]]<h4>Fontes</h4><ul><li>Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 · PMID 15946410 — glicose + frutose 1:1 a 144 g/h: pico de 1,75 g/min × 1,06 só glicose (n = 8).</li><li>Hulston CJ, Wallis GA, Jeukendrup AE. Exogenous CHO oxidation with glucose plus fructose intake during exercise. Med Sci Sports Exerc 2009;41(2):357-363. DOI 10.1249/MSS.0b013e3181857ee6 · PMID 19127189 — a ~48 g/h, mistura 0,57 × glicose 0,60 g/min: sem vantagem (n = 7).</li><li>Currell K, Jeukendrup AE. Superior endurance performance with ingestion of multiple transportable carbohydrates. Med Sci Sports Exerc 2008;40(2):275-281. DOI 10.1249/mss.0b013e31815adf19 · PMID 18202575 — 108 g/h, glicose + frutose 2:1: contrarrelógio 8% mais rápido que glicose e 19% que água (n = 8; tempos do abstract parecem trocados, só os %).</li><li>O'Brien WJ, Rowlands DS. Fructose-maltodextrin ratio in a carbohydrate-electrolyte solution differentially affects exogenous carbohydrate oxidation rate, gut comfort, and performance. Am J Physiol Gastrointest Liver Physiol 2011;300(1):G181-9. DOI 10.1152/ajpgi.00419.2010 · PMID 21071509 — frutose:maltodextrina 0,8:1 com a maior oxidação exógena e menos desconforto.</li><li>O'Brien WJ, Stannard SR, Clarke JA, Rowlands DS. Fructose-maltodextrin ratio governs exogenous and other CHO oxidation and performance. Med Sci Sports Exerc 2013;45(9):1814-1824. DOI 10.1249/MSS.0b013e31828e12d4 · PMID 23949097 — 0,8:1 com oxidação exógena total 18% maior que 0,5:1.</li><li>A linha da mistura entre os pontos medidos é ilustrativa. Tecla 3: modelo 3D do enterócito.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 105,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "120 g/h: o Que se Sabe",
+    "subtitle": "Entra mais e oxida mais; o ganho de desempenho ainda não foi demonstrado",
+    "content": "[[COMP:HighDoseSim]]<h4>Fontes</h4><ul><li>Ravikanti S, Silang KG, Martyn HJ, et al. 13C-labelled glucose-fructose show greater exogenous and whole-body CHO oxidation and lower O2 cost of running at 120 versus 60 and 90 g·h−1 in elite male marathoners. J Appl Physiol 2025;139(6):1581-1595. DOI 10.1152/japplphysiol.00665.2025 · PMID 41191077 — 8 maratonistas de elite, cruzado com 13C: exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h; sintomas GI moderados/graves frequentes em todas as doses, pico nos 120 g/h; sem prova de desempenho.</li><li>Podlogar T, Bokal Š, Cirnski S, Wallis GA. Increased exogenous but unaltered endogenous carbohydrate oxidation with combined fructose-maltodextrin ingested at 120 g h−1 versus 90 g h−1 at different ratios. Eur J Appl Physiol 2022;122(11):2393-2401. DOI 10.1007/s00421-022-05019-w · PMID 35951130 — 11 ciclistas, 120 × 90 g/h: exógena 1,51 × 1,29 g/min; endógena igual (2,15 × 2,20).</li><li>Viribay A, Arribalzaga S, Mielgo-Ayuso J, et al. Effects of 120 g/h of Carbohydrates Intake during a Mountain Marathon on Exercise-Induced Muscle Damage in Elite Runners. Nutrients 2020;12(5):1367. DOI 10.3390/nu12051367 · PMID 32403259 — ECR paralelo, 20 corredores (~6–7 por grupo) em maratona de montanha: mediu carga interna (PSE) e marcadores de dano, não o tempo de prova.</li><li>Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — 120–200 g/h: “efficacy not yet substantiated”.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 106,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Pelotão na Frente da Ciência",
+    "subtitle": "Os profissionais comiam ~94 g/h em 1989; a diretriz chegou aos 90 g/h em 2011",
+    "content": "[[COMP:PelotonSim]]<h4>Fontes</h4><ul><li>Saris WH, van Erp-Baart MA, Brouns F, Westerterp KR, ten Hoor F. Study on food intake and energy expenditure during extreme sustained exercise: the Tour de France. Int J Sports Med 1989;10(Suppl 1):S26-31. DOI 10.1055/s-2007-1024951 · PMID 2744926 — Tour de France, 5 ciclistas, 22 dias: 49% da energia ingerida durante a etapa ≈ 94 g/h de carboidrato.</li><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — teto de oxidação de ~1,0–1,1 g/min com uma fonte só.</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — consenso do COI: provas > 2,5 h, até 90 g/h com misturas.</li><li>Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — teto atual pode subir de 90 para 120 g/h em treinados; eficácia de 120–200 g/h não comprovada. Relatos de jornalismo do Tour não entram.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 108,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "Formato e Hidrogel",
+    "subtitle": "Gel, bebida, goma ou hidrogel: o formato muda a oxidação ou a prova?",
+    "content": "[[COMP:HydrogelSim]]<h4>Fontes</h4><ul><li>Hearris MA, Pugh JN, Langan-Evans C, et al. 13C-glucose-fructose labeling reveals comparable exogenous CHO oxidation during exercise when consuming 120 g/h in fluid, gel, jelly chew, or coingestion. J Appl Physiol 2022;132(6):1394-1406. DOI 10.1152/japplphysiol.00091.2022 · PMID 35446596 — 120 g/h em bebida, gel, goma ou combinação: pico de 1,56/1,58/1,59/1,66 g/min (ns); n = 9.</li><li>Pfeiffer B, Stellingwerff T, Zaltas E, Jeukendrup AE. CHO oxidation from a CHO gel compared with a drink during exercise. Med Sci Sports Exerc 2010;42(11):2038-2045. DOI 10.1249/MSS.0b013e3181e0efe6 · PMID 20404763 — gel + água × bebida a 108 g/h: 1,44 × 1,42 g/min (p = 0,40).</li><li>Sutehall S et al. Med Sci Sports Exerc 2020. PMID 32079920 — hidrogel: meia-vida de esvaziamento gástrico 21 × 37 min, em repouso (dossiê 03, tabela K).</li><li>Sutehall S, Muniz-Pardos B, Bosch A, Pitsiladis Y. The Effect of Sodium Alginate and Pectin Added to a Carbohydrate Beverage on Endurance Performance, Substrate Oxidation and Blood Glucose Concentration: A Systematic Review and Meta-analysis. Sports Med Open 2022;8(1):82. DOI 10.1186/s40798-022-00472-5 · PMID 35727377 — meta-análise × controle isocalórico: desempenho p = 0,59 (5 estudos, I² = 0%), oxidação p = 0,71, glicemia p = 0,66.</li><li>Rowe JT, King RFGJ, King AJ, et al. Glucose and Fructose Hydrogel Enhances Running Performance, Exogenous Carbohydrate Oxidation, and Gastrointestinal Tolerance. Med Sci Sports Exerc 2022;54(1):129-140. DOI 10.1249/MSS.0000000000002764 · PMID 34334720 — o positivo isolado: hidrogel 2,1% mais rápido que solução comum nos 5 km (n = 11, duplo-cego).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 109,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Intestino Treina",
+    "subtitle": "Duas semanas de treino intestinal reduzem sintomas; o ganho em prova varia",
+    "content": "[[COMP:GutTrainingSim]]<h4>Fontes</h4><ul><li>Costa RJS, Miall A, Khoo A, et al. Gut-training: the impact of two weeks repetitive gut-challenge during exercise on gastrointestinal status, glucose availability, fuel kinetics, and running performance. Appl Physiol Nutr Metab 2017;42(5):547-557. DOI 10.1139/apnm-2016-0453 · PMID 28177715 — ECR paralelo, 25 corredores: 2 semanas de desafio com gel a 90 g/h; sintomas GI −60%, H₂ 6 × 12 ppm (gel × placebo), distância em 1 h +5,2% (placebo −2,1%).</li><li>Cox GR, Clark SA, Cox AJ, et al. Daily training with high carbohydrate availability increases exogenous carbohydrate oxidation during endurance cycling. J Appl Physiol 2010;109(1):126-134. DOI 10.1152/japplphysiol.00950.2009 · PMID 20466803 — 28 dias de CHO alto nos treinos: oxidação exógena 54,6 → 63,6 g; desempenho igual entre os grupos.</li><li>King AJ, Etxebarria N, Ross ML, et al. Short-Term Very High Carbohydrate Diet and Gut-Training Have Minor Effects on Gastrointestinal Status and Performance in Highly Trained Endurance Athletes. Nutrients 2022;14(9):1929. DOI 10.3390/nu14091929 · PMID 35565896 — atletas de elite (AIS): treino intestinal + CHO alto sem vantagem extra; mais sintomas GI na 2ª metade.</li><li>Diego é personagem fictício.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 110,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Bochecho",
+    "subtitle": "Glicose na veia não muda a prova de 1 h; o bochecho cuspido muda",
+    "content": "[[COMP:MouthRinseSim]]<h4>Fontes</h4><ul><li>Carter JM, Jeukendrup AE, Mann CH, Jones DA. The effect of glucose infusion on glucose kinetics during a 1-h time trial. Med Sci Sports Exerc 2004;36(9):1543-1550. DOI 10.1249/01.MSS.0000139892.69410.D8 · PMID 15354036 — glicose IV a 1 g/min, n = 6: glicemia 12,4 × 5,9 mmol/L; contrarrelógio 59,90 × 60,04 min.</li><li>Carter JM, Jeukendrup AE, Jones DA. The effect of carbohydrate mouth rinse on 1-h cycle time trial performance. Med Sci Sports Exerc 2004;36(12):2107-2111. DOI 10.1249/01.MSS.0000147585.65709.6F · PMID 15570147 — bochecho de 5 s com maltodextrina a 6,4%, cuspido, n = 9: 59,57 × 61,37 min (~2,9%, cálculo); placebo de água.</li><li>Chambers ES, Bridge MW, Jones DA. Carbohydrate sensing in the human mouth: effects on exercise performance and brain activity. J Physiol 2009;587(Pt 8):1779-1794. DOI 10.1113/jphysiol.2008.164285 · PMID 19237430 — fMRI: glicose e maltodextrina (sem gosto doce) ativam áreas de recompensa; sacarina não. O cérebro do slide é esquema.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 111,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Tamanho Real do Bochecho",
+    "subtitle": "Efeito real, pequeno, maior em jejum, e nem sempre presente",
+    "content": "[[COMP:RinseMetaSim]]<h4>Fontes</h4><ul><li>Brietzke C, Franco-Alvarenga PE, Coelho-Júnior HJ, et al. Effects of Carbohydrate Mouth Rinse on Cycling Time Trial Performance: A Systematic Review and Meta-Analysis. Sports Med 2019;49(1):57-66. DOI 10.1007/s40279-018-1029-7 · PMID 30488186 — 13 estudos (16 ensaios): potência SMD 0,25 (0,04 a 0,46; I² = 0%); tempo SMD −0,13 (−0,36 a 0,10; p = 0,25).</li><li>Lane SC, Bird SR, Burke LM, Hawley JA. Effect of a carbohydrate mouth rinse on simulated cycling time-trial performance commenced in a fed or fasted state. Appl Physiol Nutr Metab 2013;38(2):134-139. DOI 10.1139/apnm-2012-0300 · PMID 23438223 — n = 12, duplo-cego: +3,4% em jejum (282 × 273 W) e +1,8% alimentado (286 × 281 W).</li><li>Trommelen J, Beelen M, Mullers M, et al. A Sucrose Mouth Rinse Does Not Improve 1-hr Cycle Time Trial Performance When Performed in the Fasted or Fed State. Int J Sport Nutr Exerc Metab 2015;25(6):576-583. DOI 10.1123/ijsnem.2015-0094 · PMID 26132895 — n = 14, duplo-cego, sacarose × placebo adoçado: sem efeito (p = 0,277).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 112,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "O Relógio da Prova",
+    "subtitle": "Quanto carboidrato por hora depende de quanto a prova dura",
+    "content": "[[COMP:DurationClockSim]]<h4>Fontes</h4><ul><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — ~1 h: pequenas quantidades, inclusive bochecho; provas mais longas: 30–60 g/h; > 2,5 h: até 90 g/h com misturas.</li><li>Stellingwerff T, Cox GR. Systematic review: Carbohydrate supplementation on exercise performance or capacity of varying durations. Appl Physiol Nutr Metab 2014;39(9):998-1011. DOI 10.1139/apnm-2014-0027 · PMID 24951297 — ~1 h = mecanismo oral/central; > 2 h = combustível.</li><li>Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — 120 g/h como fronteira em treinados, sem ganho de desempenho comprovado. As faixas intermediárias de Jeukendrup 2014 (Fig. 1) não foram confirmadas e não entram.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 113,
+    "sectionName": "Ato VI · Durante a Prova",
+    "number": "",
+    "layout": "prose",
+    "title": "A Vida Real do Intestino",
+    "subtitle": "Na prova de verdade, a maioria come bem menos que a diretriz",
+    "content": "[[COMP:GIRealitySim]]<h4>Fontes</h4><ul><li>Pfeiffer B, Stellingwerff T, Hodgson AB, et al. Nutritional intake and gastrointestinal problems during competitive endurance events. Med Sci Sports Exerc 2012;44(2):344-351. DOI 10.1249/MSS.0b013e31822dc809 · PMID 21775906 — 221 atletas: médias de 62/71/65/53/35 g/h (IM Havaí, IM Alemanha, 70.3, ciclismo, maratona); faixa individual 6–136 g/h; sintomas graves ~31% Ironman, 14% 70.3, 4% ciclismo e maratona. Observacional, recordatório pós-prova.</li><li>de Oliveira EP, Burini RC, Jeukendrup A. Gastrointestinal complaints during exercise: prevalence, etiology, and nutritional recommendations. Sports Med 2014;44(Suppl 1):S79-85. DOI 10.1007/s40279-014-0153-2 · PMID 24791919 — 30–50% dos atletas com queixas GI no exercício.</li><li>Arribalzaga S et al. Int J Environ Res Public Health 2021;18(11):5737. PMID 34071815 — ultra-trail, 8 estudos: a maioria não atinge 90 g/h; sintomas GI em 65–82%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 120,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "A Janela que Fecha Devagar",
+    "subtitle": "A pressa de comer só vale para quem treina de novo em poucas horas",
+    "content": "[[COMP:WindowSim]]<h4>Fontes</h4><ul><li>Ivy JL, Katz AL, Cutler CL, Sherman WM, Coyle EF. Muscle glycogen synthesis after exercise: effect of time of carbohydrate ingestion. J Appl Physiol 1988;64(4):1480-1485. DOI 10.1152/jappl.1988.64.4.1480 · PMID 3132449 — cruzado, n = 12 ciclistas; 2 g/kg logo após × 2 h depois: 7,7 × 2,5 µmol/g ww/h nas primeiras 2 h; 4,1 depois do CHO adiado, ainda 45% mais lento.</li><li>Parkin JA, Carey MF, Martin IK, Stojanovska L, Febbraio MA. Muscle glycogen storage following prolonged exercise: effect of timing of ingestion of high glycemic index food. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009 · PMID 9044226 — cruzado, n = 6; refeições de alto IG em 0–4 h × 2–6 h: glicogênio igual às 8 e às 24 h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 121,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Quatro Horas Entre Duas Sessões",
+    "subtitle": "Com 4 h de intervalo, o carboidrato da recuperação vira minutos na segunda sessão",
+    "content": "[[COMP:ShortRecoverySim]]<h4>Fontes</h4><ul><li>Alghannam AF, Jedrzejewski D, Tweddle MG, et al. Impact of muscle glycogen availability on the capacity for repeated exercise in man. Med Sci Sports Exerc 2016;48(1):123-131. DOI 10.1249/MSS.0000000000000737 · PMID 26197030 — n = 10; 4 h de recuperação com 1,2 × 0,3 g/kg/h: glicogênio 269 × 157 mmol/kg ps; 2ª corrida 80 × 48 min; mesmo glicogênio na exaustão (~72–78).</li><li>Craven J, Desbrow B, Sabapathy S, et al. The effect of consuming carbohydrate with and without protein on the rate of muscle glycogen re-synthesis during short-term post-exercise recovery: a systematic review and meta-analysis. Sports Med Open 2021;7(1):9. DOI 10.1186/s40798-020-00297-0 · PMID 33507402 — CHO × água +23,5 mmol/kg ps/h (IC95% 19,0–27,9; 10 ensaios, n = 86); doses de hora em hora ou mais frequentes rendem mais; CHO + proteína × CHO +0,4 (IC95% −2,7 a 3,4; 19 ensaios, n = 160).</li><li>Jentjens R, Jeukendrup A. Determinants of post-exercise glycogen synthesis during short-term recovery. Sports Med 2003;33(2):117-144. DOI 10.2165/00007256-200333020-00004 · PMID 12617691 — maiores taxas com 1,0–1,85 g/kg/h logo após o exercício e a cada 15–60 min (revisão narrativa).</li><li>Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 122,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Proteína Ajuda? Depende",
+    "subtitle": "A proteína só acelera a ressíntese quando falta carboidrato ou quando soma calorias",
+    "content": "[[COMP:ProteinCoSim]]<h4>Fontes</h4><ul><li>van Loon LJ, Saris WH, Kruijshoop M, Wagenmakers AJ. Maximizing postexercise muscle glycogen synthesis: carbohydrate supplementation and the application of amino acid or protein hydrolysate mixtures. Am J Clin Nutr 2000;72(1):106-111. DOI 10.1093/ajcn/72.1.106 · PMID 10871568 — cruzado, n = 8; 16,6 (CHO 0,8) × 35,4 (CHO 0,8 + proteína 0,4) × 44,8 (CHO 1,2) µmol/g ps/h.</li><li>Margolis LM, Allen JT, Hatch-McChesney A, Pasiakos SM. Coingestion of carbohydrate and protein on muscle glycogen synthesis after exercise: a meta-analysis. Med Sci Sports Exerc 2021;53(2):384-393. DOI 10.1249/MSS.0000000000002476 · PMID 32826640 — 20 estudos; geral g = 0,13 (−0,04 a 0,29); proteína somando energia g = 0,26 (0,04 a 0,49); isocalórico g = −0,05 (−0,23 a 0,13).</li><li>Craven J, Desbrow B, Sabapathy S, et al. The effect of consuming carbohydrate with and without protein on the rate of muscle glycogen re-synthesis during short-term post-exercise recovery: a systematic review and meta-analysis. Sports Med Open 2021;7(1):9. DOI 10.1186/s40798-020-00297-0 · PMID 33507402 — CHO × água +23,5 mmol/kg ps/h (IC95% 19,0–27,9; 10 ensaios, n = 86); doses de hora em hora ou mais frequentes rendem mais; CHO + proteína × CHO +0,4 (IC95% −2,7 a 3,4; 19 ensaios, n = 160).</li><li>Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 123,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "24 Horas: o Total Manda",
+    "subtitle": "Em um dia de recuperação, forma e horário pesam pouco; o que manda é quanto chega",
+    "content": "[[COMP:TotalRulesSim]]<h4>Fontes</h4><ul><li>Keizer HA, Kuipers H, van Kranenburg G, Geurten P. Influence of liquid and solid meals on muscle glycogen resynthesis, plasma fuel hormone response, and maximal physical working capacity. Int J Sports Med 1987;8(2):99-104. DOI 10.1055/s-2008-1025649 · PMID 3298088 — cruzado, n = 8; às 5 h, 72 → 198 (sólido) × 69 → 192 mmol/kg (líquido).</li><li>Burke LM, Collier GR, Davis PG, et al. Muscle glycogen storage after prolonged exercise: effect of the frequency of carbohydrate feedings. Am J Clin Nutr 1996;64(1):115-119. DOI 10.1093/ajcn/64.1.115 · PMID 8669406 — n = 8 triatletas, 10 g/kg em 24 h: 4 refeições × 16 lanches, 74,1 × 94,5 mmol/kg ww, sem diferença significativa.</li><li>Burke LM, Collier GR, Hargreaves M. Muscle glycogen storage after prolonged exercise: effect of the glycemic index of carbohydrate feedings. J Appl Physiol 1993;75(2):1019-1023. DOI 10.1152/jappl.1993.75.2.1019 · PMID 8226443 — cruzado, n = 5; 10 g/kg em 24 h; aumento de 106 (alto IG) × 71,5 mmol/kg ww (baixo IG), P = 0,02.</li><li>Burke LM, Collier GR, Broad EM, et al. Effect of alcohol intake on muscle glycogen storage after prolonged exercise. J Appl Physiol 2003;95(3):983-990. DOI 10.1152/japplphysiol.00115.2003 · PMID 12740311 — cruzados (n = 6 em 8 h; n = 9 em 24 h); álcool deslocando CHO: 68 × 82 mmol/kg ww às 24 h (24,4 × 44,6 às 8 h); álcool somado: 85, sem diferença às 24 h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 124,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Fígado Prefere Sacarose",
+    "subtitle": "Frutose e galactose aceleram o fígado; o músculo só responde à quantidade",
+    "content": "[[COMP:LiverRefillSim]]<h4>Fontes</h4><ul><li>Fuchs CJ, Gonzalez JT, Beelen M, et al. Sucrose ingestion after exhaustive exercise accelerates liver, but not muscle glycogen repletion compared with glucose ingestion in trained athletes. J Appl Physiol 2016;120(11):1328-1334. DOI 10.1152/japplphysiol.01023.2015 · PMID 27013608 — cruzado, n = 15; 1,5 g/kg/h por 5 h; fígado 53,6 → 86,8 g (sacarose) × 49,3 → 65,7 g (glicose), +3,4 g/h (IC95% 1,6–5,1); músculo 85 → 140 × 86 → 136 mmol/L (P = 0,673).</li><li>Décombaz J, Jentjens R, Ith M, et al. Fructose and galactose enhance postexercise human liver glycogen synthesis. Med Sci Sports Exerc 2011;43(10):1964-1971. DOI 10.1249/MSS.0b013e318218ca5a · PMID 21407126 — cruzado duplo-cego, n = 10; 69 g/h por 6,5 h; síntese hepática 8,1 (frutose) e 8,6 (galactose) × 3,7 g/h (glicose).</li><li>Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Glucose plus fructose ingestion for post-exercise recovery: greater than the sum of its parts? Nutrients 2017;9(4):344. DOI 10.3390/nu9040344 · PMID 28358334 — revisão: músculo responde à quantidade; fígado repõe ~2 vezes mais com glicose + frutose.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 125,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Nem 10 g/kg em 12 Horas",
+    "subtitle": "O fígado transborda em 6 h; o músculo muito depletado ainda deve às 12 h",
+    "content": "[[COMP:Fuchs2025Sim]]<h4>Fontes</h4><ul><li>Fuchs CJ, Veeraiah P, Hermans WJH, et al. Carbohydrate intake of 10 g/kg body mass rapidly replenishes liver, but not muscle glycogen contents, during 12 h of post-exercise recovery in well-trained cyclists. J Physiol 2025. DOI 10.1113/JP289115 · PMID 40836481 — cruzado, n = 12 ciclistas (VO2pico 67 mL/kg/min); músculo 159 → 56 → 88 (6 h) → 110 mmol/L (12 h), 55% e 69% do pré; fígado 166 → 110 → 236 (6 h, 142%) → 258; em jejum, nada se recuperou.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 126,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Lara, Jogo a Cada 72 Horas",
+    "subtitle": "Quando o próximo jogo chega antes do glicogênio, o carboidrato do dia precisa de conta",
+    "content": "[[COMP:LaraRecoverySim]]<h4>Fontes</h4><ul><li>Krustrup P, Ørtenblad N, Nielsen J, et al. Maximal voluntary contraction force, SR function and glycogen resynthesis during the first 72 h after a high-level competitive soccer game. Eur J Appl Physiol 2011;111(12):2987-2995. DOI 10.1007/s00421-011-1919-y · PMID 21448723 — observacional, n = 7 homens de alto nível; glicogênio 57% e 27% abaixo do controle em 0 e 24 h (193 e 328 × 449 mmol/kg ps), com dieta otimizada.</li><li>Anderson L, Orme P, Naughton RJ, et al. Energy intake and expenditure of professional soccer players of the English Premier League: evidence of carbohydrate periodization. Int J Sport Nutr Exerc Metab 2017;27(3):228-238. DOI 10.1123/ijsnem.2016-0259 · PMID 28050927 — água duplamente marcada, n = 6; CHO 6,4 ± 2,2 g/kg no dia de jogo × 4,2 ± 1,4 g/kg em dia de treino; véspera e recuperação abaixo das diretrizes.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 140,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "A Perna que Treinou com Fome",
+    "subtitle": "E se o mesmo corpo pudesse ser o grupo controle de si mesmo?",
+    "content": "[[COMP:HansenLegsSim]]<h4>Fontes</h4><ul><li>Hansen AK, Fischer CP, Plomgaard P, Andersen JL, Saltin B, Pedersen BK. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93-99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — intraindivíduo, 7 homens não treinados, extensão de joelho, 10 semanas; perna LOW 2 sessões a cada 2 dias (2ª com glicogênio baixo) × perna HIGH 1 por dia, mesma carga; carga máxima subiu igual; tempo até a exaustão a 90% subiu \"acentuadamente mais\" na LOW (o resumo não traz o número); HAD e glicogênio de repouso só significativos na LOW. Níveis das coxas no desenho: ilustrativos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 141,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "Do Músculo ao Cronômetro",
+    "subtitle": "O sinal molecular do train low vira desempenho?",
+    "content": "[[COMP:FunnelSim]]<h4>Fontes</h4><ul><li>Impey SG, Hearris MA, Hammond KM, Bartlett JD, Louis J, Close GL, Morton JP. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — revisão narrativa com contagem: sinalização maior em 73% de 11 estudos, expressão gênica em 75% de 12, enzimas oxidativas em 78% de 9; desempenho melhor em 37% de 11 (63% sem mudança).</li><li>Gejl KD, Nybo L. Performance effects of periodized carbohydrate restriction in endurance trained athletes – a systematic review and meta-analysis. J Int Soc Sports Nutr 2021;18(1):37. DOI 10.1186/s12970-021-00435-3 · PMID 34001184 — 9 estudos (11–26 atletas, 1–4 semanas, VO₂máx ≥ 60/55): SMD 0,17 [−0,15; 0,49], P = 0,29, efeito fixo.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 142,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "Sleep Low: o Ganho que Sumiu",
+    "subtitle": "Mesmo carboidrato no dia, outro horário: o ganho de 3% se sustenta?",
+    "content": "[[COMP:SleepLowSim]]<h4>Fontes</h4><ul><li>Marquet LA, Brisswalter J, Louis J, et al. Enhanced endurance performance by periodization of carbohydrate intake: \"sleep low\" strategy. Med Sci Sports Exerc 2016;48(4):663-672. DOI 10.1249/mss.0000000000000823 · PMID 26741119 — ECR paralelo não cego, 21 triatletas (11 × 10), 3 semanas, 6 g/kg/d nos dois: 10 km −2,9% × −0,1%; massa gorda −8,5% × −2,6%.</li><li>Gejl KD, Thams LB, Hansen M, et al. No superior adaptations to carbohydrate periodization in elite endurance athletes. Med Sci Sports Exerc 2017;49(12):2486-2497. DOI 10.1249/mss.0000000000001377 · PMID 28723843 — 26 homens de elite, 4 semanas: VO₂máx e contrarrelógio +5% nos dois grupos; glicogênio e CS sem diferença.</li><li>Riis S, Møller AB, Dollerup O, et al. Acute and sustained effects of a periodized carbohydrate intake using the sleep-low model in endurance-trained males. Scand J Med Sci Sports 2019;29(12):1866-1880. DOI 10.1111/sms.13541 · PMID 31430404 — 13 treinados, 4 semanas: oxidação de gordura aguda maior, sem efeito sustentado; contrarrelógio melhorou igual.</li><li>Hulston CJ, Venables MC, Mann CH, et al. Training with low muscle glycogen enhances fat metabolism in well-trained cyclists. Med Sci Sports Exerc 2010;42(11):2046-2055. DOI 10.1249/mss.0b013e3181dd5070 · PMID 20351596 — 14 ciclistas, 3 semanas: potência no HIT 297 × 323 W (~8% menor); contrarrelógio ~10% melhor nos dois.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 143,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "Combustível para o Trabalho",
+    "subtitle": "Carboidrato alto onde a sessão exige, baixo só onde a qualidade não manda",
+    "content": "[[COMP:FuelPlannerSim]]<h4>Fontes</h4><ul><li>Impey SG, Hearris MA, Hammond KM, Bartlett JD, Louis J, Close GL, Morton JP. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — conceito \"fuel for the work required\"; train low em 30–50% das sessões nos estudos.</li><li>Stellingwerff T, Morton JP, Burke LM. A framework for periodized nutrition for athletics. Int J Sport Nutr Exerc Metab 2019;29(2):141-151. DOI 10.1123/ijsnem.2018-0305 · PMID 30632439 — periodização macro, meso e micro do carboidrato.</li><li>Areta JL, Hopkins WG. Skeletal muscle glycogen content at rest and during endurance exercise in humans: a meta-analysis. Sports Med 2018;48(9):2091-2102. DOI 10.1007/s40279-018-0941-1 · PMID 29923148 — 462 mmol/kg ps em repouso; +102 com CHO alto; −253 com CHO baixo (a régua ~560/~460/~210 é cálculo). A semana do slide é ilustrativa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 144,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "A Promessa da Gordura",
+    "subtitle": "Queimar o dobro de gordura é o mesmo que correr mais rápido?",
+    "content": "[[COMP:FatPromiseSim]]<h4>Fontes</h4><ul><li>Phinney SD, Bistrian BR, Evans WJ, et al. The human metabolic response to chronic ketosis without caloric restriction: preservation of submaximal exercise capability with reduced carbohydrate oxidation. Metabolism 1983;32(8):769-776. DOI 10.1016/0026-0495(83)90106-3 · PMID 6865776 — pré-pós sem controle, 5 ciclistas, 4 semanas cetogênica: TTE a 62–64% do VO₂máx 147 → 151 min.</li><li>Burke LM. Ketogenic low-CHO, high-fat diet: the future of elite endurance sport? J Physiol 2021;599(3):819-843. DOI 10.1113/jp278928 · PMID 32358802 — relata que a média de Phinney 1983 foi puxada por um ciclista (via revisão).</li><li>Volek JS, Freidenreich DJ, Saenz C, et al. Metabolic characteristics of keto-adapted ultra-endurance runners. Metabolism 2016;65(3):100-110. DOI 10.1016/j.metabol.2015.10.028 · PMID 26892521 — transversal, 10 × 10 ultramaratonistas: pico de gordura 1,54 × 0,67 g/min; sem medida de desempenho.</li><li>Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/jp273230 · PMID 28012184 — LCHF: 1,57 g/min de gordura após 3 semanas.</li><li>Burke LM, Whitfield J, Heikura IA, et al. Adaptation to a low carbohydrate high fat diet is rapid but impairs endurance exercise metabolism and performance despite enhanced glycogen availability. J Physiol 2021;599(3):771-790. DOI 10.1113/jp280221 · PMID 32697366 — ~1,43 g/min após 5–6 dias.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 145,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "Projeto Supernova",
+    "subtitle": "A gordura queimou como nunca. O marchador ficou mais rápido?",
+    "content": "[[COMP:SupernovaSim]]<h4>Fontes</h4><ul><li>Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/jp273230 · PMID 28012184 — marchadores de elite no AIS (nov/2015 e jan/2016), comida 100% fornecida, 3 semanas de treino intensificado, alocação em parte por preferência; HCHO n = 9 (8,6 g/kg/d), PCHO n = 10, LCHF n = 10 (< 50 g/d, 78% gordura); 10 km: +6,6% (IC90% 4,1–9,1), +5,3% (3,4–7,2), −1,6% (−8,5 a 5,3); maior custo de O₂ no ritmo de prova.</li><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 — 21,1 × 19,6 kJ por litro de O₂ (os ~7,7% são cálculo; ver o slide O Preço do Oxigênio).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 146,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "A Crise de Confiança Evitada",
+    "subtitle": "Quando o próprio grupo repete o estudo, o resultado se mantém?",
+    "content": "[[COMP:ReplicationSim]]<h4>Fontes</h4><ul><li>Burke LM, Sharma AP, Heikura IA, et al. Crisis of confidence averted: impairment of exercise economy and performance in elite race walkers by ketogenic low carbohydrate, high fat (LCHF) diet is reproducible. PLoS One 2020;15(6):e0234027. DOI 10.1371/journal.pone.0234027 · PMID 32497061 — replicação em jan–fev/2017 (HCHO 8, PCHO 8, LCHF 10): 10 km HCHO +4,8% (134 s), PCHO +2,2% (61 s; p = 0,09), LCHF −2,3% (86 s mais lento); sem rebote nos 20 km após restaurar o CHO.</li><li>Burke LM, Whitfield J, Heikura IA, et al. Adaptation to a low carbohydrate high fat diet is rapid but impairs endurance exercise metabolism and performance despite enhanced glycogen availability. J Physiol 2021;599(3):771-790. DOI 10.1113/jp280221 · PMID 32697366 — 13 marchadores de classe mundial, 5–6 dias: gordura +>200%, VO₂ ~5–8% maior no ritmo de prova; todos do HCHO melhoraram, 6 de 7 do LCHF pioraram.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 147,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "A Torneira Fechada",
+    "subtitle": "Se o tanque volta a encher, por que o sprint final cai?",
+    "content": "[[COMP:PdhSim]]<h4>Fontes</h4><ul><li>Stellingwerff T, Spriet LL, Watt MJ, et al. Decreased PDH activation and glycogenolysis during exercise following fat adaptation with carbohydrate restoration. Am J Physiol Endocrinol Metab 2006;290(2):E380-8. DOI 10.1152/ajpendo.00268.2005 · PMID 16188909 — cruzado, 7 ciclistas, 5 dias de gordura + 1 de CHO: glicogênio 873 × 868 µmol/g ps; PDH 1,69 × 2,39; glicogenólise no sprint de 1 min 37,3 × 50,5.</li><li>Havemann L, West SJ, Goedecke JH, et al. Fat adaptation followed by carbohydrate loading compromises high-intensity sprint performance. J Appl Physiol 2006;100(1):194-202. DOI 10.1152/japplphysiol.00813.2005 · PMID 16141377 — cruzado simples-cego, 8 ciclistas: 100 km igual, potência menor nos sprints de 1 km (perfil do slide ilustrativo).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 148,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "Cetonas e Keto: as Meta-análises",
+    "subtitle": "A dieta cetogênica ou a cetona em gole melhoram o desempenho?",
+    "content": "[[COMP:KetoMetaSim]]<h4>Fontes</h4><ul><li>Koerich ACC, Borszcz FK, Thives Mello A, et al. Effects of the ketogenic diet on performance and body composition in athletes and trained adults: a systematic review and Bayesian multivariate multilevel meta-analysis and meta-regression. Crit Rev Food Sci Nutr 2023;63(32):11399-11424. DOI 10.1080/10408398.2022.2090894 · PMID 35757868 — 18 estudos: contrarrelógio −3,3% [−8,5; 1,7], 1RM −5,7% [−14,9; 2,6]; massa gorda −2,4 kg; massa livre de gordura −0,8 kg.</li><li>Valenzuela PL, Morales JS, Castillo-García A, Lucia A. Acute ketone supplementation and exercise performance: a systematic review and meta-analysis of randomized controlled trials. Int J Sports Physiol Perform 2020;15(3):298-308. DOI 10.1123/ijspp.2019-0918 · PMID 32045881 — 13 ECR: g = −0,05 [−0,30; 0,20], P = 0,68.</li><li>Brooks E, Lamothe G, Nagpal TS, et al. Acute ingestion of ketone monoesters and precursors do not enhance endurance exercise performance: a systematic review and meta-analysis. Int J Sport Nutr Exerc Metab 2022;32(3):214-225. DOI 10.1123/ijsnem.2021-0280 · PMID 35042186 — 8 ECR, 80 participantes (77 homens): g = 0,136 [−0,195; 0,467].</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 149,
+    "sectionName": "Ato VIII · Treinar com Pouco",
+    "number": "",
+    "layout": "prose",
+    "title": "O Osso Sente Falta",
+    "subtitle": "Com energia adequada, cortar só o carboidrato mexe no osso?",
+    "content": "[[COMP:BoneSim]]<h4>Fontes</h4><ul><li>Fensham NC, Heikura IA, McKay AKA, et al. Short-term carbohydrate restriction impairs bone formation at rest and during prolonged exercise to a greater degree than low energy availability. J Bone Miner Res 2022;37(10):1915-1925. DOI 10.1002/jbmr.4658 · PMID 35869933 — 28 marchadores de elite, 6 dias: P1NP em jejum −26% (LCHF, d = 3,6) × −14% (baixa energia, d = 1,7); controle inalterado. A reta entre o dia 0 e o 6 é só ligação.</li><li>Heikura IA, Burke LM, Hawley JA, et al. A short-term ketogenic diet impairs markers of bone health in response to exercise. Front Endocrinol 2019;10:880. DOI 10.3389/fendo.2019.00880 · PMID 32038477 — 30 marchadores, energia igual, 3,5 semanas: P1NP e osteocalcina menores, CTX maior; a volta ao CHO normalizou só o CTX.</li><li>Hammond KM, Sale C, Fraser W, et al. Post-exercise carbohydrate and energy availability induce independent effects on skeletal muscle cell signalling and bone turnover: implications for training adaptation. J Physiol 2019;597(18):4779-4796. DOI 10.1113/jp278209 · PMID 31364768 — 9 homens: βCTX menor com CHO alto, independente da energia.</li><li>Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med 2023;57(17):1073-1097. DOI 10.1136/bjsports-2023-106994 · PMID 37752011 — inclui o papel crescente da baixa disponibilidade de carboidrato (limiares numéricos não citados).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 160,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "47% das Fibras",
+    "subtitle": "O glicogênio médio do músculo engana: o fim do jogo mora nas fibras que esvaziaram",
+    "content": "[[COMP:SoccerFibersSim]]<h4>Fontes</h4><ul><li>Krustrup P, Mohr M, Steensberg A, et al. Muscle and blood metabolites during a soccer game: implications for sprint performance. Med Sci Sports Exerc 2006;38(6):1165-1174. DOI 10.1249/01.mss.0000222845.89262.cd · PMID 16775559 — 449 → 255 mmol/kg ps; 47% das fibras vazias ou quase vazias; tiro de 30 m 2,8% mais lento (n = 31, 3 amistosos). Queda da média (−43%) e distância na chegada (~0,8 m): cálculos nossos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 161,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "CHO no Jogo",
+    "subtitle": "O carboidrato poupa o músculo e sustenta os tiros; na jogada, o efeito encolhe",
+    "content": "[[COMP:TeamSportSim]]<h4>Fontes</h4><ul><li>Leatt PB, Jacobs I. Effect of glucose polymer ingestion on glycogen depletion during a soccer match. Can J Sport Sci 1989;14(2):112-116. PMID 2736440 — 111 × 181 mmol/kg ps de glicogênio gasto com × sem CHO a 7% (5 + 5 jogadores); −39%: cálculo nosso.</li><li>Balsom PD, Gaitanos GC, Söderlund K, Ekblom B. High-intensity exercise and muscle glycogen availability in humans. Acta Physiol Scand 1999;165(4):337-345. DOI 10.1046/j.1365-201x.1999.00517.x · PMID 10350228 — 111 × 294 tiros de 6 s com glicogênio baixo × alto (n = 7); razão 2,6×: cálculo nosso.</li><li>Xie S, Wen X. Acute caffeine and carbohydrate strategies for fatigue-related sport-specific performance in team-sport athletes: a systematic review and multilevel meta-analysis. J Int Soc Sports Nutr 2026;23(1):2731524. DOI 10.1080/15502783.2026.2731524 · PMID 42908119 — CHO na habilidade/decisão sob fadiga: g = 0,256 (IC 95% −0,094 a 0,605), certeza GRADE muito baixa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 162,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Paulo e o Carbo Pós-Treino",
+    "subtitle": "Uma sessão de força gasta parte do tanque; o carbo extra não trouxe mais força nem músculo",
+    "content": "[[COMP:StrengthSim]]<h4>Fontes</h4><ul><li>MacDougall JD, Ray S, Sale DG, et al. Muscle substrate utilization and lactate production. Can J Appl Physiol 1999;24(3):209-215. DOI 10.1139/h99-017 · PMID 10364416 — rosca a 80% 1RM: glicogênio do bíceps −12% (1 série) e −24% (3 séries); n = 4 por condição.</li><li>Koopman R, Manders RJ, Jonkers RA, et al. Intramyocellular lipid and glycogen content are reduced following resistance exercise in untrained healthy males. Eur J Appl Physiol 2006;96(5):525-534. DOI 10.1007/s00421-005-0118-0 · PMID 16369816 — glicogênio −23% (tipo I), −40% (IIa), −44% (IIx) em ~45 min.</li><li>Henselmans M, Bjørnsen T, Hedderman R, Vårvik FT. The Effect of Carbohydrate Intake on Strength and Resistance Training Performance: A Systematic Review. Nutrients 2022;14(4):856. DOI 10.3390/nu14040856 · PMID 35215506 — estudos agudos: 13 nulos × 6 positivos (sobretudo com controle em jejum e >10 séries).</li><li>Henselmans M, Vårvik FT, Izquierdo M. The Effect of Carbohydrate Intake on Muscle Hypertrophy: A Systematic Review and Meta-analysis. Sports Med 2026;56(3):691-702. DOI 10.1007/s40279-025-02341-z · PMID 41712097 — SMD 0,15 (p = 0,23), 11 ECRs isonitrogenados, GRADE baixa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 163,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Insulina Sobe, Síntese Não",
+    "subtitle": "Com proteína suficiente, o pico de insulina do carboidrato não acrescenta síntese",
+    "content": "[[COMP:MpsSim]]<h4>Fontes</h4><ul><li>Koopman R, Beelen M, Stellingwerff T, et al. Coingestion of carbohydrate with protein does not further augment postexercise muscle protein synthesis. Am J Physiol Endocrinol Metab 2007;293(3):E833-E842. DOI 10.1152/ajpendo.00135.2007 · PMID 17609259 — 0,3 g/kg/h de proteína com 0, 0,15 ou 0,6 g/kg/h de CHO: insulina 1,5 / 3,7 / 18,4 U·6h/L; FSR 0,10 / 0,10 / 0,11 %/h (n = 10). Razão ~12×: cálculo nosso.</li><li>Staples AW, Burd NA, West DW, et al. Carbohydrate does not augment exercise-induced protein accretion versus protein alone. Med Sci Sports Exerc 2011;43(7):1154-1161. DOI 10.1249/mss.0b013e31820751cb · PMID 21131864 — 25 g whey ± 50 g de maltodextrina: insulina 5× maior, síntese igual (n = 9).</li><li>Glynn EL, Fry CS, Drummond MJ, et al. Muscle protein breakdown has a minor role in the protein anabolic response to essential amino acid and carbohydrate intake following resistance exercise. Am J Physiol Regul Integr Comp Physiol 2010;299(2):R533-R540. DOI 10.1152/ajpregu.00077.2010 · PMID 20519362 — aminoácidos + 30 × 90 g de CHO: síntese e quebra iguais (n = 13).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 164,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "A Balança e a Água",
+    "subtitle": "O glicogênio sai da balança com água, mas essa água não protege da desidratação",
+    "content": "[[COMP:WeightCutSim]]<h4>Fontes</h4><ul><li>Fernández-Elías VE, Ortega JF, Nelson RK, Mora-Rodriguez R. Relationship between muscle water and glycogen recovery after prolonged exercise in the heat in humans. Eur J Appl Physiol 2015;115(9):1919-1926. DOI 10.1007/s00421-015-3175-z · PMID 25911631 — razão glicogênio:água de 1:3 (pouca água) a 1:17 (água plena); cruzado, n = 9.</li><li>King RFGJ, Jones B, O'Hara JP. The availability of water associated with glycogen during dehydration: a reservoir or raindrop? Eur J Appl Physiol 2018;118(2):283-290. DOI 10.1007/s00421-017-3768-9 · PMID 29196846 — perda de 2 L de suor: glicogênio cheio devolve ~55 mL ao plasma.</li><li>Foo WL, Harrison JD, Mhizha FT, et al. A Short-Term Low-Fiber Diet Reduces Body Mass in Healthy Young Men: Implications for Weight-Sensitive Sports. Int J Sport Nutr Exerc Metab 2022;32(4):256-264. DOI 10.1123/ijsnem.2021-0324 · PMID 35313275 — <10 g de fibra/d por 4 dias: −0,74% da massa (n = 19, não atletas). Aplicação ao Tiago: cálculo nosso, caso fictício.</li><li>Reale R, Slater G, Burke LM. Individualised dietary strategies for Olympic combat sports: Acute weight loss, recovery and competition nutrition. Eur J Sport Sci 2017;17(6):727-740. DOI 10.1080/17461391.2017.1297489 · PMID 28316263 — perda aguda via água corporal e conteúdo intestinal.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 165,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Depois da Pesagem",
+    "subtitle": "O regulamento da pesagem decide quanto tempo há para repor, e o que a reposição vale",
+    "content": "[[COMP:RefeedSim]]<h4>Fontes</h4><ul><li>Kondo E, Shiose K, Osawa T, et al. Effects of an overnight high-carbohydrate meal on muscle glycogen after rapid weight loss in male collegiate wrestlers. BMC Sports Sci Med Rehabil 2021;13(1):96. DOI 10.1186/s13102-021-00325-w · PMID 34416921 — −6% em 53 h, glicogênio −36,5%; 7,1 g/kg de CHO em 5 h; 13 h depois ainda abaixo da base (n = 10). Forma da curva: ilustrativa.</li><li>Reale R, Cox GR, Slater G, Burke LM. Regain in Body Mass After Weigh-In is Linked to Success in Real Life Judo Competition. Int J Sport Nutr Exerc Metab 2016;26(6):525-530. DOI 10.1123/ijsnem.2015-0359 · PMID 27206272 — pesagem 15–20 h antes; medalhistas reganharam 1,4 ponto % a mais (n = 86).</li><li>Reale R, Cox GR, Slater G, Burke LM. Weight Regain: No Link to Success in a Real-Life Multiday Boxing Tournament. Int J Sports Physiol Perform 2017;12(7):856-863. DOI 10.1123/ijspp.2016-0311 · PMID 27834565 — reganho sem relação com vencer (n = 100).</li><li>CDC. Hyperthermia and dehydration-related deaths associated with intentional rapid weight loss in three collegiate wrestlers — North Carolina, Wisconsin, and Michigan, November–December 1997. MMWR 1998;47(6):105-108. PMID 9480411 — três mortes entre 7/11 e 9/12/1997.</li><li>Oppliger RA, Utter AC, Scott JR, et al. NCAA rule change improves weight loss among national championship wrestlers. Med Sci Sports Exerc 2006;38(5):963-970. DOI 10.1249/01.mss.0000218143.69719.b4 · PMID 16672852 — 1999–2004: perda nas 20 h antes da pesagem de 1,7% (811 lutadores).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 166,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Calor e Altitude",
+    "subtitle": "Calor e altitude mudam o que o músculo queima, e não do jeito que o rótulo do gel promete",
+    "content": "[[COMP:HeatAltitudeSim]]<h4>Fontes</h4><ul><li>Jentjens RL, Wagenmakers AJ, Jeukendrup AE. Heat stress increases muscle glycogen use but reduces the oxidation of ingested carbohydrates during exercise. J Appl Physiol 2002;92(4):1562-1572. DOI 10.1152/japplphysiol.00482.2001 · PMID 11896023 — 35 × 16 °C: glicogênio 2,07 × 1,66 g/min; glicose ingerida 0,76 × 0,84 g/min (n = 9). +25% e −10%: cálculos nossos.</li><li>Febbraio MA, Murton P, Selig SE, et al. Effect of CHO ingestion on exercise metabolism and performance in different ambient temperatures. Med Sci Sports Exerc 1996;28(11):1380-1387. DOI 10.1097/00005768-199611000-00006 · PMID 8933488 — a 33 °C nenhuma solução (4,2%, 7%, 14%) aumentou o tempo até a fadiga; a 5 °C, 7% > placebo.</li><li>Péronnet F, Massicotte D, Folch N, et al. Substrate utilization during prolonged exercise with ingestion of 13C-glucose in acute hypobaric hypoxia (4,300 m). Eur J Appl Physiol 2006;97(5):527-534. DOI 10.1007/s00421-006-0164-2 · PMID 16775741 — CHO 92,0% da energia em hipóxia × 78,1% (mesma carga relativa); glicose exógena 17,2 × 20,2 g (n = 5).</li><li>Braun B, Mawson JT, Muza SR, et al. Women at altitude: carbohydrate utilization during exercise at 4,300 m. J Appl Physiol 2000;88(1):246-256. DOI 10.1152/jappl.2000.88.1.246 · PMID 10642387 — em 16 mulheres, oxidação de CHO −23,2% na altitude.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 167,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Mulheres e Jovens",
+    "subtitle": "Sexo e idade mudam menos do que se diz, até o contexto virar o resultado",
+    "content": "[[COMP:WomenYouthSim]]<h4>Fontes</h4><ul><li>Wallis GA, Dawson R, Achten J, Webber J, Jeukendrup AE. Metabolic response to carbohydrate ingestion during exercise in males and females. Am J Physiol Endocrinol Metab 2006;290(4):E708-E715. DOI 10.1152/ajpendo.00357.2005 · PMID 16278245 — pico de oxidação exógena 0,70 (H) × 0,65 g/min (M) com 90 g/h.</li><li>McNulty KL, Elliott-Sale KJ, Dolan E, et al. The Effects of Menstrual Cycle Phase on Exercise Performance in Eumenorrheic Women: A Systematic Review and Meta-Analysis. Sports Med 2020;50(10):1813-1827. DOI 10.1007/s40279-020-01319-3 · PMID 32661839 — ES0,5 −0,06 (ICr95% −0,16 a 0,04), 78 estudos.</li><li>James AP, Lorraine M, Cullen D, et al. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 · PMID 11718281 — 12 g/kg de massa magra/d: mulheres 108 → 193, homens 109 → 183 mmol/kg pu.</li><li>Tarnopolsky MA, Zawada C, Richmond LB, et al. Gender differences in carbohydrate loading are related to energy intake. J Appl Physiol 2001;91(1):225-230. DOI 10.1152/jappl.2001.91.1.225 · PMID 11408434 — mulheres só carregaram com CHO + energia (contexto do erro de 1995, PMID 7615443).</li><li>Timmons BW, Bar-Or O, Riddell MC. Oxidation rate of exogenous carbohydrate during exercise is higher in boys than in men. J Appl Physiol 2003;94(1):278-284. DOI 10.1152/japplphysiol.00140.2002 · PMID 12391100 — 8,8 × 6,2 mg/kg/min (meninos × homens); +42%: cálculo nosso.</li><li>Leites GT, Cunha GS, Chu L, Meyer F, Timmons BW. Energy substrate utilization with and without exogenous carbohydrate intake in boys and men exercising in the heat. J Appl Physiol 2016;121(5):1127-1134. DOI 10.1152/japplphysiol.00535.2016 · PMID 27609200 — a 38 °C: 2,0 × 2,5 mg/kg de massa magra/min (meninos × homens).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 169,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Diabetes Tipo 1 em Campo",
+    "subtitle": "No atleta com DM1, o carboidrato vira dose de correção guiada pela seta do sensor",
+    "content": "[[COMP:T1DSim]]<h4>Fontes</h4><ul><li>Moser O, Zaharieva DP, Adolfsson P, et al. The use of automated insulin delivery around physical activity and exercise in type 1 diabetes: a position statement of the European Association for the Study of Diabetes (EASD) and the International Society for Pediatric and Adolescent Diabetes (ISPAD). Diabetologia 2025;68(2):255-280. DOI 10.1007/s00125-024-06308-z · PMID 39653802 — bolus −25 a −33% se exercício < 2 h após a refeição; lanche de 10–20 g se < 5,0 mmol/L; durante, < 7,0 mmol/L: 3–6, 6–9, 9–12 e 12–20 g conforme a seta; reavaliar em 20–30 min. Consenso para usuários de AID, não prescrição individual.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 170,
+    "sectionName": "Ato IX · Cada Esporte, um Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Preço no Sorriso",
+    "subtitle": "Quem prescreve carboidrato o dia todo também prescreve um risco para os dentes",
+    "content": "[[COMP:DentalSim]]<h4>Fontes</h4><ul><li>Needleman I, Ashley P, Petrie A, et al. Oral health and impact on performance of athletes participating in the London 2012 Olympic Games: a cross-sectional study. Br J Sports Med 2013;47(16):1054-1058. DOI 10.1136/bjsports-2013-092891 · PMID 24068332 — erosão dentária em 45% (278 atletas examinados; viés de seleção).</li><li>Gallagher J, Ashley P, Petrie A, Needleman I. Oral health and performance impacts in elite and professional athletes. Community Dent Oral Epidemiol 2018;46(6):563-568. DOI 10.1111/cdoe.12392 · PMID 29938820 — erosão 2,0× mais provável em esporte coletivo que em endurance (IC 95% 1,3–3,1); 352 atletas.</li><li>Gallagher J, Ashley P, Petrie A, Needleman I. Oral health-related behaviours reported by elite and professional athletes. Br Dent J 2019;227(4):276-280. DOI 10.1038/s41415-019-0617-8 · PMID 31444443 — 80% usam bebida esportiva; 94% escovam 2×/dia.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 180,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "A Régua das Diretrizes",
+    "subtitle": "Quanto carboidrato por dia? Depende da carga de treino, e as faixas se cobrem.",
+    "content": "[[COMP:GuidelineRulerSim]]<h4>Fontes</h4><ul><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — faixas diárias 3–5 / 5–7 / 6–10 / 8–12 g/kg/d (lidas em tabelas que reproduzem o original).</li><li>Thomas DT, Erdman KA, Burke LM. American College of Sports Medicine Joint Position Statement. Nutrition and Athletic Performance. Med Sci Sports Exerc 2016;48(3):543-568. DOI 10.1249/MSS.0000000000000852 — repete as mesmas faixas.</li><li>Gramas por peso (58, 70 e 85 kg): cálculo próprio (g/kg × peso).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 181,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "A Diretriz Brasileira Parou em 2009",
+    "subtitle": "A SBME ainda fala em % da energia e em teto de 80 g/h; a ciência já tinha andado.",
+    "content": "[[COMP:SbmeSim]]<h4>Fontes</h4><ul><li>Hernandez AJ, Nahas RM (eds.). Modificações dietéticas, reposição hídrica, suplementos alimentares e drogas: comprovação de ação ergogênica e potenciais riscos para a saúde. Diretriz da SBME. Rev Bras Med Esporte 2009;15(3 supl.):2-12. DOI 10.1590/S1517-86922009000400001 — 60–70% da energia, 5–8 g/kg/d, “não deve exceder 80g/hora”.</li><li>Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 — ~1,0–1,1 g/min com uma fonte.</li><li>Jentjens RL, Moseley L, Waring RH, Harding LK, Jeukendrup AE. Oxidation of combined ingestion of glucose and fructose during exercise. J Appl Physiol 2004;96(4):1277-1284. DOI 10.1152/japplphysiol.00974.2003 — 1,26 × 0,83 g/min.</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — g/kg por carga; até 90 g/h com mistura em provas > 2,5 h.</li><li>Conversões (g/min → g/h; 60% de 2.000 e 4.000 kcal) são cálculo próprio.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 182,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Que os Atletas Comem",
+    "subtitle": "Entre a régua e o prato: quem atinge a meta de carboidrato?",
+    "content": "[[COMP:IntakeRealitySim]]<h4>Fontes</h4><ul><li>Masson G, Lamarche B. Many non-elite multisport endurance athletes do not meet sports nutrition recommendations for carbohydrates. Appl Physiol Nutr Metab 2016;41(7):728-734. DOI 10.1139/apnm-2015-0599 — 45,7% atingiam a meta; 87,1% ≥ 1,2 g/kg/d de proteína.</li><li>Raizel R et al. Pre-season dietary intake of professional soccer players. Nutr Health 2017;23(4):215-222. DOI 10.1177/0260106017737014 — 5,44 g/kg/d de CHO com energia adequada.</li><li>Anderson L et al. Energy Intake and Expenditure of Professional Soccer Players of the English Premier League: Evidence of Carbohydrate Periodization. Int J Sport Nutr Exerc Metab 2017;27(3):228-238. DOI 10.1123/ijsnem.2016-0259 — 6,4 × 4,2 g/kg (jogo × treino).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 183,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Como se Mede o Glicogênio",
+    "subtitle": "Biópsia, ressonância e ultrassom: qual instrumento enxerga o tanque?",
+    "content": "[[COMP:MethodsSim]]<h4>Fontes</h4><ul><li>Taylor R, Price TB, Rothman DL, Shulman RG, Shulman GI. Validation of 13C NMR measurement of human skeletal muscle glycogen by direct biochemical assay of needle biopsy samples. Magn Reson Med 1992;27(1):13-20. DOI 10.1002/mrm.1910270103 — CV 4,3% × 9,3%; R = 0,95.</li><li>Hill JC, San Millán I. Validation of musculoskeletal ultrasound to assess and quantify muscle glycogen content. Phys Sportsmed 2014;42(3):45-52. DOI 10.3810/psm.2014.09.2075 — r = 0,93 (criadores da tecnologia).</li><li>Routledge HE et al. Ultrasound Does Not Detect Acute Changes in Glycogen in Vastus Lateralis of Man. Med Sci Sports Exerc 2019;51(11):2286-2293. DOI 10.1249/MSS.0000000000002052 — 443 → 271 mmol/kg ps; escore 47 → 49 (P = 0,4).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 184,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Calorimetria e Isótopos",
+    "subtitle": "Como se sabe quanto carboidrato o músculo queimou, e onde a conta falha?",
+    "content": "[[COMP:GasExchangeSim]]<h4>Fontes</h4><ul><li>Jeukendrup AE, Wallis GA. Measurement of substrate oxidation during exercise by means of gas exchange measurements. Int J Sports Med 2005;26(Suppl 1):S28-37. DOI 10.1055/s-2004-830512 — bicarbonato invalida a conta em alta intensidade (só o princípio; sem coeficientes).</li><li>González-Haro C. Concordance between 13C:12C ratio technique respect to indirect calorimetry… Physiol Rep 2019;7(8):e14053. DOI 10.14814/phy2.14053 — ±0,308 g/min de CHO.</li><li>Saris WH et al. Exogenous carbohydrate oxidation from different carbohydrate sources during exercise. J Appl Physiol 1993;75(5):2168-2172. DOI 10.1152/jappl.1993.75.5.2168 — 13C natural do milho; 0,84 × 0,50 g/min.</li><li>±18 g/h: cálculo próprio (0,3 g/min × 60).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 185,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Glicose Contínua em Atleta",
+    "subtitle": "O CGM chegou ao pelotão. Já dá para interpretar a curva de um atleta saudável?",
+    "content": "[[COMP:CgmSim]]<h4>Fontes</h4><ul><li>Thomas F, Pretty CG, Desaive T, Chase JG. Blood Glucose Levels of Subelite Athletes During 6 Days of Free Living. J Diabetes Sci Technol 2016;10(6):1335-1343. DOI 10.1177/1932296816648344 — 4/10 > 70% do tempo acima de 6,0 mmol/L; 3/10 jejum na faixa de pré-diabetes.</li><li>Bowler AM, Burke LM, Coffey VG, Cox GR. Day-to-Day Glycemic Variability Using Continuous Glucose Monitors in Endurance Athletes. J Diabetes Sci Technol 2025;19(6):1538-1545. DOI 10.1177/19322968241250355 — média 102,6 mg/dL; MAGE 36 mg/dL.</li><li>Matkin-Hussey PA et al. Evaluating CGM-Derived Glucose Variability in Athletes Clinically Diagnosed With REDs. Eur J Sport Sci 2026;26(6):e70186. DOI 10.1002/ejsc.70186 — P = 0,21 e 0,92.</li><li>Flockhart M, Larsen FJ. Continuous Glucose Monitoring in Endurance Athletes. Sports Med 2024;54(2):247-255. DOI 10.1007/s40279-023-01910-4 — sem consenso de interpretação.</li><li>Curva de 24 h do passo 1: ilustrativa.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 186,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Desenho Decide o Efeito",
+    "subtitle": "O mesmo carboidrato parece grande num teste e some no outro. Por quê?",
+    "content": "[[COMP:DesignSim]]<h4>Fontes</h4><ul><li>Jeukendrup A, Saris WH, Brouns F, Kester AD. A new validated endurance performance test. Med Sci Sports Exerc 1996;28(2):266-270. DOI 10.1097/00005768-199602000-00017 — CV 26,6% (TTE) × 3,35% (contrarrelógio).</li><li>Colombani PC, Mannhart C, Mettler S. Carbohydrates and exercise performance in non-fasted athletes: a systematic review of studies mimicking real-life. Nutr J 2013;12:16. DOI 10.1186/1475-2891-12-16 — metade sem melhora; 1 de 5 até ~70 min; 10 de 17 de 70 a 241 min.</li><li>Vandenbogaerde TJ, Hopkins WG. Effects of acute carbohydrate supplementation on endurance performance: a meta-analysis. Sports Med 2011;41(9):773-792. DOI 10.2165/11590520-000000000-00000 — jejum prévio aumenta o benefício aparente.</li><li>Curvas de distribuição e efeito de 5%: ilustrativos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 187,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Placebo que Pedalou Mais",
+    "subtitle": "Num contrarrelógio de 1 h, a crença valeu mais que o carboidrato.",
+    "content": "[[COMP:PlaceboSim]]<h4>Fontes</h4><ul><li>Clark VR, Hopkins WG, Hawley JA, Burke LM. Placebo effect of carbohydrate feedings during a 40-km cycling time trial. Med Sci Sports Exerc 2000;32(9):1642-1647. DOI 10.1097/00005768-200009000-00019 — +4,3% / +0,5% / −1,1% pelo que ouviram; efeito real −0,3%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 188,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Quem Paga o Estudo",
+    "subtitle": "Financiamento da indústria: descartar o estudo ou aprender a lê-lo?",
+    "content": "[[COMP:FundingSim]]<h4>Fontes</h4><ul><li>Heneghan C et al. The evidence underpinning sports performance products: a systematic assessment. BMJ Open 2012;2(4):e001702. DOI 10.1136/bmjopen-2012-001702 — 431 alegações, 104 produtos, 52,8% dos sites sem referência, 3 de 74 (2,7%) de alta qualidade, 84% com alto risco de viés.</li><li>Smith JW et al. Curvilinear dose-response relationship of carbohydrate (0-120 g·h−1) and performance. Med Sci Sports Exerc 2013;45(2):336-341. DOI 10.1249/MSS.0b013e31827205d1 — 1º autor afiliado ao Gatorade Sports Science Institute; duplo-cego, 4 centros, n = 51.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 189,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Mito ou Verdade?",
+    "subtitle": "As oito afirmações do início da aula, agora com veredito e fonte.",
+    "content": "[[COMP:MythVerdictSim]]<h4>Fontes</h4><ul><li>Burdon CA et al. Effect of Glycemic Index of a Pre-exercise Meal on Endurance Exercise Performance: A Systematic Review and Meta-analysis. Sports Med 2017;47(6):1087-1101. DOI 10.1007/s40279-016-0632-8.</li><li>Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 — 1,75 × 1,06 g/min.</li><li>Rowlands DS et al. Fructose-Glucose Composite Carbohydrates and Endurance Performance: Critical Review and Future Perspectives. Sports Med 2015;45(11):1561-1576. DOI 10.1007/s40279-015-0381-0 — potência +1 a 9% vs glicose isocalórica.</li><li>Bussau VA et al. Carbohydrate loading in human muscle: an improved 1 day protocol. Eur J Appl Physiol 2002;87(3):290-295. DOI 10.1007/s00421-002-0621-5 — 95 → 180 mmol/kg ww em 1 dia.</li><li>Sherman WM, Costill DL, Fink WJ, Miller JM. Effect of exercise-diet manipulation on muscle glycogen and its subsequent utilization during performance. Int J Sports Med 1981;2(2):114-118. DOI 10.1055/s-2008-1034594 — sem diferença em 20,9 km.</li><li>Koopman R et al. Coingestion of carbohydrate with protein does not further augment postexercise muscle protein synthesis. Am J Physiol Endocrinol Metab 2007;293(3):E833-42. DOI 10.1152/ajpendo.00135.2007 — FSR 0,10 / 0,10 / 0,11 %/h.</li><li>Burke LM et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/JP273230 — +6,6% × −1,6%; replicado em Burke LM et al. PLoS One 2020;15(6):e0234027.</li><li>Moseley L, Lancaster GI, Jeukendrup AE. Effects of timing of pre-exercise ingestion of carbohydrate on subsequent metabolism and cycling performance. Eur J Appl Physiol 2003;88(4-5):453-458. DOI 10.1007/s00421-002-0728-8 — 268 / 269 / 276 W.</li><li>James AP et al. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 — mulheres 108 → 193; homens 109 → 183 mmol/kg ww.</li><li>Votos da turma: os do slide 13 nesta sessão do navegador.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 190,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "Cinco Atletas, Cinco Planos",
+    "subtitle": "Do dilema ao plano: o que cada um come por dia, antes, durante e depois.",
+    "content": "[[COMP:CasePlansSim]]<h4>Fontes</h4><ul><li>Casos fictícios. Faixas diárias: Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473; gramas: cálculo próprio (g/kg × peso).</li><li>Marina: Bussau 2002 (carga de 1 dia); Schabort EJ et al. Med Sci Sports Exerc 1999;31(3):464-471. DOI 10.1097/00005768-199903000-00017 (café 3 h antes); Parkin JA et al. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009.</li><li>Diego: Coyle EF et al. Substrate usage during prolonged exercise following a preexercise meal. J Appl Physiol 1985;59(2):429-433. DOI 10.1152/jappl.1985.59.2.429 (refeição 4 h antes); Costa RJS et al. Appl Physiol Nutr Metab 2017;42(5):547-557. DOI 10.1139/apnm-2016-0453 (treino intestinal); Jentjens R, Jeukendrup A. Sports Med 2003;33(2):117-144. DOI 10.2165/00007256-200333020-00004; Morton JP et al. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442.</li><li>Lara: Anderson 2017; Leatt PB, Jacobs I. Effect of glucose polymer ingestion on glycogen depletion during a soccer match. Can J Sport Sci 1989;14(2):112-116. PMID 2736440 (111 × 181 mmol/kg); Krustrup P et al. Eur J Appl Physiol 2011;111(12):2987-2995. DOI 10.1007/s00421-011-1919-y (−27% em 24 h).</li><li>Tiago: Foo WL et al. Int J Sport Nutr Exerc Metab 2022;32(4):256-264. DOI 10.1123/ijsnem.2021-0324; Kondo E et al. BMC Sports Sci Med Rehabil 2021;13(1):96. DOI 10.1186/s13102-021-00325-w; Reale R et al. Int J Sport Nutr Exerc Metab 2016;26(6):525-530. DOI 10.1123/ijsnem.2015-0359; CDC. MMWR 1998;47(6):105-108. PMID 9480411.</li><li>Paulo: Henselmans M et al. Nutrients 2022;14(4):856. DOI 10.3390/nu14040856; Koopman 2007; Henselmans M, Vårvik FT, Izquierdo M. Sports Med 2026;56(3):691-702. DOI 10.1007/s40279-025-02341-z (SMD 0,15).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 191,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "O Que Levar para a Segunda-feira",
+    "subtitle": "Seis mensagens, cada uma presa ao número que a sustenta.",
+    "content": "[[COMP:TakeawaysSim]]<h4>Fontes</h4><ul><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 — 21,1 × 19,6 kJ/L de O₂.</li><li>Smyth B. How recreational marathon runners hit the wall. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 — 28% × 17%.</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — 30–60 g/h; até 90 g/h > 2,5 h.</li><li>Parkin JA, Carey MF, Martin IK, Stojanovska L, Febbraio MA. Muscle glycogen storage following prolonged exercise: effect of timing of ingestion of high glycemic index food. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009 · PMID 9044226 — sem diferença às 8 e 24 h.</li><li>Impey SG et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 — 73% sinalização × 37% desempenho.</li><li>Jeukendrup A, Saris WH, Brouns F, Kester AD. A new validated endurance performance test. Med Sci Sports Exerc 1996;28(2):266-270. DOI 10.1097/00005768-199602000-00017 · PMID 8775164 — CV 26,6% × 3,35%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 199,
+    "sectionName": "Ato X · Ler, Medir e Decidir",
+    "number": "",
+    "layout": "prose",
+    "title": "",
+    "subtitle": "",
+    "content": "<p class=\"quote-text reveal\">O <span class=\"hl-glucose\">carboidrato</span> não ganha a prova. Ele decide se você vai estar <span class=\"hl-glycogen\">inteiro</span> para disputá-la no fim.</p>",
+    "cards": []
+  }
+]

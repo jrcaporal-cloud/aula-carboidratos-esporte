@@ -1,0 +1,80 @@
+{
+  "100": {
+    "minutos": 3,
+    "mensagem": "Agosto de 1965, Universidade da Flórida: jogadores internados por calor. O auxiliar Dwayne Douglas leva a dúvida ao médico Dana Shires, que chama o nefrologista Robert Cade: por que os jogadores não urinavam depois do jogo? Sais e açúcar na água, depois limão; em 1º/10/1965 os calouros testam e, no dia seguinte, a Flórida vence a LSU por 14 a 7. Fonte institucional da UF, não artigo revisado.",
+    "pergunta": "Se a pergunta original era sobre urina e sódio, por que o carboidrato entrou na fórmula?",
+    "transicao": "Daquele copo de 1965 até hoje, foram dezenas de ensaios. O que eles dizem, somados?"
+  },
+  "101": {
+    "minutos": 3,
+    "mensagem": "Stellingwerff & Cox (2014) reuniram 61 ECRs com placebo de água, n = 679: 82% acharam benefício do carboidrato durante o exercício. O ganho cresce com a duração da prova e o mecanismo muda: em ~1 h é boca e cérebro; acima de 2 h é combustível. A meta-análise de Vandenbogaerde & Hopkins (88 estudos) mostra que a formulação leva o efeito de +6% a −2%.",
+    "pergunta": "O que, numa bebida, poderia transformar um ganho de 6% num prejuízo de 2%?",
+    "transicao": "Se a dose importa, qual é a dose? Smith desenhou a curva."
+  },
+  "102": {
+    "minutos": 3,
+    "mensagem": "Smith 2013: ECR duplo-cego em 4 centros, 51 ciclistas e triatletas, 12 doses de 10 a 120 g/h e placebo, mas cada um fez só 4 ensaios (blocos incompletos, modelo misto). Ganho estimado no contrarrelógio: 1% a 9 g/h, 4% a 48 g/h e 4,7% a 78 g/h; acima disso, retorno decrescente. É um estudo só, financiado pela indústria (GSSI).",
+    "pergunta": "Vocês prescreveriam 78 g/h a partir de um único estudo de 160 min em ciclistas? O que faltaria saber?",
+    "transicao": "Por que a curva achata? A resposta não está no músculo, está no intestino."
+  },
+  "103": {
+    "minutos": 3,
+    "mensagem": "A oxidação de carboidrato exógeno de uma fonte só satura em ~1,0–1,1 g/min, por mais que se beba (Jeukendrup & Jentjens 2000). As barras pareiam o que entra e o que se oxida na hora, em três estudos com isótopo: 0,60 g/min a 48 g/h, 1,06 a 72 g/h e 1,18 a 144 g/h (≈ 36, 64 e 71 g/h). A 144 g/h, só 49% do que entra é oxidado na hora (cálculo). O gargalo é a absorção (SGLT1) e o fígado, não o músculo.",
+    "pergunta": "Se o músculo não é o limite, o que acontece com o carboidrato que entrou e não foi oxidado?",
+    "transicao": "Se a porta da glicose lota, existe outra porta?"
+  },
+  "104": {
+    "minutos": 4,
+    "mensagem": "A frutose entra pelo GLUT5, uma segunda pista. Jentjens 2005: glicose + frutose 1:1 a 144 g/h levou o pico de oxidação exógena a 1,75 g/min, contra 1,06 só com glicose (n = 8). Atenção: a ~48 g/h a mistura não acrescenta (0,57 × 0,60; Hulston 2009). Currell 2008 mostrou que isso vira desempenho: 8% mais rápido que glicose a 108 g/h. Proporção ótima perto de 0,8:1 (O'Brien). Tecla 3 abre o enterócito em 3D.",
+    "pergunta": "Para um atleta que consome 45 g/h, faz sentido pagar mais por uma mistura glicose + frutose?",
+    "transicao": "Se 90 g/h com mistura funciona, e 120 g/h?"
+  },
+  "105": {
+    "minutos": 3,
+    "mensagem": "Ravikanti 2025, 8 maratonistas de elite com 13C: oxidação exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h, com sintomas GI moderados ou graves frequentes em todas as doses e pico nos 120 g/h. Podlogar 2022: 120 × 90 g/h aumenta a exógena (1,51 × 1,29) mas a endógena fica igual (2,15 × 2,20). Viribay 2020, o estudo que viralizou, mediu dano e esforço percebido, não o tempo. Morton 2026: desempenho ainda não demonstrado.",
+    "pergunta": "Quais desfechos vocês exigiriam de um estudo para recomendar 120 g/h ao Diego?",
+    "transicao": "Se a ciência ainda não fechou a conta, quem está empurrando a dose para cima?"
+  },
+  "106": {
+    "minutos": 3,
+    "mensagem": "Saris 1989, Tour de France: 5 profissionais, 22 dias; nas etapas eles já ingeriam ~94 g/h de carboidrato. Em 2000 a literatura descrevia um teto de oxidação de ~1 g/min (~60 g/h), e só em 2011 o consenso do COI chegou a 90 g/h para provas acima de 2,5 h. Hoje equipes testam 120 g/h ou mais, sem ganho de desempenho comprovado (Morton 2026). Relatos de jornalismo do Tour ficam fora.",
+    "pergunta": "Quem gera conhecimento em nutrição esportiva: o laboratório ou a prática? E quem corrige quem?",
+    "transicao": "Junto com a dose veio a indústria do formato: gel, goma, hidrogel. O formato muda alguma coisa?"
+  },
+  "108": {
+    "minutos": 3,
+    "mensagem": "A 120 g/h, bebida, gel, goma ou combinação dão o mesmo pico de oxidação (1,56–1,66 g/min, ns; Hearris 2022); gel com água equivale à bebida (Pfeiffer 2010). O hidrogel gelifica no ácido e, em repouso, esvazia mais rápido (t½ 21 × 37 min), um mecanismo plausível. Mas a meta-análise de Sutehall 2022 contra bebida isocalórica é nula: desempenho p = 0,59, I² = 0%. Rowe 2022 é o positivo isolado (+2,1%).",
+    "pergunta": "Um estudo positivo de n = 11 contra uma meta-análise nula: como explicar isso ao atleta que já comprou o produto?",
+    "transicao": "O formato não resolve o intestino. Mas o intestino pode ser treinado?"
+  },
+  "109": {
+    "minutos": 3,
+    "mensagem": "Diego (caso fictício) trava acima de 60 g/h. Costa 2017: 25 corredores, 2 semanas de treino com gel a 90 g/h durante o exercício; sintomas GI −60%, H₂ expirado 6 × 12 ppm (menos má absorção) e +5,2% na distância em 1 h (placebo −2,1%). Cox 2010: 28 dias de CHO alto aumentam a oxidação exógena (54,6 → 63,6 g), sem desempenho extra. Em elite (King 2022), sem vantagem e com mais sintomas.",
+    "pergunta": "Como vocês montariam as 2 semanas de treino intestinal do Diego antes do Ironman?",
+    "transicao": "Até aqui o carboidrato foi combustível. Na prova de 1 hora, ele funciona de outro jeito."
+  },
+  "110": {
+    "minutos": 3,
+    "mensagem": "Carter 2004: glicose IV a 1 g/min elevou a glicemia a 12,4 mmol/L e o contrarrelógio de 1 h não mudou (59,90 × 60,04 min; n = 6). No mesmo ano, um bochecho de 5 s com maltodextrina, cuspido, deixou a prova quase 2 min mais rápida (59,57 × 61,37; n = 9; placebo de água). Chambers 2009, com fMRI: glicose e maltodextrina, que não é doce, ativam áreas de recompensa; a sacarina não.",
+    "pergunta": "Se o efeito é no cérebro, o placebo de água era um bom controle?",
+    "transicao": "Um efeito tão elegante sobrevive à meta-análise?"
+  },
+  "111": {
+    "minutos": 3,
+    "mensagem": "Brietzke 2019, 13 estudos: o bochecho aumenta a potência média com SMD 0,25 (0,04 a 0,46), efeito pequeno; o tempo para completar não muda de forma significativa (SMD −0,13; p = 0,25). Lane 2013: +3,4% em jejum e +1,8% alimentado, e a maior potência foi alimentado + bochecho. Trommelen 2015, duplo-cego com placebo adoçado: nulo (p = 0,277). Real, pequeno e dependente do contexto.",
+    "pergunta": "Para uma prova de 1 h às 7 da manhã, vocês trocariam o café da manhã pelo bochecho?",
+    "transicao": "Juntando tudo: quanto por hora, para cada duração de prova?"
+  },
+  "112": {
+    "minutos": 3,
+    "mensagem": "O consenso do COI (Burke 2011) escalona pela duração: ~1 h, pequenas quantidades ou bochecho (sinal: boca e cérebro); provas mais longas, 30–60 g/h; acima de 2,5 h, até 90 g/h com mistura glicose + frutose. A fronteira atual é 120 g/h em treinados, com oxidação maior e sem ganho comprovado (Morton 2026). As faixas intermediárias de Jeukendrup 2014 não foram conferidas na fonte e não entram. Ponto de partida do Ato X.",
+    "pergunta": "Onde a Marina (3h30 de maratona) e o Diego (~10 h) caem no relógio?",
+    "transicao": "Isso é a recomendação. E o que os atletas comem de fato?"
+  },
+  "113": {
+    "minutos": 3,
+    "mensagem": "Pfeiffer 2012, 221 atletas em prova: médias de 62–71 g/h nos Ironman, 53 g/h no ciclismo e ~35 g/h na maratona, com indivíduos de 6 a 136 g/h. Sintomas GI graves em ~31% nos Ironman. Revisões estimam queixas em 30–50% dos atletas (de Oliveira 2014); no ultra-trail a maioria não chega a 90 g/h e 65–82% relatam sintomas (Arribalzaga 2021). Dados observacionais, por recordatório.",
+    "pergunta": "Por que maratonistas comem tão menos que triatletas na mesma faixa de duração?",
+    "transicao": "Cruzada a linha de chegada, começa outra corrida: repor o tanque. Ato VII."
+  }
+}

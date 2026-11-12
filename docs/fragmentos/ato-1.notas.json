@@ -1,0 +1,32 @@
+{
+  "10": {
+    "minutos": 3,
+    "mensagem": "Marina é um caso fictício, e a curva dela é ilustrativa: 5:00 por km até o 30 e uma queda de cerca de 37% depois do 32. Os tanques usam médias reais de adulto, ~500 g de glicogênio no músculo (300–700 g) e ~80 g no fígado (0–160 g), segundo a revisão de Murray e Rosenbloom 2018. O dado do fim é real: em 1,9 milhão de maratonistas, 28% dos homens e 17% das mulheres bateram no muro, e quem bate perde cerca de 40% do ritmo por uns 10 km (Smyth 2021, observacional). Atenção: Smyth definiu o muro pela queda do ritmo. Ninguém mediu glicogênio.",
+    "pergunta": "Antes de qualquer número: no km 32 da Marina, o que acabou? Escrevam no chat uma palavra: músculo, fígado, glicose do sangue ou cabeça.",
+    "transicao": "Para responder isso vamos precisar olhar a mesma molécula de três jeitos diferentes."
+  },
+  "11": {
+    "minutos": 3,
+    "mensagem": "Combustível: cada litro de O₂ rende ~21,1 kJ queimando glicose e ~19,6 kJ queimando gordura, cerca de 7,7% a mais (cálculo nosso a partir de Scott 2012). Sinal: na contagem de Impey 2018, treinar com glicogênio baixo aumentou a sinalização em 73% de 11 estudos, mas melhorou o desempenho em só 37% deles. Escolha: as diretrizes dão faixas diárias de 3–5 g/kg em dia leve até 8–12 g/kg em dias de mais de 4–5 h (Burke 2011, Thomas 2016; faixas lidas em tabela secundária). A aula inteira volta a esses três papéis.",
+    "pergunta": "Qual dos três papéis vocês mais usam hoje para montar um plano: combustível, sinal ou escolha?",
+    "transicao": "Agora, as pessoas que vão carregar esses três papéis pela aula."
+  },
+  "12": {
+    "minutos": 3,
+    "mensagem": "São cinco casos fictícios, e cada um traz um problema de tanque diferente. A Marina, que seca antes da chegada, volta nos Atos IV e V. O Diego, que precisa repor no caminho e trava acima de 60 g/h, volta no VI. A Lara, que não tem tempo de encher entre jogos, volta no VII. O Tiago, cujo tanque pesa na balança, e o Paulo, cujo tanque esvazia só em parte, voltam no IX. O nível de cada tanque é ilustrativo: os números de cada caso aparecem, com a fonte, quando o personagem volta.",
+    "pergunta": "Qual desses cinco se parece mais com o paciente que vocês atendem? Mandem o nome no chat.",
+    "transicao": "Antes de abrir qualquer estudo, quero saber o que vocês já pensam."
+  },
+  "13": {
+    "minutos": 3,
+    "mensagem": "Leia cada afirmação em voz alta e dê uns 10 segundos para o chat. Conte os votos clicando em concordo ou discordo; o 'desfazer' corrige um clique a mais. Não comente nem dê pista: os vereditos ficam para o slide 189, quando a turma vai comparar o próprio voto com a evidência. O último passo mostra onde a turma se dividiu, e a contagem fica guardada nesta sessão do navegador.",
+    "pergunta": "Concorda ou discorda? Responda no chat só com C ou D.",
+    "transicao": "Guardem esses votos. Agora, o percurso que vamos fazer até poder responder cada um."
+  },
+  "14": {
+    "minutos": 2,
+    "mensagem": "O percurso tem dez atos, e cada um responde a uma pergunta. Primeiro vem o que a molécula é, como o motor escolhe o combustível e o tamanho do tanque. Depois vem a prova inteira: antes, durante e depois. No fim, treinar com pouco, cada esporte e como ler um estudo para decidir no consultório.",
+    "pergunta": "Qual dessas dez perguntas vocês mais querem ver respondida hoje?",
+    "transicao": "Começamos pela molécula: a mesma glicose, montada de jeitos diferentes."
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 120,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "A Janela que Fecha Devagar",
+    "subtitle": "A pressa de comer só vale para quem treina de novo em poucas horas",
+    "content": "[[COMP:WindowSim]]<h4>Fontes</h4><ul><li>Ivy JL, Katz AL, Cutler CL, Sherman WM, Coyle EF. Muscle glycogen synthesis after exercise: effect of time of carbohydrate ingestion. J Appl Physiol 1988;64(4):1480-1485. DOI 10.1152/jappl.1988.64.4.1480 · PMID 3132449 — cruzado, n = 12 ciclistas; 2 g/kg logo após × 2 h depois: 7,7 × 2,5 µmol/g ww/h nas primeiras 2 h; 4,1 depois do CHO adiado, ainda 45% mais lento.</li><li>Parkin JA, Carey MF, Martin IK, Stojanovska L, Febbraio MA. Muscle glycogen storage following prolonged exercise: effect of timing of ingestion of high glycemic index food. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009 · PMID 9044226 — cruzado, n = 6; refeições de alto IG em 0–4 h × 2–6 h: glicogênio igual às 8 e às 24 h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 121,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Quatro Horas Entre Duas Sessões",
+    "subtitle": "Com 4 h de intervalo, o carboidrato da recuperação vira minutos na segunda sessão",
+    "content": "[[COMP:ShortRecoverySim]]<h4>Fontes</h4><ul><li>Alghannam AF, Jedrzejewski D, Tweddle MG, et al. Impact of muscle glycogen availability on the capacity for repeated exercise in man. Med Sci Sports Exerc 2016;48(1):123-131. DOI 10.1249/MSS.0000000000000737 · PMID 26197030 — n = 10; 4 h de recuperação com 1,2 × 0,3 g/kg/h: glicogênio 269 × 157 mmol/kg ps; 2ª corrida 80 × 48 min; mesmo glicogênio na exaustão (~72–78).</li><li>Craven J, Desbrow B, Sabapathy S, et al. The effect of consuming carbohydrate with and without protein on the rate of muscle glycogen re-synthesis during short-term post-exercise recovery: a systematic review and meta-analysis. Sports Med Open 2021;7(1):9. DOI 10.1186/s40798-020-00297-0 · PMID 33507402 — CHO × água +23,5 mmol/kg ps/h (IC95% 19,0–27,9; 10 ensaios, n = 86); doses de hora em hora ou mais frequentes rendem mais; CHO + proteína × CHO +0,4 (IC95% −2,7 a 3,4; 19 ensaios, n = 160).</li><li>Jentjens R, Jeukendrup A. Determinants of post-exercise glycogen synthesis during short-term recovery. Sports Med 2003;33(2):117-144. DOI 10.2165/00007256-200333020-00004 · PMID 12617691 — maiores taxas com 1,0–1,85 g/kg/h logo após o exercício e a cada 15–60 min (revisão narrativa).</li><li>Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 122,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Proteína Ajuda? Depende",
+    "subtitle": "A proteína só acelera a ressíntese quando falta carboidrato ou quando soma calorias",
+    "content": "[[COMP:ProteinCoSim]]<h4>Fontes</h4><ul><li>van Loon LJ, Saris WH, Kruijshoop M, Wagenmakers AJ. Maximizing postexercise muscle glycogen synthesis: carbohydrate supplementation and the application of amino acid or protein hydrolysate mixtures. Am J Clin Nutr 2000;72(1):106-111. DOI 10.1093/ajcn/72.1.106 · PMID 10871568 — cruzado, n = 8; 16,6 (CHO 0,8) × 35,4 (CHO 0,8 + proteína 0,4) × 44,8 (CHO 1,2) µmol/g ps/h.</li><li>Margolis LM, Allen JT, Hatch-McChesney A, Pasiakos SM. Coingestion of carbohydrate and protein on muscle glycogen synthesis after exercise: a meta-analysis. Med Sci Sports Exerc 2021;53(2):384-393. DOI 10.1249/MSS.0000000000002476 · PMID 32826640 — 20 estudos; geral g = 0,13 (−0,04 a 0,29); proteína somando energia g = 0,26 (0,04 a 0,49); isocalórico g = −0,05 (−0,23 a 0,13).</li><li>Craven J, Desbrow B, Sabapathy S, et al. The effect of consuming carbohydrate with and without protein on the rate of muscle glycogen re-synthesis during short-term post-exercise recovery: a systematic review and meta-analysis. Sports Med Open 2021;7(1):9. DOI 10.1186/s40798-020-00297-0 · PMID 33507402 — CHO × água +23,5 mmol/kg ps/h (IC95% 19,0–27,9; 10 ensaios, n = 86); doses de hora em hora ou mais frequentes rendem mais; CHO + proteína × CHO +0,4 (IC95% −2,7 a 3,4; 19 ensaios, n = 160).</li><li>Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 123,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "24 Horas: o Total Manda",
+    "subtitle": "Em um dia de recuperação, forma e horário pesam pouco; o que manda é quanto chega",
+    "content": "[[COMP:TotalRulesSim]]<h4>Fontes</h4><ul><li>Keizer HA, Kuipers H, van Kranenburg G, Geurten P. Influence of liquid and solid meals on muscle glycogen resynthesis, plasma fuel hormone response, and maximal physical working capacity. Int J Sports Med 1987;8(2):99-104. DOI 10.1055/s-2008-1025649 · PMID 3298088 — cruzado, n = 8; às 5 h, 72 → 198 (sólido) × 69 → 192 mmol/kg (líquido).</li><li>Burke LM, Collier GR, Davis PG, et al. Muscle glycogen storage after prolonged exercise: effect of the frequency of carbohydrate feedings. Am J Clin Nutr 1996;64(1):115-119. DOI 10.1093/ajcn/64.1.115 · PMID 8669406 — n = 8 triatletas, 10 g/kg em 24 h: 4 refeições × 16 lanches, 74,1 × 94,5 mmol/kg ww, sem diferença significativa.</li><li>Burke LM, Collier GR, Hargreaves M. Muscle glycogen storage after prolonged exercise: effect of the glycemic index of carbohydrate feedings. J Appl Physiol 1993;75(2):1019-1023. DOI 10.1152/jappl.1993.75.2.1019 · PMID 8226443 — cruzado, n = 5; 10 g/kg em 24 h; aumento de 106 (alto IG) × 71,5 mmol/kg ww (baixo IG), P = 0,02.</li><li>Burke LM, Collier GR, Broad EM, et al. Effect of alcohol intake on muscle glycogen storage after prolonged exercise. J Appl Physiol 2003;95(3):983-990. DOI 10.1152/japplphysiol.00115.2003 · PMID 12740311 — cruzados (n = 6 em 8 h; n = 9 em 24 h); álcool deslocando CHO: 68 × 82 mmol/kg ww às 24 h (24,4 × 44,6 às 8 h); álcool somado: 85, sem diferença às 24 h.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 124,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Fígado Prefere Sacarose",
+    "subtitle": "Frutose e galactose aceleram o fígado; o músculo só responde à quantidade",
+    "content": "[[COMP:LiverRefillSim]]<h4>Fontes</h4><ul><li>Fuchs CJ, Gonzalez JT, Beelen M, et al. Sucrose ingestion after exhaustive exercise accelerates liver, but not muscle glycogen repletion compared with glucose ingestion in trained athletes. J Appl Physiol 2016;120(11):1328-1334. DOI 10.1152/japplphysiol.01023.2015 · PMID 27013608 — cruzado, n = 15; 1,5 g/kg/h por 5 h; fígado 53,6 → 86,8 g (sacarose) × 49,3 → 65,7 g (glicose), +3,4 g/h (IC95% 1,6–5,1); músculo 85 → 140 × 86 → 136 mmol/L (P = 0,673).</li><li>Décombaz J, Jentjens R, Ith M, et al. Fructose and galactose enhance postexercise human liver glycogen synthesis. Med Sci Sports Exerc 2011;43(10):1964-1971. DOI 10.1249/MSS.0b013e318218ca5a · PMID 21407126 — cruzado duplo-cego, n = 10; 69 g/h por 6,5 h; síntese hepática 8,1 (frutose) e 8,6 (galactose) × 3,7 g/h (glicose).</li><li>Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Glucose plus fructose ingestion for post-exercise recovery: greater than the sum of its parts? Nutrients 2017;9(4):344. DOI 10.3390/nu9040344 · PMID 28358334 — revisão: músculo responde à quantidade; fígado repõe ~2 vezes mais com glicose + frutose.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 125,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Nem 10 g/kg em 12 Horas",
+    "subtitle": "O fígado transborda em 6 h; o músculo muito depletado ainda deve às 12 h",
+    "content": "[[COMP:Fuchs2025Sim]]<h4>Fontes</h4><ul><li>Fuchs CJ, Veeraiah P, Hermans WJH, et al. Carbohydrate intake of 10 g/kg body mass rapidly replenishes liver, but not muscle glycogen contents, during 12 h of post-exercise recovery in well-trained cyclists. J Physiol 2025. DOI 10.1113/JP289115 · PMID 40836481 — cruzado, n = 12 ciclistas (VO2pico 67 mL/kg/min); músculo 159 → 56 → 88 (6 h) → 110 mmol/L (12 h), 55% e 69% do pré; fígado 166 → 110 → 236 (6 h, 142%) → 258; em jejum, nada se recuperou.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 126,
+    "sectionName": "Ato VII · Depois da Chegada",
+    "number": "",
+    "layout": "prose",
+    "title": "Lara, Jogo a Cada 72 Horas",
+    "subtitle": "Quando o próximo jogo chega antes do glicogênio, o carboidrato do dia precisa de conta",
+    "content": "[[COMP:LaraRecoverySim]]<h4>Fontes</h4><ul><li>Krustrup P, Ørtenblad N, Nielsen J, et al. Maximal voluntary contraction force, SR function and glycogen resynthesis during the first 72 h after a high-level competitive soccer game. Eur J Appl Physiol 2011;111(12):2987-2995. DOI 10.1007/s00421-011-1919-y · PMID 21448723 — observacional, n = 7 homens de alto nível; glicogênio 57% e 27% abaixo do controle em 0 e 24 h (193 e 328 × 449 mmol/kg ps), com dieta otimizada.</li><li>Anderson L, Orme P, Naughton RJ, et al. Energy intake and expenditure of professional soccer players of the English Premier League: evidence of carbohydrate periodization. Int J Sport Nutr Exerc Metab 2017;27(3):228-238. DOI 10.1123/ijsnem.2016-0259 · PMID 28050927 — água duplamente marcada, n = 6; CHO 6,4 ± 2,2 g/kg no dia de jogo × 4,2 ± 1,4 g/kg em dia de treino; véspera e recuperação abaixo das diretrizes.</li></ul>",
+    "cards": []
+  }
+]

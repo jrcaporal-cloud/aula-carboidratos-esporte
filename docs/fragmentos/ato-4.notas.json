@@ -1,0 +1,68 @@
+{
+ "60": {
+  "minutos": 3,
+  "mensagem": "Jonas Bergström era nefrologista: em 1959 adaptou uma agulha percutânea para medir a perda de eletrólitos causada por diuréticos, e publicou os eletrólitos musculares em 1962. No mesmo hospital de Estocolmo, Eric Hultman tinha uma dosagem de glicose; juntos, mediram pela primeira vez o glicogênio dentro do músculo humano. A história vem do depoimento de Roger Harris (Stout 2025), memória oral. A coloração PAS, que volta no slide \"Quem Esvazia Primeiro\", mostra o glicogênio fibra a fibra.",
+  "pergunta": "Que ferramenta do seu consultório decide hoje o que você consegue enxergar no atleta?",
+  "transicao": "Com a agulha na mão, os dois fizeram um experimento no próprio corpo."
+ },
+ "61": {
+  "minutos": 3,
+  "mensagem": "Bergström e Hultman pedalaram ao mesmo tempo, em lados opostos do mesmo cicloergômetro, cada um com uma perna, até a exaustão; depois, 3 dias de dieta rica em carboidrato com biópsias das duas pernas. Já no 1º dia a perna exercitada passou a parada; no 3º, estava 50–60% acima. A dieta era a mesma para as duas pernas: a supercompensação é local. Ressalvas: n = 2, sem cegamento, o artigo da Nature não foi lido no original; o detalhe da bicicleta compartilhada vem do relato de Harris (Stout 2025). Os níveis dos tanques são ilustrativos.",
+  "pergunta": "Se a supercompensação é local, o que isso muda na carga de um triatleta que corre a última etapa?",
+  "transicao": "Faltava ligar o tanque ao cronômetro. Foi o estudo seguinte."
+ },
+ "62": {
+  "minutos": 5,
+  "mensagem": "Bergström, Hermansen, Hultman e Saltin, 1967, lido no original: 9 estudantes de educação física, cruzado e não cego, cicloergômetro a 75% (71–82%) do VO₂máx até a exaustão. Glicogênio inicial de 0,63, 1,75 e 3,31 g/100 g de músculo úmido; tempos de 57, 114 e 167 min (Tabela III; o resumo traz 59/126/189, use a tabela); r = 0,92. Os 3 que fizeram carboidrato sem a fase gordurosa antes ficaram com 2,10–3,00 g/100 g e 119–124 min: daí o 'esvaziar para encher'. Limites: tempo até a exaustão não é prova, ordem 6 × 3, fígado e glicemia não controlados; é associação (crítica de Noakes 2022). O '≈ 3×' é conta nossa (167 ÷ 57). Protocolo: biópsia do vasto lateral antes e depois de cada teste; em 3 dos 9, a ordem foi mista → carboidrato → gordura.",
+  "pergunta": "No chat: qual limitação deste desenho mais pesa para você aplicar o resultado numa maratona real?",
+  "transicao": "Esses números estão em g/100 g; para ler biópsias de hoje, precisamos da régua atual."
+ },
+ "63": {
+  "minutos": 3,
+  "mensagem": "Areta & Hopkins 2018, meta-análise de 181 estudos com biópsia: o vasto lateral de homens com dieta habitual tem 462 ± 132 mmol/kg de músculo seco; alta disponibilidade de carboidrato soma +102 (efeito moderado) e baixa tira −253 (muito grande). No corpo todo, em média, ~500 g no músculo e ~80 g no fígado (Murray & Rosenbloom 2018, estimativas de revisão). O treino aumenta o tanque muscular (+67 por +10 mL/kg/min de VO₂máx) e reduz o gasto na mesma carga (−16% de oxidação de glicogênio em 5 dias, Phillips 1996), mas não aumenta o glicogênio hepático basal (Gonzalez 2016). Não misture mmol/kg seco com úmido.",
+  "pergunta": "Se o atleta treinado gasta menos na mesma carga, por que ele ainda pode esvaziar o tanque numa prova?",
+  "transicao": "A média do músculo esconde uma coisa: cada fibra esvazia no seu tempo."
+ },
+ "64": {
+  "minutos": 3,
+  "mensagem": "Gollnick, Piehl e Saltin 1974, histoquímica com PAS (glicogênio) e ATPase (tipo de fibra), ciclismo de 30 a 150% do VO₂máx: o esvaziamento foi 2,7× e 7,4× maior a 64% e 84% do que a 31%. No submáximo, as fibras lentas esvaziam primeiro e as rápidas entram aos poucos; acima do VO₂máx, as duas desde o início. A cadência não mudou o padrão. O mosaico é ilustrativo, desenhado nessas proporções; PAS é semiquantitativo e o n é pequeno. Lição: glicogênio 'médio' razoável pode esconder fibras vazias.",
+  "pergunta": "Num sprint final depois de 3 h moderadas, quais fibras ainda têm combustível?",
+  "transicao": "E dentro de uma mesma fibra, o glicogênio também não está todo no mesmo lugar."
+ },
+ "65": {
+  "minutos": 3,
+  "mensagem": "Microscopia eletrônica (Nielsen 2011, 10 atletas de elite): o glicogênio fica em três compartimentos, subsarcolemal, intermiofibrilar e intramiofibrilar. O intramiofibrilar é só 10–15% do total (Ørtenblad 2011), mas é o que mais esvazia no exercício exaustivo e, na recuperação só com água, o que custa a voltar. Tecla 3 abre a fibra em 3D. O desenho é didático; as proporções por compartimento não estão no resumo de Nielsen.",
+  "pergunta": "Por que um estoque pequeno, colado às miofibrilas, poderia importar mais que o grande, embaixo da membrana?",
+  "transicao": "Esse pequeno estoque parece conversar com o cálcio que dispara a contração."
+ },
+ "66": {
+  "minutos": 3,
+  "mensagem": "Ørtenblad 2011, 10 esquiadores de elite, ~1 h de prova: glicogênio do braço a 31% e liberação de Ca²⁺ do retículo a 85%; com 4 h de carboidrato, 59% e cálcio normal; só com água, 29% e 77%, normalizando só após mais 18 h com carboidrato. Na perna, glicogênio a 71% e cálcio sem mudança. Gejl 2014 (14 triatletas) replicou: 32% e 86%, mas r = 0,30, ou seja, o glicogênio explica ~9% da variação (conta nossa). Medida in vitro, em vesículas do retículo. A revisão de 2013 do próprio grupo: causa e efeito ainda não estabelecidos.",
+  "pergunta": "O que você precisaria ver num estudo para aceitar que o glicogênio causa a queda do cálcio?",
+  "transicao": "O músculo não é o único tanque que acaba. Há um segundo, menor, que segura o sangue."
+ },
+ "67": {
+  "minutos": 3,
+  "mensagem": "Coyle 1986, 7 ciclistas a 71% do VO₂máx, cruzado com placebo: fadiga em 3,02 h com glicose a 2,5 mM; com carboidrato, glicemia de 4,2–5,2 mM e fadiga em 4,02 h. O uso de glicogênio muscular foi igual nas 3 primeiras horas; a hora extra veio do sangue. Coyle não mediu o fígado; Gonzalez 2015 mediu por ressonância (14 ciclistas, 3 h, 102 g/h): fígado 325 → 345 mmol/L com glicose, músculo 101 → 60; com água (n = 4), fígado 454 → 283. Meta-análise de Rothschild 2026 (31 estudos): o carboidrato na prova poupa só ~24 mmol/kg de músculo seco (SMD −0,16). Níveis dos tanques ilustrativos.",
+  "pergunta": "Se o carboidrato na prova pouco poupa o músculo, por que ele adia a fadiga?",
+  "transicao": "Fora do laboratório, o que acontece quando os dois tanques acabam tem nome: o muro."
+ },
+ "68": {
+  "minutos": 3,
+  "mensagem": "Volta da Marina (caso fictício): o ritmo planejado se mantém até o km 30 e desaba no 32. Smyth 2021, dados de ritmo de quase 2 milhões de maratonistas: 28% dos homens e 17% das mulheres bateram no muro (OR 1,43; N = 1.928.813); quem bate fica ~40% mais lento por ~10 km, e o risco é maior perto do ano de recorde pessoal, quando se arrisca o ritmo. Limite: o muro foi inferido pelo ritmo; o estudo não mediu glicogênio. A diferença entre sexos bate com mulheres usando mais gordura (Tarnopolsky 1990), mas é correlação.",
+  "pergunta": "O muro da Marina foi falta de glicogênio, de ritmo mal escolhido ou dos dois?",
+  "transicao": "Até aqui o glicogênio foi combustível. Agora ele vira mensagem."
+ },
+ "69": {
+  "minutos": 3,
+  "mensagem": "Bartlett 2013, 8 homens ativos, corrida intervalada com glicogênio alto (467) × baixo (103 mmol/kg dw): com o tanque baixo, ACC (leitura da AMPK) 2,9× × 1,4× e p53 2,6× × 0,9×. Mas o PGC-1α subiu ~3× nos dois casos. Hansen 2005 fez o primeiro train low no modelo de uma perna, o mesmo desenho de Bergström. Impey 2018 contou 11 estudos: sinalização aumentou em 73%, desempenho melhorou em 37% (63% sem mudança). Os pontos '8 e 4 de 11' são nosso arredondamento.",
+  "pergunta": "Você prescreveria treino com pouco glicogênio a um atleta, sabendo do 73% × 37%? Em que sessão?",
+  "transicao": "Antes de seguir, a frase que resume o ato."
+ },
+ "70": {
+  "minutos": 1,
+  "mensagem": "Fecho do ato: o tanque cheio não garante desempenho (Hawley 1997: sem benefício em provas de menos de 90 min; Burke 2000: com carboidrato durante a prova, a carga não mudou o contrarrelógio de 100 km), mas o tanque vazio, no músculo ou no fígado, derruba o ritmo e o comando. O resto da aula é sobre quando e quanto encher.",
+  "pergunta": "Em uma palavra no chat: qual tanque a sua conduta costuma esquecer, músculo ou fígado?",
+  "transicao": "Então, como encher o tanque antes da largada: uma semana ou um dia?"
+ }
+}

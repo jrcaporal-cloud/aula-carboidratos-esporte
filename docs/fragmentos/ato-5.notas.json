@@ -1,0 +1,50 @@
+{
+  "80": {
+    "minutos": 3,
+    "mensagem": "O regime clássico de carga (conhecido como dieta escandinava) esvaziava o tanque com 3 dias quase sem carboidrato antes de 3 dias de carga. Sherman e Costill, em 1981, testaram em corredores treinados, num cruzado de 3 regimes: com depleção, 207 mmol/kg; com 3 dias de dieta mista no lugar, 203; só dieta mista, 159. A fase de depleção não acrescenta nada: o que enche é a carga. E na corrida de 20,9 km (cerca de 1h20) nenhum regime mudou o tempo: quem começa mais cheio também gasta mais por km (5,0–5,1 × 3,1 mmol/kg/km).",
+    "pergunta": "Alguém aqui ainda vê atleta fazendo a fase de depleção antes da prova? Respondam no chat: sim ou não.",
+    "transicao": "Se esvaziar não precisa, quanto tempo de carga precisa? Talvez um dia só."
+  },
+  "81": {
+    "minutos": 3,
+    "mensagem": "Bussau 2002 deu 10 g/kg/dia de carboidrato de alto IG a 8 homens treinados e parados: o glicogênio foi de 95 para 180 mmol/kg (peso úmido) em 24 h e não subiu mais nos dias 2 e 3. Fairchild 2002, com 7 atletas, fez 3 minutos de esforço quase máximo antes e o mesmo dia de carga: 109 para 198. Solem 2025 (meta-análise, 30 estudos, 319 pessoas, só 48 mulheres) mostra que a supercompensação é maior depois do ciclismo (+270 mmol/kg de peso seco) que depois da corrida (+157). Atenção à unidade: peso seco é ~4,2 vezes o úmido, não compare os números.",
+    "pergunta": "O corredor da turma: por que a corrida rende menos supercompensação que o ciclismo? Palpites no chat.",
+    "transicao": "Encher o tanque é fácil. A pergunta que importa: o tanque mais cheio vira tempo menor?"
+  },
+  "82": {
+    "minutos": 3,
+    "mensagem": "Abaixo de ~90 min a carga não mudou o tempo: Sherman 1981 nos 20,9 km e McLay 2007, com 9 mulheres, no contrarrelógio de 16 km (26,10 × 26,16 min). Acima de ~90 min, a revisão narrativa de Hawley 1997 estima 2–3% no contrarrelógio; os famosos 20% são de tempo até a exaustão. Burke 2000 é o teste mais duro: ECR cruzado com placebo, 7 ciclistas, 100 km. O glicogênio subiu (572 × 485 mmol/kg seco) e o tempo não (147,5 × 149,1 min, P = 0,4). Mas o controle já comia 6 g/kg e todos tomaram 1 g/kg/h de CHO durante. Com n = 7 o estudo não tem poder para ver 1–2%.",
+    "pergunta": "Se o seu atleta já come bem e toma carboidrato durante a prova, a carga ainda vale o desconforto? Sim, não ou depende, no chat.",
+    "transicao": "Esses estudos são quase só de homens. Por muito tempo se disse que mulher nem carrega."
+  },
+  "83": {
+    "minutos": 3,
+    "mensagem": "Tarnopolsky 1995 subiu a dieta para 75% da energia em carboidrato por 4 dias: homens +41% de glicogênio, mulheres 0% (7 homens, 8 mulheres). O problema era a prescrição em %: 75% de uma energia menor dá menos gramas por quilo. James 2001 deu 12 g/kg de massa magra por dia por 3 dias: mulheres de 108 para 193 (pós-menstrual) e de 111 para 202 (pré-menstrual), homens de 109 para 183. O próprio Tarnopolsky refez em 2001 (cruzado, 6 + 6): as mulheres só carregaram quando a energia subiu ~34%. Lição clínica: prescreva em g/kg, e atleta com baixa disponibilidade de energia não carrega.",
+    "pergunta": "Quantos de vocês ainda prescrevem carboidrato em % do VET? Respondam no chat, sem julgamento.",
+    "transicao": "Tanque cheio na véspera. E nas horas antes da largada, o que a refeição ainda faz?"
+  },
+  "84": {
+    "minutos": 3,
+    "mensagem": "Coyle 1985 (cruzado, n = 7): a refeição 4 h antes aumentou o glicogênio muscular em 42% na largada, contra 16 h de jejum; o estudo não mediu desempenho. Sherman 1989 testou 0, 45, 156 e 312 g 4 h antes: só 312 g melhorou o desempenho, 15% contra placebo (o n não consta no abstract; 312 g dá ~4,5 g/kg num ciclista de 70 kg, cálculo do dossiê). Schabort 1999 (n = 7): 100 g no café 3 h antes, 136 × 109 min até a fadiga, com glicogênio muscular igual, então o candidato é o fígado, que o jejum da noite esvazia. Aird 2018 (46 estudos): comer antes ajuda o esforço prolongado (P = 0,012), não o curto (P = 0,687).",
+    "pergunta": "Seu atleta treina às 6h. Ele deve comer antes? Depende de quê? Escrevam no chat.",
+    "transicao": "E se a refeição cair na última hora antes da largada? Aí entra um fantasma de 1979."
+  },
+  "85": {
+    "minutos": 3,
+    "mensagem": "Foster 1979 deu 75 g de glicose 30–45 min antes a 8 estudantes não treinados: 19% menos tempo até a exaustão (53,2 para 43,2 min). Daí veio décadas de não coma na última hora. Moseley 2003 (cruzado, 8 ciclistas): 75 g de glicose 15, 45 ou 75 min antes. A glicemia de largada foi 6,6, 4,5 e 3,7 mmol/L, as diferenças sumiram em 10 min de exercício, 2, 3 e 5 tiveram glicemia < 3,5 sem relação com o desempenho, e a potência foi 268, 269 e 276 W. A forma das curvas no slide é desenho. O rebote existe (6 de 19, 32%, em Kuipers 1999), mas a revisão de 2010 chamou o conselho de evitar CHO na última hora de infundado. Quem sente sintomas testa no treino.",
+    "pergunta": "Algum atleta de vocês jura que passa mal se come 1 h antes? Contem no chat.",
+    "transicao": "Se o horário não importa, e o tipo de carboidrato? Lentilha ou batata?"
+  },
+  "86": {
+    "minutos": 2,
+    "mensagem": "Thomas 1991 (cruzado, n = 8, tempo até a exaustão): lentilha 1 h antes deu 20 min a mais que batata. Virou o pré-treino de baixo IG. Burdon 2017 juntou 19 estudos cruzados (188 participantes, 91% homens): nenhum efeito agrupado significativo, e nenhum modificador (duração, horário, carga glicêmica, aptidão) mudou isso. Com CHO durante, os resultados conflitam. O IG da refeição pré se escolhe pelo conforto gastrointestinal e pela preferência.",
+    "pergunta": "Batata-doce antes do treino: hábito ou evidência? Uma palavra no chat.",
+    "transicao": "Juntando tudo: o plano da Marina para os dias antes da maratona."
+  },
+  "87": {
+    "minutos": 3,
+    "mensagem": "Marina é fictícia, 58 kg. Na última maratona, a carga foi um prato de 450 g de macarrão à bolonhesa (101 g de CHO, 1,7 g/kg pela TACO). A carga pede ~10 g/kg por dia (Bussau 2002; ISSN: 8–12 g/kg/d) por 1 a 2 dias, com o treino reduzido: 580 g por dia, cálculo. Em comida, o cardápio do slide soma ~578 g (arroz, macarrão, pão, banana, tapioca, suco, mel, batata). No dia da prova, café 3 h antes com ~100 g (pão francês, mel, banana; 1,7 g/kg), a dose de Schabort 1999. O resto vem durante a prova, no Ato VI.",
+    "pergunta": "Olhando o cardápio de 578 g: o que vocês trocariam para caber no intestino da Marina na véspera?",
+    "transicao": "Ela largou com o tanque cheio. Agora: quanto carboidrato por hora o intestino deixa passar durante a prova?"
+  }
+}

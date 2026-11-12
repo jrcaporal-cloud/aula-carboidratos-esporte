@@ -1,0 +1,62 @@
+{
+  "40": {
+    "minutos": 3,
+    "mensagem": "A glicose só entra na fibra pelo GLUT4, e o exercício aumenta a captação em até 50× (revisão de Sylow 2017). Lund 1995, em sóleo de rato isolado: a wortmanina, que bloqueia a PI3K, derrubou o transporte por insulina de 8,8 para 1,4 µmol·mL⁻¹·h⁻¹ e não mexeu no da contração (4,4 × 4,1). Num segundo lote do mesmo estudo, as duas vias juntas somaram 11,5 contra 5,6 (só contração) e 9,0 (só insulina). A via da contração passa por Ca²⁺, AMPK e Rac1, mas qual sinal é indispensável segue em debate: em camundongo, Rac1 pesou e α2-AMPK não (Sylow 2017), enquanto o knockout β1β2 precisou da AMPK (O'Neill 2011). Mikines 1988 (n = 7, clamps após 60 min a 150 W): Km da insulina 52 → 40 µU/mL e sensibilidade elevada por ~48 h, ausente em 5 dias (n = 3). Richter 1989 (uma perna, n = 6): o efeito é local, só na coxa que treinou, comparada à que ficou parada. Tecla 3 abre a fibra com o glicogênio em 3D.",
+    "pergunta": "Se a sensibilidade dura ~48 h, para quem a pressa de comer logo após o treino ainda faz diferença?",
+    "transicao": "A glicose entrou na fibra. Agora vamos ver o que ela vira lá dentro."
+  },
+  "42": {
+    "minutos": 3,
+    "mensagem": "A glicólise é uma escada: os primeiros degraus gastam ATP, a PFK é o portão, ativada por ADP, AMP e Pi (Hearris 2018). O saldo é de 2 ATP por glicose, rápido e sem oxigênio (estequiometria, rotulada como cálculo). No fim, o piruvato tem duas saídas: PDH e mitocôndria (o total de ~30–32 ATP por glicose é cálculo pelo P/O de Hinkle 2005, não dado lido) ou lactato, que devolve o NAD⁺ e se forma mesmo com oxigênio (Brooks 2018).",
+    "pergunta": "Quem já ouviu, ou ensinou, que lactato é sinal de falta de oxigênio?",
+    "transicao": "Se o lactato não é lixo, para onde ele vai?"
+  },
+  "43": {
+    "minutos": 3,
+    "mensagem": "Brooks 2018: o lactato se forma continuamente e é combustível, principal precursor da gliconeogênese e sinalizador; sai da fibra rápida e é queimado na fibra lenta e no coração, ou vira glicose no fígado. Hui 2017, com ¹³C em camundongos em repouso: o fluxo circulatório do lactato supera o da glicose em 1,1× alimentado e 2,5× em jejum, e em jejum a glicose alimenta o Krebs dos tecidos (exceto cérebro) principalmente via lactato. É dado em animal: a ideia vale, os números não se transferem para o atleta.",
+    "pergunta": "O que muda na leitura de um teste de lactato se ele é moeda e não resíduo?",
+    "transicao": "Glicose, glicogênio, lactato, gordura: quem decide qual combustível paga a conta em cada ritmo?"
+  },
+  "44": {
+    "minutos": 3,
+    "mensagem": "O cruzamento de Brooks e Mercier 1994: a intensidade empurra para o carboidrato (glicogenólise, fibras rápidas, simpático) e o treino empurra para a gordura. Romijn 1993 (n = 5): AGL do sangue domina a 25%, TG intramuscular e glicogênio entram nas intensidades maiores. As áreas do gráfico são ilustrativas; o dado medido é o de van Loon 2001 (n = 8): a gordura sobe a 32 kJ/min a 55% Wmáx e cai a 19 a 75%. Use o slider ao vivo se a turma pedir uma intensidade.",
+    "pergunta": "Em que intensidade o seu atleta faz a maior parte do volume da semana?",
+    "transicao": "Por que a gordura não só perde espaço, mas trava, quando a intensidade sobe?"
+  },
+  "45": {
+    "minutos": 3,
+    "mensagem": "Van Loon 2001: de 55% para 75% Wmáx, a PDH ativa sobe, o pool de carnitina fica acetilado e a carnitina livre cai; a gordura oxidada cai de 32 para 19 kJ/min. A CPT-I não foi medida, então o mecanismo é inferido. Howlett 1998 (n = 7 não treinados): PDH ativa 0,53 em repouso; 1,60, 2,77 e 3,33 mmol·kg ww⁻¹·min⁻¹ a 35, 65 e 90% no 1º minuto. Já a fração da fosforilase a não sobe (21,4–29,6%) e cai para 15,3% aos 10 min a 90%: o fluxo é ajustado por Pi e AMP.",
+    "pergunta": "Se a carnitina livre é o gargalo, suplementar carnitina resolveria? O que precisaria ser medido?",
+    "transicao": "Queimar gordura no alto é difícil. E, mesmo quando dá, sai mais caro em oxigênio."
+  },
+  "46": {
+    "minutos": 3,
+    "mensagem": "Um litro de O₂ rende ~21,1 kJ com carboidrato e ~19,6 kJ com gordura (Scott 2012, artigo teórico; Plews 2026: 5,05 × 4,69 kcal). Pela conta, 21,1 ÷ 19,6 = 1,077: o motor a gordura precisa de ~7,7% mais oxigênio para o mesmo trabalho. Não confundir energia por O₂ com ATP por O₂ (este não foi confirmado em fonte). No ritmo de prova o O₂ é o limite, e Burke 2017 mostrou em marchadores de elite que a dieta rica em gordura aumentou o custo de O₂ no ritmo de prova.",
+    "pergunta": "Em que tipo de prova 7,7% a mais de oxigênio pesa mais?",
+    "transicao": "O músculo queima glicose do sangue sem parar. Quem garante que ela não acaba?"
+  },
+  "47": {
+    "minutos": 3,
+    "mensagem": "Circulam só ~4 g de glicose no sangue de uma pessoa de 70 kg (Wasserman 2009): o fígado precisa repor o tempo todo. Marliss 2002 (revisão): abaixo de 60% do VO₂máx, a razão glucagon/insulina no portal faz a produção hepática subir até 2×; acima de 80%, as catecolaminas sobem a produção 7–8× enquanto a utilização sobe 3–4×, e a glicemia sobe. Na exaustão, a insulina sobe por 40–60 min para corrigir. Glicemia alta logo após um tiro é fisiologia; no diabetes tipo 1 isso vira problema (Ato IX).",
+    "pergunta": "Quem usa CGM com atleta já viu a glicemia subir depois de um treino intervalado?",
+    "transicao": "E quando o fígado não dá conta? A primeira pista veio de uma maratona, há um século."
+  },
+  "48": {
+    "minutos": 2,
+    "mensagem": "Em 1923, Levine, Gordon e Derick mediram a glicemia de maratonistas de Boston na chegada e acharam hipoglicemia (< 4 mmol/L). O artigo original (JAMA 1924) não foi lido: o dado vem da revisão de Hearris 2018, por isso o selo 'via revisão'. A observação abriu a hipótese de que a fadiga tardia tem um componente de glicose no sangue, testada em 1939 (Copenhague) e 1987 (Austin).",
+    "pergunta": "Uma observação na linha de chegada prova causa? O que faltava nesse desenho?",
+    "transicao": "Para provar, alguém precisava devolver a glicose ao atleta exausto e ver o que acontecia."
+  },
+  "49": {
+    "minutos": 3,
+    "mensagem": "Coggan e Coyle 1987 (cruzado, n = 7, não cego): a 70% do VO₂máx até a exaustão (~170 min), glicose 5,0 → 3,1 mM; após 20 min de repouso, placebo rendeu 10 min a mais, carboidrato oral 26 e glicose IV (1,13 g/min, clamp euglicêmico) 43, com o glicogênio do vasto lateral parado em ~40 mmol/kg. Christensen e Hansen 1939: 200 g de glicose em 2 atletas exaustos, cerca de mais 1 h (segundo Noakes 2022; original não lido). Nybo 2003 (cruzado, n = 8): com placebo a glicemia caiu a 3,0 mM, a ativação central caiu e a força sustentada foi 197 N contra 222 com glicose e 248 antes.",
+    "pergunta": "Se a glicose na veia resgata sem mexer no glicogênio, a fadiga era do músculo ou do sangue? Pode ser dos dois?",
+    "transicao": "Fechando o motor numa frase."
+  },
+  "51": {
+    "minutos": 1,
+    "mensagem": "Resumo do ato: a intensidade decide o combustível (cruzamento, PDH, carnitina, preço do O₂); o treino desloca a fronteira, mas não apaga a regra. O fígado defende a glicemia e, quando falha, a fadiga vem também pelo sangue e pelo cérebro.",
+    "pergunta": "Que parte deste ato muda a forma como você prescreve o treino da semana?",
+    "transicao": "Agora, o tanque: quanto glicogênio cabe, onde ele fica e quando ele acaba."
+  }
+}

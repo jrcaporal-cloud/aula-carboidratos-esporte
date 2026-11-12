@@ -1,0 +1,44 @@
+{
+  "120": {
+    "minutos": 3,
+    "mensagem": "Ivy 1988, cruzado com 12 ciclistas: 2 g/kg de carboidrato logo após o exercício ou 2 h depois. Nas primeiras 2 h a ressíntese foi de 7,7 contra 2,5 µmol/g/h; quando o carboidrato adiado chegou, a taxa subiu para 4,1, ainda 45% abaixo (não 47%, como repetem). Parkin 1997 (cruzado, n = 6) atrasou as refeições em 2 h e não achou diferença às 8 nem às 24 h. A janela existe, mas só pesa quando a próxima sessão vem cedo.",
+    "pergunta": "Quantos de vocês já orientaram 'comer em até 30 minutos' para um atleta que só treina de novo no dia seguinte? Respondam no chat: sim ou não.",
+    "transicao": "E quando o intervalo é curto de verdade, quanto isso vale em minutos de exercício?"
+  },
+  "121": {
+    "minutos": 3,
+    "mensagem": "Alghannam 2016 (medidas repetidas, n = 10): corrida até a exaustão, 4 h de recuperação com 1,2 ou 0,3 g/kg/h a cada 30 min e nova corrida. O glicogênio no fim da recuperação foi 269 contra 157 mmol/kg ps, e a segunda corrida durou 80 contra 48 min. Na exaustão, os dois tinham o mesmo glicogênio (~72–78): o carboidrato só adiou a chegada ao piso. As linhas do gráfico são retas entre duas medidas reais. A meta-análise de Craven 2021 dá +23,5 mmol/kg/h com CHO contra água (10 ensaios, n = 86); a ISSN fala em 1,2 g/kg/h para menos de 4 h.",
+    "pergunta": "Para um atleta de 70 kg com 4 h entre duas sessões, quantos gramas por hora isso dá? Façam a conta no chat.",
+    "transicao": "E se em vez de mais carboidrato a gente colocar proteína no shake?"
+  },
+  "122": {
+    "minutos": 3,
+    "mensagem": "Van Loon 2000 (cruzado, n = 8): com 0,8 g/kg/h de CHO, somar 0,4 g/kg/h de proteína levou a ressíntese de 16,6 para 35,4 µmol/g/h; mas 1,2 g/kg/h só de CHO deu 44,8. Margolis 2021 (20 estudos): quando a proteína somava calorias, g = 0,26 (0,04 a 0,49); trocando CHO por proteína com a mesma energia, g = −0,05. Craven 2021 (19 ensaios, n = 160): +0,4 mmol/kg/h, IC de −2,7 a 3,4. A proteína resgata dose baixa de CHO; não acelera dose suficiente.",
+    "pergunta": "No seu consultório, o shake pós-treino com proteína costuma substituir ou somar ao carboidrato? Escrevam: substitui ou soma.",
+    "transicao": "Se a recuperação é de um dia inteiro, o que ainda importa além do total?"
+  },
+  "123": {
+    "minutos": 3,
+    "mensagem": "Keizer 1987 (n = 8): sólido ou líquido deu o mesmo glicogênio às 5 h (198 × 192). Burke 1996 (n = 8 triatletas, 10 g/kg): 4 refeições ou 16 lanches, 74,1 × 94,5 mmol/kg, sem diferença significativa. Burke 1993 (n = 5): com 10 g/kg em 24 h, alto IG aumentou 106 contra 71,5 do baixo IG (P = 0,02), o contrário do que se faz no pré-treino. Burke 2003: o álcool no lugar do CHO deixou 68 contra 82 às 24 h; somado à dieta, 85, igual. Os blocos são pictogramas; os números são dos estudos.",
+    "pergunta": "O que vocês acham que mais atrapalha a recuperação na vida real do atleta: o horário, a forma do alimento ou a festa depois do jogo?",
+    "transicao": "Até aqui falamos do músculo. E o outro tanque, o fígado?"
+  },
+  "124": {
+    "minutos": 3,
+    "mensagem": "Fuchs 2016 (cruzado, n = 15, ¹³C-MRS): 1,5 g/kg/h de sacarose ou glicose por 5 h. O fígado foi de 53,6 para 86,8 g com sacarose e de 49,3 para 65,7 g com glicose, +3,4 g/h (IC 1,6–5,1); o músculo foi igual (85 → 140 × 86 → 136 mmol/L, P = 0,673). Décombaz 2011 (duplo-cego, n = 10): com frutose ou galactose junto da maltodextrina, 8,1 e 8,6 contra 3,7 g/h no fígado; ali não se mediu músculo. A síntese de Gonzalez 2017: músculo pede quantidade, fígado pede frutose. Os contornos são desenho; a escala é proporcional aos números.",
+    "pergunta": "Leite tem lactose, que vira glicose e galactose. Alguém já usou leite ou achocolatado na recuperação pensando no fígado?",
+    "transicao": "E se a gente der muito carboidrato, 10 g/kg, quanto o músculo recupera em 12 h?"
+  },
+  "125": {
+    "minutos": 3,
+    "mensagem": "Fuchs 2025 (cruzado, n = 12 ciclistas de elite, ¹³C-MRS conferido por biópsia): o exercício derrubou o músculo de 159 para 56 mmol/L (−64%) e o fígado de 166 para 110 (−34%); em jejum nada voltou. Com 10 g/kg em 12 h (sacarose a 1,2 g/kg/h nas 6 h iniciais), o fígado chegou a 236 às 6 h, 142% do pré, e a 258 às 12 h. O músculo ficou em 55% às 6 h e 69% às 12 h. Só homens e só 12 h. Para quem compete duas vezes no mesmo dia, a segunda prova começa com o músculo devendo.",
+    "pergunta": "Que esportes da sua prática têm duas provas ou jogos no mesmo dia? Listem no chat.",
+    "transicao": "Agora, um esporte em que o intervalo é de dias, não de horas: o futebol da Lara."
+  },
+  "126": {
+    "minutos": 3,
+    "mensagem": "Lara é caso fictício; os números são reais e de homens. Krustrup 2011 (observacional, n = 7 de alto nível): glicogênio 57% abaixo do controle no fim do jogo e ainda 27% abaixo 24 h depois, mesmo com dieta otimizada. Anderson 2017 (água duplamente marcada, n = 6, Premier League): 6,4 g/kg no dia de jogo contra 4,2 em dia de treino, mas abaixo da diretriz na véspera e na recuperação. No peso da Lara, 60 kg, isso seria 384 g e 252 g (cálculo). O tanque do dia 4 fica com interrogação: o resumo do estudo não traz o valor de 48 e 72 h.",
+    "pergunta": "Lara diz que carboidrato a deixa inchada. Como vocês abordariam isso na consulta sem perder a meta em g/kg?",
+    "transicao": "Fechamos a recuperação. No próximo ato, a pergunta se inverte: e se treinar com o tanque baixo for de propósito?"
+  }
+}

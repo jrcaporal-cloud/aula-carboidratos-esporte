@@ -1,0 +1,102 @@
+[
+ {
+  "id": 140,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "A Perna que Treinou com Fome",
+  "subtitle": "E se o mesmo corpo pudesse ser o grupo controle de si mesmo?",
+  "content": "[[COMP:HansenLegsSim]]<h4>Fontes</h4><ul><li>Hansen AK, Fischer CP, Plomgaard P, Andersen JL, Saltin B, Pedersen BK. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93-99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — intraindivíduo, 7 homens não treinados, extensão de joelho, 10 semanas; perna LOW 2 sessões a cada 2 dias (2ª com glicogênio baixo) × perna HIGH 1 por dia, mesma carga; carga máxima subiu igual; tempo até a exaustão a 90% subiu \"acentuadamente mais\" na LOW (o resumo não traz o número); HAD e glicogênio de repouso só significativos na LOW. Níveis das coxas no desenho: ilustrativos.</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 141,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "Do Músculo ao Cronômetro",
+  "subtitle": "O sinal molecular do train low vira desempenho?",
+  "content": "[[COMP:FunnelSim]]<h4>Fontes</h4><ul><li>Impey SG, Hearris MA, Hammond KM, Bartlett JD, Louis J, Close GL, Morton JP. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — revisão narrativa com contagem: sinalização maior em 73% de 11 estudos, expressão gênica em 75% de 12, enzimas oxidativas em 78% de 9; desempenho melhor em 37% de 11 (63% sem mudança).</li><li>Gejl KD, Nybo L. Performance effects of periodized carbohydrate restriction in endurance trained athletes – a systematic review and meta-analysis. J Int Soc Sports Nutr 2021;18(1):37. DOI 10.1186/s12970-021-00435-3 · PMID 34001184 — 9 estudos (11–26 atletas, 1–4 semanas, VO₂máx ≥ 60/55): SMD 0,17 [−0,15; 0,49], P = 0,29, efeito fixo.</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 142,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "Sleep Low: o Ganho que Sumiu",
+  "subtitle": "Mesmo carboidrato no dia, outro horário: o ganho de 3% se sustenta?",
+  "content": "[[COMP:SleepLowSim]]<h4>Fontes</h4><ul><li>Marquet LA, Brisswalter J, Louis J, et al. Enhanced endurance performance by periodization of carbohydrate intake: \"sleep low\" strategy. Med Sci Sports Exerc 2016;48(4):663-672. DOI 10.1249/mss.0000000000000823 · PMID 26741119 — ECR paralelo não cego, 21 triatletas (11 × 10), 3 semanas, 6 g/kg/d nos dois: 10 km −2,9% × −0,1%; massa gorda −8,5% × −2,6%.</li><li>Gejl KD, Thams LB, Hansen M, et al. No superior adaptations to carbohydrate periodization in elite endurance athletes. Med Sci Sports Exerc 2017;49(12):2486-2497. DOI 10.1249/mss.0000000000001377 · PMID 28723843 — 26 homens de elite, 4 semanas: VO₂máx e contrarrelógio +5% nos dois grupos; glicogênio e CS sem diferença.</li><li>Riis S, Møller AB, Dollerup O, et al. Acute and sustained effects of a periodized carbohydrate intake using the sleep-low model in endurance-trained males. Scand J Med Sci Sports 2019;29(12):1866-1880. DOI 10.1111/sms.13541 · PMID 31430404 — 13 treinados, 4 semanas: oxidação de gordura aguda maior, sem efeito sustentado; contrarrelógio melhorou igual.</li><li>Hulston CJ, Venables MC, Mann CH, et al. Training with low muscle glycogen enhances fat metabolism in well-trained cyclists. Med Sci Sports Exerc 2010;42(11):2046-2055. DOI 10.1249/mss.0b013e3181dd5070 · PMID 20351596 — 14 ciclistas, 3 semanas: potência no HIT 297 × 323 W (~8% menor); contrarrelógio ~10% melhor nos dois.</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 143,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "Combustível para o Trabalho",
+  "subtitle": "Carboidrato alto onde a sessão exige, baixo só onde a qualidade não manda",
+  "content": "[[COMP:FuelPlannerSim]]<h4>Fontes</h4><ul><li>Impey SG, Hearris MA, Hammond KM, Bartlett JD, Louis J, Close GL, Morton JP. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — conceito \"fuel for the work required\"; train low em 30–50% das sessões nos estudos.</li><li>Stellingwerff T, Morton JP, Burke LM. A framework for periodized nutrition for athletics. Int J Sport Nutr Exerc Metab 2019;29(2):141-151. DOI 10.1123/ijsnem.2018-0305 · PMID 30632439 — periodização macro, meso e micro do carboidrato.</li><li>Areta JL, Hopkins WG. Skeletal muscle glycogen content at rest and during endurance exercise in humans: a meta-analysis. Sports Med 2018;48(9):2091-2102. DOI 10.1007/s40279-018-0941-1 · PMID 29923148 — 462 mmol/kg ps em repouso; +102 com CHO alto; −253 com CHO baixo (a régua ~560/~460/~210 é cálculo). A semana do slide é ilustrativa.</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 144,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "A Promessa da Gordura",
+  "subtitle": "Queimar o dobro de gordura é o mesmo que correr mais rápido?",
+  "content": "[[COMP:FatPromiseSim]]<h4>Fontes</h4><ul><li>Phinney SD, Bistrian BR, Evans WJ, et al. The human metabolic response to chronic ketosis without caloric restriction: preservation of submaximal exercise capability with reduced carbohydrate oxidation. Metabolism 1983;32(8):769-776. DOI 10.1016/0026-0495(83)90106-3 · PMID 6865776 — pré-pós sem controle, 5 ciclistas, 4 semanas cetogênica: TTE a 62–64% do VO₂máx 147 → 151 min.</li><li>Burke LM. Ketogenic low-CHO, high-fat diet: the future of elite endurance sport? J Physiol 2021;599(3):819-843. DOI 10.1113/jp278928 · PMID 32358802 — relata que a média de Phinney 1983 foi puxada por um ciclista (via revisão).</li><li>Volek JS, Freidenreich DJ, Saenz C, et al. Metabolic characteristics of keto-adapted ultra-endurance runners. Metabolism 2016;65(3):100-110. DOI 10.1016/j.metabol.2015.10.028 · PMID 26892521 — transversal, 10 × 10 ultramaratonistas: pico de gordura 1,54 × 0,67 g/min; sem medida de desempenho.</li><li>Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/jp273230 · PMID 28012184 — LCHF: 1,57 g/min de gordura após 3 semanas.</li><li>Burke LM, Whitfield J, Heikura IA, et al. Adaptation to a low carbohydrate high fat diet is rapid but impairs endurance exercise metabolism and performance despite enhanced glycogen availability. J Physiol 2021;599(3):771-790. DOI 10.1113/jp280221 · PMID 32697366 — ~1,43 g/min após 5–6 dias.</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 145,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "Projeto Supernova",
+  "subtitle": "A gordura queimou como nunca. O marchador ficou mais rápido?",
+  "content": "[[COMP:SupernovaSim]]<h4>Fontes</h4><ul><li>Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/jp273230 · PMID 28012184 — marchadores de elite no AIS (nov/2015 e jan/2016), comida 100% fornecida, 3 semanas de treino intensificado, alocação em parte por preferência; HCHO n = 9 (8,6 g/kg/d), PCHO n = 10, LCHF n = 10 (< 50 g/d, 78% gordura); 10 km: +6,6% (IC90% 4,1–9,1), +5,3% (3,4–7,2), −1,6% (−8,5 a 5,3); maior custo de O₂ no ritmo de prova.</li><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 — 21,1 × 19,6 kJ por litro de O₂ (os ~7,7% são cálculo; ver o slide O Preço do Oxigênio).</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 146,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "A Crise de Confiança Evitada",
+  "subtitle": "Quando o próprio grupo repete o estudo, o resultado se mantém?",
+  "content": "[[COMP:ReplicationSim]]<h4>Fontes</h4><ul><li>Burke LM, Sharma AP, Heikura IA, et al. Crisis of confidence averted: impairment of exercise economy and performance in elite race walkers by ketogenic low carbohydrate, high fat (LCHF) diet is reproducible. PLoS One 2020;15(6):e0234027. DOI 10.1371/journal.pone.0234027 · PMID 32497061 — replicação em jan–fev/2017 (HCHO 8, PCHO 8, LCHF 10): 10 km HCHO +4,8% (134 s), PCHO +2,2% (61 s; p = 0,09), LCHF −2,3% (86 s mais lento); sem rebote nos 20 km após restaurar o CHO.</li><li>Burke LM, Whitfield J, Heikura IA, et al. Adaptation to a low carbohydrate high fat diet is rapid but impairs endurance exercise metabolism and performance despite enhanced glycogen availability. J Physiol 2021;599(3):771-790. DOI 10.1113/jp280221 · PMID 32697366 — 13 marchadores de classe mundial, 5–6 dias: gordura +>200%, VO₂ ~5–8% maior no ritmo de prova; todos do HCHO melhoraram, 6 de 7 do LCHF pioraram.</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 147,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "A Torneira Fechada",
+  "subtitle": "Se o tanque volta a encher, por que o sprint final cai?",
+  "content": "[[COMP:PdhSim]]<h4>Fontes</h4><ul><li>Stellingwerff T, Spriet LL, Watt MJ, et al. Decreased PDH activation and glycogenolysis during exercise following fat adaptation with carbohydrate restoration. Am J Physiol Endocrinol Metab 2006;290(2):E380-8. DOI 10.1152/ajpendo.00268.2005 · PMID 16188909 — cruzado, 7 ciclistas, 5 dias de gordura + 1 de CHO: glicogênio 873 × 868 µmol/g ps; PDH 1,69 × 2,39; glicogenólise no sprint de 1 min 37,3 × 50,5.</li><li>Havemann L, West SJ, Goedecke JH, et al. Fat adaptation followed by carbohydrate loading compromises high-intensity sprint performance. J Appl Physiol 2006;100(1):194-202. DOI 10.1152/japplphysiol.00813.2005 · PMID 16141377 — cruzado simples-cego, 8 ciclistas: 100 km igual, potência menor nos sprints de 1 km (perfil do slide ilustrativo).</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 148,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "Cetonas e Keto: as Meta-análises",
+  "subtitle": "A dieta cetogênica ou a cetona em gole melhoram o desempenho?",
+  "content": "[[COMP:KetoMetaSim]]<h4>Fontes</h4><ul><li>Koerich ACC, Borszcz FK, Thives Mello A, et al. Effects of the ketogenic diet on performance and body composition in athletes and trained adults: a systematic review and Bayesian multivariate multilevel meta-analysis and meta-regression. Crit Rev Food Sci Nutr 2023;63(32):11399-11424. DOI 10.1080/10408398.2022.2090894 · PMID 35757868 — 18 estudos: contrarrelógio −3,3% [−8,5; 1,7], 1RM −5,7% [−14,9; 2,6]; massa gorda −2,4 kg; massa livre de gordura −0,8 kg.</li><li>Valenzuela PL, Morales JS, Castillo-García A, Lucia A. Acute ketone supplementation and exercise performance: a systematic review and meta-analysis of randomized controlled trials. Int J Sports Physiol Perform 2020;15(3):298-308. DOI 10.1123/ijspp.2019-0918 · PMID 32045881 — 13 ECR: g = −0,05 [−0,30; 0,20], P = 0,68.</li><li>Brooks E, Lamothe G, Nagpal TS, et al. Acute ingestion of ketone monoesters and precursors do not enhance endurance exercise performance: a systematic review and meta-analysis. Int J Sport Nutr Exerc Metab 2022;32(3):214-225. DOI 10.1123/ijsnem.2021-0280 · PMID 35042186 — 8 ECR, 80 participantes (77 homens): g = 0,136 [−0,195; 0,467].</li></ul>",
+  "cards": []
+ },
+ {
+  "id": 149,
+  "sectionName": "Ato VIII · Treinar com Pouco",
+  "number": "",
+  "layout": "prose",
+  "title": "O Osso Sente Falta",
+  "subtitle": "Com energia adequada, cortar só o carboidrato mexe no osso?",
+  "content": "[[COMP:BoneSim]]<h4>Fontes</h4><ul><li>Fensham NC, Heikura IA, McKay AKA, et al. Short-term carbohydrate restriction impairs bone formation at rest and during prolonged exercise to a greater degree than low energy availability. J Bone Miner Res 2022;37(10):1915-1925. DOI 10.1002/jbmr.4658 · PMID 35869933 — 28 marchadores de elite, 6 dias: P1NP em jejum −26% (LCHF, d = 3,6) × −14% (baixa energia, d = 1,7); controle inalterado. A reta entre o dia 0 e o 6 é só ligação.</li><li>Heikura IA, Burke LM, Hawley JA, et al. A short-term ketogenic diet impairs markers of bone health in response to exercise. Front Endocrinol 2019;10:880. DOI 10.3389/fendo.2019.00880 · PMID 32038477 — 30 marchadores, energia igual, 3,5 semanas: P1NP e osteocalcina menores, CTX maior; a volta ao CHO normalizou só o CTX.</li><li>Hammond KM, Sale C, Fraser W, et al. Post-exercise carbohydrate and energy availability induce independent effects on skeletal muscle cell signalling and bone turnover: implications for training adaptation. J Physiol 2019;597(18):4779-4796. DOI 10.1113/jp278209 · PMID 31364768 — 9 homens: βCTX menor com CHO alto, independente da energia.</li><li>Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med 2023;57(17):1073-1097. DOI 10.1136/bjsports-2023-106994 · PMID 37752011 — inclui o papel crescente da baixa disponibilidade de carboidrato (limiares numéricos não citados).</li></ul>",
+  "cards": []
+ }
+]

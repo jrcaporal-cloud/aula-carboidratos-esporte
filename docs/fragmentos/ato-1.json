@@ -1,0 +1,52 @@
+[
+  {
+    "id": 10,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Km 32",
+    "subtitle": "Ritmo de relógio até o km 30, queda no 32: o que acabou?",
+    "content": "[[COMP:WallSim]]<h4>Fontes</h4><ul><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — estoques médios de glicogênio: músculo ~500 g (300–700 g) e fígado ~80 g (0–160 g) (Tabela 1, adaptada de Hargreaves 2012).</li><li>Smyth B. How recreational marathon runners hit the wall: a large-scale data analysis of late-race pacing collapse in the marathon. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — 28% dos homens × 17% das mulheres batem no muro (N = 1.928.813); quem bate desacelera ~40% por ~10 km. Observacional: o muro é inferido pelo ritmo, sem medir glicogênio.</li><li>Marina é personagem fictícia; a curva de ritmo e o nível dos tanques são ilustrativos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 11,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Três Papéis de uma Molécula",
+    "subtitle": "A mesma glicose é combustível, sinal e escolha: o fio da aula",
+    "content": "[[COMP:ThreeRolesSim]]<h4>Fontes</h4><ul><li>Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 · PMC3345970 — 1 L de O₂ rende ~21,1 kJ oxidando glicose e ~19,6 kJ oxidando gordura; +7,7% é cálculo nosso (21,1 ÷ 19,6). A tabela primária (Péronnet & Massicotte 1991) não foi lida.</li><li>Impey SG, Hearris MA, Hammond KM, et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031–1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — nos estudos de train low, sinalização aumentada em 73% (de 11) e desempenho melhor em 37% (de 11).</li><li>Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17–27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — faixas diárias 3–5 / 5–7 / 6–10 / 8–12 g/kg/d conforme a carga (lidas em tabela secundária: PMC6950062, PMC6019055).</li><li>Thomas DT, Erdman KA, Burke LM. American College of Sports Medicine Joint Position Statement. Nutrition and Athletic Performance. Med Sci Sports Exerc 2016;48(3):543–568. DOI 10.1249/MSS.0000000000000852 · PMID 26891166 — repete as mesmas faixas diárias.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 12,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "Cinco Atletas, Cinco Tanques",
+    "subtitle": "Cinco esportes, cinco jeitos de esvaziar o mesmo tanque",
+    "content": "[[COMP:CastSim]]<h4>Fontes</h4><ul><li>Casos fictícios criados para a aula (Marina, Diego, Lara, Tiago e Paulo). O nível de cada tanque é ilustrativo: mostra a forma do problema, não uma medida. Os números de cada caso aparecem, com fonte, no ato em que o personagem volta.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 13,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Que a Turma Já Acha",
+    "subtitle": "Oito afirmações para votar agora; as respostas ficam para o fim da aula",
+    "content": "[[COMP:MythVoteSim]]<h4>Fontes</h4><ul><li>Votação da turma no chat da chamada; os votos ficam guardados na sessão do navegador. Os vereditos e as fontes de cada afirmação estão no slide 189 (Ato X).</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 14,
+    "sectionName": "Ato I · A Largada",
+    "number": "",
+    "layout": "prose",
+    "title": "O Mapa da Aula",
+    "subtitle": "Dez atos, um percurso: da largada à decisão no consultório",
+    "content": "[[COMP:CourseMapSim]]<h4>Fontes</h4><ul><li>Estrutura da aula: os 10 atos e a pergunta de cada um (roteiro da aula).</li></ul>",
+    "cards": []
+  }
+]
