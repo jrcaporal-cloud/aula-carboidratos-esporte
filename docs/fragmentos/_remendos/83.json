@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Tarnopolsky MA, Atkinson SA, Phillips SM, MacDougall JD. Carbohydrate loading and metabolism during exercise in men and women. J Appl Physiol 1995;78(4):1360-1368. DOI 10.1152/jappl.1995.78.4.1360 · PMID 7615443 — 7 homens e 8 mulheres; CHO de 55–60% para 75% da energia por 4 dias: glicogênio +41% × 0%; tempo até a exaustão +45% × +5%.",
+   "James AP, Lorraine M, Cullen D, Goodman C, Dawson B, Palmer TN, Fournier PA. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 · PMID 11718281 — 12 g/kg de massa magra/d por 3 dias: mulheres 108 → 193 (pós-menstrual) e 111 → 202 (pré-menstrual); homens 109 → 183 mmol/kg ww; é também a crítica à prescrição em % do estudo de 1995.",
+   "Tarnopolsky MA, Zawada C, Richmond LB, Carter S, Shearer J, Graham T, Phillips SM. Gender differences in carbohydrate loading are related to energy intake. J Appl Physiol 2001;91(1):225-230. DOI 10.1152/jappl.2001.91.1.225 · PMID 11408434 — cruzado, 6 + 6: os homens subiram com CHO e com CHO + ~34% de energia; as mulheres só com CHO + energia.",
+   "As barras de energia do quadro \"75% de quê?\" são ilustrativas."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Tarnopolsky 1995 subiu a dieta para 75% da energia em carboidrato por 4 dias (7 homens, 8 mulheres): homens +41% de glicogênio e +45% no tempo até a exaustão; mulheres 0% e +5%. O problema era a prescrição em %: 75% de uma energia menor dá menos gramas por quilo (as barras de energia são só um desenho da ideia). James 2001 deu 12 g/kg de massa magra por dia por 3 dias: mulheres de 108 para 193 (pós-menstrual) e de 111 para 202 (pré-menstrual), homens de 109 para 183. O próprio Tarnopolsky refez em 2001 (cruzado, 6 + 6): as mulheres só carregaram quando a energia subiu ~34%. Lição clínica: prescreva em g/kg, com energia suficiente; atleta com baixa disponibilidade de energia (REDs) não carrega.",
+  "pergunta": "Quantos de vocês ainda prescrevem carboidrato em % do VET? Respondam no chat, sem julgamento.",
+  "transicao": "Tanque cheio na véspera. E nas horas antes da largada, o que a refeição ainda faz?"
+ }
+}

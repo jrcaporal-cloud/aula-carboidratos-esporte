@@ -1,0 +1,15 @@
+{
+  "slide": {
+    "fontes": [
+      "Coggan AR, Coyle EF. Reversal of fatigue during prolonged exercise by carbohydrate infusion or ingestion. J Appl Physiol 1987;63(6):2388-95. DOI 10.1152/jappl.1987.63.6.2388 · PMID 3325488 — ~170 min; glicose 5,0 → 3,1 mM; placebo 10, oral 26, IV 43 min (1,13 g/min); R 0,87 → 0,81; glicemia 5,1 mM na infusão, ~¾ da oxidação de CHO; glicogênio ~40 mmol/kg inalterado (n = 7, não cego).",
+      "Nybo L. CNS fatigue and prolonged exercise: effect of glucose supplementation. Med Sci Sports Exerc 2003;35(4):589-94. DOI 10.1249/01.MSS.0000058433.85789.66 · PMID 12673141 — força 248 / 222 / 197 N; ativação central menor com placebo (glicemia 3,0 mM; n = 8).",
+      "Nybo L, Møller K, Pedersen BK, Nielsen B, Secher NH. Association between fatigue and failure to preserve cerebral energy turnover during prolonged exercise. Acta Physiol Scand 2003;179(1):67-74. DOI 10.1046/j.1365-201X.2003.01175.x · PMID 12940940 — n = 6: com placebo, captação cerebral de glicose 0,34 → 0,28 µmol/g/min."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "Tríptico músculo × sangue × cérebro. Coggan e Coyle 1987 (cruzado, n = 7, não cego): a 70% do VO₂máx até a exaustão (170 ± 9 min), glicose 5,0 → 3,1 mM e R 0,87 → 0,81. Após 20 min de repouso: placebo 10 ± 1 min, polímero oral (3 g/kg) 26 ± 4 e glicose IV em clamp 43 ± 5 min. Na infusão, glicemia em 5,1 mM, a glicose infundida (1,13 g/min) deu ~¾ da oxidação de carboidrato e o glicogênio do vasto lateral ficou parado em ~40 mmol/kg. Nybo 2003 (cruzado, n = 8): com placebo, glicose a 3,0 mM, ativação central menor e força sustentada 197 N contra 222 com glicose e 248 antes; em outro estudo (n = 6), captação cerebral de glicose 0,34 → 0,28 µmol/g/min. Copenhague 1939 passou para o slide Boston, 1923.",
+    "pergunta": "Se a glicose na veia resgata sem mexer no glicogênio, a fadiga era do músculo ou do sangue? Pode ser dos dois?",
+    "transicao": "Fechando o motor numa frase."
+  }
+}

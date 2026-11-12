@@ -1,0 +1,12 @@
+{
+ "slide": {
+  "fontes": [
+   "Fuchs CJ, Veeraiah P, Hermans WJH, et al. Carbohydrate intake of 10 g/kg body mass rapidly replenishes liver, but not muscle glycogen contents, during 12 h of post-exercise recovery in well-trained cyclists. J Physiol 2025. DOI 10.1113/JP289115 · PMID 40836481 — cruzado, n = 12 ciclistas (VO2pico 67 mL/kg/min, 5,8 W/kg), CHO × jejum; músculo 159 → 56 → 88 (6 h) → 110 mmol/L (12 h), 55% e 69% do pré; fígado 166 → 110 → 236 (6 h, 142%) → 258; em jejum, nada se recuperou; MRS × biópsia r = 0,89, ICC 0,87.",
+   "Keizer HA, Kuipers H, van Kranenburg G, Geurten P. Influence of liquid and solid meals on muscle glycogen resynthesis, plasma fuel hormone response, and maximal physical working capacity. Int J Sports Med 1987;8(2):99-104. DOI 10.1055/s-2008-1025649 · PMID 3298088 — n = 8: reposição muscular completa às 22 h."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Fuchs 2025 (cruzado, n = 12 ciclistas de elite, ¹³C-MRS de ultra-alto campo conferido por biópsia, r = 0,89): o exercício derrubou o músculo de 159 para 56 mmol/L (−64%) e o fígado de 166 para 110 (−34%); no braço em jejum nada voltou em 12 h (o resumo não dá os valores; na tela o tracejado é esquema). Com 10 g/kg em 12 h (sacarose a 1,2 g/kg/h nas 6 h iniciais, depois refeições), o fígado chegou a 236 às 6 h, 142% do pré, e a 258 às 12 h. O músculo ficou em 55% às 6 h e 69% às 12 h: faltam 31% (cálculo). Para duas provas no mesmo dia, a segunda larga com o músculo devendo; num dia inteiro, Keizer 1987 (n = 8) viu reposição completa às 22 h. Só homens e só 12 h."
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Krustrup 2006, observacional com biópsias em 3 amistosos (n = 31, 4ª divisão dinamarquesa): o glicogênio do vasto lateral caiu de 449 para 255 mmol/kg ps, mas 47 ± 7% das fibras terminaram vazias ou quase vazias. A média caiu 43% (cálculo nosso) e esconde as fibras zeradas; o jogo tem 150–250 ações intensas (Bangsbo 2006), que esvaziam fibras específicas. Vigh-Larsen 2022 (outro estudo, n = 18, laboratório) mostra o endereço: nas fibras tipo 2, o glicogênio de dentro das miofibrilas caiu 72% no 1º bloco, contra 45% nas tipo 1. O tiro de 30 m ficou 2,8 ± 0,7% mais lento no fim (+1,6% e +3,6% após os períodos intensos), ~0,8 m num tiro (cálculo); a queda não correlacionou com o glicogênio total.",
+  "pergunta": "Se a média do músculo ainda tem mais da metade do glicogênio, por que o jogador fica lento? Respondam no chat em uma frase.",
+  "transicao": "Se o tanque esvazia no jogo, o carboidrato bebido no jogo muda alguma coisa?"
+ },
+ "slide": {
+  "fontes": [
+   "Krustrup P, Mohr M, Steensberg A, et al. Muscle and blood metabolites during a soccer game: implications for sprint performance. Med Sci Sports Exerc 2006;38(6):1165-1174. DOI 10.1249/01.mss.0000222845.89262.cd · PMID 16775559 — 449 → 255 mmol/kg ps; 47% das fibras vazias ou quase vazias; tiro de 30 m 2,8% mais lento (n = 31, 3 amistosos). Queda da média (−43%) e distância na chegada (~0,8 m): cálculos nossos.",
+   "Vigh-Larsen JF, Ørtenblad N, Andersen OE, et al. Fibre type- and localisation-specific muscle glycogen utilisation during repeated high-intensity intermittent exercise. J Physiol 2022;600(21):4713-4730. DOI 10.1113/jp283225 · PMID 36030498 — 18 homens, 10 × 45 s a ~105% Wmáx: no 1º bloco, glicogênio intramiofibrilar −72% (tipo 2) × −45% (tipo 1); intermiofibrilar −59% × −35% (fibra ampliada do passo 4).",
+   "Bangsbo J, Mohr M, Krustrup P. Physical and metabolic demands of training and match-play in the elite football player. J Sports Sci 2006;24(7):665-674. DOI 10.1080/02640410500482529 · PMID 16766496 — 150–250 ações intensas breves por jogo (revisão)."
+  ]
+ }
+}

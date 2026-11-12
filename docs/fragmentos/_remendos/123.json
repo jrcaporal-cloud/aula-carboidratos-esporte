@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Keizer HA, Kuipers H, van Kranenburg G, Geurten P. Influence of liquid and solid meals on muscle glycogen resynthesis, plasma fuel hormone response, and maximal physical working capacity. Int J Sports Med 1987;8(2):99-104. DOI 10.1055/s-2008-1025649 · PMID 3298088 — cruzado, n = 8; às 5 h, 72 → 198 (sólido) × 69 → 192 mmol/kg (líquido); recuperação completa às 22 h; braço à vontade (n = 4) recuperou menos; capacidade máxima de trabalho caiu mesmo com o glicogênio reposto.",
+   "Burke LM, Collier GR, Davis PG, et al. Muscle glycogen storage after prolonged exercise: effect of the frequency of carbohydrate feedings. Am J Clin Nutr 1996;64(1):115-119. DOI 10.1093/ajcn/64.1.115 · PMID 8669406 — n = 8 triatletas, 10 g/kg em 24 h: 4 refeições × 16 lanches, 74,1 × 94,5 mmol/kg ww, sem diferença significativa.",
+   "Burke LM, Collier GR, Hargreaves M. Muscle glycogen storage after prolonged exercise: effect of the glycemic index of carbohydrate feedings. J Appl Physiol 1993;75(2):1019-1023. DOI 10.1152/jappl.1993.75.2.1019 · PMID 8226443 — cruzado, n = 5; 10 g/kg em 24 h; aumento de 106 (alto IG) × 71,5 mmol/kg ww (baixo IG), P = 0,02.",
+   "Burke LM, Collier GR, Broad EM, et al. Effect of alcohol intake on muscle glycogen storage after prolonged exercise. J Appl Physiol 2003;95(3):983-990. DOI 10.1152/japplphysiol.00115.2003 · PMID 12740311 — cruzados (n = 6 em 8 h; n = 9 em 24 h); álcool deslocando CHO: 68 × 82 mmol/kg ww às 24 h (24,4 × 44,6 às 8 h); álcool somado: 85, sem diferença às 24 h.",
+   "Burke LM, van Loon LJC, Hawley JA. Postexercise muscle glycogen resynthesis in humans. J Appl Physiol 2017;122(5):1055-1067. DOI 10.1152/japplphysiol.00860.2016 · PMID 27789774 — revisão: de 4 a 24 h, o total de CHO deve cobrir a demanda; tipo, forma e padrão importam menos que o total.",
+   "Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h, de preferência alto IG; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h; 8–12 g/kg/d maximizam os estoques."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Keizer 1987 (cruzado, n = 8): às 5 h, 72 → 198 com sólido e 69 → 192 mmol/kg com líquido; completo às 22 h; o braço à vontade (n = 4) ficou abaixo, e a capacidade máxima caiu mesmo com glicogênio reposto. Burke 1996 (8 triatletas, 10 g/kg): 4 refeições ou 16 lanches, 74,1 × 94,5 mmol/kg ww, sem diferença significativa. Burke 1993 (cruzado, n = 5, 10 g/kg): alto IG aumentou 106 contra 71,5 (P = 0,02) — o contrário do pré-treino. Burke 2003 (cruzado, n = 9): álcool no lugar do CHO, 68 × 82 às 24 h (24,4 × 44,6 às 8 h, n = 6); somado à dieta, 85, igual. Burke 2017 (revisão): de 4 a 24 h, o total manda; ISSN 2017: 8–12 g/kg/d. Cada linha do livro-caixa tem a sua escala e unidade.",
+  "pergunta": "O que vocês acham que mais atrapalha a recuperação na vida real do atleta: o horário, a forma do alimento ou a festa depois do jogo?",
+  "transicao": "Até aqui falamos do músculo. E o outro tanque, o fígado?"
+ }
+}

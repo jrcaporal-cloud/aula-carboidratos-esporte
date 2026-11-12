@@ -117,7 +117,7 @@ está em "Não citar" ou `[NÃO CONFIRMADO]` não entra. Ids dos slides: número
 | id | título | sim | conteúdo | min |
 |---|---|---|---|---|
 | 160 | 47% das Fibras | `SoccerFibersSim` | Krustrup 2006: 47% das fibras vazias ou quase vazias no fim do jogo; média do músculo cai ~43%; sprint de 30 m 2,8% mais lento [06·KRUSTRUP2006]. Mapa de fibras 0–90 min. | 3 |
-| 161 | CHO no Jogo | `TeamSportSim` | 111 × 181 mmol/kg ps gastos com × sem 7% de CHO [06·LEATT1989]; +265% de tiros de 6 s com glicogênio alto [02·BALSOM1999a]; habilidade: g = 0,26 (IC cruza zero), certeza muito baixa [06·XIE2026]. | 3 |
+| 161 | CHO no Jogo | `TeamSportSim` | 111 × 181 mmol/kg ps gastos com × sem 7% de CHO [06·LEATT1989]; 111 → 294 tiros de 6 s (2,6×, +165%: cálculo) com glicogênio alto [02·BALSOM1999a]; habilidade: g = 0,26 (IC cruza zero), certeza muito baixa [06·XIE2026]. | 3 |
 | 162 | Paulo e o Carbo Pós-Treino | `StrengthSim` | 3 séries de rosca: −24% de glicogênio do bíceps [06·MACDOUGALL1999]; −40% a −44% nas fibras IIa/IIx numa sessão [02·KOOPMAN2006]; força: sem ganho em alimentado ≤10 séries [06·HENSELMANS2022]; hipertrofia SMD 0,15 (p = 0,23, 11 ECRs) [06·HENSELMANS2026-MA]. | 3 |
 | 163 | Insulina Sobe, Síntese Não | `MpsSim` | Síntese proteica 0,10/0,10/0,11 %/h com 0, 0,15 ou 0,6 g/kg/h de CHO [06·KOOPMAN2007]; [STAPLES2011, GLYNN2010]. | 3 |
 | 164 | A Balança e a Água | `WeightCutSim` | 1 g de glicogênio : ≥3 g de água (pouca água) até 1:17 (água plena) [06·FERNANDEZELIAS2015]; essa água não protege da desidratação [06·KING2018]; dieta pobre em fibra 4 dias: −0,74% da massa [06·FOO2022]. Tiago, caso fictício. | 3 |

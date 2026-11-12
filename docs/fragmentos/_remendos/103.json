@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-424. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — oxidação exógena de fonte única satura em ~1,0–1,1 g/min; o limite é absorção intestinal e fígado, não o músculo.",
+   "Hulston CJ, Wallis GA, Jeukendrup AE. Exogenous CHO oxidation with glucose plus fructose intake during exercise. Med Sci Sports Exerc 2009;41(2):357-363. DOI 10.1249/MSS.0b013e3181857ee6 · PMID 19127189 — glicose a 48 g/h: pico de 0,60 g/min (≈ 36 g/h, cálculo × 60).",
+   "Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 · PMID 15946410 — glicose a 72 g/h (1,2 g/min): pico de 1,06 g/min (≈ 64 g/h, cálculo).",
+   "Jentjens RL, Achten J, Jeukendrup AE. High oxidation rates from combined carbohydrates ingested during exercise. Med Sci Sports Exerc 2004;36(9):1551-1558. DOI 10.1249/01.MSS.0000139796.07843.1D · PMID 15354037 — glicose a 144 g/h (2,4 g/min): pico de 1,18 g/min (≈ 71 g/h; 49% do ingerido e ~73 g/h “no caminho” são cálculo).",
+   "Cox GR, Clark SA, Cox AJ, et al. Daily training with high carbohydrate availability increases exogenous carbohydrate oxidation during endurance cycling. J Appl Physiol 2010;109(1):126-134. DOI 10.1152/japplphysiol.00950.2009 · PMID 20466803 — 28 dias de treino com carboidrato alto: oxidação exógena de 54,6 para 63,6 g (contraponto ao “o treino não muda o teto” da revisão de 2000).",
+   "Wright EM, Loo DD, Hirayama BA. Biology of human sodium glucose transporters. Physiol Rev 2011;91(2):733-94. DOI 10.1152/physrev.00055.2009 · PMID 21527736 — SGLT1 usa o gradiente de Na⁺; glicose e galactose dividem a mesma porta."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Três ECRs cruzados com ¹³C, só glicose (n = 7–8 cada, 150 min a 60–65% do VO₂máx): 0,60 g/min a 48 g/h (Hulston), 1,06 a 72 g/h (Jentjens 2005) e 1,18 a 144 g/h (Jentjens 2004), ≈ 36, 64 e 71 g/h. De 72 para 144 g/h, só +0,12 g/min: fonte única satura em ~1,0–1,1 g/min (Jeukendrup & Jentjens 2000); frutose, galactose e amilose oxidam 25–50% menos. A 144 g/h, 49% do que entra é oxidado na hora; ~73 g/h ficam pelo caminho (cálculo). O gargalo é a absorção (SGLT1, dependente de Na⁺) e o fígado (~1 g/min), não o músculo. Atrito: a revisão de 2000 dizia que o treino não muda o teto; Cox 2010 viu a oxidação exógena subir com 28 dias de dieta rica em carboidrato (slide O Intestino Treina).",
+  "pergunta": "Se o músculo não é o limite, o que acontece com o carboidrato que entrou e não foi oxidado?",
+  "transicao": "Se a porta da glicose lota, existe outra porta?"
+ }
+}

@@ -28,21 +28,75 @@ export const mixAt = (I: number, trained: boolean): Mix => {
 };
 
 export interface CrossStep {
-    phrase: string;
+    tab: string;
+    headline: string;
+    text: string;
+    sources: readonly string[];
     intensity: number;
     trained: boolean;
 }
 
+const BROOKS = 'Brooks & Mercier 1994 (modelo)';
+const ROMIJN = 'Romijn 1993 (n = 5)';
+
 export const CROSS_STEPS: readonly CrossStep[] = [
-    { phrase: 'A 25% do VO₂máx, quem paga a conta é a gordura, quase toda vinda do sangue.', intensity: 25, trained: false },
-    { phrase: 'Subindo a intensidade, entram o TG do músculo e o glicogênio. Perto da metade, as curvas se cruzam.', intensity: 55, trained: false },
-    { phrase: 'A 85%, o glicogênio domina. A intensidade escolhe o combustível.', intensity: 85, trained: false },
-    { phrase: 'O treino empurra o cruzamento para a direita: mais gordura no mesmo %VO₂máx. A regra continua.', intensity: 65, trained: true },
+    {
+        tab: '25%', intensity: 25, trained: false,
+        headline: 'A 25%, paga a gordura do sangue',
+        text: 'Romijn 1993 (n = 5 treinados, isótopos + calorimetria) mediu as fontes a 25, 65 e 85% do VO₂máx. No ritmo leve, a lipólise periférica é máxima e os ácidos graxos do sangue dominam. Glicose e glicogênio só ganham peso quando a intensidade sobe.',
+        sources: [ROMIJN],
+    },
+    {
+        tab: '65%', intensity: 65, trained: false,
+        headline: 'Subindo, entram o TG e o glicogênio',
+        text: 'A 65%, a captação de glicose e a quebra de glicogênio sobem, e o triglicerídeo dentro do músculo passa a ser usado. O cruzamento de Brooks & Mercier é a potência a partir da qual a energia do carboidrato supera a da gordura.',
+        sources: [ROMIJN, BROOKS],
+    },
+    {
+        tab: '85%', intensity: 85, trained: false,
+        headline: 'A 85%, o glicogênio domina',
+        text: 'A liberação de ácidos graxos cai com a intensidade, e o glicogênio paga a maior parte. O motivo: mais glicogenólise, fibras rápidas recrutadas e mais atividade simpática. A intensidade escolhe o combustível.',
+        sources: [ROMIJN, BROOKS],
+    },
+    {
+        tab: 'Medido', intensity: 75, trained: false,
+        headline: 'A gordura sobe e depois cai',
+        text: 'Van Loon 2001 (n = 8 ciclistas, 30 min a 40, 55 e 75% da Wmáx, isótopos + biópsias): a gordura oxidada subiu a 32 ± 2 kJ/min a 55% e caiu a 19 ± 2 a 75%, com glicogênio e glicose do sangue subindo a cada estágio. As áreas do gráfico são modelo; estes pontos são medida.',
+        sources: ['van Loon 2001 (n = 8)'],
+    },
+    {
+        tab: 'Treino', intensity: 65, trained: true,
+        headline: 'O treino desloca a fronteira',
+        text: 'O treino de endurance aumenta a oxidação de gordura e reduz a resposta simpática: o cruzamento vai para a direita. Treinados usam sobretudo gordura até ~45% do VO₂máx, e a ~75% o carboidrato já predomina. A regra continua: a intensidade manda.',
+        sources: [BROOKS],
+    },
 ];
 
 export const LAYERS = [
-    { key: 'agl', label: 'AGL do sangue', color: '#BEF264', opacity: 1 },
-    { key: 'imtg', label: 'TG do músculo', color: '#BEF264', opacity: 0.5 },
-    { key: 'plasmaGlucose', label: 'glicose do sangue', color: '#F59E0B', opacity: 1 },
-    { key: 'glycogen', label: 'glicogênio do músculo', color: '#8B5CF6', opacity: 1 },
+    { key: 'agl', label: 'AGL do sangue', color: '#BEF264', opacity: 1, labelAt: 32 },
+    { key: 'imtg', label: 'TG do músculo', color: '#BEF264', opacity: 0.5, labelAt: 44 },
+    { key: 'plasmaGlucose', label: 'glicose do sangue', color: '#F59E0B', opacity: 1, labelAt: 73 },
+    { key: 'glycogen', label: 'glicogênio do músculo', color: '#8B5CF6', opacity: 1, labelAt: 68 },
+] as const;
+
+/** Livro-caixa do painel: o que foi medido (ou dito pelo modelo), linha a linha. */
+export interface CrossRow {
+    at: number;
+    label: string;
+    value: string;
+    color: string;
+}
+
+export const CROSS_ROWS: readonly CrossRow[] = [
+    { at: 0, label: '25% VO₂máx · Romijn', value: 'AGL do sangue', color: '#BEF264' },
+    { at: 1, label: '65% · Romijn', value: '+ TG e glicogênio', color: '#C4B5FD' },
+    { at: 2, label: '85% · Romijn', value: 'glicogênio', color: '#C4B5FD' },
+    { at: 3, label: 'gordura 55 → 75% Wmáx', value: '32 → 19 kJ/min', color: '#BEF264' },
+    { at: 4, label: 'treinado · Brooks', value: '≤45% gordura · ~75% CHO', color: '#F3F4F6' },
+];
+
+/** Pontos medidos de VANLOON2001 (média ± EP lidos no abstract); só 55 e 75% têm número confirmado. */
+export const VANLOON = [
+    { label: '55% Wmáx', kj: 32, err: 2 },
+    { label: '75% Wmáx', kj: 19, err: 2 },
 ] as const;

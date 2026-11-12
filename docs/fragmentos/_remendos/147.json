@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Stellingwerff T, Spriet LL, Watt MJ, et al. Decreased PDH activation and glycogenolysis during exercise following fat adaptation with carbohydrate restoration. Am J Physiol Endocrinol Metab 2006;290(2):E380-8. DOI 10.1152/ajpendo.00268.2005 · PMID 16188909 — cruzado, 7 ciclistas, 5 dias de CHO alto (10,3 g/kg/d) × gordura (4,6 g/kg/d, 67% da energia) + 1 dia de CHO: glicogênio 873 × 868 µmol/g ps; PDH 2,39 × 1,69 mmol/kg pú/min; glicogenólise 13,4 × 9,1 no 1º min e 50,5 × 37,3 no sprint de 1 min (mmol glicosil/kg ps/min); gordura ~45% a mais, CHO ~30% a menos. −29% e −26% são cálculo.",
+   "Peters SJ, Harris RA, Wu P, Pehleman TL, Heigenhauser GJ, Spriet LL. Human skeletal muscle PDH kinase activity and isoform expression during a 3-day high-fat/low-carbohydrate diet. Am J Physiol Endocrinol Metab 2001;281(6):E1151-8. DOI 10.1152/ajpendo.2001.281.6.e1151 · PMID 11701428 — 6 homens saudáveis, dieta eucalórica com 5% CHO e 73% gordura: atividade da PDK 0,09 → 0,37 min⁻¹ em 3 dias; proteína e mRNA da PDK4 no pico no 1º dia; PDK2 inalterada. (Abstract conferido no Europe PMC em 12/11/2026; fonte nova, não está nos dossiês.)",
+   "Howlett RA, Parolin ML, Dyck DJ, et al. Regulation of skeletal muscle glycogen phosphorylase and PDH at varying exercise power outputs. Am J Physiol 1998;275(2):R418-25. DOI 10.1152/ajpregu.1998.275.2.R418 · PMID 9688676 — a PDH ativa acompanha a potência (Ca²⁺ e piruvato).",
+   "Havemann L, West SJ, Goedecke JH, et al. Fat adaptation followed by carbohydrate loading compromises high-intensity sprint performance. J Appl Physiol 2006;100(1):194-202. DOI 10.1152/japplphysiol.00813.2005 · PMID 16141377 — cruzado simples-cego, 8 ciclistas, 6 dias de gordura (68% da energia) + 1 dia de 8–10 g/kg de CHO: 100 km igual, potência menor nos sprints de 1 km (P < 0,05); perfil do slide ilustrativo."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Stellingwerff 2006 (cruzado, 7 ciclistas): 5 dias de gordura e 1 dia de CHO deixam o glicogênio igual ao da dieta rica em CHO (873 × 868 µmol/g ps), mas a PDH ativa, a porta do piruvato para a mitocôndria, cai de 2,39 para 1,69 (−29%, cálculo); gordura oxidada ~45% a mais, CHO ~30% a menos. Quem fecha a porta é a quinase da PDH (PDK): em 6 homens, 3 dias de dieta rica em gordura levaram a atividade da PDK de 0,09 a 0,37 min⁻¹, com a PDK4 no pico no 1º dia (Peters 2001); Ca²⁺ e piruvato, que sobem com a potência, a religam (Howlett 1998). No sprint, a glicogenólise cai: 13,4 × 9,1 no 1º minuto e 50,5 × 37,3 no sprint de 1 min (−26%). Havemann 2006 (cruzado, simples-cego, 8 ciclistas): 100 km no mesmo desempenho, sprints de 1 km com menos potência. O perfil na tela é ilustrativo.",
+  "pergunta": "No chat: em que esporte vocês teriam mais medo dessa 'torneira fechada'? Pensem em onde a prova se decide.",
+  "transicao": "Saindo dos estudos isolados: o que as meta-análises dizem sobre dieta cetogênica e cetona em gole?"
+ }
+}

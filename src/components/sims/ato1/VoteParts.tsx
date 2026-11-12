@@ -3,7 +3,8 @@ import { Minus, ThumbsDown, ThumbsUp } from 'lucide-react';
 import type { PointerEvent } from 'react';
 import { DUR, EASE_OUT } from '../../../lib/motion';
 import { C } from '../kit/palette';
-import { MYTHS, type Tally } from './myth.content';
+import { CHAPTERS } from '../../../data/chapters';
+import { MYTH_WHERE, MYTHS, agreeShare, type Tally } from './myth.content';
 
 /** Cores dos dois lados: neutras de propósito (verde × vermelho sugeriria a resposta certa). */
 export const AGREE = C.glucose;
@@ -17,10 +18,12 @@ interface CounterProps {
     count: number;
     onAdd: () => void;
     onUndo: () => void;
+    /** Altura do botão (px de projeto). */
+    height?: number;
 }
 
 /** Botão grande que conta um voto do chat; o "−" embaixo desfaz um clique a mais. */
-export const Counter = ({ side, count, onAdd, onUndo }: CounterProps) => {
+export const Counter = ({ side, count, onAdd, onUndo, height = 176 }: CounterProps) => {
     const reduce = useReducedMotion();
     const agree = side === 'agree';
     const color = agree ? AGREE : DISAGREE;
@@ -29,8 +32,8 @@ export const Counter = ({ side, count, onAdd, onUndo }: CounterProps) => {
     return (
         <div className="flex flex-1 flex-col gap-2">
             <button type="button" onPointerDown={keepFocus} onClick={onAdd} aria-label={`mais um voto: ${label}`}
-                className="flex h-[176px] cursor-pointer items-center justify-between rounded-2xl border-[3px] px-8 transition-transform duration-150 ease-out active:scale-[0.97]"
-                style={{ borderColor: color, background: 'rgba(4,10,20,0.85)' }}>
+                className="flex cursor-pointer items-center justify-between rounded-2xl border-[3px] px-8 transition-transform duration-150 ease-out active:scale-[0.97]"
+                style={{ height, borderColor: color, background: 'rgba(4,10,20,0.85)' }}>
                 <span className="flex flex-col items-start gap-2">
                     <Icon size={40} color={color} strokeWidth={2.2} aria-hidden />
                     <span className="text-[26px] font-semibold" style={{ color }}>{label}</span>
@@ -63,24 +66,28 @@ export const SplitBar = ({ tally, height = 14 }: { tally: Tally; height?: number
     );
 };
 
-/** Quadro final: as oito afirmações com a divisão da turma, sem veredito. */
+const colorOf = (roman: string): string => CHAPTERS.find(c => c.roman === roman)?.color ?? C.text;
+
+/** Quadro final: as oito afirmações com a divisão da turma e o ato que responde, sem veredito. */
 export const Summary = ({ tallies }: { tallies: readonly Tally[] }) => (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+    <div className="flex flex-col gap-3">
         {MYTHS.map((m, i) => {
             const t = tallies[i];
+            const share = agreeShare(t);
+            const act = MYTH_WHERE[i].act;
             return (
-                <motion.div key={m.short} className="flex flex-col gap-1.5"
+                <motion.div key={m.short} className="grid grid-cols-[24px_1fr_56px_150px_80px] items-center gap-3"
                     initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: Math.min(i * 0.05, 0.35), duration: DUR.enter, ease: EASE_OUT }}>
-                    <div className="flex items-baseline justify-between gap-3 text-[20px] text-gray-100">
-                        <span><span className="mr-2 font-mono text-[16px] text-gray-400">{i + 1}</span>{m.short}</span>
-                        <span className="font-mono text-[18px] tabular-nums">
-                            <span style={{ color: AGREE }}>{t.agree}</span>
-                            <span className="text-gray-400"> × </span>
-                            <span style={{ color: DISAGREE }}>{t.disagree}</span>
-                        </span>
-                    </div>
+                    <span className="font-mono text-[16px] text-gray-400">{i + 1}</span>
+                    <span className="truncate text-[20px] text-gray-100">{m.short}</span>
+                    <span className="rounded-md border-2 text-center font-mono text-[14px] font-bold leading-5" style={{ borderColor: colorOf(act), color: colorOf(act) }}>{act}</span>
                     <SplitBar tally={t} height={16} />
+                    <span className="text-right font-mono text-[18px] tabular-nums">
+                        {share === null ? <span className="text-gray-400">—</span> : (
+                            <><span style={{ color: AGREE }}>{t.agree}</span><span className="text-gray-400"> × </span><span style={{ color: DISAGREE }}>{t.disagree}</span></>
+                        )}
+                    </span>
                 </motion.div>
             );
         })}

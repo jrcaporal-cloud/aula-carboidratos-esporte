@@ -4,12 +4,19 @@ import { useSlideStepStore } from '../../store/useSlideSteps';
 import { useDetailsStore } from '../../lib/detailsStore';
 import { toggleDetails } from '../../lib/detailsEvent';
 import { chapterOfSection } from './acts';
+import { IS_PREVIEW } from './presenterChannel';
+import { MarathonBar } from './MarathonBar';
+import { StageTools, StageToolButtons } from './stage/StageTools';
 
 interface DeckChromeProps {
     index: number;
     total: number;
     section: string;
+    /** Mouse parado: o indicador das ferramentas de palco fica mais discreto. */
+    idle: boolean;
     has3D: boolean;
+    /** Abertura de ato na tela: a pílula de passos sai para não ficar por cima da cortina. */
+    covered?: boolean;
     onPrev: () => void;
     onNext: () => void;
     onOverview: () => void;
@@ -33,6 +40,8 @@ const useFullscreen = () => {
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
+const ICON_BUTTON = 'w-9 h-9 rounded-full flex items-center justify-center disabled:opacity-25 disabled:pointer-events-none transition-colors focus-visible:outline-2 focus-visible:outline-brand-accent';
+
 const IconButton = ({ label, onClick, disabled, children }: {
     label: string; onClick: () => void; disabled?: boolean; children: React.ReactNode;
 }) => (
@@ -42,43 +51,40 @@ const IconButton = ({ label, onClick, disabled, children }: {
         title={label}
         onClick={onClick}
         disabled={disabled}
-        className="w-9 h-9 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 disabled:opacity-25 disabled:pointer-events-none transition-colors focus-visible:outline-2 focus-visible:outline-brand-accent"
+        className={`${ICON_BUTTON} text-gray-300 hover:text-white hover:bg-white/10`}
     >
         {children}
     </button>
 );
 
 /**
- * Barra de progresso, seção atual, contador e controles. Botões e navegação somem com o mouse parado
- * (`.hide-when-idle`, em index.css) — menos quando têm foco de teclado, para quem navega por Tab.
+ * Barra da maratona (progresso em km), seção atual, contador e controles. Botões e navegação somem com o
+ * mouse parado (`.hide-when-idle`, em index.css) — menos quando têm foco de teclado, para quem navega por Tab.
+ * Também monta as ferramentas de palco (holofote L, caneta K). Na prévia do apresentador (?previa) só fica
+ * o que a plateia vê: sem botões nem ferramentas.
  */
-export const DeckChrome = ({ index, total, section, has3D, onPrev, onNext, onOverview, on3D, onPresenter }: DeckChromeProps) => {
+export const DeckChrome = ({ index, total, section, idle, has3D, covered = false, onPrev, onNext, onOverview, on3D, onPresenter }: DeckChromeProps) => {
     const { isFull, toggle } = useFullscreen();
     const step = useSlideStepStore(s => s.step);
     const stepCount = useSlideStepStore(s => s.count);
     const detailsAvailable = useDetailsStore(s => s.available > 0);
     const detailsOpen = useDetailsStore(s => s.open);
-    const progress = total > 1 ? index / (total - 1) : 1;
     const actColor = chapterOfSection(section)?.color;
 
     return (
         <>
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-white/5 z-30" aria-hidden>
-                {/* Barra de largura total, encolhida por scaleX: só composição, nada de layout a cada slide. */}
-                <div
-                    className="h-full w-full origin-left bg-brand-accent transition-transform duration-300 ease-[var(--ease-out)]"
-                    style={{ transform: `scaleX(${progress})` }}
-                />
-            </div>
+            {!IS_PREVIEW && <StageTools index={index} idle={idle} />}
+
+            <MarathonBar index={index} total={total} />
 
             {section && (
-                <div className="absolute top-5 left-7 z-30 flex items-center gap-3 text-[16px] uppercase tracking-[0.18em] text-gray-100 pointer-events-none">
-                    <span className="w-2 h-2 rounded-full bg-brand-accent" style={actColor ? { background: actColor, boxShadow: `0 0 8px ${actColor}` } : undefined} />
+                <div className="absolute top-6 left-7 z-30 flex items-center gap-3 text-[16px] uppercase tracking-[0.18em] text-gray-100 pointer-events-none">
+                    <span className="w-2.5 h-2.5 rounded-full bg-brand-accent" style={actColor ? { background: actColor } : undefined} />
                     <span>{section}</span>
                 </div>
             )}
 
-            {stepCount > 1 && (
+            {stepCount > 1 && !covered && (
                 <div
                     className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 px-4 py-2 rounded-full bg-black/55 border border-white/10 backdrop-blur-md pointer-events-none [contain:layout_paint]"
                     aria-label={`Passo ${step + 1} de ${stepCount}`}
@@ -94,7 +100,7 @@ export const DeckChrome = ({ index, total, section, has3D, onPrev, onNext, onOve
                 </div>
             )}
 
-            {(has3D || detailsAvailable) && (
+            {!IS_PREVIEW && (has3D || detailsAvailable) && (
                 // Em tela estreita (projetor 4:3) estes botões sobem e deixam a faixa de baixo para o contador de passos,
                 // que fica sempre colado na base (o palco reserva essa faixa).
                 <div className="hide-when-idle absolute bottom-20 min-[1180px]:bottom-6 left-7 z-30 flex items-center gap-3">
@@ -124,7 +130,7 @@ export const DeckChrome = ({ index, total, section, has3D, onPrev, onNext, onOve
                 </div>
             )}
 
-            <nav
+            {!IS_PREVIEW && <nav
                 aria-label="Navegação dos slides"
                 className="hide-when-idle absolute bottom-5 right-6 z-30 flex items-center gap-1 px-2 py-1.5 rounded-full bg-black/55 border border-white/10 backdrop-blur-md"
             >
@@ -137,7 +143,8 @@ export const DeckChrome = ({ index, total, section, has3D, onPrev, onNext, onOve
                 <IconButton label="Próximo slide (→)" onClick={onNext} disabled={index === total - 1}>
                     <ChevronRight size={18} />
                 </IconButton>
-                <span className="w-px h-5 bg-white/10 mx-1" />
+                <span className="w-[2px] h-5 bg-white/15 mx-1" />
+                <StageToolButtons className={ICON_BUTTON} />
                 <IconButton label="Modo apresentador (P)" onClick={onPresenter}>
                     <MonitorSpeaker size={16} />
                 </IconButton>
@@ -147,7 +154,7 @@ export const DeckChrome = ({ index, total, section, has3D, onPrev, onNext, onOve
                 <IconButton label={isFull ? 'Sair da tela cheia (F)' : 'Tela cheia (F)'} onClick={toggle}>
                     {isFull ? <Minimize size={16} /> : <Maximize size={16} />}
                 </IconButton>
-            </nav>
+            </nav>}
         </>
     );
 };

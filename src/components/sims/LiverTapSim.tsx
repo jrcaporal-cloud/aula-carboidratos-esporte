@@ -1,76 +1,83 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT } from '../../lib/motion';
 import { C } from './kit/palette';
+import { DesignChip, IllustrativeChip } from './kit/chips';
+import { KeyFact, Reveal } from './kit/rhythm';
 import { CountUp } from './kit/CountUp';
-import { DesignChip } from './kit/chips';
-import { SourceLine, StepHeader } from './ato3/shared';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, Source } from './kit/ui';
+import { MotorFrame, StepText } from './ato3/motorB';
+import { rowEnter } from './ato3/motorBRow';
 import { LiverTap } from './ato3/LiverTap';
-import { LIVER_STEPS } from './ato3/liver.content';
+import { LIVER_LEDGER, LIVER_STEPS } from './ato3/liver.content';
 
 /**
- * Slide 47 · Quem Defende os 4 Gramas. O fígado como torneira: abre ≤2× no moderado e 7–8× no intenso,
- * mais do que o músculo consome (3–4×), e o copo de 4 g transborda. À direita, o multiplicador do passo.
+ * Slide 47 · Quem Defende os 4 Gramas. Palco: fígado (torneira) → sangue (~4 g) → músculo (ralo), com jato e ralo
+ * na mesma escala e o fluxo de glicose em laço lento. Painel: o texto do passo e o livro-caixa produção × utilização ×
+ * glicemia por intensidade, que acumula até o quadro final.
  */
 
-const SPACED = { wordSpacing: '0.15em' } as const;
+const ACCENT = [C.glucose, C.insulinSoft, C.glucoseSoft, C.insulinSoft] as const;
 
-const Readout = ({ step }: { step: number }) => {
-    if (step === 0) {
-        return (
-            <>
-                <CountUp text="~4 g" className="font-display text-[96px] font-bold leading-none" style={{ color: C.glucose, ...SPACED }} />
-                <span className="text-[21px] leading-snug text-gray-100">de glicose no sangue de uma pessoa de 70 kg</span>
-            </>
-        );
-    }
-    if (step === 1) {
-        return (
-            <>
-                <CountUp text="até 2×" className="font-display text-[96px] font-bold leading-none" style={{ color: C.glucose, ...SPACED }} />
-                <span className="text-[21px] leading-snug text-gray-100">produção de glicose pelo fígado, abaixo de 60% do VO₂máx</span>
-            </>
-        );
-    }
-    if (step === 2) {
-        return (
-            <div className="flex gap-10">
-                <div className="flex flex-col gap-1">
-                    <CountUp text="7–8×" className="font-display text-[88px] font-bold leading-none" style={{ color: C.glucose }} />
-                    <span className="text-[20px] text-gray-100">o fígado produz</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                    <CountUp text="3–4×" delay={0.3} className="font-display text-[88px] font-bold leading-none" style={{ color: C.stone }} />
-                    <span className="text-[20px] text-gray-100">o músculo usa</span>
-                </div>
-            </div>
-        );
-    }
-    return (
-        <div className="flex flex-col gap-2 rounded-2xl border-[3px] p-5" style={{ borderColor: C.insulin }}>
-            <span className="font-display text-[30px] font-bold leading-tight text-white" style={SPACED}>diabetes tipo 1</span>
-            <span className="text-[20px] leading-snug text-gray-100">a mesma subida aparece, e a insulina que corrige não vem do pâncreas</span>
-            <span className="text-[17px] text-gray-300">volta no Ato IX</span>
-        </div>
-    );
-};
+const Ledger = ({ step }: { step: number }) => (
+    <table className="w-full border-separate border-spacing-y-[3px] text-left">
+        <thead>
+            <tr className="text-[15px] text-gray-300">
+                <th className="font-normal">fase</th>
+                <th className="text-right font-normal" style={{ color: C.glycogenSoft }}>fígado produz</th>
+                <th className="text-right font-normal">músculo usa</th>
+                <th className="text-right font-normal" style={{ color: C.glucoseSoft }}>glicemia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {LIVER_LEDGER.filter(r => r.at <= step).map((r, i) => {
+                const total = 'total' in r && r.total;
+                return (
+                    <motion.tr key={r.phase} {...rowEnter(r.at === step, i)}
+                        className={total ? 'text-[19px] font-bold' : 'text-[17px] font-semibold'} style={{ color: total ? C.glucoseSoft : '#F3F4F6' }}>
+                        <td className="whitespace-nowrap">{r.phase}</td>
+                        {r.tap ? (
+                            <>
+                                <td className="whitespace-nowrap text-right tabular-nums">{total && r.at === step ? <KeyFact delay={0.8}>{r.tap}</KeyFact> : r.tap}</td>
+                                <td className="whitespace-nowrap text-right tabular-nums">{r.drain}</td>
+                                <td className="whitespace-nowrap text-right">{r.glyc}</td>
+                            </>
+                        ) : (
+                            <td colSpan={3} className="text-right" style={{ color: C.insulinSoft }}>{r.glyc}</td>
+                        )}
+                    </motion.tr>
+                );
+            })}
+        </tbody>
+    </table>
+);
 
 export default function LiverTapSim() {
-    const { step } = useSlideSteps(LIVER_STEPS.length);
-    const reduce = useReducedMotion();
+    const { step, setStep } = useSlideSteps(LIVER_STEPS.length);
     const s = LIVER_STEPS[step];
+    const chips = (
+        <>
+            <DesignChip>{s.design}</DesignChip>
+            <IllustrativeChip>glicemia ilustrativa · ×n são dados</IllustrativeChip>
+        </>
+    );
     return (
-        <div className="not-prose flex h-[500px] w-full flex-col gap-4 overflow-hidden">
-            <StepHeader beat={step} chips={<DesignChip>revisão</DesignChip>}>{s.phrase}</StepHeader>
-            <div className="flex min-h-0 flex-1 items-center gap-12">
-                <LiverTap tap={s.tap} drain={s.drain} level={s.level} handle={s.handle} />
-                <motion.div key={step} className="flex min-w-0 flex-1 flex-col gap-3"
-                    initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: DUR.enter, ease: EASE_OUT }}>
-                    <Readout step={step} />
-                </motion.div>
-            </div>
-            <SourceLine>{s.source}</SourceLine>
-        </div>
+        <MotorFrame tabs={LIVER_STEPS.map(l => l.tab)} step={step} setStep={setStep} layoutId="liver-tabs" chips={chips}>
+            <Panel className="flex w-[640px] shrink-0 items-center px-2 py-2">
+                <LiverTap step={step} />
+            </Panel>
+            <Panel className="flex min-w-0 flex-1 flex-col gap-2.5 px-5 py-3.5">
+                <StepText step={step} color={ACCENT[step]} headline={s.headline} text={s.text} />
+                <Reveal key={`stat-${step}`} order={1} className="flex items-baseline gap-3">
+                    <CountUp text={s.stat} delay={0.2} className="whitespace-nowrap font-display text-[42px] font-bold leading-none"
+                        style={{ color: ACCENT[step], wordSpacing: '0.15em' }} />
+                    <span className="text-[17px] leading-snug text-gray-200">{s.statCaption}</span>
+                </Reveal>
+                <div className="mt-auto flex flex-col gap-2">
+                    <Ledger step={step} />
+                    <Source>{sourcesUpTo(LIVER_STEPS.map(l => l.sources), step)}</Source>
+                </div>
+            </Panel>
+        </MotorFrame>
     );
 }

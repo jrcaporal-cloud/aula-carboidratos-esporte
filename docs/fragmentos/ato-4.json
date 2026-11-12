@@ -1,112 +1,112 @@
 [
- {
-  "id": 60,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "A Agulha que Veio da Nefrologia",
-  "subtitle": "O glicogênio virou protagonista por causa de uma ferramenta feita para outra pergunta.",
-  "content": "[[COMP:NeedleSim]]<h4>Fontes</h4><ul><li>Stout JR, Kreider RB, Candow DG et al. The birth of modern sports nutrition: tracing the path from muscle biopsies to creatine supplementation — a narrative review. J Int Soc Sports Nutr 2025;22(sup1):2463373. DOI 10.1080/15502783.2025.2463373 · PMID 39964101 — Bergström, nefrologista, cria a agulha em 1959 para estudar eletrólitos com diuréticos; artigo de 1962; encontro com a dosagem de Hultman (relato de Roger Harris).</li><li>Ekblom B. The muscle biopsy technique. Historical and methodological considerations. Scand J Med Sci Sports 2017;27(5):458–461. DOI 10.1111/sms.12808 · PMID 28033689 — a agulha de Bergström como instrumento de referência.</li><li>Bergström J. Percutaneous needle biopsy of skeletal muscle in physiological and clinical research. Scand J Clin Lab Invest 1975;35(7):609–616. DOI 10.1080/00365517509095787 · PMID 1108172 — descrição da técnica.</li><li>Bergström J. Muscle electrolytes in man: determined by neutron activation analysis on needle biopsy specimens. Scand J Clin Lab Invest 1962;14(Suppl 68) — o artigo dos eletrólitos (não lido; páginas não confirmadas).</li></ul>",
-  "cards": []
- },
- {
-  "id": 61,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "Dois Cientistas, uma Bicicleta",
-  "subtitle": "Se só a perna que pedalou supercompensa, a carga de carboidrato é um fenômeno local.",
-  "content": "[[COMP:OneLegSim]]<h4>Fontes</h4><ul><li>Bergström J, Hultman E. Muscle glycogen synthesis after exercise: an enhancing factor localized to the muscle cells in man. Nature 1966;210(5033):309–310. DOI 10.1038/210309a0 · PMID 5954569 — modelo de uma perna, n = 2 (os autores); original não lido.</li><li>Stout JR, Kreider RB, Candow DG et al. The birth of modern sports nutrition: tracing the path from muscle biopsies to creatine supplementation — a narrative review. J Int Soc Sports Nutr 2025;22(sup1):2463373. DOI 10.1080/15502783.2025.2463373 · PMID 39964101 — os dois em lados opostos do mesmo cicloergômetro; perna exercitada 50–60% acima da parada no 3º dia (relato de Harris).</li><li>Solem K, Clauss M, Jensen J. Glycogen supercompensation in skeletal muscle after cycling or running followed by a high carbohydrate intake the following days: a systematic review and meta-analysis. Front Physiol 2025;16:1620943. DOI 10.3389/fphys.2025.1620943 · PMID 40901614 — confirma no texto completo: supercompensação só na perna exercitada.</li><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — conclusão original: o aumento da síntese é localizado nos músculos que trabalharam.</li></ul>",
-  "cards": []
- },
- {
-  "id": 62,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "Três Dietas, Nove Estudantes",
-  "subtitle": "O glicogênio inicial prevê o tempo até a exaustão. Prevê; não prova que causa.",
-  "content": "[[COMP:ThreeDietsSim]]<h4>Fontes</h4><ul><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — lido no original (Tabela III): 0,63 / 1,75 / 3,31 g/100 g e 57 / 114 / 167 min a 75% do VO₂máx; r = 0,92; os 3 sem a fase gordurosa: 2,10–3,00 g/100 g e 119–124 min; cruzado, não cego, n = 9.</li><li>Noakes TD. What is the evidence that dietary macronutrient composition influences exercise performance? A narrative review. Nutrients 2022;14(4):862. DOI 10.3390/nu14040862 · PMID 35215511 — crítica: associação, não causa; hipoglicemia presente nos testes.</li></ul>",
-  "cards": []
- },
- {
-  "id": 63,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "Quanto é \"Normal\"",
-  "subtitle": "Uma régua para ler biópsias: o normal, a carga, a depleção e o que o treino muda.",
-  "content": "[[COMP:GlycogenRulerSim]]<h4>Fontes</h4><ul><li>Areta JL, Hopkins WG. Skeletal muscle glycogen content at rest and during endurance exercise in humans: a meta-analysis. Sports Med 2018;48(9):2091–2102. DOI 10.1007/s40279-018-0941-1 · PMID 29923148 — 462 ± 132 mmol/kg dw; +102 com carga; −253 com depleção; +67 por +10 mL/kg/min de VO₂máx; limiares 25/75/150/250.</li><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g (300–700), fígado ~80 g (0–160).</li><li>Phillips SM, Green HJ, Tarnopolsky MA et al. Effects of training duration on substrate turnover and oxidation during exercise. J Appl Physiol 1996;81(5):2182–2191. DOI 10.1152/jappl.1996.81.5.2182 · PMID 9053394 — −16% de oxidação de glicogênio após 5 dias de treino.</li><li>Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Liver glycogen metabolism during and after prolonged endurance-type exercise. Am J Physiol Endocrinol Metab 2016;311(3):E543–E553. DOI 10.1152/ajpendo.00232.2016 · PMID 27436612 — treinados não têm glicogênio hepático basal maior.</li></ul>",
-  "cards": []
- },
- {
-  "id": 64,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "Quem Esvazia Primeiro",
-  "subtitle": "O músculo não esvazia por igual: a intensidade escolhe quais fibras se apagam.",
-  "content": "[[COMP:FiberOrderSim]]<h4>Fontes</h4><ul><li>Gollnick PD, Piehl K, Saltin B. Selective glycogen depletion pattern in human muscle fibres after exercise of varying intensity and at varying pedalling rates. J Physiol 1974;241(1):45–57. DOI 10.1113/jphysiol.1974.sp010639 · PMID 4278539 — esvaziamento 2,7× e 7,4× a 64% e 84% vs 31% do VO₂máx; lentas primeiro no submáximo; PAS + ATPase.</li></ul>",
-  "cards": []
- },
- {
-  "id": 65,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "Três Endereços na Fibra",
-  "subtitle": "Onde o glicogênio fica importa tanto quanto a quantidade.",
-  "content": "[[COMP:GlycogenPoolsSim]]<h4>Fontes</h4><ul><li>Nielsen J, Holmberg HC, Schrøder HD, Saltin B, Ørtenblad N. Human skeletal muscle glycogen utilization in exhaustive exercise: role of subcellular localization and fibre type. J Physiol 2011;589(Pt 11):2871–2885. DOI 10.1113/jphysiol.2010.204487 · PMID 21486810 — três compartimentos; o intramiofibrilar esvazia mais e, só com água, custa a voltar; n = 10 atletas de elite.</li><li>Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — intramiofibrilar = 10–15% do total.</li></ul>",
-  "cards": []
- },
- {
-  "id": 66,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "O Cálcio que Falha",
-  "subtitle": "Pouco glicogênio na miofibrila anda junto com menos cálcio liberado. Junto não é causa.",
-  "content": "[[COMP:CalciumReleaseSim]]<h4>Fontes</h4><ul><li>Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — braço a 31% e Ca²⁺ a 85%; +4 h com CHO 59% e Ca²⁺ normal; só água 29% e 77%; perna 71%, Ca²⁺ sem mudança; n = 10.</li><li>Gejl KD, Hvid LG, Frandsen U, Jensen K, Sahlin K, Ørtenblad N. Muscle glycogen content modifies SR Ca²⁺ release rate in elite endurance athletes. Med Sci Sports Exerc 2014;46(3):496–505. DOI 10.1249/MSS.0000000000000132 · PMID 24091991 — 32% e 86%; r = 0,30; n = 14 triatletas.</li><li>Ørtenblad N, Westerblad H, Nielsen J. Muscle glycogen stores and fatigue. J Physiol 2013;591(18):4405–4413. DOI 10.1113/jphysiol.2013.251629 · PMID 23652590 — causa e efeito ainda não estabelecidos.</li></ul>",
-  "cards": []
- },
- {
-  "id": 67,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "O Fígado, o Segundo Limite",
-  "subtitle": "O carboidrato na prova protege o fígado e a glicemia; o músculo, quase nada.",
-  "content": "[[COMP:TwoTanksSim]]<h4>Fontes</h4><ul><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g, fígado ~80 g.</li><li>Coyle EF, Coggan AR, Hemmert MK, Ivy JL. Muscle glycogen utilization during prolonged strenuous exercise when fed carbohydrate. J Appl Physiol 1986;61(1):165–172. DOI 10.1152/jappl.1986.61.1.165 · PMID 3525502 — fadiga 3,02 × 4,02 h; glicose 2,5 × 4,2–5,2 mM; uso de glicogênio igual nas 3 primeiras horas; n = 7.</li><li>Gonzalez JT, Fuchs CJ, Smith FE et al. Ingestion of glucose or sucrose prevents liver but not muscle glycogen depletion during prolonged endurance-type exercise in trained cyclists. Am J Physiol Endocrinol Metab 2015;309(12):E1032–E1039. DOI 10.1152/ajpendo.00376.2015 · PMID 26487008 — fígado 325 → 345 e músculo 101 → 60 mmol/L com glicose; água (n = 4) fígado 454 → 283.</li><li>Rothschild JA, Dudley-Rode H, Carpenter H et al. Carbohydrate ingestion during prolonged exercise and net skeletal muscle glycogen utilization: a meta-analysis. J Appl Physiol 2026;140(1):76–87. DOI 10.1152/japplphysiol.00861.2025 · PMID 41363659 — SMD −0,16; ~24 mmol/kg dw poupados; 31 estudos.</li></ul>",
-  "cards": []
- },
- {
-  "id": 68,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "O Muro em Números",
-  "subtitle": "Um em cada quatro maratonistas homens desaba no fim, e quem arrisca o ritmo desaba mais.",
-  "content": "[[COMP:WallStatsSim]]<h4>Fontes</h4><ul><li>Smyth B. How recreational marathon runners hit the wall: a large-scale data analysis of late-race pacing collapse in the marathon. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — 28% × 17% (OR 1,43; N = 1.928.813); ~40% mais lento por ~10 km; risco maior perto do recorde pessoal; glicogênio não medido.</li></ul>",
-  "cards": []
- },
- {
-  "id": 69,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "O Glicogênio Também Fala",
-  "subtitle": "O estoque baixo aumenta o sinal de adaptação. Sinal maior não garante prova melhor.",
-  "content": "[[COMP:GlycogenSignalSim]]<h4>Fontes</h4><ul><li>Bartlett JD, Louhelainen J, Iqbal Z et al. Reduced carbohydrate availability enhances exercise-induced p53 signaling in human skeletal muscle: implications for mitochondrial biogenesis. Am J Physiol Regul Integr Comp Physiol 2013;304(6):R450–R458. DOI 10.1152/ajpregu.00498.2012 · PMID 23364526 — glicogênio 467 × 103; ACC 2,9 × 1,4; p53 2,6 × 0,9; PGC-1α ~3× nos dois; n = 8.</li><li>Hansen AK, Fischer CP, Plomgaard P et al. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93–99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — o train low original, modelo de uma perna, n = 7 não treinados.</li><li>Impey SG, Hearris MA, Hammond KM et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031–1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — sinalização em 73% de 11 estudos; desempenho em 37%.</li></ul>",
-  "cards": []
- },
- {
-  "id": 70,
-  "sectionName": "Ato IV · O Tanque",
-  "number": "",
-  "layout": "prose",
-  "title": "",
-  "subtitle": "",
-  "content": "<p class=\"quote-text reveal\">Tanque cheio não ganha prova; <span class=\"hl-glycogen\">tanque vazio perde</span>.</p>",
-  "cards": []
- }
+  {
+    "id": 60,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "A Agulha que Veio da Nefrologia",
+    "subtitle": "O glicogênio virou protagonista por causa de uma ferramenta feita para outra pergunta.",
+    "content": "[[COMP:NeedleSim]]<h4>Fontes</h4><ul><li>Stout JR, Kreider RB, Candow DG et al. The birth of modern sports nutrition: tracing the path from muscle biopsies to creatine supplementation — a narrative review. J Int Soc Sports Nutr 2025;22(sup1):2463373. DOI 10.1080/15502783.2025.2463373 · PMID 39964101 — Bergström, nefrologista, cria a agulha em 1959 para estudar eletrólitos com diuréticos (adaptando Polley &amp; Bickel); artigo de 1962; dosagem de glicose de Hultman (Nature 1959) no St. Erik's Hospital (relato de Roger Harris).</li><li>Ekblom B. The muscle biopsy technique. Historical and methodological considerations. Scand J Med Sci Sports 2017;27(5):458–461. DOI 10.1111/sms.12808 · PMID 28033689 — a agulha de Bergström como instrumento de referência.</li><li>Bergström J. Percutaneous needle biopsy of skeletal muscle in physiological and clinical research. Scand J Clin Lab Invest 1975;35(7):609–616. DOI 10.1080/00365517509095787 · PMID 1108172 — descrição da técnica.</li><li>Bergström J. Muscle electrolytes in man: determined by neutron activation analysis on needle biopsy specimens. Scand J Clin Lab Invest 1962;14(Suppl 68) — o artigo dos eletrólitos, por ativação de nêutrons (não lido; páginas não confirmadas).</li><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — faixa de glicogênio medida em 1967 (0,6–4,7 g/100 g de músculo úmido), exemplo do número que a dosagem entrega.</li><li>Gollnick PD, Piehl K, Saltin B. Selective glycogen depletion pattern in human muscle fibres after exercise of varying intensity and at varying pedalling rates. J Physiol 1974;241(1):45–57. DOI 10.1113/jphysiol.1974.sp010639 · PMID 4278539 — PAS (glicogênio) + ATPase (tipo de fibra) na mesma biópsia; PAS é semiquantitativo.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 61,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Dois Cientistas, uma Bicicleta",
+    "subtitle": "Se só a perna que pedalou supercompensa, a carga de carboidrato é um fenômeno local.",
+    "content": "[[COMP:OneLegSim]]<h4>Fontes</h4><ul><li>Bergström J, Hultman E. Muscle glycogen synthesis after exercise: an enhancing factor localized to the muscle cells in man. Nature 1966;210(5033):309–310. DOI 10.1038/210309a0 · PMID 5954569 — modelo de uma perna, n = 2 (os autores); original não lido.</li><li>Stout JR, Kreider RB, Candow DG et al. The birth of modern sports nutrition: tracing the path from muscle biopsies to creatine supplementation — a narrative review. J Int Soc Sports Nutr 2025;22(sup1):2463373. DOI 10.1080/15502783.2025.2463373 · PMID 39964101 — os dois em lados opostos do mesmo cicloergômetro; perna exercitada 50–60% acima da parada no 3º dia (relato de Harris).</li><li>Solem K, Clauss M, Jensen J. Glycogen supercompensation in skeletal muscle after cycling or running followed by a high carbohydrate intake the following days: a systematic review and meta-analysis. Front Physiol 2025;16:1620943. DOI 10.3389/fphys.2025.1620943 · PMID 40901614 — confirma no texto completo: supercompensação só na perna exercitada.</li><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — conclusão original: o aumento da síntese é localizado nos músculos que trabalharam.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 62,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Três Dietas, Nove Estudantes",
+    "subtitle": "O glicogênio inicial prevê o tempo até a exaustão. Prevê; não prova que causa.",
+    "content": "[[COMP:ThreeDietsSim]]<h4>Fontes</h4><ul><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — lido no original (Tabela III): 0,63 / 1,75 / 3,31 g/100 g e 57 / 114 / 167 min a 75% do VO₂máx; r = 0,92; os 3 sem a fase gordurosa: 2,10–3,00 g/100 g e 119–124 min; cruzado, não cego, n = 9.</li><li>Noakes TD. What is the evidence that dietary macronutrient composition influences exercise performance? A narrative review. Nutrients 2022;14(4):862. DOI 10.3390/nu14040862 · PMID 35215511 — crítica: associação, não causa; hipoglicemia presente nos testes.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 63,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Quanto é \"Normal\"",
+    "subtitle": "Uma régua para ler biópsias: o normal, a carga, a depleção e o que o treino muda.",
+    "content": "[[COMP:GlycogenRulerSim]]<h4>Fontes</h4><ul><li>Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140–150. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — a régua de 1967 em g/100 g de músculo úmido (0,63 / 1,75 / 3,31); 3,31 g/100 g ≈ 204 mmol/kg úmido é cálculo nosso (33,1 g/kg ÷ 0,162 g/mmol). Sem conversão para músculo seco (fator não confirmado).</li><li>Areta JL, Hopkins WG. Skeletal muscle glycogen content at rest and during endurance exercise in humans: a meta-analysis. Sports Med 2018;48(9):2091–2102. DOI 10.1007/s40279-018-0941-1 · PMID 29923148 — 462 ± 132 mmol/kg dw; +102 ± 47 com carga; −253 ± 30 com depleção; +67 ± 15 por +10 mL/kg/min de VO₂máx; uso +104 aos 116 min com +200 de glicogênio inicial; mulheres −30, corrida −70; limiares 25/75/150/250.</li><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g (300–700), fígado ~80 g (0–160).</li><li>Phillips SM, Green HJ, Tarnopolsky MA et al. Effects of training duration on substrate turnover and oxidation during exercise. J Appl Physiol 1996;81(5):2182–2191. DOI 10.1152/jappl.1996.81.5.2182 · PMID 9053394 — −16% de oxidação de glicogênio após 5 dias de treino.</li><li>Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Liver glycogen metabolism during and after prolonged endurance-type exercise. Am J Physiol Endocrinol Metab 2016;311(3):E543–E553. DOI 10.1152/ajpendo.00232.2016 · PMID 27436612 — treinados não têm glicogênio hepático basal maior.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 64,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Quem Esvazia Primeiro",
+    "subtitle": "O músculo não esvazia por igual: a intensidade escolhe quais fibras se apagam.",
+    "content": "[[COMP:FiberOrderSim]]<h4>Fontes</h4><ul><li>Gollnick PD, Piehl K, Saltin B. Selective glycogen depletion pattern in human muscle fibres after exercise of varying intensity and at varying pedalling rates. J Physiol 1974;241(1):45–57. DOI 10.1113/jphysiol.1974.sp010639 · PMID 4278539 — esvaziamento 2,7× e 7,4× a 64% e 84% vs 31% do VO₂máx; lentas primeiro no submáximo, rápidas aos poucos; acima do VO₂máx as duas desde o início; cadência 30–120 rpm sem efeito; após 3 h leves sobra glicogênio, quase todo nas rápidas; PAS + ATPase.</li><li>Gollnick PD, Karlsson J, Piehl K, Saltin B. Selective glycogen depletion in skeletal muscle fibres of man following sustained contractions. J Physiol 1974;241(1):59–67. DOI 10.1113/jphysiol.1974.sp010640 · PMID 4278538 — contração isométrica (n = 6): abaixo de 20% da CVM esvaziam as lentas; acima, as rápidas.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 65,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "Três Endereços na Fibra",
+    "subtitle": "Onde o glicogênio fica importa tanto quanto a quantidade.",
+    "content": "[[COMP:GlycogenPoolsSim]]<h4>Fontes</h4><ul><li>Nielsen J, Holmberg HC, Schrøder HD, Saltin B, Ørtenblad N. Human skeletal muscle glycogen utilization in exhaustive exercise: role of subcellular localization and fibre type. J Physiol 2011;589(Pt 11):2871–2885. DOI 10.1113/jphysiol.2010.204487 · PMID 21486810 — três compartimentos; o intramiofibrilar esvazia mais e, só com água, custa a voltar; n = 10 atletas de elite.</li><li>Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — intramiofibrilar = 10–15% do total.</li><li>Nielsen J, Ørtenblad N. Physiological aspects of the subcellular localization of glycogen in skeletal muscle. Appl Physiol Nutr Metab 2013;38(2):91–99. DOI 10.1139/apnm-2012-0184 · PMID 23438218 — glicogênio como β-partículas de 10–45 nm (trilha de escala); os três endereços.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 66,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Cálcio que Falha",
+    "subtitle": "Pouco glicogênio na miofibrila anda junto com menos cálcio liberado. Junto não é causa.",
+    "content": "[[COMP:CalciumReleaseSim]]<h4>Fontes</h4><ul><li>Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — braço a 31% e Ca²⁺ a 85%; +4 h com CHO 59% e Ca²⁺ normal; só água 29% e 77%; perna 71%, Ca²⁺ sem mudança; n = 10.</li><li>Gejl KD, Hvid LG, Frandsen U, Jensen K, Sahlin K, Ørtenblad N. Muscle glycogen content modifies SR Ca²⁺ release rate in elite endurance athletes. Med Sci Sports Exerc 2014;46(3):496–505. DOI 10.1249/MSS.0000000000000132 · PMID 24091991 — 32% e 86%; r = 0,30; n = 14 triatletas.</li><li>Ørtenblad N, Westerblad H, Nielsen J. Muscle glycogen stores and fatigue. J Physiol 2013;591(18):4405–4413. DOI 10.1113/jphysiol.2013.251629 · PMID 23652590 — causa e efeito ainda não estabelecidos; acoplamento excitação-contração (túbulo T, DHPR, RyR1, SERCA) como pano de fundo.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 67,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Fígado, o Segundo Limite",
+    "subtitle": "O carboidrato na prova protege o fígado e a glicemia; o músculo, quase nada.",
+    "content": "[[COMP:TwoTanksSim]]<h4>Fontes</h4><ul><li>Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g, fígado ~80 g.</li><li>Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Liver glycogen metabolism during and after prolonged endurance-type exercise. Am J Physiol Endocrinol Metab 2016;311(3):E543–E553. DOI 10.1152/ajpendo.00232.2016 · PMID 27436612 — atletas de endurance não têm glicogênio hepático basal maior.</li><li>Coyle EF, Coggan AR, Hemmert MK, Ivy JL. Muscle glycogen utilization during prolonged strenuous exercise when fed carbohydrate. J Appl Physiol 1986;61(1):165–172. DOI 10.1152/jappl.1986.61.1.165 · PMID 3525502 — fadiga 3,02 × 4,02 h; glicose 2,5 × 4,2–5,2 mM; uso de glicogênio igual nas 3 primeiras horas; n = 7.</li><li>Gonzalez JT, Fuchs CJ, Smith FE et al. Ingestion of glucose or sucrose prevents liver but not muscle glycogen depletion during prolonged endurance-type exercise in trained cyclists. Am J Physiol Endocrinol Metab 2015;309(12):E1032–E1039. DOI 10.1152/ajpendo.00376.2015 · PMID 26487008 — fígado 325 → 345 e músculo 101 → 60 mmol/L com glicose; água (n = 4) fígado 454 → 283.</li><li>Rothschild JA, Dudley-Rode H, Carpenter H et al. Carbohydrate ingestion during prolonged exercise and net skeletal muscle glycogen utilization: a meta-analysis. J Appl Physiol 2026;140(1):76–87. DOI 10.1152/japplphysiol.00861.2025 · PMID 41363659 — SMD −0,16; ~24 mmol/kg dw poupados; 31 estudos.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 68,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Muro em Números",
+    "subtitle": "Um em cada quatro maratonistas homens desaba no fim, e quem arrisca o ritmo desaba mais.",
+    "content": "[[COMP:WallStatsSim]]<h4>Fontes</h4><ul><li>Smyth B. How recreational marathon runners hit the wall: a large-scale data analysis of late-race pacing collapse in the marathon. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — 28% × 17% (OR 1,43; N = 1.928.813); ~40% mais lento por ~10 km; risco maior perto do recorde pessoal; glicogênio não medido.</li><li>Tarnopolsky LJ, MacDougall JD, Atkinson SA, Tarnopolsky MA, Sutton JR. Gender differences in substrate for endurance exercise. J Appl Physiol 1990;68(1):302–308. DOI 10.1152/jappl.1990.68.1.302 · PMID 2179207 — 6 homens e 6 mulheres igualmente treinados, dieta controlada 3 dias, 15,5 km de esteira a ~65% do VO₂máx (90–101 min): RER 0,94 (homens) × 0,87 (mulheres), uso de glicogênio do vasto lateral 25% maior e ureia 30% maior nos homens; conclusão dos autores: mulheres usam mais lipídio em exercício moderado e longo (abstract conferido em 12/11/2026). A ligação com o muro de Smyth é correlação, não testada.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 69,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "O Glicogênio Também Fala",
+    "subtitle": "O estoque baixo aumenta o sinal de adaptação. Sinal maior não garante prova melhor.",
+    "content": "[[COMP:GlycogenSignalSim]]<h4>Fontes</h4><ul><li>Bartlett JD, Louhelainen J, Iqbal Z et al. Reduced carbohydrate availability enhances exercise-induced p53 signaling in human skeletal muscle: implications for mitochondrial biogenesis. Am J Physiol Regul Integr Comp Physiol 2013;304(6):R450–R458. DOI 10.1152/ajpregu.00498.2012 · PMID 23364526 — glicogênio 467 × 103; ACC 2,9 × 1,4; p53 2,6 × 0,9; PGC-1α ~3× nos dois; n = 8.</li><li>Hansen AK, Fischer CP, Plomgaard P et al. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93–99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — o train low original, modelo de uma perna, n = 7 não treinados.</li><li>MacDonald C, Wojtaszewski JF, Pedersen BK, Kiens B, Richter EA. Interleukin-6 release from human skeletal muscle during exercise: relation to AMPK activity. J Appl Physiol 2003;95(6):2273–2277. DOI 10.1152/japplphysiol.00242.2003 · PMID 12937023 — a AMPK \"lê\" o estoque de glicogênio (α2-AMPK só subiu no estado depletado).</li><li>Impey SG, Hearris MA, Hammond KM et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031–1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — sinalização em 73% de 11 estudos; desempenho em 37%.</li></ul>",
+    "cards": []
+  },
+  {
+    "id": 70,
+    "sectionName": "Ato IV · O Tanque",
+    "number": "",
+    "layout": "prose",
+    "title": "",
+    "subtitle": "",
+    "content": "<p class=\"quote-text reveal\">Tanque cheio não ganha prova; <span class=\"hl-glycogen\">tanque vazio perde</span>.</p>",
+    "cards": []
+  }
 ]

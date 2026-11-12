@@ -1,0 +1,16 @@
+{
+  "slide": {
+    "fontes": [
+      "Jang C, Hui S, Lu W, et al. The small intestine converts dietary fructose into glucose and organic acids. Cell Metab 2018;27(2):351-61.e3. DOI 10.1016/j.cmet.2017.12.016 · PMID 29414685 — camundongo, traçadores: ~90% de dose baixa depurada no intestino (KHK); sangue portal com glicose, lactato e glicerato; doses ≥1 g/kg saturam e chegam ao fígado e ao cólon.",
+      "Sun SZ, Empie MW. Fructose metabolism in humans — what isotopic tracer studies tell us. Nutr Metab (Lond) 2012;9(1):89. DOI 10.1186/1743-7075-9-89 · PMID 23031075 — 45,0% oxidada em repouso (3–6 h) e 45,8% no exercício (2–3 h); ~41% vira glicose; ~¼ lactato; <1% a TG plasmático (frações se sobrepõem). Autores ligados à indústria de adoçantes: conflito de interesse a conferir.",
+      "Lecoultre V, Benoit R, Carrel G, et al. Fructose and glucose co-ingestion during prolonged exercise increases lactate and glucose fluxes and oxidation compared with an equimolar intake of glucose. Am J Clin Nutr 2010;92(5):1071-9. DOI 10.3945/ajcn.2010.29566 · PMID 20826630 — cruzado, n = 7, 120 min a ~60% VO₂máx: aparecimento de lactato 120 × 94 µmol/kg/min; oxidação da frutose meio a meio por lactato e glicose derivados dela.",
+      "Leijssen DP, Saris WH, Jeukendrup AE, Wagenmakers AJ. Oxidation of exogenous [¹³C]galactose and [¹³C]glucose during exercise. J Appl Physiol 1995;79(3):720-5. DOI 10.1152/jappl.1995.79.3.720 · PMID 8567509 — cruzado randomizado, n = 8, 120 min a 65% Wmáx: pico 0,41 × 0,85 g/min; 21% × 46% do ingerido oxidado; CHO endógeno 124 × 100 g."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "Grade estação × açúcar que se monta. Intestino: em camundongo, ~90% de uma dose baixa de frutose é depurada no próprio intestino pela KHK, e o sangue portal leva glicose, lactato e glicerato; ≥1 g/kg satura e segue ao fígado (Jang 2018). Fígado: em traçadores em humanos, ~45% da frutose é oxidada (45,0% em repouso, 45,8% no exercício), ~41% vira glicose e ~¼ lactato; <1% vai a triglicerídeo; as frações se sobrepõem (Sun & Empie 2012, autores ligados à indústria). Músculo: no exercício o lactato que entra no sangue sobe de 94 para 120 µmol/kg/min com frutose, e a oxidação dela se explica meio a meio por lactato e glicose (Lecoultre 2010, cruzado, n = 7). Galactose: mesma porta da glicose (SGLT1), passa pela via de Leloir no fígado e oxida metade: pico 0,41 × 0,85 g/min, 21% × 46% do ingerido, mais CHO endógeno gasto, 124 × 100 g (Leijssen 1995, n = 8). Fecho: a frutose abre pista (GLUT5); a galactose entra na mesma fila do SGLT1. O que as duas fazem no fígado volta em “O Fígado Prefere Sacarose”.",
+    "pergunta": "Se metade da frutose chega ao músculo como lactato, o lactato no sangue de quem toma gel misto é sinal de fadiga?",
+    "transicao": "Velocidade de entrada também é o que o índice glicêmico tenta medir. Mas ele mede o quê, exatamente?"
+  }
+}

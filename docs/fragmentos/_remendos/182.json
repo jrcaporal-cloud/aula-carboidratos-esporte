@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Masson G, Lamarche B. Many non-elite multisport endurance athletes do not meet sports nutrition recommendations for carbohydrates. Appl Physiol Nutr Metab 2016;41(7):728-734. DOI 10.1139/apnm-2015-0599 — n = 116, QFA; 45,7% na meta de CHO (66,7% no Ironman); 87,1% ≥ 1,2 g/kg/d de proteína.",
+   "Raizel R et al. Pre-season dietary intake of professional soccer players. Nutr Health 2017;23(4):215-222. DOI 10.1177/0260106017737014 — n = 19, 3 dias; 40,7 kcal/kg; CHO 5,44, PTN 1,91, LIP 1,27 g/kg/d.",
+   "Anderson L et al. Energy Intake and Expenditure of Professional Soccer Players of the English Premier League: Evidence of Carbohydrate Periodization. Int J Sport Nutr Exerc Metab 2017;27(3):228-238. DOI 10.1123/ijsnem.2016-0259 — n = 6, água duplamente marcada; 3.566 × 3.186 kcal/d; 6,4 × 4,2 g/kg (jogo × treino); véspera abaixo.",
+   "Burke LM, Cox GR, Cummings NK, Desbrow B. Guidelines for daily carbohydrate intake: do athletes achieve them? Sports Med 2001;31(4):267-299. DOI 10.2165/00007256-200131040-00003 — homem de endurance tende a atingir; mulher em restrição energética fica abaixo.",
+   "Jenner SL et al. Dietary Intakes of Professional and Semi-Professional Team Sport Athletes Do Not Meet Sport Nutrition Recommendations — A Systematic Literature Review. Nutrients 2019;11(5):1160. DOI 10.3390/nu11051160 — 21 estudos, n = 511: proteína/gordura sim, energia e CHO não.",
+   "Heikura IA, Stellingwerff T, Burke LM. Self-Reported Periodization of Nutrition in Elite Female and Male Runners and Race Walkers. Front Physiol 2018;9:1732. DOI 10.3389/fphys.2018.01732 — n = 104; 92% comem mais em dia forte; 32% com nutricionista."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Masson 2016 (116 amadores de endurance, QFA): só 45,7% atingiam a meta de carboidrato (66,7% no Ironman), mas 87,1% comiam ≥ 1,2 g/kg/d de proteína. Raizel 2017 (19 futebolistas profissionais, 3 dias): energia adequada (40,7 kcal/kg), carboidrato em 5,44 g/kg/d. Anderson 2017 (Premier League, n = 6, água duplamente marcada): 6,4 g/kg no jogo contra 4,2 no treino, abaixo na véspera. O déficit tem endereço: mulher em restrição energética (Burke 2001) e esporte coletivo profissional (Jenner 2019, 21 estudos, n = 511); na elite, 92% periodizam, mas só 32% têm nutricionista (Heikura 2018).",
+  "pergunta": "Por que o atleta amador come proteína de sobra e carboidrato de menos?",
+  "transicao": "Para saber se o tanque encheu, é preciso medir. Como se mede glicogênio?"
+ }
+}

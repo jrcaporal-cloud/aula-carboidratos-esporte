@@ -8,7 +8,8 @@ import { Chip } from './ui';
  */
 export const FictionChip = () => <Chip color={C.caveat}>caso fictício</Chip>;
 export const FictionsChip = () => <Chip color={C.caveat}>casos fictícios</Chip>;
-export const IllustrativeChip = () => <Chip color={C.caveat}>valores ilustrativos</Chip>;
+/** Com `children`, diz a QUE o selo se refere quando o slide também tem números reais. */
+export const IllustrativeChip = ({ children = 'valores ilustrativos' }: { children?: ReactNode }) => <Chip color={C.caveat}>{children}</Chip>;
 export const CalcChip = ({ children = 'cálculo' }: { children?: ReactNode }) => <Chip color={C.caveat}>{children}</Chip>;
 export const AnimalChip = ({ children = 'dado em animal' }: { children?: ReactNode }) => <Chip color={C.stone}>{children}</Chip>;
 export const ViaReviewChip = ({ children = 'via revisão' }: { children?: ReactNode }) => <Chip color={C.stone}>{children}</Chip>;

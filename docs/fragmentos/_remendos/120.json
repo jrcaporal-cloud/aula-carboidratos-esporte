@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Ivy JL, Katz AL, Cutler CL, Sherman WM, Coyle EF. Muscle glycogen synthesis after exercise: effect of time of carbohydrate ingestion. J Appl Physiol 1988;64(4):1480-1485. DOI 10.1152/jappl.1988.64.4.1480 · PMID 3132449 — cruzado, n = 12 ciclistas; 2 g/kg logo após × 2 h depois: 7,7 × 2,5 µmol/g ww/h nas primeiras 2 h; 4,1 depois do CHO adiado, ainda 45% mais lento.",
+   "Parkin JA, Carey MF, Martin IK, Stojanovska L, Febbraio MA. Muscle glycogen storage following prolonged exercise: effect of timing of ingestion of high glycemic index food. Med Sci Sports Exerc 1997;29(2):220-224. DOI 10.1097/00005768-199702000-00009 · PMID 9044226 — cruzado, n = 6; refeições de alto IG em 0–4 h × 2–6 h: glicogênio igual às 8 e às 24 h.",
+   "Jentjens R, Jeukendrup A. Determinants of post-exercise glycogen synthesis during short-term recovery. Sports Med 2003;33(2):117-144. DOI 10.2165/00007256-200333020-00004 · PMID 12617691 — revisão narrativa: síntese bifásica, fase rápida independente de insulina (~30–60 min, translocação de GLUT4) e fase lenta de horas; maiores taxas com 1,0–1,85 g/kg/h logo após o exercício e a cada 15–60 min.",
+   "Jensen J, Rustad PI, Kolnes AJ, Lai YC. The role of skeletal muscle glycogen breakdown for regulation of insulin sensitivity by exercise. Front Physiol 2011;2:112. DOI 10.3389/fphys.2011.00112 · PMID 22232606 — revisão: o glicogênio inibe a glicogênio sintase por retroalimentação; depois do exercício, captação e síntese estimuladas por insulina aumentam.",
+   "Mikines KJ, Sonne B, Farrell PA, Tronier B, Galbo H. Effect of physical exercise on sensitivity and responsiveness to insulin in humans. Am J Physiol 1988;254(3 Pt 1):E248-59. DOI 10.1152/ajpendo.1988.254.3.E248 · PMID 3126668 — clamps sequenciais, n = 7 não treinados: glicogênio sintase na forma ativa (I) elevada por 48 h após 60 min a 150 W.",
+   "Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h, de preferência alto IG; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h; 8–12 g/kg/d maximizam os estoques."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Primeiro o porquê: logo após o treino, a contração deixou GLUT4 na membrana (fase rápida, sem insulina, ~30–60 min; Jentjens 2003) e o glicogênio baixo ativa a glicogênio sintase, que glicogênio cheio inibe (Jensen 2011); a forma ativa da sintase ficou elevada por 48 h (Mikines 1988, n = 7) — por isso a janela fecha devagar. Ivy 1988, cruzado com 12 ciclistas: 2 g/kg logo após ou 2 h depois; nas primeiras 2 h, 7,7 contra 2,5 mmol/kg de peso úmido por hora; quando o CHO adiado chegou, 4,1, ainda 45% abaixo (não 47%). Parkin 1997 (cruzado, n = 6): atrasar as refeições 2 h não mudou o glicogênio às 8 nem às 24 h. Regra: próxima sessão em poucas horas, 1–1,2 g/kg/h já (Jentjens 1,0–1,85 a cada 15–60 min; ISSN 1,2 g/kg/h se < 4 h); dia seguinte, manda o total.",
+  "pergunta": "Quantos de vocês já orientaram 'comer em até 30 minutos' para um atleta que só treina de novo no dia seguinte? Respondam no chat: sim ou não.",
+  "transicao": "E quando o intervalo é curto de verdade, quanto isso vale em minutos de exercício?"
+ }
+}

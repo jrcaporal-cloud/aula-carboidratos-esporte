@@ -1,88 +1,59 @@
+import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { Beat, Grow } from './kit/Beat';
-import { CountUp } from './kit/CountUp';
+import { DUR, EASE_OUT } from '../../lib/motion';
 import { AnimalChip, DesignChip } from './kit/chips';
-import { Source } from './kit/ui';
-import { BODY_FONT, C, PANEL_BG } from './kit/palette';
-import { Enterocyte } from './ato2/Enterocyte';
 import { Model3DHint } from './kit/Model3DHint';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, Source } from './kit/ui';
+import { AbsorbFrame, StepText } from './ato2/AbsorbFrame';
+import { LaneCell } from './ato2/LaneCell';
+import { LaneChart } from './ato2/LaneChart';
+import { LANE_LEDGER, LANE_STEPS } from './ato2/twoLanes.content';
 
 /**
- * Slide 26 · Duas Pistas no Intestino. O enterócito à esquerda (a fila no SGLT1 cresce; o GLUT5 abre
- * a segunda pista) e, à direita, o medidor de oxidação exógena com o teto de uma fonte só.
+ * Slide 26 · Duas Pistas no Intestino, em tríptico: o enterócito com as moléculas fluindo (laço, o fluxo é o
+ * conteúdo), o gráfico do Jentjens 2004 (ingerido × oxidado, com a faixa do teto) e o painel do passo com
+ * o livro-caixa das conclusões. O último passo acumula tudo.
  */
-const MAX = 1.4; // g/min no fim da régua
+const Chips = ({ step }: { step: number }) => (
+    <>
+        {step === 0 && <DesignChip>revisão</DesignChip>}
+        {(step === 1 || step === 2) && <DesignChip>cruzado randomizado · n = 8 · sem desempenho</DesignChip>}
+        {step === 3 && <DesignChip>gráfico: n = 8</DesignChip>}
+        {step === 3 && <AnimalChip>camundongo knockout</AnimalChip>}
+        <Model3DHint label="enterócito" />
+    </>
+);
 
-interface Step {
-    value: string; flow: number; caption: string; line: string;
-    queue: number; fructose: boolean; glut2: boolean; chip: 'design' | 'animal' | null;
-}
-
-const STEPS: readonly Step[] = [
-    {
-        value: '~1,0–1,1', flow: 1.05, queue: 2, fructose: false, glut2: false, chip: null,
-        caption: 'g/min: teto da oxidação exógena com uma fonte só',
-        line: 'O gargalo está na absorção e no fígado, não no músculo.',
-    },
-    {
-        value: '0,83', flow: 0.83, queue: 8, fructose: false, glut2: false, chip: 'design',
-        caption: 'g/min oxidados com 1,8 g/min de glicose (com 1,2 g/min: 0,80)',
-        line: 'Mais glicose na boca só aumenta a fila na porta.',
-    },
-    {
-        value: '1,26', flow: 1.26, queue: 3, fructose: true, glut2: false, chip: 'design',
-        caption: 'g/min com 1,2 de glicose + 0,6 de frutose: ~55% a mais',
-        line: 'A frutose usa outra porta, o GLUT5: uma segunda pista.',
-    },
-    {
-        value: '1,26', flow: 1.26, queue: 3, fructose: true, glut2: true, chip: 'animal',
-        caption: 'g/min: a segunda pista explica o ganho',
-        line: 'GLUT2 na membrana apical? Em camundongo sem SGLT1, a glicose quase não foi retida. A porta principal é o SGLT1.',
-    },
-];
-
-const Gauge = ({ flow }: { flow: number }) => (
-    <div className="flex flex-col gap-2">
-        <div className="relative h-[40px] overflow-hidden rounded-lg bg-slate-800">
-            <Grow value={flow / MAX} color={C.glucose} />
-            <div className="absolute inset-y-0 border-x-[3px] border-dashed border-white/90"
-                style={{ left: `${(1.0 / MAX) * 100}%`, width: `${(0.1 / MAX) * 100}%` }} aria-hidden />
-        </div>
-        <div className="relative h-[24px] text-[16px] text-gray-300">
-            <span className="absolute left-0">0</span>
-            <span className="absolute -translate-x-1/2" style={{ left: `${(1.05 / MAX) * 100}%` }}>teto 1,0–1,1</span>
-            <span className="absolute right-0">1,4 g/min</span>
-        </div>
-    </div>
+const Ledger = ({ step }: { step: number }) => (
+    <table className="w-full border-separate border-spacing-y-[3px] text-left">
+        <tbody>
+            {LANE_LEDGER.filter(r => r.at <= step).map(r => (
+                <motion.tr key={r.what} initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: DUR.enter, delay: r.at === step ? 0.6 : 0, ease: EASE_OUT }}
+                    className={r.at === step ? 'text-[19px] font-semibold leading-tight' : 'text-[16px] leading-tight'}>
+                    <td className="pr-3 text-gray-100">{r.what}</td>
+                    <td className="text-right font-semibold tabular-nums" style={{ color: r.color }}>{r.value}</td>
+                </motion.tr>
+            ))}
+        </tbody>
+    </table>
 );
 
 export default function TwoLanesSim() {
-    const { step } = useSlideSteps(STEPS.length);
-    const s = STEPS[step];
+    const { step, setStep } = useSlideSteps(LANE_STEPS.length);
+    const s = LANE_STEPS[step];
     return (
-        <div className="not-prose flex flex-col gap-3" style={BODY_FONT}>
-            <div className="grid grid-cols-[507px_1fr] gap-8 rounded-2xl px-5 py-3" style={PANEL_BG}>
-                <Enterocyte glucoseQueue={s.queue} fructose={s.fructose} apicalGlut2={s.glut2} />
-                <div className="flex flex-col justify-center gap-5">
-                    <div className="flex flex-col gap-1">
-                        <CountUp text={s.value} className="font-display text-[84px] font-bold leading-none"
-                            style={{ color: s.fructose ? C.fructoseSoft : C.glucose }} />
-                        <span className="text-[20px] leading-snug text-gray-200">{s.caption}</span>
-                    </div>
-                    <Gauge flow={s.flow} />
+        <AbsorbFrame tabs={LANE_STEPS.map(l => l.tab)} step={step} setStep={setStep} layoutId="lanes-tabs" chips={<Chips step={step} />}>
+            <Panel className="shrink-0 py-1"><LaneCell queueSize={s.queue} fructose={s.fructose} apicalGlut2={s.apicalGlut2} /></Panel>
+            <Panel className="shrink-0 py-1"><LaneChart step={step} /></Panel>
+            <Panel className="flex min-w-0 flex-1 flex-col gap-2 px-4 py-3">
+                <StepText step={step} headline={s.headline} color={s.color} text={s.text} />
+                <div className="mt-auto flex flex-col gap-2">
+                    <Ledger step={step} />
+                    <Source>{sourcesUpTo(LANE_STEPS.map(l => l.sources), step)}</Source>
                 </div>
-            </div>
-            <div className="flex min-h-[76px] items-start justify-between gap-6">
-                <Beat beat={step} className="min-w-0 flex-1">
-                    <p className="m-0 text-[27px] leading-snug text-gray-100">{s.line}</p>
-                </Beat>
-                <span className="mt-1 flex shrink-0 flex-col items-end gap-2">
-                    {s.chip === 'design' && <DesignChip>cruzado randomizado · n = 8 · ¹³C/¹⁴C · sem desempenho</DesignChip>}
-                    {s.chip === 'animal' && <AnimalChip>camundongo knockout</AnimalChip>}
-                    <Model3DHint label="enterócito em 3D" />
-                </span>
-            </div>
-            <Source>Jeukendrup AE, Jentjens R. Sports Med 2000 · Jentjens RL et al. J Appl Physiol 2004 · Röder PV et al. PLoS One 2014</Source>
-        </div>
+            </Panel>
+        </AbsorbFrame>
     );
 }

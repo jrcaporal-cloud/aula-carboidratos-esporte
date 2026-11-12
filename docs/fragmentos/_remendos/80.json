@@ -1,0 +1,14 @@
+{
+ "slide": {
+  "fontes": [
+   "Sherman WM, Costill DL, Fink WJ, Miller JM. Effect of exercise-diet manipulation on muscle glycogen and its subsequent utilization during performance. Int J Sports Med 1981;2(2):114-118. DOI 10.1055/s-2008-1034594 · PMID 7333741 — cruzado, 3 regimes de 6 dias em corredores treinados, com o mesmo polimento na esteira (73% do VO2máx: 90, 40, 40, 20, 20 min e 1 dia de repouso): depleção (15% de CHO) + carga (70%) = 207; dieta mista (50%) + carga = 203; só mista = 159 mmol/kg de peso úmido; gasto de 5,0 e 5,1 × 3,1 mmol/kg/km na corrida de 20,9 km, sem diferença de tempo nem de glicogênio pós-prova (abstract conferido em 12/11/2026; números do pós-prova e duração da corrida não constam). O n não consta no abstract.",
+   "Não usado: o relato de Ron Hill (só fonte secundária) e os tempos de Karlsson & Saltin 1971 (não confirmados)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "A dieta escandinava esvaziava o tanque com 3 dias a 15% de carboidrato antes de 3 dias a 70%. Sherman e Costill, 1981, cruzado em corredores treinados, com o mesmo polimento na esteira nos três regimes: com depleção, 207 mmol/kg; com 3 dias de dieta mista no lugar, 203; só dieta mista, 159 (cerca de 23% abaixo). A depleção não acrescenta nada: quem enche é a carga. Na corrida de 20,9 km o tempo foi igual, e o glicogênio no fim da prova também não diferiu, porque quem começa cheio também gasta mais: 5,0–5,1 contra 3,1 mmol/kg por km (o abstract não dá a duração da corrida nem os valores pós-prova). Limites: n fora do abstract, sem cegamento, prova curta.",
+  "pergunta": "Alguém aqui ainda vê atleta fazendo a fase de depleção antes da prova? Respondam no chat: sim ou não.",
+  "transicao": "Se esvaziar não precisa, quanto tempo de carga precisa? Talvez um dia só."
+ }
+}

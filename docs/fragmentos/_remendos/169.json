@@ -1,0 +1,13 @@
+{
+  "slide": {
+    "fontes": [
+      "Moser O, Zaharieva DP, Adolfsson P, et al. The use of automated insulin delivery around physical activity and exercise in type 1 diabetes: a position statement of the European Association for the Study of Diabetes (EASD) and the International Society for Pediatric and Adolescent Diabetes (ISPAD). Diabetologia 2025;68(2):255-280. DOI 10.1007/s00125-024-06308-z · PMID 39653802 — Tabela 2: alvo temporário mais alto 1–2 h antes (glicose 5,0–15,0 mmol/L); bolus −25 a −33% se exercício < 2 h após a refeição; lanche de 10–20 g se < 5,0 mmol/L; durante, < 7,0 mmol/L: 3–6, 6–9, 9–12 e 12–20 g conforme a seta; reavaliar em 20–30 min; > 15,0 mmol/L checar cateter e cetonas. Consenso para usuários de AID (graus C–D em parte), não prescrição individual."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "Posicionamento EASD/ISPAD 2025 (Moser et al., Tabela 2) para usuários de sistemas automatizados de insulina: com glicose de 5,0 a 15,0 mmol/L, ativar o alvo temporário mais alto 1–2 h antes; exercício menos de 2 h após a refeição, reduzir o bolus em 25–33%; abaixo de 5,0 mmol/L no início, lanche de 10–20 g sem insulina. Durante, abaixo de 7,0 mmol/L, CHO rápido conforme a seta do sensor: 3–6 g estável, 6–9 g caindo devagar, 9–12 g caindo, 12–20 g com duas ou três setas; reavaliar em 20–30 min, e acima de 15,0 mmol/L checar cateter e cetonas. Na tabela, as linhas do 'durante' começam com '?' e acendem uma por passo. É consenso (graus C–D em parte), não prescrição individual; as leituras do sensor na tela são ilustrativas. Os números atribuídos ao Riddell 2017 não entram: só existem em fontes secundárias.",
+    "pergunta": "Quem já atendeu atleta com DM1? Quem decide o ajuste de insulina no time de vocês?",
+    "transicao": "Por fim, um custo que quase ninguém conta: o dos dentes."
+  }
+}

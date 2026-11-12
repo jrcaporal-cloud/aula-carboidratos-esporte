@@ -1,88 +1,130 @@
-import { motion } from 'framer-motion';
-import { ArrowDown, ArrowUp, Equal, HelpCircle } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT, stagger } from '../../lib/motion';
-import { Beat, Grow } from './kit/Beat';
-import { CountUp } from './kit/CountUp';
 import { DesignChip } from './kit/chips';
+import { CountSvgText } from './kit/CountUp';
 import { br } from './kit/format';
-import { C, PANEL_BG } from './kit/palette';
-import { Lead, SimFrame } from './ato6/Frame';
-import { DESIGN, DOSES, LEADS, LEDGER, SOURCES, type Mark } from './ato6/highdose.content';
+import { C } from './kit/palette';
+import { sourcesUpTo } from './kit/sources';
+import { SvgText } from './kit/ui';
+import { PaFrame, PaSide, STAGE_INNER_H, STAGE_INNER_W } from './ato6/paFrame';
+import { LESSONS, PODL, RAVI, STEPS } from './ato6/highdose.content';
 
 /**
- * Slide 105 · 120 g/h: o que se sabe. À esquerda, três colunas de dose (oxidação exógena sobe; sintomas GI sobem junto);
- * à direita, um livro-caixa que se preenche: o que foi medido, o que não mudou e o que ninguém demonstrou.
+ * Slide 105 · 120 g/h: o que se sabe. Palco em dois blocos com a mesma escala (g/min): à esquerda, Ravikanti 2025
+ * (barra vazada = carboidrato total oxidado; cheia = exógena), que ganha embaixo as linhas de sintomas GI e de custo
+ * de O₂; à direita, Podlogar 2022 em barras empilhadas (endógena embaixo, exógena em cima): o topo cresce, a base não.
+ * O painel acumula o que foi medido, o que não mudou e o que ninguém demonstrou.
  */
 
-const OX_MAX = 1.8;
-const BAR_H = 210;
+const BASE = 286;
+const TOP = 62;
+const MAX = 3.8;
+const sy = (v: number) => BASE - (v / MAX) * (BASE - TOP);
+const h = (v: number) => (v / MAX) * (BASE - TOP);
+const RX = [128, 214, 300] as const;
+const PX = [470, 576] as const;
+const BW = 64;
 
-const MARK: Record<Mark, { Icon: typeof ArrowUp; color: string }> = {
-    up: { Icon: ArrowUp, color: C.glucose },
-    down: { Icon: ArrowDown, color: C.ok },
-    same: { Icon: Equal, color: C.co2 },
-    none: { Icon: HelpCircle, color: C.stone },
+const grow = (reduce: boolean, delay: number) => ({
+    initial: reduce ? false as const : { scaleY: 0 },
+    animate: { scaleY: 1 },
+    transition: { duration: DUR.bar, delay, ease: EASE_OUT },
+    style: { originY: 1 },
+});
+
+const Ravikanti = ({ step, reduce }: { step: number; reduce: boolean }) => (
+    <g>
+        <SvgText x={8} y={22} text="Ravikanti 2025 · maratonistas de elite" size={16} color="#F3F4F6" weight={800} />
+        <SvgText x={8} y={44} text="g/min, 2ª hora" size={16} color={C.muted} weight={600} />
+        <line x1={84} x2={346} y1={BASE} y2={BASE} stroke="rgba(255,255,255,0.35)" strokeWidth={2} />
+        {RAVI.map((d, i) => (
+            <g key={d.gh}>
+                <motion.rect x={RX[i] - BW / 2} y={sy(d.total)} width={BW} height={h(d.total)} rx={6} fill="transparent" stroke={C.stone} strokeWidth={2.5}
+                    {...grow(reduce, stagger(i, 0, 0.12))} />
+                <motion.rect x={RX[i] - BW / 2 + 6} y={sy(d.exo)} width={BW - 12} height={h(d.exo)} rx={4} fill={C.glucose}
+                    {...grow(reduce, stagger(i, 0.25, 0.12))} />
+                <CountSvgText x={RX[i]} y={sy(d.total) - 8} text={br(d.total, 2)} size={16} anchor="middle" color="#E5E7EB" weight={700} delay={stagger(i, 0.2, 0.12)} />
+                <CountSvgText x={RX[i]} y={sy(d.exo) + 22} text={br(d.exo, 2)} size={17} anchor="middle" color="#FFFFFF" weight={800} delay={stagger(i, 0.45, 0.12)} />
+                <SvgText x={RX[i]} y={BASE + 22} text={`${d.gh} g/h`} size={17} anchor="middle" color="#FFFFFF" weight={800} />
+                <SvgText x={RX[i]} y={BASE + 42} text={d.ratio} size={16} anchor="middle" color={C.muted} weight={600} />
+                <motion.g initial={false} animate={{ opacity: step >= 1 ? 1 : 0, y: step >= 1 ? 0 : 6 }}
+                    transition={{ duration: DUR.enter, delay: step === 1 ? stagger(i, 0.15, 0.12) : 0, ease: EASE_OUT }}>
+                    <rect x={RX[i] - 41} y={BASE + 56} width={82} height={26} rx={6} fill={d.gi === 'pico' ? C.risk : `${C.risk}33`} />
+                    <SvgText x={RX[i]} y={BASE + 75} text={d.gi} size={16} anchor="middle" color={d.gi === 'pico' ? '#FFFFFF' : '#FDA4AF'} weight={800} />
+                </motion.g>
+            </g>
+        ))}
+        <SvgText x={8} y={BASE + 22} text="dose" size={16} color={C.muted} weight={600} />
+        <SvgText x={8} y={BASE + 42} text="proporção" size={16} color={C.muted} weight={600} />
+        <motion.g initial={false} animate={{ opacity: step >= 1 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 1 ? 0.5 : 0 }}>
+            <SvgText x={8} y={BASE + 75} text="GI" size={16} color="#FDA4AF" weight={700} />
+            <line x1={RX[0]} x2={RX[2]} y1={BASE + 102} y2={BASE + 102} stroke={C.ok} strokeWidth={3} markerEnd="url(#hd-head)" />
+            <SvgText x={8} y={BASE + 108} text="O₂" size={16} color={C.ok} weight={700} />
+            <SvgText x={(RX[0] + RX[2]) / 2} y={BASE + 130} text="−8,1 mL/kg/km · p = 0,039" size={16} anchor="middle" color={C.ok} weight={800} />
+        </motion.g>
+        <g>
+            <rect x={84} y={BASE + 140} width={14} height={14} rx={3} fill="transparent" stroke={C.stone} strokeWidth={2.5} />
+            <SvgText x={104} y={BASE + 153} text="total de CHO" size={16} color={C.caveat} weight={600} />
+            <rect x={218} y={BASE + 140} width={14} height={14} rx={3} fill={C.glucose} />
+            <SvgText x={238} y={BASE + 153} text="exógena" size={16} color={C.glucoseSoft} weight={600} />
+        </g>
+    </g>
+);
+
+const Podlogar = ({ step, reduce }: { step: number; reduce: boolean }) => {
+    const on = step >= 2;
+    return (
+        <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            <line x1={384} x2={384} y1={12} y2={BASE + 150} stroke="rgba(255,255,255,0.18)" strokeWidth={2} />
+            <SvgText x={404} y={22} text="Podlogar 2022 · ciclistas" size={16} color="#F3F4F6" weight={800} />
+            <SvgText x={404} y={44} text="g/min, 120–180 min" size={16} color={C.muted} weight={600} />
+            <line x1={420} x2={630} y1={BASE} y2={BASE} stroke="rgba(255,255,255,0.35)" strokeWidth={2} />
+            {on && PODL.map((d, i) => (
+                <g key={d.gh}>
+                    <motion.rect x={PX[i] - BW / 2} y={sy(d.endo)} width={BW} height={h(d.endo)} rx={4} fill={C.glycogen} {...grow(reduce, stagger(i, 0.1, 0.12))} />
+                    <motion.rect x={PX[i] - BW / 2} y={sy(d.endo + d.exo)} width={BW} height={h(d.exo)} rx={4} fill={C.glucose}
+                        initial={reduce ? false : { opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.enter, delay: stagger(i, 0.5, 0.15), ease: EASE_OUT }} />
+                    <SvgText x={PX[i]} y={sy(d.endo) + h(d.endo) / 2 + 6} text={br(d.endo, 2)} size={18} anchor="middle" color="#FFFFFF" weight={800} />
+                    <SvgText x={PX[i]} y={sy(d.endo + d.exo) + h(d.exo) / 2 + 6} text={br(d.exo, 2)} size={18} anchor="middle" color="#FFFFFF" weight={800} />
+                    <SvgText x={PX[i]} y={BASE + 22} text={`${d.gh} g/h`} size={17} anchor="middle" color="#FFFFFF" weight={800} />
+                    <SvgText x={PX[i]} y={BASE + 42} text={d.ratio} size={16} anchor="middle" color={C.muted} weight={600} />
+                </g>
+            ))}
+            <SvgText x={(PX[0] + PX[1]) / 2} y={BASE + 62} text="maltodextrina:frutose" size={16} anchor="middle" color={C.muted} weight={600} />
+            <SvgText x={630} y={BASE + 86} text="exógena p = 0,026" size={16} anchor="end" color={C.glucoseSoft} weight={800} />
+            <SvgText x={630} y={BASE + 108} text="endógena igual" size={16} anchor="end" color={C.glycogenSoft} weight={800} />
+            <SvgText x={630} y={BASE + 127} text="p = 0,786" size={16} anchor="end" color={C.glycogenSoft} weight={700} />
+            <rect x={404} y={BASE + 140} width={14} height={14} rx={3} fill={C.glycogen} />
+            <SvgText x={424} y={BASE + 153} text="endógena (estoque)" size={16} color={C.glycogenSoft} weight={600} />
+        </motion.g>
+    );
 };
 
-const Columns = ({ step }: { step: number }) => (
-    <div className="flex items-end gap-7">
-        {DOSES.map((d, i) => (
-            <div key={d.gh} className="flex w-[130px] flex-col items-center gap-2">
-                <CountUp text={br(d.ox, 2)} delay={stagger(i, 0.2, 0.15)} className="font-display text-[34px] font-bold leading-none" style={{ color: C.glucose }} />
-                <div className="relative w-full overflow-hidden rounded-t-xl bg-white/5" style={{ height: BAR_H }}>
-                    <div className="absolute inset-x-0 bottom-0" style={{ height: `${(d.ox / OX_MAX) * 100}%` }}>
-                        <Grow value={1} axis="y" color={C.glucose} delay={stagger(i, 0.1, 0.15)} />
-                    </div>
-                </div>
-                <span className="text-[22px] font-semibold text-white">{d.gh} g/h</span>
-                <motion.span className="whitespace-nowrap rounded-lg px-3 py-1 text-[17px] font-semibold"
-                    style={{ background: d.gi === 'pico' ? C.risk : 'rgba(244,63,94,0.18)', color: d.gi === 'pico' ? '#04080F' : '#FDA4AF' }}
-                    initial={false} animate={{ opacity: step >= 1 ? 1 : 0, y: step >= 1 ? 0 : 6 }}
-                    transition={{ delay: step >= 1 ? stagger(i, 0.15, 0.12) : 0, duration: DUR.enter, ease: EASE_OUT }}>
-                    {d.gi}
-                </motion.span>
-            </div>
-        ))}
-        <span className="flex w-[118px] flex-col gap-[60px] text-[18px] leading-snug text-gray-400">
-            <span>g/min oxidados, 2ª hora</span>
-            <motion.span initial={false} animate={{ opacity: step >= 1 ? 1 : 0 }} style={{ color: '#FDA4AF' }}>sintomas GI</motion.span>
-        </span>
-    </div>
-);
-
-const Ledger = ({ step }: { step: number }) => (
-    <div className="flex flex-col gap-2">
-        {LEDGER.filter(r => r.from <= step).map((r, i) => {
-            const { Icon, color } = MARK[r.mark];
-            const verdict = r.mark === 'none';
-            return (
-                <motion.div key={r.label} className="flex items-center gap-4 rounded-xl px-4 py-2.5"
-                    style={verdict ? { background: C.stone } : PANEL_BG}
-                    initial={{ opacity: 0, x: 14 }} animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: stagger(i, 0.15, 0.1), duration: DUR.enter, ease: EASE_OUT }}>
-                    <Icon size={26} strokeWidth={3} color={verdict ? '#04080F' : color} aria-hidden />
-                    <span className="flex flex-col">
-                        <span className="text-[21px] font-semibold" style={{ color: verdict ? '#04080F' : '#fff' }}>{r.label}</span>
-                        <span className="text-[18px]" style={{ color: verdict ? '#1F2937' : '#D1D5DB' }}>{r.value}</span>
-                    </span>
-                </motion.div>
-            );
-        })}
-    </div>
-);
+const Stage = ({ step }: { step: number }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <svg viewBox={`0 0 ${STAGE_INNER_W} ${STAGE_INNER_H}`} width="100%" height="100%" className="block" role="img"
+            aria-label="Oxidação de carboidrato com 60, 90 e 120 g/h em maratonistas e endógena × exógena com 90 e 120 g/h em ciclistas">
+            <defs>
+                <marker id="hd-head" viewBox="0 0 10 10" refX={6} refY={5} markerWidth={4} markerHeight={4} orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 Z" fill={C.ok} />
+                </marker>
+            </defs>
+            <Ravikanti step={step} reduce={reduce} />
+            <Podlogar step={step} reduce={reduce} />
+        </svg>
+    );
+};
 
 export default function HighDoseSim() {
-    const { step } = useSlideSteps(4);
+    const { step, setStep } = useSlideSteps(STEPS.length);
+    const s = STEPS[step];
     return (
-        <SimFrame
-            lead={<Beat beat={`l${step}`}><Lead>{LEADS[step]}</Lead></Beat>}
-            chips={<DesignChip>{DESIGN[step]}</DesignChip>}
-            source={SOURCES[step]}>
-            <div className="flex h-full items-center gap-10">
-                <div className="shrink-0"><Columns step={step} /></div>
-                <div className="flex min-w-0 flex-1 flex-col gap-3"><Ledger step={step} /></div>
-            </div>
-        </SimFrame>
+        <PaFrame tabs={STEPS.map(t => t.tab)} step={step} onSelect={setStep} layoutId="highdose-tabs"
+            chips={<DesignChip>{s.design}</DesignChip>}
+            stage={<Stage step={step} />}
+            panel={<PaSide step={step} color={s.color} headline={s.headline} text={s.text} lessons={LESSONS}
+                source={sourcesUpTo(STEPS.map(t => t.sources), step)} />} />
     );
 }

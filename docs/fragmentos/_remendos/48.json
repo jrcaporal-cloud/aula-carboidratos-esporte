@@ -1,0 +1,18 @@
+{
+  "slide": {
+    "fontes": [
+      "Levine SA, Gordon B, Derick CL. Some changes in the chemical constituents of the blood following a marathon race. JAMA 1924;82(22):1778-9. DOI 10.1001/jama.1924.02650480034015 — original NÃO lido; citado em Hearris 2018 (glicemia < 4 mmol/L na chegada).",
+      "Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — revisão que cita Levine 1924.",
+      "Christensen EH, Hansen O. Arbeitsfähigkeit und Ernährung. Skand Arch Physiol 1939;81:160-71. DOI 10.1111/j.1748-1716.1939.tb01320.x; e Hypoglykämie, Arbeitsfähigkeit und Ermüdung. Skand Arch Physiol 1939;81:172-9. DOI 10.1111/j.1748-1716.1939.tb01321.x — originais não lidos: 210 × 80 min (dieta de carboidrato × gordurosa) segundo Bergström 1967; 200 g de glicose em 2 atletas exaustos, cerca de mais 1 h, segundo Noakes 2022.",
+      "Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140-50. DOI 10.1111/j.1748-1716.1967.tb03720.x · PMID 5584523 — fonte dos 210 × 80 min de Christensen e Hansen (introdução).",
+      "Noakes TD. What is the evidence that dietary macronutrient composition influences exercise performance? A narrative review. Nutrients 2022;14(4):862. DOI 10.3390/nu14040862 · PMID 35215511 — relato dos 200 g de glicose em 2 atletas (1939).",
+      "Coggan AR, Coyle EF. Reversal of fatigue during prolonged exercise by carbohydrate infusion or ingestion. J Appl Physiol 1987;63(6):2388-95. DOI 10.1152/jappl.1987.63.6.2388 · PMID 3325488 — só o desenho (cruzado, placebo, n = 7, glicose IV); os números ficam no slide O Resgate pela Veia."
+    ]
+  },
+  "notas": {
+    "minutos": 2,
+    "mensagem": "A história em três marcos, numa linha do tempo em escala. 1923: Levine, Gordon e Derick mediram a glicemia de maratonistas de Boston na chegada e acharam < 4 mmol/L (JAMA 1924, não lido; via Hearris 2018): observação, associação. 1939: Christensen e Hansen (Copenhague) acharam 210 × 80 min de trabalho com dieta de carboidrato × gordurosa (segundo Bergström 1967) e deram 200 g de glicose a 2 atletas exaustos, que seguiram cerca de mais 1 h (segundo Noakes 2022): intervenção sem controle. Nos anos 1960 a biópsia levou o foco ao glicogênio muscular; em 1987, Coggan e Coyle voltaram ao sangue com cruzado, placebo e n = 7. A evidência sobe um degrau por marco.",
+    "pergunta": "Uma observação na linha de chegada prova causa? O que faltava nesse desenho?",
+    "transicao": "Para provar, alguém precisava devolver a glicose ao atleta exausto, com placebo, e ver o que acontecia."
+  }
+}

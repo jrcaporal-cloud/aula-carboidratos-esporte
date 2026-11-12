@@ -1,31 +1,31 @@
 {
   "10": {
     "minutos": 3,
-    "mensagem": "Marina é um caso fictício, e a curva dela é ilustrativa: 5:00 por km até o 30 e uma queda de cerca de 37% depois do 32. Os tanques usam médias reais de adulto, ~500 g de glicogênio no músculo (300–700 g) e ~80 g no fígado (0–160 g), segundo a revisão de Murray e Rosenbloom 2018. O dado do fim é real: em 1,9 milhão de maratonistas, 28% dos homens e 17% das mulheres bateram no muro, e quem bate perde cerca de 40% do ritmo por uns 10 km (Smyth 2021, observacional). Atenção: Smyth definiu o muro pela queda do ritmo. Ninguém mediu glicogênio.",
-    "pergunta": "Antes de qualquer número: no km 32 da Marina, o que acabou? Escrevam no chat uma palavra: músculo, fígado, glicose do sangue ou cabeça.",
+    "mensagem": "Marina é fictícia e a curva é ilustrativa: 5:00 por km até o 30 (2h30 de prova) e ~6:50 depois do 32, sem voltar. Os estoques são médias reais de adulto (Murray e Rosenbloom 2018): ~500 g de glicogênio no músculo (300–700 g), ~80 g no fígado (0–160 g) e só ~4 g de glicose no sangue inteiro; o cérebro guarda nos astrócitos ~100× menos glicogênio que o músculo. Esses são os quatro candidatos da pergunta. O fecho é real: em 1.928.813 maratonistas, 28% dos homens e 17% das mulheres bateram no muro (OR 1,43), e quem bate fica ~40% mais lento por ~10 km (homens 40% por 10,7 km; mulheres 37% por 9,6 km) (Smyth 2021). Atenção: observacional, o muro foi definido pela queda do ritmo; ninguém mediu glicogênio.",
+    "pergunta": "No km 32 da Marina, o que acabou? Uma palavra no chat: músculo, fígado, sangue ou cérebro.",
     "transicao": "Para responder isso vamos precisar olhar a mesma molécula de três jeitos diferentes."
   },
   "11": {
     "minutos": 3,
-    "mensagem": "Combustível: cada litro de O₂ rende ~21,1 kJ queimando glicose e ~19,6 kJ queimando gordura, cerca de 7,7% a mais (cálculo nosso a partir de Scott 2012). Sinal: na contagem de Impey 2018, treinar com glicogênio baixo aumentou a sinalização em 73% de 11 estudos, mas melhorou o desempenho em só 37% deles. Escolha: as diretrizes dão faixas diárias de 3–5 g/kg em dia leve até 8–12 g/kg em dias de mais de 4–5 h (Burke 2011, Thomas 2016; faixas lidas em tabela secundária). A aula inteira volta a esses três papéis.",
+    "mensagem": "Combustível: cada litro de O₂ rende ~21,1 kJ queimando glicose e ~19,6 kJ queimando gordura, ~7,7% a mais (cálculo nosso a partir de Scott 2012). Sinal: na contagem de Impey 2018, treinar com glicogênio baixo (train low, em 30–50% das sessões) aumentou a sinalização em 73% de 11 estudos, a expressão gênica em 75% de 12 e as enzimas oxidativas em 78% de 9, mas melhorou o desempenho em só 37% de 11 (63% sem mudança): o músculo responde em 3 de cada 4 estudos, o cronômetro em 1 de cada 3. Escolha: 3–5 g/kg/dia em dia leve até 8–12 g/kg acima de 4–5 h (Burke 2011, Thomas 2016; tabela secundária); para a Marina, fictícia, de 58 kg, isso vai de ~174 a ~696 g por dia (cálculo). No fim, cada cartão mostra os atos em que o papel volta.",
     "pergunta": "Qual dos três papéis vocês mais usam hoje para montar um plano: combustível, sinal ou escolha?",
     "transicao": "Agora, as pessoas que vão carregar esses três papéis pela aula."
   },
   "12": {
     "minutos": 3,
-    "mensagem": "São cinco casos fictícios, e cada um traz um problema de tanque diferente. A Marina, que seca antes da chegada, volta nos Atos IV e V. O Diego, que precisa repor no caminho e trava acima de 60 g/h, volta no VI. A Lara, que não tem tempo de encher entre jogos, volta no VII. O Tiago, cujo tanque pesa na balança, e o Paulo, cujo tanque esvazia só em parte, voltam no IX. O nível de cada tanque é ilustrativo: os números de cada caso aparecem, com a fonte, quando o personagem volta.",
+    "mensagem": "São cinco casos fictícios, cada um com um problema de tanque e uma pergunta fisiológica, e cada cartão já mostra o dado real que espera por ele. Marina (Atos IV e V): quanto cabe e quando seca; 17% das maratonistas batem no muro (Smyth 2021). Diego (Ato VI): quanto o intestino deixa passar; 2 semanas de treino intestinal cortaram 60% dos sintomas (Costa 2017, ECR, n = 25). Lara (Ato VII): o tanque volta entre dois jogos? 24 h depois do jogo o glicogênio ainda está 27% abaixo, mesmo com dieta otimizada (Krustrup 2011, n = 7). Tiago (Ato IX): quanto o tanque pesa; cada grama de glicogênio leva no mínimo 3 g de água (Fernández-Elías 2015, n = 9). Paulo (Ato IX): 3 séries de rosca tiram 24% do glicogênio do bíceps (MacDougall 1999, n = 4). O nível dos tanques é ilustrativo.",
     "pergunta": "Qual desses cinco se parece mais com o paciente que vocês atendem? Mandem o nome no chat.",
     "transicao": "Antes de abrir qualquer estudo, quero saber o que vocês já pensam."
   },
   "13": {
     "minutos": 3,
-    "mensagem": "Leia cada afirmação em voz alta e dê uns 10 segundos para o chat. Conte os votos clicando em concordo ou discordo; o 'desfazer' corrige um clique a mais. Não comente nem dê pista: os vereditos ficam para o slide 189, quando a turma vai comparar o próprio voto com a evidência. O último passo mostra onde a turma se dividiu, e a contagem fica guardada nesta sessão do navegador.",
+    "mensagem": "Leia cada afirmação em voz alta e dê uns 10 segundos para o chat. Conte os votos clicando em concordo ou discordo; o 'desfazer' corrige um clique a mais. O painel da direita diz em que ato a aula responde e que tipo de dado vai decidir (por exemplo, oxidação medida com isótopo, glicogênio por biópsia), sem pista do resultado; embaixo, a porcentagem da turma que concorda, ao vivo. O resumo mostra as oito divisões com o ato de cada uma, a afirmação mais dividida e a de mais consenso. A contagem fica guardada nesta sessão do navegador e volta no slide Mito ou Verdade, no Ato X.",
     "pergunta": "Concorda ou discorda? Responda no chat só com C ou D.",
     "transicao": "Guardem esses votos. Agora, o percurso que vamos fazer até poder responder cada um."
   },
   "14": {
     "minutos": 2,
-    "mensagem": "O percurso tem dez atos, e cada um responde a uma pergunta. Primeiro vem o que a molécula é, como o motor escolhe o combustível e o tamanho do tanque. Depois vem a prova inteira: antes, durante e depois. No fim, treinar com pouco, cada esporte e como ler um estudo para decidir no consultório.",
+    "mensagem": "O percurso tem dez atos, cada um com uma pergunta. Cada marco mostra que papéis ele acende: Combustível (âmbar), Sinal (azul) e Escolha (verde). Primeiro vem o que a molécula é, como o motor escolhe o combustível e o tamanho do tanque; depois a prova inteira: antes, durante e depois. No fim, treinar com pouco, cada esporte e como ler um estudo para decidir no consultório. O painel de baixo mostra três estações de cada ato e quem volta nele: Marina nos Atos IV e V, Diego no VI, Lara no VII, Tiago e Paulo no IX, e os cinco no X.",
     "pergunta": "Qual dessas dez perguntas vocês mais querem ver respondida hoje?",
     "transicao": "Começamos pela molécula: a mesma glicose, montada de jeitos diferentes."
   }

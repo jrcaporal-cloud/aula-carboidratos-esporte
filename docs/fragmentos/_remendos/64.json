@@ -1,0 +1,12 @@
+{
+ "slide": {
+  "fontes": [
+   "Gollnick PD, Piehl K, Saltin B. Selective glycogen depletion pattern in human muscle fibres after exercise of varying intensity and at varying pedalling rates. J Physiol 1974;241(1):45–57. DOI 10.1113/jphysiol.1974.sp010639 · PMID 4278539 — esvaziamento 2,7× e 7,4× a 64% e 84% vs 31% do VO₂máx; lentas primeiro no submáximo, rápidas aos poucos; acima do VO₂máx as duas desde o início; cadência 30–120 rpm sem efeito; após 3 h leves sobra glicogênio, quase todo nas rápidas; PAS + ATPase.",
+   "Gollnick PD, Karlsson J, Piehl K, Saltin B. Selective glycogen depletion in skeletal muscle fibres of man following sustained contractions. J Physiol 1974;241(1):59–67. DOI 10.1113/jphysiol.1974.sp010640 · PMID 4278538 — contração isométrica (n = 6): abaixo de 20% da CVM esvaziam as lentas; acima, as rápidas."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Gollnick, Piehl e Saltin 1974: cortes seriados da mesma biópsia, ATPase (tipo da fibra) ao lado do PAS (glicogênio), ciclismo de 30 a 150% do VO₂máx. A 31% esvazia pouco e só nas lentas (é o 1×); a 64%, 2,7× mais, as lentas se apagam e as rápidas seguem cheias; a 84%, 7,4× mais, as rápidas entram e o corte se apaga; acima do VO₂máx, os dois tipos desde o início. Após 3 h leves ainda sobra glicogênio, quase todo nas rápidas; a cadência (30–120 rpm) não mudou o padrão; no isométrico (segundo artigo, n = 6), abaixo de 20% da CVM esvaziam as lentas e acima as rápidas. Os botões de intensidade servem para a turma votar antes do clique. O mosaico é ilustrativo (as barras 1 · 2,7 · 7,4 são dado); PAS é semiquantitativo e o n é pequeno. Lição: glicogênio 'médio' razoável pode esconder fibras vazias."
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "slide": {
+  "fontes": [
+   "Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — braço a 31% e Ca²⁺ a 85%; +4 h com CHO 59% e Ca²⁺ normal; só água 29% e 77%; perna 71%, Ca²⁺ sem mudança; n = 10.",
+   "Gejl KD, Hvid LG, Frandsen U, Jensen K, Sahlin K, Ørtenblad N. Muscle glycogen content modifies SR Ca²⁺ release rate in elite endurance athletes. Med Sci Sports Exerc 2014;46(3):496–505. DOI 10.1249/MSS.0000000000000132 · PMID 24091991 — 32% e 86%; r = 0,30; n = 14 triatletas.",
+   "Ørtenblad N, Westerblad H, Nielsen J. Muscle glycogen stores and fatigue. J Physiol 2013;591(18):4405–4413. DOI 10.1113/jphysiol.2013.251629 · PMID 23652590 — causa e efeito ainda não estabelecidos; acoplamento excitação-contração (túbulo T, DHPR, RyR1, SERCA) como pano de fundo."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Primeiro o gatilho: o potencial de ação desce pelo túbulo T, o DHPR abre o RyR1 da cisterna, o Ca²⁺ sai, liga a troponina C, e a SERCA o devolve gastando ATP. Ørtenblad 2011, 10 esquiadores de elite, ~1 h de prova: glicogênio do tríceps 540 → 167 mmol/kg ps (31%) e liberação de Ca²⁺ do retículo a 85%; na perna 485 → 331 (71%), Ca²⁺ sem mudança. Recuperação sorteada: com 4 h de carboidrato, 59% e Ca²⁺ normal; só com água, 29% e 77%, normal só após mais 18 h com carboidrato (biópsia de 22 h). Gejl 2014 (14 triatletas, 4 h de ciclismo): 32% (225 mmol/kg ps) e 86%; potência de pico −5,5 a −8,9%, de volta em 4 h só com carboidrato; mas r = 0,30, ou seja, ~9 de 100 partes da variação do Ca²⁺ (r², conta nossa). Medida in vitro, em vesículas; só homens. A revisão de 2013 do próprio grupo: causa e efeito ainda não estabelecidos.",
+  "pergunta": "O que você precisaria ver num estudo para aceitar que o glicogênio causa a queda do cálcio?",
+  "transicao": "O músculo não é o único tanque que acaba. Há um segundo, menor, que segura o sangue."
+ }
+}

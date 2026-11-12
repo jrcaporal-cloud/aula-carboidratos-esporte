@@ -1,90 +1,99 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_IN_OUT, EASE_OUT } from '../../lib/motion';
+import { DUR, EASE_OUT } from '../../lib/motion';
+import { CHAPTERS } from '../../data/chapters';
 import { PANEL_BG } from './kit/palette';
-import { Beat } from './kit/Beat';
-import { ChoiceDetail, FuelDetail, SignalDetail } from './ato1/RoleDetails';
-import { ROLE_BEATS, ROLES, type Role, type RoleId } from './ato1/roles.content';
+import { Source, StepTabs } from './kit/ui';
+import { Reveal } from './kit/rhythm';
+import { sourcesUpTo } from './kit/sources';
+import { CalcChip, DesignChip, ViaReviewChip } from './kit/chips';
+import { ChoiceDiagram, FuelDiagram, SignalDiagram } from './ato1/RoleDetails';
+import { CHOICE, FUEL, OPEN_AT, ROLE_FINAL, ROLE_TABS, ROLES, SIGNAL, type Role, type RoleId } from './ato1/roles.content';
 
 /**
- * Slide 11 · Três Papéis de uma Molécula. Três cartões lado a lado; a cada passo um deles se abre
- * (layout compartilhado: os outros dois encolhem para dar lugar) e mostra o seu número-gancho.
- * O último passo devolve os três ao mesmo tamanho, cada um com o seu número em uma linha.
+ * Slide 11 · Três Papéis de uma Molécula, em tríptico. Os três cartões começam fechados (só o ícone e a pergunta);
+ * a cada passo um se abre com o seu mini-diagrama desenhado com eixo e unidade e o texto do estudo, e FICA aberto.
+ * O último passo acende, no pé de cada cartão, os atos em que aquele papel volta.
  */
-const STEPS = ROLE_BEATS.length;
-/** Passo em que cada papel abre (1, 2, 3); 0 e 4 = todos fechados. */
-const OPEN_AT: Record<RoleId, number> = { fuel: 1, signal: 2, choice: 3 };
-const RECAP = STEPS - 1;
+const STEPS = ROLE_TABS.length;
+const FINAL = STEPS - 1;
 
-const DETAIL: Record<RoleId, () => ReactNode> = {
-    fuel: () => <FuelDetail />,
-    signal: () => <SignalDetail />,
-    choice: () => <ChoiceDetail />,
+const DIAGRAM: Record<RoleId, () => ReactNode> = {
+    fuel: () => <FuelDiagram />,
+    signal: () => <SignalDiagram />,
+    choice: () => <ChoiceDiagram />,
 };
 
-interface RoleCardProps {
-    role: Role;
-    step: number;
-}
+const CHIPS: Record<RoleId, () => ReactNode> = {
+    fuel: () => <CalcChip>{FUEL.calc}</CalcChip>,
+    signal: () => <><DesignChip>{SIGNAL.design}</DesignChip><CalcChip>{SIGNAL.calc}</CalcChip></>,
+    choice: () => <><ViaReviewChip>{CHOICE.via}</ViaReviewChip><CalcChip>{CHOICE.calc}</CalcChip></>,
+};
 
-const RoleCard = ({ role, step }: RoleCardProps) => {
+const colorOf = (roman: string): string => CHAPTERS.find(c => c.roman === roman)?.color ?? '#F3F4F6';
+
+const Acts = ({ role }: { role: Role }) => (
+    <div className="flex items-center gap-2">
+        <span className="text-[16px] text-gray-200">volta nos atos</span>
+        {role.acts.map((a, i) => (
+            <motion.span key={a} className="rounded-md border-2 px-2 font-mono text-[16px] font-bold leading-6"
+                style={{ borderColor: colorOf(a), color: colorOf(a) }}
+                initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.08, duration: DUR.enter, ease: EASE_OUT }}>
+                {a}
+            </motion.span>
+        ))}
+    </div>
+);
+
+const RoleCard = ({ role, step }: { role: Role; step: number }) => {
     const reduce = useReducedMotion();
-    const open = step === OPEN_AT[role.id];
-    const dim = !open && step >= 1 && step < RECAP;
-    const recap = step === RECAP;
+    const open = step >= OPEN_AT[role.id];
+    const current = step === OPEN_AT[role.id] || step === FINAL;
     const Icon = role.icon;
-    const layoutT = { duration: reduce ? 0 : DUR.morph, ease: EASE_IN_OUT };
     return (
-        <motion.div layout transition={layoutT}
-            className="relative flex min-w-0 flex-col overflow-hidden border-2 p-6"
-            style={{
-                ...PANEL_BG, borderRadius: 18, flex: open ? 2.7 : 1,
-                borderColor: open || recap ? role.color : 'rgba(255,255,255,0.16)',
-            }}>
-            <motion.div animate={{ opacity: dim ? 0.55 : 1 }}
-                className={open ? 'flex items-center gap-4' : 'flex flex-col gap-2'}>
-                <motion.span layout="position" transition={layoutT}><Icon size={36} color={role.color} strokeWidth={2.2} aria-hidden /></motion.span>
-                <motion.span layout="position" transition={layoutT}
-                    className="font-display text-[34px] font-semibold leading-none tracking-tight" style={{ color: role.color }}>{role.name}</motion.span>
-                <motion.span layout="position" transition={layoutT} className="text-[22px] text-gray-200">{role.ask}</motion.span>
-            </motion.div>
+        <div className="relative flex min-w-0 flex-1 flex-col gap-2.5 rounded-2xl border-2 px-4 py-3.5 transition-colors duration-300"
+            style={{ ...PANEL_BG, borderColor: current ? role.color : open ? `${role.color}66` : 'rgba(255,255,255,0.16)' }}>
+            <div className="flex items-center gap-3">
+                <Icon size={30} color={role.color} strokeWidth={2.2} aria-hidden />
+                <span className="font-display text-[26px] font-semibold leading-none tracking-tight" style={{ color: role.color }}>{role.name}</span>
+                <span className="ml-auto shrink-0 whitespace-nowrap text-[17px] text-gray-200">{role.ask}</span>
+            </div>
 
-            {open && (
-                <motion.div className="mt-5" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: reduce ? 0 : 0.25, duration: DUR.enter, ease: EASE_OUT }}>
-                    {DETAIL[role.id]()}
+            {open ? (
+                <>
+                    <Reveal order={0}>{DIAGRAM[role.id]()}</Reveal>
+                    <Reveal order={1}><p className="m-0 text-[16px] leading-snug text-gray-100">{role.text}</p></Reveal>
+                    <Reveal order={2} className="mt-auto flex gap-2">{CHIPS[role.id]()}</Reveal>
+                    {step === FINAL && <Acts role={role} />}
+                </>
+            ) : (
+                <motion.div className="flex flex-1 items-center justify-center" initial={false}
+                    animate={{ opacity: 0.45 }} transition={{ duration: reduce ? 0 : DUR.enter }}>
+                    <Icon size={120} color={role.color} strokeWidth={1.5} aria-hidden />
                 </motion.div>
             )}
-
-            {recap && (
-                <motion.div className="mt-auto flex flex-col gap-1"
-                    initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: reduce ? 0 : 0.3, duration: DUR.enter, ease: EASE_OUT }}>
-                    <span className="font-display text-[52px] font-bold leading-none tracking-tight" style={{ color: role.color }}>{role.hook}</span>
-                    <span className="text-[20px] leading-snug text-gray-100">{role.hookCaption}</span>
-                </motion.div>
-            )}
-
-            {/* abertura: o ícone grande ocupa o cartão ainda fechado */}
-            {step === 0 && (
-                <motion.span aria-hidden className="absolute bottom-6 right-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    transition={{ delay: reduce ? 0 : 0.2, duration: DUR.enter, ease: EASE_OUT }}>
-                    <Icon size={132} color={role.color} strokeWidth={1.6} />
-                </motion.span>
-            )}
-        </motion.div>
+        </div>
     );
 };
 
 export default function ThreeRolesSim() {
-    const { step } = useSlideSteps(STEPS);
+    const { step, setStep } = useSlideSteps(STEPS);
+    const opened = ROLES.filter(r => step >= OPEN_AT[r.id]).map(r => r.source);
     return (
-        <div className="not-prose flex w-full flex-col gap-4" style={{ maxHeight: 516 }}>
-            <Beat beat={step} className="min-h-[44px] text-[30px] font-semibold leading-tight text-white">{ROLE_BEATS[step]}</Beat>
-            <div className="flex gap-4" style={{ height: 440 }}>
+        <div className="not-prose flex h-[500px] w-full flex-col gap-2.5">
+            <div className="flex items-center justify-between gap-4">
+                <StepTabs labels={ROLE_TABS} step={step} onSelect={setStep} layoutId="roles-tabs" />
+                <motion.span key={step === FINAL ? 'fim' : 'meio'} className="text-[20px] font-semibold text-white"
+                    initial={{ opacity: 0 }} animate={{ opacity: step === 0 || step === FINAL ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+                    {step === FINAL ? ROLE_FINAL : 'A mesma glicose, três perguntas.'}
+                </motion.span>
+            </div>
+            <div className="flex min-h-0 flex-1 gap-3.5">
                 {ROLES.map(r => <RoleCard key={r.id} role={r} step={step} />)}
             </div>
+            <Source>{opened.length ? sourcesUpTo(opened, opened.length - 1) : 'O fio da aula: Combustível, Sinal e Escolha.'}</Source>
         </div>
     );
 }

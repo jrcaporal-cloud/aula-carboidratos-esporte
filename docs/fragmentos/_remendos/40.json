@@ -1,0 +1,21 @@
+{
+ "slide": {
+  "fontes": [
+   "Lund S, Holman GD, Schmitz O, Pedersen O. Contraction stimulates translocation of glucose transporter GLUT4 in skeletal muscle through a mechanism distinct from that of insulin. Proc Natl Acad Sci USA 1995;92(13):5817-21. DOI 10.1073/pnas.92.13.5817 · PMID 7597034 — wortmanina: insulina 8,8 → 1,4 (GLUT4 na superfície 2,79 → 0,49 pmol/g), contração 4,4 → 4,1; soma 11,5 × 9,0 e 5,6 µmol·mL⁻¹·h⁻¹ (GLUT4 4,10 × 3,15 e 1,75 pmol/g); sóleo de rato isolado.",
+   "Richter EA, Hargreaves M. Exercise, GLUT4, and skeletal muscle glucose uptake. Physiol Rev 2013;93(3):993-1017. DOI 10.1152/physrev.00038.2012 · PMID 23899560 — GLUT4 transloca para a sarcolema e os túbulos T; Ca²⁺ e AMPK na parte proximal da cascata, Rab e SNARE na distal.",
+   "Sylow L, Kleinert M, Richter EA, Jensen TE. Exercise-stimulated glucose uptake — regulation and implications for glycaemic control. Nat Rev Endocrinol 2017;13(3):133-48. DOI 10.1038/nrendo.2016.162 · PMID 27739515 — captação até 50×; preservada no músculo resistente à insulina.",
+   "Nelson DL, Cox MM. Lehninger Principles of Biochemistry. 7ª ed. New York: W.H. Freeman; 2017. Cap. 12 (Biossinalização) — via da insulina: receptor → IRS-1 → PI3K → Akt (PKB) → translocação do GLUT4 (livro-texto). Capítulo conferido em 12/11/2026 em listagens de capítulos da 7ª ed. e no sumário da 6ª ed., com a mesma numeração (12 Biosignaling; 14 Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway; 16 The Citric Acid Cycle; 17 Fatty Acid Catabolism; 23 Hormonal Regulation and Integration of Mammalian Metabolism).",
+   "Sakamoto K, Holman GD. Emerging role for AS160/TBC1D4 and TBC1D1 in the regulation of GLUT4 traffic. Am J Physiol Endocrinol Metab 2008;295(1):E29-37. DOI 10.1152/ajpendo.90331.2008 · PMID 18477703 — AS160 é Rab-GAP fosforilada pela Akt e liga a cascata às vesículas (revisão; abstract conferido no PubMed em 12/11/2026).",
+   "Sylow L, Møller LLV, Kleinert M, et al. Rac1 and AMPK account for the majority of muscle glucose uptake stimulated by ex vivo contraction but not in vivo exercise. Diabetes 2017;66(6):1548-59. DOI 10.2337/db16-1138 · PMID 28389470 — debate AMPK × Rac1 (camundongo).",
+   "O'Neill HM, Maarbjerg SJ, Crane JD, et al. AMPK β1β2 muscle null mice reveal an essential role for AMPK in maintaining mitochondrial content and glucose uptake during exercise. Proc Natl Acad Sci USA 2011;108(38):16092-7. DOI 10.1073/pnas.1105062108 · PMID 21896769 — o outro lado do debate.",
+   "Mikines KJ, Sonne B, Farrell PA, Tronier B, Galbo H. Effect of physical exercise on sensitivity and responsiveness to insulin in humans. Am J Physiol 1988;254(3 Pt 1):E248-59. DOI 10.1152/ajpendo.1988.254.3.E248 · PMID 3126668 — Km 52 → 40 µU/mL às 48 h; efeito ausente em 5 dias (n = 3).",
+   "Richter EA, Mikines KJ, Galbo H, Kiens B. Effect of exercise on insulin action in human skeletal muscle. J Appl Physiol 1989;66(2):876-85. DOI 10.1152/jappl.1989.66.2.876 · PMID 2496078 — efeito local, só na coxa exercitada (n = 6)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "A glicose só entra na fibra pelo GLUT4, que em repouso fica em vesículas e, na contração, vai à sarcolema e aos túbulos T (Richter & Hargreaves 2013); o exercício aumenta a captação em até 50× (Sylow 2017). Chave 1, insulina: receptor → IRS-1 → PI3K → Akt → AS160, que libera as Rab das vesículas. Lund 1995, sóleo de rato isolado: a wortmanina, que bloqueia a PI3K, derrubou o transporte por insulina de 8,8 para 1,4 µmol·mL⁻¹·h⁻¹ (GLUT4 na superfície 2,79 → 0,49 pmol/g) e não mexeu no da contração (4,4 × 4,1). Chave 2, contração: Ca²⁺, AMPK e Rac1; qual é indispensável segue em debate (em camundongo, Rac1 pesou e α2-AMPK não, Sylow 2017; no knockout β1β2 a AMPK fez falta, O'Neill 2011). Juntas, 11,5 contra 9,0 e 5,6 (GLUT4 4,10 × 3,15 e 1,75 pmol/g): vias distintas que somam. Mikines 1988 (n = 7): Km da insulina 52 → 40 µU/mL às 48 h, ausente em 5 dias (n = 3); Richter 1989 (uma perna, n = 6): o efeito é local. A glicose que aparece passando pelas portas é o loop do palco. Tecla 3 abre a fibra em 3D.",
+  "pergunta": "Se a sensibilidade dura ~48 h, para quem a pressa de comer logo após o treino ainda faz diferença?",
+  "transicao": "A glicose entrou na fibra. Agora vamos ver o que ela vira lá dentro."
+ }
+}

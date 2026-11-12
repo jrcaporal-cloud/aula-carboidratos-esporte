@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Impey SG, Hearris MA, Hammond KM, Bartlett JD, Louis J, Close GL, Morton JP. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031-1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — revisão narrativa com contagem: sinalização maior em 73% de 11 estudos, expressão gênica em 75% de 12, enzimas oxidativas em 78% de 9; desempenho melhor em 37% de 11 (63% sem mudança).",
+   "Gejl KD, Nybo L. Performance effects of periodized carbohydrate restriction in endurance trained athletes – a systematic review and meta-analysis. J Int Soc Sports Nutr 2021;18(1):37. DOI 10.1186/s12970-021-00435-3 · PMID 34001184 — 9 estudos (11–26 atletas, 1–4 semanas, VO₂máx ≥ 60/55): SMD 0,17 [−0,15; 0,49], P = 0,29, efeito fixo.",
+   "Yeo WK, Paton CD, Garnham AP, et al. Skeletal muscle adaptation and performance responses to once a day versus twice every second day endurance training regimens. J Appl Physiol 2008;105(5):1462-1470. DOI 10.1152/japplphysiol.90882.2008 · PMID 18772325 — ECR, 14 ciclistas/triatletas treinados, 3 semanas: citrato sintase 45 → 54 e β-HAD 18 → 23 só no Low; PGC-1α proteína sem mudança; contrarrelógio ~10% melhor nos dois.",
+   "Hansen AK, Fischer CP, Plomgaard P, Andersen JL, Saltin B, Pedersen BK. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93-99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — intraindivíduo, 7 homens não treinados, extensão de joelho, 10 semanas; perna LOW 2 sessões a cada 2 dias (2ª com glicogênio baixo) × perna HIGH 1 por dia, mesma carga; carga máxima subiu igual; tempo até a exaustão a 90% subiu \"acentuadamente mais\" na LOW (o resumo não traz o número); HAD e glicogênio de repouso só significativos na LOW. Níveis das coxas no desenho: ilustrativos.",
+   "Marquet LA, Brisswalter J, Louis J, et al. Enhanced endurance performance by periodization of carbohydrate intake: \"sleep low\" strategy. Med Sci Sports Exerc 2016;48(4):663-672. DOI 10.1249/mss.0000000000000823 · PMID 26741119 — ECR paralelo não cego, 21 triatletas (11 × 10), 3 semanas, 6 g/kg/d nos dois: 10 km −2,9% × −0,1%; massa gorda −8,5% × −2,6%.",
+   "Gejl KD, Thams LB, Hansen M, et al. No superior adaptations to carbohydrate periodization in elite endurance athletes. Med Sci Sports Exerc 2017;49(12):2486-2497. DOI 10.1249/mss.0000000000001377 · PMID 28723843 — 26 homens de elite, 4 semanas: VO₂máx e contrarrelógio +5% nos dois grupos; glicogênio e CS sem diferença."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Impey 2018 contou os estudos de train low: sinalização maior em 73% de 11, genes em 75% de 12, enzimas oxidativas em 78% de 9; desempenho melhor em só 37% de 11 (63% sem mudança). As bolinhas do funil são a conta (% × n). Exemplo: Yeo 2008 (ECR, 14 treinados, 3 semanas): citrato sintase 45 → 54 e β-HAD 18 → 23 só no Low, mas o contrarrelógio melhorou ~10% nos dois. Em atletas treinados, Gejl e Nybo 2021 juntaram 9 estudos de 11–26 atletas, 1–4 semanas, sem cegamento, PEDro 5,8/10: SMD 0,17, IC −0,15 a 0,49, P = 0,29. A linha do tempo mostra o efeito encolhendo de 2005 a 2021 conforme o desenho melhora e o atleta é mais treinado.",
+  "pergunta": "No chat: por que um marcador molecular pode subir sem que o desempenho mude? Deem uma razão.",
+  "transicao": "O estudo mais citado a favor é o do sleep low. Vamos olhar o desenho dele."
+ }
+}

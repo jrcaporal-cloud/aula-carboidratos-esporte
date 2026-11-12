@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Bartlett JD, Louhelainen J, Iqbal Z et al. Reduced carbohydrate availability enhances exercise-induced p53 signaling in human skeletal muscle: implications for mitochondrial biogenesis. Am J Physiol Regul Integr Comp Physiol 2013;304(6):R450–R458. DOI 10.1152/ajpregu.00498.2012 · PMID 23364526 — glicogênio 467 × 103; ACC 2,9 × 1,4; p53 2,6 × 0,9; PGC-1α ~3× nos dois; n = 8.",
+   "Hansen AK, Fischer CP, Plomgaard P et al. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93–99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — o train low original, modelo de uma perna, n = 7 não treinados.",
+   "MacDonald C, Wojtaszewski JF, Pedersen BK, Kiens B, Richter EA. Interleukin-6 release from human skeletal muscle during exercise: relation to AMPK activity. J Appl Physiol 2003;95(6):2273–2277. DOI 10.1152/japplphysiol.00242.2003 · PMID 12937023 — a AMPK \"lê\" o estoque de glicogênio (α2-AMPK só subiu no estado depletado).",
+   "Impey SG, Hearris MA, Hammond KM et al. Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. Sports Med 2018;48(5):1031–1048. DOI 10.1007/s40279-018-0867-7 · PMID 29453741 — sinalização em 73% de 11 estudos; desempenho em 37%."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Bartlett 2013, 8 homens ativos, a mesma corrida intervalada com glicogênio alto (467) × baixo (103 mmol/kg ps): p-ACC (leitura da AMPK) 1,4× × 2,9×; p-p53 0,9× × 2,6×. A AMPK lê o estoque (MacDonald 2003: a α2-AMPK só subiu no estado depletado). Os mRNAs de PDK4, TFAM, COX IV e PGC-1α já eram maiores com o tanque baixo, mas o exercício elevou o PGC-1α ~3× nos dois casos. Hansen 2005 fez o train low original no desenho de uma perna (n = 7 não treinados, 10 semanas, mesma carga): carga máxima igual, tempo a 90% muito maior na perna LOW, HAD e glicogênio de repouso subiram só nela. Impey 2018 contou: sinalização em 73% de 11 estudos, expressão gênica em 75% de 12, enzimas oxidativas em 78% de 9, desempenho em só 37% de 11 (63% sem mudança). O sinal vira tempo de prova? É a pergunta do Ato VIII.",
+  "pergunta": "Você prescreveria treino com pouco glicogênio a um atleta, sabendo do 73% × 37%? Em que sessão?",
+  "transicao": "Antes de seguir, a frase que resume o ato."
+ }
+}

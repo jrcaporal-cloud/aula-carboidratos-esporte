@@ -1,0 +1,17 @@
+{
+  "slide": {
+    "fontes": [
+      "Jentjens RL, Wagenmakers AJ, Jeukendrup AE. Heat stress increases muscle glycogen use but reduces the oxidation of ingested carbohydrates during exercise. J Appl Physiol 2002;92(4):1562-1572. DOI 10.1152/japplphysiol.00482.2001 · PMID 11896023 — 35 × 16 °C: glicogênio 2,07 × 1,66 g/min (+25%); glicose ingerida 0,76 × 0,84 g/min nos 30 min finais (n = 9). −10%: cálculo nosso.",
+      "Febbraio MA, Murton P, Selig SE, et al. Effect of CHO ingestion on exercise metabolism and performance in different ambient temperatures. Med Sci Sports Exerc 1996;28(11):1380-1387. DOI 10.1097/00005768-199611000-00006 · PMID 8933488 — a 33 °C nenhuma solução (4,2%, 7%, 14%) aumentou o tempo até a fadiga; a 5 °C, 7% > placebo.",
+      "Péronnet F, Massicotte D, Folch N, et al. Substrate utilization during prolonged exercise with ingestion of 13C-glucose in acute hypobaric hypoxia (4,300 m). Eur J Appl Physiol 2006;97(5):527-534. DOI 10.1007/s00421-006-0164-2 · PMID 16775741 — CHO 92,0% da energia em hipóxia × 78,1% (mesma carga relativa, 77%); glicose exógena 17,2 × 20,2 g em 40 min (n = 5).",
+      "Braun B, Mawson JT, Muza SR, et al. Women at altitude: carbohydrate utilization during exercise at 4,300 m. J Appl Physiol 2000;88(1):246-256. DOI 10.1152/jappl.2000.88.1.246 · PMID 10642387 — em 16 mulheres, oxidação de CHO corrigida pelo gasto −23,2% na altitude.",
+      "Stellingwerff T, Peeling P, Garvican-Lewis LA, et al. Nutrition and Altitude: Strategies to Enhance Adaptation, Improve Performance and Maintain Health: A Narrative Review. Sports Med 2019;49(Suppl 2):169-184. DOI 10.1007/s40279-019-01159-w · PMID 31691928 — em 1.600–2.400 m, a recomendação de CHO extra é especulativa (dossiê 06, apoio)."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "Jentjens 2002 (cruzado, 9 ciclistas, glicose 13C, 90 min a 55% da Wmáx): no mostrador, a 35 °C o ponteiro do glicogênio sobe de 1,66 para 2,07 g/min (+25%) e o da glicose bebida desce de 0,84 para 0,76 g/min (−10%, cálculo nosso); os anéis marcam a posição a 16 °C. Febbraio 1996: a 33 °C nenhuma solução (4,2%, 7%, 14%) prolongou o exercício; a 5 °C, a de 7% venceu o placebo. Péronnet 2006 (n = 5, câmara a 4.300 m, mesma carga relativa): CHO 92% da energia contra 78%, mas a glicose bebida oxidada não subiu (17,2 contra 20,2 g em 40 min). Braun 2000 (16 mulheres): a 4.300 m a oxidação de CHO caiu 23%. Em 1.600–2.400 m, altitude típica de treino, CHO extra é especulação (Stellingwerff 2019). O termômetro mostra a temperatura de cada estudo e fica sem leitura (—) nos passos de altitude.",
+    "pergunta": "Num jogo ou prova no calor, vocês aumentariam o carboidrato bebido? Por quê?",
+    "transicao": "E a regra 'mais CHO na altitude' foi feita em homens: e as mulheres e as crianças?"
+  }
+}

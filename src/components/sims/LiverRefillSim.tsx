@@ -1,87 +1,40 @@
-import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT } from '../../lib/motion';
-import { C } from './kit/palette';
-import { Source } from './kit/ui';
-import { DesignChip } from './kit/chips';
-import { HeadRow, Phrase } from './ato7/parts';
-import { Organ } from './ato7/Organ';
-import {
-    DECOMBAZ_NOTE, DESIGN, LIVER_DECOMBAZ, LIVER_FUCHS, LIVER_NOTE, MUSCLE_FUCHS, MUSCLE_NOTE, PHRASES, SOURCE,
-    type Fill, type Sugar,
-} from './ato7/liver.content';
+import { DesignChip, IllustrativeChip } from './kit/chips';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, StepTabs } from './kit/ui';
+import { FLOW_H, LiverFlowStage } from './ato7/LiverFlowStage';
+import { LiverStrip } from './ato7/LiverStrip';
+import { RefillPanel } from './ato7/RefillPanel';
+import { LIVER_CHIPS, LIVER_LEDGER, LIVER_STEPS } from './ato7/liver.content';
 
 /**
- * Slide 124 · O fígado prefere sacarose.
- * Tela dividida: fígados à esquerda, músculos à direita, cada par enchendo com sacarose × glicose (Fuchs 2016).
- * Depois o lado do fígado troca para o trio do Décombaz 2011 (frutose, galactose, glicose).
+ * Slide 124 · O Fígado Prefere Sacarose (o pico do Ato VII). Palco à esquerda: duas pistas, sacarose × glicose,
+ * da bebida ao fígado e ao músculo (Fuchs 2016, ¹³C-MRS); o fígado da sacarose enche e incha, o músculo empata.
+ * Embaixo, o protocolo e o dobro do Décombaz 2011. Painel à direita: texto de pós e livro-caixa que acumula
+ * (Fuchs, Casey, Décombaz, Gonzalez). Nada some: o último passo é a soma dos cinco.
  */
-const SUGAR_COLOR: Record<Sugar, string> = { sacarose: C.fructose, frutose: C.fructose, galactose: C.stone, glicose: C.glucose };
-
-interface OrganSetProps {
-    kind: 'liver' | 'muscle';
-    fills: readonly Fill[];
-    filled: boolean;
-    width: number;
-}
-
-const OrganSet = ({ kind, fills, filled, width }: OrganSetProps) => (
-    <div className="flex items-start justify-center gap-6">
-        {fills.map((f, i) => (
-            <div key={f.sugar} className="flex flex-col items-center gap-2">
-                <Organ kind={kind} level={filled ? f.to : f.from} width={width} delay={i * 0.08} />
-                <span className="rounded-md px-2.5 py-0.5 text-[20px] font-bold" style={{ background: SUGAR_COLOR[f.sugar], color: '#04080F' }}>{f.sugar}</span>
-                <span className="text-[20px] tabular-nums text-gray-100">{filled ? f.text : f.text.replace(/ → [\d,]+/, '')}</span>
-            </div>
-        ))}
-    </div>
-);
-
-const Note = ({ show, children, color = C.stone }: { show: boolean; children: string; color?: string }) => (
-    <motion.span className="self-center rounded-lg border-[3px] px-3 py-1 text-[20px] font-semibold"
-        style={{ borderColor: color, color }} initial={false}
-        animate={{ opacity: show ? 1 : 0, y: show ? 0 : 6 }} transition={{ delay: show ? 0.6 : 0, duration: DUR.enter, ease: EASE_OUT }}>
-        {children}
-    </motion.span>
-);
-
-const Half = ({ title, dim, children }: { title: string; dim: boolean; children: React.ReactNode }) => (
-    <motion.div className="flex flex-1 flex-col gap-4" animate={{ opacity: dim ? 0.6 : 1 }} transition={{ duration: DUR.enter }}>
-        <span className="font-display text-[30px] font-semibold leading-none text-white">{title}</span>
-        {children}
-    </motion.div>
-);
-
 export default function LiverRefillSim() {
-    const { step } = useSlideSteps(PHRASES.length);
-    const decombaz = step === 3;
-    const last = step === 4;
+    const { step, setStep } = useSlideSteps(LIVER_STEPS.length);
+    const s = LIVER_STEPS[step];
     return (
-        <div className="not-prose flex flex-col gap-4">
-            <HeadRow chips={<DesignChip>{DESIGN[step]}</DesignChip>}>
-                <Phrase beat={step} width={780} size={last ? 34 : 28}>{PHRASES[step]}</Phrase>
-            </HeadRow>
-            <div className="flex gap-10">
-                <Half title="fígado" dim={step === 2}>
-                    {decombaz ? (
-                        <motion.div key="dec" className="flex flex-col gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.enter }}>
-                            <OrganSet kind="liver" fills={LIVER_DECOMBAZ} filled width={156} />
-                            <span className="self-center text-[18px] text-gray-300">{DECOMBAZ_NOTE}</span>
-                        </motion.div>
-                    ) : (
-                        <motion.div key="fuchs" className="flex flex-col gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.enter }}>
-                            <OrganSet kind="liver" fills={LIVER_FUCHS} filled={step >= 1} width={220} />
-                            <Note show={step >= 1} color={C.fructoseSoft}>{LIVER_NOTE}</Note>
-                        </motion.div>
-                    )}
-                </Half>
-                <span aria-hidden className="w-[3px] self-stretch rounded-full bg-white/15" />
-                <Half title="músculo" dim={step === 1 || decombaz}>
-                    <OrganSet kind="muscle" fills={MUSCLE_FUCHS} filled={step >= 2} width={220} />
-                    <Note show={step >= 2 && !decombaz}>{MUSCLE_NOTE}</Note>
-                </Half>
+        <div className="not-prose flex h-[512px] w-full flex-col gap-2.5">
+            <div className="flex items-center justify-between gap-4">
+                <StepTabs labels={LIVER_STEPS.map(x => x.tab)} step={step} onSelect={setStep} layoutId="liver-refill-tabs" />
+                <div className="flex flex-wrap justify-end gap-2">
+                    {LIVER_CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}
+                </div>
             </div>
-            <Source>{SOURCE}</Source>
+            <div className="flex min-h-0 flex-1 gap-3.5">
+                <div className="flex w-[640px] shrink-0 flex-col gap-2.5">
+                    <Panel className="relative shrink-0">
+                        <div style={{ height: FLOW_H + 4 }} className="px-0.5 pt-1"><LiverFlowStage step={step} /></div>
+                        {step >= 1 && <div className="absolute bottom-2 left-2"><IllustrativeChip>fluxo: esquema</IllustrativeChip></div>}
+                    </Panel>
+                    <Panel className="min-h-0 flex-1"><LiverStrip step={step} /></Panel>
+                </div>
+                <RefillPanel className="flex-1" step={step} headline={s.headline} color={s.color} text={s.text} note={s.note}
+                    size={step === 4 ? 16 : 17} rows={LIVER_LEDGER} source={sourcesUpTo(LIVER_STEPS.map(x => x.sources), step)} />
+            </div>
         </div>
     );
 }

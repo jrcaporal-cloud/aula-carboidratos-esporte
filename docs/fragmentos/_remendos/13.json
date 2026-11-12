@@ -1,0 +1,13 @@
+{
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Leia cada afirmação em voz alta e dê uns 10 segundos para o chat. Conte os votos clicando em concordo ou discordo; o 'desfazer' corrige um clique a mais. O painel da direita diz em que ato a aula responde e que tipo de dado vai decidir (por exemplo, oxidação medida com isótopo, glicogênio por biópsia), sem pista do resultado; embaixo, a porcentagem da turma que concorda, ao vivo. O resumo mostra as oito divisões com o ato de cada uma, a afirmação mais dividida e a de mais consenso. A contagem fica guardada nesta sessão do navegador e volta no slide Mito ou Verdade, no Ato X.",
+  "pergunta": "Concorda ou discorda? Responda no chat só com C ou D.",
+  "transicao": "Guardem esses votos. Agora, o percurso que vamos fazer até poder responder cada um."
+ },
+ "slide": {
+  "fontes": [
+   "Votação da turma no chat da chamada; os votos ficam guardados na sessão do navegador. Os vereditos e as fontes de cada afirmação estão no slide Mito ou Verdade (Ato X). O painel indica só o ato que responde e o tipo de dado que decide, sem o resultado."
+  ]
+ }
+}

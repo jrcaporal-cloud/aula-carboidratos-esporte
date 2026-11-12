@@ -1,79 +1,79 @@
 {
   "100": {
     "minutos": 3,
-    "mensagem": "Agosto de 1965, Universidade da Flórida: jogadores internados por calor. O auxiliar Dwayne Douglas leva a dúvida ao médico Dana Shires, que chama o nefrologista Robert Cade: por que os jogadores não urinavam depois do jogo? Sais e açúcar na água, depois limão; em 1º/10/1965 os calouros testam e, no dia seguinte, a Flórida vence a LSU por 14 a 7. Fonte institucional da UF, não artigo revisado.",
+    "mensagem": "Agosto de 1965, Universidade da Flórida: jogadores internados por calor. O auxiliar Dwayne Douglas leva a dúvida ao médico Dana Shires, que chama o nefrologista Robert Cade: por que os jogadores não urinavam depois do jogo? A equipe (Cade, H. James Free, Shires, Alex de Quesada) testa sais e açúcares, intragáveis até o limão. Com o aval de Ray Graves, em 1º/10/1965 os calouros com a bebida dominam o 2º tempo contra o time B sem ela; no dia seguinte, Flórida 14 × 7 LSU (5ª do ranking). Licença à Stokely-Van Camp em 1967; mais de US$ 280 milhões à UF desde 1972. Fonte institucional da UF: história de origem, não evidência de efeito; o carboidrato veio junto com o sódio.",
     "pergunta": "Se a pergunta original era sobre urina e sódio, por que o carboidrato entrou na fórmula?",
     "transicao": "Daquele copo de 1965 até hoje, foram dezenas de ensaios. O que eles dizem, somados?"
   },
   "101": {
     "minutos": 3,
-    "mensagem": "Stellingwerff & Cox (2014) reuniram 61 ECRs com placebo de água, n = 679: 82% acharam benefício do carboidrato durante o exercício. O ganho cresce com a duração da prova e o mecanismo muda: em ~1 h é boca e cérebro; acima de 2 h é combustível. A meta-análise de Vandenbogaerde & Hopkins (88 estudos) mostra que a formulação leva o efeito de +6% a −2%.",
+    "mensagem": "À esquerda, Stellingwerff & Cox (2014), revisão sistemática: 61 ECRs com placebo de água, n = 679; 82% (50) acharam benefício, 18% (11) nenhuma mudança. É placar de direção, não tamanho de efeito. O ganho cresce com a duração (p = 0,0036) e o mecanismo muda: ~1 h boca e cérebro; > 2 h combustível (entrega > 90 g/h). À direita, outro conjunto: a meta-análise de Vandenbogaerde & Hopkins (88 estudos, 155 estimativas) vai de −2% a +6% conforme a formulação; no topo, bebida de 3–10% com ~0,7 g/kg/h de polímeros de glicose + ~0,2 de frutose + ~0,2 de proteína (≈ 63 g/h a 70 kg, cálculo); frutose > 0,25 g/kg/h e +10 °C reduzem o benefício.",
     "pergunta": "O que, numa bebida, poderia transformar um ganho de 6% num prejuízo de 2%?",
     "transicao": "Se a dose importa, qual é a dose? Smith desenhou a curva."
   },
   "102": {
     "minutos": 3,
-    "mensagem": "Smith 2013: ECR duplo-cego em 4 centros, 51 ciclistas e triatletas, 12 doses de 10 a 120 g/h e placebo, mas cada um fez só 4 ensaios (blocos incompletos, modelo misto). Ganho estimado no contrarrelógio: 1% a 9 g/h, 4% a 48 g/h e 4,7% a 78 g/h; acima disso, retorno decrescente. É um estudo só, financiado pela indústria (GSSI).",
+    "mensagem": "Smith 2013: ECR duplo-cego em 4 centros, 51 ciclistas e triatletas, 12 doses de 10 a 120 g/h e placebo, mas cada um fez só 4 ensaios (placebo + 3 doses do centro: blocos incompletos, modelo misto). Bebida 1:1:1 glicose, frutose e maltodextrina a 1 L/h; 2 h de carga + 20 km contra o relógio (~160 min). Ganho estimado: +1% a 9 g/h, +4,0% a 48 e +4,7% a 78 g/h. Até ~50 g/h, ~0,8% por 10 g/h; de 48 a 78, ~0,2% por 10 g/h (cálculo). Um estudo só, sem isótopo, primeiro autor do GSSI.",
     "pergunta": "Vocês prescreveriam 78 g/h a partir de um único estudo de 160 min em ciclistas? O que faltaria saber?",
     "transicao": "Por que a curva achata? A resposta não está no músculo, está no intestino."
   },
   "103": {
     "minutos": 3,
-    "mensagem": "A oxidação de carboidrato exógeno de uma fonte só satura em ~1,0–1,1 g/min, por mais que se beba (Jeukendrup & Jentjens 2000). As barras pareiam o que entra e o que se oxida na hora, em três estudos com isótopo: 0,60 g/min a 48 g/h, 1,06 a 72 g/h e 1,18 a 144 g/h (≈ 36, 64 e 71 g/h). A 144 g/h, só 49% do que entra é oxidado na hora (cálculo). O gargalo é a absorção (SGLT1) e o fígado, não o músculo.",
+    "mensagem": "Três ECRs cruzados com ¹³C, só glicose (n = 7–8 cada, 150 min a 60–65% do VO₂máx): 0,60 g/min a 48 g/h (Hulston), 1,06 a 72 g/h (Jentjens 2005) e 1,18 a 144 g/h (Jentjens 2004), ≈ 36, 64 e 71 g/h. De 72 para 144 g/h, só +0,12 g/min: fonte única satura em ~1,0–1,1 g/min (Jeukendrup & Jentjens 2000); frutose, galactose e amilose oxidam 25–50% menos. A 144 g/h, 49% do que entra é oxidado na hora; ~73 g/h ficam pelo caminho (cálculo). O gargalo é a absorção (SGLT1, dependente de Na⁺) e o fígado (~1 g/min), não o músculo. Atrito: a revisão de 2000 dizia que o treino não muda o teto; Cox 2010 viu a oxidação exógena subir com 28 dias de dieta rica em carboidrato (slide O Intestino Treina).",
     "pergunta": "Se o músculo não é o limite, o que acontece com o carboidrato que entrou e não foi oxidado?",
     "transicao": "Se a porta da glicose lota, existe outra porta?"
   },
   "104": {
     "minutos": 4,
-    "mensagem": "A frutose entra pelo GLUT5, uma segunda pista. Jentjens 2005: glicose + frutose 1:1 a 144 g/h levou o pico de oxidação exógena a 1,75 g/min, contra 1,06 só com glicose (n = 8). Atenção: a ~48 g/h a mistura não acrescenta (0,57 × 0,60; Hulston 2009). Currell 2008 mostrou que isso vira desempenho: 8% mais rápido que glicose a 108 g/h. Proporção ótima perto de 0,8:1 (O'Brien). Tecla 3 abre o enterócito em 3D.",
+    "mensagem": "A frutose entra pelo GLUT5, uma segunda pista; as duas saem pelo GLUT2. Jentjens 2005 (n = 8): glicose + frutose 1:1 a 144 g/h levou o pico de oxidação exógena a 1,75 g/min, contra 1,06 só com glicose; nos últimos 90 min, 1,49 × 0,99. O 1,75 veio de 1:1, não de 2:1: a 2:1 e 108 g/h o pico fica perto de 1,4 (Pfeiffer 2010). A ~48 g/h a mistura não acrescenta (0,57 × 0,60; Hulston 2009, n = 7): sem fila no SGLT1, a segunda pista não muda nada. Currell 2008 (n = 8): 108 g/h 2:1, 8% mais rápido que glicose e 19% que água. Proporção ótima perto de frutose:maltodextrina 0,8:1, ou seja, maltodextrina:frutose 1:0,8 (O'Brien 2011/2013). Tecla 3 abre o enterócito em 3D.",
     "pergunta": "Para um atleta que consome 45 g/h, faz sentido pagar mais por uma mistura glicose + frutose?",
     "transicao": "Se 90 g/h com mistura funciona, e 120 g/h?"
   },
   "105": {
     "minutos": 3,
-    "mensagem": "Ravikanti 2025, 8 maratonistas de elite com 13C: oxidação exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h, com sintomas GI moderados ou graves frequentes em todas as doses e pico nos 120 g/h. Podlogar 2022: 120 × 90 g/h aumenta a exógena (1,51 × 1,29) mas a endógena fica igual (2,15 × 2,20). Viribay 2020, o estudo que viralizou, mediu dano e esforço percebido, não o tempo. Morton 2026: desempenho ainda não demonstrado.",
+    "mensagem": "Ravikanti 2025, 8 maratonistas de elite com ¹³C: exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h (total de CHO 2,09 → 3,07); custo de O₂ 8,1 mL/kg/km menor com 120 × 60 g/h (p = 0,039); mas sintomas GI moderados ou graves frequentes em todas as doses, com pico nos 120 g/h (em ciclistas preparados, Hearris 2022 viu sintomas mínimos). Dose e proporção mudam juntas. Podlogar 2022 (11 ciclistas, jejum): 120 g/h (maltodextrina:frutose 1:0,8; no artigo, frutose:maltodextrina 0,8:1) × 90 g/h (maltodextrina:frutose 2:1) aumenta a exógena (1,51 × 1,29; p = 0,026) mas a endógena fica igual (2,15 × 2,20; p = 0,786). Viribay 2020, o estudo que viralizou (ECR paralelo, ~6–7 por grupo), mediu carga interna (3805 × 4692 e 4688 UA) e dano, não o tempo. Morton 2026: desempenho ainda não demonstrado.",
     "pergunta": "Quais desfechos vocês exigiriam de um estudo para recomendar 120 g/h ao Diego?",
     "transicao": "Se a ciência ainda não fechou a conta, quem está empurrando a dose para cima?"
   },
   "106": {
     "minutos": 3,
-    "mensagem": "Saris 1989, Tour de France: 5 profissionais, 22 dias; nas etapas eles já ingeriam ~94 g/h de carboidrato. Em 2000 a literatura descrevia um teto de oxidação de ~1 g/min (~60 g/h), e só em 2011 o consenso do COI chegou a 90 g/h para provas acima de 2,5 h. Hoje equipes testam 120 g/h ou mais, sem ganho de desempenho comprovado (Morton 2026). Relatos de jornalismo do Tour ficam fora.",
+    "mensagem": "Saris 1989, Tour de France: 5 profissionais, 22 dias, registro alimentar. Ingeriam 24,7 MJ/dia para um gasto de 25,4 MJ/dia; 49% da energia entrava durante a etapa, ~94 g/h de carboidrato, ~30% dele em líquidos, e bebiam 6,7 L de água por dia (até 11,8). Em 2000 a literatura com isótopos descrevia um teto de ~1,0–1,1 g/min (~60 g/h) com uma fonte só, limitado pelo intestino e pelo fígado, não pelo músculo; só em 2011 o consenso do COI chegou a 90 g/h para provas acima de 2,5 h: 22 anos de atraso. Hoje equipes testam 120 g/h ou mais; Morton 2026 diz que o teto pode subir para 120 g/h em treinados, sem ganho de desempenho comprovado. Relatos de jornalismo do Tour ficam fora.",
     "pergunta": "Quem gera conhecimento em nutrição esportiva: o laboratório ou a prática? E quem corrige quem?",
     "transicao": "Junto com a dose veio a indústria do formato: gel, goma, hidrogel. O formato muda alguma coisa?"
   },
   "108": {
     "minutos": 3,
-    "mensagem": "A 120 g/h, bebida, gel, goma ou combinação dão o mesmo pico de oxidação (1,56–1,66 g/min, ns; Hearris 2022); gel com água equivale à bebida (Pfeiffer 2010). O hidrogel gelifica no ácido e, em repouso, esvazia mais rápido (t½ 21 × 37 min), um mecanismo plausível. Mas a meta-análise de Sutehall 2022 contra bebida isocalórica é nula: desempenho p = 0,59, I² = 0%. Rowe 2022 é o positivo isolado (+2,1%).",
+    "mensagem": "Hearris 2022 (n = 9, 13C): a 120 g/h, bebida, gel, goma ou combinação dão o mesmo pico de oxidação exógena (1,56/1,58/1,59/1,66 g/min, ns), eficiência de 72–75%, sintomas mínimos; Pfeiffer 2010 (n = 8, 108 g/h): gel com água = bebida (1,44 × 1,42 g/min). O hidrogel (alginato + pectina) gelifica no ácido e, em repouso, esvazia mais rápido (t½ 21 × 37 min) sem mudar a glicemia: mecanismo plausível. No exercício, contra bebida isocalórica, a meta-análise de Sutehall 2022 é nula (desempenho p = 0,59, 5 estudos, I² = 0%; oxidação p = 0,71; glicemia p = 0,66), assim como McCubbin 2020 (722 × 756 s, sintomas em 100% nos dois braços), Mears 2020 e Baur 2019. Rowe 2022 é o positivo isolado: duplo-cego, n = 11, hidrogel 2,1% mais rápido nos 5 km (19:29 × 19:54; p = 0,033). A gangorra pende para os nulos.",
     "pergunta": "Um estudo positivo de n = 11 contra uma meta-análise nula: como explicar isso ao atleta que já comprou o produto?",
     "transicao": "O formato não resolve o intestino. Mas o intestino pode ser treinado?"
   },
   "109": {
     "minutos": 3,
-    "mensagem": "Diego (caso fictício) trava acima de 60 g/h. Costa 2017: 25 corredores, 2 semanas de treino com gel a 90 g/h durante o exercício; sintomas GI −60%, H₂ expirado 6 × 12 ppm (menos má absorção) e +5,2% na distância em 1 h (placebo −2,1%). Cox 2010: 28 dias de CHO alto aumentam a oxidação exógena (54,6 → 63,6 g), sem desempenho extra. Em elite (King 2022), sem vantagem e com mais sintomas.",
+    "mensagem": "Diego (caso fictício) trava acima de 60 g/h: o que não é absorvido fermenta no lúmen e sai como H₂ no hálito. Costa 2017: 25 corredores em 3 grupos paralelos (~8 por grupo); desafio de 2 h a 60% do VO₂máx com gel de 30 g de glicose:frutose 2:1 a cada 20 min (90 g/h); depois, 2 semanas de treino intestinal com gel, comida ou placebo. Resultado: sintomas GI −60% (gel) e −63% (comida), pico de H₂ 6 × 12 ppm (gel × placebo), glicemia 7,2 × 6,2 mmol/L, distância em 1 h +5,2% (gel), +4,3% (comida), −2,1% (placebo); oxidação igual. Miall 2018 replica o hálito (13 → 6 ppm). Cox 2010 (n = 16, 28 dias de CHO alto): oxidação exógena 54,6 → 63,6 g, mas desempenho ~6% melhor nos dois grupos. King 2022 (elite, n = 37): ganho de 36 × 39 s no controle e mais sintomas. O intestino com mais transportadores é esquema da explicação provável, não medida.",
     "pergunta": "Como vocês montariam as 2 semanas de treino intestinal do Diego antes do Ironman?",
     "transicao": "Até aqui o carboidrato foi combustível. Na prova de 1 hora, ele funciona de outro jeito."
   },
   "110": {
     "minutos": 3,
-    "mensagem": "Carter 2004: glicose IV a 1 g/min elevou a glicemia a 12,4 mmol/L e o contrarrelógio de 1 h não mudou (59,90 × 60,04 min; n = 6). No mesmo ano, um bochecho de 5 s com maltodextrina, cuspido, deixou a prova quase 2 min mais rápida (59,57 × 61,37; n = 9; placebo de água). Chambers 2009, com fMRI: glicose e maltodextrina, que não é doce, ativam áreas de recompensa; a sacarina não.",
+    "mensagem": "Carter 2004a (cruzado, n = 6): glicose IV a 1 g/min levou a glicemia a 12,4 × 5,9 mmol/L e a captação a 88 × 49 µmol/kg/min, e o contrarrelógio de ~1 h não mudou (59,90 × 60,04 min; controle: soro). Carter 2004b (cruzado, n = 9, em jejum): bochecho de 5 s com maltodextrina a 6,4%, cuspido, a cada 12,5% do trabalho: 59,57 × 61,37 min (p = 0,011), quase 2 min (~2,9%, cálculo); potência 259 × 252 W; FC e esforço percebido iguais; o controle foi água, de sabor diferente. Chambers 2009 (n = 8 + 8, controle adoçante): glicose 60,4 × 61,6 min e maltodextrina, que não é doce, 62,6 × 64,6 min; no fMRI, ínsula/opérculo frontal, orbitofrontal e estriado acenderam; a sacarina não ativou cingulado anterior nem estriado. O desenho da cabeça é esquema: receptor oral → tronco → ínsula → recompensa; o efeito é central (Burke 2011).",
     "pergunta": "Se o efeito é no cérebro, o placebo de água era um bom controle?",
     "transicao": "Um efeito tão elegante sobrevive à meta-análise?"
   },
   "111": {
     "minutos": 3,
-    "mensagem": "Brietzke 2019, 13 estudos: o bochecho aumenta a potência média com SMD 0,25 (0,04 a 0,46), efeito pequeno; o tempo para completar não muda de forma significativa (SMD −0,13; p = 0,25). Lane 2013: +3,4% em jejum e +1,8% alimentado, e a maior potência foi alimentado + bochecho. Trommelen 2015, duplo-cego com placebo adoçado: nulo (p = 0,277). Real, pequeno e dependente do contexto.",
+    "mensagem": "Brietzke 2019, 13 estudos (16 ensaios, n = 175): o bochecho aumenta a potência média com SMD 0,25 (IC95% 0,04 a 0,46; I² = 0%), efeito pequeno; o tempo para completar não muda (SMD −0,13; p = 0,25; n = 151). A revisão anterior (de Ataide e Silva 2013) achou 9 de 11 estudos positivos, +5,05 W, mas com heterogeneidade alta (I² = 52%). Lane 2013 (duplo-cego, n = 12): +3,4% em jejum (282 × 273 W) e +1,8% alimentado (286 × 281 W); a maior potência foi alimentado + bochecho. Trommelen 2015 (n = 14, sacarose × placebo adoçado): nulo (p = 0,277). Real, pequeno e dependente do contexto.",
     "pergunta": "Para uma prova de 1 h às 7 da manhã, vocês trocariam o café da manhã pelo bochecho?",
     "transicao": "Juntando tudo: quanto por hora, para cada duração de prova?"
   },
   "112": {
     "minutos": 3,
-    "mensagem": "O consenso do COI (Burke 2011) escalona pela duração: ~1 h, pequenas quantidades ou bochecho (sinal: boca e cérebro); provas mais longas, 30–60 g/h; acima de 2,5 h, até 90 g/h com mistura glicose + frutose. A fronteira atual é 120 g/h em treinados, com oxidação maior e sem ganho comprovado (Morton 2026). As faixas intermediárias de Jeukendrup 2014 não foram conferidas na fonte e não entram. Ponto de partida do Ato X.",
-    "pergunta": "Onde a Marina (3h30 de maratona) e o Diego (~10 h) caem no relógio?",
+    "mensagem": "O consenso do COI (Burke 2011) escalona pela duração: ~1 h, pequenas quantidades ou bochecho — na revisão de 61 ECRs (Stellingwerff 2014) o efeito nessa duração é oral/central e tipo e quantidade não importam; 1 a 2,5 h, 30–60 g/h, e uma fonte única é oxidada até ~60 g/h (Jeukendrup 2014); acima de 2,5 h, até 90 g/h só com mistura glicose + frutose. A fronteira é 120 g/h em treinados: oxida mais (1,51 × 1,29 g/min, Podlogar 2022, n = 11), não poupa o endógeno e não tem ganho de desempenho demonstrado (Morton 2026). A meta é em g/h absolutos, não g/kg. Na ultramaratona a ISSN fala em 30–50 g/h (Tiller 2019). Marina (~3h30) e Diego (~10 h), casos fictícios, caem na faixa > 2,5 h. Ponto de partida do Ato X.",
+    "pergunta": "Onde a Marina (3h30 de maratona) e o Diego (~10 h) caem no relógio? E por que a ISSN pede menos no ultra?",
     "transicao": "Isso é a recomendação. E o que os atletas comem de fato?"
   },
   "113": {
     "minutos": 3,
-    "mensagem": "Pfeiffer 2012, 221 atletas em prova: médias de 62–71 g/h nos Ironman, 53 g/h no ciclismo e ~35 g/h na maratona, com indivíduos de 6 a 136 g/h. Sintomas GI graves em ~31% nos Ironman. Revisões estimam queixas em 30–50% dos atletas (de Oliveira 2014); no ultra-trail a maioria não chega a 90 g/h e 65–82% relatam sintomas (Arribalzaga 2021). Dados observacionais, por recordatório.",
+    "mensagem": "Pfeiffer 2012, 221 atletas em prova, questionário logo depois: médias de 62–71 g/h nos Ironman, 65 no 70.3, 53 no ciclismo e ~35 g/h na maratona, com indivíduos de 6 a 136 g/h. Sintomas GI graves em ~31% nos Ironman, 14% no 70.3, 4% no ciclismo e na maratona, 7% nos profissionais; mais em quem tinha histórico. Nos Ironman, comer mais andou junto com chegada mais rápida (r = −0,55 e −0,48) e com mais náusea — correlação, não causa. Revisões estimam queixas em 30–50% dos atletas (de Oliveira 2014); no ultra-trail a maioria não chega a 90 g/h e 65–82% relatam sintomas (Arribalzaga 2021).",
     "pergunta": "Por que maratonistas comem tão menos que triatletas na mesma faixa de duração?",
     "transicao": "Cruzada a linha de chegada, começa outra corrida: repor o tanque. Ato VII."
   }

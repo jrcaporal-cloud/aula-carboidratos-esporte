@@ -1,87 +1,37 @@
-import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_IN_OUT } from '../../lib/motion';
-import { C } from './kit/palette';
-import { Chip, Source } from './kit/ui';
-import { Tank } from './kit/Tank';
-import { BigStat } from './kit/Stamp';
-import { DesignChip } from './kit/chips';
-import { HeadRow, Phrase } from './ato7/parts';
-import { DESIGN, MOMENTS, PROTOCOL, SOURCE, STOPS, TANK_MAX, UNIT } from './ato7/fuchs.content';
+import { CalcChip, DesignChip, IllustrativeChip } from './kit/chips';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, StepTabs } from './kit/ui';
+import { CHART_H, Fuchs25Chart } from './ato7/Fuchs25Chart';
+import { RefillPanel } from './ato7/RefillPanel';
+import { FUCHS_DESIGN, FUCHS_LEDGER, FUCHS_STEPS } from './ato7/fuchs.content';
 
 /**
- * Slide 125 · Nem 10 g/kg em 12 horas.
- * Uma régua de tempo no alto (antes → fim do exercício → 6 h → 12 h) e dois tanques com a linha do "nível de antes":
- * o fígado passa da linha em 6 h; o músculo fica abaixo dela até o fim.
+ * Slide 125 · Nem 10 g/kg em 12 Horas. Gráfico grande à esquerda: fígado e músculo em % do valor de antes, do fim do
+ * exercício até 12 h (Fuchs 2025, ¹³C-MRS + biópsia). Primeiro o tombo, depois o jejum que não volta, o fígado que
+ * passa dos 100% em 6 h e o músculo que fica em 69% às 12 h; por fim, a segunda prova do dia. Painel à direita com
+ * o texto de pós e o livro-caixa em mmol/L que acumula.
  */
-const TRACK_W = 1000;
-const TANK_W = 116;
-const TANK_H = 250;
-const PRE_Y = TANK_H / TANK_MAX;
-
-const TimeTrack = ({ at }: { at: number }) => {
-    const reduce = useReducedMotion();
-    const x = (i: number) => (i / (STOPS.length - 1)) * TRACK_W;
-    return (
-        <div className="relative mx-auto h-[58px]" style={{ width: TRACK_W }}>
-            <span aria-hidden className="absolute left-0 top-[10px] h-[3px] rounded-full bg-white/30" style={{ width: TRACK_W }} />
-            <motion.span aria-hidden className="absolute left-0 top-[10px] h-[3px] rounded-full" style={{ width: TRACK_W, background: C.glucose, transformOrigin: 'left center' }}
-                initial={false} animate={{ scaleX: at / (STOPS.length - 1) }} transition={{ duration: reduce ? 0 : DUR.draw, ease: EASE_IN_OUT }} />
-            {STOPS.map((s, i) => (
-                <div key={s} className="absolute top-0 w-0" style={{ left: x(i) }}>
-                    <span className="absolute left-0 top-[2px] h-5 w-5 -translate-x-1/2 rounded-full border-[3px]"
-                        style={{ borderColor: i <= at ? C.glucose : 'rgba(255,255,255,0.4)', background: i === at ? C.glucose : '#04080F' }} />
-                    <span className="absolute top-7 w-max text-[18px] font-semibold"
-                        style={{ color: i === at ? '#fff' : '#9CA3AF', transform: i === 0 ? 'none' : i === STOPS.length - 1 ? 'translateX(-100%)' : 'translateX(-50%)' }}>
-                        {s}
-                    </span>
-                </div>
-            ))}
-        </div>
-    );
-};
-
-const TankWithLine = ({ level, name, text, color }: { level: number; name: string; text: string; color: string }) => (
-    <div className="flex flex-col items-center gap-2">
-        <span className="text-[22px] font-semibold text-white">{name}</span>
-        <div className="relative">
-            <Tank level={level / TANK_MAX} color={color} width={TANK_W} height={TANK_H} active />
-            {/* a linha do nível de antes (100%) */}
-            <span aria-hidden className="absolute -left-4 -right-4 h-[3px]" style={{ bottom: PRE_Y - 1, background: C.text }} />
-        </div>
-        <span className="text-[20px] tabular-nums text-gray-100">{text}</span>
-    </div>
-);
-
 export default function Fuchs2025Sim() {
-    const { step } = useSlideSteps(MOMENTS.length);
-    const m = MOMENTS[step];
-    const at = Math.min(step + 1, STOPS.length - 1);
+    const { step, setStep } = useSlideSteps(FUCHS_STEPS.length);
+    const s = FUCHS_STEPS[step];
     return (
-        <div className="not-prose flex flex-col gap-3">
-            <HeadRow chips={<DesignChip>{DESIGN}</DesignChip>}>
-                <Phrase beat={step} width={680}>{m.phrase}</Phrase>
-            </HeadRow>
-            <TimeTrack at={at} />
-            <div className="flex items-center gap-12 pl-6">
-                <div className="flex items-end gap-4">
-                    <span className="w-[86px] text-right text-[18px] leading-tight text-gray-200" style={{ marginBottom: 36 + PRE_Y - 24 }}>
-                        nível de antes
-                    </span>
-                    <TankWithLine level={m.liver} name="fígado" text={m.liverText} color={C.glycogenSoft} />
-                    <span className="w-6" />
-                    <TankWithLine level={m.muscle} name="músculo" text={m.muscleText} color={C.glycogen} />
-                </div>
-                <div className="flex flex-1 flex-col gap-6">
-                    <BigStat key={m.stat.value} value={m.stat.value} caption={m.stat.caption} size={96}
-                        color={m.stat.value === '142%' ? C.glycogenSoft : m.stat.value === '69%' ? C.stone : C.glycogen} />
-                    <div className="flex flex-col items-start gap-2">
-                        <Chip color={C.glucose}>{PROTOCOL}</Chip>
-                        <span className="text-[16px] text-gray-300">{UNIT}</span>
-                    </div>
+        <div className="not-prose flex h-[512px] w-full flex-col gap-2.5">
+            <div className="flex items-center justify-between gap-4">
+                <StepTabs labels={FUCHS_STEPS.map(x => x.tab)} step={step} onSelect={setStep} layoutId="fuchs25-tabs" />
+                <div className="flex flex-wrap justify-end gap-2">
+                    <DesignChip>{FUCHS_DESIGN}</DesignChip>
+                    {step >= 1 && <IllustrativeChip>jejum: esquema</IllustrativeChip>}
+                    {step >= 3 && <CalcChip>cálculo: 31%</CalcChip>}
                 </div>
             </div>
-            <Source>{SOURCE}</Source>
+            <div className="flex min-h-0 flex-1 gap-3.5">
+                <Panel className="shrink-0">
+                    <div style={{ height: CHART_H }} className="px-0.5 pt-0.5"><Fuchs25Chart step={step} /></div>
+                </Panel>
+                <RefillPanel className="flex-1" step={step} headline={s.headline} color={s.color} text={s.text} note={s.note} size={16}
+                    rows={FUCHS_LEDGER} source={sourcesUpTo(FUCHS_STEPS.map(x => x.sources), step)} />
+            </div>
         </div>
     );
 }

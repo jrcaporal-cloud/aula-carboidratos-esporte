@@ -1,0 +1,20 @@
+{
+ "slide": {
+  "fontes": [
+   "Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. Acta Physiol Scand 1967;71(2):140-150. DOI 10.1111/j.1748-1716.1967.tb03720.x — biópsia por agulha do vasto lateral.",
+   "Schaart G, Hesselink RP, Keizer HA, van Kranenburg G, Drost MR, Hesselink MK. A modified PAS stain combined with immunofluorescence for quantitative analyses of glycogen in muscle sections. Histochem Cell Biol 2004;122(2):161-169. DOI 10.1007/s00418-004-0690-0 · PMID 15322861 — PAS semiquantitativo, vira número com padrão externo e concorda com a bioquímica (abstract conferido em 12/11/2026).",
+   "Bone JL, Ross ML, Tomcik KA, et al. The Validity of Ultrasound Technology in Providing an Indirect Estimate of Muscle Glycogen Concentrations Is Equivocal. Nutrients 2021;13(7):2371. DOI 10.3390/nu13072371 — biópsia por métodos enzimáticos/histoquímicos, mmol/kg de peso seco; ultrassom = intensidade de pixel, razão glicogênio:água 1:3 suposta, escore 0–100; validade “at best equivocal” (texto completo PMC8308826, conferido em 12/11/2026).",
+   "Taylor R, Price TB, Rothman DL, Shulman RG, Shulman GI. Validation of 13C NMR measurement of human skeletal muscle glycogen by direct biochemical assay of needle biopsy samples. Magn Reson Med 1992;27(1):13-20. DOI 10.1002/mrm.1910270103 — n = 8; 87,4 × 88,3 mM; R = 0,95; CV 4,3% × 9,3%.",
+   "Casey A, Mann R, Banister K, et al. Effect of carbohydrate ingestion on glycogen resynthesis in human liver and skeletal muscle, measured by 13C MRS. Am J Physiol Endocrinol Metab 2000;278(1):E65-75. DOI 10.1152/ajpendo.2000.278.1.E65 — fígado +13 g (glicose) × +25 g (sacarose) em 4 h.",
+   "Hill JC, San Millán I. Validation of musculoskeletal ultrasound to assess and quantify muscle glycogen content. Phys Sportsmed 2014;42(3):45-52. DOI 10.3810/psm.2014.09.2075 — r = 0,93/0,94 (criadores da tecnologia, n = 22).",
+   "Routledge HE et al. Ultrasound Does Not Detect Acute Changes in Glycogen in Vastus Lateralis of Man. Med Sci Sports Exerc 2019;51(11):2286-2293. DOI 10.1249/MSS.0000000000002052 — 443 → 271 mmol/kg ps; escore 47 → 49 (P = 0,4); 531 × 252, escore 56 × 54 (P = 0,9).",
+   "Desenhos dos três instrumentos: esquemas de princípio (não em escala)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "A biópsia (Bergström, anos 1960) é a referência: o fragmento vai para a bioquímica (o ácido solta a glicose do glicogênio, enzimas medem a glicose, mmol/kg de peso seco) ou para o PAS, que cora o glicogênio fibra a fibra e só vira número com calibração (Schaart 2004). Mas é invasiva, vê um ponto e variou 9,3% repetida no mesmo dia. A ¹³C-MRS lê o sinal do ¹³C natural do glicogênio sem agulha: CV 4,3%, R = 0,95 contra a biópsia (Taylor 1992, n = 8), e mede o fígado (Casey 2000: +13 g com glicose, +25 g com sacarose em 4 h). O ultrassom converte o brilho da imagem num escore de 0 a 100 supondo glicogênio:água 1:3; o fabricante achou r = 0,93 (n = 22), mas no estudo independente o jogo de rugby baixou o glicogênio de 443 para 271 mmol/kg ps e o escore foi de 47 para 49 (P = 0,4); em dieta alta × baixa, 531 × 252 mmol/kg, escore 56 × 54 (P = 0,9).",
+  "pergunta": "Algum de vocês já viu esse ultrassom vendido em clínica? O que diriam ao cliente?",
+  "transicao": "Medir o estoque é uma coisa. Como se mede o que o músculo queima?"
+ }
+}

@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useStore } from '../../store/useStore';
 import { TitleSlide } from '../presentation/TitleSlide';
@@ -11,14 +11,18 @@ import { DeckChrome } from './DeckChrome';
 import { Overview } from './Overview';
 import { DECK, MODEL_3D_BY_SLIDE, type DeckSlide, type Model3D } from './slides';
 import { useDeckNavigation } from './useDeckNavigation';
-import { useSlideStepStore } from '../../store/useSlideSteps';
-import { PRESENTER_CHANNEL, openPresenterWindow, type PresenterMessage } from './presenterChannel';
+import { openPresenterWindow } from './presenterChannel';
+import { usePresenterSync } from './usePresenterSync';
 import { toggleDetails } from '../../lib/detailsEvent';
 import { MODALS_3D, preloadAll3D } from '../three/registry';
-import { ActCurtain, CURTAIN_HOLD_MS } from './ActCurtain';
-import { curtainForCrossing } from './acts';
-import type { Chapter } from '../../data/chapters';
-import { DUR, EASE_OUT } from '../../lib/motion';
+import { Morph3D } from '../three/morph/Morph3D';
+import { accentOf } from '../three/morph/accent';
+import { useMorph3D } from '../three/morph/useMorph3D';
+import { ActCurtain } from './ActCurtain';
+import { ActTint } from './motion/ActTint';
+import { GlucoseCharacter } from './motion/GlucoseCharacter';
+import { KEEP_JS_ANIMATION, SECTION_VARIANTS, SlideMotionContext } from './motion/transitions';
+import { useSlideTransition } from './motion/useSlideTransition';
 
 const renderSlide = ({ slide, section }: DeckSlide) => {
     if (slide.id === 0) return <TitleSlide slide={slide} />;
@@ -31,154 +35,9 @@ const isContentSlide = ({ slide }: DeckSlide): boolean => slide.id !== 0 && slid
 
 const IDLE_MS = 2600;
 
-/** Cliques mais rápidos que isto (passador) tiram o slide anterior na hora: nunca empilham 2–3 simuladores saindo. */
-const RAPID_NAV_MS = 260;
-
-/** Teclas de avançar/voltar (as mesmas do useDeckNavigation): qualquer uma fecha a cortina do ato. */
-const NAV_KEYS = new Set(['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' ', 'Enter', 'Backspace']);
-
-interface SlideMotion {
-    direction: number;
-    /** Lido quando a saída começa (efeito do framer-motion, depois do render): instante em que o slide que sai entrou. */
-    nav: { current: number };
-}
-
-/**
- * Troca de slide: entra subindo 16 px e esmaecendo; sai só esmaecendo, rápido. Sem transição compartilhada:
- * cada lado tem a sua duração. Se o slide que sai mal acabou de entrar (clique em rajada), sai sem animação.
- */
-const SLIDE_VARIANTS = {
-    enter: ({ direction }: SlideMotion) => ({ opacity: 0, y: direction * 16 }),
-    center: { opacity: 1, y: 0, transition: { duration: DUR.enter, ease: EASE_OUT } },
-    exit: ({ nav }: SlideMotion) => ({
-        opacity: 0,
-        transition: { duration: performance.now() - nav.current < RAPID_NAV_MS ? 0 : DUR.exit, ease: EASE_OUT },
-    }),
-};
-
-// Os modelos 3D (cena + pós-processamento) só são baixados quando alguém os abre (ou na pré-carga).
-// Cada arquivo de `three/models/` é um modelo: export default de um modal que recebe `onClose`.
-
-export const Deck = () => {
-    const rootRef = useRef<HTMLDivElement>(null);
-    const setSlide = useStore(s => s.setSlide);
-    const modalOpen = useStore(s => s.modalOpen);
-    const setModalOpen = useStore(s => s.setModalOpen);
-    const [overview, setOverview] = useState(false);
-    const [open3D, setOpen3D] = useState<Model3D | null>(null);
+/** Controles e cursor somem quando o mouse fica parado (projeção limpa). */
+const useIdle = () => {
     const [idle, setIdle] = useState(false);
-
-    const toggleOverview = useCallback(() => setOverview(o => !o), []);
-    const closeOverlays = useCallback(() => setOverview(false), []);
-
-    const { index, direction, goTo, next, prev } = useDeckNavigation({
-        total: DECK.length,
-        paused: modalOpen,
-        rootRef,
-        onToggleOverview: toggleOverview,
-        onCloseOverlays: closeOverlays,
-    });
-
-    // Cortina do ato: ao avançar um slide e entrar num ato posterior, sobe junto com o 1º slide do ato novo
-    // e abre depois de um instante. Guarda o slide de destino: qualquer outra troca de slide a tira na hora.
-    // (Saltos pela visão geral ou pelo endereço não tocam a cortina: só o avanço em sequência.)
-    const [curtain, setCurtain] = useState<{ chapter: Chapter; index: number } | null>(null);
-    const [shownIndex, setShownIndex] = useState(index);
-    if (shownIndex !== index) {
-        setShownIndex(index);
-        const chapter = index === shownIndex + 1 ? curtainForCrossing(DECK[shownIndex].section, DECK[index].section) : null;
-        setCurtain(chapter ? { chapter, index } : null);
-    }
-    useEffect(() => {
-        if (!curtain) return undefined;
-        const t = window.setTimeout(() => setCurtain(null), CURTAIN_HOLD_MS);
-        return () => window.clearTimeout(t);
-    }, [curtain]);
-
-    // Qualquer comando de avançar/voltar (passo ou slide) fecha a cortina na hora: ela nunca esconde o que o clique mudou.
-    useEffect(() => {
-        if (!curtain) return undefined;
-        const onKey = (e: KeyboardEvent) => { if (NAV_KEYS.has(e.key)) setCurtain(null); };
-        window.addEventListener('keydown', onKey, true);
-        return () => window.removeEventListener('keydown', onKey, true);
-    }, [curtain]);
-
-    // Instante da última troca de slide (ver SLIDE_VARIANTS.exit). Atualizado depois que a saída já começou.
-    const navAtRef = useRef(0);
-    useEffect(() => { navAtRef.current = performance.now(); }, [index]);
-
-    // Passador, botões e janela do apresentador: avançar ou voltar fecha a cortina na hora.
-    const advance = useCallback(() => {
-        setCurtain(null);
-        next();
-    }, [next]);
-    const back = useCallback(() => {
-        setCurtain(null);
-        prev();
-    }, [prev]);
-
-    const current = DECK[index];
-    const model3D = MODEL_3D_BY_SLIDE.get(current.slide.id) ?? null;
-    const has3D = model3D !== null;
-    const show3D = open3D !== null;
-    const Open3D = open3D ? MODALS_3D[open3D] : undefined;
-
-    useEffect(() => setSlide(index), [index, setSlide]);
-
-    // Depois que a capa aparece, baixa o resto da aula em segundo plano.
-    useEffect(() => {
-        const start = window.setTimeout(() => {
-            void preloadAllSims().then(preloadAll3D);
-        }, 2500);
-        return () => window.clearTimeout(start);
-    }, []);
-
-    // Sincroniza com a janela do apresentador (P): envia estado, recebe comandos.
-    const step = useSlideStepStore(st => st.step);
-    const stepCount = useSlideStepStore(st => st.count);
-    const channelRef = useRef<BroadcastChannel | null>(null);
-    const navRef = useRef({ next: advance, prev: back, goTo });
-    useEffect(() => { navRef.current = { next: advance, prev: back, goTo }; }, [advance, back, goTo]);
-    const stateRef = useRef({ index, step, stepCount });
-
-    useEffect(() => {
-        stateRef.current = { index, step, stepCount };
-        channelRef.current?.postMessage({ type: 'state', index, step, stepCount } satisfies PresenterMessage);
-    }, [index, step, stepCount]);
-
-    useEffect(() => {
-        const channel = new BroadcastChannel(PRESENTER_CHANNEL);
-        channelRef.current = channel;
-        channel.onmessage = (e: MessageEvent<PresenterMessage>) => {
-            const msg = e.data;
-            if (msg.type === 'next') navRef.current.next();
-            else if (msg.type === 'prev') navRef.current.prev();
-            else if (msg.type === 'goto') navRef.current.goTo(msg.index);
-            else if (msg.type === 'hello') channel.postMessage({ type: 'state', ...stateRef.current } satisfies PresenterMessage);
-        };
-        return () => { channel.close(); channelRef.current = null; };
-    }, []);
-
-    useEffect(() => {
-        const onKey = (e: KeyboardEvent) => {
-            if (modalOpen || e.metaKey || e.ctrlKey || e.altKey) return;
-            if (e.key === 'p' || e.key === 'P') openPresenterWindow(stateRef.current.index);
-            if (e.key === 'd' || e.key === 'D') toggleDetails();
-        };
-        window.addEventListener('keydown', onKey);
-        return () => window.removeEventListener('keydown', onKey);
-    }, [modalOpen]);
-    useEffect(() => setModalOpen(show3D), [show3D, setModalOpen]);
-
-    // Atalho "3" abre o modelo 3D do slide, quando ele tem um.
-    useEffect(() => {
-        if (!model3D || modalOpen) return;
-        const onKey = (e: KeyboardEvent) => { if (e.key === '3') setOpen3D(model3D); };
-        window.addEventListener('keydown', onKey);
-        return () => window.removeEventListener('keydown', onKey);
-    }, [model3D, modalOpen]);
-
-    // Controles e cursor somem quando o mouse fica parado (projeção limpa).
     useEffect(() => {
         let timer = window.setTimeout(() => setIdle(true), IDLE_MS);
         const wake = () => {
@@ -194,6 +53,84 @@ export const Deck = () => {
             window.removeEventListener('mousedown', wake);
         };
     }, []);
+    return idle;
+};
+
+// Os modelos 3D (cena + pós-processamento) só são baixados quando alguém os abre (ou na pré-carga).
+// Cada arquivo de `three/models/` é um modelo: export default de um modal que recebe `onClose`.
+
+export const Deck = () => {
+    const rootRef = useRef<HTMLDivElement>(null);
+    const setSlide = useStore(s => s.setSlide);
+    const modalOpen = useStore(s => s.modalOpen);
+    const setModalOpen = useStore(s => s.setModalOpen);
+    const [overview, setOverview] = useState(false);
+    const idle = useIdle();
+
+    const toggleOverview = useCallback(() => setOverview(o => !o), []);
+    const closeOverlays = useCallback(() => setOverview(false), []);
+
+    const { index, goTo, next, prev } = useDeckNavigation({
+        total: DECK.length,
+        paused: modalOpen,
+        rootRef,
+        onToggleOverview: toggleOverview,
+        onCloseOverlays: closeOverlays,
+    });
+
+    // Direção da troca, saída instantânea em rajada e abertura de ato (camadas em ./motion).
+    const { motion: slideMotion, opening, closeOpening } = useSlideTransition(index);
+
+    // Passador, botões e janela do apresentador: avançar ou voltar fecha a abertura do ato na hora.
+    const advance = useCallback(() => { closeOpening(); next(); }, [closeOpening, next]);
+    const back = useCallback(() => { closeOpening(); prev(); }, [closeOpening, prev]);
+
+    const current = DECK[index];
+    const model3D: Model3D | null = MODEL_3D_BY_SLIDE.get(current.slide.id) ?? null;
+    const has3D = model3D !== null;
+    // Tecla 3: a arte do slide cresce e vira a cena 3D (e volta para ela ao fechar).
+    const morph = useMorph3D(rootRef, index);
+    const openMorph = morph.open;
+    const open3D = morph.name;
+    const show3D = open3D !== null;
+    const Open3D = open3D ? MODALS_3D[open3D] : undefined;
+
+    useEffect(() => setSlide(index), [index, setSlide]);
+
+    // Depois que a capa aparece, baixa o resto da aula em segundo plano.
+    useEffect(() => {
+        const start = window.setTimeout(() => {
+            void preloadAllSims().then(preloadAll3D);
+        }, 2500);
+        return () => window.clearTimeout(start);
+    }, []);
+
+    const nav = useMemo(() => ({ next: advance, prev: back, goTo }), [advance, back, goTo]);
+    const presenterState = usePresenterSync(index, nav);
+
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (modalOpen || e.metaKey || e.ctrlKey || e.altKey) return;
+            if (e.key === 'p' || e.key === 'P') openPresenterWindow(presenterState.current.index);
+            if (e.key === 'd' || e.key === 'D') toggleDetails();
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [modalOpen, presenterState]);
+    useEffect(() => setModalOpen(show3D), [show3D, setModalOpen]);
+
+    // Atalho "3" abre o modelo 3D do slide, quando ele tem um.
+    useEffect(() => {
+        if (!model3D || modalOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key !== '3' || e.metaKey || e.ctrlKey || e.altKey || useStore.getState().modalOpen) return;
+            openMorph(model3D);
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [model3D, modalOpen, openMorph]);
+
+    const liveText = `${opening ? `Ato ${opening.chapter.roman}: ${opening.chapter.title}. ` : ''}Slide ${index + 1} de ${DECK.length}: ${current.label}`;
 
     return (
         <div
@@ -201,42 +138,50 @@ export const Deck = () => {
             data-idle={idle || undefined}
             className={`deck-root absolute inset-0 z-10 overflow-hidden font-body selection:bg-brand-deep selection:text-white ${idle && !overview ? 'cursor-none' : ''}`}
         >
-            <AnimatePresence initial={false} custom={{ direction, nav: navAtRef } satisfies SlideMotion}>
+            <ActTint section={current.section} />
+
+            {/* Troca de slide: lateral com parallax no mesmo ato; a abertura cobre a troca entre atos. */}
+            <AnimatePresence initial={false} custom={slideMotion}>
                 <motion.section
                     key={index}
-                    custom={{ direction, nav: navAtRef } satisfies SlideMotion}
+                    custom={slideMotion}
+                    data-deck-index={index}
                     className="absolute inset-0"
                     aria-roledescription="slide"
                     aria-label={`${index + 1} de ${DECK.length}: ${current.label}`}
-                    variants={SLIDE_VARIANTS}
+                    variants={SECTION_VARIANTS}
+                    onUpdate={KEEP_JS_ANIMATION}
                     initial="enter"
                     animate="center"
                     exit="exit"
                 >
-                    <FitStage width={SLIDE_WIDTH} padX={PAD_X_SELF} minHeight={isContentSlide(current) ? CONTENT_MIN_HEIGHT : 0}><SlideErrorBoundary resetKey={index}>{renderSlide(current)}</SlideErrorBoundary></FitStage>
+                    <SlideMotionContext.Provider value={slideMotion}>
+                        <FitStage width={SLIDE_WIDTH} padX={PAD_X_SELF} minHeight={isContentSlide(current) ? CONTENT_MIN_HEIGHT : 0}><SlideErrorBoundary resetKey={index}>{renderSlide(current)}</SlideErrorBoundary></FitStage>
+                    </SlideMotionContext.Provider>
                 </motion.section>
             </AnimatePresence>
 
             {/* Leitor de tela: anuncia o slide novo a cada troca (o <section> que sai e entra não é anunciado sozinho). */}
-            <p className="sr-only" aria-live="polite" aria-atomic="true">
-                {`Slide ${index + 1} de ${DECK.length}: ${current.label}`}
-            </p>
+            <p className="sr-only" aria-live="polite" aria-atomic="true">{liveText}</p>
+
+            <AnimatePresence>
+                {opening && <ActCurtain key={opening.key} chapter={opening.chapter} />}
+            </AnimatePresence>
+            <GlucoseCharacter index={index} hidden={overview || modalOpen} />
 
             <DeckChrome
                 index={index}
                 total={DECK.length}
                 section={current.section}
+                idle={idle}
                 has3D={has3D}
+                covered={Boolean(opening)}
                 onPrev={back}
                 onNext={advance}
                 onOverview={toggleOverview}
-                on3D={() => setOpen3D(model3D)}
+                on3D={() => openMorph(model3D)}
                 onPresenter={() => openPresenterWindow(index)}
             />
-
-            <AnimatePresence>
-                {curtain && <ActCurtain key={curtain.chapter.roman} chapter={curtain.chapter} />}
-            </AnimatePresence>
 
             <AnimatePresence>
                 {overview && (
@@ -249,8 +194,12 @@ export const Deck = () => {
             </AnimatePresence>
 
             <Suspense fallback={null}>
-                <AnimatePresence>
-                    {Open3D && <Open3D key={open3D} onClose={() => setOpen3D(null)} />}
+                <AnimatePresence custom={morph.from} onExitComplete={morph.onExitComplete}>
+                    {Open3D && (
+                        <Morph3D key={open3D} from={morph.from} accent={accentOf(open3D)} onClose={morph.close}>
+                            <Open3D onClose={morph.close} />
+                        </Morph3D>
+                    )}
                 </AnimatePresence>
             </Suspense>
         </div>

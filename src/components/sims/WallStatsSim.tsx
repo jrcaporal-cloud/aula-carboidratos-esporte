@@ -2,101 +2,88 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT } from '../../lib/motion';
 import { C } from './kit/palette';
-import { SvgText } from './kit/ui';
 import { castOf } from './kit/cast';
 import { DesignChip, FictionChip } from './kit/chips';
-import { sample, useMorphPath } from './kit/useMorphPath';
-import { Foot, Lead, SimBox } from './ato4/frame';
-import { planSpeed, WAFFLES, WALL_LEADS, WALL_SOURCE, wallSpeed } from './ato4/wall.content';
+import { sourcesUpTo } from './kit/sources';
+import { WALL_W, WallChart } from './ato4/wallChart';
+import { Ledger, PanelFoot, StageLayout, StepText } from './ato4/tankBLayout';
+import { WAFFLES, WALL_CHIPS, WALL_LEDGER, WALL_STEPS } from './ato4/wall.content';
 
 /**
- * Slide 68 · a volta da Marina: a linha do ritmo planejado se transforma na do muro (morfose). Depois, à direita,
- * dois quadros de 100 corredores com os 28% e 17% reais de Smyth 2021.
+ * Slide 68 · O muro em números: gráfico grande + painel. No palco, a volta da Marina (fictícia) vira a curva do muro
+ * por morfose, com a zona dos ~10 km lentos; embaixo, a Marina e, a partir do passo 3, os dois quadros de 100
+ * corredores (28% × 17%). O selo "caso fictício" da curva fica até o fim. No painel, o texto e o livro-caixa de Smyth.
  */
 
-const W = 560;
-const H = 280;
-const X0 = 30;
-const X1 = 540;
-const KM = 42.2;
-const sx = (km: number) => X0 + (km / KM) * (X1 - X0);
-const sy = (v: number) => 60 + (1 - v) * 420;
-const toPts = (f: (km: number) => number) => sample(43, 0, KM, f, (km, v) => [sx(km), sy(v)] as const);
-const PLAN = toPts(planSpeed);
-const WALL = toPts(wallSpeed);
-
-const PaceChart = ({ crashed }: { crashed: boolean }) => {
-    const ref = useMorphPath(crashed ? WALL : PLAN, 800);
-    return (
-        <svg viewBox={`0 0 ${W} ${H}`} style={{ width: W, height: H }} className="block shrink-0" role="img"
-            aria-label="Velocidade da Marina ao longo da maratona, com queda a partir do km 32">
-            <line x1={X0} y1={sy(1)} x2={X1} y2={sy(1)} stroke="#3A4152" strokeWidth={2} />
-            <SvgText x={X0} y={sy(1) - 16} text="ritmo planejado" size={17} color={C.caveat} />
-            <path ref={ref} fill="none" stroke={crashed ? C.risk : C.stone} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" />
-            <motion.g initial={false} animate={{ opacity: crashed ? 1 : 0 }} transition={{ duration: DUR.enter, delay: crashed ? 0.5 : 0 }}>
-                <line x1={sx(32)} y1={sy(1) + 18} x2={sx(32)} y2={H - 40} stroke={C.stone} strokeWidth={3} />
-                <SvgText x={sx(32) - 12} y={sy(1) + 44} text="km 32" size={20} anchor="end" color={C.stone} weight={700} />
-                <SvgText x={sx(33) + 4} y={sy(1 / 1.4) - 16} text="−40%" size={22} color={C.risk} weight={700} />
-            </motion.g>
-            <line x1={X0} y1={H - 24} x2={X1} y2={H - 24} stroke={C.co2} strokeWidth={2} />
-            {[0, 10, 20, 30, 42].map(k => <SvgText key={k} x={sx(Math.min(k, KM))} y={H - 4} text={`${k}`} size={16} anchor="middle" color={C.muted} />)}
-        </svg>
-    );
-};
+const ACCENT = [C.stone, C.risk, C.risk, C.stone] as const;
 
 const Marina = () => {
     const m = castOf('marina');
     const Icon = m.icon;
     return (
-        <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-4">
-                <Icon size={44} strokeWidth={2.2} color="#FFFFFF" aria-hidden />
-                <span className="font-display text-[40px] font-semibold leading-none text-white">{m.name}</span>
+        <div className="flex w-[250px] shrink-0 flex-col gap-2">
+            <div className="flex items-center gap-3">
+                <Icon size={34} strokeWidth={2.2} color="#FFFFFF" aria-hidden />
+                <span className="font-display text-[30px] font-semibold leading-none text-white">{m.name}</span>
             </div>
-            <span className="text-[22px] text-gray-200">{m.age} anos · {m.kg} kg · {m.sport}</span>
-            <span className="text-[22px] italic text-gray-100">{m.dilemma}</span>
-            <span className="self-start"><FictionChip /></span>
+            <span className="text-[17px] text-gray-200">{m.age} anos · {m.kg} kg · {m.sport}</span>
+            <span className="text-[17px] italic leading-snug text-gray-100">{m.dilemma}</span>
+            <span className="flex items-center gap-2 whitespace-nowrap text-[16px] text-gray-300">curva da Marina <FictionChip /></span>
         </div>
     );
 };
 
-/** 100 corredores; os que batem no muro se pintam em sequência (atraso com teto). */
-const Waffle = ({ pct, who }: { pct: number; who: string }) => {
+/** 100 corredores; os que bateram no muro se pintam em sequência (atraso com teto). */
+const Waffle = ({ pct, who, show }: { pct: number; who: string; show: boolean }) => {
     const reduce = useReducedMotion() ?? false;
     return (
-        <div className="flex flex-col items-start gap-3">
-            <div className="grid grid-cols-10 gap-[4px]">
+        <div className="flex flex-col gap-2">
+            <span className="flex items-baseline gap-2">
+                <span className="font-display text-[30px] font-bold leading-none tabular-nums" style={{ color: C.risk }}>{pct}%</span>
+                <span className="text-[17px] text-gray-200">dos {who}</span>
+            </span>
+            <div className="grid grid-cols-10 gap-[3px]">
                 {Array.from({ length: 100 }, (_, i) => (
-                    <motion.span key={i} className="block h-[17px] w-[17px] rounded-[3px]" initial={false}
-                        animate={{ backgroundColor: i < pct ? C.risk : '#2A3140' }}
-                        transition={{ duration: reduce ? 0 : DUR.text, delay: reduce ? 0 : Math.min(i * 0.02, 0.6), ease: EASE_OUT }} />
+                    <motion.span key={i} className="block h-[11px] w-[11px] rounded-[2px]" initial={false}
+                        animate={{ backgroundColor: show && i < pct ? C.risk : '#2A3140' }}
+                        transition={{ duration: reduce ? 0 : DUR.text, delay: reduce || !show ? 0 : 0.2 + Math.min(i * 0.025, 0.7), ease: EASE_OUT }} />
                 ))}
             </div>
-            <span className="font-display text-[44px] font-semibold leading-none" style={{ color: C.risk }}>{pct}%</span>
-            <span className="text-[20px] text-gray-200">{who}</span>
         </div>
     );
 };
 
+const Stage = ({ step }: { step: number }) => (
+    <div className="flex h-full flex-col px-1 pt-2">
+        <WallChart step={step} />
+        <div className="mt-1 flex items-start gap-6 px-3">
+            <Marina />
+            <motion.div className="flex gap-8" initial={false} animate={{ opacity: step >= 2 ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+                {WAFFLES.map(w => <Waffle key={w.who} pct={w.pct} who={w.who} show={step >= 2} />)}
+            </motion.div>
+        </div>
+    </div>
+);
+
 export default function WallStatsSim() {
-    const { step } = useSlideSteps(WALL_LEADS.length);
-    const stats = step >= 2;
+    const { step, setStep } = useSlideSteps(WALL_STEPS.length);
+    const s = WALL_STEPS[step];
     return (
-        <SimBox>
-            <Lead beat={step} chips={stats
-                ? <><DesignChip>observacional · N = 1.928.813 · OR 1,43</DesignChip>{step === 3 && <DesignChip>muro inferido pelo ritmo; glicogênio não medido</DesignChip>}</>
-                : <DesignChip>a queda desenhada é a média de Smyth 2021</DesignChip>} className="min-h-[72px]">{WALL_LEADS[step]}</Lead>
-            <div className="mt-4 flex flex-1 items-start gap-12">
-                <PaceChart crashed={step >= 1} />
-                <div className="flex-1 pt-2">
-                    {stats
-                        ? <motion.div className="flex gap-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.enter }}>
-                            {WAFFLES.map(w => <Waffle key={w.who} pct={w.pct} who={w.who} />)}
-                        </motion.div>
-                        : <Marina />}
-                </div>
-            </div>
-            <Foot source={WALL_SOURCE} />
-        </SimBox>
+        <StageLayout tabs={WALL_STEPS.map(w => w.tab)} step={step} onSelect={setStep} layoutId="wall-tabs" stageWidth={WALL_W + 8}
+            chips={<DesignChip>{WALL_CHIPS[step]}</DesignChip>}
+            stage={<Stage step={step} />}
+            panel={<>
+                <StepText step={step} color={ACCENT[step]} headline={s.headline} text={s.text} />
+                <PanelFoot source={sourcesUpTo(WALL_STEPS.map(w => w.sources), step)}>
+                    {step >= 1 && (
+                        <div className="flex flex-col gap-1">
+                            <Ledger step={step} head={['Smyth 2021', 'homens', 'mulheres']} cols={['46%', '27%', '27%']}
+                                rows={WALL_LEDGER.map(r => ({ at: r.at, cells: r.cells, color: r.at === 2 && r.cells[1] === '28%' ? C.risk : undefined }))} />
+                            {step >= 2 && <span className="text-[15px] text-gray-300">N = 1.928.813 corredores · mais de 4 milhões de registros</span>}
+                        </div>
+                    )}
+                </PanelFoot>
+            </>}
+        />
     );
 }

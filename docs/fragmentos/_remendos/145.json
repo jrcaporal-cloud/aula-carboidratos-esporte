@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-2807. DOI 10.1113/jp273230 · PMID 28012184 — marchadores de elite no AIS (nov/2015 e jan/2016), comida 100% fornecida, 3 semanas de treino intensificado, alocação em parte por preferência; HCHO n = 9 (8,6 g/kg/d CHO, 2,1 proteína, 1,2 gordura), PCHO n = 10, LCHF n = 10 (< 50 g/d, 78% gordura, 2,1 g/kg proteína), isoenergéticas; gordura no LCHF 1,57 ± 0,32 g/min; VO₂pico subiu em todos (IC90% 2,55–5,20%); 10 km: +6,6% (IC90% 4,1–9,1), +5,3% (3,4–7,2), −1,6% (−8,5 a 5,3); maior custo de O₂ no ritmo de prova. As barras de % da energia são cálculo a partir dos g/kg/d.",
+   "Burke LM. Re-examining high-fat diets for sports performance: did we call the \"nail in the coffin\" too soon? Sports Med 2015;45(Suppl 1):S33-49. DOI 10.1007/s40279-015-0393-9 · PMID 26553488 — a reabertura do caso em 2015; o editorial original é Burke LM, Kiens B. J Appl Physiol 2006;100(1):7-8 (PMID 16357078), \"o prego no caixão\".",
+   "Burke LM. Ketogenic low-CHO, high-fat diet: the future of elite endurance sport? J Physiol 2021;599(3):819-843. DOI 10.1113/jp278928 · PMID 32358802 — o boom da dieta cetogênica na mídia leiga desde 2012 (marco da linha do tempo).",
+   "Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 — 21,1 × 19,6 kJ por litro de O₂ (os ~7,7% são cálculo; ver o slide O Preço do Oxigênio)."
+  ]
+ },
+ "notas": {
+  "minutos": 5,
+  "mensagem": "Comece pela virada da própria Burke: em 2006 ela e Kiens chamaram a adaptação à gordura de 'prego no caixão'; depois do boom cetogênico na mídia leiga (desde 2012), em 2015 ela admitiu que faltavam dados e foi buscá-los. Supernova 1 (Burke 2017): marchadores de elite no AIS, campos em nov/2015 e jan/2016, comida 100% fornecida, 3 semanas de treino intensificado. HCHO 8,6 g/kg/d (n = 9; ~64% da energia em CHO, cálculo), PCHO com os mesmos macros periodizados (n = 10), LCHF < 50 g/d e 78% de gordura (n = 10). O LCHF chegou a 1,57 g/min de gordura. O VO₂pico subiu nos três grupos (IC90% +2,55 a +5,20%), mas 1 litro de O₂ rende 21,1 kJ com carboidrato e 19,6 kJ com gordura (~7,7% a menos, cálculo): no ritmo de prova o LCHF pagou mais O₂. Na prova oficial de 10 km: HCHO +6,6% (IC90% 4,1 a 9,1), PCHO +5,3% (3,4 a 7,2), LCHF −1,6% (−8,5 a 5,3). Limitações: alocação em parte por preferência, sem cegamento possível, ~10 por grupo.",
+  "pergunta": "Votem no chat: a alocação por preferência favorece ou prejudica o grupo LCHF? Justifiquem em uma linha.",
+  "transicao": "Vieram críticas e relatos de que o LCHF melhorava ao voltar ao carboidrato. O grupo fez o que pouca gente faz: repetiu tudo."
+ }
+}

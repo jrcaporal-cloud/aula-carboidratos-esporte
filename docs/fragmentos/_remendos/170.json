@@ -1,0 +1,15 @@
+{
+  "slide": {
+    "fontes": [
+      "Needleman I, Ashley P, Petrie A, et al. Oral health and impact on performance of athletes participating in the London 2012 Olympic Games: a cross-sectional study. Br J Sports Med 2013;47(16):1054-1058. DOI 10.1136/bjsports-2013-092891 · PMID 24068332 — 302 atletas de 25 esportes (278 com dados): gengivite 76%, cárie 55%, erosão 45%, periodontite 15%; 18% com impacto no treino ou desempenho; viés de seleção.",
+      "Gallagher J, Ashley P, Petrie A, Needleman I. Oral health-related behaviours reported by elite and professional athletes. Br Dent J 2019;227(4):276-280. DOI 10.1038/s41415-019-0617-8 · PMID 31444443 — 80% usam bebida esportiva; 94% escovam 2×/dia.",
+      "Gallagher J, Ashley P, Petrie A, Needleman I. Oral health and performance impacts in elite and professional athletes. Community Dent Oral Epidemiol 2018;46(6):563-568. DOI 10.1111/cdoe.12392 · PMID 29938820 — 352 atletas de 11 esportes, examinador calibrado: erosão 41,4%; chance 2,0× maior em esporte coletivo que em endurance (IC 95% 1,3–3,1); 32% com impacto no desempenho."
+    ]
+  },
+  "notas": {
+    "minutos": 2,
+    "mensagem": "Needleman 2013, transversal na clínica da Vila Olímpica de Londres 2012 (302 atletas de 25 esportes, 278 com dados): gengivite 76%, cárie 55%, erosão dentária 45%, periodontite 15%; 18% relataram impacto no treino ou desempenho. Viés de seleção (quem procurou a clínica) e o desenho não prova que a bebida cause a erosão. Gallagher 2019 (352 atletas britânicos): 94% escovam 2 vezes ao dia e 80% usam bebida esportiva em treino ou prova. Gallagher 2018 (mesmos atletas, 11 esportes, examinador calibrado): erosão em 41,4%, chance 2,0 vezes maior em esporte coletivo que em endurance (IC 95% 1,3–3,1), 32% com impacto no desempenho. Fecho na tela: água depois do gole, flúor e saúde bucal na anamnese.",
+    "pergunta": "Vocês perguntam sobre saúde bucal na anamnese do atleta?",
+    "transicao": "Fechamos os contextos. Agora: como ler, medir e decidir."
+  }
+}

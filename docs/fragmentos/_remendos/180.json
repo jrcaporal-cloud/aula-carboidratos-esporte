@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 — faixas diárias 3–5 / 5–7 / 6–10 / 8–12 g/kg/d (lidas em tabelas que reproduzem o original: PMC6950062, PMC6019055); durante: ~1 h bochecho/pouco, 30–60 g/h, até 90 g/h > 2,5 h com mistura (abstract).",
+   "Thomas DT, Erdman KA, Burke LM. American College of Sports Medicine Joint Position Statement. Nutrition and Athletic Performance. Med Sci Sports Exerc 2016;48(3):543-568. DOI 10.1249/MSS.0000000000000852 — repete as mesmas faixas; descrição da carga pela fala (canta / conversa / frases curtas / não fala) lida em tabela secundária (PMC6019055).",
+   "Jeukendrup A. A step towards personalized sports nutrition: carbohydrate intake during exercise. Sports Med 2014;44(Suppl 1):S25-33. DOI 10.1007/s40279-014-0148-z — durante, a meta é em g/h e independe do peso.",
+   "Gramas por peso (58, 70 e 85 kg; 210–840 g/d a 70 kg): cálculo próprio (g/kg × peso)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "As faixas diárias de Burke 2011, repetidas pelo posicionamento ACSM/AND/DC de 2016, vão por carga de treino: 3–5 (leve; o atleta conversa e canta), 5–7 (~1 h/d), 6–10 (1–3 h/d; só frases curtas) e 8–12 g/kg/d (mais de 4–5 h/d; não consegue falar). Elas se sobrepõem em 6–7 e 8–10 de propósito: é consenso sem graduação formal de evidência, ponto de partida para o atleta médio. Para 70 kg, de 210 a 840 g por dia (cálculo). Durante a sessão a unidade muda para g/h, independente do peso: ~1 h intensa pede bochecho ou pouco, provas mais longas 30–60 g/h, acima de 2,5 h até 90 g/h com mistura (Burke 2011; Jeukendrup 2014).",
+  "pergunta": "No chat: o seu atleta de hoje está em qual faixa, e em qual estaria no dia de treino leve?",
+  "transicao": "Essa régua tem 15 anos. E a diretriz brasileira, de que ano é?"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Jörgens V, Grüsser M. Happy birthday, Claude Bernard. Diabetes 2013;62(7):2181-2. DOI 10.2337/db13-0700 · PMID 23801718 · PMC3712027 — açúcar no sangue do cão (1848), anotação no caderno ('não entendo mais nada', paráfrase), isolamento do glicogênio em fevereiro de 1855 ('batizo esta substância glicogênio') e publicação em 1857 (Nouvelles recherches expérimentales sur les phénomènes glycogéniques du foie).",
+   "Habert R. Claude Bernard, the founder of modern medicine. Cells 2022;11(10):1702. DOI 10.3390/cells11101702 · PMID 35626738 · PMC9139283 — datas e publicações de 1848 (De l'origine du sucre dans l'économie animale) e 1857; meio interno.",
+   "Wasserman DH. Four grams of glucose. Am J Physiol Endocrinol Metab 2009;296(1):E11-21. DOI 10.1152/ajpendo.90563.2008 · PMID 18840763 — ~4 g de glicose no sangue de uma pessoa de 70 kg (quadro 'Para o esporte').",
+   "Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — ~100 g de glicogênio no fígado (quadro 'Para o esporte')."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Storyboard em quatro quadros e o caderno de Bernard reconstituído (paráfrase de Jörgens 2013). Em 1848 ele achou açúcar no sangue de um cão que não comera açúcar, anotou algo como 'não entendo mais nada' e publicou sobre a origem do açúcar no animal. Em fevereiro de 1855 isolou no fígado a substância que vira açúcar ('batizo esta substância glicogênio'); publicou os 'fenômenos glicogênicos do fígado' em 1857 — diga as duas datas. Daí o meio interno: o fígado é uma das torneiras que mantêm o sangue estável. Ponte para o esporte: ~4 g de glicose no sangue (Wasserman 2009), ~100 g de glicogênio no fígado (Hearris 2018).",
+  "pergunta": "Se o fígado fabrica glicose, por que alguém tem hipoglicemia na prova? Guarde a resposta para o Ato III.",
+  "transicao": "Mas como é, por dentro, essa substância que Bernard isolou? Vamos abrir um grânulo."
+ }
+}

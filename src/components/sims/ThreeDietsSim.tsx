@@ -1,77 +1,73 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { Syringe } from 'lucide-react';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT, stagger } from '../../lib/motion';
+import { DUR, EASE_OUT } from '../../lib/motion';
 import { C } from './kit/palette';
-import { Beat } from './kit/Beat';
+import { Panel } from './kit/ui';
 import { CalcChip, DesignChip } from './kit/chips';
-import { Foot, Lead, SimBox } from './ato4/frame';
-import { DietLanes } from './ato4/DietLanes';
-import { DietChart } from './ato4/DietChart';
-import { DIET_LEADS, DIETS_SOURCE, LIMITS, PROTOCOL } from './ato4/threeDiets.content';
+import { sourcesUpTo } from './kit/sources';
+import { InfoPanel, ShellA } from './ato4/shellA';
+import { DietChart, LimitStamps } from './ato4/DietChart';
+import { DIET_STEPS, DIETS, OUT_OF_ORDER } from './ato4/threeDiets.content';
 
 /**
- * Slide 62 · Bergström 1967, o estudo-âncora do ato. À esquerda, três raias fixas (dieta → tanque → cronômetro);
- * à direita, a leitura muda a cada passo: o protocolo, a razão de tempos, a correlação, os 3 "fora da ordem", os limites.
+ * Slide 62 · Bergström 1967, o estudo-âncora do ato, como caderno de laboratório: à esquerda o protocolo e o
+ * gráfico que se monta (glicogênio → cronômetros → reta → os 3 fora da ordem → limitações carimbadas, sem apagar
+ * a dispersão); à direita o texto do passo e a Tabela III, com o resumo (59/126/189) riscado.
  */
 
-const Protocol = () => (
-    <ol className="m-0 flex list-none flex-col gap-3 p-0">
-        {PROTOCOL.map((p, i) => (
-            <motion.li key={p.what} className="flex items-center gap-3" initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: stagger(i, 0.1), duration: DUR.enter, ease: EASE_OUT }}>
-                <Syringe size={22} strokeWidth={2.5} color={C.glycogenSoft} aria-hidden />
-                <span className="text-[21px] leading-snug text-gray-100">{p.what}<span className="text-gray-400"> → {p.then}</span></span>
-            </motion.li>
-        ))}
-    </ol>
-);
+const cell = 'py-0.5 text-right tabular-nums';
 
-const Ratio = () => (
-    <Beat beat="ratio" className="flex flex-col gap-2">
-        <span className="font-display text-[96px] font-bold leading-none" style={{ color: C.glucose }}>≈ 3×</span>
-        <span className="max-w-[380px] text-[22px] leading-snug text-gray-100">mais tempo com o tanque cheio que com o vazio</span>
-    </Beat>
-);
-
-const Limits = () => (
-    <ul className="absolute inset-0 m-0 flex list-none flex-col justify-center gap-4 p-0 pl-4">
-        {LIMITS.map((l, i) => (
-            <motion.li key={l} className="flex items-baseline gap-3 text-[23px] leading-snug text-white" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: stagger(i, 0.05), duration: DUR.enter, ease: EASE_OUT }}>
-                <span className="inline-block h-3 w-3 shrink-0 rounded-sm" style={{ background: C.stone }} aria-hidden />{l}
-            </motion.li>
-        ))}
-    </ul>
-);
-
-/** Coluna da direita: o que se lê das raias neste passo. */
-const Reading = ({ step }: { step: number }) => {
+const Table = ({ step }: { step: number }) => {
     const reduce = useReducedMotion() ?? false;
-    if (step === 0) return <Protocol />;
-    if (step === 1) return <Ratio />;
+    const timed = step >= 1;
+    const enter = (on: boolean) => ({ initial: false as const, animate: { opacity: on ? 1 : 0 }, transition: { duration: reduce ? 0 : DUR.enter, ease: EASE_OUT } });
     return (
-        <div className="relative">
-            <motion.div initial={false} animate={{ opacity: step === 4 ? 0 : 1 }} transition={{ duration: reduce ? 0 : DUR.enter }}>
-                <DietChart step={step} />
-            </motion.div>
-            {step === 4 && <Limits />}
-        </div>
+        <table className="w-full border-separate border-spacing-0 text-left text-[17px]">
+            <thead>
+                <tr className="text-[15px] text-gray-300">
+                    <th className="pb-1 font-normal">Tabela III · n = 9</th>
+                    <th className="pb-1 text-right font-normal">g/100 g</th>
+                    <motion.th className="pb-1 text-right font-normal" {...enter(timed)}>min</motion.th>
+                    <motion.th className="pb-1 text-right font-normal" {...enter(timed)}>resumo</motion.th>
+                </tr>
+            </thead>
+            <tbody>
+                {DIETS.map(d => (
+                    <tr key={d.name} className="font-semibold">
+                        <td className="py-0.5" style={{ color: d.soft }}>{d.name}</td>
+                        <td className={cell} style={{ color: d.soft }}>{d.glycogen.toFixed(2).replace('.', ',')}</td>
+                        <motion.td className={`${cell} text-white`} {...enter(timed)}>{d.minutes}</motion.td>
+                        <motion.td className={`${cell} font-normal text-gray-400 line-through decoration-2`} {...enter(timed)}>{d.abstract}</motion.td>
+                    </tr>
+                ))}
+                <motion.tr className="font-semibold" style={{ color: C.glucoseSoft }} {...enter(step >= 3)}>
+                    <td className="py-0.5">3 sem esvaziar</td>
+                    <td className={cell}>{`${OUT_OF_ORDER.gly[0].toFixed(2)}–${OUT_OF_ORDER.gly[1].toFixed(2)}`.replace(/\./g, ',')}</td>
+                    <td className={cell}>{`${OUT_OF_ORDER.min[0]}–${OUT_OF_ORDER.min[1]}`}</td>
+                    <td className={cell} />
+                </motion.tr>
+            </tbody>
+        </table>
     );
 };
 
 export default function ThreeDietsSim() {
-    const { step } = useSlideSteps(DIET_LEADS.length);
+    const { step, setStep } = useSlideSteps(DIET_STEPS.length);
+    const s = DIET_STEPS[step];
     return (
-        <SimBox>
-            <Lead beat={step} chips={<><DesignChip>cruzado · n = 9 · não cego · 75% do VO₂máx</DesignChip>{step === 1 && <CalcChip>cálculo: 167 ÷ 57 min</CalcChip>}</>} className="min-h-[72px]">{DIET_LEADS[step]}</Lead>
-            <div className="mt-3 flex flex-1 items-center gap-8">
-                <div className="w-[600px] shrink-0"><DietLanes step={step} /></div>
-                <div className="flex min-h-[330px] flex-1 items-center">
-                    <Reading step={step} />
-                </div>
-            </div>
-            <Foot source={DIETS_SOURCE} />
-        </SimBox>
+        <ShellA tabs={DIET_STEPS.map(d => d.tab)} step={step} onSelect={setStep} layoutId="three-diets-tabs"
+            chips={<>
+                <DesignChip>cruzado · n = 9 · não cego</DesignChip>
+                {step >= 1 && <CalcChip>≈ 3×: cálculo (167 ÷ 57)</CalcChip>}
+            </>}>
+            <Panel className="relative shrink-0">
+                <DietChart step={step} />
+                <LimitStamps show={step >= 4} />
+            </Panel>
+            <InfoPanel step={step} color={s.color} headline={s.headline} text={s.text}
+                source={sourcesUpTo(DIET_STEPS.map(d => d.sources), step)}>
+                <Table step={step} />
+            </InfoPanel>
+        </ShellA>
     );
 }

@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Hinkle PC. P/O ratios of mitochondrial oxidative phosphorylation. Biochim Biophys Acta 2005;1706(1-2):1-11. DOI 10.1016/j.bbabio.2004.09.004 · PMID 15620362 — P/O ≈ 2,5 (NADH) e ≈ 1,5 (FADH₂/succinato); 2,3 e 1,4 se H⁺/ATP = 10/3.",
+   "Nelson DL, Cox MM. Lehninger Principles of Biochemistry. 7ª ed. New York: W.H. Freeman; 2017. Caps. 14, 16 e 17 (glicólise; PDH e ciclo do ácido cítrico; β-oxidação) — carreadores por molécula: 1 glicose = 10 NADH + 2 FADH₂; 1 palmitato = 31 NADH + 15 FADH₂ (estequiometria canônica; conferida em busca web em 12/11/2026 em Berg/Tymoczko, Biochemistry: A Short Course, 3ª ed., cap. 27). A proporção 1 em 6 × 1 em 3 é contagem nossa. ATP por O₂ glicose × gordura NÃO é citado (não confirmado em fonte). Cap. 14 incluído em 12/11/2026: 2 dos 10 NADH da glicose vêm da glicólise. Capítulo conferido em 12/11/2026 em listagens de capítulos da 7ª ed. e no sumário da 6ª ed., com a mesma numeração (12 Biosignaling; 14 Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway; 16 The Citric Acid Cycle; 17 Fatty Acid Catabolism; 23 Hormonal Regulation and Integration of Mammalian Metabolism).",
+   "Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041. DOI 10.1100/2012/375041 · PMID 22593681 · PMC3345970 — 1 L de O₂ ≈ 21,1 kJ (glicose) × 19,6 kJ (gordura); ~7,7% é cálculo nosso.",
+   "Plews DJ, Booth PD, Krieger T, Maunder E. Fuelled or fooled? Examining the evidence and mechanisms behind ultra-high carbohydrate intake in endurance athletes. Sports Med 2026;56(10):2367-88. DOI 10.1007/s40279-026-02462-z · PMID 42258036 — 5,05 × 4,69 kcal por litro de O₂.",
+   "Burke LM, Ross ML, Garvican-Lewis LA, et al. Low carbohydrate, high fat diet impairs exercise economy and negates the performance benefit from intensified training in elite race walkers. J Physiol 2017;595(9):2785-807. DOI 10.1113/JP273230 · PMID 28012184 — LCHF aumentou o custo de O₂ no ritmo de prova (gancho para o slide do Supernova)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Duas portas na cadeia: o NADH entra no complexo I e o FADH₂ entra direto na ubiquinona (complexo II ou ETF da β-oxidação), pulando um bombeamento de H⁺; P/O ≈ 2,5 × 1,5 (Hinkle 2005). Contando carreadores (livro-texto), a glicose gera 10 NADH e 2 FADH₂ (1 em 6 pela porta lateral) e o palmitato 31 e 15 (1 em 3). Resultado medido como energia: 1 L de O₂ rende ~21,1 kJ com carboidrato e ~19,6 kJ com gordura (Scott 2012; Plews 2026: 5,05 × 4,69 kcal); 21,1 ÷ 19,6 = 1,077, ~7,7% mais O₂ para a mesma carga (cálculo). Não confundir com ATP por O₂ (não confirmado em fonte). Burke 2017 (marchadores de elite, não randomizado, n = 9/10/10): LCHF levou a oxidação de gordura a 1,57 g/min, mas subiu o custo de O₂ no ritmo de 20 km; 10 km: HCHO +6,6%, periodizado +5,3%, LCHF −1,6%.",
+  "pergunta": "Em que tipo de prova 7,7% a mais de oxigênio pesa mais?",
+  "transicao": "O músculo queima glicose do sangue sem parar. Quem garante que ela não acaba?"
+ }
+}

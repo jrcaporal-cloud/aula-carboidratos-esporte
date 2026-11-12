@@ -1,76 +1,62 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT, stagger } from '../../lib/motion';
-import { Beat } from './kit/Beat';
-import { CountUp } from './kit/CountUp';
+import { DUR, EASE_OUT } from '../../lib/motion';
 import { DesignChip } from './kit/chips';
-import { ForestPlot, type ForestRow } from './kit/ForestPlot';
-import { C, PANEL_BG } from './kit/palette';
+import { KeyFact } from './kit/rhythm';
+import { sourcesUpTo } from './kit/sources';
 import { Stamp } from './kit/Stamp';
-import { Lead, SimFrame } from './ato6/Frame';
-import { FED, META_DESIGN, META_LEADS, META_SOURCES } from './ato6/rinse.content';
+import { Source } from './kit/ui';
+import { RinseMetaStage } from './ato6/RinseMetaStage';
+import { META_LEDGER, META_STEPS } from './ato6/rinsemeta.content';
+import { PcFrame, PcHead } from './ato6/pcFrame';
 
 /**
- * Slide 111 · O Tamanho Real do Bochecho. O gráfico de floresta da meta-análise (potência pequena, tempo nulo),
- * depois o estado alimentar que encolhe o efeito e o ensaio nulo bem controlado. Fecha com o carimbo "depende".
+ * Slide 111 · O Tamanho Real do Bochecho. Palco: a floresta da meta-análise cresce (potência, depois tempo),
+ * a revisão anterior fica no rodapé da floresta, e dois ensaios entram e ficam (Lane: jejum × alimentado;
+ * Trommelen: o nulo bem feito). Painel: texto do passo, livro-caixa que acumula e, no fim, o carimbo "depende".
  */
 
-const ROWS: readonly ForestRow[] = [
-    { id: 'pot', label: 'Potência média', sub: '16 ensaios · n = 175', est: 0.25, lo: 0.04, hi: 0.46, kind: 'pooled', color: C.glucose, right: '0,25 (0,04 a 0,46)' },
-    { id: 'tempo', label: 'Tempo para completar', sub: 'negativo = mais rápido · p = 0,25', est: -0.13, lo: -0.36, hi: 0.1, kind: 'pooled', color: '#CBD5E1', right: '−0,13 (−0,36 a 0,10)' },
-];
+const STAGE_W = 664;
 
-const Fed = () => (
-    <div className="flex gap-5">
-        {FED.map((f, i) => (
-            <motion.div key={f.label} className="flex flex-1 items-center gap-6 rounded-2xl px-6 py-4" style={PANEL_BG}
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: stagger(i, 0.1, 0.12), duration: DUR.enter, ease: EASE_OUT }}>
-                <CountUp text={f.value} delay={stagger(i, 0.2, 0.12)} className="font-display text-[64px] font-bold leading-none"
-                    style={{ color: i === 0 ? C.glucose : C.glucoseSoft }} />
-                <span className="flex flex-col">
-                    <span className="text-[24px] font-semibold text-white">{f.label}</span>
-                    <span className="font-mono text-[18px] text-gray-400">{f.watts}</span>
-                </span>
-            </motion.div>
-        ))}
-    </div>
-);
-
-const Null = () => (
-    <div className="flex items-center gap-8">
-        <div className="flex items-center gap-6 rounded-2xl px-6 py-4" style={PANEL_BG}>
-            <span className="font-display text-[56px] font-bold leading-none text-gray-200">p = 0,277</span>
-            <span className="text-[20px] leading-snug text-gray-300">sacarose × placebo adoçado,<br />jejum e alimentado</span>
-        </div>
-        <Stamp verdict="depende" size="lg" />
-    </div>
-);
+const Ledger = ({ step }: { step: number }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <ul className="m-0 flex list-none flex-col gap-1.5 border-t-2 border-white/15 p-0 pt-2.5">
+            {META_LEDGER.filter(l => l.at <= step).map(l => (
+                <motion.li key={l.value} className="grid grid-cols-[146px_1fr] items-baseline gap-3"
+                    initial={reduce ? false : { opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: DUR.enter, delay: l.at === step ? 0.4 : 0, ease: EASE_OUT }}>
+                    <span className="font-display text-[21px] font-bold leading-none tabular-nums" style={{ color: l.color }}>
+                        {l.at === step ? <KeyFact color={l.color} delay={0.55}>{l.value}</KeyFact> : l.value}
+                    </span>
+                    <span className="text-[16px] leading-snug text-gray-100">{l.label}</span>
+                </motion.li>
+            ))}
+        </ul>
+    );
+};
 
 export default function RinseMetaSim() {
-    const { step } = useSlideSteps(4);
-    const rows = step === 0 ? ROWS.slice(0, 1) : ROWS;
+    const { step, setStep } = useSlideSteps(META_STEPS.length);
+    const s = META_STEPS[step];
+    const last = step === META_STEPS.length - 1;
     return (
-        <SimFrame
-            lead={<Beat beat={`l${step}`}><Lead>{META_LEADS[step]}</Lead></Beat>}
-            chips={<DesignChip>{META_DESIGN[step]}</DesignChip>}
-            source={META_SOURCES[step]}>
-            <div className="flex h-full flex-col justify-center gap-6">
-                {/* no último passo a floresta sai: fica só o ensaio nulo e o veredito */}
-                {step < 3 && <div className="h-[210px] shrink-0" style={{ opacity: step === 2 ? 0.7 : 1, transition: 'opacity 300ms' }}>
-                    <ForestPlot rows={rows} width={1136} height={210} domain={[-0.5, 0.7]} ticks={[-0.4, -0.2, 0, 0.2, 0.4, 0.6]}
-                        axisLabel="diferença padronizada (SMD), bochecho × placebo" decimals={2} labelWidth={330} valueWidth={230} />
-                </div>}
-                {step < 2 && (
-                    <Beat beat={`n${step}`} className="flex items-baseline gap-5">
-                        <CountUp text={step === 0 ? 'SMD 0,25' : 'p = 0,25'} className="font-display text-[72px] font-bold leading-none"
-                            style={{ color: step === 0 ? C.glucose : '#E5E7EB' }} />
-                        <span className="text-[22px] text-gray-300">{step === 0 ? 'efeito pequeno na potência' : 'no tempo: não significativo'}</span>
-                    </Beat>
+        <PcFrame tabs={META_STEPS.map(m => m.tab)} step={step} onSelect={setStep} layoutId="rinsemeta-tabs" stageWidth={STAGE_W}
+            chips={s.chips.map(c => <DesignChip key={c}>{c}</DesignChip>)}
+            stage={<RinseMetaStage step={step} />}
+            panel={<>
+                <PcHead step={step} color={s.color} headline={s.headline} text={s.text} />
+                {last && (
+                    <div className="flex items-center gap-4">
+                        <Stamp verdict="depende" />
+                        <span className="text-[17px] font-semibold leading-snug text-gray-50">real e pequeno; maior em jejum; nem sempre aparece</span>
+                    </div>
                 )}
-                {step === 2 && <Fed />}
-                {step === 3 && <Null />}
-            </div>
-        </SimFrame>
+                <div className="mt-auto flex flex-col gap-2.5">
+                    <Ledger step={step} />
+                    <Source>{sourcesUpTo(META_STEPS.map(m => m.sources), step)}</Source>
+                </div>
+            </>}
+        />
     );
 }

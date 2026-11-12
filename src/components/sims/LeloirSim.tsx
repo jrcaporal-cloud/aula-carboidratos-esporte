@@ -1,89 +1,72 @@
-import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT, stagger } from '../../lib/motion';
-import { Beat, Wipe } from './kit/Beat';
-import { Source } from './kit/ui';
-import { BODY_FONT, C, PANEL_BG } from './kit/palette';
-import { Lane, Molecule } from './ato2/Lane';
+import { DesignChip } from './kit/chips';
+import { C } from './kit/palette';
+import { sourcesUpTo } from './kit/sources';
+import { Accrue, MolFrame, StepText } from './ato2/moleculaA.ui';
+import { LM_W, LeloirMap } from './ato2/leloirMap';
 
 /**
- * Slide 23 · Síntese não é Quebra ao Contrário. Duas pistas em sentidos opostos:
- * a fosforilase quebra (Cori), a glicogênio sintase constrói via UDP-glicose (Leloir). Fecha com os dois Nobel.
+ * Slide 23 · Síntese não é Quebra ao Contrário. Palco: o ciclo do glicogênio em duas pistas opostas
+ * (fosforilase × UDP-glicose → glicogênio sintase + ramificadora), que ganha os controles de cada pista e,
+ * no fim, os dois Nobel. Painel: texto do passo e um livro de datas e dados que acumula.
  */
-const STEPS = [
-    { tab: '1939', line: 'No tubo de ensaio, os Cori viram a fosforilase montar um polissacarídeo a partir de glicose-1-fosfato. Parecia uma rua de mão dupla.' },
-    { tab: 'Leloir', line: 'Em Buenos Aires, Leloir mostra que a síntese real usa outro doador, a UDP-glicose, e outra enzima: a glicogênio sintase.' },
-    { tab: 'Dois controles', line: 'No corpo, a fosforilase quebra e a sintase constrói. Duas enzimas, dois controles: dá para frear uma e soltar a outra.' },
-    { tab: 'Nobel', line: 'A quebra rendeu o Nobel de 1947; a construção, o de 1970.' },
-] as const;
+interface LeloirStep { tab: string; headline: string; color: string; text: string; chip: string; sources: readonly string[] }
 
-const Control = ({ text, color, show }: { text: string; color: string; show: boolean }) => (
-    <motion.span className="rounded-lg border-2 px-3 py-1 text-[18px]" style={{ borderColor: color, color }}
-        initial={{ opacity: 0, y: 6 }} animate={{ opacity: show ? 1 : 0, y: show ? 0 : 6 }}
-        transition={{ duration: DUR.enter, ease: EASE_OUT, delay: show ? 0.3 : 0 }}>
-        {text}
-    </motion.span>
-);
+const STEPS: readonly LeloirStep[] = [
+    {
+        tab: '1939', headline: 'Parecia uma rua de mão dupla', color: C.glucose, chip: 'extrato de músculo · in vitro',
+        text: 'Num extrato de músculo, Carl e Gerty Cori viram a fosforilase montar um polissacarídeo a partir de glicose-1-fosfato. Se a enzima que quebra também constrói, a síntese seria a quebra andando para trás.',
+        sources: ['Cori 1939'],
+    },
+    {
+        tab: 'Leloir', headline: 'A síntese usa outro doador', color: C.glycogenSoft, chip: 'bioquímica · músculo e fígado',
+        text: 'O grupo de Leloir, em Buenos Aires, mostrou a síntese a partir de UDP-glicose, a glicose ativada com UTP. Quem alonga (α-1,4) é a glicogênio sintase; a ramificadora cria os ramos (α-1,6). No corpo, a fosforilase só quebra.',
+        sources: ['Leloir 1959 e 1960', 'Roach 2012'],
+    },
+    {
+        tab: 'Dois controles', headline: 'Duas enzimas, dois freios', color: C.ok, chip: 'revisões',
+        text: 'O Ca²⁺ da contração ativa a fosforilase quinase via calmodulina, que liga a fosforilase; AMP e Pi ajustam o fluxo. Na outra pista, glicose-6-P ativa a sintase, a fosforilação a desliga e o glicogênio cheio a freia.',
+        sources: ['Hearris 2018', 'Howlett 1998', 'Roach 2012', 'Jensen 2011'],
+    },
+    {
+        tab: 'Nobel', headline: 'Um Nobel para cada sentido', color: C.glucoseSoft, chip: 'nobelprize.org',
+        text: 'A quebra rendeu o Nobel de Fisiologia ou Medicina de 1947 (Carl e Gerty Cori, metade; a outra metade foi de Houssay). A construção, o de Química de 1970 a Leloir, pelos nucleotídeos de açúcar.',
+        sources: ['nobelprize.org'],
+    },
+];
 
-const MEDALS = [
-    { year: '1947', field: 'Fisiologia ou Medicina', who: 'Carl e Gerty Cori (metade; a outra metade, Houssay)', color: C.glucose },
-    { year: '1970', field: 'Química', who: 'Luis F. Leloir, nucleotídeos de açúcar', color: C.glycogenSoft },
-] as const;
+interface Entry { at: number; tag: string; color: string; text: string }
 
-const Medals = () => (
-    <div className="grid grid-cols-2 gap-6">
-        {MEDALS.map((m, i) => (
-            <motion.div key={m.year} className="flex items-center gap-4"
-                initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: stagger(i, 0.1, 0.2), type: 'spring', duration: 0.5, bounce: 0.2 }}>
-                <span className="flex h-[96px] w-[96px] shrink-0 items-center justify-center rounded-full border-[5px] font-display text-[28px] font-bold"
-                    style={{ borderColor: m.color, color: m.color }}>{m.year}</span>
-                <span className="flex flex-col">
-                    <span className="text-[22px] font-semibold text-white">{m.field}</span>
-                    <span className="text-[18px] leading-snug text-gray-200">{m.who}</span>
-                </span>
-            </motion.div>
+const BOOK: readonly Entry[] = [
+    { at: 0, tag: '1939', color: C.glucoseSoft, text: 'Cori: fosforilase monta polissacarídeo no tubo' },
+    { at: 1, tag: '1959–60', color: C.glycogenSoft, text: 'Leloir: glicogênio a partir de UDP-glicose' },
+    { at: 2, tag: 'clamp', color: C.ok, text: '70–90% da glicose captada vira glicogênio' },
+    { at: 3, tag: '1947', color: C.glucoseSoft, text: 'Nobel de Medicina: Cori (½) e Houssay (½)' },
+    { at: 3, tag: '1970', color: C.glycogenSoft, text: 'Nobel de Química: Leloir' },
+];
+
+const Book = ({ step }: { step: number }) => (
+    <div className="flex flex-col">
+        {BOOK.filter(e => e.at <= step).map((e, i) => (
+            <Accrue key={e.tag} at={e.at} step={step} delay={0.5 + i * 0.05}
+                className="grid grid-cols-[92px_1fr] items-baseline gap-2 border-b-2 border-white/10 py-1">
+                <span className="font-display text-[18px] font-bold" style={{ color: e.color }}>{e.tag}</span>
+                <span className="text-[16px] leading-snug text-gray-100">{e.text}</span>
+            </Accrue>
         ))}
     </div>
 );
 
 export default function LeloirSim() {
-    const { step } = useSlideSteps(STEPS.length);
-    const run = String(step);
+    const { step, setStep } = useSlideSteps(STEPS.length);
+    const s = STEPS[step];
     return (
-        <div className="not-prose flex flex-col gap-4" style={BODY_FONT}>
-            <div className="relative flex flex-col gap-3 rounded-2xl p-5" style={PANEL_BG}>
-                <motion.span className="absolute inset-x-0 bottom-[44px] text-center font-display text-[34px] font-semibold text-slate-500"
-                    animate={{ opacity: step === 0 ? 1 : 0 }} transition={{ duration: DUR.text }} aria-hidden={step !== 0}>
-                    e a síntese: é a mesma rua, ao contrário?
-                </motion.span>
-                <div className="flex min-h-[38px] items-center justify-between">
-                    <span className="text-[18px] font-semibold uppercase tracking-wide text-gray-300">quebra</span>
-                    <Control text="Ca²⁺ da contração liga a quebra" color={C.glucoseSoft} show={step >= 2} />
-                </div>
-                <Lane dir={step === 0 ? 'both' : 'right'} enzyme="fosforilase" color={C.glucose} run={run}
-                    left={<Molecule name="glicogênio" color={C.glycogenSoft} />}
-                    right={<Molecule name="glicose-1-P" color={C.glucoseSoft} />} />
-
-                <Wipe show={step >= 1} from="right" className="mt-2 flex flex-col gap-3 pb-1">
-                    <div className="flex min-h-[38px] items-center justify-between">
-                        <span className="text-[18px] font-semibold uppercase tracking-wide text-gray-300">síntese</span>
-                        <Control text="glicogênio cheio freia a síntese" color={C.glycogenSoft} show={step >= 2} />
-                    </div>
-                    <Lane dir="left" enzyme="glicogênio sintase" color={C.glycogen} run={step >= 1 ? run : 'off'}
-                        left={<Molecule name="glicogênio" color={C.glycogenSoft} />}
-                        right={<Molecule name="UDP-glicose" color={C.glucoseSoft} note="glicose ativada" />} />
-                </Wipe>
-            </div>
-
-            <div className="flex min-h-[96px] items-center">
-                {step < 3 ? (
-                    <Beat beat={step} className="max-w-[1080px]">
-                        <p className="m-0 text-[27px] leading-snug text-gray-100">{STEPS[step].line}</p>
-                    </Beat>
-                ) : <Medals />}
-            </div>
-            <Source>Cori CF, Schmidt G, Cori GT. Science 1939 · Leloir LF et al. Arch Biochem Biophys 1959 · Hearris MA et al. Nutrients 2018 · Jensen J et al. Front Physiol 2011 · nobelprize.org</Source>
-        </div>
+        <MolFrame tabs={STEPS.map(x => x.tab)} step={step} setStep={setStep} layoutId="leloir-tabs" stageWidth={LM_W}
+            stage={<LeloirMap step={step} />}
+            chips={<DesignChip>{s.chip}</DesignChip>}
+            source={sourcesUpTo(STEPS.map(x => x.sources), step)}>
+            <StepText step={step} color={s.color} headline={s.headline} text={s.text} />
+            <Book step={step} />
+        </MolFrame>
     );
 }

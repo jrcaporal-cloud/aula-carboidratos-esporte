@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — ~1 h: pequenas quantidades, inclusive bochecho; provas mais longas: 30–60 g/h; > 2,5 h: até 90 g/h com misturas.",
+   "Stellingwerff T, Cox GR. Systematic review: Carbohydrate supplementation on exercise performance or capacity of varying durations. Appl Physiol Nutr Metab 2014;39(9):998-1011. DOI 10.1139/apnm-2014-0027 · PMID 24951297 — ~1 h = mecanismo oral/central; > 2 h = combustível.",
+   "Jeukendrup A. A step towards personalized sports nutrition: carbohydrate intake during exercise. Sports Med 2014;44(Suppl 1):S25-33. DOI 10.1007/s40279-014-0148-z · PMID 24791914 · PMC4008807 — fonte única oxidada até ~60 g/h; recomendação em g/h, independente do peso corporal; benefício das misturas em estudos de 2,5 h ou mais (texto completo). As faixas da Fig. 1 não entram.",
+   "Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — 120 g/h como fronteira em treinados, sem ganho de desempenho comprovado. As faixas intermediárias de Jeukendrup 2014 (Fig. 1) não foram confirmadas e não entram.",
+   "Podlogar T, Bokal Š, Cirnski S, Wallis GA. Increased exogenous but unaltered endogenous carbohydrate oxidation with combined fructose-maltodextrin ingested at 120 g h−1 versus 90 g h−1 at different ratios. Eur J Appl Physiol 2022;122(11):2393-2401. DOI 10.1007/s00421-022-05019-w · PMID 35951130 — ECR cruzado, 11 ciclistas treinados, ¹³C: oxidação exógena 1,51 × 1,29 g/min; endógena igual (2,15 × 2,20 g/min).",
+   "Tiller NB, Roberts JD, Beasley L, et al. International Society of Sports Nutrition Position Stand: nutritional considerations for single-stage ultra-marathon training and racing. J Int Soc Sports Nutr 2019;16(1):50. DOI 10.1186/s12970-019-0312-9 · PMID 31699159 — ultramaratona: 30–50 g/h de carboidrato (150–400 kcal/h) de alimentos variados."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "O consenso do COI (Burke 2011) escalona pela duração: ~1 h, pequenas quantidades ou bochecho — na revisão de 61 ECRs (Stellingwerff 2014) o efeito nessa duração é oral/central e tipo e quantidade não importam; 1 a 2,5 h, 30–60 g/h, e uma fonte única é oxidada até ~60 g/h (Jeukendrup 2014); acima de 2,5 h, até 90 g/h só com mistura glicose + frutose. A fronteira é 120 g/h em treinados: oxida mais (1,51 × 1,29 g/min, Podlogar 2022, n = 11), não poupa o endógeno e não tem ganho de desempenho demonstrado (Morton 2026). A meta é em g/h absolutos, não g/kg. Na ultramaratona a ISSN fala em 30–50 g/h (Tiller 2019). Marina (~3h30) e Diego (~10 h), casos fictícios, caem na faixa > 2,5 h. Ponto de partida do Ato X.",
+  "pergunta": "Onde a Marina (3h30 de maratona) e o Diego (~10 h) caem no relógio? E por que a ISSN pede menos no ultra?",
+  "transicao": "Isso é a recomendação. E o que os atletas comem de fato?"
+ }
+}

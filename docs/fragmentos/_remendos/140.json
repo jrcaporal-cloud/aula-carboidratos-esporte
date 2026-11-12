@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Hansen AK, Fischer CP, Plomgaard P, Andersen JL, Saltin B, Pedersen BK. Skeletal muscle adaptation: training twice every second day vs. training once daily. J Appl Physiol 2005;98(1):93-99. DOI 10.1152/japplphysiol.00163.2004 · PMID 15361516 — intraindivíduo, 7 homens não treinados, extensão de joelho, 10 semanas; perna LOW 2 sessões a cada 2 dias (2ª com glicogênio baixo) × perna HIGH 1 por dia, mesma carga; carga máxima subiu igual; tempo até a exaustão a 90% subiu \"acentuadamente mais\" na LOW (o resumo não traz o número); HAD e glicogênio de repouso só significativos na LOW. Níveis das coxas no desenho: ilustrativos.",
+   "McBride A, Ghilagaber S, Nikolaev A, Hardie DG. The glycogen-binding domain on the AMPK beta subunit allows the kinase to act as a glycogen sensor. Cell Metab 2009;9(1):23-34. DOI 10.1016/j.cmet.2008.11.008 · PMID 19117544 — bioquímico in vitro: o glicogênio inibe a AMPK pelo domínio de ligação da subunidade β (mecanismo plausível de glicogênio baixo → AMPK mais ativa).",
+   "MacDonald C, Wojtaszewski JF, Pedersen BK, Kiens B, Richter EA. Interleukin-6 release from human skeletal muscle during exercise: relation to AMPK activity. J Appl Physiol 2003;95(6):2273-2277. DOI 10.1152/japplphysiol.00242.2003 · PMID 12937023 — 8 homens bem treinados, glicogênio depletado × carregado: no exercício, a α2-AMPK só subiu no estado depletado.",
+   "Bartlett JD, Louhelainen J, Iqbal Z, et al. Reduced carbohydrate availability enhances exercise-induced p53 signaling in human skeletal muscle: implications for mitochondrial biogenesis. Am J Physiol Regul Integr Comp Physiol 2013;304(6):R450-R458. DOI 10.1152/ajpregu.00498.2012 · PMID 23364526 — medidas repetidas, 8 homens ativos; glicogênio 467 × 103 mmol/kg ps; p-ACC Ser79 2,9 × 1,4; p-p53 Ser15 2,6 × 0,9; PGC-1α mRNA subiu ~3× com o exercício independentemente do CHO.",
+   "Lane SC, Camera DM, Lassiter DG, et al. Effects of sleeping with reduced carbohydrate availability on acute training responses. J Appl Physiol 2015;119(6):643-655. DOI 10.1152/japplphysiol.00857.2014 · PMID 26112242 — cruzado, 7 ciclistas, mesmo CHO no dia: na manhã em jejum, AMPK, p38MAPK e ACC mais fosforiladas e mais gordura oxidada; atrasar a refeição não aumentou marcadores de biogênese mitocondrial."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Hansen 2005 usou cada perna de 7 homens não treinados como um tratamento: a LOW treinava 1 h, descansava 2 h em jejum e treinava mais 1 h a cada 2 dias; a HIGH treinava 1 h por dia, mesma carga total, 10 semanas. A 2ª sessão começa com o tanque baixo, e é aí que o sinal liga: o glicogênio inibe a AMPK pelo domínio da subunidade β (McBride 2009, in vitro); a α2-AMPK só subiu no estado depletado (MacDonald 2003, n = 8); com 467 × 103 mmol/kg ps, p-ACC 2,9 × 1,4 e p-p53 2,6 × 0,9 (Bartlett 2013, n = 8); no sleep low, AMPK e p38 amanhecem mais fosforiladas (Lane 2015, n = 7). Resultado de Hansen: carga máxima subiu igual; TTE a 90% subiu bem mais na LOW; HAD e glicogênio de repouso só significativos nela. Ressalvas: n = 7, não treinados, uma perna, TTE pouco reprodutível, e o PGC-1α subiu ~3× com ou sem carboidrato. O 'dobrou' não está no resumo: não citamos.",
+  "pergunta": "Escrevam no chat: o que esse desenho controla que um estudo com dois grupos de pessoas não controla?",
+  "transicao": "Se a perna aprende mais, o atleta inteiro corre mais rápido? Vamos seguir o sinal até o cronômetro."
+ }
+}

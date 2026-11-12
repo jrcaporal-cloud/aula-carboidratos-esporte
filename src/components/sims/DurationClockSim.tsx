@@ -1,80 +1,93 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_IN_OUT, EASE_OUT } from '../../lib/motion';
-import { Beat } from './kit/Beat';
+import { DUR, EASE_OUT } from '../../lib/motion';
+import { DesignChip, FictionsChip } from './kit/chips';
 import { C } from './kit/palette';
-import { Chip, SvgText } from './kit/ui';
-import { Lead, SimFrame } from './ato6/Frame';
-import { BANDS, DIAL_HOURS, FRONTIER, SOURCES } from './ato6/clock.content';
+import { KeyFact } from './kit/rhythm';
+import { sourcesUpTo } from './kit/sources';
+import { Source } from './kit/ui';
+import { ClockDial, DIAL_RENDER } from './ato6/ClockDial';
+import { CASES, CLOCK_STEPS, ROWS, type ClockRow } from './ato6/clock.content';
+import { PcFrame, PcHead } from './ato6/pcFrame';
 
 /**
- * Slide 112 · O Relógio da Prova. Um mostrador de 0 a 6 h: o ponteiro gira até cada faixa de duração,
- * a faixa acende e a recomendação aparece ao lado. O último passo acende o anel externo dos 120 g/h.
- * Ponto de partida do Ato X.
+ * Slide 112 · O Relógio da Prova, a síntese prática do Ato VI. À esquerda, um relógio de 12 h: as faixas do
+ * consenso acendem uma por passo, o anel tracejado dos 120 g/h entra no 4º e Marina e Diego pousam no 5º.
+ * À direita, o quadro "duração → quanto → o quê e por quê", que ganha uma linha por passo e nunca perde nenhuma.
+ * O quadro final é o que o aluno fotografaria.
  */
 
-const S = 400;
-const CX = S / 2;
-const R = 136;
-const angle = (h: number) => (h / DIAL_HOURS) * 360 - 90;
-const polar = (h: number, r: number): [number, number] => {
-    const a = (angle(h) * Math.PI) / 180;
-    return [CX + r * Math.cos(a), CX + r * Math.sin(a)];
-};
-const arc = (h0: number, h1: number, r: number) => {
-    const [x0, y0] = polar(h0, r);
-    const [x1, y1] = polar(h1, r);
-    const large = h1 - h0 > DIAL_HOURS / 2 ? 1 : 0;
-    return `M${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 ${large} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;
-};
+const STAGE_W = DIAL_RENDER + 28;
+const GRID = 'grid grid-cols-[118px_136px_1fr] items-center gap-x-3';
 
-const Dial = ({ step }: { step: number }) => {
-    const reduce = useReducedMotion();
-    const band = BANDS[Math.min(step, 2)];
-    const handHour = (band.from + band.to) / 2;
+const BoardRow = ({ r, step }: { r: ClockRow; step: number }) => {
+    const reduce = useReducedMotion() ?? false;
+    const fresh = r.at === step;
+    const current = r.at === step || (step === 4 && r.id === 'longa');
     return (
-        <svg viewBox={`0 0 ${S} ${S}`} width={S} height={S} role="img" aria-label="Mostrador de duração da prova">
-            {BANDS.map((b, i) => (
-                <motion.path key={b.duration} d={arc(b.from + 0.04, b.to - 0.04, R)} fill="none" stroke={b.color}
-                    strokeWidth={i === Math.min(step, 2) && step < 3 ? 52 : 34}
-                    initial={false} animate={{ opacity: i === Math.min(step, 2) && step < 3 ? 1 : 0.6 }} transition={{ duration: DUR.enter }} />
-            ))}
-            {/* anel externo: a fronteira experimental de 120 g/h, nas provas longas */}
-            <motion.path d={arc(2.54, 5.96, R + 42)} fill="none" stroke={C.fructose} strokeWidth={10} strokeDasharray="14 10"
-                initial={false} animate={{ opacity: step === 3 ? 1 : 0 }} transition={{ duration: DUR.enter }} />
-            {Array.from({ length: DIAL_HOURS }, (_, h) => {
-                const [x, y] = polar(h, R - 50);
-                return <SvgText key={h} x={x} y={y + 6} text={`${h} h`} anchor="middle" size={18} color="#CBD5E1" weight={600} />;
-            })}
-            <motion.g initial={false} animate={{ rotate: angle(handHour) + 90 }}
-                transition={{ duration: reduce ? 0 : 0.8, ease: EASE_IN_OUT }}>
-                {/* círculo invisível centrado no eixo: o giro acontece em torno do centro do mostrador */}
-                <circle cx={CX} cy={CX} r={R} fill="transparent" />
-                <line x1={CX} y1={CX} x2={CX} y2={CX - R + 30} stroke="#F9FAFB" strokeWidth={6} strokeLinecap="round" />
-            </motion.g>
-            <circle cx={CX} cy={CX} r={12} fill="#F9FAFB" />
-        </svg>
+        <motion.div className={`${GRID} rounded-xl px-2 py-0.5`}
+            style={{ background: current ? `${r.color}24` : 'transparent', transition: 'background-color 300ms' }}
+            initial={reduce ? false : { opacity: 0, x: 14 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: DUR.enter, delay: fresh ? 0.35 : 0, ease: EASE_OUT }}>
+            <span className="flex flex-col leading-tight">
+                <span className="flex items-center gap-2 whitespace-nowrap text-[20px] font-bold text-white">
+                    <span aria-hidden className="h-3 w-3 shrink-0 rounded-full" style={{ background: r.color }} />
+                    {r.duration}
+                </span>
+                <span className="pl-5 text-[16px] text-gray-300">{r.durationSub}</span>
+            </span>
+            <span className="font-display text-[23px] font-bold leading-none tabular-nums" style={{ color: r.color }}>
+                {fresh ? <KeyFact color={r.color} delay={0.55}>{r.dose}</KeyFact> : r.dose}
+            </span>
+            <span className="flex flex-col leading-tight">
+                <span className="text-[17px] text-gray-50">{r.how}</span>
+                <span className="text-[16px] text-gray-300">{r.why}</span>
+            </span>
+        </motion.div>
     );
 };
 
+const Board = ({ step }: { step: number }) => (
+    <div className="flex flex-col gap-0.5 border-t-2 border-white/15 pt-1.5">
+        {ROWS.filter(r => r.at <= step).map(r => <BoardRow key={r.id} r={r} step={step} />)}
+    </div>
+);
+
+/** Legenda sob o mostrador: o que é o anel, o tracejado e as letras. */
+const DialLegend = ({ step }: { step: number }) => (
+    <div className="flex flex-col gap-1 px-4 text-[16px] leading-snug text-gray-200">
+        {step < 4 && <span>o anel é a duração da prova: a largada é no 12</span>}
+        {step >= 4 && CASES.map(c => (
+            <motion.span key={c.id} className="flex items-center gap-2" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: DUR.enter, delay: 0.5, ease: EASE_OUT }}>
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gray-50 text-[16px] font-extrabold text-[#04080F]">{c.letter}</span>
+                <span><strong className="text-white">{c.label}</strong> · {c.detail}</span>
+            </motion.span>
+        ))}
+        {step >= 4 && <span className="pl-8 text-gray-300">os dois: &gt; 2,5 h → até 90 g/h, com mistura</span>}
+    </div>
+);
+
 export default function DurationClockSim() {
-    const { step } = useSlideSteps(4);
-    const info = step === 3 ? { ...FRONTIER, color: C.fructose } : BANDS[step];
+    const { step, setStep } = useSlideSteps(CLOCK_STEPS.length);
+    const s = CLOCK_STEPS[step];
     return (
-        <SimFrame chips={step === 3 ? <Chip color={C.stone}>experimental</Chip> : <Chip color={C.co2}>consenso do COI 2010/2011</Chip>} source={SOURCES[step]}>
-            <div className="flex h-full items-center gap-14 pl-6">
-                <div className="shrink-0"><Dial step={step} /></div>
-                <Beat beat={step} className="flex min-w-0 flex-1 flex-col gap-4">
-                    <span className="text-[26px] font-semibold text-gray-200">{info.duration}</span>
-                    <span className="font-display text-[84px] font-bold leading-[0.95]" style={{ color: info.color }}>{info.dose}</span>
-                    <Lead size={28}>{info.how}</Lead>
-                    <motion.span className="self-start rounded-lg px-4 py-2 text-[20px] font-semibold"
-                        style={{ background: `${info.color}26`, color: '#F3F4F6' }}
-                        initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: DUR.enter, ease: EASE_OUT }}>
-                        {info.mechanism}
-                    </motion.span>
-                </Beat>
-            </div>
-        </SimFrame>
+        <PcFrame tabs={CLOCK_STEPS.map(c => c.tab)} step={step} onSelect={setStep} layoutId="clock-tabs" stageWidth={STAGE_W}
+            chips={<>
+                {s.chips.map(c => <DesignChip key={c}>{c}</DesignChip>)}
+                {step === 4 && <FictionsChip />}
+            </>}
+            stage={
+                <div className="flex h-full flex-col items-center justify-center gap-1 pt-1">
+                    <ClockDial step={step} />
+                    <DialLegend step={step} />
+                </div>
+            }
+            panel={<>
+                <PcHead step={step} color={s.color === C.text ? '#F9FAFB' : s.color} headline={s.headline} text={s.text} />
+                <Board step={step} />
+                <div className="mt-auto"><Source>{sourcesUpTo(CLOCK_STEPS.map(c => c.sources), step)}</Source></div>
+            </>}
+        />
     );
 }

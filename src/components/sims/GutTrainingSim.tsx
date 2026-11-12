@@ -1,154 +1,117 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_IN_OUT, EASE_OUT, stagger } from '../../lib/motion';
-import { Beat, Grow } from './kit/Beat';
-import { CountUp } from './kit/CountUp';
+import { DUR, EASE_OUT, stagger } from '../../lib/motion';
+import { Wipe } from './kit/Beat';
 import { castOf } from './kit/cast';
-import { DesignChip, FictionChip } from './kit/chips';
-import { C, PANEL_BG } from './kit/palette';
-import { SvgText } from './kit/ui';
-import { Lead, SimFrame } from './ato6/Frame';
-import { COX, DAYS, DESIGN, DISTANCE, LEADS, SIDE_STATS, SOURCES } from './ato6/gut.content';
+import { DesignChip, FictionChip, IllustrativeChip } from './kit/chips';
+import { C } from './kit/palette';
+import { sourcesUpTo } from './kit/sources';
+import { Panel } from './kit/ui';
+import { GUT_W, GutSide } from './ato6/GutScene';
+import { PbRow, PbShell, PbSidePanel } from './ato6/pbShell';
+import { BREATH, DAYS, GROUPS, GUT_STEPS, TRANSFER } from './ato6/gut.content';
 
 /**
- * Slide 109 · O Intestino Treina. Faixa do Diego (caso fictício) no alto; embaixo, a imagem principal de cada passo:
- * o calendário de 14 dias que se preenche, as barras de distância dos três grupos (Costa 2017) e a rampa da oxidação
- * exógena em 28 dias (Cox 2010), com a ressalva da elite ao lado.
+ * Slide 109 · O Intestino Treina, como antes × depois + painel. No palco: o Diego (caso fictício) no alto, o corte do
+ * intestino sem treino e treinado lado a lado (esquema: fila no lúmen, transportadores, H₂ no hálito) e o
+ * calendário das 2 semanas de Costa 2017. No painel: o texto do passo, a tabela dos 3 grupos e "vira prova?".
  */
 
 const diego = castOf('diego');
+const ACCENT = [C.risk, C.glucose, C.ok, C.caveat] as const;
 
 const Banner = () => {
     const Icon = diego.icon;
     return (
-        <div className="flex items-center gap-5 rounded-2xl px-6 py-3" style={PANEL_BG}>
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10">
-                <Icon size={28} color="#E5E7EB" aria-hidden />
-            </span>
-            <div className="flex flex-col">
-                <span className="text-[22px] font-bold text-white">{diego.name}, {diego.age} anos</span>
-                <span className="text-[17px] text-gray-400">{diego.sport} · {diego.effort} de prova</span>
+        <div className="flex items-center gap-4 border-b-2 border-white/15 pb-1.5">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10"><Icon size={26} color="#E5E7EB" aria-hidden /></span>
+            <div className="flex flex-col leading-tight">
+                <span className="text-[20px] font-bold text-white">{diego.name}, {diego.age} anos</span>
+                <span className="text-[16px] text-gray-300">{diego.sport} · {diego.effort}</span>
             </div>
-            <span className="ml-auto text-[24px] italic text-gray-100">{diego.dilemma}</span>
+            <span className="ml-auto text-[20px] italic text-gray-100">{diego.dilemma}</span>
         </div>
     );
 };
 
-const Calendar = ({ filled }: { filled: boolean }) => {
+const Calendar = ({ step }: { step: number }) => {
     const reduce = useReducedMotion();
+    const filled = step >= 1;
     return (
-        <div className="flex flex-col gap-3">
-            <div className="grid grid-cols-7 gap-3">
+        <div className="flex flex-col gap-1.5 border-t-2 border-white/15 pt-2">
+            <div className="flex items-baseline justify-between">
+                <span className="text-[16px] font-bold uppercase tracking-wide text-gray-300">2 semanas de treino intestinal</span>
+                <span className="text-[16px] text-gray-200">gel · comida · placebo</span>
+            </div>
+            <div className="grid grid-cols-[repeat(14,1fr)] gap-1.5">
                 {Array.from({ length: DAYS }, (_, i) => (
-                    <div key={i} className="relative flex h-[76px] items-end overflow-hidden rounded-xl bg-white/8 p-2">
-                        <motion.span className="absolute inset-0 rounded-xl" style={{ background: C.stone, transformOrigin: 'center bottom' }}
-                            initial={{ scaleY: 0 }} animate={{ scaleY: filled ? 1 : 0 }}
-                            transition={{ duration: reduce ? 0 : DUR.enter, delay: filled ? stagger(i, 0.1, 0.05) : 0, ease: EASE_OUT }} />
-                        <span className="relative font-mono text-[16px]" style={{ color: filled ? '#04080F' : '#9CA3AF' }}>dia {i + 1}</span>
+                    <div key={i} className="relative flex h-[34px] items-center justify-center overflow-hidden rounded-md bg-white/10">
+                        <motion.span className="absolute inset-0" style={{ background: C.glucose, transformOrigin: 'center bottom' }}
+                            initial={false} animate={{ scaleY: filled ? 1 : 0 }}
+                            transition={{ duration: reduce ? 0 : DUR.enter, delay: filled && step === 1 ? stagger(i, 0.15, 0.05) : 0, ease: EASE_OUT }} />
+                        <span className="relative font-mono text-[16px] font-bold" style={{ color: filled ? '#04080F' : '#9CA3AF' }}>{i + 1}</span>
                     </div>
                 ))}
             </div>
-            <span className="text-[18px] text-gray-400">2 semanas de treino com gel durante o exercício</span>
         </div>
     );
 };
 
-/** Barras divergentes: variação da distância em 1 h por grupo; o zero no meio. */
-const DistanceBars = () => {
-    const max = 6;
-    return (
-        <div className="flex flex-1 flex-col gap-3">
-            <span className="text-[19px] text-gray-300">distância em 1 h, depois das 2 semanas</span>
-            {DISTANCE.map((d, i) => {
-                const pos = d.value >= 0;
-                const color = d.group === 'placebo' ? C.co2 : C.glucose;
-                return (
-                    <div key={d.group} className="grid grid-cols-[110px_1fr] items-center gap-4">
-                        <span className="text-[21px] font-semibold text-gray-100">{d.group}</span>
-                        <div className="relative h-[46px]">
-                            <span className="absolute inset-y-0 left-[30%] w-[3px] bg-white/60" />
-                            <div className="absolute inset-y-[6px] overflow-hidden rounded-md"
-                                style={pos ? { left: '30%', width: `${(d.value / max) * 70}%` } : { right: '70%', width: `${(-d.value / max) * 70}%` }}>
-                                <div className="absolute inset-0" style={{ transform: pos ? undefined : 'scaleX(-1)' }}>
-                                    <Grow value={1} color={color} delay={stagger(i, 0.15, 0.12)} />
-                                </div>
-                            </div>
-                            <span className="absolute top-1/2 -translate-y-1/2 font-display text-[30px] font-bold"
-                                style={pos ? { left: `calc(30% + ${(d.value / max) * 70}% + 12px)`, color } : { left: 'calc(30% + 12px)', color: '#D1D5DB' }}>
-                                {d.text}
-                            </span>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+const Groups = ({ step }: { step: number }) => (
+    <table className="w-full border-separate border-spacing-y-0.5 text-left">
+        <thead>
+            <tr className="text-[15px] text-gray-300">
+                <th className="font-normal">Costa 2017, por grupo</th>
+                <th className="text-right font-normal">sintomas GI</th>
+                <th className="text-right font-normal">distância em 1 h</th>
+            </tr>
+        </thead>
+        <tbody>
+            {GROUPS.map((g, i) => (
+                <PbRow key={g.group} at={2} step={step} i={i} className="text-[18px] font-semibold">
+                    <td className="text-gray-100">{g.group}</td>
+                    <td className="text-right tabular-nums" style={{ color: g.good ? C.ok : '#D1D5DB' }}>{g.symptoms}</td>
+                    <td className="text-right font-display text-[20px] font-bold tabular-nums" style={{ color: g.good ? C.ok : '#D1D5DB' }}>{g.distance}</td>
+                </PbRow>
+            ))}
+        </tbody>
+    </table>
+);
 
-const SideStats = () => (
-    <div className="flex w-[300px] shrink-0 flex-col gap-3">
-        {SIDE_STATS.map((s, i) => (
-            <motion.div key={s.label} className="flex flex-col rounded-2xl px-5 py-3" style={PANEL_BG}
-                initial={{ opacity: 0, x: 14 }} animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: stagger(i, 0.3, 0.12), duration: DUR.enter, ease: EASE_OUT }}>
-                <CountUp text={s.value} delay={stagger(i, 0.3, 0.12)} className="font-display text-[48px] font-bold leading-none text-white" />
-                <span className="text-[18px] leading-snug text-gray-300">{s.label}</span>
+/** "Vira prova?" no rodapé do palco (passo 4): os dois estudos que esfriam a promessa. */
+const Transfer = () => (
+    <div className="grid grid-cols-2 gap-3">
+        {TRANSFER.map((t, i) => (
+            <motion.div key={t.study} className="flex flex-col rounded-lg border-2 border-white/20 px-3 py-1 leading-snug"
+                initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: stagger(i, 0.3, 0.12), duration: DUR.enter, ease: EASE_OUT }}>
+                <span className="text-[16px] font-bold text-white">{t.study}</span>
+                {t.lines.map(l => <span key={l} className="text-[16px] text-gray-200">{l}</span>)}
             </motion.div>
         ))}
     </div>
 );
 
-/** Rampa de Cox 2010: oxidação exógena antes × depois de 28 dias de CHO alto. */
-const CoxSlope = () => {
-    const reduce = useReducedMotion();
-    const W = 560;
-    const H = 230;
-    const y = (g: number) => H - 40 - ((g - 50) / 16) * (H - 80);
-    return (
-        <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-label="Oxidação exógena antes e depois de 28 dias">
-            <SvgText x={0} y={20} text="oxidação exógena de glicose no teste (g)" size={18} color="#CBD5E1" weight={500} />
-            <line x1={110} x2={110} y1={40} y2={H - 30} stroke="rgba(255,255,255,0.3)" strokeWidth={2} />
-            <line x1={450} x2={450} y1={40} y2={H - 30} stroke="rgba(255,255,255,0.3)" strokeWidth={2} />
-            <SvgText x={110} y={H - 6} text="antes" anchor="middle" size={18} color={C.muted} />
-            <SvgText x={450} y={H - 6} text="28 dias depois" anchor="middle" size={18} color={C.muted} />
-            <motion.path d={`M110 ${y(COX.before)} L450 ${y(COX.after)}`} stroke={C.glucose} strokeWidth={6} strokeLinecap="round" fill="none"
-                initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: reduce ? 0 : DUR.draw, ease: EASE_IN_OUT }} />
-            <circle cx={110} cy={y(COX.before)} r={10} fill={C.glucose} />
-            <circle cx={450} cy={y(COX.after)} r={10} fill={C.glucose} />
-            <SvgText x={96} y={y(COX.before) + 7} text="54,6" anchor="end" size={26} color="#F9FAFB" weight={700} />
-            <SvgText x={466} y={y(COX.after) + 7} text="63,6" size={26} color="#F9FAFB" weight={700} />
-        </svg>
-    );
-};
-
-const Elite = () => (
-    <div className="flex flex-1 flex-col gap-3">
-        <div className="rounded-2xl px-5 py-4" style={PANEL_BG}>
-            <span className="block text-[20px] font-semibold text-white">mas o desempenho</span>
-            <span className="block text-[19px] leading-snug text-gray-300">melhorou igual no grupo controle</span>
-        </div>
-        <div className="rounded-2xl px-5 py-4" style={PANEL_BG}>
-            <span className="block text-[20px] font-semibold text-white">em atletas de elite</span>
-            <span className="block text-[19px] leading-snug text-gray-300">ganho igual ao controle, mais sintomas</span>
-        </div>
-    </div>
-);
-
 export default function GutTrainingSim() {
-    const { step } = useSlideSteps(4);
+    const { step, setStep } = useSlideSteps(GUT_STEPS.length);
+    const s = GUT_STEPS[step];
     return (
-        <SimFrame
-            lead={<Beat beat={`l${step}`}><Lead>{LEADS[step]}</Lead></Beat>}
-            chips={<><FictionChip />{step > 0 && <DesignChip>{DESIGN[step]}</DesignChip>}</>}
-            source={SOURCES[step]}>
-            <div className="flex h-full flex-col gap-4">
+        <PbShell tabs={GUT_STEPS.map(g => g.tab)} step={step} setStep={setStep} layoutId="gut-tabs"
+            chips={<><FictionChip /><IllustrativeChip>intestino: esquema</IllustrativeChip>{s.chip && <DesignChip>{s.chip}</DesignChip>}</>}>
+            <Panel className="flex w-[640px] shrink-0 flex-col gap-2 px-5 py-3">
                 <Banner />
-                <Beat beat={step} className="flex min-h-0 flex-1 items-center gap-8">
-                    {step <= 1 && <div className="w-full"><Calendar filled={step === 1} /></div>}
-                    {step === 2 && <><DistanceBars /><SideStats /></>}
-                    {step === 3 && <><CoxSlope /><Elite /></>}
-                </Beat>
-            </div>
-        </SimFrame>
+                <div className="flex justify-between">
+                    <GutSide kind="untrained" note={step >= 2 ? 'placebo, 2 sem.' : 'sem treino'} h2={step >= 2 ? BREATH.before : undefined} animate={step === 0} />
+                    {step >= 2
+                        ? <Wipe from="left" style={{ width: GUT_W }}><GutSide kind="trained" note="treinado (gel)" h2={BREATH.after} animate={step === 2} /></Wipe>
+                        : <div className="flex items-center justify-center rounded-xl border-2 border-dashed border-white/25 text-[18px] text-gray-300" style={{ width: GUT_W }}>e depois de 2 semanas?</div>}
+                </div>
+                <Calendar step={step} />
+                {step >= 3 && <Transfer />}
+            </Panel>
+            <PbSidePanel step={step} headline={s.headline} color={ACCENT[step]} text={s.text}
+                source={sourcesUpTo(GUT_STEPS.map(g => g.sources), step)}>
+                {step >= 2 && <Groups step={step} />}
+            </PbSidePanel>
+        </PbShell>
     );
 }

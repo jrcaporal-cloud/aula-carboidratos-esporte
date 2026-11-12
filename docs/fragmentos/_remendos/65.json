@@ -1,0 +1,15 @@
+{
+ "slide": {
+  "fontes": [
+   "Nielsen J, Holmberg HC, Schrøder HD, Saltin B, Ørtenblad N. Human skeletal muscle glycogen utilization in exhaustive exercise: role of subcellular localization and fibre type. J Physiol 2011;589(Pt 11):2871–2885. DOI 10.1113/jphysiol.2010.204487 · PMID 21486810 — três compartimentos; o intramiofibrilar esvazia mais e, só com água, custa a voltar; n = 10 atletas de elite.",
+   "Ørtenblad N, Nielsen J, Saltin B, Holmberg HC. Role of glycogen availability in sarcoplasmic reticulum Ca²⁺ kinetics in human skeletal muscle. J Physiol 2011;589(Pt 3):711–725. DOI 10.1113/jphysiol.2010.195982 · PMID 21135051 — intramiofibrilar = 10–15% do total.",
+   "Nielsen J, Ørtenblad N. Physiological aspects of the subcellular localization of glycogen in skeletal muscle. Appl Physiol Nutr Metab 2013;38(2):91–99. DOI 10.1139/apnm-2012-0184 · PMID 23438218 — glicogênio como β-partículas de 10–45 nm (trilha de escala); os três endereços."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Trilha de escala: coxa (cm) → fibra (µm) → sarcômero → grânulo de 10–45 nm (β-partícula; Nielsen & Ørtenblad 2013). Na MET de Nielsen 2011 (10 atletas de endurance de elite, VO₂máx 68), o glicogênio fica em três endereços: subsarcolemal (sob o sarcolema, junto às mitocôndrias subsarcolemais e ao núcleo), intermiofibrilar (entre as miofibrilas, junto ao retículo, às tríades e às mitocôndrias, na banda I) e intramiofibrilar (entre os filamentos, na banda I), que é só 10–15% do total (Ørtenblad 2011). Em repouso, fibras tipo I têm mais intra e subsarcolemal. Após 1 h exaustiva de braço e perna, o intramiofibrilar cai mais, igual em tipo I e II; só com água, é ele que custa a voltar. Limites: n = 10, MET olha poucas fibras; a quantidade de grânulos do desenho é ilustrativa. Tecla 3 abre a fibra em 3D.",
+  "pergunta": "Por que um estoque pequeno, colado às miofibrilas, poderia importar mais que o grande, embaixo da membrana?",
+  "transicao": "Esse pequeno estoque parece conversar com o cálcio que dispara a contração."
+ }
+}

@@ -274,7 +274,7 @@ Unidades: glicogênio em mmol de unidades glicosil/kg de músculo **seco** (dw) 
 - Desenho: cruzado, 48 h de dieta + exercício para glicogênio baixo × alto.
 - Amostra: **7 homens**.
 - Teste: tiros de 6 s a cada 30 s no cicloergômetro, versão curta (< 10 min) e longa (> 30 min).
-- Resultado principal: glicogênio pré-teste de 180/181 (LOW) × 397/540 mmol/kg dw (HIGH). Menos trabalho com LOW nas duas versões. Na versão longa, os tiros completados na intensidade-alvo foram de **111 ± 14 (LOW) para 294 ± 29 (HIGH), +265%**. Glicogênio na fadiga: 58 × 181 mmol/kg dw. O VO₂ chegou perto de 70% do VO₂máx, ou seja, o componente aeróbio é grande mesmo com tiros de 6 s.
+- Resultado principal: glicogênio pré-teste de 180/181 (LOW) × 397/540 mmol/kg dw (HIGH). Menos trabalho com LOW nas duas versões. Na versão longa, os tiros completados na intensidade-alvo foram de **111 ± 14 (LOW) para 294 ± 29 (HIGH), 2,65 vezes (+165%)**. O abstract escreve "increased by 265%", mas os próprios números dão +165% (corrigido em 12/11/2026 conferindo o abstract, PMID 10350228). Glicogênio na fadiga: 58 × 181 mmol/kg dw. O VO₂ chegou perto de 70% do VO₂máx, ou seja, o componente aeróbio é grande mesmo com tiros de 6 s.
 - Limitações: n = 7; não cego.
 - Verificação: `confirmado no abstract`.
 
@@ -486,7 +486,7 @@ Unidades: glicogênio em mmol de unidades glicosil/kg de músculo **seco** (dw) 
 8. **10 → 26 → 43 min**: exercício extra após a fadiga com placebo, carboidrato oral ou glicose IV — COGGAN1987
 9. **85% / 77%**: liberação de Ca²⁺ do RS após a prova / após 4 h só com água (esquiadores de elite) — ORTENBLAD2011
 10. **47%** das fibras vazias ou quase vazias no fim de um jogo de futebol; sprint 2,8% mais lento — KRUSTRUP2006
-11. **+265%** de tiros de 6 s completados com glicogênio alto × baixo — BALSOM1999a
+11. **2,65× (+165%)** de tiros de 6 s completados com glicogênio alto × baixo (111 → 294) — BALSOM1999a (o abstract escreve "+265%"; corrigido em 12/11/2026)
 12. **−40% a −44%** de glicogênio nas fibras IIa/IIx numa sessão de força — KOOPMAN2006
 13. **73% × 37%**: estudos de "train low" com mais sinalização × com melhor desempenho — IMPEY2018
 14. **572 × 485 mmol/kg dw e 147,5 × 149,1 min (p = 0,4)**: a carga encheu o tanque, mas não mudou o contrarrelógio de 100 km — BURKE2000

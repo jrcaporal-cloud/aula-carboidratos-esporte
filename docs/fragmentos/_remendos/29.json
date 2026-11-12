@@ -1,0 +1,16 @@
+{
+  "slide": {
+    "fontes": [
+      "Jenkins DJ, Wolever TM, Taylor RH, et al. Glycemic index of foods: a physiological basis for carbohydrate exchange. Am J Clin Nutr 1981;34(3):362-6. DOI 10.1093/ajcn/34.3.362 · PMID 6259925 — 62 alimentos, grupos de 5–10 voluntários em jejum, glicemia por 2 h × mesma quantidade de CHO como glicose; médias por grupo: vegetais 70, cereais matinais 65 ± 5, cereais e biscoitos 60, frutas 50, laticínios 35, leguminosas secas 31 ± 3; resposta menor com gordura (P < 0,01) e proteína (P < 0,001), não com fibra ou açúcar.",
+      "Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J. International tables of glycemic index and glycemic load values 2021: a systematic review. Am J Clin Nutr 2021;114(5):1625-32. DOI 10.1093/ajcn/nqab233 · PMID 34258626 — >4.000 itens (+61% desde 2008), ~2.100 pelo método ISO; pães, cereais matinais e arroz em versões de IG alto, médio e baixo; o IG é do produto e do processamento.",
+      "Burdon CA, Spronk I, Cheng HL, O'Connor HT. Effect of glycemic index of a pre-exercise meal on endurance exercise performance: a systematic review and meta-analysis. Sports Med 2017;47(6):1087-101. DOI 10.1007/s40279-016-0632-8 · PMID 27677914 — faixas de IG baixo (≤55) e alto (≥70).",
+      "Curvas da tela ilustrativas; carga glicêmica calculada pela definição (IG × g de CHO ÷ 100)."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "O IG compara a área sob a curva de glicemia em 2 h, em jejum, com a da mesma quantidade de carboidrato dada como glicose (Jenkins 1981: 62 alimentos, grupos de 5–10 voluntários). A curva se transforma: cereais matinais 65 ± 5, leguminosas secas 31 ± 3; a régua de Jenkins mostra os grupos (vegetais 70, cereais e biscoitos 60, frutas 50, laticínios 35), e a resposta caiu com gordura e proteína, não com fibra ou açúcar. Hoje o IG é do produto e do processamento: >4.000 itens, ~2.100 pelo método ISO, pães, cereais e arroz em versões alta, média e baixa (Atkinson 2021); faixas ≤55 e ≥70 (Burdon 2017). A carga glicêmica multiplica pela quantidade: o cereal de IG 65 dá 13 com 20 g e 39 com 60 g (a porção pode ser arrastada no painel). As curvas são ilustrativas. O IG mede o sangue de quem está parado, não o desempenho: a pergunta volta em “A Refeição de 3–4 Horas” e em “Mito ou Verdade?”.",
+    "pergunta": "No chat: um alimento de IG baixo antes do treino rende mais na prova? Votem de novo no “Mito ou Verdade?”.",
+    "transicao": "Fechamos a molécula. Agora o motor: quem decide se o músculo queima carboidrato ou gordura?"
+  }
+}

@@ -1,0 +1,14 @@
+{
+ "slide": {
+  "fontes": [
+   "Thomas DE, Brotherhood JR, Brand JC. Carbohydrate feeding before exercise: effect of glycemic index. Int J Sports Med 1991;12(2):180-186. DOI 10.1055/s-2007-1024664 · PMID 1860741 — cruzado, n = 8; lentilha × batata 1 h antes: +20 min até a exaustão; glicose e insulina pós-refeição mais baixas com a lentilha.",
+   "Burdon CA, Spronk I, Cheng HL, O'Connor HT. Effect of glycemic index of a pre-exercise meal on endurance exercise performance: a systematic review and meta-analysis. Sports Med 2017;47(6):1087-1101. DOI 10.1007/s40279-016-0632-8 · PMID 27677914 — 19 cruzados randomizados, 188 participantes (91% homens); IG médio 82 × 35, 0,18–2 g/kg, 30–210 min antes; efeitos agrupados sem CHO durante −0,17 a −0,36 (p > 0,05), com CHO durante −0,67 a 0,11; nenhum modificador. As barras mostram a faixa dos efeitos por desfecho (não são IC); os quadrados são só contagem de estudos."
+  ]
+ },
+ "notas": {
+  "minutos": 2,
+  "mensagem": "Thomas 1991 (cruzado, n = 8, tempo até a exaustão, sem cegamento): lentilha 1 h antes deu 20 min a mais que batata. Virou o pré-treino de baixo IG. Burdon 2017 juntou 19 cruzados (188 participantes, 91% homens): IG médio 82 × 35, 0,18–2 g/kg, de 30 a 210 min antes. Sem CHO durante, os efeitos agrupados ficaram entre −0,17 e −0,36, leve inclinação para o IG baixo, nenhum significativo. Com CHO durante, a vida real, de −0,67 a 0,11: se contradizem. Nenhum modificador (duração, horário, carga glicêmica, aptidão). As barras do eixo são a faixa dos efeitos por desfecho, não intervalos de confiança. O IG da refeição pré se escolhe pelo conforto gastrointestinal e pela preferência.",
+  "pergunta": "Batata-doce antes do treino: hábito ou evidência? Uma palavra no chat.",
+  "transicao": "Juntando tudo: o plano da Marina para os dias antes da maratona."
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Marina é personagem fictícia (58 kg); as gramas são cálculo com a Tabela Brasileira de Composição de Alimentos (TACO): prato da véspera 450 g de macarrão à bolonhesa = 101 g (1,7 g/kg); meta 10 g/kg × 58 kg = 580 g/d; cardápio de ~578 g; café de ~100 g (1,7 g/kg).",
+   "Bussau VA, Fairchild TJ, Rao A, Steele P, Fournier PA. Carbohydrate loading in human muscle: an improved 1 day protocol. Eur J Appl Physiol 2002;87(3):290-295. DOI 10.1007/s00421-002-0621-5 · PMID 12111292 — n = 8 homens treinados em repouso, 10 g/kg/d de alto IG: glicogênio de 95 para 180 mmol/kg (peso úmido) após 1 dia, estável nos dias 2–3; sem desempenho.",
+   "Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — 8–12 g/kg/d para maximizar os estoques (faixa sombreada no gráfico).",
+   "Schabort EJ, Bosch AN, Weltan SM, Noakes TD. The effect of a preexercise meal on time to fatigue during prolonged cycling exercise. Med Sci Sports Exerc 1999;31(3):464-471. DOI 10.1097/00005768-199903000-00017 · PMID 10188753 — café com 100 g de CHO 3 h antes: 136 × 109 min contra jejum."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Marina é fictícia, 58 kg. O gráfico tem a régua em gramas de carboidrato e, ao lado, a mesma régua em g/kg, tudo na mesma escala. Na última maratona, a carga foi um prato de 450 g de macarrão à bolonhesa (101 g de CHO, 1,7 g/kg pela TACO). A carga pede ~10 g/kg por dia: Bussau 2002 (8 homens treinados em repouso) levou o glicogênio de 95 para 180 mmol/kg em 1 dia com 10 g/kg; a ISSN fala em 8–12 g/kg/d (faixa violeta), por 1 a 2 dias, com o treino reduzido. Para ela, 580 g por dia (cálculo): o contorno tracejado mostra o que falta. Em comida, o cardápio soma ~578 g (arroz, macarrão, pão, banana, tapioca, suco, mel, batata), quase seis pratos da véspera; clicar num alimento da lista tira ele da pilha e da conta. No dia da prova, café 3 h antes com ~100 g (pão francês, mel, banana; 1,7 g/kg), a dose de Schabort 1999 (136 × 109 min). O resto vem durante a prova, no Ato VI.",
+  "pergunta": "Olhando o cardápio de 578 g: o que vocês trocariam para caber no intestino da Marina na véspera? Eu tiro da pilha ao vivo.",
+  "transicao": "Ela largou com o tanque cheio. Agora: quanto carboidrato por hora o intestino deixa passar durante a prova?"
+ }
+}

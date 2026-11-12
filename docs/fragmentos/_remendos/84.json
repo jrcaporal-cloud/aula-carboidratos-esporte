@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Coyle EF, Coggan AR, Hemmert MK, Lowe RC, Walters TJ. Substrate usage during prolonged exercise following a preexercise meal. J Appl Physiol 1985;59(2):429-433. DOI 10.1152/jappl.1985.59.2.429 · PMID 3897180 — cruzado, n = 7; refeição 4 h antes × jejum de 16 h, 105 min a 70% do VO₂máx: glicogênio do vasto lateral +42% no início, uso 97 × 64 mmol/kg, sem diferença aos 105 min (nível dos tanques ilustrativo).",
+   "Sherman WM, Brodowicz G, Wright DA, Allen WK, Simonsen J, Dernbach A. Effects of 4 h preexercise carbohydrate feedings on cycling performance. Med Sci Sports Exerc 1989;21(5):598-604. DOI 10.1249/00005768-198910000-00017 · PMID 2691821 — 0, 45, 156 ou 312 g 4 h antes: só 312 g, +15% de desempenho × placebo; insulina +84% no início; queda transitória da glicemia nos primeiros 15 min (~4,5 g/kg para 70 kg é cálculo do dossiê).",
+   "Schabort EJ, Bosch AN, Weltan SM, Noakes TD. The effect of a preexercise meal on time to fatigue during prolonged cycling exercise. Med Sci Sports Exerc 1999;31(3):464-471. DOI 10.1097/00005768-199903000-00017 · PMID 10188753 — cruzado, n = 7; 100 g de CHO 3 h antes × jejum: 136 ± 14 × 109 ± 12 min até a fadiga, glicogênio muscular, QR e oxidação iguais.",
+   "Aird TP, Davies RW, Carson BP. Effects of fasted vs fed-state exercise on performance and post-exercise metabolism: a systematic review and meta-analysis. Scand J Med Sci Sports 2018;28(5):1476-1493. DOI 10.1111/sms.13054 · PMID 29315892 — 46 estudos: alimentado melhora o aeróbio prolongado (P = 0,012), não o curto (P = 0,687)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Relógio regressivo: cada estudo fica pendurado na hora em que comeram. Coyle 1985 (cruzado, n = 7): a refeição 4 h antes deu +42% de glicogênio no vasto lateral na largada, contra 16 h de jejum, mas o músculo cheio também gastou mais (97 × 64 mmol/kg) e aos 105 min os dois braços estavam iguais; não mediu desempenho. Sherman 1989: 0, 45, 156 e 312 g 4 h antes; só 312 g rendeu, +15% contra placebo, com a insulina 84% acima na largada e uma queda da glicemia só nos primeiros 15 min (o n não consta; ~4,5 g/kg em 70 kg é cálculo). Schabort 1999 (n = 7): 100 g no café 3 h antes, 136 × 109 min até a fadiga, glicogênio muscular igual: o candidato é o fígado, que a noite esvazia. Aird 2018 (46 estudos): comer antes ajuda o esforço prolongado (P = 0,012), não o curto (P = 0,687). O painel acumula a linha 'para a prática' de cada estudo.",
+  "pergunta": "Seu atleta treina às 6h. Ele deve comer antes? Depende de quê? Escrevam no chat.",
+  "transicao": "E se a refeição cair na última hora antes da largada? Aí entra um fantasma de 1979."
+ }
+}

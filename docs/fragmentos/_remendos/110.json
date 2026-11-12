@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Carter JM, Jeukendrup AE, Mann CH, Jones DA. The effect of glucose infusion on glucose kinetics during a 1-h time trial. Med Sci Sports Exerc 2004;36(9):1543-1550. DOI 10.1249/01.MSS.0000139892.69410.D8 · PMID 15354036 — glicose IV a 1 g/min, n = 6: glicemia 12,4 × 5,9 mmol/L; contrarrelógio 59,90 × 60,04 min.",
+   "Carter JM, Jeukendrup AE, Jones DA. The effect of carbohydrate mouth rinse on 1-h cycle time trial performance. Med Sci Sports Exerc 2004;36(12):2107-2111. DOI 10.1249/01.MSS.0000147585.65709.6F · PMID 15570147 — bochecho de 5 s com maltodextrina a 6,4%, cuspido, n = 9: 59,57 × 61,37 min (~2,9%, cálculo); placebo de água.",
+   "Chambers ES, Bridge MW, Jones DA. Carbohydrate sensing in the human mouth: effects on exercise performance and brain activity. J Physiol 2009;587(Pt 8):1779-1794. DOI 10.1113/jphysiol.2008.164285 · PMID 19237430 — fMRI: glicose e maltodextrina (sem gosto doce) ativam áreas de recompensa; sacarina não. O cérebro do slide é esquema.",
+   "Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — prova de ~1 h: pequenas quantidades, \"including even mouth-rinsing\", com efeito via sistema nervoso central."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Carter 2004a (cruzado, n = 6): glicose IV a 1 g/min levou a glicemia a 12,4 × 5,9 mmol/L e a captação a 88 × 49 µmol/kg/min, e o contrarrelógio de ~1 h não mudou (59,90 × 60,04 min; controle: soro). Carter 2004b (cruzado, n = 9, em jejum): bochecho de 5 s com maltodextrina a 6,4%, cuspido, a cada 12,5% do trabalho: 59,57 × 61,37 min (p = 0,011), quase 2 min (~2,9%, cálculo); potência 259 × 252 W; FC e esforço percebido iguais; o controle foi água, de sabor diferente. Chambers 2009 (n = 8 + 8, controle adoçante): glicose 60,4 × 61,6 min e maltodextrina, que não é doce, 62,6 × 64,6 min; no fMRI, ínsula/opérculo frontal, orbitofrontal e estriado acenderam; a sacarina não ativou cingulado anterior nem estriado. O desenho da cabeça é esquema: receptor oral → tronco → ínsula → recompensa; o efeito é central (Burke 2011).",
+  "pergunta": "Se o efeito é no cérebro, o placebo de água era um bom controle?",
+  "transicao": "Um efeito tão elegante sobrevive à meta-análise?"
+ }
+}

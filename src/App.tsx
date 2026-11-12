@@ -9,6 +9,8 @@ const params = new URLSearchParams(window.location.search);
 const simName = params.get('sim');
 const modelName = params.get('model');
 const isPresenter = params.has('apresentador');
+// Prévia do próximo passo na janela do apresentador (iframe): sem o fundo 3D.
+const isPreview = params.has('previa');
 
 function App() {
   // Movimento reduzido do sistema vale para toda animação do framer-motion (transform some, opacidade fica).
@@ -17,7 +19,7 @@ function App() {
       <main className="w-screen h-[100dvh] relative bg-[#04080F] overflow-hidden">
         {isPresenter ? <Presenter /> : (
           <>
-            <AmbientBackground />
+            {!isPreview && <AmbientBackground />}
             {modelName ? <ModelHarness name={modelName} /> : simName ? <SimHarness name={simName} /> : <Deck />}
           </>
         )}

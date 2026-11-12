@@ -1,0 +1,18 @@
+{
+ "slide": {
+  "fontes": [
+   "Casos fictícios criados para a aula (Marina, Diego, Lara, Tiago e Paulo). O nível de cada tanque é ilustrativo: mostra a forma do problema, não uma medida.",
+   "Smyth B. How recreational marathon runners hit the wall. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — gancho da Marina: 17% das mulheres × 28% dos homens batem no muro (observacional).",
+   "Costa RJS, Miall A, Khoo A, et al. Gut-training: the impact of two weeks repetitive gut-challenge during exercise on gastrointestinal status, glucose availability, fuel kinetics, and running performance. Appl Physiol Nutr Metab 2017;42(5):547–557. DOI 10.1139/apnm-2016-0453 · PMID 28177715 — gancho do Diego: sintomas GI −60% após 2 semanas de treino intestinal com gel (ECR, n = 25).",
+   "Krustrup P, Ørtenblad N, Nielsen J, et al. Maximal voluntary contraction force, SR function and glycogen resynthesis during the first 72 h after a high-level competitive soccer game. Eur J Appl Physiol 2011;111(12):2987–2995. DOI 10.1007/s00421-011-1919-y · PMID 21448723 — gancho da Lara: glicogênio 27% abaixo do controle 24 h após o jogo, mesmo com dieta otimizada (n = 7).",
+   "Fernández-Elías VE, Ortega JF, Nelson RK, Mora-Rodriguez R. Relationship between muscle water and glycogen recovery after prolonged exercise in the heat in humans. Eur J Appl Physiol 2015;115(9):1919–1926. DOI 10.1007/s00421-015-3175-z · PMID 25911631 — gancho do Tiago: 1 g de glicogênio armazena 3 g de água com pouca água e até 17 g com água plena (cruzado, n = 9).",
+   "MacDougall JD, Ray S, Sale DG, et al. Muscle substrate utilization and lactate production. Can J Appl Physiol 1999;24(3):209–215. DOI 10.1139/h99-017 · PMID 10364416 — gancho do Paulo: −24% do glicogênio do bíceps após 3 séries de rosca a 80% 1RM (n = 4 por condição)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "São cinco casos fictícios, cada um com um problema de tanque e uma pergunta fisiológica, e cada cartão já mostra o dado real que espera por ele. Marina (Atos IV e V): quanto cabe e quando seca; 17% das maratonistas batem no muro (Smyth 2021). Diego (Ato VI): quanto o intestino deixa passar; 2 semanas de treino intestinal cortaram 60% dos sintomas (Costa 2017, ECR, n = 25). Lara (Ato VII): o tanque volta entre dois jogos? 24 h depois do jogo o glicogênio ainda está 27% abaixo, mesmo com dieta otimizada (Krustrup 2011, n = 7). Tiago (Ato IX): quanto o tanque pesa; cada grama de glicogênio leva no mínimo 3 g de água (Fernández-Elías 2015, n = 9). Paulo (Ato IX): 3 séries de rosca tiram 24% do glicogênio do bíceps (MacDougall 1999, n = 4). O nível dos tanques é ilustrativo.",
+  "pergunta": "Qual desses cinco se parece mais com o paciente que vocês atendem? Mandem o nome no chat.",
+  "transicao": "Antes de abrir qualquer estudo, quero saber o que vocês já pensam."
+ }
+}

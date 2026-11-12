@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Ravikanti S, Silang KG, Martyn HJ, et al. 13C-labelled glucose-fructose show greater exogenous and whole-body CHO oxidation and lower O2 cost of running at 120 versus 60 and 90 g·h−1 in elite male marathoners. J Appl Physiol 2025;139(6):1581-1595. DOI 10.1152/japplphysiol.00665.2025 · PMID 41191077 — 8 maratonistas de elite, cruzado com 13C: exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h; sintomas GI moderados/graves frequentes em todas as doses, pico nos 120 g/h; oxidação total de CHO 2,09/2,46/3,07 g/min; custo de O₂ 8,1 mL/kg/km menor com 120 × 60 g/h (p = 0,039); sem prova de desempenho.",
+   "Hearris MA, Pugh JN, Langan-Evans C, et al. 13C-glucose-fructose labeling reveals comparable exogenous CHO oxidation during exercise when consuming 120 g/h in fluid, gel, jelly chew, or coingestion. J Appl Physiol 2022;132(6):1394-1406. DOI 10.1152/japplphysiol.00091.2022 · PMID 35446596 — 9 homens treinados a 120 g/h (1:0,8): sintomas GI mínimos (tolerância em atletas preparados).",
+   "Podlogar T, Bokal Š, Cirnski S, Wallis GA. Increased exogenous but unaltered endogenous carbohydrate oxidation with combined fructose-maltodextrin ingested at 120 g h−1 versus 90 g h−1 at different ratios. Eur J Appl Physiol 2022;122(11):2393-2401. DOI 10.1007/s00421-022-05019-w · PMID 35951130 — 11 ciclistas, 120 g/h com frutose:maltodextrina 0,8:1 (= maltodextrina:frutose 1:0,8) × 90 g/h com 1:2 (= maltodextrina:frutose 2:1): exógena 1,51 × 1,29 g/min; endógena igual (2,15 × 2,20).",
+   "Viribay A, Arribalzaga S, Mielgo-Ayuso J, et al. Effects of 120 g/h of Carbohydrates Intake during a Mountain Marathon on Exercise-Induced Muscle Damage in Elite Runners. Nutrients 2020;12(5):1367. DOI 10.3390/nu12051367 · PMID 32403259 — ECR paralelo, 20 corredores (~6–7 por grupo) em maratona de montanha: mediu carga interna (PSE) e marcadores de dano, não o tempo de prova.",
+   "Morton JP, Fell JM, Gonzalez JT, et al. From Metabolism to Medals: Contemporary Perspectives and Revisiting Carbohydrate Guidelines for Fueling Endurance Athletes during Exercise. J Nutr 2026;156(5):101442. DOI 10.1016/j.tjnut.2026.101442 · PMID 41759826 — 120–200 g/h: “efficacy not yet substantiated”."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Ravikanti 2025, 8 maratonistas de elite com ¹³C: exógena 0,89/1,31/1,68 g/min a 60/90/120 g/h (total de CHO 2,09 → 3,07); custo de O₂ 8,1 mL/kg/km menor com 120 × 60 g/h (p = 0,039); mas sintomas GI moderados ou graves frequentes em todas as doses, com pico nos 120 g/h (em ciclistas preparados, Hearris 2022 viu sintomas mínimos). Dose e proporção mudam juntas. Podlogar 2022 (11 ciclistas, jejum): 120 g/h (maltodextrina:frutose 1:0,8; no artigo, frutose:maltodextrina 0,8:1) × 90 g/h (maltodextrina:frutose 2:1) aumenta a exógena (1,51 × 1,29; p = 0,026) mas a endógena fica igual (2,15 × 2,20; p = 0,786). Viribay 2020, o estudo que viralizou (ECR paralelo, ~6–7 por grupo), mediu carga interna (3805 × 4692 e 4688 UA) e dano, não o tempo. Morton 2026: desempenho ainda não demonstrado.",
+  "pergunta": "Quais desfechos vocês exigiriam de um estudo para recomendar 120 g/h ao Diego?",
+  "transicao": "Se a ciência ainda não fechou a conta, quem está empurrando a dose para cima?"
+ }
+}

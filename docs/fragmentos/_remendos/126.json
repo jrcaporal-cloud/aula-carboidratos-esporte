@@ -1,0 +1,14 @@
+{
+ "slide": {
+  "fontes": [
+   "Krustrup P, Ørtenblad N, Nielsen J, et al. Maximal voluntary contraction force, SR function and glycogen resynthesis during the first 72 h after a high-level competitive soccer game. Eur J Appl Physiol 2011;111(12):2987-2995. DOI 10.1007/s00421-011-1919-y · PMID 21448723 — observacional, n = 7 homens de alto nível; glicogênio 57% e 27% abaixo do controle em 0 e 24 h (193 e 328 × 449 mmol/kg ps), com dieta otimizada; CVM 11% e 10% menor.",
+   "Anderson L, Orme P, Naughton RJ, et al. Energy intake and expenditure of professional soccer players of the English Premier League: evidence of carbohydrate periodization. Int J Sport Nutr Exerc Metab 2017;27(3):228-238. DOI 10.1123/ijsnem.2016-0259 · PMID 28050927 — água duplamente marcada, n = 6; CHO 6,4 ± 2,2 g/kg no dia de jogo × 4,2 ± 1,4 g/kg em dia de treino; 32,3 × 3,1 g/h durante jogo × treino; gasto 3566 × ingestão 3186 kcal/d (n.s.); véspera e recuperação abaixo das diretrizes.",
+   "Burke LM, Hawley JA, Wong SH, Jeukendrup AE. Carbohydrates for training and competition. J Sports Sci 2011;29(Suppl 1):S17-27. DOI 10.1080/02640414.2011.585473 · PMID 21660838 — faixa diária de 6–10 g/kg/d para carga alta (1–3 h/d), lida em tabela secundária (PMC6950062).",
+   "Gunnarsson TP, Bendiksen M, Bischoff R, et al. Effect of whey protein- and carbohydrate-enriched diet on glycogen resynthesis during the first 48 h after a soccer game. Scand J Med Sci Sports 2013;23(4):508-515. DOI 10.1111/j.1600-0838.2011.01418.x · PMID 22107250 — ECR, n = 16: dieta 71% × 55% da energia em CHO, ressíntese em 48 h igual."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Lara é caso fictício; os números são reais e de homens. Krustrup 2011 (observacional, n = 7 de alto nível, biópsias): glicogênio 57% abaixo do controle no fim do jogo e ainda 27% abaixo 24 h depois (193 e 328 × 449 mmol/kg ps), com dieta otimizada; a força máxima caiu 11% e 10%. O resumo não traz 48 e 72 h (tanques com ?). Anderson 2017 (água duplamente marcada, n = 6, Premier League): 6,4 g/kg no dia de jogo × 4,2 no treino, 32,3 g/h durante o jogo, e abaixo da faixa de 6–10 g/kg/d (Burke 2011) justamente na véspera e na recuperação. Gunnarsson 2013 (ECR, n = 16): 71% × 55% da energia em CHO não mudou a ressíntese em 48 h, então a meta se escreve em g/kg. No peso da Lara, 60 kg: 384 g no jogo, 252 g no treino, faixa de 360–600 g (cálculo)."
+ }
+}

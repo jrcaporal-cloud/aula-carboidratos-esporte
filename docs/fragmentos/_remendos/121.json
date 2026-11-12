@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Alghannam AF, Jedrzejewski D, Tweddle MG, et al. Impact of muscle glycogen availability on the capacity for repeated exercise in man. Med Sci Sports Exerc 2016;48(1):123-131. DOI 10.1249/MSS.0000000000000737 · PMID 26197030 — n = 10; 4 h de recuperação com 1,2 × 0,3 g/kg/h: glicogênio 269 × 157 mmol/kg ps; 2ª corrida 80 × 48 min; mesmo glicogênio na exaustão (~72–78).",
+   "Craven J, Desbrow B, Sabapathy S, et al. The effect of consuming carbohydrate with and without protein on the rate of muscle glycogen re-synthesis during short-term post-exercise recovery: a systematic review and meta-analysis. Sports Med Open 2021;7(1):9. DOI 10.1186/s40798-020-00297-0 · PMID 33507402 — CHO × água +23,5 mmol/kg ps/h (IC95% 19,0–27,9; 10 ensaios, n = 86); doses de hora em hora ou mais frequentes rendem mais; CHO + proteína × CHO +0,4 (IC95% −2,7 a 3,4; 19 ensaios, n = 160).",
+   "Jentjens R, Jeukendrup A. Determinants of post-exercise glycogen synthesis during short-term recovery. Sports Med 2003;33(2):117-144. DOI 10.2165/00007256-200333020-00004 · PMID 12617691 — maiores taxas com 1,0–1,85 g/kg/h logo após o exercício e a cada 15–60 min (revisão narrativa).",
+   "Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 — recuperação de menos de 4 h: 1,2 g/kg/h; proteína só aumenta a ressíntese com CHO abaixo de 1,2 g/kg/h."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Alghannam 2016 (medidas repetidas, n = 10): corrida a 70% do VO2máx até a exaustão, 4 h de recuperação com 0,3 ou 1,2 g/kg/h a cada 30 min (0,15 ou 0,6 g/kg por tomada, cálculo) e nova corrida. Glicogênio no fim das 4 h: 269 ± 84 contra 157 ± 37 mmol/kg ps — 112 a mais, ~28 mmol/kg/h (cálculo). Segunda corrida: 80 contra 48 min (+67%). Na exaustão, os dois tinham o mesmo glicogênio (~72–78): o CHO só adiou a chegada ao piso; as linhas são retas entre duas medidas. Craven 2021 (10 ensaios, n = 86): CHO contra água +23,5 mmol/kg ps/h (IC95% 19,0–27,9), e doses de hora em hora ou mais frequentes rendem mais. Prática: < 4 h, 1,2 g/kg/h (ISSN), cedo e a cada 15–60 min (Jentjens: 1,0–1,85).",
+  "pergunta": "Para um atleta de 70 kg com 4 h entre duas sessões, quantos gramas por hora isso dá? Façam a conta no chat.",
+  "transicao": "E se em vez de mais carboidrato a gente colocar proteína no shake?"
+ }
+}

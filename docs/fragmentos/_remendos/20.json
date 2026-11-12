@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Jeukendrup AE, Jentjens R. Oxidation of carbohydrate feedings during prolonged exercise: current thoughts, guidelines and directions for future research. Sports Med 2000;29(6):407-24. DOI 10.2165/00007256-200029060-00004 · PMID 10870867 — frutose, galactose e amilose oxidadas 25–50% menos que glicose, sacarose, maltose, maltodextrina e amilopectina (lactose não avaliada).",
+   "Chi C, Shi M, Zhao Y, et al. Dietary compounds slow starch enzymatic digestion: a review. Front Nutr 2022;9:1004966. DOI 10.3389/fnut.2022.1004966 · PMID 36185656 — amilase gera maltose da amilose e dextrinas ramificadas da amilopectina; a arquitetura do amido muda a velocidade de digestão.",
+   "Roach PJ, Depaoli-Roach AA, Hurley TD, Tagliabracci VS. Glycogen and its metabolism: some new developments and old themes. Biochem J 2012;441(3):763-87. DOI 10.1042/BJ20111416 · PMID 22248338 · PMC4945249 — ligações α-1,4 (C1 → C4) e α-1,6 (C1 → C6, ramo); ramo a cada ~12 resíduos; glicogenina no centro do glicogênio.",
+   "Tappy L, Lê KA. Metabolic effects of fructose and the worldwide increase in obesity. Physiol Rev 2010;90(1):23-46. DOI 10.1152/physrev.00019.2009 · PMID 20086073 — glicose e frutose têm a mesma fórmula (C₆H₁₂O₆) e metabolismos diferentes."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Glicose, frutose e galactose têm a mesma fórmula (C₆H₁₂O₆); glicose e galactose fecham anel de seis, a frutose de cinco. Juntando peças: sacarose, lactose, maltose; depois cadeias de glicose pela ligação α-1,4 (C1 de uma no C4 da outra: maltodextrina curta, amilose longa e reta) e ramos pela α-1,6 (C1 no C6: amilopectina; glicogênio, com ramo a cada ~12 resíduos em volta da glicogenina). A amilase solta maltose da amilose e dextrinas ramificadas da amilopectina (Chi 2022). Na revisão de Jeukendrup & Jentjens (2000), frutose, galactose e amilose são oxidadas 25–50% menos que glicose, sacarose, maltose, maltodextrina e amilopectina; a lactose não foi avaliada. A ficha do painel acumula tudo isso.",
+  "pergunta": "No chat: maltodextrina e amido são 'açúcar' ou 'carboidrato complexo'? Para o intestino, faz diferença?",
+  "transicao": "E quem descobriu que o próprio corpo fabrica essa árvore de glicose foi um fisiologista olhando o sangue de um cão."
+ }
+}

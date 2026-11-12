@@ -1,0 +1,20 @@
+{
+ "slide": {
+  "fontes": [
+   "Cori CF, Schmidt G, Cori GT. The synthesis of a polysaccharide from glucose-1-phosphate in muscle extract. Science 1939;89(2316):464-5. DOI 10.1126/science.89.2316.464 · PMID 17731092 — a fosforilase monta polissacarídeo no tubo de ensaio.",
+   "Leloir LF, Olavarría JM, Goldemberg SH, Carminatti H. Biosynthesis of glycogen from uridine diphosphate glucose. Arch Biochem Biophys 1959;81(2):508-20. DOI 10.1016/0003-9861(59)90232-2 · PMID 13638016 — síntese de glicogênio a partir de UDP-glicose.",
+   "Leloir LF, Goldemberg SH. Synthesis of glycogen from uridine diphosphate glucose in liver. J Biol Chem 1960;235:919-23. PMID 14415527 — a mesma via no fígado.",
+   "Roach PJ, Depaoli-Roach AA, Hurley TD, Tagliabracci VS. Glycogen and its metabolism: some new developments and old themes. Biochem J 2012;441(3):763-87. DOI 10.1042/BJ20111416 · PMID 22248338 · PMC4945249 — UDP-glicose produzida pela UDP-glicose pirofosforilase com UTP; glicogênio sintase (α-1,4) e enzima ramificadora (α-1,6); sintase ativada alostericamente pela glicose-6-P e desligada por fosforilação.",
+   "Hearris MA, Hammond KM, Fell JM, Morton JP. Regulation of muscle glycogen metabolism during exercise: implications for endurance performance and training adaptations. Nutrients 2018;10(3):298. DOI 10.3390/nu10030298 · PMID 29498691 — Ca²⁺ ativa a fosforilase quinase via calmodulina.",
+   "Howlett RA, Parolin ML, Dyck DJ, et al. Regulation of skeletal muscle glycogen phosphorylase and PDH at varying exercise power outputs. Am J Physiol 1998;275(2):R418-25. DOI 10.1152/ajpregu.1998.275.2.R418 · PMID 9688676 — o fluxo da fosforilase é ajustado por Pi e AMP (n = 7).",
+   "Jensen J, Rustad PI, Kolnes AJ, Lai YC. The role of skeletal muscle glycogen breakdown for regulation of insulin sensitivity by exercise. Front Physiol 2011;2:112. DOI 10.3389/fphys.2011.00112 · PMID 22232606 — glicogênio cheio inibe a glicogênio sintase por retroalimentação; no clamp hiperinsulinêmico, 70–90% da glicose captada vira glicogênio muscular.",
+   "Nobel de Fisiologia ou Medicina 1947 (Carl e Gerty Cori, metade; Bernardo Houssay, metade) e Nobel de Química 1970 (Luis F. Leloir) — nobelprize.org."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Em 1939 os Cori mostraram a fosforilase montando um polissacarídeo a partir de glicose-1-fosfato num extrato de músculo: parecia que a síntese era a quebra ao contrário. O grupo de Leloir (1959–1960) mostrou que a síntese real usa UDP-glicose, a glicose ativada com UTP pela UDP-glicose pirofosforilase, e outra enzima, a glicogênio sintase, com a ramificadora fazendo os ramos. Duas pistas permitem controles opostos: o Ca²⁺ da contração liga a quebra via calmodulina e fosforilase quinase, com AMP e Pi ajustando o fluxo; a glicose-6-P ativa a sintase, a fosforilação a desliga e o glicogênio cheio a freia. No clamp de insulina, 70–90% da glicose captada vira glicogênio muscular (Jensen 2011). Nobel de 1947 aos Cori (metade; a outra metade a Houssay) e de Química de 1970 a Leloir.",
+  "pergunta": "Se quebra e síntese fossem a mesma reação, o que aconteceria ao glicogênio durante o exercício quando a insulina sobe?",
+  "transicao": "Sabendo como se monta e se desmonta, a pergunta prática é: quanto disso cabe no corpo?"
+ }
+}

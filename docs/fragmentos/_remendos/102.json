@@ -1,0 +1,14 @@
+{
+ "slide": {
+  "fontes": [
+   "Smith JW, Pascoe DD, Passe DH, et al. Curvilinear dose-response relationship of carbohydrate (0-120 g·h−1) and performance. Med Sci Sports Exerc 2013;45(2):336-341. DOI 10.1249/MSS.0b013e31827205d1 · PMID 22968309 — ECR duplo-cego, 4 centros, 51 ciclistas e triatletas; 12 doses de 10 a 120 g/h + placebo, cada sujeito fez só 4 ensaios; 2 h de carga + 20 km contra o relógio; ganhos estimados de 1,0/2,0/3,0/4,0/4,7% a 9/19/31/48/78 g/h, decrescentes acima. Primeiro autor afiliado ao Gatorade Sports Science Institute.",
+   "A matriz de blocos incompletos na tela é esquema: o abstract diz 3 doses por centro + placebo, não quais doses cada centro testou. “~0,8% e ~0,2% de ganho por 10 g/h” são cálculo (4,0 ÷ 4,8 e 0,7 ÷ 3)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Smith 2013: ECR duplo-cego em 4 centros, 51 ciclistas e triatletas, 12 doses de 10 a 120 g/h e placebo, mas cada um fez só 4 ensaios (placebo + 3 doses do centro: blocos incompletos, modelo misto). Bebida 1:1:1 glicose, frutose e maltodextrina a 1 L/h; 2 h de carga + 20 km contra o relógio (~160 min). Ganho estimado: +1% a 9 g/h, +4,0% a 48 e +4,7% a 78 g/h. Até ~50 g/h, ~0,8% por 10 g/h; de 48 a 78, ~0,2% por 10 g/h (cálculo). Um estudo só, sem isótopo, primeiro autor do GSSI.",
+  "pergunta": "Vocês prescreveriam 78 g/h a partir de um único estudo de 160 min em ciclistas? O que faltaria saber?",
+  "transicao": "Por que a curva achata? A resposta não está no músculo, está no intestino."
+ }
+}

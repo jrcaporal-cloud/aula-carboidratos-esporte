@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Fuchs CJ, Gonzalez JT, Beelen M, et al. Sucrose ingestion after exhaustive exercise accelerates liver, but not muscle glycogen repletion compared with glucose ingestion in trained athletes. J Appl Physiol 2016;120(11):1328-1334. DOI 10.1152/japplphysiol.01023.2015 · PMID 27013608 — cruzado, n = 15; 1,5 g/kg/h por 5 h; ¹³C-MRS aos 0, 120 e 300 min; fígado 53,6 → 86,8 g (sacarose) × 49,3 → 65,7 g (glicose), +3,4 g/h (IC95% 1,6–5,1); volume do fígado subiu só com sacarose; músculo 85 → 140 × 86 → 136 mmol/L (P = 0,673).",
+   "Casey A, Mann R, Banister K, et al. Effect of carbohydrate ingestion on glycogen resynthesis in human liver and skeletal muscle, measured by 13C MRS. Am J Physiol Endocrinol Metab 2000;278(1):E65-E75. DOI 10.1152/ajpendo.2000.278.1.E65 · PMID 10644538 — cruzado, n = 6 (MRS); 1 g/kg em 4 h: fígado +25 g (sacarose) × +13 g (glicose), placebo sem ressíntese; músculo igual; tempo até a exaustão sem diferença (35, 40 e 46 min).",
+   "Décombaz J, Jentjens R, Ith M, et al. Fructose and galactose enhance postexercise human liver glycogen synthesis. Med Sci Sports Exerc 2011;43(10):1964-1971. DOI 10.1249/MSS.0b013e318218ca5a · PMID 21407126 — cruzado duplo-cego, n = 10; 69 g/h por 6,5 h; síntese hepática 8,1 (frutose) e 8,6 (galactose) × 3,7 g/h (glicose); volume do fígado +9–10% × +2%.",
+   "Blom PC, Høstmark AT, Vaage O, et al. Effect of different post-exercise sugar diets on the rate of muscle glycogen synthesis. Med Sci Sports Exerc 1987;19(5):491-496. DOI 10.1249/00005768-198710000-00012 · PMID 3316904 — músculo: frutose sozinha 3,2 × sacarose 6,2 mmol/kg/h (n = 5–7 por condição).",
+   "Tappy L, Lê KA. Metabolic effects of fructose and the worldwide increase in obesity. Physiol Rev 2010;90(1):23-46. DOI 10.1152/physrev.00019.2009 · PMID 20086073 — revisão: extração hepática quase completa da frutose (o mecanismo provável do slide).",
+   "Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Glucose plus fructose ingestion for post-exercise recovery: greater than the sum of its parts? Nutrients 2017;9(4):344. DOI 10.3390/nu9040344 · PMID 28358334 — revisão: ≥ 1,2 g/kg/h parece maximizar o músculo; fígado repõe ~2 vezes mais com glicose + frutose; a mistura alivia o intestino acima de ~1,2 g/min."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Fuchs 2016 (cruzado, n = 15, ¹³C-MRS): 1,5 g/kg/h de sacarose ou glicose por 5 h. Fígado de 53,6 para 86,8 g com sacarose e de 49,3 para 65,7 g com glicose, +3,4 g/h (IC 1,6–5,1), e o fígado inchou só com sacarose; o músculo empatou (85 → 140 × 86 → 136 mmol/L, P = 0,673). Frutose sozinha é a pior para o músculo: 3,2 × 6,2 mmol/kg/h (Blom 1987). O mesmo dobro em outros desenhos: Décombaz 2011 (duplo-cego, n = 10) 8,1 e 8,6 × 3,7 g/h; Casey 2000 (n = 6) +25 × +13 g em 4 h, e ali o tempo até a exaustão não mudou (35, 40, 46 min). Síntese de Gonzalez 2017: músculo pede quantidade (≥ 1,2 g/kg/h), fígado pede frutose. O fluxo de moléculas é esquema; o nível dos órgãos é proporcional aos números."
+ }
+}

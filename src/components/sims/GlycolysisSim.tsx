@@ -1,78 +1,71 @@
-import { motion, useReducedMotion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT } from '../../lib/motion';
+import { DUR, EASE_OUT, stagger } from '../../lib/motion';
 import { C } from './kit/palette';
 import { CalcChip, DesignChip } from './kit/chips';
-import { SourceLine, StepHeader } from './ato3/shared';
-import { Staircase } from './ato3/Staircase';
-import { GLYCO_STEPS } from './ato3/glycolysis.content';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, Source, StepTabs } from './kit/ui';
+import { GlycolysisMap } from './ato3/GlycolysisMap';
+import { CALC_CHIP, GLYCO_CHIPS, GLYCO_STEPS, LEDGER } from './ato3/glycolysis.content';
 
 /**
- * Slide 42 · A Escada da Glicólise. Cena que se monta: os degraus acendem de cima para baixo,
- * o portão da PFK gira quando ADP/AMP/Pi chegam, e no fim o piruvato se bifurca (PDH × lactato).
+ * Slide 42 · A Escada da Glicólise, no formato palco + painel. À esquerda, a via inteira se monta passo a passo
+ * (10 enzimas, os 3 portões, ATP e NADH no degrau certo, o circuito do NAD⁺); à direita, o texto do passo e o
+ * livro-caixa por glicose, que acumula. Nada some: o quadro final é a soma dos quatro passos.
  */
 
-const FORK_X = 880;
-const FORK_FROM = 836;
+const ACCENT = [C.glucose, C.ok, C.glucoseSoft, C.lactate] as const;
 
-const ForkBox = ({ top, height, color, delay, children }: { top: number; height: number; color: string; delay: number; children: ReactNode }) => {
-    const reduce = useReducedMotion();
-    return (
-        <motion.div className="absolute flex flex-col justify-center gap-1 rounded-2xl border-[3px] px-4"
-            style={{ left: FORK_X, top, width: 1136 - FORK_X, height, borderColor: color, background: '#0B1220' }}
-            initial={reduce ? { opacity: 0 } : { opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
-            transition={{ delay, duration: DUR.enter, ease: EASE_OUT }}>
-            {children}
-        </motion.div>
-    );
-};
-
-const Fork = () => {
-    const reduce = useReducedMotion();
-    return (
-        <>
-            <motion.svg className="absolute left-0 top-0" width={1136} height={360} viewBox="0 0 1136 360" aria-hidden
-                initial={reduce ? false : { clipPath: 'inset(0 100% 0 0)' }} animate={{ clipPath: 'inset(0 0% 0 0)' }}
-                transition={{ duration: DUR.bar, ease: EASE_OUT }}>
-                <path d={`M ${FORK_FROM} 330 C 860 330, 860 112, ${FORK_X} 112`} fill="none" stroke={C.caveat} strokeWidth={4} />
-                <path d={`M ${FORK_FROM} 330 C 860 330, 860 300, ${FORK_X} 300`} fill="none" stroke={C.lactate} strokeWidth={4} />
-            </motion.svg>
-            <ForkBox top={22} height={180} color={C.caveat} delay={0.25}>
-                <span className="text-[22px] font-bold text-white">mitocôndria</span>
-                <span className="text-[18px] text-gray-200">via PDH, rumo ao Krebs</span>
-                <span className="mt-1 text-[21px] font-semibold" style={{ color: C.glucoseSoft }}>~30–32 ATP por glicose</span>
-                <span className="self-start"><CalcChip>cálculo pelo P/O</CalcChip></span>
-            </ForkBox>
-            <ForkBox top={232} height={128} color={C.lactate} delay={0.4}>
-                <span className="text-[22px] font-bold" style={{ color: C.lactate }}>lactato</span>
-                <span className="text-[18px] leading-snug text-gray-200">devolve o NAD⁺ à escada; forma-se mesmo com O₂</span>
-            </ForkBox>
-        </>
-    );
-};
+const Ledger = ({ step }: { step: number }) => (
+    <table className="w-full border-separate border-spacing-y-1 text-left">
+        <thead>
+            <tr className="text-[15px] text-gray-300">
+                <th className="font-normal">por glicose</th>
+                <th className="text-right font-normal">do sangue</th>
+                <th className="text-right font-normal" style={{ color: C.glycogenSoft }}>do glicogênio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {LEDGER.filter(r => r.at <= step).map((r, i) => (
+                <motion.tr key={r.label} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: DUR.enter, delay: r.at === step ? stagger(i, 0.55, 0.12) : 0, ease: EASE_OUT }}
+                    className={r.total ? 'font-display text-[24px] font-bold' : 'text-[18px] font-semibold'}
+                    style={{ color: r.total ? C.glucose : '#F3F4F6' }}>
+                    <td className={r.total ? 'pt-1' : ''}>{r.label}</td>
+                    <td className="text-right tabular-nums">{r.blood}</td>
+                    <td className="text-right tabular-nums">{r.glycogen}</td>
+                </motion.tr>
+            ))}
+        </tbody>
+    </table>
+);
 
 export default function GlycolysisSim() {
-    const { step } = useSlideSteps(GLYCO_STEPS.length);
+    const { step, setStep } = useSlideSteps(GLYCO_STEPS.length);
     const s = GLYCO_STEPS[step];
-    const reduce = useReducedMotion();
     return (
-        <div className="not-prose flex h-[500px] w-full flex-col gap-4 overflow-hidden">
-            <StepHeader beat={step} chips={step === 3 ? <DesignChip>lactato: revisão</DesignChip> : undefined}>{s.phrase}</StepHeader>
-            <div className="relative mt-auto h-[360px] w-full">
-                <Staircase lit={s.lit} gateOpen={s.gateOpen} />
-                {step === 2 && (
-                    <motion.div className="absolute flex flex-col items-start gap-2" style={{ left: FORK_X + 20, top: 150 }}
-                        initial={reduce ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.7, duration: DUR.enter, ease: EASE_OUT }}>
-                        <span className="text-[18px] text-gray-300">saldo</span>
-                        <span className="font-display text-[64px] font-bold leading-none" style={{ color: C.glucose, wordSpacing: '0.18em' }}>2 ATP</span>
-                        <CalcChip>4 − 2, por glicose</CalcChip>
-                    </motion.div>
-                )}
-                {s.fork && <Fork />}
+        <div className="not-prose flex h-[500px] w-full flex-col gap-3">
+            <div className="flex items-center justify-between gap-4">
+                <StepTabs labels={GLYCO_STEPS.map(g => g.tab)} step={step} onSelect={setStep} layoutId="glyco-tabs" />
+                <div className="flex flex-wrap justify-end gap-2">
+                    {GLYCO_CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}
+                    {CALC_CHIP[step] && <CalcChip>{CALC_CHIP[step]}</CalcChip>}
+                </div>
             </div>
-            <SourceLine>{s.source}</SourceLine>
+            <div className="flex min-h-0 flex-1 gap-4">
+                <Panel className="shrink-0 px-2 py-1"><GlycolysisMap step={step} /></Panel>
+                <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-4">
+                    <motion.div key={step} className="flex flex-col gap-2" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: DUR.enter, ease: EASE_OUT }}>
+                        <h3 className="m-0 font-display text-[24px] font-semibold leading-tight" style={{ color: ACCENT[step] }}>{s.headline}</h3>
+                        <p className="m-0 text-[17px] leading-snug text-gray-100">{s.text}</p>
+                    </motion.div>
+                    <div className="mt-auto flex flex-col gap-3">
+                        <Ledger step={step} />
+                        <Source>{sourcesUpTo(GLYCO_STEPS.map(g => g.sources), step)}</Source>
+                    </div>
+                </Panel>
+            </div>
         </div>
     );
 }

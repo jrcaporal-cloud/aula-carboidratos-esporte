@@ -18,7 +18,7 @@ export const StepTabs = ({ labels, step, onSelect, layoutId }: StepTabsProps) =>
             const active = i === step;
             return (
                 <button key={label} type="button" role="tab" aria-selected={active} onClick={() => onSelect(i)}
-                    className="relative px-3 py-1.5 rounded-xl text-[16px] font-semibold cursor-pointer transition-colors"
+                    className="relative shrink-0 whitespace-nowrap px-3 py-1.5 rounded-xl text-[16px] font-semibold cursor-pointer transition-colors"
                     style={{ color: active ? '#fff' : '#D1D5DB' }}>
                     {active && (
                         <motion.span layoutId={layoutId} className="absolute inset-0 rounded-xl bg-brand-deep/45 border border-brand-accent/70"

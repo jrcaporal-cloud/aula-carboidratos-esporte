@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Hawley JA, Schabort EJ, Noakes TD, Dennis SC. Carbohydrate-loading and exercise performance. An update. Sports Med 1997;24(2):73-81. DOI 10.2165/00007256-199724020-00001 · PMID 9291549 — revisão narrativa (não meta-análise): < 5 min, pouco ou nenhum efeito; 60–90 min, nenhum (sobra glicogênio); > 90 min, +2–3% no contrarrelógio e ~20% no tempo até a exaustão.",
+   "Sherman WM, Costill DL, Fink WJ, Miller JM. Effect of exercise-diet manipulation on muscle glycogen and its subsequent utilization during performance. Int J Sports Med 1981;2(2):114-118. DOI 10.1055/s-2008-1034594 · PMID 7333741 — 20,9 km (~1h20): tempo igual entre os regimes.",
+   "McLay RT, Thomson CD, Williams SM, Rehrer NJ. Carbohydrate loading and female endurance athletes: effect of menstrual-cycle phase. Int J Sport Nutr Exerc Metab 2007;17(2):189-205. DOI 10.1123/ijsnem.17.2.189 · PMID 17507743 — 9 mulheres, cruzado 2 × 2, 8,4 × 5,2 g/kg/d por 3 dias; contrarrelógio de 16 km após 75 min intermitentes: 26,10 × 26,16 min (P = 0,494); fase do ciclo também sem efeito.",
+   "Burke LM, Hawley JA, Schabort EJ, St Clair Gibson A, Mujika I, Noakes TD. Carbohydrate loading failed to improve 100-km cycling performance in a placebo-controlled trial. J Appl Physiol 2000;88(4):1284-1290. DOI 10.1152/jappl.2000.88.4.1284 · PMID 10749820 — ECR cruzado com placebo, n = 7; 9 × 6 g/kg/d por 3 dias, 2 g/kg 2 h antes e 1 g/kg/h durante nas duas condições: glicogênio 572 × 485 mmol/kg dw; 147,5 × 149,1 min e 259 × 253 W (P = 0,4)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Abaixo de ~90 min a carga não mudou o tempo: Sherman 1981 nos 20,9 km e McLay 2007, 9 mulheres, 8,4 contra 5,2 g/kg/d, contrarrelógio de 16 km depois de 75 min intermitentes (26,10 × 26,16 min, P = 0,494). Acima de ~90 min, a revisão narrativa de Hawley 1997 estima 2–3% no contrarrelógio; os famosos 20% são de tempo até a exaustão, e em tiros de menos de 5 min o efeito é pouco ou nenhum. Burke 2000 é o teste mais duro: ECR cruzado com placebo, 7 ciclistas, 100 km. O glicogênio subiu (572 × 485 mmol/kg seco) e o desempenho não (147,5 × 149,1 min; 259 × 253 W; P = 0,4). Mas o controle já comia 6 g/kg e todos tomaram 2 g/kg no café e 1 g/kg/h durante. Com n = 7 o estudo não tem poder para ver 1–2%.",
+  "pergunta": "Se o seu atleta já come bem e toma carboidrato durante a prova, a carga ainda vale o desconforto? Sim, não ou depende, no chat.",
+  "transicao": "Esses estudos são quase só de homens. Por muito tempo se disse que mulher nem carrega."
+ }
+}

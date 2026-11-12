@@ -1,0 +1,15 @@
+{
+  "slide": {
+    "fontes": [
+      "Chi C, Shi M, Zhao Y, et al. Dietary compounds slow starch enzymatic digestion: a review. Front Nutr 2022;9:1004966. DOI 10.3389/fnut.2022.1004966 · PMID 36185656 — α-amilases salivar e pancreática; maltase-glicoamilase e sacarase-isomaltase na borda em escova; maltose da amilose e dextrinas ramificadas da amilopectina; mais ramos α-1,6 curtos = digestão lenta, mais amilose e cristalinidade = amido resistente.",
+      "Wright EM, Loo DD, Hirayama BA. Biology of human sodium glucose transporters. Physiol Rev 2011;91(2):733-94. DOI 10.1152/physrev.00055.2009 · PMID 21527736 — SGLT1 usa o gradiente de Na⁺ (mantido pela Na⁺/K⁺-ATPase basolateral); glicose e galactose dividem a porta.",
+      "Ferraris RP, Choe JY, Patel CR. Intestinal absorption of fructose. Annu Rev Nutr 2018;38:41-67. DOI 10.1146/annurev-nutr-082117-051707 · PMID 29751733 — frutose entra pelo GLUT5 apical; KHK-C do intestino proximal fosforila frutose a frutose-1-fosfato; GLUT2 basolateral leva frutose, glicose e galactose (Km para frutose >5× o do GLUT5); sem SGLT1 (má absorção glicose-galactose) não se absorve glicose."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "O corte se monta da luz ao fígado e nada apaga. As α-amilases da saliva e do pâncreas cortam o amido: maltose da amilose (α-1,4), dextrinas ramificadas da amilopectina (α-1,6); ramos curtos digerem devagar, amilose e cristalinidade resistem (Chi 2022). Na borda em escova, maltase-glicoamilase e sacarase-isomaltase soltam os monossacarídeos: dissacarídeo não atravessa. Glicose e galactose entram pelo SGLT1 junto com Na⁺, a favor do gradiente que a Na⁺/K⁺-ATPase basolateral sustenta gastando ATP (transporte ativo secundário; Wright 2011); sem SGLT1, na má absorção glicose-galactose, não se absorve glicose nenhuma. A frutose entra pelo GLUT5, sem Na⁺, e a KHK-C já fosforila parte dela a frutose-1-fosfato no próprio enterócito. As três saem pelo GLUT2 basolateral (Km para frutose >5× o do GLUT5) para a veia porta: o fígado é a primeira parada (Ferraris 2018).",
+    "pergunta": "Se glicose e galactose dividem a mesma porta, o que acontece quando uma bebida de prova tem muita glicose?",
+    "transicao": "É exatamente essa porta que limita quanto carboidrato o atleta consegue usar por hora."
+  }
+}

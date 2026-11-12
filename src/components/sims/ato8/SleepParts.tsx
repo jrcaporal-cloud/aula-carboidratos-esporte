@@ -1,100 +1,118 @@
-import { motion } from 'framer-motion';
-import { Equal, Moon, Sun, UtensilsCrossed, Zap, type LucideIcon } from 'lucide-react';
-import { EASE_OUT, stagger } from '../../../lib/motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import { DUR, EASE_IN_OUT, EASE_OUT, stagger } from '../../../lib/motion';
 import { Grow } from '../kit/Beat';
-import { CountUp } from '../kit/CountUp';
 import { br } from '../kit/format';
 import { C } from '../kit/palette';
-import { DAY, HULSTON, STUDIES, type DaySegment, type StudyRow } from './sleeplow.content';
+import { SvgText } from '../kit/ui';
+import { CLOCK, STUDIES, type ClockArc, type Metric, type StudyCard } from './sleeplow.content';
 
-/** Peças do slide 142: o trilho do dia de sleep low, as linhas dos estudos e a cena do custo. */
+/** Peças do slide 142: o relógio de 24 h do sleep low e a pilha de estudos que acumula. */
 
-const SEG_STYLE: Record<DaySegment['id'], { bg: string; fg: string; Icon: LucideIcon }> = {
-    hit: { bg: C.glucose, fg: '#04080F', Icon: Zap },
-    night: { bg: '#1E293B', fg: C.text, Icon: Moon },
-    easy: { bg: 'transparent', fg: C.stone, Icon: Sun },
-    refuel: { bg: C.glucose, fg: '#04080F', Icon: UtensilsCrossed },
+const S = 300;
+const O = S / 2;
+const R_OUT = 112;
+const R_IN = 76;
+
+const ARC_STYLE: Record<ClockArc['id'], { fill: string; stroke: string }> = {
+    hit: { fill: C.glucose, stroke: C.glucose },
+    refuel: { fill: `${C.glucose}66`, stroke: C.glucose },
+    easy: { fill: '#04080F', stroke: C.stone },
+    night: { fill: '#1E293B', stroke: C.co2 },
 };
 
-/** O dia de sleep low. `compact` = faixa fina que fica no topo como legenda (só ícone + o quê). */
-export const DayStrip = ({ compact = false }: { compact?: boolean }) => (
-    <div className="flex w-full gap-2">
-        {DAY.map((seg, i) => {
-            const s = SEG_STYLE[seg.id];
-            return (
-                <motion.div key={seg.id} className={`flex flex-col justify-center gap-1 rounded-2xl px-5 ${compact ? 'h-[52px]' : 'h-[110px]'}`}
-                    style={{ flex: seg.span, background: s.bg, color: s.fg, border: seg.id === 'easy' ? `3px solid ${C.stone}` : 'none' }}
-                    initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: stagger(i, 0.05, 0.12), duration: 0.35, ease: EASE_OUT }}>
-                    {compact ? (
-                        <span className="flex items-center gap-2 text-[18px] font-semibold"><s.Icon size={18} strokeWidth={2.5} />{seg.what}</span>
-                    ) : (
-                        <>
-                            <span className="flex items-center gap-2 text-[18px] font-semibold opacity-90"><s.Icon size={20} strokeWidth={2.5} />{seg.when}</span>
-                            <span className="text-[24px] font-bold leading-tight">{seg.what}</span>
-                        </>
-                    )}
-                </motion.div>
-            );
-        })}
+const polar = (h: number, r: number): [number, number] => {
+    const a = ((h / 24) * 360 - 90) * (Math.PI / 180);
+    return [O + r * Math.cos(a), O + r * Math.sin(a)];
+};
+
+const arcPath = (from: number, to: number) => {
+    const span = (to - from + 24) % 24;
+    const large = span > 12 ? 1 : 0;
+    const [x1, y1] = polar(from, R_OUT);
+    const [x2, y2] = polar(from + span, R_OUT);
+    const [x3, y3] = polar(from + span, R_IN);
+    const [x4, y4] = polar(from, R_IN);
+    return `M ${x1} ${y1} A ${R_OUT} ${R_OUT} 0 ${large} 1 ${x2} ${y2} L ${x3} ${y3} A ${R_IN} ${R_IN} 0 ${large} 0 ${x4} ${y4} Z`;
+};
+
+/** Ponteiro: no passo 1 percorre uma vez a noite do sleep low (17 h → 7 h). */
+const Hand = ({ run }: { run: boolean }) => {
+    const reduce = useReducedMotion() ?? false;
+    const deg = (h: number) => (h / 24) * 360;
+    return (
+        <motion.g style={{ transformOrigin: `${O}px ${O}px`, transformBox: 'view-box' }}
+            initial={false} animate={{ rotate: run && !reduce ? [deg(17), deg(31)] : deg(31) }}
+            transition={{ duration: run && !reduce ? 1.15 : 0, ease: EASE_IN_OUT }}>
+            <line x1={O} y1={O - 60} x2={O} y2={O - R_OUT - 8} stroke="#FFFFFF" strokeWidth={5} strokeLinecap="round" />
+        </motion.g>
+    );
+};
+
+export const DayClock = ({ step }: { step: number }) => (
+    <div className="flex flex-col items-center gap-2">
+        <svg viewBox={`0 0 ${S} ${S}`} width={S} height={S} role="img" aria-label="Relógio de 24 horas do sleep low">
+            {CLOCK.map((a, i) => (
+                <motion.path key={a.id} d={arcPath(a.from, a.to)} fill={ARC_STYLE[a.id].fill} stroke={ARC_STYLE[a.id].stroke} strokeWidth={3}
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.enter, delay: stagger(i, 0.05, 0.12), ease: EASE_OUT }} />
+            ))}
+            {[0, 6, 12, 18].map(h => {
+                const [x, y] = polar(h, 132);
+                return <SvgText key={h} x={x} y={y + 6} text={`${h} h`} size={16} anchor="middle" color={C.muted} weight={700} />;
+            })}
+            <circle cx={O} cy={O} r={58} fill="#04080F" />
+            <Hand run={step === 0} />
+            <SvgText x={O} y={O - 2} text="6 g/kg/d" size={24} anchor="middle" color={C.glucoseSoft} weight={800} />
+            <SvgText x={O} y={O + 22} text="nos dois grupos" size={16} anchor="middle" color="#E5E7EB" weight={600} />
+        </svg>
+        <ul className="m-0 flex w-full list-none flex-col gap-1 p-0 px-3">
+            {CLOCK.map(a => (
+                <li key={a.id} className="flex items-center gap-3 text-[17px] font-semibold text-gray-100">
+                    <span className="h-[16px] w-[26px] shrink-0 rounded-[4px] border-[3px]" style={{ background: ARC_STYLE[a.id].fill, borderColor: ARC_STYLE[a.id].stroke }} />
+                    {a.label}
+                </li>
+            ))}
+        </ul>
     </div>
 );
 
-/** Largura máxima das barras: 6% de melhora. */
-const MAX = 6;
-
-const Bar = ({ value, color, label }: { value: number; color: string; label: string }) => (
-    <div className="flex items-center gap-3">
-        <div className="relative h-[22px] w-[300px] overflow-hidden rounded-md" style={{ background: 'rgba(255,255,255,0.06)' }}>
-            <Grow value={value / MAX} color={color} />
-        </div>
-        <span className="w-[150px] text-[18px] tabular-nums" style={{ color }}>{label}</span>
-    </div>
-);
-
-const Row = ({ row, dim, i }: { row: StudyRow; dim: boolean; i: number }) => (
-    <motion.div className="flex items-center gap-6 rounded-xl px-4 py-2" style={{ background: 'rgba(255,255,255,0.05)' }}
-        initial={{ opacity: 0, x: -14 }} animate={{ opacity: dim ? 0.6 : 1, x: 0 }}
-        transition={{ delay: dim ? 0 : stagger(i, 0.1, 0.18), duration: 0.35, ease: EASE_OUT }}>
-        <div className="w-[300px] shrink-0">
-            <p className="m-0 text-[21px] font-bold text-white">{row.who}</p>
-            <p className="m-0 text-[17px] text-gray-300">{row.design} · {row.test}</p>
-        </div>
-        {row.low !== null && row.ctl !== null ? (
-            <div className="flex flex-col gap-1.5">
-                <Bar value={row.low} color={C.stone} label={`sleep low +${br(row.low, row.low % 1 ? 1 : 0)}%`} />
-                <Bar value={row.ctl} color={C.glucose} label={`controle +${br(row.ctl, row.ctl % 1 ? 1 : 0)}%`} />
-            </div>
-        ) : (
-            <span className="flex w-[462px] items-center gap-3 text-[20px] text-gray-100"><Equal size={24} strokeWidth={3} /> sem diferença entre os grupos</span>
-        )}
-        <span className="text-[17px] leading-snug text-gray-300">{row.note}</span>
-    </motion.div>
-);
-
-export const StudyRows = ({ count, dimFirst }: { count: number; dimFirst: boolean }) => (
-    <div className="flex flex-col gap-2.5">
-        <span className="ml-[340px] text-[16px] text-gray-300">melhora no teste final (pré → pós)</span>
-        {STUDIES.slice(0, count).map((r, i) => <Row key={r.id} row={r} i={i} dim={dimFirst && i === 0} />)}
-    </div>
-);
-
-/** Duas colunas de potência no treino intenso: 323 × 297 W. */
-export const CostScene = () => (
-    <div className="flex items-end gap-14 pl-4">
-        {([['com CHO', HULSTON.high, C.glucose], ['train low', HULSTON.low, C.stone]] as const).map(([label, w, color], i) => (
-            <div key={label} className="flex flex-col items-center gap-2">
-                <CountUp text={`${w} W`} delay={0.1 + i * 0.15} className="font-display text-[44px] font-bold leading-none" style={{ color }} />
-                <div className="relative w-[120px] overflow-hidden rounded-t-xl" style={{ height: 230 * (w / HULSTON.high) }}>
-                    <Grow value={1} axis="y" color={color} delay={i * 0.15} />
+const MetricRow = ({ m, delay }: { m: Metric; delay: number }) => (
+    <div className="flex items-center gap-2">
+        <span className="w-[112px] shrink-0 text-[16px] font-semibold text-gray-200">{m.label}</span>
+        <div className="flex flex-1 flex-col gap-[3px]">
+            {([['low', m.low, C.stone], ['ctl', m.ctl, C.glucose]] as const).map(([k, v, color]) => (
+                <div key={k} className="flex items-center gap-2">
+                    <div className="relative h-[12px] flex-1 overflow-hidden rounded-[4px]" style={{ background: 'rgba(255,255,255,0.07)' }}>
+                        <Grow value={Math.abs(v) / m.max} color={color} delay={delay} />
+                    </div>
+                    <span className="w-[66px] text-right text-[16px] font-bold tabular-nums" style={{ color }}>{`${br(v, m.unit === '%' ? 1 : 0)}${m.unit}`}</span>
                 </div>
-                <span className="text-[20px] text-gray-200">{label}</span>
-            </div>
-        ))}
-        <div className="mb-10 flex max-w-[460px] flex-col gap-3 pl-6">
-            <CountUp text="−8%" delay={0.4} className="font-display text-[88px] font-bold leading-none" style={{ color: C.risk }} />
-            <span className="text-[22px] leading-snug text-gray-100">de potência nas sessões intensas feitas com pouco glicogênio</span>
-            <span className="text-[20px] leading-snug text-gray-300">No contrarrelógio final, os dois grupos melhoraram ~10%.</span>
+            ))}
         </div>
+    </div>
+);
+
+const Card = ({ c, step }: { c: StudyCard; step: number }) => {
+    const cur = step === c.at;
+    const delay = cur ? 0.25 + STUDIES.filter(s => s.at === c.at).indexOf(c) * 0.15 : 0;
+    return (
+        <motion.div className="flex flex-col gap-1 rounded-xl border-2 px-3 py-1.5" initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: DUR.enter, delay, ease: EASE_OUT }}
+            style={{ borderColor: cur ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.16)', background: 'rgba(255,255,255,0.04)' }}>
+            <p className="m-0 text-[16px] leading-tight text-gray-300">
+                <span className="text-[18px] font-bold text-white">{c.who}</span> · {c.design}
+            </p>
+            {c.metrics.map(m => <MetricRow key={m.label} m={m} delay={delay + 0.2} />)}
+            {c.notes?.map(n => <p key={n} className="m-0 text-[16px] font-semibold leading-tight" style={{ color: C.stone }}>{n}</p>)}
+        </motion.div>
+    );
+};
+
+export const StudyStack = ({ step }: { step: number }) => (
+    <div className="flex h-full flex-col gap-[6px]">
+        <div className="flex items-center gap-4 text-[16px] font-semibold text-gray-200">
+            <span className="flex items-center gap-2"><span className="h-[14px] w-[22px] rounded-[3px]" style={{ background: C.stone }} />sleep / train low</span>
+            <span className="flex items-center gap-2"><span className="h-[14px] w-[22px] rounded-[3px]" style={{ background: C.glucose }} />controle</span>
+        </div>
+        {STUDIES.filter(c => step >= c.at).map(c => <Card key={c.id} c={c} step={step} />)}
     </div>
 );

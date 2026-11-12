@@ -1,52 +1,47 @@
-import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT, stagger } from '../../lib/motion';
 import { C } from './kit/palette';
-import { DesignChip, ViaReviewChip } from './kit/chips';
-import { BarRow, SourceLine, StepHeader } from './ato3/shared';
-import { FirstBout, RescueLanes } from './ato3/RescueLanes';
-import { FORCE, RESCUE_STEPS } from './ato3/rescue.content';
+import { CountUp } from './kit/CountUp';
+import { DesignChip } from './kit/chips';
+import { Reveal } from './kit/rhythm';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, Source } from './kit/ui';
+import { MotorFrame, StepText } from './ato3/motorB';
+import { RescueLanes, Triptych } from './ato3/RescueLanes';
+import { RESCUE_STEPS } from './ato3/rescue.content';
 
 /**
- * Slide 49 · O Resgate pela Veia. História com cronômetro: a primeira exaustão (~170 min), três raias
- * (placebo 10, oral 26, IV 43 min), Copenhague 1939 como raia histórica, e a força caindo com a hipoglicemia (Nybo).
+ * Slide 49 · O Resgate pela Veia, em tríptico. Palco: músculo × sangue × cérebro, cada coluna acumulando o que o estudo
+ * mediu nela, e as raias embaixo (tempo extra de Coggan 1987; força de Nybo 2003 no fim). Painel: texto do passo + dado-chave.
  */
 
-const Force = () => (
-    <div className="flex w-full flex-col gap-4">
-        <span className="text-[18px] text-gray-300">força média sustentada por 2 min, depois de 3 h de bicicleta</span>
-        {FORCE.map((f, i) => (
-            <BarRow key={f.key} label={f.label} value={f.value} max={260} text={f.text} labelWidth={200}
-                color={f.key === 'p' ? C.co2 : f.key === 'g' ? C.glucose : C.stone} delay={stagger(i, 0.1, 0.15)} />
-        ))}
-        <span className="text-[19px] text-gray-100">glicemia com placebo: <b style={{ color: C.risk }}>3,0 mM</b>; ativação central caiu</span>
-    </div>
-);
+const ACCENT = [C.risk, C.glucose, C.glycogenSoft, C.stone] as const;
 
-const CHIPS = [
-    <DesignChip key="d">cruzado · n = 7 · não cego</DesignChip>,
-    <DesignChip key="d">cruzado · n = 7 · não cego</DesignChip>,
-    <DesignChip key="d">cruzado · n = 7 · não cego</DesignChip>,
-    <ViaReviewChip key="v">via revisão</ViaReviewChip>,
-    <DesignChip key="d">cruzado · n = 8</DesignChip>,
+const COGGAN_CHIP = 'cruzado · n = 7 · não cego';
+const CHIPS: readonly (readonly string[])[] = [
+    [COGGAN_CHIP], [COGGAN_CHIP], [COGGAN_CHIP], ['Nybo MSSE: cruzado · n = 8', 'Acta: n = 6'],
 ];
 
 export default function RescueSim() {
-    const { step } = useSlideSteps(RESCUE_STEPS.length);
-    const reduce = useReducedMotion();
+    const { step, setStep } = useSlideSteps(RESCUE_STEPS.length);
     const s = RESCUE_STEPS[step];
-    const panelKey = step === 0 ? 'first' : step === 4 ? 'force' : 'lanes';
     return (
-        <div className="not-prose flex h-[500px] w-full flex-col gap-4 overflow-hidden">
-            <StepHeader beat={step} chips={CHIPS[step]}>{s.phrase}</StepHeader>
-            <motion.div key={panelKey} className="flex min-h-0 flex-1 items-center"
-                initial={reduce ? { opacity: 0 } : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: DUR.enter, ease: EASE_OUT }}>
-                {step === 0 && <FirstBout />}
-                {step >= 1 && step <= 3 && <RescueLanes run={step >= 2} showHistoric={step === 3} />}
-                {step === 4 && <Force />}
-            </motion.div>
-            <SourceLine>{s.source}</SourceLine>
-        </div>
+        <MotorFrame tabs={RESCUE_STEPS.map(r => r.tab)} step={step} setStep={setStep} layoutId="rescue-tabs" chips={CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}>
+            <Panel className="flex w-[660px] shrink-0 flex-col gap-4 px-4 py-3">
+                <Triptych step={step} />
+                <RescueLanes step={step} />
+            </Panel>
+            <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-4">
+                <StepText step={step} color={ACCENT[step]} headline={s.headline} text={s.text} />
+                <Reveal key={`lim-${step}`} order={2}>
+                    <p className="m-0 text-[16px] leading-snug text-gray-300"><b className="text-gray-200">Limitação:</b> {s.limit}</p>
+                </Reveal>
+                <Reveal key={`stat-${step}`} order={1} className="mt-auto flex items-baseline gap-3">
+                    <CountUp text={s.stat} delay={0.2} className="whitespace-nowrap font-display text-[44px] font-bold leading-none"
+                        style={{ color: ACCENT[step], wordSpacing: '0.15em' }} />
+                    <span className="text-[17px] leading-snug text-gray-200">{s.statCaption}</span>
+                </Reveal>
+                <Source>{sourcesUpTo(RESCUE_STEPS.map(r => r.sources), step)}</Source>
+            </Panel>
+        </MotorFrame>
     );
 }

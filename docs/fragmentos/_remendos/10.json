@@ -1,0 +1,15 @@
+{
+ "slide": {
+  "fontes": [
+   "Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — estoques médios: músculo ~500 g (300–700 g), fígado ~80 g (0–160 g), glicose circulante ~4 g; glicogênio cerebral (astrócitos) ~100× menor que o do músculo (Tabela 1, adaptada de Hargreaves 2012).",
+   "Smyth B. How recreational marathon runners hit the wall: a large-scale data analysis of late-race pacing collapse in the marathon. PLoS One 2021;16(5):e0251513. DOI 10.1371/journal.pone.0251513 · PMID 34010308 — 28% dos homens × 17% das mulheres batem no muro (OR 1,43; N = 1.928.813); quem bate desacelera ~40% por 10,7 km (homens) e ~37% por 9,6 km (mulheres). Observacional: o muro é inferido pelo ritmo, sem medir glicogênio.",
+   "Marina é personagem fictícia; a curva de ritmo (5:00/km até o 30, ~6:50/km depois do 32) e o nível dos tanques são ilustrativos; 2h30 até o km 30 é cálculo (30 × 5 min)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Marina é fictícia e a curva é ilustrativa: 5:00 por km até o 30 (2h30 de prova) e ~6:50 depois do 32, sem voltar. Os estoques são médias reais de adulto (Murray e Rosenbloom 2018): ~500 g de glicogênio no músculo (300–700 g), ~80 g no fígado (0–160 g) e só ~4 g de glicose no sangue inteiro; o cérebro guarda nos astrócitos ~100× menos glicogênio que o músculo. Esses são os quatro candidatos da pergunta. O fecho é real: em 1.928.813 maratonistas, 28% dos homens e 17% das mulheres bateram no muro (OR 1,43), e quem bate fica ~40% mais lento por ~10 km (homens 40% por 10,7 km; mulheres 37% por 9,6 km) (Smyth 2021). Atenção: observacional, o muro foi definido pela queda do ritmo; ninguém mediu glicogênio.",
+  "pergunta": "No km 32 da Marina, o que acabou? Uma palavra no chat: músculo, fígado, sangue ou cérebro.",
+  "transicao": "Para responder isso vamos precisar olhar a mesma molécula de três jeitos diferentes."
+ }
+}

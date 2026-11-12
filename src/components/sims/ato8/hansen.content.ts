@@ -1,41 +1,58 @@
-/** Slide 140 · Hansen 2005 (dossiê 05·HANSEN2005). O "TTE dobrou" NÃO entra: o resumo não traz o número. */
+/**
+ * Slide 140 · A perna que treinou com fome. Desenho e resultado: 05·HANSEN2005 (o "TTE dobrou" NÃO entra: o resumo
+ * não traz o número). Sinal: 01·MCBRIDE2009 (in vitro), 02·MACDONALD2003 (n = 8), 02/05·BARTLETT2013 (n = 8),
+ * 05·LANE2015 (n = 7). Níveis das coxas: ilustrativos.
+ */
 
-export const HANSEN_BEATS = [
-    'Sete homens, duas pernas: cada perna é um tratamento.',
-    'Mesma carga total. A 2ª sessão da perna LOW começa com o tanque baixo.',
-    'A força máxima subiu igual. A resistência subiu mais na perna que treinou com fome.',
-    'Prova de conceito, não prescrição.',
-] as const;
-
-export interface LegRow {
-    id: 'low' | 'high';
-    name: string;
-    rule: string;
-    /** Sessões por dia nos 14 dias mostrados (2 semanas). */
-    days: readonly number[];
+export interface HansenStep {
+    tab: string;
+    headline: string;
+    text: string;
+    sources: readonly string[];
 }
 
-const twoWeeks = (f: (d: number) => number): number[] => Array.from({ length: 14 }, (_, d) => f(d));
-
-export const LEG_ROWS: readonly LegRow[] = [
-    { id: 'low', name: 'Perna LOW', rule: '2 sessões a cada 2 dias', days: twoWeeks(d => (d % 2 === 0 ? 2 : 0)) },
-    { id: 'high', name: 'Perna HIGH', rule: '1 sessão por dia', days: twoWeeks(() => 1) },
+export const HANSEN_STEPS: readonly HansenStep[] = [
+    {
+        tab: 'Duas pernas',
+        headline: 'O corpo é o próprio controle',
+        text: 'Hansen 2005, Copenhague: 7 homens não treinados, extensão de joelho de uma perna, 10 semanas. A perna LOW treinava 1 h, descansava 2 h em jejum e treinava mais 1 h, a cada 2 dias; a HIGH treinava 1 h por dia. Mesma carga total. Mesma genética, mesmo sangue, mesma dieta: só muda o glicogênio na hora do treino.',
+        sources: ['Hansen 2005 (J Appl Physiol)'],
+    },
+    {
+        tab: 'A 2ª sessão',
+        headline: 'O tanque baixo liga o sinal',
+        text: 'A 2ª sessão começa com pouco glicogênio. A AMPK tem um domínio na subunidade β que se liga ao glicogênio e é inibida por ele (in vitro). Em 8 homens treinados, a α2-AMPK só subiu no exercício com o tanque depletado. Com 467 × 103 mmol/kg ps, Bartlett mediu mais p-ACC (o alvo da AMPK) e mais p-p53. No sleep low, AMPK e p38 amanhecem mais fosforiladas.',
+        sources: ['McBride 2009 (Cell Metab, in vitro)', 'MacDonald 2003 (J Appl Physiol)', 'Bartlett 2013 (AJP Regul)', 'Lane 2015 (J Appl Physiol)'],
+    },
+    {
+        tab: 'O resultado',
+        headline: 'Mesma força, mais resistência',
+        text: 'A carga máxima subiu igual nas duas pernas. O tempo até a exaustão a 90% subiu "acentuadamente mais" na LOW, e HAD (β-oxidação) e glicogênio de repouso só subiram de forma significativa nela.',
+        sources: [],
+    },
+    {
+        tab: 'A ressalva',
+        headline: 'Prova de conceito, não prescrição',
+        text: 'n = 7, não treinados, uma perna só (pouca massa muscular), TTE pouco reprodutível. E o sinal tem nuance: o PGC-1α subiu ~3× com o exercício, com ou sem carboidrato. O "dobrou" que circula não está no resumo: não citamos.',
+        sources: [],
+    },
 ];
 
-export interface ResultRow {
+/** Resultado de Hansen 2005 (lido no resumo; sem os números do TTE). */
+export interface HansenRow {
     label: string;
     low: string;
     high: string;
-    /** Quem ganhou: 'tie' = igual nas duas pernas. */
-    winner: 'tie' | 'low';
+    /** A perna LOW se destacou? */
+    lowWins: boolean;
 }
 
-export const RESULTS: readonly ResultRow[] = [
-    { label: 'Carga máxima', low: 'aumento idêntico', high: 'aumento idêntico', winner: 'tie' },
-    { label: 'Tempo até a exaustão a 90%', low: 'subiu muito mais', high: 'subiu', winner: 'low' },
-    { label: 'HAD e glicogênio de repouso', low: 'subiram', high: 'subiram, sem significância', winner: 'low' },
+export const HANSEN_ROWS: readonly HansenRow[] = [
+    { label: 'carga máxima', low: '↑ igual', high: '↑ igual', lowWins: false },
+    { label: 'TTE a 90%', low: '↑ bem mais', high: '↑', lowWins: true },
+    { label: 'HAD', low: '↑ signif.', high: '↑ n.s.', lowWins: true },
+    { label: 'glicogênio de repouso', low: '↑ signif.', high: '↑ n.s.', lowWins: true },
 ];
 
-export const HANSEN_CAVEATS = ['uma perna só: pouca massa muscular', 'TTE: teste pouco reprodutível'] as const;
-
-export const HANSEN_SOURCE = 'Hansen AK et al. J Appl Physiol 2005;98(1):93-99.';
+/** Nível ilustrativo das coxas por passo [HIGH, LOW]. */
+export const LEG_LEVELS: readonly (readonly [number, number])[] = [[0.8, 0.8], [0.8, 0.2], [0.84, 0.96], [0.84, 0.96]];

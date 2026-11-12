@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Marquet LA, Brisswalter J, Louis J, et al. Enhanced endurance performance by periodization of carbohydrate intake: \"sleep low\" strategy. Med Sci Sports Exerc 2016;48(4):663-672. DOI 10.1249/mss.0000000000000823 · PMID 26741119 — ECR paralelo não cego, 21 triatletas (11 × 10), 3 semanas, 6 g/kg/d nos dois: 10 km −2,9% × −0,1%; massa gorda −8,5% × −2,6%.",
+   "Lane SC, Camera DM, Lassiter DG, et al. Effects of sleeping with reduced carbohydrate availability on acute training responses. J Appl Physiol 2015;119(6):643-655. DOI 10.1152/japplphysiol.00857.2014 · PMID 26112242 — cruzado, 7 ciclistas, mesmo CHO no dia: na manhã em jejum, AMPK, p38MAPK e ACC mais fosforiladas e mais gordura oxidada; atrasar a refeição não aumentou marcadores de biogênese mitocondrial.",
+   "Gejl KD, Thams LB, Hansen M, et al. No superior adaptations to carbohydrate periodization in elite endurance athletes. Med Sci Sports Exerc 2017;49(12):2486-2497. DOI 10.1249/mss.0000000000001377 · PMID 28723843 — 26 homens de elite, 4 semanas: VO₂máx e contrarrelógio +5% nos dois grupos; glicogênio e CS sem diferença.",
+   "Riis S, Møller AB, Dollerup O, et al. Acute and sustained effects of a periodized carbohydrate intake using the sleep-low model in endurance-trained males. Scand J Med Sci Sports 2019;29(12):1866-1880. DOI 10.1111/sms.13541 · PMID 31430404 — 13 treinados, 4 semanas: oxidação de gordura aguda maior, sem efeito sustentado; contrarrelógio melhorou igual.",
+   "Hulston CJ, Venables MC, Mann CH, et al. Training with low muscle glycogen enhances fat metabolism in well-trained cyclists. Med Sci Sports Exerc 2010;42(11):2046-2055. DOI 10.1249/mss.0b013e3181dd5070 · PMID 20351596 — 14 ciclistas, 3 semanas: potência no HIT 297 × 323 W (~8% menor); contrarrelógio ~10% melhor nos dois."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Sleep low (Marquet 2016): treino intenso no fim da tarde com CHO, noite sem carboidrato, treino leve em jejum de manhã; o total do dia é o mesmo (6 g/kg/d). O mecanismo está em Lane 2015 (7 ciclistas, cruzado): AMPK, p38 e ACC mais fosforiladas na manhã em jejum, sem mais marcadores de biogênese. Marquet: 21 triatletas (11 × 10), não cego, 3 semanas: 10 km −2,9% × −0,1%, mas massa gorda −8,5% × −2,6%. Em 26 de elite (Gejl 2017) e 13 treinados (Riis 2019), os dois grupos melhoraram igual (+5% no contrarrelógio em Gejl). O custo: Hulston 2010 mediu 297 × 323 W nas sessões intensas feitas com glicogênio baixo, ~8% a menos; o contrarrelógio final melhorou ~10% nos dois. Os horários do relógio são ilustrativos.",
+  "pergunta": "Respondam no chat: o atleta que sabe que está no grupo 'novo' corre igual ao do controle? O que isso faz com um efeito de 3%?",
+  "transicao": "Então como usar o train low sem pagar na sessão que importa? Planejando a semana."
+ }
+}

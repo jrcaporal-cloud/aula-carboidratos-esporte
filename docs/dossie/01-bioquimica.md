@@ -76,6 +76,13 @@ Fontes conferidas em Europe PMC (REST), PubMed (efetch), texto completo PMC quan
 - Ponto de ensino: base para o rendimento moderno de ~30–32 ATP por glicose (cálculo derivado dessas razões, não lido no abstract — ver Armadilhas). Glicose rende mais ATP por O₂ que ácido graxo porque parte dos elétrons do ácido graxo entra via FADH₂ (P/O menor).
 - Verificação: confirmado no abstract
 
+### LEHNINGER2017 (livro-texto: as 10 reações da glicólise)
+- Citação: Nelson DL, Cox MM. Lehninger Principles of Biochemistry. 7ª ed. New York: W.H. Freeman; 2017. Cap. 14 (Glicólise, gliconeogênese e via das pentoses-fosfato). Capítulo confirmado no sumário da 7ª ed.; a 8ª ed. (2021) não foi conferida.
+- Desenho: livro-texto (fato canônico, não estudo)
+- Conteúdo usado: fase preparatória (5 reações) e fase de pagamento (5 reações). Enzimas: hexoquinase (HK, −1 ATP), fosfo-hexose-isomerase (PGI), fosfofrutoquinase-1 (PFK-1, −1 ATP), aldolase, triose-fosfato-isomerase (TPI) → 2 gliceraldeído-3-P; gliceraldeído-3-P-desidrogenase (GAPDH, +1 NADH por triose = +2 por glicose), fosfoglicerato-quinase (PGK, +2 ATP), fosfoglicerato-mutase (PGAM), enolase, piruvato-quinase (PK, +2 ATP). Saldo: 2 ATP e 2 NADH por glicose. Três reações irreversíveis e reguladas: HK, PFK-1 e PK. A lactato-desidrogenase (LDH) reoxida o NADH a NAD⁺ ao formar lactato. Glicogênio entra sem a hexoquinase: fosforilase → glicose-1-P → fosfoglicomutase → glicose-6-P; por isso cada glicose vinda do glicogênio rende 3 ATP líquidos (não gasta o ATP da HK).
+- Ponto de ensino: o ATP sai em dois degraus (PGK e PK), não no último; o NAD⁺ gasto na GAPDH precisa voltar (LDH ou mitocôndria) para a via continuar.
+- Verificação: livro-texto; estequiometria canônica, sem número de estudo.
+
 ### SCOTT2012 (equivalente energético do O₂)
 - Citação: Scott CB. Glucose and fat oxidation: bomb calorimeter be damned. ScientificWorldJournal 2012;2012:375041 (PMC3345970) · PMID 22593681
 - Desenho: artigo de opinião/teórico

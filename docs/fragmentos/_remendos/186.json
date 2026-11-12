@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Jeukendrup A, Saris WH, Brouns F, Kester AD. A new validated endurance performance test. Med Sci Sports Exerc 1996;28(2):266-270. DOI 10.1097/00005768-199602000-00017 — CV 26,6% (TTE) × 3,35% (contrarrelógio).",
+   "Currell K, Jeukendrup AE. Validity, reliability and sensitivity of measures of sporting performance. Sports Med 2008;38(4):297-316. DOI 10.2165/00007256-200838040-00003 · PMID 18348590 — TTE com CV > 10%, contrarrelógio < 5%; diferença entre 1º e 2º lugar < 1%.",
+   "Colombani PC, Mannhart C, Mettler S. Carbohydrates and exercise performance in non-fasted athletes: a systematic review of studies mimicking real-life. Nutr J 2013;12:16. DOI 10.1186/1475-2891-12-16 — 16.658 artigos triados, 17 estudos, 22 intervenções (26–241 min); metade sem melhora, a outra metade +1% a +13%; 1 de 5 até ~70 min; 10 de 17 de 70 a 241 min.",
+   "Vandenbogaerde TJ, Hopkins WG. Effects of acute carbohydrate supplementation on endurance performance: a meta-analysis. Sports Med 2011;41(9):773-792. DOI 10.2165/11590520-000000000-00000 — 88 estudos cruzados (155 estimativas) → 73 e 122 após o corte de viés de publicação; jejum adicional de 9 h aumenta o benefício aparente; limiares em potência de contrarrelógio: pequeno 0,5%, moderado 1,5%, grande 2,7%; efeitos de ~6% de melhora a ~2% de prejuízo.",
+   "Curvas de distribuição e efeito de 5%: ilustrativos."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Quatro quadros que ficam na tela. Jeukendrup 1996 (30 atletas bem treinados, cada um repetiu o próprio teste 6 vezes): CV de 3,35% no contrarrelógio (3,49% no de pré-carga) e 26,6% no tempo até a exaustão; a mesma curva alarga e o efeito de 5% (ilustrativo) some no ruído. Currell 2008: TTE > 10%, contrarrelógio < 5%; um TTE que “melhora 20%” e um contrarrelógio que melhora 2% podem ser o mesmo efeito. Colombani 2013 (16.658 triados, 17 estudos, 22 intervenções, atleta alimentado e teste que imita a prova): metade sem melhora, a outra metade +1% a +13%; até ~70 min, 1 de 5; de 70 a 241 min, 10 de 17. Vandenbogaerde 2011 (88 estudos cruzados): viés de publicação (88 → 73 estudos após o corte), 9 h de jejum a mais aumentam o efeito aparente e, em potência de contrarrelógio, 2,7% já é efeito grande.",
+  "pergunta": "No último artigo que você leu, o teste era TTE ou contrarrelógio? O atleta estava em jejum?",
+  "transicao": "E quando o atleta sabe o que bebeu?"
+ }
+}

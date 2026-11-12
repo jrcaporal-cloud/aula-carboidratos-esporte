@@ -1,73 +1,68 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { DUR, EASE_OUT, stagger } from '../../../lib/motion';
-import { Grow } from '../kit/Beat';
-import { CountUp } from '../kit/CountUp';
+import { DUR, EASE_OUT } from '../../../lib/motion';
+import { CountSvgText } from '../kit/CountUp';
 import { C } from '../kit/palette';
-import { PDH_BARS } from './fatbrake.content';
+import { SvgText } from '../kit/ui';
+import { PDH_10MIN, PDH_BARS, PHOS } from './fatbrake.content';
 
-/** Painéis da direita do slide 45: a gordura medida, a PDH por potência e a fosforilase a que não sobe. */
+/**
+ * Faixa de baixo do palco do slide 45 (dois gráficos de 320 × 178, HOWLETT1998): a PDH ativa por potência (barras que
+ * crescem, números que contam) e a fosforilase a que NÃO sobe (faixa estável e a queda aos 10 min a 90%).
+ */
 
-export const FatOxPanel = ({ high }: { high: boolean }) => (
-    <div className="flex flex-col gap-2">
-        <span className="text-[19px] text-gray-300">gordura oxidada, corpo inteiro</span>
-        <div className="flex items-end gap-6">
-            <div className="flex flex-col">
-                <span className="font-display text-[84px] font-bold leading-none tabular-nums transition-colors duration-300"
-                    style={{ color: high ? '#6B7280' : C.fat }}>32</span>
-                <span className="text-[19px] text-gray-100">kJ/min a 55%</span>
-            </div>
-            {high && (
-                <div className="flex flex-col">
-                    <CountUp text="19" delay={0.5} className="font-display text-[84px] font-bold leading-none" style={{ color: C.fat }} />
-                    <span className="text-[19px] text-gray-100">kJ/min a 75%</span>
-                </div>
-            )}
-        </div>
-    </div>
-);
+const TOP = 252;
+const BASE = 400;
+const PDH_MAX = 4.6;
+const PDH_H = 104;
+const ph = (v: number) => (v / PDH_MAX) * PDH_H;
 
-const BAR_H = 220;
-const PDH_MAX = 3.6;
-
-export const PdhPanel = () => (
-    <div className="flex flex-col gap-3">
-        <span className="text-[19px] text-gray-300">PDH ativa · mmol·kg⁻¹·min⁻¹</span>
-        <div className="flex items-end gap-5" style={{ height: BAR_H + 70 }}>
-            {PDH_BARS.map((b, i) => (
-                <div key={b.label} className="flex w-[84px] flex-col items-center gap-2">
-                    <CountUp text={b.text} delay={stagger(i, 0.1, 0.12)} className="font-display text-[26px] font-semibold" style={{ color: C.glucose }} />
-                    <div className="relative w-full overflow-hidden rounded-t-md" style={{ height: (b.value / PDH_MAX) * BAR_H }}>
-                        <Grow axis="y" value={1} color={C.glucose} delay={stagger(i, 0.1, 0.12)} />
-                    </div>
-                    <span className="text-[18px] text-gray-100">{b.label}</span>
-                </div>
-            ))}
-        </div>
-    </div>
-);
-
-/** Fosforilase a: faixa de 21,4–29,6% em 35, 65 e 90%; aos 10 min a 90%, cai para 15,3%. Escala 0–40%. */
-const PH_H = 230;
-const y = (pct: number) => PH_H - (pct / 40) * PH_H;
-
-export const PhosphorylasePanel = () => {
-    const reduce = useReducedMotion();
+export const PdhBars = ({ show }: { show: boolean }) => {
+    const reduce = useReducedMotion() ?? false;
     return (
-        <div className="flex flex-col gap-3">
-            <span className="text-[19px] text-gray-300">fosforilase na forma a · % do total</span>
-            <div className="relative w-[440px]" style={{ height: PH_H }}>
-                <div className="absolute inset-x-0 bottom-0 h-[3px] bg-slate-400" />
-                <motion.div className="absolute left-0 right-[120px] rounded-md" style={{ top: y(29.6), height: y(21.4) - y(29.6), background: C.glycogen, transformOrigin: 'left center' }}
-                    initial={reduce ? false : { scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: DUR.bar, ease: EASE_OUT }} />
-                <span className="absolute left-3 text-[20px] font-bold text-white" style={{ top: y(29.6) + 8 }}>21–30%</span>
-                <span className="absolute left-0 text-[17px] text-gray-100" style={{ top: y(21.4) + 8 }}>a 35, 65 e 90% (1º min)</span>
-                <motion.div className="absolute flex flex-col items-start" style={{ left: 336, top: y(15.3) - 13 }}
-                    initial={reduce ? false : { opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: DUR.enter, ease: EASE_OUT }}>
-                    <span className="h-[26px] w-[26px] rounded-full" style={{ background: C.stone }} />
-                    <span className="mt-1 text-[20px] font-bold" style={{ color: C.stone }}>15,3%</span>
-                    <span className="text-[17px] text-gray-100">90%, 10 min</span>
-                </motion.div>
-            </div>
-        </div>
+        <motion.g initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            <SvgText x={0} y={TOP + 16} text="PDH ativa, 1º min" size={16} color="#F3F4F6" weight={800} />
+            <SvgText x={0} y={TOP + 38} text="mmol·kg⁻¹·min⁻¹" size={16} color={C.muted} />
+            <line x1={0} y1={BASE + 1} x2={300} y2={BASE + 1} stroke="#94A3B8" strokeWidth={3} />
+            {PDH_BARS.map((b, i) => {
+                const x = 14 + i * 66;
+                const delay = 0.2 + i * 0.12;
+                return (
+                    <g key={b.label}>
+                        <motion.rect x={x} y={BASE - ph(b.value)} width={44} height={ph(b.value)} rx={4} fill={C.glucose}
+                            style={{ transformBox: 'fill-box', transformOrigin: 'center bottom' }}
+                            initial={false} animate={{ scaleY: show ? 1 : 0 }} transition={{ duration: reduce ? 0 : DUR.bar, delay: show ? delay : 0, ease: EASE_OUT }} />
+                        {show && <CountSvgText x={x + 22} y={BASE - ph(b.value) - 8} text={b.text} delay={delay} size={17} anchor="middle" color={C.glucoseSoft} weight={800} />}
+                        <SvgText x={x + 22} y={BASE + 22} text={b.label} size={16} anchor="middle" color="#D1D5DB" />
+                    </g>
+                );
+            })}
+            <line x1={14 + 3 * 66 - 4} y1={BASE - ph(PDH_10MIN.value)} x2={14 + 3 * 66 + 48} y2={BASE - ph(PDH_10MIN.value)} stroke="#FFFFFF" strokeWidth={3} strokeDasharray="6 5" />
+            <SvgText x={14 + 3 * 66 + 22} y={BASE - ph(PDH_10MIN.value) - 8} text="4,45 aos 10 min" size={16} anchor="middle" color="#F3F4F6" />
+        </motion.g>
+    );
+};
+
+/** Fosforilase a: escala 0–40%. A faixa 21,4–29,6% cobre as três intensidades; o ponto é 90% aos 10 min. */
+const PH_H = 112;
+const py = (pct: number) => BASE - (pct / 40) * PH_H;
+
+export const PhosphorylaseBand = ({ show }: { show: boolean }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <motion.g initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            <SvgText x={0} y={TOP + 16} text="fosforilase a · % do total" size={16} color="#F3F4F6" weight={800} />
+            <line x1={0} y1={BASE + 1} x2={310} y2={BASE + 1} stroke="#94A3B8" strokeWidth={3} />
+            {[0, 20].map(v => <SvgText key={v} x={26} y={py(v) + 6} text={`${v}`} size={16} anchor="end" color="#D1D5DB" />)}
+            <motion.rect x={36} y={py(PHOS.high)} width={186} height={py(PHOS.low) - py(PHOS.high)} rx={6} fill={C.glycogen}
+                style={{ transformBox: 'fill-box', transformOrigin: 'left center' }}
+                initial={false} animate={{ scaleX: show ? 1 : 0 }} transition={{ duration: reduce ? 0 : DUR.bar, delay: show ? 0.2 : 0, ease: EASE_OUT }} />
+            <text x={48} y={py(PHOS.high) + (py(PHOS.low) - py(PHOS.high)) / 2 + 6} fontSize={17} fontWeight={800} fill="#FFFFFF" style={{ fontFamily: 'var(--font-body)' }}>21,4–29,6%</text>
+            {['35', '65', '90'].map((v, i) => <SvgText key={v} x={66 + i * 62} y={BASE + 22} text={`${v}%`} size={16} anchor="middle" color="#D1D5DB" />)}
+            <motion.g initial={false} animate={{ opacity: show ? 1 : 0, y: show ? 0 : -10 }} transition={{ duration: DUR.enter, delay: show ? 0.7 : 0, ease: EASE_OUT }}>
+                <circle cx={262} cy={py(PHOS.drop)} r={10} fill={C.stone} stroke="#04080F" strokeWidth={2} />
+                <SvgText x={262} y={py(PHOS.drop) - 16} text="15,3%" size={17} anchor="middle" color={C.stone} weight={800} />
+                <SvgText x={262} y={BASE + 22} text="90%·10′" size={16} anchor="middle" color="#D1D5DB" />
+            </motion.g>
+        </motion.g>
     );
 };

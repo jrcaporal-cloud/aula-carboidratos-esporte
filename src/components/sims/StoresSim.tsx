@@ -1,110 +1,152 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_IN_OUT, EASE_OUT } from '../../lib/motion';
-import { Beat } from './kit/Beat';
-import { BigStat } from './kit/Stamp';
-import { CalcChip } from './kit/chips';
-import { Source } from './kit/ui';
-import { BODY_FONT, C, PANEL_BG } from './kit/palette';
-import { FAT_G_EQUIV, SOURCE, STEPS, ZOOM_OUT, side } from './ato2/stores.content';
+import { CalcChip, DesignChip } from './kit/chips';
+import { KeyFact } from './kit/rhythm';
+import { C } from './kit/palette';
+import { sourcesUpTo } from './kit/sources';
+import { Accrue, MolFrame, StepText } from './ato2/moleculaA.ui';
+import { LEDGER, STEPS, STORES, type Store, type StoreId } from './ato2/stores.content';
 
 /**
- * Slide 24 · Quanto Cabe no Corpo. Quadrados com área proporcional: 4 g → ~100 g → ~400–500 g.
- * No fim a câmera se afasta (escala) e a gordura entra ao lado, para dar a ordem de grandeza.
+ * Slide 24 · Quanto Cabe no Corpo. Palco: quadrados com área ∝ massa sobre um chão; a cada clique a câmera
+ * se afasta (escala) e entra um estoque maior (sangue → fígado → músculo → gordura, só para escala).
+ * Painel: livro-caixa em gramas e kcal que acumula, e o ~40× no fim. Só transform e opacidade.
  */
-const BASE = 40; // margem esquerda do palco
-const FLOOR = 44; // distância do chão até a base dos quadrados
+const STAGE_W = 640;
+const GROUND = 64; // distância do chão até a base do palco (px)
+const LEFT = 40;
+const GAP = 30;
+const SLOTS: readonly StoreId[] = ['blood', 'liver', 'muscle', 'fat'];
 
-interface Square { id: string; grams: number; x: number; from: number; color: string; dashed?: boolean }
+const side = (grams: number, k: number) => Math.sqrt(grams) * k;
+const slotGrams = (id: StoreId) => (id === 'muscle' ? 500 : STORES.find(s => s.id === id)!.grams);
 
-const SQUARES: readonly Square[] = [
-    { id: 'blood', grams: 4, x: BASE, from: 0, color: C.glucose },
-    { id: 'liver', grams: 100, x: BASE + 72, from: 1, color: C.glycogen },
-    { id: 'muscle-max', grams: 500, x: BASE + 240, from: 2, color: C.glycogenSoft, dashed: true },
-    { id: 'muscle', grams: 400, x: BASE + 240, from: 2, color: C.glycogen },
-];
+/** x de cada vaga no passo (os quadrados seguem lado a lado, com vão fixo em px). */
+const slotX = (step: number): Record<StoreId, number> => {
+    const k = STEPS[step].k;
+    const out = {} as Record<StoreId, number>;
+    let x = LEFT;
+    SLOTS.forEach(id => {
+        out[id] = x;
+        x += side(slotGrams(id), k) + GAP;
+    });
+    return { ...out, muscleMax: out.muscle };
+};
 
-const NAMES = [
-    { text: 'sangue', x: BASE - 10, from: 0 },
-    { text: 'fígado', x: BASE + 90, from: 1 },
-    { text: 'músculo', x: BASE + 330, from: 2 },
-] as const;
+const NAMES: Record<Exclude<StoreId, 'muscleMax'>, { name: string; grams: string }> = {
+    blood: { name: 'sangue', grams: '4 g' },
+    liver: { name: 'fígado', grams: '~100 g' },
+    muscle: { name: 'músculo', grams: '~400–500 g' },
+    fat: { name: 'gordura', grams: '10,5 kg' },
+};
+
+const Square = ({ s, step, x, reduce }: { s: Store; step: number; x: number; reduce: boolean }) => {
+    const on = step >= s.from;
+    const base = Math.sqrt(s.grams);
+    return (
+        <motion.div className="absolute left-0" aria-hidden
+            style={{ bottom: GROUND, width: base, height: base, background: s.color, transformOrigin: 'left bottom' }}
+            initial={false}
+            animate={{ x: Math.min(x, STAGE_W - 40), scale: on ? STEPS[step].k : 0.02, opacity: on ? 1 : 0 }}
+            transition={{ duration: reduce ? 0 : 0.9, ease: EASE_IN_OUT, opacity: { duration: DUR.enter, delay: on && step === s.from ? 0.45 : 0 } }} />
+    );
+};
+
+const Label = ({ id, step, x }: { id: Exclude<StoreId, 'muscleMax'>; step: number; x: number }) => {
+    const k = STEPS[step].k;
+    const w = side(slotGrams(id), k);
+    const store = STORES.find(s => s.id === id)!;
+    const small = step === 3 && id !== 'fat';
+    const on = step >= store.from && !small;
+    const top = 456 - GROUND - w;
+    return (
+        <>
+            <motion.span className="absolute left-0 whitespace-nowrap text-center text-[18px] font-semibold text-gray-100"
+                style={{ top: 456 - GROUND + 8, width: 160, marginLeft: -80 }} initial={false}
+                animate={{ x: Math.min(x + w / 2, STAGE_W - 100), opacity: on ? 1 : 0 }} transition={{ duration: 0.9, ease: EASE_IN_OUT, opacity: { duration: DUR.text } }}>
+                {NAMES[id].name}
+            </motion.span>
+            <motion.span className="absolute left-0 whitespace-nowrap text-center font-display text-[22px] font-bold"
+                style={{ top: 0, width: 200, marginLeft: -100, color: id === 'fat' ? C.fat : id === 'blood' ? C.glucoseSoft : C.glycogenSoft }}
+                initial={false} animate={{ x: Math.min(x + w / 2, STAGE_W - 100), y: Math.max(top - 34, 6), opacity: on ? 1 : 0 }}
+                transition={{ duration: 0.9, ease: EASE_IN_OUT, opacity: { duration: DUR.text, delay: on ? 0.5 : 0 } }}>
+                {NAMES[id].grams}
+            </motion.span>
+        </>
+    );
+};
+
+const Stage = ({ step }: { step: number }) => {
+    const reduce = useReducedMotion() ?? false;
+    const xs = slotX(step);
+    return (
+        <div className="relative h-full overflow-hidden" style={{ width: STAGE_W }}>
+            <div className="absolute inset-x-4 h-[3px] bg-slate-500" style={{ bottom: GROUND - 3 }} aria-hidden />
+            {STORES.map(s => <Square key={s.id} s={s} step={step} x={xs[s.id]} reduce={reduce} />)}
+            {(['blood', 'liver', 'muscle', 'fat'] as const).map(id => <Label key={id} id={id} step={step} x={xs[id]} />)}
+            <motion.span className="absolute left-[24px] text-[18px] font-semibold text-gray-100" style={{ top: 456 - GROUND + 8 }}
+                initial={false} animate={{ opacity: step === 3 ? 1 : 0 }} transition={{ duration: DUR.text, delay: step === 3 ? 0.6 : 0 }}>
+                carboidrato
+            </motion.span>
+            <motion.span className="absolute left-4 top-3 text-[16px] text-gray-300" initial={false}
+                animate={{ opacity: step === 2 ? 1 : 0 }} transition={{ duration: DUR.text, delay: step === 2 ? 0.6 : 0 }}>
+                claro = 500 g · escuro = 400 g
+            </motion.span>
+            <motion.span className="absolute left-[230px] text-[20px] font-semibold text-amber-200" style={{ top: 456 - GROUND - 96 }}
+                initial={false} animate={{ opacity: step === 0 ? 1 : 0 }} transition={{ duration: DUR.text, delay: step === 0 ? 0.6 : 0 }}>
+                ≈ 1 colher de chá, no sangue inteiro
+            </motion.span>
+            <span className="absolute bottom-3 right-4 text-[16px] text-gray-300">área ∝ {step === 3 ? 'energia' : 'massa'}</span>
+        </div>
+    );
+};
+
+const Ledger = ({ step }: { step: number }) => (
+    <table className="w-full border-separate border-spacing-y-0 text-left">
+        <thead>
+            <tr className="text-[15px] text-gray-300">
+                <th className="pb-1 font-normal">estoque (70 kg)</th>
+                <th className="pb-1 text-right font-normal">massa</th>
+                <th className="pb-1 text-right font-normal">kcal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {LEDGER.filter(r => r.at <= step).map((r, i) => (
+                <motion.tr key={r.label} initial={r.at === step ? { opacity: 0, y: 6 } : false} animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: DUR.enter, delay: r.at === step ? 0.55 + i * 0.06 : 0, ease: EASE_OUT }}
+                    className={r.total ? 'text-[17px] font-bold' : 'text-[16px]'}
+                    style={{ color: r.total === 'fat' ? C.fat : r.total === 'cho' ? C.glucoseSoft : '#F3F4F6' }}>
+                    <td className="py-0.5">{r.label}</td>
+                    <td className="py-0.5 pl-3 text-right tabular-nums">{r.grams}</td>
+                    <td className="py-0.5 pl-3 text-right tabular-nums">{r.kcal}</td>
+                </motion.tr>
+            ))}
+        </tbody>
+    </table>
+);
 
 export default function StoresSim() {
-    const { step } = useSlideSteps(STEPS.length);
-    const reduce = useReducedMotion();
+    const { step, setStep } = useSlideSteps(STEPS.length);
     const s = STEPS[step];
-    const z = s.zoom;
-    const zoomed = z < 1;
-    const move = { duration: reduce ? 0 : 0.9, ease: EASE_IN_OUT };
-
     return (
-        <div className="not-prose flex flex-col gap-4" style={BODY_FONT}>
-            <div className="grid grid-cols-[620px_1fr] gap-8 rounded-2xl p-5" style={PANEL_BG}>
-                <div className="relative h-[370px] overflow-hidden">
-                    <div className="absolute inset-x-0 h-[3px] bg-slate-500" style={{ bottom: FLOOR - 3 }} aria-hidden />
-                    {SQUARES.map(q => {
-                        const on = step >= q.from && !(q.dashed && zoomed);
-                        const w = side(q.grams);
-                        return (
-                            <motion.div key={q.id} className="absolute left-0 rounded-[3px]"
-                                style={{
-                                    bottom: FLOOR, width: w, height: w, transformOrigin: 'left bottom',
-                                    background: q.dashed ? 'transparent' : q.color,
-                                    border: q.dashed ? `3px dashed ${q.color}` : 'none',
-                                }}
-                                initial={{ x: q.x, scale: 0.9, opacity: 0 }}
-                                animate={{ x: BASE + (q.x - BASE) * z, scale: on ? z : z * 0.9, opacity: on ? 1 : 0 }}
-                                transition={{ ...move, opacity: { duration: DUR.enter, ease: EASE_OUT } }} />
-                        );
-                    })}
-                    <motion.div className="absolute left-0 rounded-[3px]"
-                        style={{ bottom: FLOOR, width: side(FAT_G_EQUIV), height: side(FAT_G_EQUIV), transformOrigin: 'left bottom', background: C.fat }}
-                        initial={{ x: 230, scale: ZOOM_OUT * 0.9, opacity: 0 }}
-                        animate={{ x: 230, scale: zoomed ? ZOOM_OUT : ZOOM_OUT * 0.9, opacity: zoomed ? 1 : 0 }}
-                        transition={{ delay: zoomed ? 0.5 : 0, duration: DUR.morph, ease: EASE_OUT }} />
-
-                    {NAMES.map(n => (
-                        <motion.span key={n.text} className="absolute bottom-0 text-[18px] text-gray-200" style={{ left: n.x }}
-                            animate={{ opacity: step >= n.from && !zoomed ? 1 : 0 }} transition={{ duration: DUR.text }}>
-                            {n.text}
-                        </motion.span>
-                    ))}
-                    <motion.span className="absolute bottom-0 left-[20px] text-[18px] text-gray-200"
-                        animate={{ opacity: zoomed ? 1 : 0 }} transition={{ delay: zoomed ? 0.6 : 0, duration: DUR.text }}>
-                        carboidrato
-                    </motion.span>
-                    <motion.span className="absolute bottom-0 left-[310px] text-[18px] text-gray-200"
-                        animate={{ opacity: zoomed ? 1 : 0 }} transition={{ delay: zoomed ? 0.6 : 0, duration: DUR.text }}>
-                        gordura (só para escala)
-                    </motion.span>
-                    {step === 2 && (
-                        <motion.span className="absolute right-0 top-2 text-[16px] text-gray-300"
-                            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-                            tracejado = 500 g
-                        </motion.span>
-                    )}
-                </div>
-
-                <div className="flex flex-col justify-center gap-5">
-                    {zoomed && (
-                        <motion.span className="self-end" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: DUR.enter }}>
-                            <CalcChip>cálculo: 4 e 9 kcal/g; 70 kg, 15% de gordura</CalcChip>
-                        </motion.span>
-                    )}
-                    <Beat beat={step}>
-                        <BigStat value={s.value} caption={s.caption} size={zoomed ? 96 : s.value.length > 6 ? 64 : 84}
-                            color={step === 0 ? C.glucose : zoomed ? C.fat : C.glycogenSoft} />
-                    </Beat>
-                    {zoomed && (
-                        <motion.div className="flex flex-col items-start gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                            transition={{ delay: 0.4, duration: DUR.enter }}>
-                            <span className="text-[20px] leading-snug text-gray-200">carboidrato ≈ 2.000–2.400 kcal<br />gordura ≈ 94.500 kcal</span>
-                        </motion.div>
-                    )}
-                </div>
-            </div>
-            <Source>{SOURCE}</Source>
-        </div>
+        <MolFrame tabs={STEPS.map(x => x.tab)} step={step} setStep={setStep} layoutId="stores-tabs" stageWidth={STAGE_W}
+            stage={<Stage step={step} />}
+            chips={<>
+                <DesignChip>revisões · pessoa de 70 kg</DesignChip>
+                {step === 3 && <CalcChip>kcal: 4 e 9 kcal/g; 70 kg, 15% de gordura</CalcChip>}
+            </>}
+            source={sourcesUpTo(STEPS.map(x => x.sources), step)}>
+            <StepText step={step} color={s.color} headline={s.headline} text={s.text} />
+            <Ledger step={step} />
+            {step === 3 && (
+                <Accrue at={3} step={step} delay={0.8} className="flex items-baseline gap-3">
+                    <KeyFact color={C.fat} delay={0.9}>
+                        <span className="font-display text-[48px] font-bold leading-none" style={{ color: C.fat }}>~40×</span>
+                    </KeyFact>
+                    <span className="text-[17px] leading-snug text-gray-100">mais energia na gordura do que em todo o carboidrato</span>
+                </Accrue>
+            )}
+        </MolFrame>
     );
 }

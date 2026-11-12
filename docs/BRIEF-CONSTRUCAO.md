@@ -28,9 +28,13 @@ Varie: dois slides seguidos não devem ter a mesma composição. Cada slide = UM
 ## O que a videochamada proíbe (regra dura)
 - **Sem brilho** (box-shadow/text-shadow/glow/bloom), **sem degradê** de fundo e **sem partícula fina**: o codec transforma em borrão e blocos.
 - **Sem hairline**: borda de 1 px com baixo contraste some. Bordas ≥ 2 px ou nenhuma; separe por espaço e por bloco de cor chapada.
-- **Sem movimento contínuo em loop** atrás do conteúdo (pulsar, girar, pisca-pisca): na chamada isso vira ruído e trava. Animação = consequência de um passo, e termina.
+- ~~Sem movimento contínuo em loop~~ **LIBERADO em 12/11/2026, com limites** (o professor quer loops como os de tamponantes e nitrato):
+  loop só no PALCO, para mostrar um FLUXO que é o próprio conteúdo (glicose entrando pelo GLUT4, lactato indo e voltando, H⁺ saindo,
+  sangue circulando). Formas grandes e chapadas (≥ 10 px), poucas (≤ 8 em movimento ao mesmo tempo), ciclo lento (≥ 2,5 s, com `repeatDelay`),
+  só transform/opacity, nunca atrás do texto do painel, nada piscando nem girando sem sentido. No máximo 1 grupo em loop por passo.
+  Com `useReducedMotion()` o loop para e fica a pose final. Sem partícula fina, sem rastro com brilho.
 - **Texto grande**: corpo ≥ 20 px, rótulos ≥ 16 px, nada < 14 px efetivos. A frase-chave do passo em 26–34 px. Números-chave 64–96 px.
-- **Baixa densidade**: no máximo ~35 palavras visíveis por passo (fora a linha de fonte). O resto vai para as notas do professor.
+- ~~Baixa densidade: no máximo ~35 palavras por passo~~ **REVOGADO em 12/11/2026** (o professor quer slides ricos como os de nitrato e tamponantes). Ver "Formato palco + painel" abaixo.
 - Contraste alto, cores chapadas da paleta. Fundo dos painéis: `PANEL_BG`.
 
 ## Regras de conteúdo
@@ -75,7 +79,7 @@ Varie: dois slides seguidos não devem ter a mesma composição. Cada slide = UM
 ## Verificação obrigatória (antes de responder)
 1. Suba seu servidor em segundo plano na SUA porta: `node node_modules/vite/bin/vite.js --port <PORTA> --strictPort` (no diretório do projeto). Derrube-o no fim.
 2. Para cada simulador: `node scripts/qa/sim-check.mjs <Nome> <PORTA> <pasta-de-capturas> 1280x720` e de novo com `1920x1080`. Zero erro de console, zero estouro, zero texto < 14 px. A bancada `?sim=Nome` mostra o simulador dentro do slide real.
-3. ABRA (ferramenta Read) a captura de TODOS os passos de cada simulador e olhe de verdade: hierarquia, legibilidade a distância, nada sobreposto, cara de aula de pós (não de painel genérico), ≤ 35 palavras por passo, nenhum brilho ou degradê. Renderizar não é olhar. Corrija e capture de novo.
+3. ABRA (ferramenta Read) a captura de TODOS os passos de cada simulador e olhe de verdade: hierarquia, legibilidade a distância, nada sobreposto, cara de aula de pós (não de painel genérico), detalhe suficiente para pós (mecanismo, n, desenho, números do dossiê na tela), nenhum brilho ou degradê. Renderizar não é olhar. Corrija e capture de novo.
 4. `npx tsc -b` e `npx eslint <seus arquivos>` limpos nos SEUS arquivos (erros de outros atos em construção não são seus).
 5. Resposta final em ≤ 20 linhas: arquivos criados, o que cada sim faz em 1 linha (e qual recurso visual usa), resultado das checagens, pendências e dúvidas de conteúdo.
 
@@ -88,3 +92,22 @@ Varie: dois slides seguidos não devem ter a mesma composição. Cada slide = UM
 - **Sem número de slide no texto visível** ("veja o slide 124"): os ids não são a posição na aula. Cite pelo título ("no slide do Supernova").
 - **Sem sombra/halo próprios:** o `drop-shadow` do contêiner foi removido; não recrie com text-shadow/box-shadow/filter.
 - **Bordas:** ≥ 2 px (o `Panel` do kit passou para 2 px; confira se algo apertado estourou 2 px).
+
+## Formato palco + painel (12/11/2026, vale para toda refação)
+Referência viva: `GlycolysisSim.tsx` (slide 42) e os slides das aulas de nitrato e tamponantes. Revisão slide a slide em `docs/REVISAO-VISUAL-2026-11-12.md`.
+- **Abas com nome** (`StepTabs`) no lugar de "Passo n de m"; selos à direita das abas.
+- **Palco à esquerda (~60%)**: a arte/mecanismo desenhado com rigor (enzimas, transportadores, desenho do estudo, eixos com unidade).
+- **Painel à direita (~40%)**: título colorido do passo (24 px), texto de 30–40 palavras com o estudo (n, desenho, resultado, limitação), número-chave ou livro-caixa, fonte curta no pé (`sourcesUpTo`).
+- **O último passo ACUMULA**: nada do que foi mostrado some; o quadro final é a soma dos passos. Densidade de pós como tamponantes/nitrato (~300–450 palavras na tela no fim do slide). Sem teto de palavras; o limite é caber legível (corpo ≥ 16–17 px no painel).
+- **Animação com propósito, uma vez por clique** (≤ 1,2 s): a molécula percorre o trecho novo, a moeda salta no degrau, a linha se desenha. Os números contam até o valor.
+- Os números novos saem das notas (`notas.json`, campo "mensagem") e dos dossiês; nada inventado.
+
+## Refação de 12/11 — regras de trabalho em paralelo (vários agentes ao mesmo tempo)
+- Servidor ÚNICO já rodando: `http://localhost:5360/aula-carboidratos-esporte/` (HMR). NÃO suba outro vite. Use `node scripts/qa/sim-check.mjs <Nome> 5360 <pasta> 1280x720`.
+- Checagem de tipos SEM `-b` (o `-b` grava cache e briga com os outros agentes): `npx tsc -p tsconfig.app.json --noEmit`. Erro em arquivo que não é seu: ignore.
+- NÃO edite `docs/fragmentos/*.json`, `src/data/*`, `kit/`, `deck/`, `lib/` nem arquivos de outro agente. Peça nova vai na pasta do seu ato (`ato<N>/`), com nome que não colida.
+- Mudou título, subtítulo, fontes ou notas de um slide? Grave um remendo em `docs/fragmentos/_remendos/<id>.json`:
+  `{"slide": {"title": "...", "subtitle": "...", "fontes": ["Citação completa — o que o slide usa dela.", ...]}, "notas": {"minutos": n, "mensagem": "...", "pergunta": "...", "transicao": "..."}}`
+  (só as chaves que mudaram; "fontes" substitui a lista inteira). O coordenador junta tudo e roda o `montar-aula.py`.
+- Dossiê novo (livro-texto, artigo que o slide passa a usar): só se você CONFERIR a fonte (busca na web) e anotar no remendo; não edite os dossiês.
+- Ritmo: `kit/rhythm.tsx` tem `Reveal` (entrada em ordem arte → número → legenda) e `KeyFact` (pulso no dado-chave, 1 por passo). Além disso: `Beat`, `CountUp`/`CountSvgText`, `BigStat`, `Stamp`, `Wipe`, `Grow`, `useMorphPath`, `sourcesUpTo` (`kit/sources.ts`), `IllustrativeChip` com texto (`<IllustrativeChip>curva ilustrativa</IllustrativeChip>`).

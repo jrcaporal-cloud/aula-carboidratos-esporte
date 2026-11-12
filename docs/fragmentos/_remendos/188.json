@@ -1,0 +1,14 @@
+{
+ "slide": {
+  "fontes": [
+   "Heneghan C et al. The evidence underpinning sports performance products: a systematic assessment. BMJ Open 2012;2(4):e001702. DOI 10.1136/bmjopen-2012-001702 — 1.035 páginas, 431 alegações, 104 produtos, 52,8% dos sites sem referência, 72 de 146 referências impossíveis de avaliar, nenhuma revisão sistemática, randomização em 58,1%, cegamento claro em 27,0%, sigilo de alocação claro em 6,8%, 3 de 74 (2,7%) de alta qualidade, 84% com alto risco de viés.",
+   "Smith JW et al. Curvilinear dose-response relationship of carbohydrate (0-120 g·h−1) and performance. Med Sci Sports Exerc 2013;45(2):336-341. DOI 10.1249/MSS.0b013e31827205d1 — 1º autor afiliado ao Gatorade Sports Science Institute (afiliação conferida no registro Europe PMC, PMID 22968309, em 12/11/2026); duplo-cego, 4 centros, n = 51."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Heneghan 2012 (BMJ Open, às vésperas de Londres 2012): 1.035 páginas, 431 alegações de 104 produtos (de várias categorias); 52,8% dos sites sem nenhuma referência. Das 146 referências, 72 impossíveis de avaliar; sobraram 74 estudos, nenhuma revisão sistemática. Nos estudos avaliados: 84% com alto risco de viés, randomização em 58,1%, cegamento claro em 27,0%, sigilo de alocação em 6,8%; só 3 de 74 (2,7%) de alta qualidade. Isso não torna o carboidrato inútil: explica desenhos que favorecem o produto (jejum, TTE, placebo de água). Smith 2013 tem o 1º autor no Gatorade Sports Science Institute e mesmo assim é duplo-cego, em 4 centros, com 51 atletas: julgue pelo método. As quatro perguntas: cegos? jejum? TTE ou contrarrelógio? placebo de água ou de sabor igual?",
+  "pergunta": "Qual dessas quatro perguntas você costuma pular quando lê um estudo?",
+  "transicao": "Com essas ferramentas, voltamos às oito afirmações do começo da aula."
+ }
+}

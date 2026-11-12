@@ -1,109 +1,90 @@
 import { motion } from 'framer-motion';
 import { User } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT, stagger } from '../../lib/motion';
 import { C } from './kit/palette';
-import { Beat, Wipe } from './kit/Beat';
-import { BigStat } from './kit/Stamp';
+import { Wipe } from './kit/Beat';
+import { CountUp } from './kit/CountUp';
 import { DesignChip, IllustrativeChip } from './kit/chips';
-import { sample, toPath } from './kit/useMorphPath';
-import { Frame } from './ato10/Frame';
-import { BOWLER, DESIGNS, glucoseAt, LINES, MATKIN, SOURCE, THOMAS, THRESHOLD } from './ato10/cgm.content';
+import { sourcesUpTo } from './kit/sources';
+import { MedirLedger, MedirShell } from './ato10/MedirShell';
+import { Monitor, SensorDrawing } from './ato10/CgmParts';
+import { BOWLER, LEDGER, MATKIN, STEPS, THOMAS } from './ato10/cgm.content';
 
 /**
- * Slide 185 · Glicose Contínua em Atleta. Uma faixa de monitor no alto (curva ilustrativa de 24 h, área acima de 6 mmol/L
- * pintada); embaixo, o que os estudos acharam: picos comuns em subelite, elite "normal", e o CGM que não separa REDs.
+ * Slide 185 · Glicose Contínua em Atleta (palco + painel). No alto, o sensor em corte (a glicose sai do capilar e chega ao
+ * filamento, em laço lento) e o monitor de 24 h com o selo "curva ilustrativa" preso à curva até o fim. Embaixo, um
+ * cartão por estudo entra a cada passo e fica: subelite (Thomas 2016), elite (Bowler 2025), REDs (Matkin-Hussey 2026).
  */
-const VB_W = 1136;
-const VB_H = 170;
-const Y_MIN = 3.5;
-const Y_MAX = 9;
-const yOf = (mmol: number) => VB_H - ((mmol - Y_MIN) / (Y_MAX - Y_MIN)) * VB_H;
-const CURVE = sample(120, 0, 24, glucoseAt, (h, g) => [(h / 24) * VB_W, yOf(g)]);
-const LINE_D = toPath(CURVE);
-const AREA_D = `${LINE_D} L${VB_W} ${VB_H} L0 ${VB_H} Z`;
-const Y_TH = yOf(THRESHOLD);
+const STAGE_W = 680;
+const ACCENT = [C.glucose, C.glucoseSoft, C.ok, C.stone] as const;
 
-const EVENTS = [
-    { at: 7.5, label: 'café' },
-    { at: 12.5, label: 'almoço' },
-    { at: 17, label: 'treino intenso' },
-    { at: 20, label: 'jantar' },
-] as const;
-
-const Monitor = ({ lit }: { lit: boolean }) => (
-    <div className="relative">
-        <div className="relative h-[28px]">
-            {EVENTS.map(e => (
-                <span key={e.label} className="absolute -translate-x-1/2 whitespace-nowrap text-[17px] text-gray-200" style={{ left: `${(e.at / 24) * 100}%` }}>{e.label}</span>
-            ))}
-        </div>
-        <Wipe from="left" duration={DUR.draw}>
-            <svg viewBox={`0 0 ${VB_W} ${VB_H}`} width="100%" height={VB_H} aria-label="Curva ilustrativa de glicose em 24 h">
-                <defs><clipPath id="cgm-above"><rect x={0} y={0} width={VB_W} height={Y_TH} /></clipPath></defs>
-                <motion.path d={AREA_D} fill={C.glucose} clipPath="url(#cgm-above)" initial={false}
-                    animate={{ opacity: lit ? 0.45 : 0.18 }} transition={{ duration: DUR.enter }} />
-                <line x1={0} x2={VB_W} y1={Y_TH} y2={Y_TH} stroke={C.stone} strokeWidth={2} strokeDasharray="10 8" />
-                <path d={LINE_D} fill="none" stroke={C.glucose} strokeWidth={4} strokeLinejoin="round" />
-            </svg>
-        </Wipe>
-        <span className="absolute right-0 font-mono text-[16px]" style={{ top: Y_TH - 26, color: C.stone }}>6,0 mmol/L</span>
-        <div className="mt-1 flex justify-between font-mono text-[16px] text-gray-300">
-            {['0 h', '6 h', '12 h', '18 h', '24 h'].map(t => <span key={t}>{t}</span>)}
-        </div>
-    </div>
+/** Cartão de estudo: a moldura e o título já estão na tela (a agenda do slide); o conteúdo entra no passo dele. */
+const Tile = ({ show, title, color, children }: { show: boolean; title: string; color: string; children: ReactNode }) => (
+    <motion.div className="flex h-full flex-col gap-1.5 rounded-xl border-2 px-3 py-2" initial={false}
+        animate={{ opacity: show ? 1 : 0.6, borderColor: show ? `${color}80` : 'rgba(255,255,255,0.16)' }} transition={{ duration: DUR.enter }}>
+        <span className="text-[16px] font-semibold leading-tight" style={{ color: show ? color : '#D1D5DB' }}>{title}</span>
+        <Wipe show={show} from="top" className="flex min-h-0 flex-1 flex-col gap-1.5">{show && children}</Wipe>
+    </motion.div>
 );
 
 const People = () => (
-    <div className="flex flex-col gap-4">
-        {THOMAS.rows.map((row, r) => (
-            <div key={row.text} className="flex items-center gap-6">
-                <div className="flex gap-1">
-                    {Array.from({ length: 10 }, (_, i) => (
-                        <motion.span key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: stagger(i, r * 0.3, 0.03), duration: DUR.text }}>
-                            <User size={34} strokeWidth={2.6} color={i < row.lit ? C.glucose : '#4B5563'} fill={i < row.lit ? C.glucose : 'none'} aria-hidden />
-                        </motion.span>
-                    ))}
-                </div>
-                <span className="font-display text-[40px] font-bold tabular-nums leading-none text-white">{row.lit} de 10</span>
-                <span className="max-w-[360px] text-[19px] leading-snug text-gray-200">{row.text}</span>
-            </div>
-        ))}
-    </div>
-);
-
-const Elite = () => (
-    <div className="flex items-end gap-14">
-        <BigStat value={BOWLER.mean.value} caption={BOWLER.mean.caption} color={C.ok} size={64} />
-        <BigStat value={BOWLER.mage.value} caption={BOWLER.mage.caption} color={C.ok} size={64} delay={0.15} />
-        <span className="pb-1 text-[20px] text-gray-200">{BOWLER.note}</span>
-    </div>
-);
-
-const Reds = () => (
-    <div className="flex flex-col gap-4">
-        <div className="flex items-end gap-14">
-            {MATKIN.stats.map((s, i) => <BigStat key={s.value} value={s.value} caption={s.caption} color={C.stone} size={60} delay={i * 0.15} />)}
+    <div className="flex flex-col gap-1.5">
+        <div className="grid grid-cols-5 gap-x-1 gap-y-0.5 self-start">
+            {Array.from({ length: 10 }, (_, i) => (
+                <motion.span key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: stagger(i, 0.3, 0.04), duration: DUR.text }}>
+                    <User size={26} strokeWidth={2.6} color={i < THOMAS.lit ? C.glucose : '#6B7280'} fill={i < THOMAS.lit ? C.glucose : 'none'} aria-hidden />
+                </motion.span>
+            ))}
         </div>
-        <span className="text-[20px] italic text-gray-200">{MATKIN.quote}</span>
+        <span className="text-[16px] leading-tight text-gray-100"><b className="text-[22px]" style={{ color: C.glucoseSoft }}>4 de 10</b> &gt; 70% do tempo acima de 6,0</span>
+        <span className="text-[16px] leading-tight text-gray-100"><b className="text-[22px] text-white">3 de 10</b> jejum na faixa de pré-diabetes</span>
     </div>
 );
 
-const BODY = [null, <People key="p" />, <Elite key="e" />, <Reds key="r" />];
+const Stat = ({ value, unit, caption, color, delay = 0 }: { value: string; unit?: string; caption: string; color: string; delay?: number }) => (
+    <div className="flex flex-col leading-tight">
+        <span className="flex items-baseline gap-1">
+            <CountUp text={value} delay={delay} className="text-[26px] font-bold tabular-nums" style={{ color }} />
+            {unit && <span className="text-[16px] text-gray-300">{unit}</span>}
+        </span>
+        <span className="text-[16px] text-gray-200">{caption}</span>
+    </div>
+);
 
 export default function CgmSim() {
-    const { step } = useSlideSteps(LINES.length);
-    const chip = step === 0 ? <IllustrativeChip /> : <DesignChip>{DESIGNS[step]}</DesignChip>;
-    return (
-        <Frame step={step} line={LINES[step]} chips={chip} source={SOURCE}>
-            <div className="flex h-full flex-col gap-6">
-                <motion.div animate={{ opacity: step >= 2 ? 0.65 : 1 }} transition={{ duration: DUR.enter, ease: EASE_OUT }}>
-                    <Monitor lit={step === 1} />
-                </motion.div>
-                <div className="min-h-0 flex-1">
-                    {step > 0 && <Beat beat={step}>{BODY[step]}</Beat>}
-                </div>
+    const { step, setStep } = useSlideSteps(STEPS.length);
+    const s = STEPS[step];
+    const stage = (
+        <div className="flex h-full flex-col gap-2 px-3 py-2">
+            <div className="flex items-start gap-2">
+                <SensorDrawing />
+                <Monitor lit={step === 1} />
             </div>
-        </Frame>
+            <div className="grid min-h-0 flex-1 grid-cols-3 gap-2.5">
+                <Tile show={step >= 1} title="Subelite · n = 10" color={C.glucoseSoft}><People /></Tile>
+                <Tile show={step >= 2} title="Elite · n = 12 · 8,4 g/kg/d" color={C.ok}>
+                    <Stat value={BOWLER.mean} unit="mg/dL" caption="média de 24 h" color={C.ok} delay={0.3} />
+                    <Stat value={BOWLER.night} unit="mg/dL" caption="média noturna" color={C.ok} delay={0.45} />
+                    <Stat value={BOWLER.mage} unit="mg/dL" caption="variabilidade (MAGE)" color={C.ok} delay={0.6} />
+                </Tile>
+                <Tile show={step >= 3} title="REDs × controle · n = 18" color={C.stone}>
+                    <Stat value={MATKIN.night} caption="glicose noturna" color={C.stone} delay={0.3} />
+                    <Stat value={MATKIN.mage} caption="variabilidade (MAGE)" color={C.stone} delay={0.45} />
+                    <motion.span className="mt-auto text-[16px] leading-tight text-gray-100" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                        transition={{ delay: 0.7, duration: DUR.enter, ease: EASE_OUT }}>
+                        2024: sem consenso para interpretar
+                    </motion.span>
+                </Tile>
+            </div>
+        </div>
+    );
+    return (
+        <MedirShell tabs={STEPS.map(t => t.tab)} step={step} setStep={setStep} layoutId="ato10-cgm-tabs"
+            chips={<><DesignChip>{s.design}</DesignChip><IllustrativeChip>curva de 24 h: ilustrativa</IllustrativeChip></>}
+            stageWidth={STAGE_W} stage={stage} accent={ACCENT[step]} headline={s.headline} text={s.text}
+            ledger={<MedirLedger rows={LEDGER} step={step} termWidth={120} />}
+            sources={sourcesUpTo(STEPS.map(t => t.sources), step)} />
     );
 }

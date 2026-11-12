@@ -1,66 +1,64 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT, stagger } from '../../lib/motion';
 import { C } from './kit/palette';
-import { BigStat } from './kit/Stamp';
 import { AnimalChip, DesignChip } from './kit/chips';
 import { Model3DHint } from './kit/Model3DHint';
-import { BarRow, SourceLine, StepHeader } from './ato3/shared';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, Source, StepTabs } from './kit/ui';
 import { Glut4Door } from './ato3/Glut4Door';
-import { Glut4Window } from './ato3/Glut4Window';
-import { BAR_MAX, BLOCK_ROWS, GLUT4_STEPS, SUM_ROWS } from './ato3/glut4.content';
+import { GLUT4_CHIPS, GLUT4_ROWS, GLUT4_STEPS, GLUT4_UNITS, type Glut4Tone } from './ato3/glut4.content';
 
 /**
- * Slide 40 · Duas Chaves para a Mesma Porta.
- * À esquerda, a porta (GLUT4) com as fechaduras da insulina e da contração; à direita, o número que cada passo prova:
- * 50× → wortmanina trava a insulina → não trava a contração → as duas somam → a janela de ~48 h.
+ * Slide 40 · Duas Chaves para a Mesma Porta, no formato palco + painel. À esquerda, a fibra em corte: as vesículas de
+ * GLUT4 sobem à sarcolema e ao túbulo T conforme as chaves giram (insulina pela PI3K, contração por Ca²⁺/AMPK/Rac1).
+ * À direita, o texto do passo e o livro de bancada (Lund 1995 → Mikines 1988), que acumula. Nada some.
  */
 
-const UNIT = 'µmol·mL⁻¹·h⁻¹';
-const COLOR_BY_KEY: Record<string, string> = { ins: C.insulin, insW: C.insulin, con: C.stone, conW: C.stone, c: C.stone, i: C.insulin, ci: C.glucose };
+const TONE: Record<Glut4Tone, string> = { glucose: C.glucose, insulin: C.insulinSoft, contraction: C.stone };
+const ACCENT = [C.glucose, C.insulinSoft, C.stone, C.glucose, C.insulinSoft] as const;
 
-const RightPanel = ({ step }: { step: number }) => {
-    if (step === 0) {
-        return <BigStat value="até 50×" caption="de captação de glicose no exercício" color={C.glucose} size={96} />;
-    }
-    if (step === 4) return <Glut4Window />;
-    const rows = step === 3 ? SUM_ROWS : BLOCK_ROWS.slice(0, step === 1 ? 2 : 4);
-    return (
-        <div className="flex w-full flex-col gap-4">
-            <span className="text-[17px] text-gray-300">{UNIT}</span>
-            {rows.map((r, i) => (
-                <BarRow key={r.key} label={r.label} value={r.value} max={BAR_MAX} text={r.text}
-                    color={COLOR_BY_KEY[r.key]} dim={step === 2 && i < 2} delay={step === 2 && i < 2 ? 0 : stagger(step === 2 ? i - 2 : i, 0.15)} />
-            ))}
-        </div>
-    );
-};
-
-const CHIPS = [
-    <><DesignChip key="r">revisão</DesignChip><Model3DHint key="h" label="a fibra" /></>,
-    <AnimalChip key="a">sóleo de rato isolado</AnimalChip>,
-    <AnimalChip key="a">sóleo de rato isolado</AnimalChip>,
-    <AnimalChip key="a">sóleo de rato isolado</AnimalChip>,
-    <><DesignChip key="m">clamp · n = 7</DesignChip><DesignChip key="r">uma perna · n = 6</DesignChip></>,
-];
+const Ledger = ({ step }: { step: number }) => (
+    <div className="flex flex-col">
+        {GLUT4_ROWS.filter(r => r.at <= step).map((r, i) => (
+            <motion.div key={r.label} className="flex items-baseline justify-between gap-3 border-t-2 border-white/10 py-0.5"
+                initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: DUR.enter, delay: r.at === step ? stagger(i, 0.45, 0) : 0, ease: EASE_OUT }}>
+                <span className="min-w-0 text-[16px] font-semibold leading-tight text-gray-100">{r.label}</span>
+                <span className="shrink-0 font-display text-[20px] font-bold leading-tight tabular-nums" style={{ color: TONE[r.tone] }}>{r.value}</span>
+            </motion.div>
+        ))}
+        <span className="border-t-2 border-white/10 pt-1 text-[14px] text-gray-400">{GLUT4_UNITS[Math.min(step, GLUT4_UNITS.length - 1)]}</span>
+    </div>
+);
 
 export default function Glut4Sim() {
-    const { step } = useSlideSteps(GLUT4_STEPS.length);
-    const reduce = useReducedMotion();
+    const { step, setStep } = useSlideSteps(GLUT4_STEPS.length);
     const s = GLUT4_STEPS[step];
-    const panelKey = step === 0 ? 'stat' : step === 4 ? 'window' : step === 3 ? 'sum' : 'block';
     return (
-        <div className="not-prose flex h-[500px] w-full flex-col gap-4 overflow-hidden">
-            <StepHeader beat={step} chips={CHIPS[step]}>{s.phrase}</StepHeader>
-            <div className="flex min-h-0 flex-1 items-center gap-12">
-                <Glut4Door step={step} insulin={s.insulin} contraction={s.contraction} pass={s.pass} detail={step === 1 || step === 2} />
-                <motion.div key={panelKey} className="flex min-w-0 flex-1 items-center"
-                    initial={reduce ? { opacity: 0 } : { opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: DUR.enter, ease: EASE_OUT }}>
-                    <RightPanel step={step} />
-                </motion.div>
+        <div className="not-prose flex h-[500px] w-full flex-col gap-3">
+            <div className="flex items-center justify-between gap-4">
+                <StepTabs labels={GLUT4_STEPS.map(g => g.tab)} step={step} onSelect={setStep} layoutId="glut4-tabs" />
+                <div className="flex flex-wrap justify-end gap-2">
+                    {step >= 1 && step <= 3 && <AnimalChip>sóleo de rato isolado</AnimalChip>}
+                    {GLUT4_CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}
+                    {step === 0 && <Model3DHint label="a fibra" />}
+                </div>
             </div>
-            <SourceLine>{s.source}</SourceLine>
+            <div className="flex min-h-0 flex-1 gap-4">
+                <Panel className="shrink-0 px-2 py-1"><Glut4Door step={step} insulin={s.insulin} contraction={s.contraction} docked={s.docked} /></Panel>
+                <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-3">
+                    <motion.div key={step} className="flex flex-col gap-2" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: DUR.enter, ease: EASE_OUT }}>
+                        <h3 className="m-0 font-display text-[24px] font-semibold leading-tight" style={{ color: ACCENT[step] }}>{s.headline}</h3>
+                        <p className="m-0 text-[17px] leading-snug text-gray-100">{s.text}</p>
+                    </motion.div>
+                    <div className="mt-auto flex flex-col gap-2">
+                        <Ledger step={step} />
+                        <Source>{sourcesUpTo(GLUT4_STEPS.map(g => g.sources), step)}</Source>
+                    </div>
+                </Panel>
+            </div>
         </div>
     );
 }

@@ -1,106 +1,86 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT } from '../../lib/motion';
-import { C, PANEL_BG } from './kit/palette';
-import { Source } from './kit/ui';
-import { DesignChip } from './kit/chips';
-import { Phrase } from './ato7/parts';
-import { CONDITIONS, SOURCE, STEPS, UNIT, type Pan } from './ato7/protein.content';
+import { C } from './kit/palette';
+import { CalcChip, DesignChip } from './kit/chips';
+import { sourcesUpTo } from './kit/sources';
+import { Panel, Source } from './kit/ui';
+import { Narration, RecTop } from './ato7/RecFrame';
+import { CravenForest, MargolisForest, VanLoonBars } from './ato7/ProteinCards';
+import { CONDITIONS, PROTEIN_CALC, PROTEIN_CHIPS, PROTEIN_STEPS } from './ato7/protein.content';
 
 /**
- * Slide 122 · Proteína ajuda? Depende.
- * Uma balança: o prato que repõe mais glicogênio desce. Ela pende para a proteína só em duas condições,
- * que vão se acendendo no caderno à direita. Nas meta-análises, o travessão fica nivelado.
+ * Slide 122 · Proteína Ajuda? Depende. Tríptico + faixa de narração (composição diferente dos slides 120–121):
+ * em cima, três cartões que se acendem em ordem e ficam (van Loon 2000 → Margolis 2021 → Craven 2021);
+ * embaixo, o texto do passo à esquerda e o caderno "só ajuda se…" à direita, que acumula.
  */
-const BOX_W = 780;
-const BOX_H = 360;
-const PIVOT = { x: BOX_W / 2, y: 70 };
-const ARM = 250;
-const HANG = 50;
-const PAN_W = 270;
-const settle = { type: 'spring', duration: 0.9, bounce: 0.15 } as const;
 
-const PanBox = ({ pan, side, tilt }: { pan: Pan; side: -1 | 1; tilt: number }) => {
-    const reduce = useReducedMotion();
-    const dy = side * ARM * Math.sin((tilt * Math.PI) / 180);
-    const color = pan.kind === 'cho' ? C.glucose : C.protein;
-    return (
-        <motion.div className="absolute flex flex-col items-center" style={{ left: PIVOT.x + side * ARM - PAN_W / 2, top: PIVOT.y, width: PAN_W }}
-            animate={{ y: dy }} transition={reduce ? { duration: 0 } : settle}>
-            <span aria-hidden className="block w-[3px] bg-white/60" style={{ height: HANG }} />
-            <div className="flex w-full flex-col items-center gap-1 rounded-2xl border-[3px] px-3 py-3 text-center" style={{ ...PANEL_BG, background: '#04080F', borderColor: color }}>
-                <span className="text-[20px] font-semibold leading-tight text-white">{pan.label}</span>
-                {pan.value && (
-                    <span className="flex items-baseline gap-2">
-                        <span className="font-display text-[44px] font-bold leading-none tabular-nums" style={{ color }}>{pan.value}</span>
-                        <span className="text-[16px] text-gray-300">{UNIT}</span>
-                    </span>
-                )}
-            </div>
-        </motion.div>
-    );
-};
+const ACCENT = [C.proteinSoft, C.glycogenSoft, C.proteinSoft, C.stone, C.glucose] as const;
 
-const Balance = ({ step }: { step: number }) => {
-    const reduce = useReducedMotion();
-    const s = STEPS[step];
-    return (
-        <div className="relative shrink-0" style={{ width: BOX_W, height: BOX_H }}>
-            {/* coluna e base */}
-            <span aria-hidden className="absolute w-3 rounded-full" style={{ left: PIVOT.x - 6, top: PIVOT.y, height: BOX_H - PIVOT.y - 10, background: C.co2 }} />
-            <span aria-hidden className="absolute h-3 rounded-full" style={{ left: PIVOT.x - 110, width: 220, bottom: 4, background: C.co2 }} />
-            {/* travessão */}
-            <motion.span aria-hidden className="absolute h-3 rounded-full"
-                style={{ left: PIVOT.x - ARM - 8, width: 2 * ARM + 16, top: PIVOT.y - 6, background: C.text, transformOrigin: '50% 50%' }}
-                animate={{ rotate: s.tilt }} transition={reduce ? { duration: 0 } : settle} />
-            <span aria-hidden className="absolute h-6 w-6 rounded-full" style={{ left: PIVOT.x - 12, top: PIVOT.y - 12, background: C.co2 }} />
-            <PanBox pan={s.left} side={-1} tilt={s.tilt} />
-            <PanBox pan={s.right} side={1} tilt={s.tilt} />
-            {s.effect && (
-                <motion.div key={s.effect} className="absolute flex justify-center" style={{ left: 0, right: 0, bottom: 34 }}
-                    initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: DUR.enter, ease: EASE_OUT }}>
-                    <span className="rounded-lg px-3 py-1 text-[20px] font-semibold tabular-nums" style={{ background: C.stone, color: '#04080F' }}>{s.effect}</span>
-                </motion.div>
-            )}
+interface CardProps {
+    title: string;
+    sub: string;
+    at: number;
+    step: number;
+    children: ReactNode;
+}
+
+const Card = ({ title, sub, at, step, children }: CardProps) => (
+    <Panel state={step >= at ? (step === at ? 'active' : 'idle') : 'dim'} glow={C.protein} className="flex flex-1 flex-col gap-1 px-3 pt-2.5">
+        <div className="flex items-baseline justify-between gap-2">
+            <span className="text-[19px] font-bold text-white">{title}</span>
+            <span className="text-[15px] text-gray-300">{sub}</span>
         </div>
-    );
-};
+        {children}
+    </Panel>
+);
 
 const Notebook = ({ step }: { step: number }) => (
-    <div className="flex flex-col gap-5 pt-4">
-        <span className="font-display text-[32px] font-semibold leading-none text-white">Só ajuda se…</span>
+    <div className="flex w-[400px] shrink-0 flex-col gap-2">
+        <span className="font-display text-[22px] font-semibold leading-none text-white">Só ajuda se…</span>
         {CONDITIONS.map(c => {
-            const on = step >= c.from;
+            const on = step >= c.at;
             return (
-                <div key={c.text} className="flex items-start gap-3 transition-opacity duration-300" style={{ opacity: on ? 1 : 0 }}>
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-[3px]"
-                        style={{ borderColor: on ? C.ok : 'rgba(255,255,255,0.3)', background: on ? C.ok : 'transparent' }}>
-                        {on && <Check size={20} strokeWidth={3.5} color="#04080F" aria-hidden />}
-                    </span>
-                    <span className="text-[22px] leading-snug text-white">{c.text}</span>
+                <div key={c.text} className="flex items-start gap-3 transition-opacity duration-300" style={{ opacity: on ? 1 : 0.6 }}>
+                    <motion.span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-[3px]"
+                        initial={false} animate={{ scale: on && step === c.at ? [1, 1.2, 1] : 1 }}
+                        transition={{ duration: 0.5, delay: 0.4, ease: EASE_OUT }}
+                        style={{ borderColor: on ? C.ok : 'rgba(255,255,255,0.4)', background: on ? C.ok : 'transparent' }}>
+                        {on && <Check size={18} strokeWidth={3.5} color="#04080F" aria-hidden />}
+                    </motion.span>
+                    <span className="text-[18px] leading-snug text-white">{c.text}</span>
                 </div>
             );
         })}
-        <span className="text-[18px] leading-snug text-gray-300 transition-opacity duration-300" style={{ opacity: step === 4 ? 1 : 0 }}>
-            Fora disso, a prioridade é carboidrato cedo e regular.
-        </span>
     </div>
 );
 
 export default function ProteinCoSim() {
-    const { step } = useSlideSteps(STEPS.length);
+    const { step, setStep } = useSlideSteps(PROTEIN_STEPS.length);
+    const s = PROTEIN_STEPS[step];
     return (
-        <div className="not-prose flex flex-col gap-3">
-            <div className="flex items-start justify-between gap-6">
-                <div className="min-h-[68px]"><Phrase beat={step} width={780}>{STEPS[step].phrase}</Phrase></div>
-                <div className="pt-1"><DesignChip>{STEPS[step].design}</DesignChip></div>
+        <div className="not-prose flex h-[500px] w-full flex-col gap-3">
+            <RecTop tabs={PROTEIN_STEPS.map(p => p.tab)} step={step} setStep={setStep} layoutId="protein-tabs"
+                chips={<>
+                    {PROTEIN_CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}
+                    {PROTEIN_CALC[step] && <CalcChip>{PROTEIN_CALC[step]}</CalcChip>}
+                </>} />
+            <div className="flex h-[256px] shrink-0 gap-3">
+                <Card title="van Loon 2000" sub="a cada 30 min, 5 h" at={0} step={step}><VanLoonBars step={step} /></Card>
+                <Card title="Margolis 2021" sub="CHO + PTN × CHO" at={2} step={step}><MargolisForest step={step} /></Card>
+                <Card title="Craven 2021" sub="até 8 h" at={3} step={step}><CravenForest step={step} /></Card>
             </div>
-            <div className="flex items-start gap-8">
-                <Balance step={step} />
+            <Panel className="flex min-h-0 flex-1 gap-6 px-5 py-3">
+                <div className="flex min-w-0 flex-1 flex-col justify-between gap-1">
+                    <Narration step={step} headline={s.headline} color={ACCENT[step]} size={17}>{s.text}</Narration>
+                    <motion.div key={`src-${step}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.text }}>
+                        <Source>{sourcesUpTo(PROTEIN_STEPS.map(p => p.sources), step)}</Source>
+                    </motion.div>
+                </div>
                 <Notebook step={step} />
-            </div>
-            <Source>{SOURCE}</Source>
+            </Panel>
         </div>
     );
 }

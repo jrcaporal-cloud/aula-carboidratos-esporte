@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Brooks GA. The science and translation of lactate shuttle theory. Cell Metab 2018;27(4):757-85. DOI 10.1016/j.cmet.2018.03.008 · PMID 29617642 — lactato forma-se continuamente em aerobiose; fonte de energia, principal precursor gliconeogênico e sinalizador.",
+   "Brooks GA. Cell-cell and intracellular lactate shuttles. J Physiol 2009;587(Pt 23):5591-600. DOI 10.1113/jphysiol.2009.178350 · PMID 19805739 — lançadeiras entre fibras glicolíticas e oxidativas e do músculo para coração e fígado; MCT1; glicólise e oxidação como vias ligadas (abstract conferido no PubMed em 12/11/2026).",
+   "Nelson DL, Cox MM. Lehninger Principles of Biochemistry. 7ª ed. New York: W.H. Freeman; 2017. Caps. 14 e 23 — gliconeogênese (2 piruvato → 1 glicose: 4 ATP + 2 GTP) e ciclo de Cori entre músculo e fígado (livro-texto). Capítulo conferido em 12/11/2026 em listagens de capítulos da 7ª ed. e no sumário da 6ª ed., com a mesma numeração (12 Biosignaling; 14 Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway; 16 The Citric Acid Cycle; 17 Fatty Acid Catabolism; 23 Hormonal Regulation and Integration of Mammalian Metabolism).",
+   "Hui S, Ghergurovich JM, Morscher RJ, et al. Glucose feeds the TCA cycle via circulating lactate. Nature 2017;551(7678):115-8. DOI 10.1038/nature24057 · PMID 29045397 — fluxo de lactato 1,1× (alimentado) e 2,5× (jejum) o da glicose; em jejum, a glicose chega ao Krebs dos tecidos (exceto cérebro) via lactato; camundongo, repouso."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "A leitura antiga (lactato = resíduo da falta de O₂) leva o carimbo de mito. Brooks 2018 e 2009: o lactato se forma o tempo todo, com oxigênio, sai da fibra glicolítica pelos MCT e é oxidado na fibra oxidativa do mesmo músculo e no coração; glicólise e oxidação são ligadas, o produto de uma é o substrato da outra. É também o principal precursor da gliconeogênese: no ciclo de Cori, o fígado refaz 1 glicose a partir de 2 lactatos, pagando 4 ATP + 2 GTP, enquanto o músculo ganhou 2 ATP na glicólise (estequiometria do Lehninger). Hui 2017, ¹³C em camundongos em repouso: o fluxo circulatório do lactato é 1,1× o da glicose alimentado e 2,5× em jejum, e em jejum a glicose chega ao Krebs dos tecidos (exceto cérebro) sobretudo via lactato. É dado em animal: a ideia vale, os números não se transferem para o atleta.",
+  "pergunta": "O que muda na leitura de um teste de lactato se ele é moeda e não resíduo?",
+  "transicao": "Glicose, glicogênio, lactato, gordura: quem decide qual combustível paga a conta em cada ritmo?"
+ }
+}

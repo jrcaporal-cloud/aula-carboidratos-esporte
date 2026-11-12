@@ -1,48 +1,91 @@
-/** Slide 142 · Sleep low (dossiê 05·MARQUET2016a, GEJL2017, RIIS2019, HULSTON2010). */
+/**
+ * Slide 142 · Sleep low (dossiê 05·MARQUET2016a, LANE2015, GEJL2017, RIIS2019, HULSTON2010).
+ * Os horários do relógio são ilustrativos; o desenho (mesmo CHO no dia, outro horário) é o de Marquet 2016.
+ */
 
-export const SLEEP_BEATS = [
-    'Sleep low: o mesmo carboidrato do dia, em outro horário.',
-    'Num estudo não cego, o 10 km melhorou 2,9% com sleep low.',
-    'Em atletas mais treinados, o ganho não apareceu.',
-    'E o preço aparece no treino intenso.',
-] as const;
-
-export interface DaySegment {
-    id: 'hit' | 'night' | 'easy' | 'refuel';
-    when: string;
-    what: string;
-    /** Flex da largura no trilho de 24 h. */
-    span: number;
+export interface SleepStep {
+    tab: string;
+    headline: string;
+    text: string;
+    sources: readonly string[];
 }
 
-export const DAY: readonly DaySegment[] = [
-    { id: 'hit', when: 'fim da tarde', what: 'treino intenso com CHO', span: 3.6 },
-    { id: 'night', when: 'noite', what: 'dorme sem carboidrato', span: 3.6 },
-    { id: 'easy', when: 'manhã', what: 'treino leve em jejum', span: 3 },
-    { id: 'refuel', when: 'depois', what: 'CHO de volta', span: 2 },
+export const SLEEP_STEPS: readonly SleepStep[] = [
+    {
+        tab: 'O dia',
+        headline: 'Mesmo carboidrato, outro horário',
+        text: 'Treino intenso no fim da tarde com carboidrato, noite sem carboidrato, treino leve em jejum na manhã seguinte; depois o carboidrato volta. O total não muda: 6 g/kg/d nos dois grupos. Em 7 ciclistas (Lane 2015), a manhã em jejum começou com AMPK, p38 e ACC mais fosforiladas e mais gordura oxidada, mas sem mais marcadores de biogênese mitocondrial.',
+        sources: ['Marquet 2016 (MSSE)', 'Lane 2015 (J Appl Physiol)'],
+    },
+    {
+        tab: 'Marquet 2016',
+        headline: '−2,9% no 10 km, sem cegamento',
+        text: 'ECR paralelo, 21 triatletas (VO₂máx 58,7), 11 × 10, 3 semanas. O tempo no 10 km caiu 2,9% × 0,1%. Mas o grupo sleep low também perdeu mais gordura (−8,5% × −2,6%) e sabia que estava no grupo "novo". As duas coisas podem explicar parte do ganho.',
+        sources: [],
+    },
+    {
+        tab: 'Réplicas',
+        headline: 'Em atletas mais treinados, o ganho sumiu',
+        text: 'Gejl 2017: 26 homens de elite (VO₂máx 65), 4 semanas: VO₂máx e contrarrelógio +5% nos dois grupos; glicogênio e citrato sintase sem diferença. Riis 2019: 13 treinados, 4 semanas de sleep low: ~36% mais gordura oxidada no agudo, sem efeito sustentado, e o contrarrelógio melhorou igual.',
+        sources: ['Gejl 2017 (MSSE)', 'Riis 2019 (Scand J Med Sci Sports)'],
+    },
+    {
+        tab: 'O custo',
+        headline: 'O preço aparece no treino intenso',
+        text: 'Hulston 2010: 14 ciclistas bem treinados, 3 semanas, HIT 1 h depois do treino aeróbio (o modelo de 2 sessões no dia). Nas sessões intensas feitas com pouco glicogênio, 297 × 323 W. O contrarrelógio final melhorou ~10% nos dois.',
+        sources: ['Hulston 2010 (MSSE)'],
+    },
 ];
 
-export interface StudyRow {
+/** Relógio de 24 h: arcos [início, fim] em horas. */
+export interface ClockArc {
+    id: 'easy' | 'refuel' | 'hit' | 'night';
+    from: number;
+    to: number;
+    label: string;
+}
+
+export const CLOCK: readonly ClockArc[] = [
+    { id: 'hit', from: 17, to: 19, label: 'treino intenso com CHO' },
+    { id: 'night', from: 19, to: 7, label: 'noite sem carboidrato' },
+    { id: 'easy', from: 7, to: 8.5, label: 'treino leve em jejum' },
+    { id: 'refuel', from: 8.5, to: 17, label: 'carboidrato de volta' },
+];
+
+/** Barras dos estudos: sleep low (ou train low) × controle. */
+export interface Metric {
+    label: string;
+    low: number;
+    ctl: number;
+    unit: string;
+    max: number;
+}
+
+export interface StudyCard {
     id: string;
     who: string;
     design: string;
-    test: string;
-    /** Melhora em % (low = sleep low; ctl = controle). null = o resumo só diz "igual". */
-    low: number | null;
-    ctl: number | null;
-    note: string;
+    at: number;
+    metrics: readonly Metric[];
+    /** Linhas de texto quando não há número para barra. */
+    notes?: readonly string[];
 }
 
-export const STUDIES: readonly StudyRow[] = [
-    { id: 'marquet', who: 'Marquet 2016', design: '21 triatletas · não cego', test: '10 km de corrida', low: 2.9, ctl: 0.1, note: 'perderam mais gordura no grupo sleep low' },
-    { id: 'gejl', who: 'Gejl 2017', design: '26 de elite · 4 semanas', test: 'contrarrelógio de 30 min', low: 5, ctl: 5, note: 'enzimas e glicogênio: iguais também' },
-    { id: 'riis', who: 'Riis 2019', design: '13 treinados · 4 semanas', test: 'contrarrelógio de 30 min', low: null, ctl: null, note: 'mais gordura no agudo; não durou' },
+export const STUDIES: readonly StudyCard[] = [
+    { id: 'lane', who: 'Lane 2015', design: '7 ciclistas · cruzado', at: 0, metrics: [], notes: ['manhã em jejum: AMPK, p38, ACC ↑', 'marcadores de biogênese: iguais'] },
+    {
+        id: 'marquet', who: 'Marquet 2016', design: '21 triatletas · 3 sem', at: 1,
+        metrics: [
+            { label: '10 km', low: -2.9, ctl: -0.1, unit: '%', max: 3 },
+        ],
+        notes: ['massa gorda: −8,5% × −2,6%'],
+    },
+    {
+        id: 'rep', who: 'Réplicas', design: '4 semanas', at: 2, metrics: [],
+        notes: ['Gejl 2017 · 26 de elite: +5% nos dois', 'Riis 2019 · 13 treinados: prova igual'],
+    },
+    {
+        id: 'hulston', who: 'Hulston 2010', design: '14 ciclistas · potência no HIT', at: 3,
+        metrics: [{ label: 'HIT', low: 297, ctl: 323, unit: ' W', max: 340 }],
+    },
 ];
-
-export const HULSTON = { high: 323, low: 297 } as const;
-
-export const SLEEP_SOURCES = [
-    'Marquet LA et al. Med Sci Sports Exerc 2016;48(4):663-672.',
-    'Marquet 2016; Gejl KD et al. MSSE 2017;49(12):2486-97; Riis S et al. Scand J Med Sci Sports 2019;29(12):1866-80.',
-    'Hulston CJ et al. Med Sci Sports Exerc 2010;42(11):2046-2055.',
-] as const;

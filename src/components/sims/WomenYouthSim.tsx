@@ -1,89 +1,94 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight, Thermometer } from 'lucide-react';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_IN_OUT } from '../../lib/motion';
 import { C } from './kit/palette';
-import { SvgText } from './kit/ui';
-import { Beat, Grow } from './kit/Beat';
-import { br, signed } from './kit/format';
 import { CalcChip, DesignChip } from './kit/chips';
-import { Head, Reveal, SimBox, SourceLine } from './ato9/parts';
-import { BOYS_EDGE, CYCLE, STEPS, type DuelSide } from './ato9/womenYouth.content';
+import { sourcesUpTo } from './kit/sources';
+import { FrameB, LedgerB, PanelB, StageBlock, StageLabel } from './ato9/FrameB';
+import { CellHead, CycleRuler, HBars, VBars } from './ato9/WomenYouthCharts';
+import { BOYS_EDGE, LEDGER, LEITES, LOAD_1995, LOAD_2001, STEPS, TIMMONS, WALLIS } from './ato9/womenYouth.content';
 
 /**
- * Slide 167 · Mulheres e Jovens. Um único instrumento, duas barras, cinco perguntas: as barras ficam, os rótulos
- * e as alturas trocam (homens × mulheres → carga → meninos → calor). A virada final é a inversão a 38 °C.
+ * Slide 167 · Mulheres e Jovens, palco + painel. O palco é uma grade que se completa: em cima, as três perguntas
+ * sobre mulheres (oxidação, ciclo, carga: o "% da energia" que vira g/kg); embaixo, os meninos, com a vantagem
+ * que se inverte a 38 °C. Cada célula entra no seu passo e fica; o grupo de comparação é sempre neutro (ardósia).
  */
 
-const BAR_H = 230;
-
-const Bar = ({ side, max, decimals }: { side: DuelSide; max: number; decimals: number }) => {
-    const reduce = useReducedMotion();
-    const beforeAt = side.before !== undefined ? side.before / max : null;
-    return (
-        <div className="flex w-[170px] flex-col items-center gap-3">
-            <span className="font-mono text-[30px] font-semibold tabular-nums text-white">{br(side.value, decimals)}</span>
-            <div className="relative w-[150px] overflow-hidden rounded-t-xl" style={{ height: BAR_H, background: 'rgba(255,255,255,0.06)' }}>
-                <Grow value={side.value / max} axis="y" color={side.color} />
-                {/* marca do "antes": uma linha tracejada que desce até o valor de partida */}
-                <motion.div aria-hidden className="absolute inset-x-0 border-t-[3px] border-dashed" style={{ borderColor: '#04080F', bottom: 0 }}
-                    initial={false} animate={{ y: beforeAt === null ? 0 : -beforeAt * BAR_H, opacity: beforeAt === null ? 0 : 1 }}
-                    transition={{ duration: reduce ? 0 : DUR.morph, ease: EASE_IN_OUT }} />
-            </div>
-            <span className="text-[24px] font-semibold text-gray-100">{side.label}</span>
-        </div>
-    );
-};
-
-/** McNulty 2020: um ponto quase em cima do zero. */
-const CycleRuler = () => {
-    const x0 = 30;
-    const x1 = 470;
-    const sx = (v: number) => x0 + ((v + 0.3) / 0.6) * (x1 - x0);
-    return (
-        <svg viewBox="0 0 500 120" width={500} height={120} role="img" aria-label="Tamanho de efeito −0,06, intervalo −0,16 a 0,04">
-            <line x1={x0} x2={x1} y1={60} y2={60} stroke="rgba(255,255,255,0.25)" strokeWidth={3} />
-            <line x1={sx(0)} x2={sx(0)} y1={24} y2={84} stroke={C.text} strokeWidth={3} strokeDasharray="5 5" />
-            <line x1={sx(CYCLE.lo)} x2={sx(CYCLE.hi)} y1={60} y2={60} stroke={C.stone} strokeWidth={6} strokeLinecap="round" />
-            <circle cx={sx(CYCLE.es)} cy={60} r={11} fill={C.stone} stroke="#04080F" strokeWidth={3} />
-            {[-0.3, 0, 0.3].map(t => <SvgText key={t} x={sx(t)} y={110} text={signed(t, t === 0 ? 0 : 1)} anchor="middle" size={16} color={C.muted} weight={500} />)}
-            <SvgText x={sx(CYCLE.es)} y={34} text={`ES ${signed(CYCLE.es, 2)}`} anchor="middle" size={20} color={C.stone} weight={700} />
-        </svg>
-    );
-};
+const ACCENT = [C.glucoseSoft, C.stone, C.glycogenSoft, C.glucoseSoft, C.glucoseSoft] as const;
 
 export default function WomenYouthSim() {
-    const { step } = useSlideSteps(STEPS.length);
+    const { step, setStep } = useSlideSteps(STEPS.length);
     const s = STEPS[step];
-    // Mesma grandeza nas duas barras: a cor é a da química (CHO oxidado = âmbar; glicogênio = violeta).
-    const color = step === 2 ? C.glycogen : C.glucose;
+    const last = step === STEPS.length - 1;
+    const cell = (i: number) => ({ shown: step >= i, focus: last || step === i });
     return (
-        <SimBox className="flex flex-col">
-            <Head beat={step} say={s.say} className="min-h-[68px]" chips={<>
-                <DesignChip>{s.design}</DesignChip>
-                {step === 3 && <CalcChip />}
-            </>} />
-            <div className="mt-4 flex min-h-0 flex-1 gap-14">
-                <div className="flex w-[480px] shrink-0 flex-col items-center">
-                    <span className="text-[18px] text-gray-300">{s.unit}</span>
-                    <div className="mt-3 flex items-end gap-16">
-                        {s.sides.map((side, i) => <Bar key={i} side={{ ...side, color }} max={s.max} decimals={s.decimals} />)}
+        <FrameB tabs={STEPS.map(x => x.tab)} step={step} onSelect={setStep} layoutId="women-youth-tabs"
+            chips={<><DesignChip>{s.design}</DesignChip>{step >= 3 && <CalcChip>+{BOYS_EDGE}%: cálculo</CalcChip>}</>}
+            stage={
+                <div className="flex h-full flex-col gap-2 px-4 py-2.5">
+                    <StageLabel color={C.glucoseSoft}>mulheres</StageLabel>
+                    <div className="flex items-start gap-4">
+                        <StageBlock {...cell(0)} className="flex w-[140px] flex-col gap-2">
+                            <CellHead title="Wallis 2006" sub="pico de oxidação, g/min" />
+                            <VBars max={0.8} bars={[
+                                { label: 'H', value: WALLIS.men, color: C.co2 },
+                                { label: 'M', value: WALLIS.women, color: C.glucose },
+                            ]} />
+                        </StageBlock>
+                        <StageBlock {...cell(1)} className="flex w-[200px] flex-col gap-2">
+                            <CellHead title="McNulty 2020" sub="folicular inicial × outras" color={C.stone} />
+                            {step >= 1 && <CycleRuler />}
+                            <span className="text-[15px] leading-tight text-gray-300">faixa clara: efeito trivial</span>
+                        </StageBlock>
+                        <StageBlock {...cell(2)} className="flex min-w-0 flex-1 flex-col gap-2">
+                            <CellHead title="1995 → 2001" sub="a carga de glicogênio" color={C.glycogenSoft} />
+                            {step >= 2 && (
+                                <div className="flex items-end gap-2">
+                                    <div className="flex flex-col items-center gap-1">
+                                        <VBars max={80} height={80} width={30} bars={[
+                                            { label: 'H', value: LOAD_1995.men, text: `+${LOAD_1995.men}%`, color: C.co2 },
+                                            { label: 'M', value: LOAD_1995.women, text: `${LOAD_1995.women}%`, color: C.glycogen },
+                                        ]} />
+                                        <span className="text-[15px] leading-tight text-gray-300">75% da energia</span>
+                                    </div>
+                                    <ArrowRight size={24} strokeWidth={3} color={C.text} className="mb-12 shrink-0" aria-hidden />
+                                    <div className="flex flex-col items-center gap-1">
+                                        <VBars max={220} height={80} width={30} decimals={0} delay={0.3} bars={[
+                                            { label: 'H', value: LOAD_2001.men.after, before: LOAD_2001.men.before, color: C.co2 },
+                                            { label: 'M', value: LOAD_2001.women.after, before: LOAD_2001.women.before, color: C.glycogen },
+                                        ]} />
+                                        <span className="text-[15px] leading-tight text-gray-300">12 g/kg MM · mmol/kg</span>
+                                    </div>
+                                </div>
+                            )}
+                        </StageBlock>
+                    </div>
+                    <div className="border-t-2 border-white/10" />
+                    <StageLabel color={C.glucoseSoft}>jovens</StageLabel>
+                    <div className="flex items-start gap-6">
+                        <StageBlock {...cell(3)} className="flex w-[290px] flex-col gap-2">
+                            <CellHead title="Timmons 2003" sub="CHO ingerido oxidado, mg/kg/min" />
+                            {step >= 3 && <HBars max={10} bars={[
+                                { label: 'homens', value: TIMMONS.men, color: C.co2 },
+                                { label: 'meninos', value: TIMMONS.boys, color: C.glucose },
+                            ]} />}
+                        </StageBlock>
+                        <StageBlock {...cell(4)} className="flex min-w-0 flex-1 flex-col gap-2">
+                            <span className="flex items-center gap-1.5">
+                                <Thermometer size={20} strokeWidth={2.6} color={C.risk} aria-hidden />
+                                <CellHead title="Leites 2016 · 38 °C" sub="mg/kg de massa magra/min" />
+                            </span>
+                            {step >= 4 && <HBars max={3} bars={[
+                                { label: 'homens', value: LEITES.men, color: C.co2 },
+                                { label: 'meninos', value: LEITES.boys, color: C.glucose },
+                            ]} />}
+                        </StageBlock>
                     </div>
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-6 pt-8">
-                    <Beat beat={`n${step}`} className="text-[28px] font-semibold leading-snug" style={{ color: C.text }}>{s.note}</Beat>
-                    <div className="relative flex-1">
-                        <Reveal show={step === 1} className="absolute inset-x-0 top-0"><CycleRuler /><span className="block pl-7 text-[18px] text-gray-300">folicular inicial × outras fases</span></Reveal>
-                        <Reveal show={step === 2} className="absolute inset-x-0 top-0 flex items-center gap-3 text-[20px] text-gray-200">
-                            <span className="block w-12 border-t-[3px] border-dashed" style={{ borderColor: C.text }} />valor antes da carga
-                        </Reveal>
-                        <Reveal show={step === 3} className="absolute inset-x-0 top-0">
-                            <span className="font-display font-bold leading-none" style={{ fontSize: 96, color: C.glucoseSoft }}>+{BOYS_EDGE}%</span>
-                            <span className="block text-[20px] text-gray-200">por kg, meninos × homens</span>
-                        </Reveal>
-                    </div>
-                </div>
-            </div>
-            <SourceLine>{s.source}</SourceLine>
-        </SimBox>
+            }
+            panel={
+                <PanelB step={step} headline={s.headline} color={ACCENT[step]} text={s.text}
+                    source={sourcesUpTo(STEPS.map(x => x.source), step)}
+                    ledger={<LedgerB title="o que fica" items={LEDGER} step={step} />} />
+            } />
     );
 }

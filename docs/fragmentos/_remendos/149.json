@@ -1,0 +1,16 @@
+{
+ "slide": {
+  "fontes": [
+   "Fensham NC, Heikura IA, McKay AKA, et al. Short-term carbohydrate restriction impairs bone formation at rest and during prolonged exercise to a greater degree than low energy availability. J Bone Miner Res 2022;37(10):1915-1925. DOI 10.1002/jbmr.4658 · PMID 35869933 — 28 marchadores de elite, 2 fases de 6 dias, 25 km de marcha: P1NP em jejum −26% (LCHF, d = 3,6) × −14% (baixa energia, d = 1,7); gla-OC −22% e glu-OC −41% no LCHF; só o LCHF baixou o P1NP durante o exercício; controle inalterado. A reta entre o dia 0 e o 6 é só ligação.",
+   "Heikura IA, Burke LM, Hawley JA, et al. A short-term ketogenic diet impairs markers of bone health in response to exercise. Front Endocrinol 2019;10:880. DOI 10.3389/fendo.2019.00880 · PMID 32038477 — 30 marchadores, energia igual (220 kJ/kg/d), 3,5 semanas, CHO 8,6 × 0,5 g/kg/d: CTX ↑ (d = 0,69), P1NP ↓ (d = 0,99), osteocalcina ↓ (d = 1,39); a volta ao CHO normalizou só o CTX.",
+   "Hammond KM, Sale C, Fraser W, et al. Post-exercise carbohydrate and energy availability induce independent effects on skeletal muscle cell signalling and bone turnover: implications for training adaptation. J Physiol 2019;597(18):4779-4796. DOI 10.1113/jp278209 · PMID 31364768 — 9 homens, 2 HIT de corrida no dia; CHO alto (~12 g/kg) × CHO baixo (~3 g/kg) com energia alta × CHO baixo com pouca energia: glicogênio 17 h depois 316 × 171 × 194 mmol/kg; βCTX menor com CHO alto, independente da energia; sinalização igual.",
+   "Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med 2023;57(17):1073-1097. DOI 10.1136/bjsports-2023-106994 · PMID 37752011 — inclui o papel crescente da baixa disponibilidade de carboidrato (limiares numéricos não citados)."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Fensham 2022: 28 marchadores de elite, 6 dias. Com LCHF e energia alta, o P1NP em jejum (formação óssea) caiu ~26% (d = 3,6), a osteocalcina gla ~22% e a glu ~41%; com baixa energia, P1NP −14% (d = 1,7); o controle não mudou; só o LCHF baixou o P1NP durante o exercício. Heikura 2019 (30 marchadores, energia igual 220 kJ/kg/d, 3,5 semanas): P1NP (d = 0,99) e osteocalcina (d = 1,39) caíram, o CTX subiu (d = 0,69), e só o CTX normalizou com a volta ao CHO. Hammond 2019 (9 homens): glicogênio 17 h depois 316 com CHO alto × 171 e 194 com CHO baixo; o βCTX (reabsorção) foi menor só com CHO alto, independente da energia. O consenso REDs do COI de 2023 põe a baixa disponibilidade de carboidrato ao lado da baixa energia; não citamos limiares numéricos. São marcadores, não fraturas.",
+  "pergunta": "No chat: na anamnese do atleta, como vocês perguntariam sobre carboidrato separado de energia total?",
+  "transicao": "Treinar com pouco é ferramenta, não dieta. Agora, cada esporte tem o seu tanque."
+ }
+}

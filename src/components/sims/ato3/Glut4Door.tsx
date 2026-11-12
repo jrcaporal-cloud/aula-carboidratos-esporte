@@ -1,103 +1,210 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { Ban } from 'lucide-react';
 import { DUR, EASE_IN_OUT, EASE_OUT } from '../../../lib/motion';
 import { C } from '../kit/palette';
+import { SvgText } from '../kit/ui';
 import type { KeyState } from './glut4.content';
 
 /**
- * A porta (GLUT4) na membrana da fibra, com duas fechaduras embaixo: insulina (via PI3K) e contração.
- * Cena em HTML sobre um SVG só de linhas (texto em HTML fica nítido no codec). 500 × 340 px.
+ * A fibra em corte (viewBox 640 × 436, desenhada 1:1): capilar, sarcolema com um túbulo T, as vesículas de GLUT4
+ * no citosol e as duas cascatas: insulina à esquerda (receptor → IRS-1 → PI3K → Akt → AS160) e contração à direita
+ * (Ca²⁺, AMPK, Rac1; as duas últimas em debate). Elas convergem nas Rab/SNARE, que levam a vesícula à membrana.
+ * Loop permitido: a glicose atravessando as portas abertas (≤ 6 formas, ciclo de 2,8 s).
  */
 
-const W = 500;
-const DOOR_X = 250;
-const DOTS = [150, 200, 250, 300, 350] as const;
-/** Ordem de passagem: o centro primeiro, as pontas por último. */
-const PASS_ORDER = [2, 1, 3, 0, 4] as const;
-const MEMBRANE = '#475569';
-type DotIndex = (typeof PASS_ORDER)[number];
+export const FIBER_W = 640;
+export const FIBER_H = 428;
+const MEM_Y = 58;
+const TUBE = { l: 280, r: 328, bottom: 248 } as const;
+const MID = (TUBE.l + TUBE.r) / 2;
+const SLATE = '#475569';
+const BLOOD = '#0E1729';
+const PILL_H = 30;
+const INS_X = 74;
+const CON_X = 566;
+const NODE = { x: MID, y: 354 } as const;
 
-interface DoorProps {
-    step: number;
-    insulin: KeyState;
-    contraction: KeyState;
-    pass: number;
-    /** Mostra a via de cada chave (só nos passos da wortmanina). */
-    detail: boolean;
-}
+type Pt = readonly [number, number];
+/** Onde cada vesícula se funde: as 4 primeiras (contração) metade na sarcolema, metade no túbulo T. */
+const SITES: readonly Pt[] = [[196, 66], [TUBE.l + 5, 132], [416, 66], [TUBE.r - 5, 196], [240, 66], [TUBE.r - 5, 132], [372, 66], [TUBE.l + 5, 196]];
+const REST: readonly Pt[] = [[214, 282], [262, 282], [346, 282], [394, 282], [190, 314], [238, 314], [370, 314], [418, 314]];
 
-const lineColor = (s: KeyState, color: string) => (s === 'on' ? color : s === 'blocked' ? C.text : MEMBRANE);
+interface CascadePill { label: string; y: number; w: number }
+const INS_PILLS: readonly CascadePill[] = [
+    { label: 'IRS-1', y: 124, w: 100 }, { label: 'PI3K', y: 166, w: 100 }, { label: 'Akt', y: 208, w: 100 }, { label: 'AS160', y: 250, w: 100 },
+];
+const CON_PILLS: readonly CascadePill[] = [
+    { label: 'Ca²⁺ (retículo)', y: 124, w: 144 }, { label: 'AMPK (AMP↑)', y: 166, w: 144 }, { label: 'Rac1', y: 208, w: 144 },
+];
 
-const KeyPill = ({ x, label, detail, color, state }: { x: number; label: string; detail?: string; color: string; state: KeyState }) => {
-    const on = state === 'on';
+const HEX = 'M 0 -10 L 8.7 -5 L 8.7 5 L 0 10 L -8.7 5 L -8.7 -5 Z';
+
+const Pill = ({ x, p, color, lit, at, step }: { x: number; p: CascadePill; color: string; lit: boolean; at: number; step: number }) => (
+    <motion.g initial={false} animate={{ opacity: step >= at ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+        <rect x={x - p.w / 2} y={p.y - PILL_H / 2} width={p.w} height={PILL_H} rx={PILL_H / 2}
+            fill={lit ? `${color}38` : '#0B1220'} stroke={lit ? color : SLATE} strokeWidth={lit ? 3 : 2} style={{ transition: 'all 300ms' }} />
+        <SvgText x={x} y={p.y + 6} text={p.label} size={16} anchor="middle" color={lit ? '#F9FAFB' : '#9CA3AF'} weight={700} />
+    </motion.g>
+);
+
+const Link = ({ d, color, lit, shown, dashed = false, reduce }: { d: string; color: string; lit: boolean; shown: boolean; dashed?: boolean; reduce: boolean }) => (
+    <motion.path d={d} fill="none" stroke={lit ? color : SLATE} strokeWidth={lit ? 4 : 3} strokeLinecap="round"
+        strokeDasharray={dashed ? '7 7' : undefined}
+        initial={false} animate={{ pathLength: shown ? 1 : 0, opacity: shown ? 1 : 0 }}
+        transition={{ duration: reduce ? 0 : DUR.bar, ease: EASE_OUT, delay: 0.1 }} />
+);
+
+/** Cascata da insulina: receptor na membrana e quatro degraus; com wortmanina, o que vem depois da PI3K apaga. */
+const InsulinCascade = ({ state, step, reduce }: { state: KeyState; step: number; reduce: boolean }) => {
+    const signal = state !== 'off';
+    const through = state === 'on';
     return (
-        <div className="absolute flex h-[70px] w-[214px] flex-col justify-center rounded-2xl border-[3px] px-4 transition-colors duration-300"
-            style={{ left: x, top: 252, borderColor: state === 'off' ? MEMBRANE : state === 'blocked' ? C.text : color, background: on ? color : '#0B1220' }}>
-            <span className="text-[22px] font-bold leading-tight" style={{ color: on ? '#04080F' : '#F3F4F6' }}>{label}</span>
-            {detail && <span className="text-[16px] leading-tight" style={{ color: on ? '#04080F' : '#D1D5DB' }}>{detail}</span>}
-        </div>
+        <g>
+            <path d={`M ${INS_X - 10} 22 L ${INS_X - 6} ${MEM_Y} L ${INS_X - 6} ${MEM_Y + 30} M ${INS_X + 10} 22 L ${INS_X + 6} ${MEM_Y} L ${INS_X + 6} ${MEM_Y + 30}`}
+                fill="none" stroke={C.insulin} strokeWidth={6} strokeLinecap="round" />
+            <motion.circle cx={INS_X} cy={16} r={9} fill={C.insulin} initial={false} animate={{ opacity: signal ? 1 : 0.25 }} transition={{ duration: DUR.enter }} />
+            <SvgText x={INS_X + 26} y={100} text="receptor" size={16} color={C.insulinSoft} />
+            {INS_PILLS.slice(1).map((p, i) => {
+                const prev = INS_PILLS[i];
+                return <Link key={p.label} d={`M ${INS_X} ${prev.y + PILL_H / 2 + 2} L ${INS_X} ${p.y - PILL_H / 2 - 2}`} color={C.insulin}
+                    lit={i === 0 ? signal : through} shown={step >= 1} dashed={i > 0 && !through} reduce={reduce} />;
+            })}
+            <Link d={`M ${INS_X} ${MEM_Y + 30} L ${INS_X} ${INS_PILLS[0].y - PILL_H / 2 - 2}`} color={C.insulin} lit={signal} shown={step >= 1} reduce={reduce} />
+            <Link d={`M ${INS_X} ${INS_PILLS[3].y + PILL_H / 2 + 2} C ${INS_X} 340, 160 ${NODE.y}, ${NODE.x - 92} ${NODE.y}`} color={C.insulin}
+                lit={through} shown={step >= 1} dashed={!through} reduce={reduce} />
+            {INS_PILLS.map((p, i) => <Pill key={p.label} x={INS_X} p={p} color={C.insulin} lit={i < 2 ? signal : through} at={1} step={step} />)}
+        </g>
     );
 };
 
-export const Glut4Door = ({ step, insulin, contraction, pass, detail }: DoorProps) => {
-    const reduce = useReducedMotion();
-    const both = insulin === 'on' && contraction === 'on';
-    const open = both ? 46 : insulin === 'on' || contraction === 'on' ? 32 : 0;
-    // Passo bloqueado: a porta chega a abrir com a insulina e fecha quando a wortmanina entra.
-    const blink = insulin === 'blocked' && contraction === 'off' && !reduce;
-    const doorX = blink ? [0, 32, 32, 0] : open;
-    const doorT = blink ? { duration: 1.1, times: [0, 0.3, 0.55, 1], ease: EASE_IN_OUT } : { duration: DUR.morph, ease: EASE_IN_OUT };
-    const passing = new Set<number>(PASS_ORDER.slice(0, pass));
-
+/** A marca da wortmanina na PI3K: bloqueio ativo nos passos 2 e 3; depois fica esmaecida, como anotação do experimento. */
+const Wortmannin = ({ state, step }: { state: KeyState; step: number }) => {
+    const active = state === 'blocked';
+    const y = INS_PILLS[1].y;
     return (
-        <div className="relative h-[340px] shrink-0" style={{ width: W }}>
-            <span className="absolute left-0 top-0 text-[17px] text-gray-300">sangue</span>
-            <span className="absolute left-0 top-[150px] text-[17px] text-gray-300">dentro da fibra</span>
-            <span className="absolute text-[20px] font-bold" style={{ left: DOOR_X + 74, top: 74, color: C.caveat }}>GLUT4</span>
+        <motion.g initial={false} animate={{ opacity: step >= 1 ? (active ? 1 : 0.7) : 0, x: step >= 1 ? 0 : 12 }}
+            transition={{ duration: DUR.enter, delay: step === 1 ? 0.5 : 0, ease: EASE_OUT }}>
+            <circle cx={INS_X + 70} cy={y} r={11} fill="#04080F" stroke={C.stone} strokeWidth={3} />
+            <line x1={INS_X + 62} y1={y + 8} x2={INS_X + 78} y2={y - 8} stroke={C.stone} strokeWidth={3} />
+            <SvgText x={INS_X + 88} y={y + 6} text="wortmanina" size={16} color={C.stone} weight={700} />
+        </motion.g>
+    );
+};
 
-            <svg className="absolute inset-0" width={W} height={340} viewBox={`0 0 ${W} 340`} aria-hidden>
-                <line x1={125} y1={252} x2={DOOR_X - 18} y2={142} stroke={lineColor(insulin, C.insulin)} strokeWidth={4}
-                    strokeDasharray={insulin === 'blocked' ? '10 8' : undefined} />
-                <line x1={375} y1={252} x2={DOOR_X + 18} y2={142} stroke={lineColor(contraction, C.stone)} strokeWidth={4} />
-            </svg>
+const ContractionCascade = ({ state, step, reduce }: { state: KeyState; step: number; reduce: boolean }) => {
+    const lit = state === 'on';
+    const shown = step >= 2;
+    return (
+        <g>
+            <Link d={`M ${CON_X} ${CON_PILLS[2].y + PILL_H / 2 + 14} C ${CON_X} 330, 470 ${NODE.y}, ${NODE.x + 92} ${NODE.y}`} color={C.stone} lit={lit} shown={shown} reduce={reduce} />
+            <motion.g initial={false} animate={{ opacity: shown ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 2 ? 0.3 : 0 }}>
+                <rect x={CON_X - 84} y={CON_PILLS[1].y - 25} width={168} height={CON_PILLS[2].y - CON_PILLS[1].y + 50} rx={12}
+                    fill="none" stroke={C.stone} strokeWidth={2} strokeDasharray="6 6" />
+                <SvgText x={CON_X - 92} y={CON_PILLS[1].y + 26} text="em debate" size={16} anchor="end" color={C.stone} weight={700} />
+            </motion.g>
+            {CON_PILLS.map(p => <Pill key={p.label} x={CON_X} p={p} color={C.stone} lit={lit} at={2} step={step} />)}
+        </g>
+    );
+};
 
-            {/* membrana com o vão da porta */}
-            <div className="absolute h-6 rounded-sm" style={{ left: 0, top: 110, width: DOOR_X - 64, background: MEMBRANE }} />
-            <div className="absolute h-6 rounded-sm" style={{ left: DOOR_X + 64, top: 110, width: W - DOOR_X - 64, background: MEMBRANE }} />
-            {[-1, 1].map(side => (
-                <motion.div key={side} className="absolute h-[38px] w-[58px] rounded-lg border-[3px]"
-                    style={{ left: side < 0 ? DOOR_X - 60 : DOOR_X + 2, top: 103, borderColor: C.caveat, background: '#0B1220' }}
-                    animate={{ x: Array.isArray(doorX) ? doorX.map(v => v * side) : doorX * side }} transition={doorT} />
-            ))}
+/** Glicose atravessando as portas abertas (loop do palco). Só passa onde já há GLUT4 fundido. */
+const GlucoseFlow = ({ docked }: { docked: number }) => {
+    const n = Math.min(6, docked === 0 ? 0 : docked <= 4 ? 3 : 6);
+    return (
+        <g>
+            {Array.from({ length: n }, (_, i) => {
+                const [sx, sy] = SITES[i];
+                const inTube = sy > 70;
+                const xs = inTube ? [MID, MID, sx + (sx < MID ? -34 : 34)] : [sx, sx, sx + (i % 2 ? 12 : -12)];
+                const ys = inTube ? [26, sy, sy + 6] : [26, MEM_Y + 8, 118];
+                return (
+                    <motion.path key={i} d={HEX} fill={C.glucose} stroke="#04080F" strokeWidth={2}
+                        initial={{ x: xs[0], y: ys[0], opacity: 0 }}
+                        animate={{ x: xs, y: ys, opacity: [0, 1, 1, 0] }}
+                        transition={{ duration: 2.8, delay: 0.8 + i * 0.45, repeat: Infinity, repeatDelay: 0.6, ease: EASE_IN_OUT, times: [0, 0.5, 1],
+                            opacity: { duration: 2.8, delay: 0.8 + i * 0.45, repeat: Infinity, repeatDelay: 0.6, times: [0, 0.12, 0.85, 1] } }} />
+                );
+            })}
+        </g>
+    );
+};
 
-            {/* glicoses: as que passam atravessam o vão e pousam dentro da fibra */}
-            <div key={step} className="absolute inset-0">
-                {DOTS.map((x0, i) => {
-                    const goes = passing.has(i);
-                    const xEnd = DOOR_X - 60 + i * 30;
-                    const target = { x: [0, DOOR_X - x0, xEnd - x0], y: [0, 96, 181] };
-                    return (
-                        <motion.span key={x0} aria-hidden className="absolute h-[22px] w-[22px] rounded-full"
-                            style={{ left: x0 - 11, top: 28, background: C.glucose }}
-                            initial={{ x: 0, y: 0 }}
-                            animate={goes ? (reduce ? { x: xEnd - x0, y: 181 } : target) : { x: 0, y: 0 }}
-                            transition={{ delay: 0.25 + PASS_ORDER.indexOf(i as DotIndex) * 0.07, duration: 0.65, ease: EASE_OUT }} />
-                    );
-                })}
-            </div>
+const Vesicles = ({ docked, reduce }: { docked: number; reduce: boolean }) => (
+    <g>
+        {REST.map(([rx, ry], i) => {
+            const on = i < docked;
+            const [tx, ty] = SITES[i];
+            return (
+                <motion.g key={i} initial={false} animate={{ x: on ? tx - rx : 0, y: on ? ty - ry : 0 }}
+                    transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 0.35 + (i % 4) * 0.08, ease: EASE_IN_OUT }}>
+                    <circle cx={rx} cy={ry} r={13} fill={on ? C.glucose : '#0B1220'} stroke={C.glucose} strokeWidth={3} style={{ transition: 'fill 400ms 700ms' }} />
+                    <rect x={rx - 3} y={ry - 7} width={6} height={14} rx={2} fill={on ? '#04080F' : C.glucose} style={{ transition: 'fill 400ms 700ms' }} />
+                </motion.g>
+            );
+        })}
+    </g>
+);
 
-            {insulin === 'blocked' && (
-                <motion.div className="absolute flex items-center gap-2 rounded-xl border-[3px] px-3 py-1"
-                    style={{ left: 20, top: 186, borderColor: C.text, background: '#04080F', color: C.text }}
-                    initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: step === 1 ? 0.5 : 0, duration: DUR.enter, ease: EASE_OUT }}>
-                    <Ban size={22} strokeWidth={3} aria-hidden />
-                    <span className="text-[19px] font-semibold">wortmanina</span>
-                </motion.div>
-            )}
+/** Faixa do tempo (passo 5): sensibilidade maior por ~48 h; em 5 dias, some. Escala 0 → 120 h. */
+const Window48h = ({ show, reduce }: { show: boolean; reduce: boolean }) => {
+    const x0 = 92;
+    const x48 = x0 + (48 / 120) * 520;
+    return (
+        <motion.g initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            <SvgText x={0} y={411} text="treino →" size={16} color="#E5E7EB" weight={700} />
+            <motion.rect x={x0} y={391} width={x48 - x0} height={28} rx={6} fill={C.insulin}
+                style={{ transformBox: 'fill-box', transformOrigin: 'left center' }}
+                initial={false} animate={{ scaleX: show ? 1 : 0 }} transition={{ duration: reduce ? 0 : DUR.draw, delay: 0.2, ease: EASE_OUT }} />
+            <text x={x0 + 12} y={411} fontSize={16} fontWeight={800} fill="#04080F" style={{ fontFamily: 'var(--font-body)' }}>mais sensível · ~48 h</text>
+            <line x1={x48 + 8} y1={405} x2={470} y2={405} stroke={SLATE} strokeWidth={3} strokeDasharray="8 7" />
+            <SvgText x={478} y={411} text="5 dias: some (n = 3)" size={16} color="#E5E7EB" />
+        </motion.g>
+    );
+};
 
-            <KeyPill x={18} label="insulina" detail={detail ? 'via PI3K' : undefined} color={C.insulin} state={insulin} />
-            <KeyPill x={268} label="contração" detail={detail ? 'outra via' : undefined} color={C.stone} state={contraction} />
-        </div>
+export const Glut4Door = ({ step, insulin, contraction, docked }: { step: number; insulin: KeyState; contraction: KeyState; docked: number }) => {
+    const reduce = useReducedMotion() ?? false;
+    const anyOn = insulin === 'on' || contraction === 'on';
+    return (
+        <svg viewBox={`0 0 ${FIBER_W} ${FIBER_H}`} width={FIBER_W} height={FIBER_H} className="block" role="img"
+            aria-label="Fibra muscular em corte: GLUT4 em vesículas, cascata da insulina e da contração convergindo na translocação">
+            <rect x={0} y={0} width={FIBER_W} height={MEM_Y} fill={BLOOD} />
+            <SvgText x={150} y={22} text="capilar · glicose do sangue" size={16} color={C.muted} weight={700} />
+            {[170, 240, 380, 450, 530].map(x => <path key={x} d={HEX} transform={`translate(${x} 42)`} fill={C.glucose} opacity={0.55} />)}
+            <rect x={0} y={MEM_Y} width={TUBE.l} height={16} fill={SLATE} />
+            <rect x={TUBE.r} y={MEM_Y} width={FIBER_W - TUBE.r} height={16} fill={SLATE} />
+            <rect x={TUBE.l + 10} y={MEM_Y} width={TUBE.r - TUBE.l - 20} height={TUBE.bottom - MEM_Y} fill={BLOOD} />
+            <rect x={TUBE.l} y={MEM_Y} width={10} height={TUBE.bottom - MEM_Y + 10} fill={SLATE} />
+            <rect x={TUBE.r - 10} y={MEM_Y} width={10} height={TUBE.bottom - MEM_Y + 10} fill={SLATE} />
+            <rect x={TUBE.l} y={TUBE.bottom} width={TUBE.r - TUBE.l} height={10} fill={SLATE} />
+            <SvgText x={TUBE.r + 8} y={240} text="túbulo T" size={16} color="#D1D5DB" weight={700} />
+            <SvgText x={536} y={98} text="sarcolema" size={16} color="#D1D5DB" weight={700} />
+            <motion.g initial={false} animate={{ opacity: docked < REST.length ? 1 : 0 }} transition={{ duration: DUR.enter, delay: 0.6 }}>
+                <SvgText x={170} y={276} text="vesículas" size={16} anchor="end" color={C.glucoseSoft} weight={700} />
+                <SvgText x={170} y={296} text="de GLUT4" size={16} anchor="end" color={C.glucoseSoft} weight={700} />
+            </motion.g>
+            <motion.g initial={false} animate={{ opacity: docked > 0 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: 0.9 }}>
+                <SvgText x={344} y={98} text="GLUT4 na superfície" size={16} color={C.glucoseSoft} weight={700} />
+            </motion.g>
+
+            <InsulinCascade state={insulin} step={step} reduce={reduce} />
+            <Wortmannin state={insulin} step={step} />
+            <ContractionCascade state={contraction} step={step} reduce={reduce} />
+
+            <motion.g initial={false} animate={{ opacity: step >= 1 ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+                <rect x={NODE.x - 92} y={NODE.y - 16} width={184} height={32} rx={16} fill={anyOn ? `${C.glucose}30` : '#0B1220'}
+                    stroke={anyOn ? C.glucose : SLATE} strokeWidth={anyOn ? 3 : 2} style={{ transition: 'all 300ms' }} />
+                <SvgText x={NODE.x} y={NODE.y + 6} text="Rab · SNARE" size={16} anchor="middle" color={anyOn ? '#F9FAFB' : '#9CA3AF'} weight={700} />
+                <path d={`M ${NODE.x} ${NODE.y - 18} L ${NODE.x} 332`} stroke={anyOn ? C.glucose : SLATE} strokeWidth={3} markerEnd="url(#g4-head)" />
+            </motion.g>
+            <defs>
+                <marker id="g4-head" viewBox="0 0 10 10" refX={6} refY={5} markerWidth={4} markerHeight={4} orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 Z" fill={anyOn ? C.glucose : SLATE} />
+                </marker>
+            </defs>
+
+            <Vesicles docked={docked} reduce={reduce} />
+            {!reduce && <GlucoseFlow key={docked} docked={docked} />}
+            <Window48h show={step >= 4} reduce={reduce} />
+        </svg>
     );
 };

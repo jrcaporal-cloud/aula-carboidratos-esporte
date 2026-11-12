@@ -15,6 +15,12 @@ const SHORTCUTS: [string, string][] = [
     ['G', 'visão geral'],
     ['F', 'tela cheia'],
     ['P', 'modo apresentador'],
+    ['3', 'modelo 3D do slide'],
+    ['D', 'detalhamento'],
+    ['L', 'holofote (roda = tamanho, clique fixa)'],
+    ['K', 'caneta'],
+    ['Shift+K', 'cor da caneta'],
+    ['Esc', 'desliga holofote e caneta'],
     ['Home / End', 'início / fim'],
 ];
 

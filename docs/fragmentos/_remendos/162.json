@@ -1,0 +1,18 @@
+{
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Paulo é caso fictício. MacDougall 1999 (8 fisiculturistas, n = 4 por condição): rosca a 80% de 1RM tirou 12% do glicogênio do bíceps em 1 série e 24% em 3 séries; Essén 1990: 30 min de coxa até a falha, 690 → 495 mmol/kg ps (≈−28%). Koopman 2006 (8 não treinados, ~45 min, em jejum): −23% nas fibras tipo I, −40% nas IIa e −44% nas IIx; nenhum tanque passou da metade. Henselmans 2022, revisão de 49 estudos: agudos 13 nulos × 6 positivos (estes com controle em jejum ou >10 séries), curto prazo 0 de 7, longo prazo 15 nulos, 1 a favor e 1 contra. Henselmans 2026, meta-análise de 11 ECRs: SMD 0,15 (p = 0,23), GRADE baixa; no cruzado de 20 treinados, +33 g CHO/dia não mudou massa magra nem 1RM.",
+  "pergunta": "Quantas séries por grupo muscular o atleta de vocês faz numa sessão típica? Mais ou menos que 10?",
+  "transicao": "Mas a insulina não é anabólica? Vamos medir a síntese proteica com e sem carboidrato."
+ },
+ "slide": {
+  "fontes": [
+   "MacDougall JD, Ray S, Sale DG, et al. Muscle substrate utilization and lactate production. Can J Appl Physiol 1999;24(3):209-215. DOI 10.1139/h99-017 · PMID 10364416 — rosca a 80% 1RM: glicogênio do bíceps −12% (1 série) e −24% (3 séries); n = 4 por condição.",
+   "Koopman R, Manders RJ, Jonkers RA, et al. Intramyocellular lipid and glycogen content are reduced following resistance exercise in untrained healthy males. Eur J Appl Physiol 2006;96(5):525-534. DOI 10.1007/s00421-005-0118-0 · PMID 16369816 — glicogênio −23% (tipo I), −40% (IIa), −44% (IIx) em ~45 min.",
+   "Henselmans M, Bjørnsen T, Hedderman R, Vårvik FT. The Effect of Carbohydrate Intake on Strength and Resistance Training Performance: A Systematic Review. Nutrients 2022;14(4):856. DOI 10.3390/nu14040856 · PMID 35215506 — estudos agudos: 13 nulos × 6 positivos (sobretudo com controle em jejum e >10 séries).",
+   "Henselmans M, Vårvik FT, Izquierdo M. The Effect of Carbohydrate Intake on Muscle Hypertrophy: A Systematic Review and Meta-analysis. Sports Med 2026;56(3):691-702. DOI 10.1007/s40279-025-02341-z · PMID 41712097 — SMD 0,15 (p = 0,23), 11 ECRs isonitrogenados, GRADE baixa.",
+   "Essén-Gustavsson B, Tesch PA. Glycogen and triglyceride utilization in relation to muscle metabolic characteristics in men performing heavy-resistance exercise. Eur J Appl Physiol 1990;61(1-2):5-10. DOI 10.1007/bf00236686 · PMID 2289498 — 30 min de quadríceps até a falha: 690 → 495 mmol/kg ps (≈−28%, cálculo nosso).",
+   "Henselmans M, Tiede DR, Plotkin DL, et al. Effects of Modest Carbohydrate-Energy Supplementation on Resistance Training Adaptations in Trained Men: A Crossover Trial. Nutrients 2026;18(12):1961. DOI 10.3390/nu18121961 · PMID 42356347 — cruzado, 20 treinados, 8 semanas por fase: +33 g CHO/d sem diferença em massa magra nem 1RM."
+  ]
+ }
+}

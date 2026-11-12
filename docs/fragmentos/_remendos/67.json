@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Murray B, Rosenbloom C. Fundamentals of glycogen metabolism for coaches and athletes. Nutr Rev 2018;76(4):243–259. DOI 10.1093/nutrit/nuy001 · PMID 29444266 — músculo ~500 g, fígado ~80 g.",
+   "Gonzalez JT, Fuchs CJ, Betts JA, van Loon LJ. Liver glycogen metabolism during and after prolonged endurance-type exercise. Am J Physiol Endocrinol Metab 2016;311(3):E543–E553. DOI 10.1152/ajpendo.00232.2016 · PMID 27436612 — atletas de endurance não têm glicogênio hepático basal maior.",
+   "Coyle EF, Coggan AR, Hemmert MK, Ivy JL. Muscle glycogen utilization during prolonged strenuous exercise when fed carbohydrate. J Appl Physiol 1986;61(1):165–172. DOI 10.1152/jappl.1986.61.1.165 · PMID 3525502 — fadiga 3,02 × 4,02 h; glicose 2,5 × 4,2–5,2 mM; uso de glicogênio igual nas 3 primeiras horas; n = 7.",
+   "Gonzalez JT, Fuchs CJ, Smith FE et al. Ingestion of glucose or sucrose prevents liver but not muscle glycogen depletion during prolonged endurance-type exercise in trained cyclists. Am J Physiol Endocrinol Metab 2015;309(12):E1032–E1039. DOI 10.1152/ajpendo.00376.2015 · PMID 26487008 — fígado 325 → 345 e músculo 101 → 60 mmol/L com glicose; água (n = 4) fígado 454 → 283.",
+   "Rothschild JA, Dudley-Rode H, Carpenter H et al. Carbohydrate ingestion during prolonged exercise and net skeletal muscle glycogen utilization: a meta-analysis. J Appl Physiol 2026;140(1):76–87. DOI 10.1152/japplphysiol.00861.2025 · PMID 41363659 — SMD −0,16; ~24 mmol/kg dw poupados; 31 estudos."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Dois tanques (Murray 2018): músculo ~500 g (300–700), fígado ~80 g (0–160), sangue ~4 g de glicose; o fígado segura a glicemia, e o treino não o aumenta (Gonzalez 2016). Coyle 1986, 7 ciclistas a 71% do VO₂máx, cruzado com placebo: fadiga em 3,02 h com glicose a 2,5 mM; com polímero de glicose (2 g/kg aos 20 min + 0,4 g/kg a cada 20 min), glicemia de 4,2–5,2 mM e fadiga em 4,02 h. O glicogênio muscular caiu igual nas 3 primeiras horas (51,5 mmol/kg/h nas 2 primeiras, 23 na 3ª); a hora extra usou ~5 (NS). Coyle não mediu o fígado; Gonzalez 2015 mediu por ¹³C-RM (14 ciclistas, 3 h a 50%, 102 g/h): fígado 325 → 345 com glicose e 321 → 348 com sacarose, músculo 101 → 60 e 114 → 67; só água (n = 4) fígado 454 → 283. Rothschild 2026 (31 estudos, 48 efeitos): poupa só ~24 mmol/kg ps em ~100 min (IC 4–45; SMD −0,16, IC −0,30 a −0,02), sem moderador significativo. Níveis dos tanques ilustrativos.",
+  "pergunta": "Se o carboidrato na prova pouco poupa o músculo, por que ele adia a fadiga?",
+  "transicao": "Fora do laboratório, o que acontece quando os dois tanques acabam tem nome: o muro."
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Leatt 1989, ensaio de campo com 5 + 5 jogadores: 0,5 L de polímero de glicose a 7% antes e no intervalo (≈70 g) reduziu o glicogênio gasto de 181 para 111 mmol/kg ps (~39% a menos, cálculo nosso), sem medir desempenho. Balsom 1999a, cruzado com 7 homens: com glicogênio alto, 294 ± 29 tiros de 6 s contra 111 ± 14 com glicogênio baixo, 2,6 vezes, ou +165% (cálculo; se alguém citar '+265%', é a frase do próprio abstract, mas os números dão +165%). Xie 2026, meta-análise multinível (23 grupos, 341 atletas): na habilidade e decisão sob fadiga, g = 0,26 com IC de −0,09 a 0,61 (p = 0,118), certeza muito baixa; cafeína g = 0,04. Baker 2015 resume: CHO (30–60 g/h, 6–7%) melhora a capacidade intermitente; sprint, salto e habilidade ficam mistos.",
+  "pergunta": "Vocês já viram o CHO vendido como 'melhora a tomada de decisão'? Qual estudo sustentava isso?",
+  "transicao": "Saindo do campo e indo para a academia: quanto glicogênio uma sessão de força realmente gasta?"
+ },
+ "slide": {
+  "fontes": [
+   "Leatt PB, Jacobs I. Effect of glucose polymer ingestion on glycogen depletion during a soccer match. Can J Sport Sci 1989;14(2):112-116. PMID 2736440 — 111 × 181 mmol/kg ps de glicogênio gasto com × sem CHO a 7% (5 + 5 jogadores); −39%: cálculo nosso.",
+   "Balsom PD, Gaitanos GC, Söderlund K, Ekblom B. High-intensity exercise and muscle glycogen availability in humans. Acta Physiol Scand 1999;165(4):337-345. DOI 10.1046/j.1365-201x.1999.00517.x · PMID 10350228 — 111 × 294 tiros de 6 s com glicogênio baixo × alto (n = 7); razão 2,6×: cálculo nosso.",
+   "Xie S, Wen X. Acute caffeine and carbohydrate strategies for fatigue-related sport-specific performance in team-sport athletes: a systematic review and multilevel meta-analysis. J Int Soc Sports Nutr 2026;23(1):2731524. DOI 10.1080/15502783.2026.2731524 · PMID 42908119 — CHO na habilidade/decisão sob fadiga: g = 0,256 (IC 95% −0,094 a 0,605), certeza GRADE muito baixa.",
+   "Baker LB, Rollo I, Stein KW, Jeukendrup AE. Acute Effects of Carbohydrate Supplementation on Intermittent Sports Performance. Nutrients 2015;7(7):5733-5763. DOI 10.3390/nu7075249 · PMID 26184303 — revisão: CHO melhora a capacidade intermitente na maioria dos estudos (30–60 g/h, solução 6–7%); resultado misto em sprint, salto e habilidade."
+  ]
+ }
+}

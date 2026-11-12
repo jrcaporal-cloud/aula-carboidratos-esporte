@@ -40,9 +40,9 @@ Fonte de conferência: Europe PMC REST (abstract `resultType=core`) e, quando in
 - Amostra: corredores treinados (T2). O n não consta no abstract `[NÃO CONFIRMADO]`.
 - Intervenção: A = 3 dias com 15% de CHO e depois 3 dias com 70% (o "clássico", com fase de depleção); B = 3 dias com 50% e depois 3 dias com 70% (o "modificado"); C = 6 dias com 50%. Esteira a 73% do VO2máx em polimento: 90, 40, 40, 20 e 20 min, mais 1 dia de repouso.
 - Teste: corrida de 20,9 km.
-- Resultado principal: glicogênio de 207 (A), 203 (B) e 159 (C) mmol/kg ww. A e B gastaram mais glicogênio por km (5,0 e 5,1 contra 3,1 mmol/kg/km). **Não houve diferença no tempo da corrida de 20,9 km.**
+- Resultado principal: glicogênio de 207 (A), 203 (B) e 159 (C) mmol/kg ww. A e B gastaram mais glicogênio por km (5,0 e 5,1 contra 3,1 mmol/kg/km). **Não houve diferença no tempo da corrida de 20,9 km nem no glicogênio pós-prova** (valores pós-prova e duração da corrida não constam no abstract; acrescentado em 12/11/2026 conferindo o abstract, PMID 7333741).
 - Limitações: prova curta demais para a carga fazer diferença, sem cegamento e com amostra pequena.
-- Ponto de ensino: (1) a fase de depleção com dieta pobre em CHO é dispensável, porque o protocolo moderado chega ao mesmo glicogênio; (2) quem começa com mais glicogênio também gasta mais; (3) em prova de cerca de 1h20 a carga não melhorou o desempenho (resultado nulo).
+- Ponto de ensino: (1) a fase de depleção com dieta pobre em CHO é dispensável, porque o protocolo moderado chega ao mesmo glicogênio; (2) quem começa com mais glicogênio também gasta mais; (3) em prova de 20,9 km (duração não informada no abstract) a carga não melhorou o desempenho (resultado nulo).
 - Verificação: confirmado no abstract.
 
 ### BURKE2000
@@ -63,7 +63,7 @@ Fonte de conferência: Europe PMC REST (abstract `resultType=core`) e, quando in
 - Amostra: n = 8 homens treinados em endurance (T2).
 - Intervenção: 10 g/kg/d de CHO de alto IG com o atleta fisicamente inativo, por 3 dias.
 - Teste: nenhum. O desfecho foi o glicogênio (biópsia e coloração PAS por tipo de fibra).
-- Resultado principal: glicogênio de 95 (5) para 180 (15) mmol/kg ww **após 1 dia** (P < 0,05), estável nos dias 2–3. O pico foi atingido nas fibras I, IIa e IIb.
+- Resultado principal: glicogênio de 95 (5) para 180 (15) mmol/kg ww **após 1 dia** (P < 0,05), estável depois (biópsias só antes, no dia 1 e no dia 3; o abstract não dá o valor do dia 3 — corrigido em 12/11/2026 conferindo o abstract, PMID 12111292). O pico foi atingido nas fibras I, IIa e IIb.
 - Limitações: sem desfecho de desempenho, só homens, n = 8.
 - Ponto de ensino: em atleta treinado e em repouso, 24 h com ~10 g/kg bastam para chegar ao glicogênio máximo. A carga moderna é de 1 a 3 dias, não de uma semana.
 - Verificação: confirmado no abstract.

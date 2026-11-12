@@ -1,82 +1,57 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
+import { DUR, EASE_OUT, stagger } from '../../lib/motion';
 import { C } from './kit/palette';
-import { Grow } from './kit/Beat';
-import { Tank } from './kit/Tank';
-import { CalcChip, IllustrativeChip } from './kit/chips';
-import { Appear, Foot, Frame, Headline } from './ato8/parts';
-import {
-    KIND, NEXT_KIND, PLANNER_BEATS, PLANNER_SOURCE, PRESETS, RULER, WEEK, type SessionKind,
-} from './ato8/planner.content';
+import { CalcChip, FictionChip, IllustrativeChip } from './kit/chips';
+import { sourcesUpTo } from './kit/sources';
+import { Panel } from './kit/ui';
+import { PlannerBoard } from './ato8/PlannerBoard';
+import { StepPanel, TrainLowShell } from './ato8/TrainLowShell';
+import { LEDGER, NEXT_KIND, PLANNER_STEPS, PRESETS, type SessionKind } from './ato8/planner.content';
 
 /**
- * Slide 143 · Combustível para o trabalho. Quadro da semana: cada coluna é um dia (sessão, glicogênio ao começar, CHO do dia).
- * O passador conta a história (prato igual → chave alto → leves selecionadas baixas → mão do professor);
- * o clique numa sessão troca o tipo (leve → chave → com pouco) e o tanque e a barra do dia acompanham.
+ * Slide 143 · Combustível para o trabalho. Palco: a semana da Marina (caso fictício) com o glicogênio ao começar cada
+ * sessão na régua de Areta 2018 (~560 / 462 / ~210 mmol/kg ps). O passador conta a história (prato igual → chave alto
+ * → leves com pouco → a semana pronta); o clique numa sessão troca o tipo (leve → chave → com pouco) e tudo acompanha.
  */
 
-const CARD: Record<SessionKind, { bg: string; fg: string; border: string }> = {
-    neutral: { bg: 'rgba(255,255,255,0.06)', fg: C.text, border: 'rgba(255,255,255,0.18)' },
-    leve: { bg: 'rgba(255,255,255,0.06)', fg: C.text, border: 'rgba(255,255,255,0.32)' },
-    chave: { bg: C.glucose, fg: '#04080F', border: C.glucose },
-    low: { bg: '#04080F', fg: C.caveat, border: C.caveat },
-};
+const ACCENT = [C.text, C.glucose, C.caveat, C.ok] as const;
 
 interface Picks { step: number; map: Readonly<Record<number, SessionKind>> }
 
-const DayColumn = ({ i, kind, onPick }: { i: number; kind: SessionKind; onPick: (i: number) => void }) => {
-    const look = KIND[kind];
-    const card = CARD[kind];
-    return (
-        <div className="flex w-[124px] flex-col items-center gap-3">
-            <span className="text-[20px] font-semibold text-gray-200">{WEEK[i].day}</span>
-            <button type="button" onClick={() => onPick(i)} aria-label={`${WEEK[i].day}: ${WEEK[i].session}, ${look.tag}`}
-                className="flex h-[78px] w-full cursor-pointer flex-col items-center justify-center rounded-xl border-[3px] transition-[transform,background-color,color,border-color] duration-200 active:scale-[0.97]"
-                style={{ background: card.bg, color: card.fg, borderColor: card.border }}>
-                <span className="text-[20px] font-bold leading-tight">{WEEK[i].session}</span>
-                <span className="text-[16px] font-semibold leading-tight opacity-90">{look.tag}</span>
-            </button>
-            <Tank level={look.glycogen} width={44} height={84} active={kind === 'chave'} />
-            <div className="relative h-[96px] w-[54px] overflow-hidden rounded-lg" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                <Grow value={look.cho} axis="y" color={C.glucose} />
-            </div>
-        </div>
-    );
-};
+const Ledger = ({ step }: { step: number }) => (
+    <div className="flex flex-col gap-1">
+        <span className="text-[15px] text-gray-300">régua de Areta 2018 · mmol/kg ps</span>
+        {LEDGER.filter(r => r.at <= step).map((r, i) => (
+            <motion.div key={r.label} className="flex items-baseline justify-between text-[18px] font-semibold"
+                initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: DUR.enter, delay: r.at === step ? stagger(i, 0.4, 0.1) : 0, ease: EASE_OUT }}>
+                <span className="text-gray-100">{r.label}</span>
+                <span className="font-display text-[22px] tabular-nums" style={{ color: r.at === 1 ? C.glucoseSoft : r.at === 2 ? C.caveat : '#FFFFFF' }}>{r.value}</span>
+            </motion.div>
+        ))}
+    </div>
+);
 
 export default function FuelPlannerSim() {
-    const { step } = useSlideSteps(PLANNER_BEATS.length);
+    const { step, setStep } = useSlideSteps(PLANNER_STEPS.length);
     const [picks, setPicks] = useState<Picks>({ step: -1, map: {} });
     // Os cliques valem só no passo em que foram feitos: o passador sempre volta à história.
     const kindOf = (i: number): SessionKind => (picks.step === step ? picks.map[i] : undefined) ?? PRESETS[step][i];
     const pick = (i: number) => {
-        const current = kindOf(i);
         const base = picks.step === step ? picks.map : {};
-        setPicks({ step, map: { ...base, [i]: NEXT_KIND[current] } });
+        setPicks({ step, map: { ...base, [i]: NEXT_KIND[kindOf(i)] } });
     };
-    const lowCount = WEEK.filter((_, i) => kindOf(i) === 'low').length;
-
+    const s = PLANNER_STEPS[step];
     return (
-        <Frame>
-            <Headline beat={step} chips={<><IllustrativeChip /><CalcChip>régua: cálculo (Areta 2018)</CalcChip></>} size={28}>{PLANNER_BEATS[step]}</Headline>
-            <div className="mt-4 flex gap-5">
-                {/* legenda das linhas */}
-                <div className="flex w-[150px] shrink-0 flex-col pt-[42px] text-[17px] leading-snug text-gray-300">
-                    <span className="flex h-[78px] items-center">sessão</span>
-                    <div className="mt-3 flex h-[84px] flex-col justify-center">
-                        <span>glicogênio ao começar</span>
-                        <Appear show={step >= 1} className="text-[16px] text-gray-400">{RULER.filter(r => r.label !== 'normal').map(r => `${r.label} ${r.value}`).join(' · ')}</Appear>
-                    </div>
-                    <span className="mt-3 flex h-[96px] items-center">CHO do dia</span>
-                </div>
-                <div className="flex gap-[10px]">
-                    {WEEK.map((d, i) => <DayColumn key={d.day} i={i} kind={kindOf(i)} onPick={pick} />)}
-                </div>
-            </div>
-            <Appear show={step >= 3} className="mt-3 ml-[170px] text-[20px] text-gray-100">
-                sessões com pouco: <span className="font-bold tabular-nums" style={{ color: C.caveat }}>{lowCount} de 7</span>
-            </Appear>
-            <Foot source={PLANNER_SOURCE} />
-        </Frame>
+        <TrainLowShell tabs={PLANNER_STEPS.map(p => p.tab)} step={step} setStep={setStep} layoutId="planner-tabs"
+            chips={<><FictionChip /><IllustrativeChip>semana ilustrativa</IllustrativeChip><CalcChip>~560 e ~210: cálculo</CalcChip></>}>
+            <Panel className="w-[700px] shrink-0 px-4 py-3"><PlannerBoard step={step} kindOf={kindOf} onPick={pick} /></Panel>
+            <StepPanel step={step} color={ACCENT[step]} headline={s.headline} text={s.text}
+                source={sourcesUpTo(PLANNER_STEPS.map(p => p.sources), step)} className="flex-1">
+                <Ledger step={step} />
+            </StepPanel>
+        </TrainLowShell>
     );
 }

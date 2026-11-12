@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { EASE_OUT } from '../../../lib/motion';
+import { DUR, EASE_OUT } from '../../../lib/motion';
 import { C } from '../kit/palette';
 import { hash01 } from './hash';
 
@@ -20,6 +20,9 @@ export const MOSAIC_H = Math.ceil(2 * R + (ROWS - 1) * 1.5 * R + PAD * 2);
 interface Cell {
     id: number;
     points: string;
+    cx: number;
+    cy: number;
+    col: number;
     /** Ordem de esvaziamento (0 = primeira); só as `emptyCount` primeiras esvaziam. */
     rank: number;
     /** Nível antes do jogo: quase todas cheias, algumas um pouco abaixo (variação natural). */
@@ -42,24 +45,34 @@ const buildCells = (): Cell[] => {
             .map(a => jitter(cx + R * Math.cos((a * Math.PI) / 180), cy + R * Math.sin((a * Math.PI) / 180)))
             .map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`)
             .join(' ');
-        return { id, points, order: hash01(id + 1000), start: hash01(id + 50) < 0.14 ? 0.72 : 1 };
+        return { id, points, cx, cy, col, order: hash01(id + 1000), start: hash01(id + 50) < 0.14 ? 0.72 : 1 };
     });
     const ranked = [...raw].sort((a, b) => a.order - b.order).map(c => c.id);
-    return raw.map(({ id, points, start }) => ({ id, points, start, rank: ranked.indexOf(id) }));
+    return raw.map(({ id, points, cx, cy, col, start }) => ({ id, points, cx, cy, col, start, rank: ranked.indexOf(id) }));
 };
 
 /** O mosaico é fixo: calculado uma vez, quando o módulo carrega. */
 const CELLS = buildCells();
 
+/** A fibra que o slide 160 amplia: uma das que esvaziam, na borda direita, perto do meio (coordenadas do viewBox). */
+const ZOOM_EMPTY = 47;
+export const ZOOM_CELL = [...CELLS]
+    .filter(c => c.col >= 8 && c.rank < ZOOM_EMPTY)
+    .sort((a, b) => Math.abs(a.cy - MOSAIC_H / 2) - Math.abs(b.cy - MOSAIC_H / 2))[0];
+
 interface FiberMosaicProps {
     emptied: boolean;
     emptyCount: number;
+    /** Largura de exibição (o mosaico não tem texto: pode encolher). */
+    width?: number;
+    /** Contorna a fibra ampliada (ZOOM_CELL). */
+    highlight?: boolean;
 }
 
-export const FiberMosaic = ({ emptied, emptyCount }: FiberMosaicProps) => {
+export const FiberMosaic = ({ emptied, emptyCount, width = MOSAIC_W, highlight = false }: FiberMosaicProps) => {
     const reduce = useReducedMotion();
     return (
-        <svg viewBox={`0 0 ${MOSAIC_W} ${MOSAIC_H}`} width={MOSAIC_W} height={MOSAIC_H} role="img"
+        <svg viewBox={`0 0 ${MOSAIC_W} ${MOSAIC_H}`} width={width} height={(width * MOSAIC_H) / MOSAIC_W} role="img"
             aria-label={emptied ? `${emptyCount} de 100 fibras vazias ou quase vazias` : '100 fibras cheias de glicogênio'}>
             {/* base: a fibra sem glicogênio (ardósia escura) */}
             {CELLS.map(c => (
@@ -75,6 +88,10 @@ export const FiberMosaic = ({ emptied, emptyCount }: FiberMosaicProps) => {
                         transition={{ delay: empty && !reduce ? c.rank * 0.014 : 0, duration: reduce ? 0 : 0.4, ease: EASE_OUT }} />
                 );
             })}
+            {ZOOM_CELL && (
+                <motion.polygon points={ZOOM_CELL.points} fill="none" stroke="#F9FAFB" strokeWidth={5} strokeLinejoin="round"
+                    initial={false} animate={{ opacity: highlight ? 1 : 0 }} transition={{ duration: DUR.enter }} />
+            )}
         </svg>
     );
 };

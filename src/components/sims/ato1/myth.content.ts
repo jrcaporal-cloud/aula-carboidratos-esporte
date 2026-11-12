@@ -20,10 +20,36 @@ export const MYTHS: readonly Myth[] = [
     { text: 'Mulher não supercompensa glicogênio.', short: 'Mulher não supercompensa' },
 ];
 
+/**
+ * Onde a aula responde cada afirmação (mesma ordem de MYTHS) e que tipo de dado vai decidir.
+ * Neutro de propósito: diz o que será medido, nunca o resultado.
+ */
+export interface MythWhere {
+    act: string;
+    decides: string;
+}
+
+export const MYTH_WHERE: readonly MythWhere[] = [
+    { act: 'V', decides: 'ensaios que comparam IG baixo × alto na refeição antes do exercício' },
+    { act: 'VI', decides: 'oxidação do carboidrato ingerido, medida com isótopo' },
+    { act: 'VI', decides: 'potência e sintomas com glicose + frutose × só glicose' },
+    { act: 'V', decides: 'glicogênio medido por biópsia depois da carga' },
+    { act: 'IX', decides: 'força e massa muscular com e sem carboidrato depois do treino' },
+    { act: 'VIII', decides: 'contrarrelógio depois de adaptar à dieta cetogênica × rica em carboidrato' },
+    { act: 'V', decides: 'glicemia e desempenho de quem come na última hora' },
+    { act: 'V', decides: 'glicogênio por biópsia em mulheres depois da carga' },
+];
+
 export interface Tally {
     agree: number;
     disagree: number;
 }
+
+/** Parcela que concorda (0 → 1), ou null sem voto. */
+export const agreeShare = (t: Tally): number | null => {
+    const total = t.agree + t.disagree;
+    return total ? t.agree / total : null;
+};
 
 export const EMPTY_TALLIES: readonly Tally[] = MYTHS.map(() => ({ agree: 0, disagree: 0 }));
 

@@ -1,0 +1,19 @@
+{
+  "slide": {
+    "fontes": [
+      "Wallis GA, Dawson R, Achten J, Webber J, Jeukendrup AE. Metabolic response to carbohydrate ingestion during exercise in males and females. Am J Physiol Endocrinol Metab 2006;290(4):E708-E715. DOI 10.1152/ajpendo.00357.2005 · PMID 16278245 — pico de oxidação exógena 0,70 (H) × 0,65 g/min (M) com 90 g/h; glicogênio não poupado.",
+      "McNulty KL, Elliott-Sale KJ, Dolan E, et al. The Effects of Menstrual Cycle Phase on Exercise Performance in Eumenorrheic Women: A Systematic Review and Meta-Analysis. Sports Med 2020;50(10):1813-1827. DOI 10.1007/s40279-020-01319-3 · PMID 32661839 — ES0,5 −0,06 (ICr95% −0,16 a 0,04), 78 estudos, qualidade baixa em 42%.",
+      "Tarnopolsky MA, Atkinson SA, Phillips SM, MacDougall JD. Carbohydrate loading and metabolism during exercise in men and women. J Appl Physiol 1995;78(4):1360-1368. DOI 10.1152/jappl.1995.78.4.1360 · PMID 7615443 — CHO a 75% da energia: glicogênio +41% (H) × 0% (M).",
+      "James AP, Lorraine M, Cullen D, et al. Muscle glycogen supercompensation: absence of a gender-related difference. Eur J Appl Physiol 2001;85(6):533-538. DOI 10.1007/s004210100499 · PMID 11718281 — 12 g/kg de massa magra/d: mulheres 108 → 193, homens 109 → 183 mmol/kg pu.",
+      "Tarnopolsky MA, Zawada C, Richmond LB, et al. Gender differences in carbohydrate loading are related to energy intake. J Appl Physiol 2001;91(1):225-230. DOI 10.1152/jappl.2001.91.1.225 · PMID 11408434 — mulheres só carregaram com CHO + energia.",
+      "Timmons BW, Bar-Or O, Riddell MC. Oxidation rate of exogenous carbohydrate during exercise is higher in boys than in men. J Appl Physiol 2003;94(1):278-284. DOI 10.1152/japplphysiol.00140.2002 · PMID 12391100 — 8,8 × 6,2 mg/kg/min (meninos × homens), 21,8% × 14,6% da energia; +42%: cálculo nosso.",
+      "Leites GT, Cunha GS, Chu L, Meyer F, Timmons BW. Energy substrate utilization with and without exogenous carbohydrate intake in boys and men exercising in the heat. J Appl Physiol 2016;121(5):1127-1134. DOI 10.1152/japplphysiol.00535.2016 · PMID 27609200 — a 38 °C: 2,0 × 2,5 mg/kg de massa magra/min (meninos × homens)."
+    ]
+  },
+  "notas": {
+    "minutos": 3,
+    "mensagem": "Wallis 2006 (cruzado, 8 homens e 8 mulheres, 90 g/h de glicose): pico de oxidação do CHO ingerido de 0,70 e 0,65 g/min. McNulty 2020 (78 estudos): desempenho na fase folicular inicial com ES de −0,06 (−0,16 a 0,04), trivial, e qualidade baixa em 42% dos estudos. Na célula da carga, o '% da energia' vira g/kg: Tarnopolsky 1995 prescreveu 75% da energia e as mulheres ganharam 0% de glicogênio (eles +41%); James 2001, com 12 g/kg de massa magra, viu 108 → 193 nelas e 109 → 183 mmol/kg neles, e Tarnopolsky 2001 mostrou que o limite era a energia. Timmons 2003: meninos oxidaram 8,8 contra 6,2 mg/kg/min (+42%, cálculo nosso), 21,8% contra 14,6% da energia; Leites 2016, a 38 °C: 2,0 contra 2,5 mg/kg de massa magra/min, a vantagem inverte.",
+    "pergunta": "Alguém aqui já ouviu (ou repetiu) que mulher não supercompensa glicogênio? De onde veio?",
+    "transicao": "Um atleta em que o carboidrato é, literalmente, dose: diabetes tipo 1."
+  }
+}

@@ -1,0 +1,17 @@
+{
+ "slide": {
+  "fontes": [
+   "Costa RJS, Miall A, Khoo A, et al. Gut-training: the impact of two weeks repetitive gut-challenge during exercise on gastrointestinal status, glucose availability, fuel kinetics, and running performance. Appl Physiol Nutr Metab 2017;42(5):547-557. DOI 10.1139/apnm-2016-0453 · PMID 28177715 — ECR paralelo, 25 corredores: 2 semanas de desafio com gel a 90 g/h; sintomas GI −60%, H₂ 6 × 12 ppm (gel × placebo), distância em 1 h +5,2% (placebo −2,1%).",
+   "Cox GR, Clark SA, Cox AJ, et al. Daily training with high carbohydrate availability increases exogenous carbohydrate oxidation during endurance cycling. J Appl Physiol 2010;109(1):126-134. DOI 10.1152/japplphysiol.00950.2009 · PMID 20466803 — 28 dias de CHO alto nos treinos: oxidação exógena 54,6 → 63,6 g; desempenho igual entre os grupos.",
+   "King AJ, Etxebarria N, Ross ML, et al. Short-Term Very High Carbohydrate Diet and Gut-Training Have Minor Effects on Gastrointestinal Status and Performance in Highly Trained Endurance Athletes. Nutrients 2022;14(9):1929. DOI 10.3390/nu14091929 · PMID 35565896 — atletas de elite (AIS): treino intestinal + CHO alto sem vantagem extra; mais sintomas GI na 2ª metade.",
+   "Miall A et al. Scand J Med Sci Sports 2018;28(2):630-640. PMID 28508559 — treino intestinal de 2 semanas a 90 g/h × placebo (n = 18): pico de H₂ de 13 para 6 ppm, menos sintomas (dossiê 03, tabela K).",
+   "Diego é personagem fictício."
+  ]
+ },
+ "notas": {
+  "minutos": 3,
+  "mensagem": "Diego (caso fictício) trava acima de 60 g/h: o que não é absorvido fermenta no lúmen e sai como H₂ no hálito. Costa 2017: 25 corredores em 3 grupos paralelos (~8 por grupo); desafio de 2 h a 60% do VO₂máx com gel de 30 g de glicose:frutose 2:1 a cada 20 min (90 g/h); depois, 2 semanas de treino intestinal com gel, comida ou placebo. Resultado: sintomas GI −60% (gel) e −63% (comida), pico de H₂ 6 × 12 ppm (gel × placebo), glicemia 7,2 × 6,2 mmol/L, distância em 1 h +5,2% (gel), +4,3% (comida), −2,1% (placebo); oxidação igual. Miall 2018 replica o hálito (13 → 6 ppm). Cox 2010 (n = 16, 28 dias de CHO alto): oxidação exógena 54,6 → 63,6 g, mas desempenho ~6% melhor nos dois grupos. King 2022 (elite, n = 37): ganho de 36 × 39 s no controle e mais sintomas. O intestino com mais transportadores é esquema da explicação provável, não medida.",
+  "pergunta": "Como vocês montariam as 2 semanas de treino intestinal do Diego antes do Ironman?",
+  "transicao": "Até aqui o carboidrato foi combustível. Na prova de 1 hora, ele funciona de outro jeito."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "slide": {
+  "fontes": [
+   "Jentjens RL, Jeukendrup AE. High rates of exogenous carbohydrate oxidation from a mixture of glucose and fructose ingested during prolonged cycling exercise. Br J Nutr 2005;93(4):485-492. DOI 10.1079/BJN20041368 · PMID 15946410 — glicose + frutose 1:1 a 144 g/h: pico de 1,75 g/min × 1,06 só glicose (n = 8).",
+   "Hulston CJ, Wallis GA, Jeukendrup AE. Exogenous CHO oxidation with glucose plus fructose intake during exercise. Med Sci Sports Exerc 2009;41(2):357-363. DOI 10.1249/MSS.0b013e3181857ee6 · PMID 19127189 — a ~48 g/h, mistura 0,57 × glicose 0,60 g/min: sem vantagem (n = 7).",
+   "Currell K, Jeukendrup AE. Superior endurance performance with ingestion of multiple transportable carbohydrates. Med Sci Sports Exerc 2008;40(2):275-281. DOI 10.1249/mss.0b013e31815adf19 · PMID 18202575 — 108 g/h, glicose + frutose 2:1: contrarrelógio 8% mais rápido que glicose e 19% que água (n = 8; tempos do abstract parecem trocados, só os %).",
+   "O'Brien WJ, Rowlands DS. Fructose-maltodextrin ratio in a carbohydrate-electrolyte solution differentially affects exogenous carbohydrate oxidation rate, gut comfort, and performance. Am J Physiol Gastrointest Liver Physiol 2011;300(1):G181-9. DOI 10.1152/ajpgi.00419.2010 · PMID 21071509 — frutose:maltodextrina 0,8:1 com a maior oxidação exógena e menos desconforto.",
+   "O'Brien WJ, Stannard SR, Clarke JA, Rowlands DS. Fructose-maltodextrin ratio governs exogenous and other CHO oxidation and performance. Med Sci Sports Exerc 2013;45(9):1814-1824. DOI 10.1249/MSS.0b013e31828e12d4 · PMID 23949097 — 0,8:1 com oxidação exógena total 18% maior que 0,5:1.",
+   "Pfeiffer B, Stellingwerff T, Zaltas E, Jeukendrup AE. CHO oxidation from a CHO gel compared with a drink during exercise. Med Sci Sports Exerc 2010;42(11):2038-2045. DOI 10.1249/MSS.0b013e3181e0efe6 · PMID 20404763 — glicose + frutose 2:1 a 108 g/h: pico de 1,44 (gel) e 1,42 g/min (bebida), o ponto “2:1 · ~1,4” do gráfico.",
+   "Gráfico de curva composta: os pontos vêm de estudos diferentes (Hulston 2009, Jentjens 2004, Jentjens 2005, Pfeiffer 2010); as linhas entre eles são ilustrativas. Tecla 3: modelo 3D do enterócito."
+  ]
+ },
+ "notas": {
+  "minutos": 4,
+  "mensagem": "A frutose entra pelo GLUT5, uma segunda pista; as duas saem pelo GLUT2. Jentjens 2005 (n = 8): glicose + frutose 1:1 a 144 g/h levou o pico de oxidação exógena a 1,75 g/min, contra 1,06 só com glicose; nos últimos 90 min, 1,49 × 0,99. O 1,75 veio de 1:1, não de 2:1: a 2:1 e 108 g/h o pico fica perto de 1,4 (Pfeiffer 2010). A ~48 g/h a mistura não acrescenta (0,57 × 0,60; Hulston 2009, n = 7): sem fila no SGLT1, a segunda pista não muda nada. Currell 2008 (n = 8): 108 g/h 2:1, 8% mais rápido que glicose e 19% que água. Proporção ótima perto de frutose:maltodextrina 0,8:1, ou seja, maltodextrina:frutose 1:0,8 (O'Brien 2011/2013). Tecla 3 abre o enterócito em 3D.",
+  "pergunta": "Para um atleta que consome 45 g/h, faz sentido pagar mais por uma mistura glicose + frutose?",
+  "transicao": "Se 90 g/h com mistura funciona, e 120 g/h?"
+ }
+}

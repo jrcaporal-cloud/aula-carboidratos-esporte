@@ -1,125 +1,127 @@
-import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT, stagger } from '../../lib/motion';
-import { Beat, Grow } from './kit/Beat';
-import { CountUp } from './kit/CountUp';
 import { CalcChip, DesignChip } from './kit/chips';
-import { C, PANEL_BG } from './kit/palette';
-import { Lead, SimFrame } from './ato6/Frame';
-import { BOTTLENECK, CEILING_LEADS, GLUCOSE } from './ato6/oxidation.content';
+import { CountSvgText } from './kit/CountUp';
+import { br } from './kit/format';
+import { C } from './kit/palette';
+import { KeyFact } from './kit/rhythm';
+import { sourcesUpTo } from './kit/sources';
+import { SvgText } from './kit/ui';
+import { Gut } from './ato6/paGut';
+import { PaFrame, PaSide, STAGE_INNER_H, STAGE_INNER_W } from './ato6/paFrame';
+import { LESSONS, ROWS, STEPS } from './ato6/ceiling.content';
 
 /**
- * Slide 103 · O Teto de um Grama. Barras pareadas por dose (o que entra × o que se oxida na hora, em g/h):
- * a barra de entrada cresce, a de oxidação para no teto. A sobra fica marcada; depois, onde está o gargalo.
- * (O slide seguinte usa um gráfico de curva; aqui a forma é outra de propósito.)
+ * Slide 103 · O Teto de um Grama. Palco em dois andares: em cima, o funil de três ensaios com ¹³C (o que entra ×
+ * o que se oxida, em g/h); embaixo, o enterócito com a glicose passando pelo SGLT1 em laço, e a fila que se forma
+ * quando a ingestão passa do teto. Nada some: o quadro final tem o teto, a sobra de 144 g/h e o gargalo.
  */
 
-const GH_MAX = 190;
-const pct = (gh: number) => `${(gh / GH_MAX) * 100}%`;
-/** g/min → g/h (cálculo: × 60). */
+const X0 = 168;
+const X1 = 616;
+const sx = (gh: number) => X0 + (gh / 150) * (X1 - X0);
+const ROW_Y = [56, 120, 198] as const;
+const BAR = 18;
 const perHour = (gmin: number) => Math.round(gmin * 60);
 
-const SOURCES = [
-    'Hulston 2009 · Jentjens 2005 · Jentjens 2004 (isótopo 13C)',
-    'Jeukendrup & Jentjens, Sports Med 2000 · picos de oxidação × 60 = g/h',
-    'Jentjens 2004: 1,18 g/min oxidados de 2,4 g/min ingeridos',
-    'Jeukendrup & Jentjens, Sports Med 2000',
-] as const;
-
-const Bar = ({ value, color, delay, outline = false }: { value: number; color: string; delay: number; outline?: boolean }) => (
-    <div className="relative h-[28px] shrink-0 overflow-hidden rounded-md" style={{ width: pct(value), border: outline ? `2px solid ${color}` : 'none' }}>
-        {!outline && <Grow value={1} color={color} delay={delay} />}
-    </div>
+const Axis = () => (
+    <g>
+        <line x1={X0} x2={X1} y1={226} y2={226} stroke="rgba(255,255,255,0.35)" strokeWidth={2} />
+        {[0, 30, 60, 90, 120, 150].map(v => <SvgText key={v} x={sx(v)} y={248} text={String(v)} size={16} anchor="middle" color={C.muted} weight={500} />)}
+        <SvgText x={X1} y={22} text="g/h" size={16} anchor="end" color={C.muted} weight={600} />
+    </g>
 );
 
-const Rows = ({ step }: { step: number }) => (
-    <div className="grid grid-cols-[130px_1fr] gap-x-4">
-        <div className="flex flex-col gap-6 pt-9">
-            {GLUCOSE.map(p => <span key={p.gh} className="flex h-[62px] items-center text-[17px] leading-tight text-gray-400">{p.label}</span>)}
-        </div>
-        <Bars step={step} />
-    </div>
+const Ceiling = ({ on }: { on: boolean }) => (
+    <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+        <rect x={sx(60)} y={30} width={sx(66) - sx(60)} height={196} fill={`${C.glucose}55`} />
+        <line x1={sx(63)} x2={sx(63)} y1={30} y2={226} stroke={C.glucose} strokeWidth={2} strokeDasharray="6 5" />
+        <SvgText x={sx(60) - 8} y={22} text="teto ~1,0–1,1 g/min ≈ 60–66 g/h" size={16} anchor="end" color={C.glucoseSoft} weight={700} />
+    </motion.g>
 );
 
-const Bars = ({ step }: { step: number }) => (
-    <div className="relative flex flex-col gap-6 pt-9">
-        {/* teto: ~1,0–1,1 g/min ≈ 60–66 g/h */}
-        <motion.div className="absolute bottom-0 top-0 rounded-md" style={{ left: pct(60), width: `calc(${pct(66)} - ${pct(60)})`, background: `${C.glucose}40` }}
-            initial={false} animate={{ opacity: step >= 1 ? 1 : 0 }} transition={{ duration: DUR.enter }} />
-        <motion.span className="absolute top-0 whitespace-nowrap text-[18px] font-semibold" style={{ left: pct(60), color: C.glucoseSoft }}
-            initial={false} animate={{ opacity: step >= 1 ? 1 : 0 }} transition={{ duration: DUR.enter }}>
-            teto ~1 g/min (≈ 60 g/h)
-        </motion.span>
-        {GLUCOSE.map((p, i) => {
-            const ox = perHour(p.ox);
-            return (
-                <div key={p.gh} className="relative grid grid-cols-[1fr] gap-1.5">
-                    <div className="flex items-center gap-3">
-                        <Bar value={p.gh} color={C.stone} delay={0} outline />
-                        <span className="whitespace-nowrap text-[19px] text-gray-200">entra {p.gh} g/h</span>
-                    </div>
-                    <div className="flex items-center gap-3" style={{ opacity: step >= 1 ? 1 : 0, transition: 'opacity 250ms' }}>
-                        {step >= 1 && <Bar value={ox} color={C.glucose} delay={stagger(i, 0.1, 0.12)} />}
-                        <span className="whitespace-nowrap text-[19px] font-semibold" style={{ color: C.glucoseSoft }}>oxida ~{ox} g/h</span>
-                    </div>
-                    {step === 2 && p.gh === 144 && (
-                        <motion.div className="absolute top-0 flex h-[28px] items-center justify-center rounded-md"
-                            style={{ left: pct(ox), width: `calc(${pct(p.gh)} - ${pct(ox)})`, background: `${C.risk}55` }}
-                            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: DUR.enter }}>
-                            <span className="text-[17px] font-semibold text-white">~{p.gh - ox} g/h no caminho</span>
-                        </motion.div>
-                    )}
-                </div>
-            );
-        })}
-    </div>
+const Row = ({ i, step, reduce }: { i: number; step: number; reduce: boolean }) => {
+    const r = ROWS[i];
+    const y = ROW_Y[i];
+    const ox = perHour(r.ox);
+    const grow = (delay: number) => ({
+        initial: reduce ? false : { scaleX: 0 },
+        animate: { scaleX: 1 },
+        transition: { duration: DUR.bar, delay, ease: EASE_OUT },
+        style: { originX: 0 },
+    });
+    return (
+        <g>
+            <SvgText x={8} y={y - 2} text={r.study} size={16} color={C.muted} weight={600} />
+            <SvgText x={8} y={y + 20} text={`entra ${r.gh} g/h`} size={17} color="#F3F4F6" weight={700} />
+            <motion.rect x={X0} y={y - BAR - 3} width={sx(r.gh) - X0} height={BAR} rx={4} fill="transparent" stroke={C.stone} strokeWidth={2.5} {...grow(stagger(i, 0, 0.1))} />
+            <motion.rect x={X0} y={y + 3} width={sx(ox) - X0} height={BAR} rx={4} fill={C.glucose} {...grow(stagger(i, 0.3, 0.12))} />
+            <CountSvgText x={sx(ox) + 8} y={y + 18} text={`oxida ${br(r.ox, 2)} g/min ≈ ${ox} g/h`} size={16} color={C.glucoseSoft} weight={700}
+                delay={stagger(i, 0.4, 0.12)} />
+            {i === 2 && <Leftover on={step >= 2} y={y - BAR - 3} from={ox} to={r.gh} />}
+        </g>
+    );
+};
+
+/** A sobra de 144 g/h: o que entrou e não foi oxidado na hora. */
+const Leftover = ({ on, y, from, to }: { on: boolean; y: number; from: number; to: number }) => (
+    <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter, delay: on ? 0.2 : 0 }}>
+        <rect x={sx(from)} y={y} width={sx(to) - sx(from)} height={BAR} rx={4} fill={C.risk} />
+        <SvgText x={(sx(from) + sx(to)) / 2} y={y - 8} text={`~${to - from} g/h no caminho · 49% oxidado`} size={16} anchor="middle" color="#FDA4AF" weight={800} />
+    </motion.g>
 );
 
-const Bottleneck = () => (
-    <div className="flex flex-col gap-3">
-        {BOTTLENECK.map((b, i) => (
-            <motion.div key={b.organ} className="flex items-center gap-4 rounded-xl px-5 py-3" style={PANEL_BG}
-                initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: stagger(i, 0.2, 0.12), duration: DUR.enter, ease: EASE_OUT }}>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    style={{ background: b.limit ? C.glucose : 'rgba(255,255,255,0.12)' }}>
-                    {b.limit ? <Check size={24} strokeWidth={3} color="#04080F" aria-hidden /> : <X size={24} strokeWidth={3} color="#E5E7EB" aria-hidden />}
-                </span>
-                <span className="flex flex-col">
-                    <span className="text-[24px] font-semibold text-white">{b.organ}</span>
-                    <span className="text-[18px]" style={{ color: b.limit ? C.glucoseSoft : '#9CA3AF' }}>{b.detail}</span>
-                </span>
-            </motion.div>
-        ))}
-    </div>
+/** Rótulos do gargalo, no lado do sangue (passo 4). */
+const Bottleneck = ({ on }: { on: boolean }) => (
+    <motion.g initial={false} animate={{ opacity: on ? 1 : 0, x: on ? 0 : 10 }} transition={{ duration: DUR.enter, delay: on ? 0.3 : 0, ease: EASE_OUT }}>
+        <SvgText x={640} y={22} text="fígado libera ~1 g/min" size={16} anchor="end" color={C.glucoseSoft} weight={800} />
+        <SvgText x={640} y={46} text="músculo: não é o limite" size={16} anchor="end" color="#E5E7EB" weight={700} />
+    </motion.g>
 );
+
+const Stage = ({ step }: { step: number }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <svg viewBox={`0 0 ${STAGE_INNER_W} ${STAGE_INNER_H}`} width="100%" height="100%" className="block" role="img"
+            aria-label="Ingestão e oxidação exógena de glicose em três ensaios com isótopo, e o enterócito com o SGLT1 saturado">
+            <Ceiling on={step >= 1} />
+            <Axis />
+            {ROWS.map((r, i) => <Row key={r.study} i={i} step={step} reduce={reduce} />)}
+            <g transform="translate(4 266)">
+                <Gut fructose={false} queue={step >= 1} stressSglt1={step >= 3} queueLabel={step >= 2 ? 'sobra na luz' : 'fila: SGLT1 saturado'} />
+                <Bottleneck on={step >= 3} />
+            </g>
+        </svg>
+    );
+};
+
+/** Número-chave do passo (um por passo, pulso curto). */
+const FACT: Readonly<Record<number, { value: string; caption: string; color: string }>> = {
+    1: { value: '~1 g/min', caption: 'teto de uma fonte só', color: C.glucose },
+    2: { value: '49%', caption: 'do que entra a 144 g/h', color: C.risk },
+};
 
 export default function CeilingSim() {
-    const { step } = useSlideSteps(4);
+    const { step, setStep } = useSlideSteps(STEPS.length);
+    const s = STEPS[step];
+    const fact = FACT[step];
     return (
-        <SimFrame
-            lead={<Beat beat={`l${step}`}><Lead>{CEILING_LEADS[step]}</Lead></Beat>}
-            chips={step >= 1 && step <= 2 ? <><DesignChip>3 ECRs cruzados · n = 7–8 cada</DesignChip><CalcChip>cálculo: g/min × 60</CalcChip></> : <DesignChip>3 ECRs cruzados · n = 7–8 cada</DesignChip>}
-            source={SOURCES[step]}>
-            <div className="flex h-full items-center gap-10">
-                <div className="w-[700px] shrink-0"><Rows step={step} /></div>
-                <Beat beat={step} className="flex min-w-0 flex-1 flex-col gap-4">
-                    {step === 1 && (
-                        <div className="flex flex-col gap-1">
-                            <CountUp text="~1 g/min" className="font-display text-[72px] font-bold leading-none" style={{ color: C.glucose }} />
-                            <span className="text-[20px] text-gray-300">com uma fonte só</span>
+        <PaFrame tabs={STEPS.map(t => t.tab)} step={step} onSelect={setStep} layoutId="ceiling-tabs"
+            chips={<><DesignChip>3 ECRs cruzados · n = 7–8 cada · ¹³C</DesignChip><CalcChip>g/min × 60 = g/h</CalcChip></>}
+            stage={<Stage step={step} />}
+            panel={
+                <PaSide step={step} color={s.color} headline={s.headline} text={s.text} lessons={LESSONS}
+                    source={sourcesUpTo(STEPS.map(t => t.sources), step)}>
+                    {fact && (
+                        <div key={step} className="flex items-baseline gap-3">
+                            <KeyFact color={fact.color} delay={0.3}>
+                                <span className="font-display text-[44px] font-bold leading-none tabular-nums" style={{ color: fact.color }}>{fact.value}</span>
+                            </KeyFact>
+                            <span className="text-[17px] text-gray-200">{fact.caption}</span>
                         </div>
                     )}
-                    {step === 2 && (
-                        <div className="flex flex-col gap-1">
-                            <CountUp text="49%" className="font-display text-[72px] font-bold leading-none" style={{ color: C.glucose }} />
-                            <span className="text-[20px] text-gray-300">do que entra a 144 g/h</span>
-                        </div>
-                    )}
-                    {step === 3 && <Bottleneck />}
-                </Beat>
-            </div>
-        </SimFrame>
+                </PaSide>
+            } />
     );
 }
