@@ -20,6 +20,16 @@ export const PODL = [
     { gh: 120, ratio: '1:0,8', endo: 2.15, exo: 1.51 },
 ] as const;
 
+/** Viribay 2020: carga interna (PSE da sessão, UA) por grupo. O tempo de prova não foi medido. */
+export const VIRI = [
+    { gh: 120, load: 3805 },
+    { gh: 90, load: 4692 },
+    { gh: 60, load: 4688 },
+] as const;
+
+/** Morton 2026: faixa de g/h com eficácia ainda não demonstrada. */
+export const MORTON_BAND = [120, 200] as const;
+
 export interface HighStep {
     tab: string;
     headline: string;
@@ -31,43 +41,43 @@ export interface HighStep {
 
 export const STEPS: readonly HighStep[] = [
     {
-        tab: 'Elite, ¹³C',
-        headline: 'Mais entra, mais se oxida',
+        tab: 'Oxida mais',
+        headline: 'Entra mais, oxida mais',
         color: C.glucose,
-        text: 'Ravikanti 2025: 8 maratonistas de elite, ECR cruzado com ¹³C, 8 g/kg nas 24 h antes; 120 min de corrida perto do limiar. Exógena na 2ª hora: 0,89, 1,31 e 1,68 g/min a 60, 90 e 120 g/h; carboidrato total, de 2,09 a 3,07. Dose e proporção mudam juntas.',
+        text: 'Ravikanti 2025: 8 maratonistas de elite, ECR cruzado com ¹³C, 120 min de corrida perto do limiar. Exógena na 2ª hora: 0,89, 1,31 e 1,68 g/min a 60, 90 e 120 g/h; dose e proporção mudam juntas. Custo de O₂ 8,1 mL/kg/km menor com 120 × 60 g/h (p = 0,039), mas sintomas GI moderados ou graves em todas as doses, com pico nos 120. Em ciclistas preparados (Hearris 2022, n = 9), sintomas mínimos.',
         design: 'ECR cruzado · n = 8 · elite · ¹³C',
-        sources: ['Ravikanti 2025 (J Appl Physiol)'],
-    },
-    {
-        tab: 'O intestino',
-        headline: 'Economia melhor, intestino cobra',
-        color: C.risk,
-        text: 'Com 120 g/h, o custo de O₂ da corrida foi 8,1 mL/kg/km menor que com 60 (p = 0,039). Mas sintomas GI moderados ou graves foram frequentes em todas as doses, com pico de náusea, plenitude e cólica nos 120 g/h. Em ciclistas preparados (Hearris 2022, n = 9), 120 g/h deu sintomas mínimos.',
-        design: 'ECR cruzado · n = 8 · elite · ¹³C',
-        sources: ['Hearris 2022 (J Appl Physiol)'],
+        sources: ['Ravikanti 2025 (J Appl Physiol)', 'Hearris 2022 (J Appl Physiol)'],
     },
     {
         tab: 'O estoque',
-        headline: 'Entra mais, não poupa mais',
+        headline: 'Mais da bebida, o mesmo do estoque',
         color: C.glycogenSoft,
-        text: 'Podlogar 2022: 11 ciclistas muito treinados, 3 h a 95% do limiar de trocas gasosas, em jejum. 120 g/h com maltodextrina:frutose 1:0,8 (o artigo escreve frutose:maltodextrina 0,8:1) × 90 g/h com maltodextrina:frutose 2:1: exógena 1,51 × 1,29 g/min (p = 0,026); endógena 2,15 × 2,20 (p = 0,786). Sem desfecho de desempenho.',
+        text: 'Podlogar 2022: 11 ciclistas muito treinados, 3 h a 95% do limiar de trocas gasosas, em jejum. 120 g/h com maltodextrina:frutose 1:0,8 (o artigo escreve frutose:maltodextrina 0,8:1) × 90 g/h com maltodextrina:frutose 2:1: exógena 1,51 × 1,29 g/min (p = 0,026); endógena 2,15 × 2,20 (p = 0,786). O glicogênio não foi poupado. Sem desfecho de desempenho.',
         design: 'ECR cruzado · n = 11 · ¹³C · jejum',
         sources: ['Podlogar 2022 (Eur J Appl Physiol)'],
     },
     {
-        tab: 'O desfecho',
+        tab: 'O tempo',
         headline: 'O estudo viral não mediu o tempo',
         color: C.stone,
-        text: 'Viribay 2020 (ECR paralelo, 20 corredores, ~6–7 por grupo, maratona de montanha): com 120 g/h, carga interna de 3805 UA × 4692 (90) e 4688 (60), e CK, LDH e TGO menores. O tempo de prova não foi medido. Morton 2026: eficácia de 120–200 g/h ainda não comprovada.',
+        text: 'Viribay 2020, o estudo que viralizou: ECR paralelo, 20 corredores de elite (~6–7 por grupo), maratona de montanha. Com 120 g/h, carga interna de 3805 UA × 4692 (90 g/h) e 4688 (60 g/h), e CK, LDH e TGO menores. O tempo de prova, o desfecho que interessa ao atleta, não foi medido.',
         design: 'ECR paralelo · n = 20 · ~6–7 por grupo',
-        sources: ['Viribay 2020 (Nutrients)', 'Morton 2026 (J Nutr)'],
+        sources: ['Viribay 2020 (Nutrients)'],
+    },
+    {
+        tab: 'Desempenho',
+        headline: 'Desempenho: ainda não demonstrado',
+        color: '#FFFFFF',
+        text: 'Somando os elos: com 120 g/h entra e se oxida mais (Ravikanti), o estoque não é poupado (Podlogar) e o estudo de campo não cronometrou a prova (Viribay). A revisão de Morton 2026 fecha a conta: para 120–200 g/h, eficácia “not yet substantiated”.',
+        design: 'revisão · Morton 2026 (J Nutr)',
+        sources: ['Morton 2026 (J Nutr)'],
     },
 ];
 
 export const LESSONS: readonly Lesson[] = [
     { at: 0, text: 'Exógena sobe com a dose: 0,89 → 1,31 → 1,68 g/min.', color: C.glucose },
-    { at: 1, text: 'O₂ −8,1 mL/kg/km (120 × 60); sintomas GI no pico.', color: C.risk },
-    { at: 2, text: '120 × 90 g/h: endógena igual (2,15 × 2,20).', color: C.glycogen },
-    { at: 3, text: 'Dano e esforço percebido menores; tempo não medido.', color: C.stone },
+    { at: 0, text: 'O₂ −8,1 mL/kg/km (120 × 60); sintomas GI no pico.', color: C.risk },
+    { at: 1, text: '120 × 90 g/h: endógena igual (2,15 × 2,20).', color: C.glycogen },
+    { at: 2, text: 'Carga interna e dano menores; tempo não medido.', color: C.stone },
     { at: 3, text: 'Desempenho com 120 g/h: não demonstrado.', color: '#FFFFFF' },
 ];

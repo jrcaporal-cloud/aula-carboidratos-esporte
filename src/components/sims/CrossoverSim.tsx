@@ -7,22 +7,23 @@ import { useTween } from './kit/useTween';
 import { DesignChip, IllustrativeChip } from './kit/chips';
 import { sourcesUpTo } from './kit/sources';
 import { Panel, Source, StepTabs } from './kit/ui';
-import { CrossoverChart, VanLoonStrip } from './ato3/CrossoverChart';
+import { CHART_W, CrossoverChart } from './ato3/CrossoverChart';
 import { CROSS_ROWS, CROSS_STEPS, I_MAX, I_MIN, mixAt } from './ato3/crossover.content';
 
 /**
- * Slide 44 · O Cruzamento. Gráfico grande + painel. O passador leva o cursor a 25 → 65 → 85%, mostra a medida de
- * van Loon numa régua própria (kJ/min) e, por fim, o treinado a 65%. Slider e botão de treino mexem ao vivo.
- * As áreas são modelo (selo "ilustrativo"); o livro-caixa do painel guarda só o que foi medido ou dito pelas fontes.
+ * Slide 44 · O Cruzamento. Só o modelo, grande, + painel. O passador leva o cursor a 25 → 65 → 85% e, por fim, mostra o
+ * treinado: a fronteira anda para a direita e a do destreinado fica tracejada. Slider e botão de treino mexem ao vivo.
+ * Áreas e fronteira são modelo (selo "ilustrativo"); o livro-caixa guarda só o que foi dito pelas fontes.
+ * Os pontos medidos de van Loon 2001 (kJ/min) saíram daqui: estão no slide da gordura (45), na escala deles.
  */
 
 interface Manual { step: number; intensity?: number; trained?: boolean }
 
 const round5 = (f: number) => Math.round((f * 100) / 5) * 5;
-const ACCENT = [C.fat, C.glycogenSoft, C.glycogenSoft, C.fat, C.text] as const;
+const ACCENT = [C.fat, C.glycogenSoft, C.glycogenSoft, C.text] as const;
 const CHIPS: readonly (readonly string[])[] = [
     ['isótopos · n = 5 treinados'], ['isótopos · n = 5', 'modelo conceitual'], ['isótopos · n = 5', 'modelo conceitual'],
-    ['isótopos + biópsias · n = 8'], ['modelo conceitual'],
+    ['modelo conceitual'],
 ];
 
 const Toggle = ({ trained, onChange }: { trained: boolean; onChange: (t: boolean) => void }) => (
@@ -67,24 +68,23 @@ export default function CrossoverSim() {
             <div className="flex items-center justify-between gap-4">
                 <StepTabs labels={CROSS_STEPS.map(c => c.tab)} step={step} onSelect={setStep} layoutId="cross-tabs" />
                 <div className="flex flex-wrap justify-end gap-2">
-                    <IllustrativeChip>áreas: modelo ilustrativo</IllustrativeChip>
+                    <IllustrativeChip>áreas e cruzamento: modelo ilustrativo</IllustrativeChip>
                     {CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}
                 </div>
             </div>
             <div className="flex min-h-0 flex-1 gap-4">
-                <Panel className="flex shrink-0 flex-col gap-2 px-2 py-1">
+                <Panel className="flex shrink-0 flex-col justify-center gap-2 px-2 py-1">
                     <CrossoverChart intensity={intensity} trained={trained} />
-                    <div className="flex items-center gap-4 px-2">
+                    <div className="flex items-center gap-4 px-2" style={{ width: CHART_W }}>
                         <label className="flex min-w-0 flex-1 flex-col gap-1">
-                            <span className="text-[17px] text-gray-100">intensidade: <b className="text-white">{Math.round(intensity)}% do VO₂máx</b>
-                                <span className="text-gray-300"> · modelo: ~{cho}% CHO</span></span>
+                            <span className="text-[17px] text-gray-100">linha branca: <b className="text-white">{Math.round(intensity)}% do VO₂máx</b>
+                                <span className="text-gray-300"> · ~{cho}% CHO</span></span>
                             <input type="range" min={I_MIN} max={I_MAX} step={1} value={Math.round(target)}
                                 onChange={e => setManual({ step, trained, intensity: Number(e.target.value) })}
                                 className="h-3 w-full cursor-pointer accent-amber-500" aria-label="Intensidade em % do VO₂máx" />
                         </label>
                         <Toggle trained={trained} onChange={t => setManual({ step, intensity: target, trained: t })} />
                     </div>
-                    <VanLoonStrip show={step >= 3} />
                 </Panel>
                 <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-3">
                     <motion.div key={step} className="flex flex-col gap-2" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}

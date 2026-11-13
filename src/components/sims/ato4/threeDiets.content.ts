@@ -30,9 +30,6 @@ export const FIT = { slope: 41.6, intercept: 36.8, x0: 0.6, x1: 4.7 } as const;
 /** Os 3 que fizeram carboidrato sem a fase gordurosa logo antes. */
 export const OUT_OF_ORDER = { gly: [2.1, 3.0], min: [119, 124] } as const;
 
-/** Limitações, como carimbos sobre o canto vazio do gráfico (a dispersão continua à vista). */
-export const LIMITS = ['associação, não causa', 'não cego', 'ordem 6 × 3', 'exaustão ≠ prova', 'fígado e glicemia sem controle'] as const;
-
 export interface DietStep {
     tab: string;
     headline: string;

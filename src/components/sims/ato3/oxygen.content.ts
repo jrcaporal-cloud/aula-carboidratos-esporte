@@ -25,7 +25,6 @@ export const OXY_STEPS: readonly OxyStep[] = [
         text: 'O NADH entrega os elétrons ao complexo I; o FADH₂ entrega direto à ubiquinona (Q), pelo complexo II ou pela ETF da β-oxidação, e pula o primeiro bombeamento de H⁺. Menos H⁺ por par de elétrons, menos ATP por átomo de O: P/O ≈ 2,5 para o NADH e ≈ 1,5 para o FADH₂ (2,3 e 1,4 se a ATP-sintase gastar 10/3 H⁺ por ATP).',
         sources: ['Hinkle 2005 (P/O, revisão quantitativa)'],
         design: ['P/O: revisão quantitativa'],
-        stat: { value: '2,5 × 1,5', caption: 'ATP por átomo de O: porta do NADH × porta do FADH₂' },
     },
     {
         tab: 'Dois combustíveis',
@@ -46,7 +45,7 @@ export const OXY_STEPS: readonly OxyStep[] = [
     {
         tab: 'Ritmo de prova',
         headline: 'Na prova, o oxigênio é o teto',
-        text: 'Burke 2017 (marchadores de elite, 3 semanas, não randomizado, n = 9/10/10): a dieta cetogênica (LCHF) levou a oxidação de gordura a 1,57 g/min, mas subiu o custo de O₂ no ritmo de 20 km. Nos 10 km, o CHO periodizado também melhorou (+5,3%). Volta no slide do Supernova (Ato VIII).',
+        text: 'Burke 2017 (marchadores de elite, 3 semanas, não randomizado, n = 9/10/10): a LCHF levou a gordura a 1,57 g/min, mas subiu o custo de O₂ no ritmo de prova. Nos 10 km, alto CHO +6,6%, CHO periodizado +5,3%, LCHF −1,6% (IC90% −8,5 a 5,3). Volta no Supernova (Ato VIII).',
         sources: ['Burke 2017 (J Physiol)'],
         design: ['elite · não randomizado · n = 29'],
     },

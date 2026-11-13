@@ -59,16 +59,16 @@ export const LaneChart = ({ step }: { step: number }) => {
             <line x1={X0} y1={yOf(1.1)} x2={X1} y2={yOf(1.1)} stroke={C.stone} strokeWidth={2.5} strokeDasharray="8 6" />
             <line x1={X0} y1={yOf(1.0)} x2={X1} y2={yOf(1.0)} stroke={C.stone} strokeWidth={2.5} strokeDasharray="8 6" />
             <rect x={8} y={58} width={26} height={14} fill={`${C.stone}38`} stroke={C.stone} strokeWidth={2} strokeDasharray="5 4" />
-            <SvgText x={42} y={71} text="teto com uma fonte só: ~1,0–1,1" size={16} color={C.stone} weight={700} />
+            <SvgText x={42} y={71} text="teto de uma fonte só (revisão): ~1,0–1,1" size={16} color={C.stone} weight={700} />
 
             {BARS.map((_, i) => <Bar key={i} i={i} step={step} reduce={reduce} />)}
 
-            {/* legenda: contorno = ingerido, cheia = oxidado */}
+            {/* legenda: contorno = dose ingerida (g/min, mesma escala), cheia = pico oxidado */}
             <g>
                 <rect x={X0} y={398} width={22} height={18} rx={3} fill="none" stroke={C.caveat} strokeWidth={2.5} strokeDasharray="5 4" />
-                <SvgText x={X0 + 30} y={413} text="ingerido" size={16} color={C.caveat} />
-                <rect x={X0 + 120} y={398} width={22} height={18} rx={3} fill={C.glucose} />
-                <SvgText x={X0 + 150} y={413} text="oxidado (pico)" size={16} color={C.caveat} />
+                <SvgText x={X0 + 30} y={413} text="ingerido, g/min" size={16} color={C.caveat} />
+                <rect x={X0 + 166} y={398} width={22} height={18} rx={3} fill={C.glucose} />
+                <SvgText x={X0 + 196} y={413} text="oxidado (pico)" size={16} color={C.caveat} />
             </g>
             <motion.g initial={false} animate={{ opacity: step >= 2 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 2 ? 0.8 : 0 }}>
                 <SvgText x={COL[2]} y={yOf(1.26) - 40} text="+55%" size={20} anchor="middle" color={C.fructoseSoft} weight={800} />

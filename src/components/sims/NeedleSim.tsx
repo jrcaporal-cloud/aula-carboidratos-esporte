@@ -5,6 +5,7 @@ import { C } from './kit/palette';
 import { Panel, SvgText } from './kit/ui';
 import { CountSvgText } from './kit/CountUp';
 import { DesignChip, IllustrativeChip, ViaReviewChip } from './kit/chips';
+import { Model3DHint } from './kit/Model3DHint';
 import { sourcesUpTo } from './kit/sources';
 import { InfoPanel, Ledger, ShellA } from './ato4/shellA';
 import { NEEDLE_LEDGER, NEEDLE_MILESTONES, NEEDLE_STEPS } from './ato4/needle.content';
@@ -162,9 +163,10 @@ export default function NeedleSim() {
     return (
         <ShellA tabs={NEEDLE_STEPS.map(n => n.tab)} step={step} onSelect={setStep} layoutId="needle-tabs"
             chips={<>
-                <ViaReviewChip>relato de Harris (Stout 2025)</ViaReviewChip>
-                {step === 1 && <DesignChip>técnica: Bergström 1975</DesignChip>}
+                <ViaReviewChip>relato de Harris</ViaReviewChip>
+                {step === 1 && <DesignChip>Bergström 1975</DesignChip>}
                 {step === 3 && <IllustrativeChip>lâmina ilustrativa</IllustrativeChip>}
+                <Model3DHint label="biópsia 3D" />
             </>}>
             <Panel className="shrink-0">
                 <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} className="block" role="img"

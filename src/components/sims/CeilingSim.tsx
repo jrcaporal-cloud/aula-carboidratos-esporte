@@ -14,7 +14,7 @@ import { LESSONS, ROWS, STEPS } from './ato6/ceiling.content';
 
 /**
  * Slide 103 · O Teto de um Grama. Palco em dois andares: em cima, o funil de três ensaios com ¹³C (o que entra ×
- * o que se oxida, em g/h); embaixo, o enterócito com a glicose passando pelo SGLT1 em laço, e a fila que se forma
+ * o que se oxida, em g/h; legenda no alto: vazada = ingerido, âmbar = oxidado, vermelho = no caminho, faixa = teto); embaixo, o enterócito com a glicose passando pelo SGLT1 em laço, e a fila que se forma
  * quando a ingestão passa do teto. Nada some: o quadro final tem o teto, a sobra de 144 g/h e o gargalo.
  */
 
@@ -29,7 +29,27 @@ const Axis = () => (
     <g>
         <line x1={X0} x2={X1} y1={226} y2={226} stroke="rgba(255,255,255,0.35)" strokeWidth={2} />
         {[0, 30, 60, 90, 120, 150].map(v => <SvgText key={v} x={sx(v)} y={248} text={String(v)} size={16} anchor="middle" color={C.muted} weight={500} />)}
-        <SvgText x={X1} y={22} text="g/h" size={16} anchor="end" color={C.muted} weight={600} />
+        <SvgText x={X0 - 14} y={248} text="g/h" size={16} anchor="end" color={C.muted} weight={700} />
+    </g>
+);
+
+/** Legenda das barras, no alto do palco: cada cor diz o que é; teto e "no caminho" acendem no passo deles. */
+const LEGEND_Y = 20;
+const Legend = ({ step }: { step: number }) => (
+    <g>
+        <rect x={8} y={LEGEND_Y - 13} width={18} height={14} rx={3} fill="transparent" stroke={C.stone} strokeWidth={2.5} />
+        <SvgText x={32} y={LEGEND_Y} text="ingerido" size={16} color="#E5E7EB" weight={700} />
+        <rect x={120} y={LEGEND_Y - 13} width={18} height={14} rx={3} fill={C.glucose} />
+        <SvgText x={144} y={LEGEND_Y} text="oxidado (¹³C)" size={16} color={C.glucoseSoft} weight={700} />
+        <motion.g initial={false} animate={{ opacity: step >= 1 ? 1 : 0.3 }} transition={{ duration: DUR.enter }}>
+            <rect x={274} y={LEGEND_Y - 15} width={18} height={18} fill={`${C.glucose}55`} />
+            <line x1={283} x2={283} y1={LEGEND_Y - 15} y2={LEGEND_Y + 3} stroke={C.glucose} strokeWidth={2} strokeDasharray="4 3" />
+            <SvgText x={298} y={LEGEND_Y} text="teto (fonte única)" size={16} color={C.glucoseSoft} weight={700} />
+        </motion.g>
+        <motion.g initial={false} animate={{ opacity: step >= 2 ? 1 : 0.3 }} transition={{ duration: DUR.enter }}>
+            <rect x={460} y={LEGEND_Y - 13} width={18} height={14} rx={3} fill={C.risk} />
+            <SvgText x={484} y={LEGEND_Y} text="no caminho" size={16} color="#FDA4AF" weight={700} />
+        </motion.g>
     </g>
 );
 
@@ -37,7 +57,7 @@ const Ceiling = ({ on }: { on: boolean }) => (
     <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter }}>
         <rect x={sx(60)} y={30} width={sx(66) - sx(60)} height={196} fill={`${C.glucose}55`} />
         <line x1={sx(63)} x2={sx(63)} y1={30} y2={226} stroke={C.glucose} strokeWidth={2} strokeDasharray="6 5" />
-        <SvgText x={sx(60) - 8} y={22} text="teto ~1,0–1,1 g/min ≈ 60–66 g/h" size={16} anchor="end" color={C.glucoseSoft} weight={700} />
+        <SvgText x={sx(66) + 12} y={44} text="teto ~1 g/min ≈ 60–66 g/h" size={16} color={C.glucoseSoft} weight={700} />
     </motion.g>
 );
 
@@ -68,7 +88,7 @@ const Row = ({ i, step, reduce }: { i: number; step: number; reduce: boolean }) 
 const Leftover = ({ on, y, from, to }: { on: boolean; y: number; from: number; to: number }) => (
     <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter, delay: on ? 0.2 : 0 }}>
         <rect x={sx(from)} y={y} width={sx(to) - sx(from)} height={BAR} rx={4} fill={C.risk} />
-        <SvgText x={(sx(from) + sx(to)) / 2} y={y - 8} text={`~${to - from} g/h no caminho · 49% oxidado`} size={16} anchor="middle" color="#FDA4AF" weight={800} />
+        <SvgText x={X1} y={y - 8} text={`~${to - from} g/h no caminho`} size={16} anchor="end" color="#FDA4AF" weight={800} />
     </motion.g>
 );
 
@@ -85,6 +105,7 @@ const Stage = ({ step }: { step: number }) => {
     return (
         <svg viewBox={`0 0 ${STAGE_INNER_W} ${STAGE_INNER_H}`} width="100%" height="100%" className="block" role="img"
             aria-label="Ingestão e oxidação exógena de glicose em três ensaios com isótopo, e o enterócito com o SGLT1 saturado">
+            <Legend step={step} />
             <Ceiling on={step >= 1} />
             <Axis />
             {ROWS.map((r, i) => <Row key={r.study} i={i} step={step} reduce={reduce} />)}

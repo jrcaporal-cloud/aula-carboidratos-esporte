@@ -1,6 +1,8 @@
 /**
  * Slide 44 · O Cruzamento. Forma do modelo de BROOKS1994 (intensidade empurra para o CHO, treino para a gordura)
- * com a ordem das fontes de ROMIJN1993. As porcentagens são ILUSTRATIVAS: o dossiê não confirma os valores por fonte.
+ * com a ordem das fontes de ROMIJN1993. As porcentagens e a posição da fronteira são ILUSTRATIVAS: o dossiê só dá,
+ * para o treinado, "gordura predomina até ~45% do VO₂máx e o CHO predomina a ~75%" (BROOKS1994); o modelo treinado
+ * respeita os dois (≈22% CHO a 45%, ≈80% a 75%). Os pontos medidos de van Loon 2001 ficam no slide da gordura (45).
  */
 
 export const I_MIN = 25;
@@ -13,8 +15,8 @@ export interface Mix {
     glycogen: number;
 }
 
-/** Fração da energia vinda do carboidrato: logística com o cruzamento em 52% (destreinado) ou 60% (treinado). */
-export const crossoverAt = (trained: boolean): number => (trained ? 60 : 52);
+/** Fração da energia vinda do carboidrato: logística com o cruzamento em 45% (destreinado) ou 60% (treinado). Ilustrativo. */
+export const crossoverAt = (trained: boolean): number => (trained ? 60 : 45);
 
 const choFraction = (I: number, trained: boolean): number => 0.08 + 0.86 / (1 + Math.exp(-(I - crossoverAt(trained)) / 9));
 
@@ -59,24 +61,19 @@ export const CROSS_STEPS: readonly CrossStep[] = [
         sources: [ROMIJN, BROOKS],
     },
     {
-        tab: 'Medido', intensity: 75, trained: false,
-        headline: 'A gordura sobe e depois cai',
-        text: 'Van Loon 2001 (n = 8 ciclistas, 30 min a 40, 55 e 75% da Wmáx, isótopos + biópsias): a gordura oxidada subiu a 32 ± 2 kJ/min a 55% e caiu a 19 ± 2 a 75%, com glicogênio e glicose do sangue subindo a cada estágio. As áreas do gráfico são modelo; estes pontos são medida.',
-        sources: ['van Loon 2001 (n = 8)'],
-    },
-    {
         tab: 'Treino', intensity: 65, trained: true,
         headline: 'O treino desloca a fronteira',
-        text: 'O treino de endurance aumenta a oxidação de gordura e reduz a resposta simpática: o cruzamento vai para a direita. Treinados usam sobretudo gordura até ~45% do VO₂máx, e a ~75% o carboidrato já predomina. A regra continua: a intensidade manda.',
+        text: 'O treino de endurance aumenta a oxidação de gordura e reduz a resposta simpática: o cruzamento vai para a direita (no modelo, de ~45 para ~60% do VO₂máx; posição ilustrativa). Treinados usam sobretudo gordura até ~45% do VO₂máx, e a ~75% o carboidrato já predomina. A regra continua: a intensidade manda.',
         sources: [BROOKS],
     },
 ];
 
+/** `labelAt` (e `labelAtTrained`, quando o treino pede outro lugar) fica longe das linhas do cruzamento (45 e 60), do cursor nos passos (25, 65, 85) e da fronteira fantasma. */
 export const LAYERS = [
     { key: 'agl', label: 'AGL do sangue', color: '#BEF264', opacity: 1, labelAt: 32 },
-    { key: 'imtg', label: 'TG do músculo', color: '#BEF264', opacity: 0.5, labelAt: 44 },
-    { key: 'plasmaGlucose', label: 'glicose do sangue', color: '#F59E0B', opacity: 1, labelAt: 73 },
-    { key: 'glycogen', label: 'glicogênio do músculo', color: '#8B5CF6', opacity: 1, labelAt: 68 },
+    { key: 'imtg', label: 'TG do músculo', color: '#BEF264', opacity: 0.5, labelAt: 35, labelAtTrained: 52.5 },
+    { key: 'plasmaGlucose', label: 'glicose do sangue', color: '#F59E0B', opacity: 1, labelAt: 76 },
+    { key: 'glycogen', label: 'glicogênio\ndo músculo', color: '#8B5CF6', opacity: 1, labelAt: 76 },
 ] as const;
 
 /** Livro-caixa do painel: o que foi medido (ou dito pelo modelo), linha a linha. */
@@ -91,12 +88,5 @@ export const CROSS_ROWS: readonly CrossRow[] = [
     { at: 0, label: '25% VO₂máx · Romijn', value: 'AGL do sangue', color: '#BEF264' },
     { at: 1, label: '65% · Romijn', value: '+ TG e glicogênio', color: '#C4B5FD' },
     { at: 2, label: '85% · Romijn', value: 'glicogênio', color: '#C4B5FD' },
-    { at: 3, label: 'gordura 55 → 75% Wmáx', value: '32 → 19 kJ/min', color: '#BEF264' },
-    { at: 4, label: 'treinado · Brooks', value: '≤45% gordura · ~75% CHO', color: '#F3F4F6' },
+    { at: 3, label: 'treinado · Brooks', value: '≤45% gordura · ~75% CHO', color: '#F3F4F6' },
 ];
-
-/** Pontos medidos de VANLOON2001 (média ± EP lidos no abstract); só 55 e 75% têm número confirmado. */
-export const VANLOON = [
-    { label: '55% Wmáx', kj: 32, err: 2 },
-    { label: '75% Wmáx', kj: 19, err: 2 },
-] as const;

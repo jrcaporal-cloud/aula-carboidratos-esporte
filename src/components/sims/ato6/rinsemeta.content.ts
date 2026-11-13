@@ -3,21 +3,23 @@ import { C } from '../kit/palette';
 
 /**
  * Slide 111 · O Tamanho Real do Bochecho. Arquivo próprio (o rinse.content.ts é dividido com o slide do Bochecho).
- * BRIE2019 (meta-análise, abstract), DEAT2013 (revisão sistemática, abstract; dossiê 03, K), LANE2013 e TROM2015 (abstracts).
+ * BRIE2019 (meta-análise, abstract), LANE2013 e TROM2015 (abstracts). A revisão de 2013 (DEAT2013) saiu da tela
+ * (passo fora da pergunta, outra escala) e fica nas notas.
+ * Palco em 3 faixas, um estudo e um eixo por faixa: 1 meta-análise (SMD) → 2 Lane (% de potência) → 3 Trommelen (min).
  */
 
 export const META_ROWS: readonly ForestRow[] = [
-    { id: 'pot', label: 'Potência média', sub: '16 ensaios · n = 175', est: 0.25, lo: 0.04, hi: 0.46, kind: 'pooled', color: C.glucose, right: '0,25 (0,04 a 0,46)' },
-    { id: 'tempo', label: 'Tempo de prova', sub: 'n = 151 · p = 0,25', est: -0.13, lo: -0.36, hi: 0.1, kind: 'pooled', color: '#CBD5E1', right: '−0,13 (−0,36 a 0,10)' },
+    { id: 'pot', label: 'potência', est: 0.25, lo: 0.04, hi: 0.46, kind: 'pooled', color: C.glucose, right: '0,25' },
+    { id: 'tempo', label: 'tempo', est: -0.13, lo: -0.36, hi: 0.1, kind: 'pooled', color: '#CBD5E1', right: '−0,13' },
 ];
 
-/** Lane 2013: potência média (W) no contrarrelógio de 60 min, por estado alimentar. */
-export const LANE_GROUPS = [
-    { id: 'jejum', label: 'em jejum', placebo: 273, rinse: 282, gain: '+3,4%' },
-    { id: 'alim', label: 'alimentado', placebo: 281, rinse: 286, gain: '+1,8%' },
+/** Lane 2013: ganho de potência média (%) com o bochecho no contrarrelógio de 60 min, por estado alimentar. */
+export const LANE_GAINS = [
+    { id: 'jejum', label: 'em jejum', value: 3.4, text: '+3,4%', color: C.glucose },
+    { id: 'alim', label: 'alimentado', value: 1.8, text: '+1,8%', color: C.glucoseSoft },
 ] as const;
-/** Eixo em zoom honesto: começa em 260 W (está escrito no gráfico). */
-export const LANE_AXIS = [260, 290] as const;
+/** Fim do eixo da barra (%), que começa no zero. */
+export const LANE_MAX = 4;
 
 /** Trommelen 2015: tempo (min) no contrarrelógio de 1 h; menor = melhor. */
 export const TROM_ROWS = [
@@ -38,20 +40,20 @@ export interface MetaStep {
 export const META_STEPS: readonly MetaStep[] = [
     {
         tab: 'Potência', color: C.glucose, chips: ['meta-análise · 16 ensaios · n = 175 · I² = 0%'],
-        headline: 'Efeito real, e pequeno',
-        text: 'Brietzke 2019 juntou 13 estudos (16 ensaios) de bochecho com carboidrato × placebo no contrarrelógio de ciclismo. A potência média subiu com SMD 0,25 (p = 0,02), sem heterogeneidade. Pela régua de Cohen, efeito pequeno.',
-        sources: ['Brietzke et al., Sports Med 2019', 'de Ataide e Silva et al., Nutrients 2013'],
+        headline: 'Somados, o efeito é real',
+        text: 'Brietzke 2019 juntou 13 estudos (16 ensaios) de bochecho com carboidrato × placebo no contrarrelógio de ciclismo. A potência média subiu com SMD 0,25 (p = 0,02), sem heterogeneidade: o intervalo não toca o zero.',
+        sources: ['Brietzke et al., Sports Med 2019'],
     },
     {
         tab: 'Tempo', color: '#E5E7EB', chips: ['meta-análise · n = 151 (tempo) · I² = 0%'],
-        headline: 'O cronômetro não confirmou',
-        text: 'No tempo para completar a prova, SMD −0,13 (p = 0,25): o intervalo cruza o zero. O ganho aparece na potência média, não no tempo final. A meta-análise recebeu um comentário crítico publicado.',
+        headline: 'Mas pequeno',
+        text: 'Pela régua de Cohen, 0,25 é efeito pequeno. E no tempo para completar a prova, SMD −0,13 (p = 0,25): o intervalo cruza o zero. O ganho aparece na potência média, não no cronômetro. A meta-análise recebeu um comentário crítico publicado.',
         sources: [],
     },
     {
         tab: 'Jejum × alimentado', color: C.glucose, chips: ['ECR duplo-cego · n = 12 · quadrado latino'],
         headline: 'O café da manhã encolhe o efeito',
-        text: 'Lane 2013: 12 ciclistas, bochecho de 10 s com maltodextrina a 10% num contrarrelógio de 60 min. Em jejum, +3,4% de potência; alimentado (2,5 g/kg de carboidrato 2 h antes), +1,8%. A maior potência absoluta veio de alimentado + bochecho.',
+        text: 'Lane 2013: 12 ciclistas, bochecho de 10 s com maltodextrina a 10% num contrarrelógio de 60 min. Em jejum, +3,4% (273 → 282 W); alimentado com 2,5 g/kg de carboidrato 2 h antes, +1,8% (281 → 286 W). A maior potência absoluta foi alimentado + bochecho.',
         sources: ['Lane et al., Appl Physiol Nutr Metab 2013'],
     },
     {
@@ -62,10 +64,10 @@ export const META_STEPS: readonly MetaStep[] = [
     },
 ];
 
-/** Livro-caixa do painel: um dado-chave por passo, que fica. */
-export const META_LEDGER = [
-    { at: 0, value: 'SMD 0,25', label: 'potência · IC95% 0,04 a 0,46', color: C.glucose },
-    { at: 1, value: 'p = 0,25', label: 'tempo de prova: nulo', color: '#E5E7EB' },
-    { at: 2, value: '+3,4 × +1,8%', label: 'jejum × alimentado (n = 12)', color: C.glucoseSoft },
-    { at: 3, value: 'p = 0,277', label: 'sacarose × placebo doce', color: C.stone },
+/** Livro-caixa do painel: a cadeia "isso → mas → por isso → logo", um elo por passo, que fica. */
+export const META_CHAIN = [
+    { at: 0, link: 'isso', text: 'potência sobe: SMD 0,25', color: C.glucose },
+    { at: 1, link: 'mas', text: 'pequeno; tempo não muda (p = 0,25)', color: '#E5E7EB' },
+    { at: 2, link: 'por isso', text: 'jejum +3,4% × alimentado +1,8%', color: C.glucoseSoft },
+    { at: 3, link: 'logo', text: 'nem sempre aparece (p = 0,277)', color: C.stone },
 ] as const;

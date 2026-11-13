@@ -22,6 +22,8 @@ export interface StepLabel {
     at: Vec3;
     dx: number;
     dy: number;
+    /** Espera (s) depois do pouso da câmera: para rótulos do que só existe no fim da animação. */
+    delay?: number;
 }
 
 export interface StepInfo {

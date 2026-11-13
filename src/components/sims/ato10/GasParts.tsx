@@ -1,13 +1,12 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import { DUR, EASE_IN_OUT, EASE_OUT, stagger } from '../../../lib/motion';
 import { C } from '../kit/palette';
 import { br } from '../kit/format';
-import { EQUATIONS, ISOTOPE_CHAIN, NEEDLES, RER_MAX, RER_MIN, STOICH } from './gas.content';
+import { EQUATIONS, NEEDLES, RER_MAX, RER_MIN, STOICH } from './gas.content';
 
 /**
  * Slide 184 · peças do palco: o circuito do gás (com o único laço do slide: O₂ entrando e CO₂ saindo, o fluxo que É o
- * conteúdo), a estequiometria, as equações, o mostrador do RER e a trilha do ¹³C.
+ * conteúdo), a estequiometria, as equações e o mostrador do RER. A cadeia do ¹³C está em GasIsotope.
  */
 
 const LANE_W = 92;
@@ -113,20 +112,5 @@ export const RerGauge = ({ sprint }: { sprint: boolean }) => (
                 <span key={t} className={`absolute font-mono text-[16px] tabular-nums text-gray-200 ${i === 0 ? '' : '-translate-x-1/2'}`} style={{ left: pos(t) }}>{br(t, 2)}</span>
             ))}
         </div>
-    </div>
-);
-
-export const IsotopeChain = () => (
-    <div className="flex items-center gap-1">
-        {ISOTOPE_CHAIN.map((s, i) => (
-            <motion.div key={s.title} className="flex items-center gap-1" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: stagger(i, 0.2, 0.15), duration: DUR.enter, ease: EASE_OUT }}>
-                <div className="flex flex-col rounded-lg border-2 px-2 py-0.5 leading-tight" style={{ borderColor: i === 3 ? C.glucose : 'rgba(255,255,255,0.25)' }}>
-                    <span className="text-[17px] font-semibold text-white">{s.title}</span>
-                    <span className="whitespace-nowrap text-[16px] text-gray-300">{s.sub}</span>
-                </div>
-                {i < ISOTOPE_CHAIN.length - 1 && <ArrowRight size={20} strokeWidth={2.6} color={C.glucose} aria-hidden />}
-            </motion.div>
-        ))}
     </div>
 );

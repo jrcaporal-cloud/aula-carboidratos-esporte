@@ -18,7 +18,7 @@ export const PDH_STEPS: readonly SnStep[] = [
     {
         tab: 'A porta',
         headline: 'A porta da mitocôndria abre menos',
-        text: 'O piruvato só entra no ciclo de Krebs como acetil-CoA, pela piruvato desidrogenase (PDH). Depois da gordura, a PDH ativa caiu de 2,39 para 1,69 mmol/kg/min (−29%). No mesmo exercício, ~45% mais gordura e ~30% menos CHO oxidados.',
+        text: 'O piruvato só entra no ciclo de Krebs como acetil-CoA, pela piruvato desidrogenase (PDH). Depois da gordura, a PDH ativa caiu de 2,39 para 1,69 mmol/kg de peso úmido/min (−29%). No mesmo exercício, ~45% mais gordura e ~30% menos CHO oxidados.',
         sources: ['Stellingwerff 2006'],
     },
     {
@@ -72,8 +72,8 @@ export const ARMS: readonly PdhArm[] = [
 
 export const PDH_LEDGER: readonly LedgerRow[] = [
     { at: 0, label: 'glicogênio de repouso (µmol/g ps)', value: '873 × 868' },
-    { at: 1, label: 'PDH ativa (mmol/kg/min)', value: '2,39 × 1,69', color: C.fat },
+    { at: 1, label: 'PDH ativa (mmol/kg pú/min)', value: '2,39 × 1,69', color: C.fat },
     { at: 2, label: 'PDK, 3 dias de gordura (min⁻¹)', value: '0,09 → 0,37', color: C.stone },
-    { at: 3, label: 'glicogenólise, sprint de 1 min', value: '50,5 × 37,3', color: C.fat },
+    { at: 3, label: 'glicogenólise no sprint de 1 min (mmol glicosil/kg ps/min)', value: '50,5 × 37,3', color: C.fat },
     { at: 4, label: '100 km · sprints de 1 km', value: 'igual · menor', color: C.fat },
 ];

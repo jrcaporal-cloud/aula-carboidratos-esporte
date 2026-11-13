@@ -3,12 +3,12 @@ import { DUR, EASE_IN_OUT, EASE_OUT, stagger } from '../../../lib/motion';
 import { C } from '../kit/palette';
 import { SvgText } from '../kit/ui';
 import { CountSvgText } from '../kit/CountUp';
-import { DIETS, FIT, LIMITS, OUT_OF_ORDER } from './threeDiets.content';
+import { DIETS, FIT, OUT_OF_ORDER } from './threeDiets.content';
 
 /**
  * Palco do slide 62 (Bergström 1967): no topo, a ordem do protocolo; embaixo, o gráfico que se monta e não perde nada.
  * Passo 0: glicogênio de cada dieta no eixo · 1: os cronômetros sobem até o tempo · 2: a reta e o r ·
- * 3: a caixa dos 3 fora da ordem · 4: as limitações carimbadas no canto vazio (a dispersão continua à vista).
+ * 3: a caixa dos 3 fora da ordem · 4: o selo "associação, não causa" (as limitações ficam no texto do painel).
  * viewBox = tamanho na tela (1:1): fonte SVG = fonte real.
  */
 
@@ -20,30 +20,23 @@ const Y_MAX = 240;
 const sx = (g: number) => P.x0 + (g / X_MAX) * (P.x1 - P.x0);
 const sy = (m: number) => P.y0 - (m / Y_MAX) * (P.y0 - P.y1);
 
-const Clock = ({ x }: { x: number }) => (
-    <g>
-        <circle cx={x} cy={32} r={13} fill="none" stroke={C.stone} strokeWidth={3} />
-        <path d={`M ${x} 32 V 23 M ${x} 32 H ${x + 7}`} stroke={C.stone} strokeWidth={3} strokeLinecap="round" />
-        {[-20, 20].map(d => <rect key={d} x={x + d - 2} y={50} width={4} height={16} rx={2} fill={C.glycogenSoft} />)}
-    </g>
-);
-
-const Block = ({ x, w, label, color }: { x: number; w: number; label: string; color: string }) => (
-    <g>
-        <rect x={x} y={14} width={w} height={36} rx={8} fill={color} fillOpacity={0.16} stroke={color} strokeWidth={2} />
-        <SvgText x={x + w / 2} y={38} text={label} size={16} anchor="middle" color={color === C.glucose ? C.glucoseSoft : color} />
-    </g>
-);
+/** A ordem do protocolo, como no estudo: três fases de 3 dias, e depois de cada uma, biópsia + teste até a exaustão. */
+const PHASES = [
+    { x: 10, w: 150, label: 'dieta mista', color: C.stone },
+    { x: 214, w: 210, label: 'gordura + proteína', color: C.fat },
+    { x: 478, w: 150, label: 'carboidrato', color: C.glucose },
+] as const;
 
 const Protocol = () => (
     <g>
-        <Block x={10} w={110} label="dieta mista" color={C.stone} />
-        <Clock x={142} />
-        <Block x={174} w={196} label="3 dias gordura + proteína" color={C.fat} />
-        <Clock x={392} />
-        <Block x={424} w={150} label="3 dias carboidrato" color={C.glucose} />
-        <Clock x={598} />
-        <SvgText x={10} y={90} text="relógio = exaustão a 75% do VO₂máx · traço roxo = biópsia antes e depois" size={16} color={C.muted} />
+        {PHASES.map((ph, i) => (
+            <g key={ph.label}>
+                <rect x={ph.x} y={12} width={ph.w} height={34} rx={8} fill={ph.color} fillOpacity={0.16} stroke={ph.color} strokeWidth={2} />
+                <SvgText x={ph.x + ph.w / 2} y={35} text={`${i + 1} · ${ph.label}`} size={16} weight={700} anchor="middle" color={ph.color === C.glucose ? C.glucoseSoft : ph.color} />
+                {i < PHASES.length - 1 && <SvgText x={ph.x + ph.w + 27} y={36} text="→" size={20} weight={700} anchor="middle" color="#D1D5DB" />}
+            </g>
+        ))}
+        <SvgText x={10} y={76} text="cada fase: 3 dias de dieta → biópsia → pedalar a 75% do VO₂máx até a exaustão" size={16} color="#D1D5DB" />
     </g>
 );
 
@@ -105,8 +98,12 @@ const Fit = ({ step, reduce }: { step: number; reduce: boolean }) => {
                     stroke={C.glycogenSoft} strokeWidth={4} strokeLinecap="round" />
             </motion.g>
             <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter, delay: on && step === 2 ? 0.8 : 0 }}>
-                <SvgText x={P.x1} y={318} text="r = 0,92" size={34} weight={700} anchor="end" color={C.glycogenSoft} />
-                <SvgText x={P.x1} y={342} text="p < 0,001 · y = 41,6x + 36,8" size={16} anchor="end" color={C.caveat} />
+                <SvgText x={P.x0 + 22} y={166} text="r = 0,92" size={34} weight={700} color={C.glycogenSoft} />
+                <SvgText x={P.x0 + 22} y={190} text="p < 0,001 · y = 41,6x + 36,8" size={16} color={C.caveat} />
+            </motion.g>
+            <motion.g initial={false} animate={{ opacity: step >= 4 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 4 ? 0.3 : 0 }}>
+                <rect x={P.x0 + 22} y={202} width={196} height={30} rx={8} fill="#04080F" stroke={C.stone} strokeWidth={3} />
+                <SvgText x={P.x0 + 120} y={223} text="associação, não causa" size={16} weight={700} anchor="middle" color={C.stone} />
             </motion.g>
         </g>
     );
@@ -120,26 +117,10 @@ const OutOfOrder = ({ step }: { step: number }) => {
     return (
         <motion.g initial={false} animate={{ opacity: step >= 3 ? 1 : 0 }} transition={{ duration: DUR.enter }}>
             <rect x={x} y={y} width={w} height={h} rx={6} fill={C.glucose} fillOpacity={0.3} stroke={C.glucoseSoft} strokeWidth={3} />
-            <SvgText x={x + w / 2} y={y + h + 22} text="3 sem esvaziar antes" size={16} anchor="middle" color={C.glucoseSoft} />
+            <SvgText x={x + w / 2} y={y + h + 46} text="3 sem esvaziar" size={16} weight={700} anchor="middle" color={C.glucoseSoft} />
+            <SvgText x={x + w / 2} y={y + h + 66} text="antes: 2,1–3,0 g" size={16} anchor="middle" color={C.glucoseSoft} />
+            <SvgText x={x + w / 2} y={y + h + 86} text="119–124 min" size={16} anchor="middle" color={C.glucoseSoft} />
         </motion.g>
-    );
-};
-
-/** Carimbos das limitações, no canto de cima à esquerda (vazio: a reta sobe da esquerda-baixo para a direita-cima). */
-export const LimitStamps = ({ show }: { show: boolean }) => {
-    const reduce = useReducedMotion() ?? false;
-    if (!show) return null;
-    return (
-        <div className="pointer-events-none absolute left-[80px] top-[116px] flex w-[300px] flex-wrap gap-x-2 gap-y-1.5">
-            {LIMITS.map((l, i) => (
-                <motion.span key={l} className="whitespace-nowrap rounded-lg border-[3px] px-2 py-0 font-display text-[16px] font-semibold leading-[1.45]"
-                    style={{ color: C.stone, borderColor: C.stone, background: '#04080F' }}
-                    initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.4, rotate: -8 }} animate={{ opacity: 1, scale: 1, rotate: i % 2 ? 2 : -2 }}
-                    transition={reduce ? { duration: 0.2 } : { type: 'spring', stiffness: 520, damping: 26, mass: 0.8, delay: stagger(i, 0.1, 0.12) }}>
-                    {l}
-                </motion.span>
-            ))}
-        </div>
     );
 };
 

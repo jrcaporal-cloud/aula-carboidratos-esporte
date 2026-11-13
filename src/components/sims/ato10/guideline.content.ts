@@ -27,7 +27,7 @@ export const BANDS: readonly Band[] = [
 ];
 
 /** Onde duas faixas vizinhas se cobrem (5–7 ∩ 6–10 e 6–10 ∩ 8–12). */
-export const OVERLAPS = [{ lo: 6, hi: 7 }, { lo: 8, hi: 10 }] as const;
+export const OVERLAPS = [{ lo: 6, hi: 7, lastRow: 2 }, { lo: 8, hi: 10, lastRow: 3 }] as const;
 
 export const WEIGHTS = [58, 70, 85] as const;
 export const DEFAULT_KG = 70;

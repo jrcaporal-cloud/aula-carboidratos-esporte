@@ -11,38 +11,40 @@ import { WINDOW_CHIPS, WINDOW_STEPS } from './ato7/window.content';
 /**
  * Slide 120 · A Janela que Fecha Devagar, no formato palco + painel.
  * Palco: em cima, a fibra logo após o treino (GLUT4 ainda na membrana, glicogênio sintase ativada pelo
- * glicogênio baixo, glicose percorrendo a via em loop); embaixo, as taxas do Ivy 1988 e, depois do corte no
- * eixo, o Parkin 1997 às 8 e 24 h. Painel: o texto do passo e o livro-caixa que acumula.
+ * glicogênio baixo, glicose percorrendo a via em loop); embaixo, dois elos rotulados: Ivy 1988 em duas séries no
+ * tempo (comeu logo × comeu 2 h depois) e Parkin 1997 no dia seguinte. Painel: texto do passo e livro-caixa.
  */
 
 const ACCENT = [C.glycogenSoft, C.glycogenSoft, C.stone, C.stone, C.glucose] as const;
 
 const Ledger = ({ step }: { step: number }) => (
-    <table className="w-full border-separate border-spacing-y-1 text-left">
+    <table className="w-full border-separate border-spacing-y-[2px] text-left">
         <thead>
             <tr className="text-[15px] text-gray-300">
-                <th className="font-normal">mmol/kg ww/h</th>
-                <th className="text-right font-normal" style={{ color: C.glycogenSoft }}>logo após</th>
-                <th className="text-right font-normal">2 h depois</th>
+                <th className="font-normal">Ivy · mmol/kg ww/h</th>
+                <th className="text-right font-normal" style={{ color: C.glycogenSoft }}>comeu logo</th>
+                <th className="text-right font-normal">comeu 2 h depois</th>
             </tr>
         </thead>
-        <tbody className="text-[18px] font-semibold text-gray-100">
+        <tbody className="text-[17px] font-semibold text-gray-100">
             <LedgerRow at={1} step={step}>
                 <td>0–2 h</td>
                 <td className="text-right tabular-nums" style={{ color: C.glycogenSoft }}>7,7</td>
-                <td className="text-right tabular-nums">2,5</td>
+                <td className="text-right tabular-nums">2,5 <span className="text-[16px] text-gray-300">(sem CHO)</span></td>
             </LedgerRow>
             <LedgerRow at={2} step={step}>
                 <td>2–4 h</td>
-                <td className="text-right text-gray-300">não relatado</td>
-                <td className="text-right tabular-nums">4,1 <span style={{ color: C.stone }}>(−45%)</span></td>
+                <td className="text-right text-[16px] text-gray-300">não relatado</td>
+                <td className="text-right tabular-nums">4,1</td>
+            </LedgerRow>
+            <LedgerRow at={2} step={step}>
+                <td colSpan={3} style={{ color: C.stone }}>2 h após comer: 4,1 × 7,7 → 45% mais lenta</td>
             </LedgerRow>
             <LedgerRow at={3} step={step}>
-                <td>glicogênio 8 e 24 h</td>
-                <td colSpan={2} className="text-right" style={{ color: C.stone }}>igual (Parkin)</td>
+                <td colSpan={3} style={{ color: C.stone }}>Parkin, 8 e 24 h: glicogênio igual</td>
             </LedgerRow>
             <LedgerRow at={4} step={step} className="font-display text-[20px] font-bold">
-                <td colSpan={3} className="pt-1" style={{ color: C.glucose }}>próxima sessão cedo → 1–1,2 g/kg/h já</td>
+                <td colSpan={3} style={{ color: C.glucose }}>próxima sessão cedo → 1–1,2 g/kg/h já</td>
             </LedgerRow>
         </tbody>
     </table>
@@ -60,7 +62,7 @@ export default function WindowSim() {
                     <WindowFiber step={step} />
                     <WindowChart step={step} />
                 </Panel>
-                <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-4">
+                <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-3">
                     <Narration step={step} headline={s.headline} color={ACCENT[step]}>{s.text}</Narration>
                     <div className="mt-auto flex flex-col gap-2">
                         <Ledger step={step} />

@@ -71,11 +71,11 @@ export interface TimelineCard {
 }
 
 export const TIMELINE: readonly TimelineCard[] = [
-    { year: '2005', who: 'Hansen', n: 'n = 7', result: 'não treinados: LOW ↑ mais', positive: true, at: 0 },
-    { year: '2008', who: 'Yeo', n: 'n = 14', result: 'CS, β-HAD ↑ só Low', positive: false, at: 0, extra: 'prova ~10% nos dois', extraAt: 1 },
-    { year: '2016', who: 'Marquet', n: 'n = 21', result: 'não cego: 10 km −2,9 × −0,1%', positive: true, at: 2 },
+    { year: '2005', who: 'Hansen', n: 'n = 7', result: 'LOW ↑ mais (não treinados)', positive: true, at: 0 },
+    { year: '2008', who: 'Yeo', n: 'n = 14', result: 'enzimas ↑ só Low', positive: false, at: 0, extra: 'prova: igual', extraAt: 1 },
+    { year: '2016', who: 'Marquet', n: 'n = 21', result: '−2,9 × −0,1% (não cego)', positive: true, at: 2 },
     { year: '2017', who: 'Gejl', n: 'n = 26 · elite', result: '+5% nos dois', positive: false, at: 2 },
-    { year: '2021', who: 'meta-análise', n: '9 estudos', result: 'SMD 0,17', positive: false, at: 2 },
+    { year: '2021', who: 'MA', n: '9 estudos', result: 'SMD 0,17', positive: false, at: 2 },
 ];
 
 /** Livro-caixa do painel: o funil em números, linha a linha (entra no passo `at` e fica). */

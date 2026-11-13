@@ -2,26 +2,26 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_IN_OUT, EASE_OUT } from '../../lib/motion';
 import { C } from './kit/palette';
-import { Grow, Wipe } from './kit/Beat';
 import { CalcChip, DesignChip } from './kit/chips';
-import { br } from './kit/format';
 import { sourcesUpTo } from './kit/sources';
 import { SvgText } from './kit/ui';
 import { MedirLedger, MedirShell } from './ato10/MedirShell';
-import { BARS, GH_MAX, LEDGER, PERCENT_ROWS, STEPS, TICKS, YEAR_X, type Bar } from './ato10/sbme.content';
+import { PercentScene } from './ato10/SbmePercent';
+import { BARS, GH_MAX, LEDGER, LEGEND, STEPS, TICKS, YEAR_X, type Bar } from './ato10/sbme.content';
 
 /**
- * Slide 181 · A Diretriz Brasileira Parou em 2009. Linha do tempo que é também gráfico (g/h por ano): o teto de 80 g/h
- * da SBME nasce em 2009 e corre até hoje; os passos acendem o que veio antes (2000, 2004) e depois (2011), e a barra de
- * 90 g/h atravessa a linha. No último passo, uma faixa embaixo mostra por que a % da energia engana (cálculo).
+ * Slide 181 · A Diretriz Brasileira Parou em 2009. Linha do tempo que é também gráfico, TUDO em g/h (g/min × 60 rotulado
+ * como cálculo): o teto de 80 g/h da SBME nasce em 2009 e corre até hoje; os passos acendem o que veio antes (2000, 2004)
+ * e depois (2011), e a barra de 90 g/h atravessa a linha. A legenda cobre cada cor e o traço. No último passo o palco
+ * vira a conta dos 60% (ato10/SbmePercent), com o gráfico resumido numa linha no alto.
  */
 const STAGE_W = 660;
 const W = 628;
-const H = 268;
+const H = 300;
 const PL = 46;
 const PR = 12;
-const PT = 26;
-const PB = 222;
+const PT = 30;
+const PB = 254;
 const BAR_W = 34;
 const xOf = (year: number) => PL + (YEAR_X[year] ?? 1) * (W - PL - PR);
 const yOf = (gh: number) => PB - (gh / GH_MAX) * (PB - PT);
@@ -66,8 +66,8 @@ const Chart = ({ step }: { step: number }) => {
             {/* o teto de 2009 corre até hoje */}
             <motion.path d={`M ${xOf(2009) - 26} ${Y_80} L ${W - PR} ${Y_80}`} stroke={C.risk} strokeWidth={4} strokeDasharray="12 8" fill="none"
                 initial={reduce ? false : { pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: DUR.draw, ease: EASE_IN_OUT }} />
-            <SvgText x={W - PR} y={Y_80 + 24} text="teto SBME" anchor="end" color={C.risk} size={17} weight={700} />
-            <SvgText x={W - PR} y={Y_80 + 44} text="80 g/h até hoje" anchor="end" color={C.risk} size={16} />
+            <SvgText x={W - PR} y={Y_80 + 24} text="teto SBME 80" anchor="end" color={C.risk} size={17} weight={700} />
+            <SvgText x={W - PR} y={Y_80 + 44} text="vale até hoje" anchor="end" color={C.risk} size={16} />
             {step >= 2 && (
                 <motion.circle cx={xOf(2011)} cy={Y_80} r={9} fill="none" stroke="#fff" strokeWidth={3}
                     initial={reduce ? false : { opacity: 0, scale: 0.4 }} animate={{ opacity: 1, scale: 1 }} style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
@@ -83,30 +83,17 @@ const Chart = ({ step }: { step: number }) => {
     );
 };
 
-const Legend = () => (
-    <div className="flex items-center gap-4 text-[16px] text-gray-200">
-        <span className="flex items-center gap-1.5"><span className="h-3.5 w-5 rounded-sm" style={{ background: C.fructose }} />oxidado (isótopo)</span>
-        <span className="flex items-center gap-1.5"><span className="h-3.5 w-5 rounded-sm border-2 border-dashed" style={{ borderColor: C.caveat }} />bebido</span>
-        <span className="flex items-center gap-1.5"><span className="h-3.5 w-5 rounded-sm" style={{ background: C.ok }} />aceito pela diretriz</span>
-    </div>
-);
-
-/** Os mesmos 60% da energia em dois dias do mesmo atleta, numa régua de g/kg/d. */
-const PercentStrip = () => (
-    <div className="flex flex-col gap-1.5">
-        <span className="text-[17px] font-semibold text-gray-100">60% da energia, atleta de 70 kg</span>
-        {PERCENT_ROWS.map((r, i) => (
-            <div key={r.kcal} className="flex items-center gap-3">
-                <span className="w-[150px] shrink-0 text-[16px] tabular-nums text-gray-200">{r.kcal} → {r.grams}</span>
-                <div className="relative h-[24px] flex-1">
-                    <div className="absolute inset-y-0 left-0 overflow-hidden rounded-md" style={{ width: `${(r.gkg / 12) * 100}%` }}>
-                        <Grow value={1} color={r.color} delay={0.3 + i * 0.15} />
-                    </div>
-                    <span className="absolute top-0 font-mono text-[17px] font-bold tabular-nums" style={{ left: `calc(${(r.gkg / 12) * 100}% + 8px)`, color: r.color }}>
-                        {br(r.gkg, 1)} g/kg/d
-                    </span>
-                </div>
-            </div>
+/** Legenda: uma entrada para cada cor e para o traço do teto; cada uma acende no passo em que a marca entra. */
+const Legend = ({ step }: { step: number }) => (
+    <div className="grid grid-cols-3 gap-x-3 gap-y-1 text-[16px] leading-tight text-gray-200">
+        {LEGEND.map(l => (
+            <span key={l.key} className="flex items-center gap-1.5 transition-opacity duration-300" style={{ opacity: l.at <= step ? 1 : 0.6 }}>
+                {l.kind === 'line'
+                    ? <span className="h-0 w-5 shrink-0 border-t-[4px] border-dashed" style={{ borderColor: l.color }} />
+                    : <span className={`h-3.5 w-5 shrink-0 rounded-sm ${l.kind === 'outline' ? 'border-2 border-dashed' : ''}`}
+                        style={l.kind === 'outline' ? { borderColor: l.color } : { background: l.color }} />}
+                <span className="whitespace-nowrap">{l.label}</span>
+            </span>
         ))}
     </div>
 );
@@ -117,24 +104,25 @@ export default function SbmeSim() {
     const chips = (
         <>
             {step === 0 && <DesignChip>diretriz nacional · painel</DesignChip>}
-            {step >= 1 && <DesignChip>2004: cruzado · n = 8 · isótopos</DesignChip>}
-            {step >= 1 && <CalcChip>g/min × 60 = g/h</CalcChip>}
-            {step >= 3 && <CalcChip>4 kcal/g</CalcChip>}
+            {(step === 1 || step === 2) && <DesignChip>2004: cruzado · n = 8 · isótopos</DesignChip>}
+            {step >= 1 && step < 3 && <CalcChip>g/h = g/min × 60 (cálculo)</CalcChip>}
+            {step >= 3 && <CalcChip>% → g/kg: cálculo (4 kcal/g · 70 kg)</CalcChip>}
         </>
     );
     const stage = (
-        <div className="flex h-full flex-col gap-1 px-4 py-2">
-            <Legend />
-            <Chart step={step} />
-            <Wipe show={step >= 3} from="left" className="border-t-2 border-white/15 pt-1.5">
-                <PercentStrip />
-            </Wipe>
+        <div className="flex h-full flex-col gap-2 px-4 py-3">
+            {step < 3 ? (
+                <>
+                    <Legend step={step} />
+                    <Chart step={step} />
+                </>
+            ) : <PercentScene />}
         </div>
     );
     return (
         <MedirShell tabs={STEPS.map(t => t.tab)} step={step} setStep={setStep} layoutId="ato10-sbme-tabs" chips={chips}
             stageWidth={STAGE_W} stage={stage} accent={ACCENT[step]} headline={s.headline} text={s.text}
-            ledger={<MedirLedger rows={LEDGER} step={step} termWidth={98} />}
+            ledger={<MedirLedger rows={LEDGER} step={step} termWidth={112} />}
             sources={sourcesUpTo(STEPS.map(t => t.sources), step)} />
     );
 }

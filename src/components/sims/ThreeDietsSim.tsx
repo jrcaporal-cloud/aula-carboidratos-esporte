@@ -6,7 +6,7 @@ import { Panel } from './kit/ui';
 import { CalcChip, DesignChip } from './kit/chips';
 import { sourcesUpTo } from './kit/sources';
 import { InfoPanel, ShellA } from './ato4/shellA';
-import { DietChart, LimitStamps } from './ato4/DietChart';
+import { DietChart } from './ato4/DietChart';
 import { DIET_STEPS, DIETS, OUT_OF_ORDER } from './ato4/threeDiets.content';
 
 /**
@@ -60,10 +60,7 @@ export default function ThreeDietsSim() {
                 <DesignChip>cruzado · n = 9 · não cego</DesignChip>
                 {step >= 1 && <CalcChip>≈ 3×: cálculo (167 ÷ 57)</CalcChip>}
             </>}>
-            <Panel className="relative shrink-0">
-                <DietChart step={step} />
-                <LimitStamps show={step >= 4} />
-            </Panel>
+            <Panel className="relative shrink-0"><DietChart step={step} /></Panel>
             <InfoPanel step={step} color={s.color} headline={s.headline} text={s.text}
                 source={sourcesUpTo(DIET_STEPS.map(d => d.sources), step)}>
                 <Table step={step} />

@@ -1,159 +1,191 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { DUR, EASE_OUT } from '../../../lib/motion';
+import type { ReactNode } from 'react';
+import { DUR, EASE_OUT, stagger } from '../../../lib/motion';
 import { C } from '../kit/palette';
 import { SvgText } from '../kit/ui';
 import { HEX } from './geometry';
-import { MAX_TIERS } from './granule.content';
+import { MAX_TIERS, TIER_PCT } from './granule.content';
 
 /**
- * Palco do slide 22 (viewBox 640 × 456). Em cima, à esquerda, o centro do grânulo ampliado (camadas 1–4,
- * dendrograma: cada cadeia de comprimento igual carrega dois ramos α-1,6); à direita, o grânulo inteiro em
- * 12 anéis. Embaixo, duas lupas: o começo (glicogenina + primer) e a ponta (fosforilase para 4 antes do ramo).
+ * Palco do slide 22 (viewBox 640 × 448): a cadeia de construção em 4 quadros numerados, um por passo, lidos em Z:
+ * 1 glicogenina (o primer) → 2 ramos (cadeias que dobram, centro ampliado) → 3 camadas (o grânulo inteiro, até 12)
+ * → 4 a casca (glicose por camada, com eixo: a camada 12 guarda metade). Antes do passo, só a moldura tracejada com o
+ * título, para o aluno ver o caminho inteiro. Nada some; a quebra (fosforilase) fica para "Síntese não é Quebra ao Contrário".
  */
 export const GR_W = 640;
-export const GR_H = 456;
+export const GR_H = 448;
 
-/* ---------- dendrograma (centro ampliado) ---------- */
-const Y0 = 150;
-const X0 = 50;
-const LEN = 110;
-const OFFSET = [64, 32, 16] as const; // afastamento vertical dos filhos de cada camada
+const QW = 314;
+const QH = 218;
+const Q_POS = [[0, 0], [326, 0], [0, 230], [326, 230]] as const;
+const DARK = '#04080F';
+
+/** Quadro numerado: moldura (sólida quando ativo, tracejada antes), número e título; o desenho entra no passo dele. */
+const Quad = ({ n, title, show, born, children }: { n: number; title: string; show: boolean; born: boolean; children: ReactNode }) => {
+    const reduce = useReducedMotion() ?? false;
+    const [x, y] = Q_POS[n - 1];
+    return (
+        <g transform={`translate(${x} ${y})`}>
+            <rect x={1} y={1} width={QW - 2} height={QH - 2} rx={12} fill="none" strokeWidth={2}
+                stroke={show ? '#475569' : '#334155'} strokeDasharray={show ? undefined : '8 7'} />
+            <circle cx={22} cy={22} r={12} fill={show ? '#F3F4F6' : '#334155'} />
+            <text x={22} y={27} textAnchor="middle" fontSize={15} fontWeight={800} fill={show ? DARK : '#94A3B8'}
+                style={{ fontFamily: 'var(--font-body)' }}>{n}</text>
+            <SvgText x={42} y={28} text={title} size={17} weight={800} color={show ? '#FFFFFF' : '#94A3B8'} />
+            {show && (
+                <motion.g initial={born && !reduce ? { opacity: 0 } : false} animate={{ opacity: 1 }}
+                    transition={{ duration: DUR.enter, delay: born ? 0.15 : 0, ease: EASE_OUT }}>
+                    {children}
+                </motion.g>
+            )}
+        </g>
+    );
+};
+
+const Bead = ({ x, y, color = C.glucose }: { x: number; y: number; color?: string }) => (
+    <polygon points={HEX} fill={color} transform={`translate(${x} ${y}) scale(0.4)`} />
+);
+
+/* ---------- 1 · glicogenina ---------- */
+const Primer = ({ born }: { born: boolean }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <g>
+            <SvgText x={166} y={74} text="10–20 glicoses (α-1,4)" size={16} anchor="middle" color="#E5E7EB" />
+            <rect x={14} y={92} width={36} height={36} rx={8} fill={C.protein} />
+            <SvgText x={32} y={150} text="Tyr" size={16} anchor="middle" color={C.proteinSoft} weight={700} />
+            <line x1={50} y1={110} x2={66} y2={110} stroke="#E5E7EB" strokeWidth={3} />
+            {Array.from({ length: 10 }, (_, i) => (
+                <motion.g key={i} initial={born && !reduce ? { opacity: 0 } : false} animate={{ opacity: 1 }}
+                    transition={{ duration: DUR.enter, delay: born ? 0.3 + i * 0.06 : 0 }}>
+                    <Bead x={78 + i * 22} y={110} />
+                </motion.g>
+            ))}
+            <SvgText x={14} y={182} text="a proteína prende a 1ª glicose" size={16} color="#E5E7EB" />
+            <SvgText x={14} y={204} text="doador: UDP-glicose" size={16} color={C.caveat} />
+        </g>
+    );
+};
+
+/* ---------- 2 · ramos (centro ampliado, camadas 1–4) ---------- */
+const D_Y0 = 112;
+const D_X0 = 44;
+const LEN = 66;
+const OFFSET = [36, 18, 9] as const;
 
 interface Chain { id: string; tier: number; d: string; bx: readonly number[]; y: number }
 
 const buildChains = (): Chain[] => {
     const out: Chain[] = [];
     const grow = (id: string, tier: number, x0: number, y: number, d: string) => {
-        const bx = [x0 + 40, x0 + 80];
+        const bx = [x0 + 22, x0 + 44];
         out.push({ id, tier, d, bx: tier < 4 ? bx : [], y });
         if (tier >= 4) return;
         const off = OFFSET[tier - 1];
         [[bx[0], y - off], [bx[1], y + off]].forEach(([cx, cy], i) =>
             grow(`${id}${i}`, tier + 1, cx, cy, `M ${cx} ${y} L ${cx} ${cy} L ${cx + LEN} ${cy}`));
     };
-    grow('c', 1, X0, Y0, `M ${X0} ${Y0} L ${X0 + LEN} ${Y0}`);
+    grow('c', 1, D_X0, D_Y0, `M ${D_X0} ${D_Y0} L ${D_X0 + LEN} ${D_Y0}`);
     return out;
 };
 const CHAINS = buildChains();
 
-const Dendrogram = ({ step, reduce }: { step: number; reduce: boolean }) => (
-    <g>
-        <SvgText x={14} y={24} text="centro ampliado · camadas 1 a 4" size={17} color={C.muted} weight={700} />
-        {CHAINS.map(c => {
-            const shown = step >= (c.tier === 1 ? 0 : 1);
-            const outer = c.tier === 4 && step >= 3;
-            return (
-                <motion.path key={c.id} d={c.d} fill="none" strokeWidth={6} strokeLinecap="round" strokeLinejoin="round"
-                    stroke={outer ? C.glucose : C.glycogen}
-                    initial={false} animate={{ pathLength: shown ? 1 : 0, opacity: shown ? 1 : 0 }}
-                    transition={{ duration: reduce ? 0 : DUR.bar, delay: shown && step === 1 ? (c.tier - 2) * 0.22 : 0, ease: EASE_OUT }} />
-            );
-        })}
-        {CHAINS.flatMap(c => c.bx.map(x => ({ key: `${c.id}-${x}`, x, y: c.y, tier: c.tier }))).map(p => (
-            <motion.circle key={p.key} cx={p.x} cy={p.y} r={5} fill={C.stone} initial={false}
-                animate={{ opacity: step >= 1 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 1 ? 0.2 + (p.tier - 1) * 0.22 : 0 }} />
-        ))}
-        <rect x={20} y={Y0 - 13} width={26} height={26} rx={6} fill={C.protein} />
-        <motion.g initial={false} animate={{ opacity: step >= 1 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 1 ? 0.8 : 0 }}>
-            <SvgText x={80} y={118} text="α-1,6" size={16} anchor="end" color={C.glycogenSoft} weight={800} />
-            <SvgText x={14} y={286} text="cadeias por camada: 1 → 2 → 4 → 8" size={16} color="#E5E7EB" />
-        </motion.g>
-        <motion.g initial={false} animate={{ opacity: step >= 3 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 3 ? 0.5 : 0 }}>
-            <SvgText x={404} y={Y0 + 6} text="pontas" size={16} anchor="end" color={C.glucoseSoft} weight={800} />
-        </motion.g>
-    </g>
-);
-
-/* ---------- grânulo inteiro ---------- */
-const RC = { x: 532, y: 128 };
-const ringR = (k: number) => 12 + 8.3 * k;
-
-const Rings = ({ step, tiers, reduce }: { step: number; tiers: number; reduce: boolean }) => (
-    <g>
-        {Array.from({ length: MAX_TIERS }, (_, k) => {
-            const on = k < tiers;
-            const shell = step === 3 && k === MAX_TIERS - 1;
-            const ghost = step === 4 && k >= tiers;
-            return (
-                <motion.circle key={k} cx={RC.x} cy={RC.y} r={ringR(k)} fill="none"
-                    stroke={shell ? C.glucose : C.glycogen} strokeWidth={ghost ? 2 : 6.5} strokeDasharray={ghost ? '5 6' : undefined}
-                    initial={false} animate={{ opacity: on ? (k % 2 ? 1 : 0.7) : ghost ? 0.7 : 0 }}
-                    transition={{ duration: reduce ? 0 : DUR.enter, delay: on && k > 0 ? Math.min(k * 0.05, 0.5) : 0 }} />
-            );
-        })}
-        <rect x={RC.x - 8} y={RC.y - 8} width={16} height={16} rx={4} fill={C.protein} />
-        <SvgText x={RC.x} y={262} text="grânulo inteiro" size={17} anchor="middle" color={C.muted} weight={700} />
-        <motion.g initial={false} animate={{ opacity: step >= 2 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 2 ? 0.5 : 0 }}>
-            <SvgText x={RC.x} y={286} text="12 camadas · ~44 nm" size={16} anchor="middle" color="#E5E7EB" />
-        </motion.g>
-        <motion.g initial={false} animate={{ opacity: step >= 4 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 4 ? 0.5 : 0 }}>
-            <circle cx={RC.x} cy={RC.y} r={ringR(6) + 5} fill="none" stroke="#F3F4F6" strokeWidth={3} strokeDasharray="9 6" />
-            <SvgText x={RC.x} y={RC.y + 6} text="~25 nm" size={18} anchor="middle" color="#F9FAFB" weight={800} />
-        </motion.g>
-    </g>
-);
-
-/* ---------- lupas de baixo ---------- */
-const Bead = ({ x, y, color = C.glucose }: { x: number; y: number; color?: string }) => (
-    <polygon points={HEX} fill={color} transform={`translate(${x} ${y}) scale(0.4)`} />
-);
-
-const Box = ({ x, title, color }: { x: number; title: string; color: string }) => (
-    <g>
-        <rect x={x} y={298} width={306} height={154} rx={12} fill="none" stroke={C.co2} strokeWidth={2} />
-        <SvgText x={x + 12} y={322} text={title} size={17} color={color} weight={800} />
-    </g>
-);
-
-const Primer = () => (
-    <g>
-        <Box x={4} title="o começo · glicogenina" color={C.proteinSoft} />
-        <rect x={20} y={360} width={34} height={34} rx={8} fill={C.protein} />
-        <SvgText x={37} y={418} text="Tyr" size={16} anchor="middle" color={C.proteinSoft} weight={700} />
-        <line x1={54} y1={377} x2={70} y2={377} stroke="#E5E7EB" strokeWidth={3} />
-        {Array.from({ length: 10 }, (_, i) => <Bead key={i} x={80 + i * 21} y={377} />)}
-        <SvgText x={174} y={352} text="10–20 glicoses (α-1,4)" size={16} anchor="middle" color="#E5E7EB" />
-        <SvgText x={70} y={424} text="doador: UDP-glicose" size={16} color="#E5E7EB" />
-    </g>
-);
-
-const A_Y = 368;
-const B_Y = 420;
-const BX = (i: number) => 346 + i * 21;
-const AX = (i: number) => BX(2) + i * 21;
-
-const Tip = ({ step, reduce }: { step: number; reduce: boolean }) => (
-    <motion.g initial={false} animate={{ opacity: step >= 3 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 3 ? 0.2 : 0 }}>
-        <Box x={330} title="a ponta" color={C.glucoseSoft} />
-        <SvgText x={628} y={322} text="fosforilase → glicose-1-P" size={16} anchor="end" color={C.glucoseSoft} weight={700} />
-        {Array.from({ length: 7 }, (_, i) => <Bead key={`b${i}`} x={BX(i)} y={B_Y} color={C.glycogen} />)}
-        <line x1={AX(0)} y1={B_Y - 10} x2={AX(0)} y2={A_Y + 10} stroke={C.glycogenSoft} strokeWidth={4} />
-        {Array.from({ length: 4 }, (_, i) => <Bead key={`a${i}`} x={AX(i)} y={A_Y} />)}
-        {[4, 5, 6, 7].map(i => (
-            <g key={`gone${i}`}>
-                <polygon points={HEX} fill="none" stroke={C.glucoseSoft} strokeWidth={4} strokeDasharray="6 5" transform={`translate(${AX(i)} ${A_Y}) scale(0.4)`} />
-                {step === 3 && !reduce && (
-                    <motion.g initial={{ opacity: 1, x: 0, y: 0 }} animate={{ opacity: 0, x: 18, y: -26 }}
-                        transition={{ duration: 0.5, delay: 0.5 + (7 - i) * 0.14, ease: EASE_OUT }}>
-                        <Bead x={AX(i)} y={A_Y} />
-                    </motion.g>
-                )}
-            </g>
-        ))}
-        <SvgText x={AX(0) + 12} y={398} text="para 4 antes do ramo" size={16} color="#E5E7EB" />
-        <SvgText x={342} y={446} text="desramificadora → glicose livre" size={16} color="#E5E7EB" />
-    </motion.g>
-);
-
-export const GranuleStage = ({ step, tiers }: { step: number; tiers: number }) => {
+const Branches = ({ born }: { born: boolean }) => {
     const reduce = useReducedMotion() ?? false;
+    const t = (tier: number) => (born && !reduce ? 0.2 + (tier - 1) * 0.22 : 0);
     return (
-        <svg viewBox={`0 0 ${GR_W} ${GR_H}`} width={GR_W} height={GR_H} className="block" role="img"
-            aria-label="Glicogênio: centro ampliado com cadeias e ramos, grânulo inteiro em camadas, glicogenina e ação da fosforilase">
-            <Dendrogram step={step} reduce={reduce} />
-            <Rings step={step} tiers={tiers} reduce={reduce} />
-            <Primer />
-            <Tip step={step} reduce={reduce} />
-        </svg>
+        <g>
+            {CHAINS.map(c => (
+                <motion.path key={c.id} d={c.d} fill="none" strokeWidth={5} strokeLinecap="round" strokeLinejoin="round" stroke={C.glycogen}
+                    initial={born && !reduce ? { pathLength: 0 } : false} animate={{ pathLength: 1 }}
+                    transition={{ duration: reduce ? 0 : DUR.bar, delay: t(c.tier), ease: EASE_OUT }} />
+            ))}
+            {CHAINS.flatMap(c => c.bx.map(x => ({ key: `${c.id}-${x}`, x, y: c.y }))).map(p => (
+                <circle key={p.key} cx={p.x} cy={p.y} r={4} fill={C.stone} />
+            ))}
+            <rect x={14} y={D_Y0 - 13} width={26} height={26} rx={6} fill={C.protein} />
+            <circle cx={244} cy={64} r={4} fill={C.stone} />
+            <SvgText x={254} y={70} text="= ramo" size={16} color={C.stone} weight={700} />
+            <SvgText x={254} y={90} text="α-1,6" size={16} color={C.stone} weight={700} />
+            <SvgText x={14} y={204} text="cadeias por camada: 1 → 2 → 4 → 8" size={16} color="#E5E7EB" />
+        </g>
     );
 };
+
+/* ---------- 3 · camadas (grânulo inteiro) ---------- */
+const RC = { x: 96, y: 128 };
+const ringR = (k: number) => 9 + 6.6 * k;
+
+const Rings = ({ born, shell }: { born: boolean; shell: boolean }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <g>
+            {Array.from({ length: MAX_TIERS }, (_, k) => {
+                const outer = shell && k === MAX_TIERS - 1;
+                return (
+                    <motion.circle key={k} cx={RC.x} cy={RC.y} r={ringR(k)} fill="none"
+                        stroke={outer ? C.glucose : C.glycogen} strokeWidth={outer ? 5.5 : 4.5}
+                        initial={born && !reduce ? { opacity: 0 } : false} animate={{ opacity: outer ? 1 : k % 2 ? 1 : 0.7 }}
+                        transition={{ duration: DUR.enter, delay: born && !reduce ? 0.15 + k * 0.05 : 0 }} />
+                );
+            })}
+            <rect x={RC.x - 6} y={RC.y - 6} width={12} height={12} rx={3} fill={C.protein} />
+            <SvgText x={196} y={84} text="12 camadas" size={18} color={C.glycogenSoft} weight={800} />
+            <SvgText x={196} y={116} text="~55.000" size={18} color="#F9FAFB" weight={800} />
+            <SvgText x={196} y={136} text="glicoses" size={16} color="#E5E7EB" />
+            <SvgText x={196} y={168} text="~44 nm" size={18} color="#F9FAFB" weight={800} />
+            <SvgText x={196} y={204} text="teto teórico" size={16} color={C.caveat} />
+        </g>
+    );
+};
+
+/* ---------- 4 · a casca (glicose por camada, com eixo) ---------- */
+const H_X0 = 56;
+const H_X1 = 300;
+const H_Y0 = 182;
+const H_PX = 2.2; // px por ponto percentual (50% = 110 px)
+const hy = (pct: number) => H_Y0 - pct * H_PX;
+const BAND = (H_X1 - H_X0) / MAX_TIERS;
+const bx = (k: number) => H_X0 + BAND * k + BAND / 2;
+
+const Shell = ({ born }: { born: boolean }) => {
+    const reduce = useReducedMotion() ?? false;
+    return (
+        <g>
+            <SvgText x={14} y={56} text="% da glicose do grânulo" size={16} color={C.caveat} />
+            {[0, 25, 50].map(v => (
+                <g key={v}>
+                    <line x1={H_X0} y1={hy(v)} x2={H_X1} y2={hy(v)} stroke={v === 0 ? '#94A3B8' : '#334155'} strokeWidth={2} />
+                    <SvgText x={H_X0 - 8} y={hy(v) + 6} text={String(v)} size={16} anchor="end" color="#D1D5DB" />
+                </g>
+            ))}
+            {TIER_PCT.map((v, k) => {
+                const outer = k === MAX_TIERS - 1;
+                const h = Math.max(v * H_PX, 2);
+                return (
+                    <motion.rect key={k} x={bx(k) - 7} y={H_Y0 - h} width={14} height={h} rx={2} fill={outer ? C.glucose : C.glycogen}
+                        style={{ transformBox: 'fill-box', transformOrigin: 'center bottom' }}
+                        initial={born && !reduce ? { scaleY: 0 } : false} animate={{ scaleY: 1 }}
+                        transition={{ duration: reduce ? 0 : DUR.bar, delay: born ? stagger(k, 0.25, 0.04) : 0, ease: EASE_OUT }} />
+                );
+            })}
+            <motion.g initial={born && !reduce ? { opacity: 0 } : false} animate={{ opacity: 1 }}
+                transition={{ duration: DUR.enter, delay: born ? 1 : 0 }}>
+                <SvgText x={bx(MAX_TIERS - 1) - 14} y={hy(50) + 22} text="50%" size={20} anchor="end" color={C.glucoseSoft} weight={800} />
+            </motion.g>
+            <SvgText x={bx(0)} y={H_Y0 + 20} text="1" size={16} anchor="middle" color="#D1D5DB" />
+            <SvgText x={bx(MAX_TIERS - 1)} y={H_Y0 + 20} text="12" size={16} anchor="middle" color="#D1D5DB" />
+            <SvgText x={(H_X0 + H_X1) / 2} y={H_Y0 + 20} text="camada (centro → casca)" size={16} anchor="middle" color={C.caveat} />
+        </g>
+    );
+};
+
+export const GranuleStage = ({ step }: { step: number }) => (
+    <svg viewBox={`0 0 ${GR_W} ${GR_H}`} width={GR_W} height={GR_H} className="block" role="img"
+        aria-label="Glicogênio em quatro quadros: glicogenina, ramos que dobram, até 12 camadas, a camada externa com metade da glicose">
+        <Quad n={1} title="Glicogenina: o primer" show={step >= 0} born={step === 0}><Primer born={step === 0} /></Quad>
+        <Quad n={2} title="Ramos: as cadeias dobram" show={step >= 1} born={step === 1}><Branches born={step === 1} /></Quad>
+        <Quad n={3} title="Camadas: até 12" show={step >= 2} born={step === 2}><Rings born={step === 2} shell={step >= 3} /></Quad>
+        <Quad n={4} title="Casca: metade da glicose" show={step >= 3} born={step === 3}><Shell born={step === 3} /></Quad>
+    </svg>
+);

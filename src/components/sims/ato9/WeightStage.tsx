@@ -1,166 +1,165 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Droplet } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { DUR, EASE_OUT, stagger } from '../../../lib/motion';
+import { DUR } from '../../../lib/motion';
 import { Grow } from '../kit/Beat';
 import { castOf } from '../kit/cast';
 import { br } from '../kit/format';
 import { C } from '../kit/palette';
+import { KeyFact } from '../kit/rhythm';
 import { useTween } from '../kit/useTween';
-import { SvgText } from '../kit/ui';
 import {
-    FOO_DAYS, LEVERS, PLASMA_GAIN_ML, SWEAT_ML, TIAGO_AFTER_FIBER, TIAGO_START, TIAGO_TARGET, WATER_MAX, WATER_MIN,
+    AFTER_GLY, AFTER_GUT, GLY_KG, PLASMA_GAIN_ML, REST_KG, SCALE_AT, SWEAT_ML, TIAGO_START, TIAGO_TARGET, WATER_MAX, WATER_PER_G,
 } from './weightCut.content';
 
 /**
- * Palco do slide 164 (640 × 420). À esquerda, o Tiago (fictício) na balança e as três alavancas rápidas; cada uma
- * acende no passo do seu estudo. À direita, acumulam: a razão glicogênio : água (piso 3, até 17), o "cantil" que
- * não existe (2 L de suor × 55 mL) e a dieta pobre em fibra. A balança só se mexe com o dado da fibra.
+ * Palco do slide 164 (640 × 420): uma cena só, a balança do Tiago (fictício). No alto, o visor e o quanto falta.
+ * No meio, a conta em cascata na régua de kg (76,5 → 73,0): 1 glicogênio com a água dele → 2 conteúdo do intestino →
+ * 3 o que falta, que só sairia como água do corpo (fora: ACSM). Embaixo, a ressalva rotulada: essa água não é cantil.
  */
 
 export const STAGE_W = 640;
 export const STAGE_H = 420;
-const RIGHT_X = 262;
-const RIGHT_W = STAGE_W - RIGHT_X;
 const WATER = C.caveat;
+const GUT = C.co2;
 
-const Block = ({ show, y, children }: { show: boolean; y: number; children: ReactNode }) => (
-    <motion.div className="absolute flex flex-col gap-1" style={{ left: RIGHT_X, top: y, width: RIGHT_W }}
-        initial={false} animate={{ opacity: show ? 1 : 0, y: show ? 0 : 8 }} transition={{ duration: DUR.enter, ease: EASE_OUT }}>
-        {children}
-    </motion.div>
-);
-const Title = ({ children }: { children: ReactNode }) => <span className="text-[16px] font-semibold text-gray-200">{children}</span>;
+/** Régua da cascata: 76,5 kg à esquerda, 73,0 (alvo) à direita. */
+const LABEL_W = 176;
+const BAR_W = STAGE_W - LABEL_W - 16 - 14;
+const kx = (kg: number) => ((TIAGO_START - kg) / (TIAGO_START - TIAGO_TARGET)) * BAR_W;
+const TICKS = [76.5, 76, 75, 74, 73] as const;
 
-const Scale = ({ step }: { step: number }) => {
+const Top = ({ step }: { step: number }) => {
     const reduce = useReducedMotion() ?? false;
-    const kg = useTween(step >= 4 ? TIAGO_AFTER_FIBER : TIAGO_START, reduce, 900);
+    const kg = useTween(SCALE_AT[step], reduce, 900);
     const t = castOf('tiago');
     const Icon = t.icon;
     return (
-        <div className="absolute left-0 top-0 flex w-[240px] flex-col gap-2">
-            <div className="flex items-center gap-2">
-                <Icon size={26} strokeWidth={2.2} color={C.text} aria-hidden />
-                <span className="text-[22px] font-semibold text-white">{t.name}</span>
-                <span className="text-[16px] text-gray-300">{t.sport}</span>
-            </div>
-            <div className="flex flex-col items-center">
-                <div className="h-4 w-[210px] rounded-t-xl" style={{ background: '#475569' }} />
-                <div className="flex h-[112px] w-[230px] flex-col items-center justify-center gap-1 rounded-2xl" style={{ background: '#1E293B', border: `3px solid ${C.co2}` }}>
-                    <div className="flex h-[64px] w-[180px] items-center justify-center rounded-xl" style={{ background: '#04080F' }}>
-                        <span className="font-mono text-[44px] font-bold tabular-nums text-white">{br(kg, 2)}</span>
-                    </div>
-                    <span className="text-[16px] text-gray-300">kg · alvo {br(TIAGO_TARGET)} na pesagem</span>
+        <div className="flex items-stretch gap-4">
+            <div className="flex w-[300px] shrink-0 items-center gap-3 rounded-2xl px-3 py-2" style={{ background: '#1E293B', border: `3px solid ${C.co2}` }}>
+                <div className="flex flex-col gap-0.5">
+                    <span className="flex items-center gap-1.5"><Icon size={22} strokeWidth={2.2} color={C.text} aria-hidden /><b className="text-[20px] text-white">{t.name}</b></span>
+                    <span className="text-[16px] text-gray-300">judô, −73 kg</span>
                 </div>
+                <div className="ml-auto flex flex-col items-end">
+                    <span className="rounded-lg px-2 font-mono text-[40px] font-bold leading-tight tabular-nums text-white" style={{ background: '#04080F' }}>{br(kg, 2)}</span>
+                    <span className="text-[15px] text-gray-300">kg na balança</span>
+                </div>
+            </div>
+            <div className="flex flex-1 flex-col justify-center">
+                <span className="text-[16px] text-gray-300">alvo na pesagem: <b className="text-white">73,0 kg</b></span>
+                <span className="flex items-baseline gap-2">
+                    <span className="text-[17px] text-gray-200">faltam</span>
+                    <span className="font-display text-[40px] font-bold leading-none tabular-nums" style={{ color: step >= 3 ? C.risk : C.text }}>{br(kg - TIAGO_TARGET, 2)}</span>
+                    <span className="text-[17px] text-gray-200">kg</span>
+                </span>
             </div>
         </div>
     );
 };
 
-/** As três alavancas rápidas; a do passo acende. */
-const Levers = ({ step }: { step: number }) => (
-    <div className="absolute left-0 flex w-[240px] flex-col gap-2" style={{ top: 186 }}>
-        <Title>o que sai rápido</Title>
-        {LEVERS.map((l, i) => {
-            const lit = step >= l.at;
-            const color = l.key === 'gly' ? C.glycogen : l.key === 'gut' ? C.stone : WATER;
-            return (
-                <motion.div key={l.key} className="flex items-center gap-2 rounded-lg border-2 px-2 py-1 text-[16px]"
-                    initial={false} animate={{ opacity: lit || step === 0 ? 1 : 0.6 }}
-                    transition={{ duration: DUR.enter, delay: step === 0 ? stagger(i, 0.2) : 0 }}
-                    style={{ borderColor: step === l.at ? color : 'rgba(255,255,255,0.15)', color: '#F3F4F6' }}>
-                    <span className="block h-3 w-3 shrink-0 rounded-full" style={{ background: color }} />{l.label}
-                </motion.div>
-            );
-        })}
-        <motion.p className="m-0 text-[15px] leading-snug text-gray-300" initial={false} animate={{ opacity: step >= 4 ? 1 : 0 }}
-            transition={{ duration: DUR.enter, delay: step === 4 ? 0.6 : 0 }}>
-            Desidratar à força fica fora: o ACSM (2021) pede regras contra técnicas perigosas.
-        </motion.p>
+/** Segmento da cascata, entre dois pesos; cresce da esquerda quando o passo chega. */
+const Seg = ({ from, to, color, show, delay = 0.2, children }: { from: number; to: number; color: string; show: boolean; delay?: number; children?: ReactNode }) => (
+    <div className="absolute inset-y-[6px] overflow-hidden rounded-[4px]" style={{ left: kx(from), width: kx(to) - kx(from) }}>
+        <Grow value={show ? 1 : 0} color={color} delay={delay} />
+        {show && children}
     </div>
 );
 
-/** 1 g de glicogênio e as 17 gramas possíveis de água; as 3 primeiras são o piso. */
-const Ratio = ({ step }: { step: number }) => {
-    const reduce = useReducedMotion();
-    const count = step >= 2 ? WATER_MAX : WATER_MIN;
-    return (
-        <Block show={step >= 1} y={0}>
-            <div className="flex items-baseline justify-between">
-                <Title>glicogênio : água (g)</Title>
-                <span className="font-display text-[30px] font-bold leading-none text-white">1 : {count}</span>
-            </div>
-            <div className="flex items-start gap-2">
-                <span className="block h-[34px] w-[34px] shrink-0 rounded-md" style={{ background: C.glycogen }} />
-                <div className="flex flex-wrap gap-[4px]" style={{ width: 9 * 30 }}>
-                    {Array.from({ length: WATER_MAX }, (_, i) => {
-                        const on = i < count;
-                        const floor = i < WATER_MIN;
-                        return (
-                            <motion.span key={i} className="flex h-[26px] w-[26px] items-center justify-center rounded-md"
-                                style={floor ? { background: WATER } : { border: `2px solid ${WATER}` }}
-                                initial={false} animate={{ opacity: on ? 1 : 0.12, scale: on || reduce ? 1 : 0.85 }}
-                                transition={{ delay: on ? stagger(i - (step >= 2 ? WATER_MIN : 0), 0.2, 0.04) : 0, duration: DUR.enter, ease: EASE_OUT }}>
-                                <Droplet size={15} strokeWidth={2.4} color={floor ? '#04080F' : WATER} aria-hidden />
-                            </motion.span>
-                        );
-                    })}
-                </div>
-            </div>
-            <span className="text-[15px] text-gray-300">cheio: piso, pouca água (400 mL) · contorno: só com água plena (~3,2 L)</span>
-        </Block>
-    );
-};
+interface RowProps {
+    n: number;
+    title: string;
+    note: string;
+    show: boolean;
+    children: ReactNode;
+}
 
-/** King 2018: 2 L de suor × ~55 mL devolvidos ao plasma, na mesma escala. */
-const Canteen = ({ show }: { show: boolean }) => (
-    <Block show={show} y={142}>
-        <Title>2 L de suor × água devolvida ao plasma</Title>
-        {[{ label: 'suor', ml: SWEAT_ML, color: C.co2 }, { label: 'plasma', ml: PLASMA_GAIN_ML, color: WATER }].map((r, i) => (
-            <div key={r.label} className="flex items-center gap-2">
-                <span className="w-[56px] text-[16px] text-gray-300">{r.label}</span>
-                <div className="relative h-[24px] w-[200px] overflow-hidden rounded" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                    <Grow value={show ? r.ml / SWEAT_ML : 0} color={r.color} delay={0.2 + i * 0.3} />
-                </div>
-                <span className="whitespace-nowrap font-mono text-[17px] font-semibold tabular-nums text-white">{r.ml.toLocaleString('pt-BR')} mL</span>
-            </div>
-        ))}
-    </Block>
+const Row = ({ n, title, note, show, children }: RowProps) => (
+    <div className="flex h-[54px] items-center gap-4">
+        <div className="flex shrink-0 flex-col leading-tight" style={{ width: LABEL_W }}>
+            <span className="text-[17px] font-bold" style={{ color: show ? '#FFFFFF' : '#94A3B8' }}>{n} · {title}</span>
+            <motion.span className="text-[15px] text-gray-300" initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter }}>{note}</motion.span>
+        </div>
+        <div className="relative h-full" style={{ width: BAR_W }}>{children}</div>
+    </div>
 );
 
-/** Foo 2022: a massa cai em degraus pequenos ao longo dos dias de pouca fibra. */
-const Fiber = ({ show }: { show: boolean }) => {
-    const W = RIGHT_W;
-    const x = (i: number) => 30 + i * ((W - 150) / 2);
-    const y = (kg: number) => 18 + (-kg / 0.6) * 70;
-    return (
-        <Block show={show} y={250}>
-            <div className="flex items-baseline justify-between">
-                <Title>&lt; 10 g de fibra por dia · massa (kg)</Title>
-                <span className="font-display text-[30px] font-bold leading-none" style={{ color: C.stone }}>−0,74%</span>
-            </div>
-            <svg viewBox={`0 0 ${W} 120`} width={W} height={120} role="img" aria-label="Massa −0,40 kg no dia 4 e −0,58 kg na manhã do 5º dia">
-                <line x1={x(0)} x2={x(2)} y1={y(0)} y2={y(0)} stroke="rgba(255,255,255,0.2)" strokeWidth={2} strokeDasharray="5 5" />
-                <motion.polyline points={FOO_DAYS.map((d, i) => `${x(i)},${y(d.kg)}`).join(' ')} fill="none" stroke={C.stone} strokeWidth={4}
-                    initial={false} animate={{ pathLength: show ? 1 : 0 }} transition={{ duration: DUR.draw, delay: show ? 0.2 : 0, ease: EASE_OUT }} />
-                {FOO_DAYS.map((d, i) => (
-                    <g key={d.day}>
-                        <circle cx={x(i)} cy={y(d.kg)} r={7} fill={C.stone} />
-                        <SvgText x={x(i)} y={116} text={d.day} anchor="middle" size={16} color={C.muted} weight={500} />
-                        {i > 0 && <SvgText x={x(i) + 10} y={y(d.kg) - 10} text={br(d.kg, 2)} size={17} color="#F9FAFB" weight={700} />}
-                    </g>
+/** Valor escrito logo depois do fim do segmento. */
+const After = ({ kg, text, show, color = C.text }: { kg: number; text: string; show: boolean; color?: string }) => (
+    <motion.span className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap font-mono text-[18px] font-bold tabular-nums" style={{ left: kx(kg) + 8, color }}
+        initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter, delay: show ? 0.7 : 0 }}>{text}</motion.span>
+);
+
+const Cascade = ({ step }: { step: number }) => (
+    <div className="relative flex flex-col">
+        {/* régua de kg e linhas-guia da cascata */}
+        <div className="flex h-[22px] items-end gap-4">
+            <span className="shrink-0 text-[15px] text-gray-300" style={{ width: LABEL_W }}>régua: kg na balança</span>
+            <div className="relative h-full" style={{ width: BAR_W }}>
+                {TICKS.map(t => (
+                    <span key={t} className={`absolute bottom-0 whitespace-nowrap text-[15px] tabular-nums ${t === TIAGO_TARGET ? '-translate-x-[85%]' : '-translate-x-1/2'}`}
+                        style={{ left: kx(t), color: t === TIAGO_TARGET ? C.text : C.muted, fontWeight: t === TIAGO_TARGET ? 700 : 500 }}>
+                        {t === TIAGO_TARGET ? 'alvo 73' : br(t, t % 1 ? 1 : 0)}
+                    </span>
                 ))}
-            </svg>
-        </Block>
-    );
-};
+            </div>
+        </div>
+        <div className="pointer-events-none absolute bottom-0 top-[24px]" style={{ left: LABEL_W + 16, width: BAR_W }}>
+            {[TIAGO_START, AFTER_GLY, AFTER_GUT].map((kg, i) => (
+                <span key={kg} className="absolute inset-y-0 border-l-2 border-dashed" style={{ left: kx(kg), borderColor: step > i ? 'rgba(255,255,255,0.22)' : 'transparent' }} />
+            ))}
+            <span className="absolute inset-y-0 border-l-[3px]" style={{ left: kx(TIAGO_TARGET) - 3, borderColor: C.text }} />
+        </div>
+        <Row n={1} title="glicogênio + água" note={`1 g leva ≥ ${WATER_PER_G} g (até ${WATER_MAX})`} show={step >= 1}>
+            <Seg from={TIAGO_START} to={TIAGO_START - GLY_KG} color={C.glycogen} show={step >= 1} />
+            <Seg from={TIAGO_START - GLY_KG} to={AFTER_GLY} color={WATER} show={step >= 1} delay={0.45}>
+                <span className="absolute inset-0 flex items-center justify-center"><Droplet size={18} strokeWidth={2.6} color="#04080F" aria-hidden /></span>
+            </Seg>
+            <After kg={AFTER_GLY} text="−0,72 kg" show={step >= 1} color={C.glycogenSoft} />
+        </Row>
+        <Row n={2} title="intestino" note="fibra < 10 g/dia, 4 dias" show={step >= 2}>
+            <Seg from={AFTER_GLY} to={AFTER_GUT} color={GUT} show={step >= 2} />
+            <After kg={AFTER_GUT} text="−0,57 kg" show={step >= 2} />
+        </Row>
+        <Row n={3} title="o que falta" note="o ACSM pede regra contra" show={step >= 3}>
+            <motion.div className="absolute inset-y-[6px] flex items-center justify-center rounded-[4px] border-[3px] border-dashed"
+                style={{ left: kx(AFTER_GUT), width: kx(TIAGO_TARGET) - kx(AFTER_GUT), borderColor: C.risk }}
+                initial={false} animate={{ opacity: step >= 3 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: step === 3 ? 0.2 : 0 }}>
+                {step >= 3 && (
+                    <KeyFact color={C.risk} delay={step === 3 ? 0.6 : 0}>
+                        <span className="whitespace-nowrap text-[17px] font-bold" style={{ color: C.text }}>≈{br(REST_KG, 1)} kg · só água do corpo</span>
+                    </KeyFact>
+                )}
+            </motion.div>
+        </Row>
+    </div>
+);
+
+/** A ressalva rotulada (King 2018): 2 L de suor × ~55 mL devolvidos ao plasma, na mesma escala de mL. */
+const Caveat = ({ show }: { show: boolean }) => (
+    <div className="flex flex-col gap-1 rounded-xl border-2 px-3 py-2"
+        style={{ borderColor: show ? C.caveat : '#334155', borderStyle: show ? 'solid' : 'dashed', transition: 'border-color 300ms' }}>
+        <span className="text-[16px] font-bold" style={{ color: show ? C.text : '#94A3B8' }}>
+            ressalva · essa água não protege da desidratação <span className="font-normal text-gray-300">(King 2018)</span>
+        </span>
+        <motion.div className="flex flex-col gap-1" initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            {[{ label: '2 L de suor', ml: SWEAT_ML, color: C.co2 }, { label: 'volta ao plasma', ml: PLASMA_GAIN_ML, color: WATER }].map((r, i) => (
+                <div key={r.label} className="flex items-center gap-3">
+                    <span className="w-[130px] shrink-0 text-[16px] text-gray-200">{r.label}</span>
+                    <div className="relative h-[20px] flex-1 overflow-hidden rounded" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                        <Grow value={show ? r.ml / SWEAT_ML : 0} color={r.color} delay={0.2 + i * 0.3} />
+                    </div>
+                    <span className="w-[92px] shrink-0 text-right font-mono text-[17px] font-semibold tabular-nums text-white">{i ? '~' : ''}{r.ml.toLocaleString('pt-BR')} mL</span>
+                </div>
+            ))}
+        </motion.div>
+    </div>
+);
 
 export const WeightStage = ({ step }: { step: number }) => (
-    <div className="relative" style={{ width: STAGE_W, height: STAGE_H }}>
-        <Scale step={step} />
-        <Levers step={step} />
-        <Ratio step={step} />
-        <Canteen show={step >= 3} />
-        <Fiber show={step >= 4} />
+    <div className="flex flex-col gap-3" style={{ width: STAGE_W, height: STAGE_H }}>
+        <Top step={step} />
+        <Cascade step={step} />
+        <div className="mt-auto"><Caveat show={step >= 4} /></div>
     </div>
 );

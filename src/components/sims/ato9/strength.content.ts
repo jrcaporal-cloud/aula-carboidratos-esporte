@@ -5,30 +5,23 @@
 
 import type { LedgerRow } from './A9aShell';
 
-export interface TankSpec {
+/** Um protocolo por barra (cada uma, um estudo): quanto do glicogênio de antes a sessão gastou. */
+export interface SpendSpec {
     key: string;
     label: string;
-    /** Queda do glicogênio (%). */
+    who: string;
+    /** Queda do glicogênio (%), em relação ao próprio valor de antes. */
     drop: number;
-    /** Passo em que o tanque baixa. */
+    text: string;
+    /** Passo em que a barra entra. */
     at: number;
-    group: 'biceps' | 'coxa' | 'fibra';
 }
 
-export const TANKS: readonly TankSpec[] = [
-    { key: 'b1', label: '1 série', drop: 12, at: 1, group: 'biceps' },
-    { key: 'b3', label: '3 séries', drop: 24, at: 1, group: 'biceps' },
-    { key: 'q', label: '30 min', drop: Math.round((1 - 495 / 690) * 100), at: 1, group: 'coxa' }, // 690 → 495: ≈28% (cálculo)
-    { key: 't1', label: 'tipo I', drop: 23, at: 2, group: 'fibra' },
-    { key: 't2a', label: 'IIa', drop: 40, at: 2, group: 'fibra' },
-    { key: 't2x', label: 'IIx', drop: 44, at: 2, group: 'fibra' },
+export const SPEND: readonly SpendSpec[] = [
+    { key: 'biceps', label: 'bíceps, 3 séries', who: 'MacDougall', drop: 24, text: '−24%', at: 1 },
+    { key: 'coxa', label: 'coxa, 30 min', who: 'Essén', drop: (1 - 495 / 690) * 100, text: '≈−28%', at: 1 }, // 690 → 495 (cálculo)
+    { key: 'iix', label: 'fibras IIx, 45 min', who: 'Koopman', drop: 44, text: '−44%', at: 2 },
 ];
-
-export const GROUPS = [
-    { key: 'biceps', label: 'bíceps', who: 'MacDougall 1999', at: 1 },
-    { key: 'coxa', label: 'coxa', who: 'Essén 1990', at: 1 },
-    { key: 'fibra', label: 'por fibra', who: 'Koopman 2006', at: 2 },
-] as const;
 
 /** Henselmans 2022: os 49 estudos por tipo de desenho e o que cada um achou. */
 export type Finding = 'positivo' | 'nulo' | 'contra';
@@ -41,9 +34,9 @@ export const REVIEW = [
 
 /** Henselmans 2026 (meta-análise) e o ensaio cruzado do mesmo grupo. */
 export const HYPER = [
-    { key: 'todos', label: '11 ECRs', smd: 0.15, note: 'p = 0,23' },
-    { key: 'iso', label: 'isocalóricos', smd: 0.15, note: 'p = 0,60' },
-    { key: 'img', label: 'imagem direta (2)', smd: -0.26, note: '' },
+    { key: 'todos', label: '11 ECRs', smd: 0.15 },
+    { key: 'iso', label: 'isocalóricos', smd: 0.15 },
+    { key: 'img', label: 'imagem direta (2)', smd: -0.26 },
 ] as const;
 
 export const STEPS = [
@@ -62,7 +55,7 @@ export const STEPS = [
     {
         tab: 'Por fibra',
         headline: 'O rombo é nas fibras rápidas, e não zera',
-        text: 'Koopman 2006, 8 homens não treinados, ~45 min de treino resistido em jejum: −23% nas fibras tipo I, −40% nas IIa e −44% nas IIx, sem ressíntese em 2 h sem comer. Nenhum dos seis tanques passou da metade.',
+        text: 'Koopman 2006, 8 homens não treinados, ~45 min de treino resistido em jejum: −23% nas fibras tipo I, −40% nas IIa e −44% nas IIx, sem ressíntese em 2 h sem comer. Nenhum tanque passou da metade.',
         sources: ['Koopman 2006'],
     },
     {

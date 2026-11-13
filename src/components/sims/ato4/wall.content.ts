@@ -1,6 +1,6 @@
 /**
  * Slide 68 · O muro em números. Fonte: dossiê 02 · SMYTH2021 (> 4 milhões de registros; N = 1.928.813; 28% × 17%,
- * OR 1,43; quem bate desacelera ~40% × ~37% por ~10,7 × 9,6 km; risco maior nos anos em torno do recorde pessoal;
+ * OR 1,43; quem bate fica ~40% × ~37% mais lento por km (DoS = aumento do min/km sobre o ritmo-base; conferido no artigo em 12/11/2026) por ~10,7 × 9,6 km; risco maior nos anos em torno do recorde pessoal;
  * muro inferido pelo ritmo, glicogênio não medido), TARNOPOLSKY1990 (6 + 6, 15,5 km a ~65% do VO₂máx: RER 0,87 × 0,94, homens +25% de glicogênio; correlação).
  * A volta da Marina é fictícia; a queda desenhada é a média de Smyth.
  */
@@ -24,7 +24,7 @@ export const WALL_STEPS: readonly WallStep[] = [
     {
         tab: 'Km 32',
         headline: 'No km 32, o ritmo desaba',
-        text: 'Quem bate no muro desacelera cerca de 40% (homens; 37% nas mulheres) e fica assim por uns 10 km (10,7 e 9,6 km). Não é um quilômetro ruim: é o último quarto da maratona inteiro mais devagar.',
+        text: 'Quem bate no muro fica cerca de 40% mais lento: cada km leva ~40% mais tempo que no ritmo do início (homens; 37% nas mulheres). Em velocidade, é cair para ~71% da planejada (1 ÷ 1,4). E dura uns 10 km (10,7 e 9,6 km): o último quarto da maratona inteiro mais devagar.',
         sources: [SMYTH],
     },
     {
@@ -41,8 +41,8 @@ export const WALL_STEPS: readonly WallStep[] = [
     },
 ];
 
-/** Velocidade relativa ao ritmo planejado (1 = plano), por km. Queda de ~40% no ritmo = velocidade ÷ 1,4. */
-const SLOW = 1 / 1.4;
+/** Velocidade relativa ao ritmo planejado (1 = plano), por km. Ritmo (min/km) 40% mais lento = velocidade ÷ 1,4 ≈ 71%. */
+export const SLOW = 1 / 1.4;
 export const planSpeed = (): number => 1;
 export const wallSpeed = (km: number): number => {
     if (km <= 30) return 1;
@@ -56,7 +56,7 @@ export const WAFFLES = [
 ] as const;
 
 export const WALL_LEDGER: readonly { at: number; cells: readonly [string, string, string] }[] = [
-    { at: 1, cells: ['desaceleração', '~40%', '~37%'] },
+    { at: 1, cells: ['min/km a mais', '+40%', '+37%'] },
     { at: 1, cells: ['por quanto', '10,7 km', '9,6 km'] },
     { at: 2, cells: ['bateram no muro', '28%', '17%'] },
     { at: 2, cells: ['razão de chances', 'OR 1,43', ''] },

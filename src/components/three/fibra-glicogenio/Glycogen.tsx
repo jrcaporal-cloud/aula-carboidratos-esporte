@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { C } from '../../sims/kit/palette';
 import { SCREEN_PX_GLSL, drawingHeight } from '../shared/toon';
 import type { Params } from '../shared/tween';
-import { GRANULES } from './layout';
+import { GRANULES, type Granule } from './layout';
 import type { FiberKey } from './steps';
 
 /*
@@ -20,7 +20,7 @@ attribute vec3 aG;
 uniform vec3 uShow, uDeplete;
 ${SCREEN_PX_GLSL}
 `;
-const BODY = /* glsl */ `
+const body = (r: number) => /* glsl */ `
 #include <begin_vertex>
 {
     float pool = aG.x;
@@ -29,30 +29,37 @@ const BODY = /* glsl */ `
     float s = clamp((show * 1.4 - aG.y * 0.4) * 2.5, 0.0, 1.0);
     s *= clamp((aG.z - dep) * 12.0, 0.0, 1.0);
     vec3 c = (instanceMatrix * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
-    float px = screenPx((modelViewMatrix * vec4(c, 1.0)).xyz, ${R.toFixed(2)});
+    float px = screenPx((modelViewMatrix * vec4(c, 1.0)).xyz, ${r.toFixed(2)});
     transformed *= s * clamp(1.5 / max(px, 0.01), 1.0, 3.0);
 }
 `;
 
-interface Props { params: Params<FiberKey>; ramp: THREE.Texture }
+interface Props {
+    /** Revelação e esvaziamento por endereço (outros modelos usam as mesmas chaves no seu tween). */
+    params: Params<FiberKey>;
+    ramp: THREE.Texture;
+    /** Grânulos de outro modelo (padrão: os da fibra em corte). */
+    granules?: readonly Granule[];
+    radius?: number;
+}
 
-export const Glycogen = ({ params, ramp }: Props) => {
+export const Glycogen = ({ params, ramp, granules = GRANULES, radius = R }: Props) => {
     const built = useMemo(() => {
         const uniforms = { uShow: { value: new THREE.Vector3() }, uDeplete: { value: new THREE.Vector3() }, uViewportH: { value: 720 } };
         const material = new THREE.MeshToonMaterial({ color: C.glycogen, gradientMap: ramp });
         material.onBeforeCompile = shader => {
             Object.assign(shader.uniforms, uniforms);
-            shader.vertexShader = HEAD + shader.vertexShader.replace('#include <begin_vertex>', BODY);
+            shader.vertexShader = HEAD + shader.vertexShader.replace('#include <begin_vertex>', body(radius));
         };
-        material.customProgramCacheKey = () => 'fibra-glicogenio-graos-v1';
-        const geo = new THREE.IcosahedronGeometry(R, 1);
-        geo.setAttribute('aG', new THREE.InstancedBufferAttribute(new Float32Array(GRANULES.flatMap(g => [g.pool, g.reveal, g.deplete])), 3));
-        const mesh = new THREE.InstancedMesh(geo, material, GRANULES.length);
+        material.customProgramCacheKey = () => `fibra-glicogenio-graos-v1-${radius.toFixed(2)}`;
+        const geo = new THREE.IcosahedronGeometry(radius, 1);
+        geo.setAttribute('aG', new THREE.InstancedBufferAttribute(new Float32Array(granules.flatMap(g => [g.pool, g.reveal, g.deplete])), 3));
+        const mesh = new THREE.InstancedMesh(geo, material, granules.length);
         const m = new THREE.Matrix4();
-        GRANULES.forEach((g, i) => mesh.setMatrixAt(i, m.makeTranslation(g.x, g.y, g.z)));
+        granules.forEach((g, i) => mesh.setMatrixAt(i, m.makeTranslation(g.x, g.y, g.z)));
         mesh.frustumCulled = false;
         return { mesh, uniforms };
-    }, [ramp]);
+    }, [ramp, granules, radius]);
     const gpu = useRef(built.uniforms);
     useEffect(() => { gpu.current = built.uniforms; }, [built]);
     useEffect(() => () => {

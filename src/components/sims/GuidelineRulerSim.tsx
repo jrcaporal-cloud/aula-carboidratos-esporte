@@ -52,16 +52,20 @@ const Axis = ({ ticks, max, unit }: { ticks: readonly number[]; max: number; uni
     </div>
 );
 
-/** Zonas de sobreposição: atrás das barras, atravessando as quatro linhas. */
+/**
+ * Zonas de sobreposição: atrás das barras, só nas linhas que se cobrem (6–7 em Moderado e Alto; 8–10 de Moderado a
+ * Muito alto), com o rótulo no pé da linha do Leve, logo acima da coluna. Os gramas ficam ao lado de cada barra, fora das
+ * colunas: à esquerda; no Leve, à direita (não cabe antes do 3), na altura da barra, acima dos rótulos das colunas.
+ */
 const Overlaps = ({ on }: { on: boolean }) => (
     <div className="pointer-events-none absolute inset-y-0" style={{ left: LABEL_W, right: 0 }}>
         {OVERLAPS.map(o => (
-            <motion.div key={o.lo} className="absolute inset-y-0 rounded-md border-x-2"
-                style={{ left: at(o.lo), width: at(o.hi - o.lo), borderColor: C.stone, background: 'rgba(231,229,228,0.12)' }}
+            <motion.div key={o.lo} className="absolute" style={{ left: at(o.lo), width: at(o.hi - o.lo), top: ROW_H - 22, bottom: o.lastRow === 3 ? 0 : ROW_H }}
                 initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter, ease: EASE_OUT }}>
                 <span className="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[16px] font-semibold" style={{ color: C.stone }}>
                     {o.lo}–{o.hi}
                 </span>
+                <span className="absolute inset-x-0 bottom-0 rounded-md border-x-2" style={{ top: 22, borderColor: C.stone, background: 'rgba(231,229,228,0.12)' }} />
             </motion.div>
         ))}
     </div>
@@ -85,10 +89,11 @@ const DailyBands = ({ step, kg }: { step: number; kg: number }) => (
                         </div>
                     </Wipe>
                     {step >= 2 && (
-                        <motion.span className="absolute top-[34px] whitespace-nowrap" style={{ left: at(b.lo) }}
+                        <motion.span className="absolute top-[5px] flex h-[28px] items-center whitespace-nowrap"
+                            style={b.id === 'leve' ? { left: `calc(${at(b.hi)} + 10px)` } : { right: `calc(${at(RULER_MAX - b.lo)} + 10px)` }}
                             initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: stagger(i), duration: DUR.enter, ease: EASE_OUT }}>
                             <CountUp key={kg} text={`${int(b.lo * kg)}–${int(b.hi * kg)} g/d`} duration={0.6}
-                                className="font-mono text-[16px] font-semibold" style={{ color: C.glucoseSoft }} />
+                                className="text-[17px] font-semibold tabular-nums" style={{ color: C.glucoseSoft }} />
                         </motion.span>
                     )}
                 </div>

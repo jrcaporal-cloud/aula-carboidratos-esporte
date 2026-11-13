@@ -83,22 +83,22 @@ interface Node { x: number; y: number; w: number; h: number; title: string; line
 
 const CX = 394;
 const NODES: readonly Node[] = [
-    { x: CX, y: 6, w: 282, h: 56, title: 'glicogênio baixo', lines: ['467 × 103 mmol/kg ps'], color: C.glycogen, at: 1 },
-    { x: CX, y: 98, w: 136, h: 76, title: 'AMPK ↑', lines: ['p-ACC', '2,9 × 1,4'], color: C.insulin, at: 1 },
-    { x: CX + 146, y: 98, w: 136, h: 76, title: 'p38 MAPK ↑', lines: ['jejum', 'noturno'], color: C.insulin, at: 1 },
-    { x: CX, y: 210, w: 136, h: 76, title: 'p53 ↑', lines: ['p-Ser15', '2,6 × 0,9'], color: C.insulin, at: 1 },
-    { x: CX + 146, y: 210, w: 136, h: 76, title: 'PGC-1α', lines: ['mRNA ~3×', 'com ou sem CHO'], color: C.insulin, at: 1 },
+    { x: CX, y: 6, w: 282, h: 56, title: 'glicogênio baixo · Bartlett', lines: ['LOW 103 · HIGH 467 mmol/kg ps'], color: C.glycogen, at: 1 },
+    { x: CX, y: 98, w: 136, h: 90, title: 'AMPK ↑', lines: ['p-ACC', 'LOW 2,9', 'HIGH 1,4'], color: C.insulin, at: 1 },
+    { x: CX + 146, y: 98, w: 136, h: 90, title: 'p38 MAPK ↑', lines: ['jejum', 'noturno'], color: C.insulin, at: 1 },
+    { x: CX, y: 210, w: 136, h: 90, title: 'p53 ↑', lines: ['p-Ser15', 'LOW 2,6', 'HIGH 0,9'], color: C.insulin, at: 1 },
+    { x: CX + 146, y: 210, w: 136, h: 90, title: 'PGC-1α', lines: ['mRNA ~3×', 'com ou sem CHO'], color: C.insulin, at: 1 },
     { x: CX, y: 322, w: 282, h: 56, title: 'mitocôndria · enzimas', lines: ['HAD só na LOW · CS mais na LOW'], color: C.ok, at: 2 },
 ];
 
 const ARROWS: readonly { d: string; at: number }[] = [
     { d: `M ${CX + 68} 64 L ${CX + 68} 92`, at: 1 },
     { d: `M ${CX + 214} 64 L ${CX + 214} 92`, at: 1 },
-    { d: `M ${CX + 68} 176 L ${CX + 68} 204`, at: 1 },
-    { d: `M ${CX + 120} 176 L ${CX + 170} 204`, at: 1 },
-    { d: `M ${CX + 214} 176 L ${CX + 214} 204`, at: 1 },
-    { d: `M ${CX + 68} 288 L ${CX + 68} 316`, at: 2 },
-    { d: `M ${CX + 214} 288 L ${CX + 214} 316`, at: 2 },
+    { d: `M ${CX + 68} 190 L ${CX + 68} 204`, at: 1 },
+    { d: `M ${CX + 120} 190 L ${CX + 156} 204`, at: 1 },
+    { d: `M ${CX + 214} 190 L ${CX + 214} 204`, at: 1 },
+    { d: `M ${CX + 68} 302 L ${CX + 68} 316`, at: 2 },
+    { d: `M ${CX + 214} 302 L ${CX + 214} 316`, at: 2 },
 ];
 
 /** Da coxa LOW até o topo da cascata. */
@@ -114,7 +114,7 @@ const NodeView = ({ n, step }: { n: Node; step: number }) => {
             transition={{ duration: DUR.enter, delay: shown && current ? 0.3 : 0, ease: EASE_OUT }}>
             <rect x={n.x} y={n.y} width={n.w} height={n.h} rx={12} fill={`${n.color}24`} stroke={caveat ? C.stone : n.color} strokeWidth={current || caveat ? 4 : 2} />
             <SvgText x={n.x + n.w / 2} y={n.y + 23} text={n.title} size={18} anchor="middle" color="#FFFFFF" weight={800} />
-            {n.lines.map((l, i) => <SvgText key={l} x={n.x + n.w / 2} y={n.y + 44 + i * 20} text={l} size={16} anchor="middle" color="#E5E7EB" weight={600} />)}
+            {n.lines.map((l, i) => <SvgText key={l} x={n.x + n.w / 2} y={n.y + 43 + i * 19} text={l} size={16} anchor="middle" color="#E5E7EB" weight={600} />)}
         </motion.g>
     );
 };
@@ -134,8 +134,8 @@ const TRAVELS: readonly (readonly { pts: readonly Pt[]; color: string }[])[] = [
         { pts: [[CX + 214, 60], [CX + 214, 136], [CX + 214, 200], [CX + 214, 248]], color: C.insulin },
     ],
     [
-        { pts: [[CX + 68, 290], [CX + 100, 310], [CX + 141, 350], [CX + 141, 352]], color: C.ok },
-        { pts: [[CX + 214, 290], [CX + 180, 310], [CX + 141, 350], [CX + 141, 352]], color: C.ok },
+        { pts: [[CX + 68, 302], [CX + 100, 312], [CX + 141, 350], [CX + 141, 352]], color: C.ok },
+        { pts: [[CX + 214, 302], [CX + 180, 312], [CX + 141, 350], [CX + 141, 352]], color: C.ok },
     ],
     [],
 ];

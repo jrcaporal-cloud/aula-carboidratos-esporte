@@ -2,13 +2,14 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { DUR, EASE_OUT } from '../../../lib/motion';
 import { C } from '../kit/palette';
 import { SvgText } from '../kit/ui';
-import { EXHAUSTED_STEP, LEFT_AFTER, POOL_FOCUS, WATER_STEP, type Pool } from './pools.content';
+import { EXHAUSTED_STEP, LEFT_AFTER, POOL_FOCUS, POOL_NAMES, WATER_STEP, type Pool } from './pools.content';
 
 /**
  * Slide 65 · corte longitudinal de uma fibra (como na MET): sarcolema, espaço subsarcolemal com mitocôndrias e núcleo,
  * três miofibrilas com sarcômeros (linha Z, bandas I e A, zona H, linha M), tríades nas junções A–I (túbulo T entre
  * duas cisternas do retículo), retículo longitudinal e mitocôndrias intermiofibrilares na altura da linha Z.
  * Os grânulos de glicogênio moram nos três endereços. No alto, a trilha de escala: coxa → fibra → sarcômero → grânulo.
+ * Na calha da esquerda, o número e o nome de cada endereço (com colchete na faixa da fibra) e a legenda das fichas.
  */
 
 export const FIBER_W = 680;
@@ -20,6 +21,10 @@ const HALF_I = 45; // meia banda I
 const MF = [[150, 210], [264, 324], [378, 436]] as const;
 const GAPS = [[210, 264], [324, 378]] as const;
 const SUB = [96, 150] as const;
+/** Calha da esquerda: número + nome de cada endereço e a legenda. A fibra começa em GUTTER. */
+const GUTTER = 186;
+const MITO_SUB = [228, 370] as const;
+const TUBE_X = 285;
 
 const hash = (n: number) => {
     const s = Math.sin(n * 91.7) * 12345.678;
@@ -32,18 +37,18 @@ interface Granule { x: number; y: number; pool: Pool; rank: number }
 const GRANULES: readonly Granule[] = (() => {
     const out: Granule[] = [];
     // subsarcolemal: entre as mitocôndrias e o núcleo
-    [[36, 112], [64, 136], [176, 110], [204, 138], [236, 116], [264, 140], [372, 112], [402, 138], [438, 116], [612, 140], [644, 134]].forEach(([x, y], i) =>
+    [[306, 112], [316, 138], [432, 112], [446, 138], [612, 140], [644, 134]].forEach(([x, y], i) =>
         out.push({ pool: 'sub', x, y, rank: hash(i + 40) }));
     // intermiofibrilar: acima e abaixo do retículo, na altura da banda I
     GAPS.forEach(([y0, y1], g) => ZS.slice(1).forEach((z, k) => [-60, -34, 30, 58].forEach((dx, j) => {
         const n = g * 100 + k * 10 + j;
         if (hash(n) < 0.25) return;
         const x = z + dx;
-        if (x < 14 || x > FIBER_W - 12) return;
+        if (x < GUTTER + 10 || x > FIBER_W - 12) return;
         out.push({ pool: 'inter', x, y: j % 2 ? y0 + 8 : y1 - 8, rank: hash(n + 7) });
     })));
     // intramiofibrilar: dentro das miofibrilas, banda I, de um lado da linha Z
-    [[0, 1, -24], [0, 3, 22], [1, 1, 26], [1, 2, -22], [1, 4, 0], [2, 2, 24], [2, 3, -26], [0, 2, 0]].forEach(([m, k, dx], i) => {
+    [[0, 4, -24], [0, 3, 22], [2, 4, 24], [1, 2, -22], [1, 4, 0], [2, 2, 24], [2, 3, -26], [0, 2, 0]].forEach(([m, k, dx], i) => {
         const z = ZS[k];
         const x = dx === 0 ? z - 30 : z + dx;
         const [y0, y1] = MF[m];
@@ -143,22 +148,44 @@ const GranuleView = ({ g, i, step, reduce }: { g: Granule; i: number; step: numb
             <circle cx={g.x} cy={g.y} r={6.5} fill="none" stroke={C.glycogenSoft} strokeWidth={2} strokeDasharray="3 3" opacity={full ? 0 : 0.85} />
             <motion.circle cx={g.x} cy={g.y} r={7} stroke="#04080F" strokeWidth={1.5} style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
                 initial={false}
-                animate={{ opacity: full ? (lit ? 1 : 0.6) : 0, scale: full ? (pop && !reduce ? [1, 1.45, 1] : 1) : 0.3, fill: lit ? C.glycogenSoft : C.glycogen }}
+                animate={{ opacity: full ? (lit ? 1 : 0.45) : 0, scale: full ? (pop && !reduce ? [1, 1.45, 1] : 1) : 0.3 }} fill={C.glycogenSoft}
                 transition={{ duration: reduce ? 0 : DUR.bar, delay: reduce ? 0 : Math.min((i % 12) * 0.05, 0.5), ease: EASE_OUT }} />
         </g>
     );
 };
 
 /** Número do endereço na margem esquerda; acende no passo do endereço e fica. */
-const BADGES: readonly { pool: Pool; y: number; at: number }[] = [
-    { pool: 'sub', y: 123, at: 1 }, { pool: 'inter', y: 237, at: 2 }, { pool: 'intra', y: 294, at: 3 },
+const BADGES: readonly { pool: Pool; y0: number; y1: number; at: number }[] = [
+    { pool: 'sub', y0: SUB[0], y1: SUB[1], at: 1 }, { pool: 'inter', y0: GAPS[0][0], y1: GAPS[0][1], at: 2 }, { pool: 'intra', y0: MF[1][0], y1: MF[1][1], at: 3 },
 ];
 
-const Badge = ({ y, n, shown, current }: { y: number; n: number; shown: boolean; current: boolean }) => (
-    <motion.g initial={false} animate={{ opacity: shown ? 1 : 0 }} transition={{ duration: DUR.enter }}>
-        <circle cx={16} cy={y} r={14} fill={current ? C.glycogenSoft : '#0B1220'} stroke={C.glycogenSoft} strokeWidth={3} />
-        <text x={16} y={y + 6} textAnchor="middle" fontSize={17} fontWeight={800} fill={current ? '#04080F' : '#FFFFFF'} style={{ fontFamily: 'var(--font-body)' }}>{n}</text>
-    </motion.g>
+/** Número + nome do endereço na calha, com o colchete que marca a faixa da fibra; acende no passo e fica. */
+const Badge = ({ y0, y1, n, name, shown, current }: { y0: number; y1: number; n: number; name: string; shown: boolean; current: boolean }) => {
+    const y = (y0 + y1) / 2;
+    return (
+        <motion.g initial={false} animate={{ opacity: shown ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            <circle cx={18} cy={y} r={14} fill={current ? C.glycogenSoft : '#0B1220'} stroke={C.glycogenSoft} strokeWidth={3} />
+            <text x={18} y={y + 6} textAnchor="middle" fontSize={17} fontWeight={800} fill={current ? '#04080F' : '#FFFFFF'} style={{ fontFamily: 'var(--font-body)' }}>{n}</text>
+            <SvgText x={38} y={y + 6} text={name} size={16} color={current ? C.glycogenSoft : '#F3F4F6'} weight={700} />
+            <path d={`M ${GUTTER - 4} ${y0 + 3} H ${GUTTER - 10} V ${y1 - 3} H ${GUTTER - 4}`} fill="none" stroke={C.glycogenSoft} strokeWidth={3} />
+        </motion.g>
+    );
+};
+
+/** Legenda das fichas, no pé da calha. O grânulo gasto só aparece a partir da exaustão. */
+const Legend = ({ step }: { step: number }) => (
+    <g>
+        <circle cx={18} cy={352} r={7} fill={C.glycogenSoft} stroke="#04080F" strokeWidth={1.5} />
+        <SvgText x={34} y={358} text="glicogênio" size={16} color="#F3F4F6" weight={600} />
+        <motion.g initial={false} animate={{ opacity: step >= EXHAUSTED_STEP ? 1 : 0 }} transition={{ duration: DUR.enter }}>
+            <circle cx={18} cy={380} r={6.5} fill="none" stroke={C.glycogenSoft} strokeWidth={2} strokeDasharray="3 3" />
+            <SvgText x={34} y={386} text="grânulo gasto" size={16} color="#F3F4F6" weight={600} />
+        </motion.g>
+        <ellipse cx={18} cy={408} rx={12} ry={8} fill="#3F6B5C" stroke="#7FB8A3" strokeWidth={2} />
+        <SvgText x={34} y={414} text="mitocôndria" size={16} color="#F3F4F6" weight={600} />
+        <circle cx={18} cy={432} r={6} fill={C.stone} />
+        <SvgText x={34} y={438} text="túbulo T (tríade)" size={16} color="#F3F4F6" weight={600} />
+    </g>
 );
 
 export const PoolsFiber = ({ step }: { step: number }) => {
@@ -170,7 +197,7 @@ export const PoolsFiber = ({ step }: { step: number }) => {
                 <marker id="pools-arrow" viewBox="0 0 10 10" refX={6} refY={5} markerWidth={4} markerHeight={4} orient="auto">
                     <path d="M 0 0 L 10 5 L 0 10 Z" fill={C.co2} />
                 </marker>
-                <clipPath id="pools-clip"><rect x={0} y={80} width={FIBER_W} height={FIBER_H - 80} /></clipPath>
+                <clipPath id="pools-clip"><rect x={GUTTER} y={80} width={FIBER_W - GUTTER} height={FIBER_H - 80} /></clipPath>
             </defs>
             <Trail step={step} reduce={reduce} />
             <motion.g clipPath="url(#pools-clip)" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.morph }}>
@@ -178,22 +205,22 @@ export const PoolsFiber = ({ step }: { step: number }) => {
                 {MF.map(([a, b]) => <Myofibril key={a} y0={a} y1={b} />)}
                 {GAPS.map(([a, b]) => <Reticulum key={a} cy={(a + b) / 2} />)}
                 <rect x={0} y={86} width={FIBER_W} height={10} fill={C.stone} />
-                <rect x={81} y={92} width={8} height={138} fill={C.stone} />
-                <Mito cx={124} cy={123} rx={36} />
-                <Mito cx={320} cy={123} rx={36} />
+                <rect x={TUBE_X - 4} y={92} width={8} height={138} fill={C.stone} />
+                {MITO_SUB.map(cx => <Mito key={cx} cx={cx} cy={123} rx={36} />)}
                 <ellipse cx={530} cy={123} rx={62} ry={20} fill="#2E3A55" stroke={C.insulinSoft} strokeWidth={2.5} />
                 <SvgText x={530} y={129} text="núcleo" size={16} anchor="middle" color={C.insulinSoft} weight={700} />
                 <SvgText x={FIBER_W - 8} y={116} text="sarcolema ↑" size={16} anchor="end" color={C.stone} weight={700} />
-                <SvgText x={96} y={174} text="túbulo T" size={16} color={C.stone} weight={700} />
-                <SvgText x={320} y={104} text="mitocôndria" size={16} anchor="middle" color="#9FD3BF" weight={700} />
+                <SvgText x={TUBE_X + 12} y={174} text="túbulo T" size={16} color={C.stone} weight={700} />
+                <SvgText x={MITO_SUB[1]} y={104} text="mitocôndria" size={16} anchor="middle" color="#9FD3BF" weight={700} />
                 <SvgText x={385} y={231} text="retículo (RS)" size={16} anchor="middle" color="#CBD5E1" weight={700} />
                 <SvgText x={285} y={318} text="tríade ↓" size={16} anchor="middle" color={C.stone} weight={700} />
                 <SvgText x={634} y={186} text="linha Z →" size={16} anchor="end" color="#FFFFFF" weight={700} />
-                <SvgText x={140} y={428} text="banda A" size={16} anchor="middle" color="#FFFFFF" weight={700} />
+                <SvgText x={340} y={428} text="banda A" size={16} anchor="middle" color="#FFFFFF" weight={700} />
                 <SvgText x={240} y={428} text="banda I" size={16} anchor="middle" color="#FFFFFF" weight={700} />
                 {GRANULES.map((g, i) => <GranuleView key={i} g={g} i={i} step={step} reduce={reduce} />)}
-                {BADGES.map((b, i) => <Badge key={b.pool} y={b.y} n={i + 1} shown={step >= b.at} current={step === b.at} />)}
             </motion.g>
+            {BADGES.map((b, i) => <Badge key={b.pool} y0={b.y0} y1={b.y1} n={i + 1} name={POOL_NAMES[b.pool]} shown={step >= b.at} current={step === b.at} />)}
+            <Legend step={step} />
         </svg>
     );
 };

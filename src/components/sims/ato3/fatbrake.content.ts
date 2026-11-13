@@ -1,7 +1,8 @@
 /**
- * Slide 45 · Por que a Gordura Trava no Alto. Fonte única dos textos, do livro-caixa e dos dados das barras.
- * VANLOON2001 (n = 8 ciclistas; gordura 32 → 19 kJ/min; PDH ↑, carnitina acetilada, carnitina livre ↓; CPT-I não medida)
- * e HOWLETT1998 (n = 7 não treinados; PDH ativa e fosforilase a). As fichas de carnitina/acetil-CoA da cena são ilustrativas.
+ * Slide 45 · Por que a Gordura Trava no Alto. Uma cadeia de causa numa cena só (ato3/FatGate.tsx):
+ * mais carboidrato → PDH aberta → acetil-CoA em excesso → a CAT prende a carnitina → a CPT-I fica sem carnitina livre.
+ * VANLOON2001 (n = 8 ciclistas; gordura 32 → 19 kJ/min a 55 → 75% Wmáx; PDH ↑, carnitina acetilada, carnitina livre ↓;
+ * CPT-I não medida) e HOWLETT1998 (n = 7 não treinados; PDH ativa por % do VO₂máx). Contagem de fichas: esquema.
  */
 
 export interface FatStep {
@@ -16,28 +17,28 @@ const HOWLETT = 'Howlett 1998 (n = 7)';
 
 export const FAT_STEPS: readonly FatStep[] = [
     {
-        tab: '55% Wmáx',
-        headline: 'A 55%, a carnitina está livre',
-        text: 'Van Loon 2001 (n = 8 ciclistas, isótopos + biópsias): a 55% da Wmáx, a gordura oxidada chega ao pico, 32 ± 2 kJ/min. Para entrar na mitocôndria, o acil-CoA troca a CoA pela carnitina na CPT-I. Com carnitina livre sobrando, a porta funciona.',
+        tab: 'A porta',
+        headline: 'A 55% da Wmáx, a porta da gordura está aberta',
+        text: 'O ácido graxo só entra na mitocôndria pela CPT-I, trocando a CoA pela carnitina livre. Van Loon 2001 (n = 8 ciclistas, isótopos + biópsias): a 55% da Wmáx, com carnitina livre sobrando, a oxidação de gordura chega ao pico, 32 ± 2 kJ/min.',
         sources: [VANLOON],
     },
     {
-        tab: '75% Wmáx',
-        headline: 'A 75%, a acetil-CoA prende a carnitina',
-        text: 'A PDH mais ativa produz acetil-CoA mais depressa do que o Krebs consome. A carnitina-acetiltransferase (CAT) guarda o excesso como acetilcarnitina, e a carnitina livre cai. A gordura oxidada desce a 19 ± 2 kJ/min. A CPT-I não foi medida: o gargalo é inferido.',
+        tab: 'Mais carboidrato',
+        headline: 'A 75%, a PDH despeja acetil-CoA',
+        text: 'Com a potência, a glicogenólise e a PDH aceleram. Em outro estudo (Howlett 1998, n = 7 não treinados, intensidade em % do VO₂máx), a PDH ativa foi de 0,53 em repouso a 3,33 mmol·kg⁻¹·min⁻¹ a 90%. Sai mais acetil-CoA do que o ciclo de Krebs consome.',
+        sources: [HOWLETT],
+    },
+    {
+        tab: 'Carnitina presa',
+        headline: 'O excesso de acetil-CoA prende a carnitina',
+        text: 'A carnitina-acetiltransferase (CAT) tampona o excesso: acetil-CoA + carnitina → acetilcarnitina. A 75% da Wmáx, van Loon mediu mais acetilação do pool de carnitina e queda da carnitina livre. A PDH segue trabalhando, mas a carnitina sai da porta da gordura.',
         sources: [VANLOON],
     },
     {
-        tab: 'PDH',
-        headline: 'A PDH acompanha a potência',
-        text: 'Howlett 1998 (n = 7 não treinados, biópsias no 1º e no 10º min): PDH ativa de 0,53 em repouso para 1,60, 2,77 e 3,33 a 35, 65 e 90% do VO₂máx, e 4,45 aos 10 min a 90%. Acetil-CoA e acetilcarnitina só sobem a 65 e 90%.',
-        sources: [HOWLETT],
-    },
-    {
-        tab: 'Fosforilase',
-        headline: 'A fosforilase não precisa de mais enzima ativa',
-        text: 'No mesmo estudo, a fosforilase na forma a ficou em 21,4–29,6% nas três intensidades e caiu a 15,3% aos 10 min a 90%, mesmo com mais glicogenólise. O fluxo é ajustado por Pi e AMP livres, não por mais enzima fosforilada.',
-        sources: [HOWLETT],
+        tab: 'A porta trava',
+        headline: 'Sem carnitina livre, a gordura cai',
+        text: 'A oxidação de gordura desce a 19 ± 2 kJ/min. No alto, o carboidrato não só ganha: ele fecha a entrada da gordura. Limitação: a CPT-I não foi medida, o gargalo é inferido pela carnitina; n = 8, só homens.',
+        sources: [VANLOON],
     },
 ];
 
@@ -45,25 +46,37 @@ export interface FatRow {
     at: number;
     label: string;
     value: string;
-    tone: 'fat' | 'glucose' | 'glycogen' | 'neutral';
+    tone: 'fat' | 'glucose' | 'neutral';
 }
 
 export const FAT_ROWS: readonly FatRow[] = [
     { at: 0, label: 'gordura oxidada · 55% Wmáx', value: '32 kJ/min', tone: 'fat' },
-    { at: 1, label: 'gordura oxidada · 75% Wmáx', value: '19 kJ/min', tone: 'fat' },
-    { at: 1, label: 'carnitina livre, 55 → 75%', value: 'cai (acetilada)', tone: 'neutral' },
-    { at: 2, label: 'PDH ativa, repouso → 90%', value: '0,53 → 3,33', tone: 'glucose' },
-    { at: 3, label: 'fosforilase a, 1º min · 10 min', value: '21–30% · 15,3%', tone: 'glycogen' },
+    { at: 1, label: 'PDH ativa (Howlett) · repouso → 90% VO₂máx', value: '0,53 → 3,33', tone: 'glucose' },
+    { at: 2, label: 'carnitina livre · 55 → 75% Wmáx', value: 'cai', tone: 'neutral' },
+    { at: 3, label: 'gordura oxidada · 75% Wmáx', value: '19 kJ/min', tone: 'fat' },
+    { at: 3, label: 'queda da gordura (cálculo)', value: '−41%', tone: 'fat' },
 ];
 
-/** PDH ativa, mmol·kg peso úmido⁻¹·min⁻¹, no 1º minuto (HOWLETT1998). Aos 10 min a 90%: 4,45. */
-export const PDH_BARS = [
-    { label: 'rep.', value: 0.53, text: '0,53' },
-    { label: '35%', value: 1.6, text: '1,60' },
-    { label: '65%', value: 2.77, text: '2,77' },
-    { label: '90%', value: 3.33, text: '3,33' },
-] as const;
-export const PDH_10MIN = { value: 4.45, text: '4,45' } as const;
+/** Estado da cena por passo. Contagens de fichas são esquema; os kJ/min são de VANLOON2001. */
+export interface GateState {
+    intensity: string;
+    pdh: string;
+    /** Fichas de acetil-CoA na matriz (de 8). */
+    acetyl: number;
+    /** Carnitinas presas como acetilcarnitina (de 8). */
+    bound: number;
+    /** AGL entrando pela CPT-I ao mesmo tempo. */
+    stream: number;
+    jammed: boolean;
+    cat: boolean;
+    fat: string | null;
+    /** Espessura do fluxo de carboidrato (glicólise → PDH). */
+    flux: number;
+}
 
-/** Fosforilase a, % do total (HOWLETT1998): faixa nas três intensidades e o valor aos 10 min a 90%. */
-export const PHOS = { low: 21.4, high: 29.6, drop: 15.3 } as const;
+export const GATE: readonly GateState[] = [
+    { intensity: '55% Wmáx', pdh: 'PDH · pouco ativa', acetyl: 2, bound: 1, stream: 3, jammed: false, cat: false, fat: '32 kJ/min', flux: 4 },
+    { intensity: '75% Wmáx', pdh: 'PDH · muito ativa', acetyl: 8, bound: 1, stream: 3, jammed: false, cat: false, fat: null, flux: 11 },
+    { intensity: '75% Wmáx', pdh: 'PDH · muito ativa', acetyl: 8, bound: 6, stream: 3, jammed: false, cat: true, fat: null, flux: 11 },
+    { intensity: '75% Wmáx', pdh: 'PDH · muito ativa', acetyl: 8, bound: 6, stream: 1, jammed: true, cat: true, fat: '19 kJ/min', flux: 11 },
+];

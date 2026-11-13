@@ -3,7 +3,7 @@ import { DUR, EASE_IN_OUT } from '../../../lib/motion';
 import { C } from '../kit/palette';
 import { SvgText } from '../kit/ui';
 import { sample, useMorphPath } from '../kit/useMorphPath';
-import { planSpeed, wallSpeed } from './wall.content';
+import { SLOW, planSpeed, wallSpeed } from './wall.content';
 
 /**
  * Slide 68 · a volta da Marina em velocidade relativa ao plano, km a km: a linha reta se transforma na do muro
@@ -32,7 +32,7 @@ export const WallChart = ({ step }: { step: number }) => {
     return (
         <svg viewBox={`0 0 ${WALL_W} ${WALL_H}`} width={WALL_W} height={WALL_H} className="block" role="img"
             aria-label="Velocidade da Marina relativa ao plano ao longo da maratona, com queda a partir do km 32">
-            <SvgText x={4} y={20} text="velocidade, % do ritmo planejado" size={16} color={C.muted} weight={600} />
+            <SvgText x={4} y={20} text="velocidade, % da planejada" size={16} color={C.muted} weight={600} />
             {[1, 0.8].map(v => (
                 <g key={v}>
                     <line x1={X0} y1={sy(v)} x2={X1} y2={sy(v)} stroke="#2A3140" strokeWidth={2} />
@@ -44,7 +44,9 @@ export const WallChart = ({ step }: { step: number }) => {
                 <line x1={sx(32)} y1={sy(1.04)} x2={sx(32)} y2={BASE} stroke={C.stone} strokeWidth={3} />
                 <SvgText x={sx(32) - 8} y={sy(0.66)} text="km 32" size={18} anchor="end" color={C.stone} weight={800} />
                 <SvgText x={sx(37.1)} y={sy(0.88)} text="~10 km" size={17} anchor="middle" color={C.risk} weight={800} />
-                <SvgText x={sx(37.1)} y={sy(0.66) + 2} text="~40% mais lento" size={17} anchor="middle" color={C.risk} weight={800} />
+                <SvgText x={sx(37.1)} y={sy(0.66) + 2} text="min/km +40%" size={17} anchor="middle" color={C.risk} weight={800} />
+                <SvgText x={X0 - 10} y={sy(SLOW) + 6} text="71%" size={16} anchor="end" color={C.risk} weight={800} />
+                <line x1={X0} y1={sy(SLOW)} x2={sx(32)} y2={sy(SLOW)} stroke={C.risk} strokeWidth={2} strokeDasharray="4 6" />
             </motion.g>
             <motion.g initial={false} animate={{ opacity: step >= 3 ? 1 : 0 }} transition={{ duration: DUR.enter }}>
                 <rect x={sx(3)} y={sy(0.9) - 18} width={250} height={30} rx={8} fill="#04080F" stroke={C.stone} strokeWidth={2} />

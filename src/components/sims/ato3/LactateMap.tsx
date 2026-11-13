@@ -80,14 +80,21 @@ const Trash = ({ step }: { step: number }) => (
     </g>
 );
 
-/** Fluxo circulante do lactato em relação ao da glicose (HUI2017): a glicose vale a régua (1×). */
+/**
+ * Fluxo circulante do lactato em relação ao da glicose (HUI2017). A régua laranja fina é a glicose (1×), rotulada na
+ * legenda; a barra ciano é o lactato, em múltiplos dessa régua.
+ */
 const FLUX = [{ label: 'alimentado', v: 1.1, text: '1,1×' }, { label: 'jejum', v: 2.5, text: '2,5×' }] as const;
 const UNIT_PX = 56;
 const Flux = ({ show, reduce }: { show: boolean; reduce: boolean }) => (
     <Fade show={show}>
-        <SvgText x={8} y={334} text="fluxo circulante (glicose = 1×)" size={16} color="#F3F4F6" weight={700} />
+        <SvgText x={8} y={326} text="fluxo no sangue (camundongo)" size={16} color="#F3F4F6" weight={700} />
+        <rect x={8} y={340} width={28} height={6} rx={2} fill={C.glucose} />
+        <SvgText x={42} y={348} text="glicose = 1×" size={16} color={C.glucoseSoft} weight={700} />
+        <rect x={150} y={336} width={28} height={14} rx={3} fill={C.lactate} />
+        <SvgText x={184} y={348} text="lactato" size={16} color={C.lactateSoft} weight={700} />
         {FLUX.map((f, i) => {
-            const y = 364 + i * 36;
+            const y = 378 + i * 32;
             return (
                 <g key={f.label}>
                     <SvgText x={8} y={y + 6} text={f.label} size={16} color="#D1D5DB" />

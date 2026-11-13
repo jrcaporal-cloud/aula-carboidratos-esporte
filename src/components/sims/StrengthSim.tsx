@@ -8,9 +8,9 @@ import { StrengthStage } from './ato9/StrengthStage';
 import { CALC, CHIPS, LEDGER, STEPS } from './ato9/strength.content';
 
 /**
- * Slide 162 · Paulo e o Carbo Pós-Treino, no formato palco + painel. O palco junta o gasto (seis tanques que baixam
- * e não esvaziam) e o veredito (os 49 estudos de força e a régua do SMD de hipertrofia); o painel conta o estudo
- * do passo e o livro-caixa acumula os números. Paulo é caso fictício.
+ * Slide 162 · Paulo e o Carbo Pós-Treino, no formato palco + painel. O palco é a cadeia em 3 faixas (ato9/StrengthStage):
+ * a sessão gasta parte do tanque (uma barra por protocolo) → força igual (49 estudos) → hipertrofia igual (SMD, 11 ECRs).
+ * O painel conta o estudo do passo e o livro-caixa acumula. Paulo é caso fictício.
  */
 
 const ACCENT = [C.stone, C.glycogenSoft, C.glycogenSoft, C.glucoseSoft, C.glucoseSoft] as const;

@@ -1,7 +1,9 @@
 /**
  * Slide 142 · Sleep low (dossiê 05·MARQUET2016a, LANE2015, GEJL2017, RIIS2019, HULSTON2010).
- * Os horários do relógio são ilustrativos; o desenho (mesmo CHO no dia, outro horário) é o de Marquet 2016.
+ * Os horários da linha do dia são ilustrativos; o desenho (mesmo CHO no dia, outro horário) é o de Marquet 2016.
  */
+import { C } from '../kit/palette';
+import type { LedgerRow } from './SnShell';
 
 export interface SleepStep {
     tab: string;
@@ -32,60 +34,31 @@ export const SLEEP_STEPS: readonly SleepStep[] = [
     {
         tab: 'O custo',
         headline: 'O preço aparece no treino intenso',
-        text: 'Hulston 2010: 14 ciclistas bem treinados, 3 semanas, HIT 1 h depois do treino aeróbio (o modelo de 2 sessões no dia). Nas sessões intensas feitas com pouco glicogênio, 297 × 323 W. O contrarrelógio final melhorou ~10% nos dois.',
+        text: 'Hulston 2010: 14 ciclistas bem treinados, 3 semanas, HIT 1 h depois do treino aeróbio (2 sessões no dia). Nas sessões intensas com pouco glicogênio, 297 × 323 W: ~8% menos potência justo na sessão de qualidade. O contrarrelógio final melhorou ~10% nos dois.',
         sources: ['Hulston 2010 (MSSE)'],
     },
 ];
 
-/** Relógio de 24 h: arcos [início, fim] em horas. */
-export interface ClockArc {
+/** O dia em blocos (17 h → 17 h do dia seguinte). Horários ilustrativos; largura didática, não proporcional. */
+export interface DayBlock {
     id: 'easy' | 'refuel' | 'hit' | 'night';
-    from: number;
-    to: number;
     label: string;
+    /** Hora de início, sob o bloco. */
+    start: string;
+    flex: number;
 }
 
-export const CLOCK: readonly ClockArc[] = [
-    { id: 'hit', from: 17, to: 19, label: 'treino intenso com CHO' },
-    { id: 'night', from: 19, to: 7, label: 'noite sem carboidrato' },
-    { id: 'easy', from: 7, to: 8.5, label: 'treino leve em jejum' },
-    { id: 'refuel', from: 8.5, to: 17, label: 'carboidrato de volta' },
+export const DAY: readonly DayBlock[] = [
+    { id: 'hit', label: 'treino intenso com CHO', start: '17 h', flex: 2.2 },
+    { id: 'night', label: 'noite sem CHO', start: '19 h', flex: 2.2 },
+    { id: 'easy', label: 'treino leve em jejum', start: '7 h', flex: 2 },
+    { id: 'refuel', label: 'CHO de volta', start: '8h30', flex: 2 },
 ];
 
-/** Barras dos estudos: sleep low (ou train low) × controle. */
-export interface Metric {
-    label: string;
-    low: number;
-    ctl: number;
-    unit: string;
-    max: number;
-}
-
-export interface StudyCard {
-    id: string;
-    who: string;
-    design: string;
-    at: number;
-    metrics: readonly Metric[];
-    /** Linhas de texto quando não há número para barra. */
-    notes?: readonly string[];
-}
-
-export const STUDIES: readonly StudyCard[] = [
-    { id: 'lane', who: 'Lane 2015', design: '7 ciclistas · cruzado', at: 0, metrics: [], notes: ['manhã em jejum: AMPK, p38, ACC ↑', 'marcadores de biogênese: iguais'] },
-    {
-        id: 'marquet', who: 'Marquet 2016', design: '21 triatletas · 3 sem', at: 1,
-        metrics: [
-            { label: '10 km', low: -2.9, ctl: -0.1, unit: '%', max: 3 },
-        ],
-        notes: ['massa gorda: −8,5% × −2,6%'],
-    },
-    {
-        id: 'rep', who: 'Réplicas', design: '4 semanas', at: 2, metrics: [],
-        notes: ['Gejl 2017 · 26 de elite: +5% nos dois', 'Riis 2019 · 13 treinados: prova igual'],
-    },
-    {
-        id: 'hulston', who: 'Hulston 2010', design: '14 ciclistas · potência no HIT', at: 3,
-        metrics: [{ label: 'HIT', low: 297, ctl: 323, unit: ' W', max: 340 }],
-    },
+/** Livro-caixa do painel: a cadeia em uma linha por elo (entra no passo e fica). */
+export const SLEEP_LEDGER: readonly LedgerRow[] = [
+    { at: 0, label: 'Lane 2015, jejum', value: 'sinal ↑ · biogênese igual' },
+    { at: 1, label: '1 · Marquet, 10 km (não cego)', value: '−2,9% × −0,1%', color: C.stone },
+    { at: 2, label: '2 · Gejl e Riis, contrarrelógio', value: 'igual ao controle', color: C.stone },
+    { at: 3, label: '3 · custo: Hulston, HIT', value: '297 × 323 W (−8%)', color: C.risk },
 ];

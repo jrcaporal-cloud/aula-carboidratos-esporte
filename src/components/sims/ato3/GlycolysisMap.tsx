@@ -6,7 +6,8 @@ import { SvgText } from '../kit/ui';
 /**
  * A via da glicólise desenhada em três colunas: preparatória (1 hexose), pagamento (tudo ×2) e destino.
  * Cada peça entra no passo `at` e fica (o quadro final mostra a via inteira). A cada clique, uma molécula
- * percorre o trecho novo uma vez só (≤ 1,2 s, sem laço). Geometria em px do palco: viewBox 680 × 396.
+ * percorre o trecho novo uma vez só (≤ 1,2 s, sem laço). O circuito do NAD⁺ é um laço fechado GAPDH → LDH → GAPDH.
+ * Geometria em px do palco: viewBox 680 × 396.
  */
 
 export const MAP_W = 680;
@@ -41,7 +42,7 @@ const NODES: readonly Node[] = [
     { id: 'pg2', label: '2 2-fosfoglicerato', cx: COL2, y: ROW[3], w: 172, color: C.glucose, at: 2 },
     { id: 'pep', label: '2 fosfoenolpiruvato', cx: COL2, y: ROW[4], w: 184, color: C.glucose, at: 2 },
     { id: 'pyr', label: '2 piruvato', cx: COL2, y: ROW[5], w: 120, color: C.glucose, at: 2 },
-    { id: 'lac', label: 'lactato', cx: 616, y: ROW[3], w: 104, color: C.lactate, at: 3 },
+    { id: 'lac', label: 'lactato', cx: 616, y: ROW[3], w: 90, color: C.lactate, at: 3 },
 ];
 
 type Stoich = { text: string; gain: boolean; x: number; y: number; anchor: 'start' | 'end' };
@@ -60,6 +61,19 @@ interface Edge {
 /** Reta vertical entre a base de uma linha e o topo da seguinte, na coluna x. */
 const down = (x: number, r: number): string => `M ${x} ${ROW[r] + PILL_H / 2 + 2} L ${x} ${ROW[r + 1] - PILL_H / 2 - 4}`;
 const midGap = (r: number): number => (ROW[r] + ROW[r + 1]) / 2 + 6;
+
+/**
+ * Circuito do NAD⁺, um laço fechado: o NADH sai da GAPDH (em cima), contorna pela direita e entra na LDH (embaixo);
+ * a LDH devolve o NAD⁺, que sobe pela esquerda do laço e volta à GAPDH.
+ */
+const GAPDH_OUT_Y = ROW[0] + 22;
+const GAPDH_IN_Y = ROW[0] + 36;
+const LOOP_L = 548;
+const LOOP_R = 670;
+const NAD_Y = 290;
+const LDH_X = 596;
+const NADH_DOWN = `M ${COL2 + 76} ${GAPDH_OUT_Y} L ${LOOP_R} ${GAPDH_OUT_Y} L ${LOOP_R} ${NAD_Y} L ${LDH_X + 12} ${NAD_Y}`;
+const NAD_UP = `M ${LDH_X - 10} ${NAD_Y} L ${LOOP_L} ${NAD_Y} L ${LOOP_L} ${GAPDH_IN_Y} L ${COL2 + 80} ${GAPDH_IN_Y}`;
 
 const EDGES: readonly Edge[] = [
     { id: 'hk', d: `M 62 ${ROW[0] + 18} L 104 ${ROW[2] - 20}`, at: 0, gate: true,
@@ -80,14 +94,10 @@ const EDGES: readonly Edge[] = [
     { id: 'pk', d: down(COL2, 4), at: 2, gate: true,
         enzyme: { text: 'PK', x: COL2 + 12, y: midGap(4) }, stoich: { text: '+2 ATP', gain: true, x: COL2 - 12, y: midGap(4), anchor: 'end' } },
     { id: 'ldh', d: `M ${COL2 + 62} ${ROW[5]} C 560 ${ROW[5]}, 600 ${ROW[4] + 10}, 604 ${ROW[3] + 20}`, at: 3, color: C.lactate,
-        enzyme: { text: 'LDH', x: 584, y: ROW[4] + 4, anchor: 'start' } },
+        enzyme: { text: 'LDH', x: 612, y: NAD_Y - 13, anchor: 'start' } },
     { id: 'pdh', d: `M ${COL2 + 62} ${ROW[5]} L 548 ${ROW[5]}`, at: 3, color: C.co2,
         enzyme: { text: 'PDH', x: 520, y: ROW[5] - 12, anchor: 'middle' } },
 ];
-
-/** Circuito do NAD⁺: o NADH sai da GAPDH e desce até a LDH; o NAD⁺ volta. */
-const NADH_DOWN = `M ${COL2 + 70} ${ROW[0] + 24} L 648 ${ROW[0] + 24} L 648 ${ROW[3] - 22}`;
-const NAD_UP = `M 588 ${ROW[3] - 22} L 588 ${ROW[0] + 40} L ${COL2 + 70} ${ROW[0] + 40}`;
 
 /** Trajetos da molécula em cada clique (pontos por onde ela passa). */
 type Pt = readonly [number, number];
@@ -190,13 +200,15 @@ const NadLoop = ({ step, reduce }: { step: number; reduce: boolean }) => {
     const t = (delay: number) => ({ duration: reduce ? 0 : DUR.draw, delay: on && step === 3 ? delay : 0, ease: EASE_IN_OUT });
     return (
         <g>
-            <motion.path d={NADH_DOWN} fill="none" stroke={C.lactate} strokeWidth={3} markerEnd="url(#glyco-head-nad)"
+            <motion.path d={NADH_DOWN} fill="none" stroke={C.lactate} strokeWidth={3} strokeLinejoin="round" markerEnd="url(#glyco-head-nad)"
                 initial={false} animate={{ pathLength: on ? 1 : 0, opacity: on ? 1 : 0 }} transition={t(0.6)} />
-            <motion.path d={NAD_UP} fill="none" stroke={C.lactateSoft} strokeWidth={3} strokeDasharray="8 6" markerEnd="url(#glyco-head-nad)"
-                initial={false} animate={{ pathLength: on ? 1 : 0, opacity: on ? 1 : 0 }} transition={t(1)} />
+            <motion.path d={NAD_UP} fill="none" stroke={C.lactateSoft} strokeWidth={3} strokeLinejoin="round" strokeDasharray="8 6" markerEnd="url(#glyco-head-nadp)"
+                initial={false} animate={{ pathLength: on ? 1 : 0, opacity: on ? 1 : 0 }} transition={t(1.1)} />
             <motion.g initial={false} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: DUR.enter, delay: on && step === 3 ? 0.9 : 0 }}>
-                <SvgText x={596} y={ROW[1] + 30} text="NADH" size={16} color={C.lactate} weight={700} />
-                <SvgText x={596} y={ROW[2] + 30} text="NAD⁺" size={16} color={C.lactateSoft} weight={700} />
+                <circle cx={LDH_X} cy={NAD_Y} r={6} fill={C.lactate} stroke="#04080F" strokeWidth={2} />
+                <SvgText x={LOOP_R - 8} y={GAPDH_OUT_Y + 26} text="2 NADH" size={16} anchor="end" color={C.lactate} weight={800} />
+                <SvgText x={LOOP_L + 8} y={ROW[2] + 6} text="2 NAD⁺" size={16} color={C.lactateSoft} weight={800} />
+                <SvgText x={LOOP_L + 8} y={ROW[2] + 26} text="volta" size={16} color={C.lactateSoft} weight={600} />
             </motion.g>
         </g>
     );
@@ -205,7 +217,7 @@ const NadLoop = ({ step, reduce }: { step: number; reduce: boolean }) => {
 const Heads = () => (
     <defs>
         {[...EDGES.map(e => ({ id: e.id, color: e.gate ? C.stone : e.color ?? C.glucoseSoft, size: e.gate ? 3.2 : 4 })),
-            { id: 'gate', color: C.stone, size: 3.2 }, { id: 'nad', color: C.lactate, size: 4 }].map(h => (
+            { id: 'gate', color: C.stone, size: 3.2 }, { id: 'nad', color: C.lactate, size: 4 }, { id: 'nadp', color: C.lactateSoft, size: 4 }].map(h => (
             <marker key={h.id} id={`glyco-head-${h.id}`} viewBox="0 0 10 10" refX={6} refY={5} markerWidth={h.size} markerHeight={h.size} orient="auto-start-reverse">
                 <path d="M 0 0 L 10 5 L 0 10 Z" fill={h.color} />
             </marker>

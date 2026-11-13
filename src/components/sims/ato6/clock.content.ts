@@ -2,14 +2,12 @@ import { C } from '../kit/palette';
 
 /**
  * Slide 112 · O Relógio da Prova (síntese prática do Ato VI). Fonte única dos textos e números.
+ * Palco: barra horizontal da DURAÇÃO da prova (0 a 10+ h) com as faixas do quadro (o relógio de 12 h lia como hora do dia).
  * Faixas: BURKE2011 (consenso do COI, abstract conferido). Mecanismo por duração: STELL2014 (61 ECRs, n = 679).
  * Fonte única até ~60 g/h, g/h independente do peso e misturas a partir da 3ª hora: JEUK2014 (texto completo).
  * Fronteira 120 g/h: MORTON2026 (texto completo) + PODL2022 (n = 11, ¹³C). Ultramaratona: TILLER2019 (ISSN).
  * NÃO entram: as faixas intermediárias da Fig. 1 de Jeukendrup 2014 e a tabela de Thomas 2016 (não lidas na fonte).
  */
-
-/** O mostrador é um relógio de 12 h: a prova começa no 12 e o ponteiro anda com a duração. */
-export const CLOCK_HOURS = 12;
 
 export interface ClockRow {
     id: 'curta' | 'media' | 'longa' | 'fronteira' | 'ultra';
@@ -49,33 +47,39 @@ export const ROWS: readonly ClockRow[] = [
     },
 ];
 
-/** Faixas do mostrador (horas de prova). A fronteira é um anel externo tracejado sobre a faixa longa. */
-export interface DialBand {
+/** Eixo da barra de duração (horas de prova): vai até 11 para a faixa longa seguir além do "10+". */
+export const BAR_MAX = 11;
+export const BAR_TICKS = [
+    { h: 0, text: '0' }, { h: 1, text: '1' }, { h: 2.5, text: '2,5' }, { h: 4, text: '4' },
+    { h: 6, text: '6' }, { h: 8, text: '8' }, { h: 10, text: '10+' },
+] as const;
+
+/** Faixas do consenso na barra principal: acendem uma por passo e ficam. */
+export interface BarSegment {
     id: ClockRow['id'];
+    at: number;
     from: number;
     to: number;
     color: string;
-    /** O que aparece no centro do mostrador quando a faixa está ativa. */
-    center: string;
-    centerSub: string;
+    text: string;
 }
 
-export const DIAL_BANDS: readonly DialBand[] = [
-    { id: 'curta', from: 0, to: 1, color: C.text, center: 'bochecho', centerSub: 'ou pouco' },
-    { id: 'media', from: 1, to: 2.5, color: C.glucose, center: '30–60', centerSub: 'g/h' },
-    { id: 'longa', from: 2.5, to: CLOCK_HOURS, color: C.fructose, center: 'até 90', centerSub: 'g/h, mistura' },
+export const BAR_SEGMENTS: readonly BarSegment[] = [
+    { id: 'curta', at: 0, from: 0, to: 1, color: C.text, text: 'bochecho' },
+    { id: 'media', at: 1, from: 1, to: 2.5, color: C.glucose, text: '30–60 g/h' },
+    { id: 'longa', at: 2, from: 2.5, to: BAR_MAX, color: C.fructose, text: 'até 90 g/h · só com mistura glicose + frutose' },
 ];
 
-/** Centro do mostrador nos passos que não são de uma faixa só. */
-export const DIAL_CENTER_EXTRA = [
-    { center: '120', centerSub: 'g/h, treinados', color: C.stone },
-    { center: 'g/h', centerSub: 'não g/kg', color: C.text },
-] as const;
+/** Leituras extras da faixa longa, em trilhos próprios (acima: a fronteira; abaixo: a ultramaratona). */
+export const BAR_LANES = {
+    fronteira: { at: 3, label: 'fronteira', text: '120 g/h · oxida mais, ganho não provado', color: C.stone },
+    ultra: { at: 4, label: 'ultra · ISSN', text: '30–50 g/h · ultramaratona, de alimentos variados', color: C.co2 },
+} as const;
 
-/** Os dois casos fictícios que caem no relógio (Ato I): onde ficam no mostrador. */
+/** Os dois casos fictícios (Ato I): onde caem na barra de duração. */
 export const CASES = [
-    { id: 'marina', letter: 'M', hours: 3.5, label: 'Marina', detail: 'maratona, ~3h30 · 58 kg' },
-    { id: 'diego', letter: 'D', hours: 10, label: 'Diego', detail: 'Ironman, ~10 h · 72 kg' },
+    { id: 'marina', letter: 'M', hours: 3.5, label: 'Marina', race: 'maratona, ~3h30', weight: '58 kg' },
+    { id: 'diego', letter: 'D', hours: 10, label: 'Diego', race: 'Ironman, ~10 h', weight: '72 kg' },
 ] as const;
 
 export interface ClockStep {
@@ -94,7 +98,7 @@ export const CLOCK_STEPS: readonly ClockStep[] = [
     {
         tab: '~1 hora', color: C.text, chips: ['consenso do COI', 'revisão sistemática · 61 ECRs'],
         headline: 'Na prova curta, a boca manda',
-        text: 'Em ~1 h de esforço intenso, o consenso aceita pequenas quantidades e até o bochecho. Na revisão de 61 ECRs (n = 679), o efeito nessa duração é oral e central: tipo e quantidade de carboidrato são irrelevantes.',
+        text: 'Em ~1 h de esforço intenso, o consenso aceita pouco carboidrato e até o bochecho. Na revisão de 61 ECRs (n = 679), o efeito nessa duração é oral e central: tipo e quantidade são irrelevantes.',
         sources: [BURKE, 'Stellingwerff & Cox, Appl Physiol Nutr Metab 2014'],
     },
     {
@@ -112,7 +116,7 @@ export const CLOCK_STEPS: readonly ClockStep[] = [
     {
         tab: '120 g/h', color: C.stone, chips: ['ECR cruzado · n = 11 · ¹³C', 'fronteira experimental'],
         headline: 'A fronteira: 120 g/h',
-        text: 'Em ciclistas treinados, 120 g/h oxidou mais que 90 g/h (1,51 × 1,29 g/min), mas a oxidação endógena não mudou (2,15 × 2,20 g/min). Atletas já testam 120–200 g/h; o ganho de desempenho ainda não foi demonstrado.',
+        text: 'Em ciclistas treinados, 120 g/h oxidou mais que 90 g/h (1,51 × 1,29 g/min); a oxidação endógena não mudou (2,15 × 2,20 g/min). Atletas já testam 120–200 g/h, sem ganho de desempenho demonstrado.',
         sources: ['Podlogar et al., Eur J Appl Physiol 2022', 'Morton et al., J Nutr 2026'],
     },
     {

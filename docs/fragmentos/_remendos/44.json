@@ -1,14 +1,13 @@
 {
   "slide": {
     "fontes": [
-      "Brooks GA, Mercier J. Balance of carbohydrate and lipid utilization during exercise: the \"crossover\" concept. J Appl Physiol 1994;76(6):2253-61. DOI 10.1152/jappl.1994.76.6.2253 · PMID 7928844 — o modelo do cruzamento (forma do gráfico; áreas ilustrativas); treinados usam sobretudo lipídio até ~45% do VO₂máx e o CHO predomina a ~75%.",
-      "Romijn JA, Coyle EF, Sidossis LS, et al. Regulation of endogenous fat and carbohydrate metabolism in relation to exercise intensity and duration. Am J Physiol 1993;265(3 Pt 1):E380-91. DOI 10.1152/ajpendo.1993.265.3.E380 · PMID 8214047 — ordem das 4 fontes a 25, 65 e 85% VO₂máx (n = 5 treinados).",
-      "van Loon LJ, Greenhaff PL, Constantin-Teodosiu D, Saris WH, Wagenmakers AJ. The effects of increasing exercise intensity on muscle fuel utilisation in humans. J Physiol 2001;536(Pt 1):295-304. DOI 10.1111/j.1469-7793.2001.00295.x · PMID 11579177 — pontos medidos: gordura oxidada 32 ± 2 kJ/min a 55% e 19 ± 2 a 75% da Wmáx (n = 8), em régua própria abaixo do gráfico."
+      "Brooks GA, Mercier J. Balance of carbohydrate and lipid utilization during exercise: the \"crossover\" concept. J Appl Physiol 1994;76(6):2253-61. DOI 10.1152/jappl.1994.76.6.2253 · PMID 7928844 — o modelo do cruzamento (forma do gráfico; áreas e posição do cruzamento ilustrativas); treinados usam sobretudo lipídio até ~45% do VO₂máx e o CHO predomina a ~75%.",
+      "Romijn JA, Coyle EF, Sidossis LS, et al. Regulation of endogenous fat and carbohydrate metabolism in relation to exercise intensity and duration. Am J Physiol 1993;265(3 Pt 1):E380-91. DOI 10.1152/ajpendo.1993.265.3.E380 · PMID 8214047 — ordem das 4 fontes a 25, 65 e 85% VO₂máx (n = 5 treinados)."
     ]
   },
   "notas": {
     "minutos": 3,
-    "mensagem": "O cruzamento de Brooks e Mercier 1994: a intensidade empurra para o carboidrato (glicogenólise, fibras rápidas, simpático) e o treino empurra para a gordura. Romijn 1993 (n = 5 treinados, isótopos): a 25% os AGL do sangue dominam; a 65% entram o TG intramuscular e o glicogênio; a 85% o glicogênio domina. As áreas do gráfico são modelo; o dado medido está na régua de baixo: van Loon 2001 (n = 8 ciclistas), gordura oxidada 32 ± 2 kJ/min a 55% e 19 ± 2 a 75% da Wmáx (atenção: Wmáx, não VO₂máx). No último passo, o treinado: gordura até ~45% do VO₂máx, CHO já predominando a ~75%. O slider e o botão de treino funcionam ao vivo se a turma pedir uma intensidade.",
+    "mensagem": "O cruzamento de Brooks e Mercier 1994: a intensidade empurra para o carboidrato (glicogenólise, fibras rápidas, simpático) e o treino empurra para a gordura. Romijn 1993 (n = 5 treinados, isótopos): a 25% os AGL do sangue dominam; a 65% entram o TG intramuscular e o glicogênio; a 85% o glicogênio domina. A tela tem só o modelo: as áreas e a posição da fronteira são ilustrativas (selo no canto), só a forma e a ordem das fontes vêm dos estudos. No último passo, o treinado: a fronteira anda para a direita (no desenho, de ~45 para ~60% do VO₂máx) e a do destreinado fica tracejada; Brooks: treinados usam sobretudo gordura até ~45% do VO₂máx e o CHO já predomina a ~75%. Os números medidos de van Loon 2001 (gordura oxidada em kJ/min) não estão aqui: ficam no slide seguinte, o da gordura que trava. O slider e o botão treinado/destreinado funcionam ao vivo se a turma pedir uma intensidade.",
     "pergunta": "Em que intensidade o seu atleta faz a maior parte do volume da semana?",
     "transicao": "Por que a gordura não só perde espaço, mas trava, quando a intensidade sobe?"
   }

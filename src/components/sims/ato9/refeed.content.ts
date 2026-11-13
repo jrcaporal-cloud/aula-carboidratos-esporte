@@ -2,6 +2,7 @@
  * Slide 165 · Depois da Pesagem — KONDO2021, REALE2016-JUDO, REALE2017-BOXE, CDC1998 + OPPLIGER2006 (dossiê 06,
  * confirmados no abstract). A forma da curva do glicogênio é desenho: só os marcos são do estudo (−36,5% na pesagem,
  * ainda abaixo da base 13 h depois, sem número publicado no abstract). As três mortes de 1997 são o pico do Ato IX.
+ * O 1,7% do palco e do livro-caixa é o de Oppliger 2006 (perda nas 20 h antes da pesagem), escrito sem contador.
  */
 import { C } from '../kit/palette';
 import type { LedgerItem } from './FrameB';
@@ -20,8 +21,8 @@ export interface Lane {
 }
 
 export const LANES: readonly Lane[] = [
-    { key: 'judo', sport: 'Judô', gap: 0.86, gapLabel: 'pesagem 15–20 h antes · n = 86', regain: 'reganho H +2,3% · M +3,1%', verdict: 'medalhistas +1,4 p.p.', color: C.ok },
-    { key: 'boxe', sport: 'Boxe', gap: 0.3, gapLabel: 'pesagem diária · n = 100', regain: 'reganho H +2,1% · M +1,5%', verdict: 'sem relação com vencer', color: C.stone },
+    { key: 'judo', sport: 'Judô', gap: 0.86, gapLabel: 'pesagem 15–20 h antes', regain: 'reganho H +2,3% · M +3,1%', verdict: 'medalhistas reganharam +1,4 p.p.', color: C.ok },
+    { key: 'boxe', sport: 'Boxe', gap: 0.3, gapLabel: 'pesagem diária', regain: 'reganho H +2,1% · M +1,5%', verdict: 'reganho sem relação com vencer', color: C.stone },
 ];
 
 export const NCAA = { deaths: 3, states: 'Carolina do Norte · Wisconsin · Michigan', window: '7/11 a 9/12/1997', loss: '1,7%', lossKg: '1,2 kg', regain: '1,3%', wrestlers: 811 } as const;

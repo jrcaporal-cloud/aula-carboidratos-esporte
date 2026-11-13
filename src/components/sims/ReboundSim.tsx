@@ -3,15 +3,13 @@ import { DesignChip, IllustrativeChip } from './kit/chips';
 import { sourcesUpTo } from './kit/sources';
 import { Narration, PanelFoot, PreRaceFrame, Takeaways } from './ato5/PreRaceFrame';
 import { C } from './kit/palette';
-import { GlycemiaChart } from './ato5/GlycemiaChart';
-import { MythCover, ReboundColumn } from './ato5/ReboundSide';
+import { ReboundFlow } from './ato5/ReboundFlow';
 import { RB_STEPS, TEXT } from './ato5/rebound.content';
 
 /**
- * Slide 85 · O Fantasma do Rebote, palco + painel. Passo 1: a frase-mito e o −19% de Foster em tela cheia.
- * A frase sai por clip-path e revela a glicemia de Moseley 2003 do jejum à 20ª min de pedal: as três doses caem
- * no eixo (−75, −45, −15), as curvas sobem e largam em 6,6 / 4,5 / 3,7; no exercício, encontram-se aos 10 min.
- * A coluna à direita acumula Foster (que leva o carimbo de mito no fim), a potência (268/269/276 W) e os 6 de 19 de Kuipers.
+ * Slide 85 · O Fantasma do Rebote, palco + painel. Palco: a cadeia em 3 faixas numeradas (ato5/ReboundFlow), um estudo
+ * por faixa e cada um no seu eixo: 1 Foster 1979, o medo → 2 Moseley 2003, glicemia em minutos de exercício e potência →
+ * 3 Kuipers 1999, quem sente; o carimbo MITO cai no veredito, sobre o conselho. Painel: o passo e o "o que fica" que acumula.
  */
 export default function ReboundSim() {
     const { step, setStep } = useSlideSteps(RB_STEPS.length);
@@ -22,13 +20,7 @@ export default function ReboundSim() {
                 {s.chips.map(c => <DesignChip key={c}>{c}</DesignChip>)}
                 {step >= 1 && <IllustrativeChip>{TEXT.illustrative}</IllustrativeChip>}
             </>}
-            stage={
-                <div className="relative flex h-full gap-2.5 px-2 py-3">
-                    <GlycemiaChart step={step} />
-                    <div className="min-w-0 flex-1 pr-1"><ReboundColumn step={step} /></div>
-                    <MythCover show={step === 0} />
-                </div>
-            }
+            stage={<div className="h-full p-2"><ReboundFlow step={step} /></div>}
             panel={<>
                 <Narration step={step} headline={s.headline} color={s.color} text={s.text} limit={s.limit} />
                 <PanelFoot sources={sourcesUpTo(RB_STEPS.map(r => r.sources), step)}>

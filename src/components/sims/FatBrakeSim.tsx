@@ -5,45 +5,24 @@ import { C } from './kit/palette';
 import { DesignChip, IllustrativeChip } from './kit/chips';
 import { sourcesUpTo } from './kit/sources';
 import { Chip, Panel, Source, StepTabs } from './kit/ui';
-import { FatBrakeDiagram } from './ato3/FatBrakeDiagram';
-import { PdhBars, PhosphorylaseBand } from './ato3/FatBrakePanels';
+import { FatGate } from './ato3/FatGate';
 import { FAT_ROWS, FAT_STEPS, type FatRow } from './ato3/fatbrake.content';
 
 /**
- * Slide 45 · Por que a Gordura Trava no Alto. Palco em quatro quadros que se acumulam: o díptico 55% × 75% da Wmáx
- * (carnitina livre → acetilcarnitina, a CPT-I sem carnitina, 3 AGL × 1 AGL passando) e, embaixo, a PDH por potência e a
- * fosforilase a que não sobe (Howlett 1998). Painel com o texto do passo e o livro-caixa que acumula.
+ * Slide 45 · Por que a Gordura Trava no Alto. Uma cena, uma cadeia de causa: mais carboidrato → PDH aberta → acetil-CoA
+ * em excesso → a CAT prende a carnitina → a CPT-I fica sem carnitina livre e a gordura cai (32 → 19 kJ/min, van Loon 2001).
+ * A cena muda de estado a cada passo; o painel acumula os números com a fonte de cada um.
  */
 
-const W = 660;
-const H = 428;
-const ACCENT = [C.fat, C.glucoseSoft, C.glucoseSoft, C.glycogenSoft] as const;
-const TONE: Record<FatRow['tone'], string> = { fat: C.fat, glucose: C.glucoseSoft, glycogen: C.glycogenSoft, neutral: C.stone };
+const ACCENT = [C.fat, C.glucoseSoft, C.glucoseSoft, C.fat] as const;
+const TONE: Record<FatRow['tone'], string> = { fat: C.fat, glucose: C.glucoseSoft, neutral: '#F3F4F6' };
 
 const Chips = ({ step }: { step: number }) => (
     <>
-        {step <= 1 && <IllustrativeChip>fichas ilustrativas</IllustrativeChip>}
-        <DesignChip>{step <= 1 ? 'isótopos + biópsias · n = 8' : 'biópsias · n = 7 não treinados'}</DesignChip>
-        {step === 1 && <Chip>CPT-I não medida</Chip>}
+        <IllustrativeChip>fichas: esquema</IllustrativeChip>
+        <DesignChip>{step === 1 ? 'PDH: Howlett · n = 7 não treinados' : 'van Loon · biópsias · n = 8'}</DesignChip>
+        {step === 3 && <Chip>CPT-I não medida</Chip>}
     </>
-);
-
-/** Moldura do quadro que ainda vai entrar: mostra a estrutura do palco sem adiantar o dado. */
-const SLOTS = [
-    { at: 1, x: 340, y: 0, w: 320, h: 240, label: '75% Wmáx' },
-    { at: 2, x: 0, y: 252, w: 320, h: 172, label: 'PDH × potência' },
-    { at: 3, x: 350, y: 252, w: 310, h: 172, label: 'fosforilase a' },
-] as const;
-
-const Slots = ({ step }: { step: number }) => (
-    <g>
-        {SLOTS.map(sl => (
-            <motion.g key={sl.label} initial={false} animate={{ opacity: step < sl.at ? 1 : 0 }} transition={{ duration: DUR.exit }}>
-                <rect x={sl.x + 1} y={sl.y + 1} width={sl.w - 2} height={sl.h - 2} rx={14} fill="none" stroke="#334155" strokeWidth={2} strokeDasharray="8 8" />
-                <text x={sl.x + sl.w / 2} y={sl.y + sl.h / 2 + 6} textAnchor="middle" fontSize={18} fontWeight={700} fill="#64748B" style={{ fontFamily: 'var(--font-body)' }}>{sl.label}</text>
-            </motion.g>
-        ))}
-    </g>
 );
 
 export default function FatBrakeSim() {
@@ -56,15 +35,7 @@ export default function FatBrakeSim() {
                 <div className="flex flex-wrap justify-end gap-2"><Chips step={step} /></div>
             </div>
             <div className="flex min-h-0 flex-1 gap-4">
-                <Panel className="shrink-0 px-2 py-1">
-                    <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} className="block" role="img"
-                        aria-label="55% contra 75% da Wmáx: carnitina livre e acetilada na porta CPT-I; PDH ativa e fosforilase a por intensidade">
-                        <Slots step={step} />
-                        <FatBrakeDiagram step={step} />
-                        <PdhBars show={step >= 2} />
-                        <g transform="translate(350 0)"><PhosphorylaseBand show={step >= 3} /></g>
-                    </svg>
-                </Panel>
+                <Panel className="shrink-0 overflow-hidden p-0"><FatGate step={step} /></Panel>
                 <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-3">
                     <motion.div key={step} className="flex flex-col gap-2" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: DUR.enter, ease: EASE_OUT }}>

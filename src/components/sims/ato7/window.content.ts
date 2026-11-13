@@ -53,24 +53,36 @@ export const WINDOW_CHIPS: readonly (readonly string[])[] = [
     ['revisão', 'posicionamento ISSN'],
 ];
 
-/** Taxas do Ivy (mmol/kg ww/h): janela de 2 h, braço, valor e passo em que a barra entra. */
+/** Ivy 1988 em duas séries no tempo: um braço por linha, uma janela de 2 h por coluna (mmol/kg ww/h). */
 export type ArmKind = 'now' | 'late';
 
-export interface RateBar {
-    arm: ArmKind;
-    /** Janela: 0 = 0–2 h, 1 = 2–4 h. */
-    win: 0 | 1;
-    rate: number;
-    label: string;
+export interface IvyCell {
+    /** O braço comeu os 2 g/kg no início desta janela? */
+    meal: boolean;
+    /** Taxa em mmol/kg ww/h; null = não relatada no resumo. */
+    rate: number | null;
+    text: string;
+    /** Passo em que a célula se preenche. */
     at: number;
+    /** É a primeira janela de 2 h depois da refeição (a comparação do −45%). */
+    firstAfterMeal: boolean;
 }
 
-export const RATE_BARS: readonly RateBar[] = [
-    { arm: 'now', win: 0, rate: 7.7, label: '7,7', at: 1 },
-    { arm: 'late', win: 0, rate: 2.5, label: '2,5', at: 1 },
-    { arm: 'late', win: 1, rate: 4.1, label: '4,1', at: 2 },
+export const IVY_ARMS: readonly { arm: ArmKind; label: string; cells: readonly [IvyCell, IvyCell] }[] = [
+    {
+        arm: 'now', label: 'comeu logo',
+        cells: [
+            { meal: true, rate: 7.7, text: '7,7', at: 1, firstAfterMeal: true },
+            { meal: false, rate: null, text: '', at: 2, firstAfterMeal: false },
+        ],
+    },
+    {
+        arm: 'late', label: 'comeu 2 h depois',
+        cells: [
+            { meal: false, rate: 2.5, text: '2,5', at: 1, firstAfterMeal: false },
+            { meal: true, rate: 4.1, text: '4,1', at: 2, firstAfterMeal: true },
+        ],
+    },
 ];
 
 export const RATE_MAX = 8;
-
-export const ARM_LABEL: Record<ArmKind, string> = { now: 'CHO logo após', late: 'CHO 2 h depois' };

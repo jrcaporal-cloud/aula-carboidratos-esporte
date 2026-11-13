@@ -1,5 +1,5 @@
 /**
- * Slide 49 · O Resgate pela Veia. Tríptico músculo × sangue × cérebro + raias de tempo e de força.
+ * Slide 49 · O Resgate pela Veia. Cadeia em 4 faixas (ato3/RescueFlow) + raias de tempo e de força.
  * COGGAN1987 (cruzado, n = 7, não cego): 170 ± 9 min; 5,0 → 3,1 mM; R 0,87 → 0,81; 10 / 26 / 43 min; IV 1,13 g/min ≈ ¾ do CHO
  * oxidado; glicemia 5,1 mM na infusão; glicogênio do vasto lateral ~40 mmol/kg sem mudar.
  * NYBO2003 (MSSE, cruzado, n = 8): 4,5 → 3,0 mM; 248 / 222 / 197 N; ativação central ↓ com placebo.
@@ -52,43 +52,6 @@ export const RESCUE_STEPS: readonly RescueStep[] = [
         sources: ['Nybo 2003 (MSSE)', 'Nybo et al. 2003 (Acta Physiol Scand)'],
         stat: '197 N', statCaption: 'força sustentada com placebo (248 antes, 222 com glicose)',
         limit: 'n pequeno; a técnica de Kety-Schmidt é invasiva e tem limites.',
-    },
-];
-
-export type OrganKey = 'muscle' | 'blood' | 'brain';
-
-export interface OrganFact {
-    at: number;
-    big: string;
-    small: string;
-    risk?: boolean;
-}
-
-/** As três colunas do tríptico; cada fato entra num passo e fica. */
-export const ORGANS: readonly { key: OrganKey; name: string; facts: readonly OrganFact[] }[] = [
-    {
-        key: 'muscle', name: 'músculo',
-        facts: [
-            { at: 0, big: '70% VO₂máx', small: 'até a fadiga' },
-            { at: 0, big: 'R 0,87 → 0,81', small: 'menos CHO oxidado' },
-            { at: 2, big: '~40 mmol/kg', small: 'glicogênio parado' },
-        ],
-    },
-    {
-        key: 'blood', name: 'sangue',
-        facts: [
-            { at: 0, big: '5,0 → 3,1 mM', small: 'glicose na 1ª fadiga', risk: true },
-            { at: 1, big: '5,1 mM', small: 'com a glicose IV' },
-            { at: 2, big: '1,13 g/min', small: '≈ ¾ do CHO oxidado' },
-        ],
-    },
-    {
-        key: 'brain', name: 'cérebro',
-        facts: [
-            { at: 3, big: '4,5 → 3,0 mM', small: '3 h com placebo', risk: true },
-            { at: 3, big: 'ativação ↓', small: 'central, com placebo' },
-            { at: 3, big: '0,34 → 0,28', small: 'captação, µmol/g/min' },
-        ],
     },
 ];
 

@@ -9,14 +9,14 @@ import type { StepLabel } from './types';
 
 const PAD = 6;
 
-const Label = ({ spec, index }: { spec: StepLabel; index: number }) => {
+const Label = ({ spec, index, instant }: { spec: StepLabel; index: number; instant: boolean }) => {
     const left = spec.dx < 0;
     return (
         <group position={[...spec.at]}>
             <Html zIndexRange={[40, 10]} style={{ pointerEvents: 'none' }}>
                 <div
                     className="absolute left-0 top-0 opacity-0 animate-[label-in_250ms_cubic-bezier(0.23,1,0.32,1)_forwards]"
-                    style={{ animationDelay: `${Math.min(index * 70, 280)}ms` }}
+                    style={{ animationDelay: `${(instant ? 0 : (spec.delay ?? 0) * 1000) + Math.min(index * 70, 280)}ms` }}
                 >
                     <svg width={1} height={1} className="absolute left-0 top-0 overflow-visible" aria-hidden>
                         <line x1={0} y1={0} x2={spec.dx} y2={spec.dy} stroke={spec.color} strokeWidth={2} />
@@ -42,8 +42,9 @@ const Label = ({ spec, index }: { spec: StepLabel; index: number }) => {
     );
 };
 
-export const StepLabels = ({ labels, visible }: { labels: readonly StepLabel[]; visible: boolean }) =>
-    visible ? <>{labels.map((l, i) => <Label key={l.id} spec={l} index={i} />)}</> : null;
+/** `instant` (movimento reduzido): a animação já está no fim, os rótulos com espera aparecem logo. */
+export const StepLabels = ({ labels, visible, instant = false }: { labels: readonly StepLabel[]; visible: boolean; instant?: boolean }) =>
+    visible ? <>{labels.map((l, i) => <Label key={l.id} spec={l} index={i} instant={instant} />)}</> : null;
 
 /** Keyframe do esmaecimento dos rótulos (injetado uma vez pelo modal). */
 export const LABEL_KEYFRAMES = '@keyframes label-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }';

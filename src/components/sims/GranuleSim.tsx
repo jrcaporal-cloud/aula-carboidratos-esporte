@@ -1,28 +1,24 @@
-import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
-import { DUR, EASE_OUT, stagger } from '../../lib/motion';
-import { Grow } from './kit/Beat';
-import { DesignChip, IllustrativeChip } from './kit/chips';
+import { CalcChip, IllustrativeChip } from './kit/chips';
 import { C } from './kit/palette';
 import { sourcesUpTo } from './kit/sources';
 import { Model3DHint } from './kit/Model3DHint';
 import { Accrue, MolFrame, StepText } from './ato2/moleculaA.ui';
 import { GR_W, GranuleStage } from './ato2/granuleArt';
-import { CHIPS, MAX_TIERS, STEPS, TIER_SHARE } from './ato2/granule.content';
+import { STEPS } from './ato2/granule.content';
 
 /**
- * Slide 22 · A Árvore de Glicose. Palco: centro do grânulo ampliado (dendrograma de cadeias e ramos α-1,6),
- * o grânulo inteiro em 12 anéis e duas lupas (glicogenina; fosforilase parando 4 glicoses antes do ramo).
- * Painel: texto do passo, ficha que acumula (primer → cadeia → máximo → casca → músculo) e glicoses por camada.
+ * Slide 22 · A Árvore de Glicose. Palco: a cadeia de construção em 4 quadros numerados (glicogenina → ramos →
+ * até 12 camadas → a casca com metade da glicose). Painel: texto do passo, livro-caixa que acumula um elo por passo
+ * e, no último, a nota curta da microscopia (o grânulo real é menor que o teto do modelo).
  */
 interface FichaRow { at: number; label: string; value: string; color: string }
 
 const FICHA: readonly FichaRow[] = [
-    { at: 0, label: 'primer da glicogenina', value: '10–20 glicoses', color: C.proteinSoft },
-    { at: 1, label: 'cada cadeia', value: '~13 glicoses · 2 ramos', color: C.glycogenSoft },
-    { at: 2, label: 'máximo teórico', value: '12 camadas · ~55.000 · ~44 nm', color: C.glycogenSoft },
-    { at: 3, label: 'camada externa', value: '50% da glicose', color: C.glucoseSoft },
-    { at: 4, label: 'no músculo (MET)', value: '~25 nm (~7 camadas) · 10–44', color: '#F9FAFB' },
+    { at: 0, label: '1 · primer da glicogenina', value: '10–20 glicoses', color: C.proteinSoft },
+    { at: 1, label: '2 · cada cadeia', value: '~13 glicoses · 2 ramos', color: C.glycogenSoft },
+    { at: 2, label: '3 · teto do modelo', value: '12 camadas · ~44 nm', color: C.glycogenSoft },
+    { at: 3, label: '4 · camada externa', value: '50% da glicose', color: C.glucoseSoft },
 ];
 
 const Ficha = ({ step }: { step: number }) => (
@@ -37,43 +33,30 @@ const Ficha = ({ step }: { step: number }) => (
     </div>
 );
 
-const TierBars = ({ step }: { step: number }) => (
-    <div className="flex flex-col gap-1">
-        <div className="relative flex h-[56px] items-end gap-1.5">
-            <span className="absolute left-0 top-0 text-[15px] text-gray-300">glicoses por camada, da 1 à 12 (modelo)</span>
-            {TIER_SHARE.map((v, k) => {
-                const shell = step >= 3 && k === MAX_TIERS - 1;
-                return (
-                    <div key={k} className="relative h-full flex-1">
-                        <Grow axis="y" value={Math.max(v, 0.03)} delay={stagger(k, 0.3, 0.04)} color={shell ? C.glucose : C.glycogen} className="rounded-t-[3px]" />
-                        {shell && (
-                            <motion.span className="absolute -left-12 top-0 font-display text-[20px] font-bold text-amber-300"
-                                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: DUR.enter, ease: EASE_OUT }}>
-                                ≈ ½
-                            </motion.span>
-                        )}
-                    </div>
-                );
-            })}
-        </div>
-    </div>
-);
+const LAST = STEPS.length - 1;
 
 export default function GranuleSim() {
     const { step, setStep } = useSlideSteps(STEPS.length);
     const s = STEPS[step];
     return (
         <MolFrame tabs={STEPS.map(x => x.tab)} step={step} setStep={setStep} layoutId="granule-tabs" stageWidth={GR_W}
-            stage={<GranuleStage step={step} tiers={s.tiers} />}
+            stage={<GranuleStage step={step} />}
             chips={<>
                 <IllustrativeChip>modelo estilizado</IllustrativeChip>
-                {CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}
+                {step === LAST && <CalcChip>% por camada: cálculo do modelo</CalcChip>}
             </>}
             footer={<Model3DHint label="grânulo em 3D" />}
             source={sourcesUpTo(STEPS.map(x => x.sources), step)}>
             <StepText step={step} color={s.color} headline={s.headline} text={s.text} />
             <Ficha step={step} />
-            {step >= 2 && <Accrue at={2} step={step}><TierBars step={step} /></Accrue>}
+            {step === LAST && (
+                <Accrue at={LAST} step={step} delay={0.9}>
+                    <p className="m-0 text-[16px] leading-snug text-gray-300">
+                        <b className="text-gray-200">Nota:</b> no músculo real (microscopia eletrônica, 11 homens em repouso), o grânulo
+                        tem ~25 nm em média (~7 camadas), de 10 a 44 nm. O modelo é um teto teórico.
+                    </p>
+                </Accrue>
+            )}
         </MolFrame>
     );
 }

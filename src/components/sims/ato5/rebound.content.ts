@@ -11,6 +11,9 @@
  *   JEUKENDRUP2010: revisão narrativa: evitar CHO na hora anterior "é infundado"; sintomas raramente ligados a
  *     glicemia baixa; abordagem individual.
  * A FORMA das curvas é desenho (ilustrativa). Do estudo: a hora da ingestão, a glicemia no 0 e o encontro em 10 min.
+ * Passada de clareza (12/11/2026): três faixas numeradas, um estudo por faixa, cada um com o seu eixo: 1 Foster 1979 (o medo,
+ * minutos até a exaustão) → 2 Moseley 2003 (glicemia em minutos de EXERCÍCIO, 0–20, uma escala só; e a potência) →
+ * 3 Kuipers 1999 (quem sente). O carimbo MITO cai no fim, sobre o conselho, nunca sobre o dado de Foster.
  */
 import { C } from '../kit/palette';
 
@@ -30,12 +33,11 @@ export const ARMS: readonly Arm[] = [
     { id: 'a75', before: 75, start: 3.7, hypo: 5, watts: 276, color: C.insulinSoft },
 ];
 
-/** Eixo: de −80 min (antes da primeira dose) a +20 min de exercício. */
-export const X_RANGE = [-80, 20] as const;
-export const Y_RANGE = [3, 9.5] as const;
+/** Eixo do gráfico de Moseley: só minutos de exercício (0–20), uma escala. */
+export const X_MAX = 20;
+export const Y_RANGE = [3, 7] as const;
 export const HYPO = 3.5;
-/** Glicemia de jejum e valor comum depois dos 10 min: desenho, sem número na tela. */
-export const BASAL = 5;
+/** Valor comum depois dos 10 min: desenho, sem número na tela. */
 export const MEETS_AT = 4.6;
 
 export interface ReboundStep {
@@ -62,29 +64,20 @@ export const RB_STEPS: readonly ReboundStep[] = [
         chips: ['cruzado · n = 8 · não treinados'],
     },
     {
-        tab: 'O desenho',
-        headline: 'Moseley testou o relógio',
-        color: C.glucose,
-        text: 'Moseley 2003, cruzado, 8 ciclistas treinados (VO₂máx 63 mL/kg/min): os mesmos 75 g de glicose em 500 mL, tomados 15, 45 ou 75 min antes de 20 min a 65% da potência máxima e de um contrarrelógio de ~685 kJ. Cada braço largou com uma glicemia: 6,6, 4,5 e 3,7 mmol/L.',
-        sources: 'Moseley 2003',
-        takeaway: '2003: mesmos 75 g; muda só o horário.',
-        chips: ['cruzado · n = 8 · treinados'],
-    },
-    {
         tab: '10 minutos',
-        headline: 'Em 10 min de pedal, as curvas se encontram',
-        color: C.glucoseSoft,
-        text: 'As diferenças de glicemia sumiram nos primeiros 10 min de exercício. Abaixo de 3,5 mmol/L ficaram 2, 3 e 5 dos 8 ciclistas, e a hipoglicemia não se relacionou com o desempenho nem com o esforço percebido.',
-        limit: 'n = 8; a forma das curvas no gráfico é desenho, só o 0 e os 10 min são do estudo.',
+        headline: 'Em 10 min de pedal, a glicemia se acerta',
+        color: C.glucose,
+        text: 'Moseley 2003, cruzado, 8 ciclistas treinados: os mesmos 75 g de glicose, tomados 15, 45 ou 75 min antes de pedalar. Largaram com 6,6, 4,5 e 3,7 mmol/L; em 10 min de exercício, as diferenças sumiram. Abaixo de 3,5 ficaram 2, 3 e 5 dos 8, sem relação com o desempenho nem com o esforço percebido.',
+        limit: 'n = 8; a forma das curvas entre o 0 e os 10 min é desenho.',
         sources: 'Moseley 2003',
-        takeaway: 'Glicemias iguais aos 10 min de pedal.',
+        takeaway: '2003: glicemias iguais aos 10 min de pedal.',
         chips: ['cruzado · n = 8 · treinados'],
     },
     {
         tab: 'A potência',
         headline: 'E a potência foi a mesma',
         color: C.ok,
-        text: 'No contrarrelógio, a potência média foi 268, 269 e 276 W, sem diferença entre os horários. O momento da glicose na última hora muda a glicemia de largada; o desempenho, não.',
+        text: 'Depois de 20 min a 65% da potência máxima, um contrarrelógio de ~685 kJ: potência média de 268, 269 e 276 W, sem diferença entre os horários. O momento da glicose na última hora muda a glicemia de largada; o desempenho, não.',
         limit: 'contrarrelógio curto (~685 kJ) e n = 8.',
         sources: 'Moseley 2003',
         takeaway: 'Potência: 268, 269 e 276 W, sem diferença.',
@@ -94,7 +87,7 @@ export const RB_STEPS: readonly ReboundStep[] = [
         tab: 'Quem sente',
         headline: 'Rebote existe; prejuízo, não',
         color: C.insulinSoft,
-        text: 'Kuipers 1999: 6 de 19 ciclistas (32%) caíram transitoriamente abaixo de 3,0 mmol/L e se recuperaram. A revisão de 2010 chamou de infundado o conselho de evitar carboidrato na última hora.',
+        text: 'Kuipers 1999: 6 de 19 ciclistas (32%) caíram transitoriamente abaixo de 3,0 mmol/L e se recuperaram. A revisão de 2010 chamou de infundado o conselho de evitar carboidrato na última hora. Quem tem sintomas testa o horário no treino.',
         limit: 'Kuipers não mediu desempenho; a revisão é narrativa.',
         sources: 'Kuipers 1999 · Jeukendrup & Killer 2010 (revisão)',
         takeaway: 'Sintomático? Teste o horário no treino.',
@@ -117,14 +110,14 @@ export const FOSTER = {
 export const KUIPERS = { n: 19, low: 6, caption: '6 de 19 < 3,0 mmol/L' } as const;
 
 export const TEXT = {
-    xAxis: 'min · repouso e exercício em escalas diferentes',
-    rest: 'repouso',
-    legend: '75 g de glicose, tomada:',
-    hypo: '3,5 · hipoglicemia',
+    xAxis: 'minutos de exercício',
+    yAxis: 'glicemia, mmol/L',
+    legend: '75 g tomados:',
+    /** Rótulo da linha tracejada de 3,5 mmol/L (o valor está no texto do painel; no gráfico não cabe sem encostar nas curvas). */
+    hypo: 'hipoglicemia',
     ten: '10 min',
-    exercise: 'exercício',
     watts: 'potência média, W',
-    hypoCount: '< 3,5 mmol/L',
     illustrative: 'curvas: forma ilustrativa',
-    stamp: 'não se repetiu',
+    verdictTitle: 'Veredito',
+    verdictNote: 'revisão 2010: conselho infundado · Kuipers: rebote transitório',
 } as const;

@@ -11,7 +11,7 @@
  },
  "notas": {
   "minutos": 3,
-  "mensagem": "Três ECRs cruzados com ¹³C, só glicose (n = 7–8 cada, 150 min a 60–65% do VO₂máx): 0,60 g/min a 48 g/h (Hulston), 1,06 a 72 g/h (Jentjens 2005) e 1,18 a 144 g/h (Jentjens 2004), ≈ 36, 64 e 71 g/h. De 72 para 144 g/h, só +0,12 g/min: fonte única satura em ~1,0–1,1 g/min (Jeukendrup & Jentjens 2000); frutose, galactose e amilose oxidam 25–50% menos. A 144 g/h, 49% do que entra é oxidado na hora; ~73 g/h ficam pelo caminho (cálculo). O gargalo é a absorção (SGLT1, dependente de Na⁺) e o fígado (~1 g/min), não o músculo. Atrito: a revisão de 2000 dizia que o treino não muda o teto; Cox 2010 viu a oxidação exógena subir com 28 dias de dieta rica em carboidrato (slide O Intestino Treina).",
+  "mensagem": "Legenda no alto do palco: barra vazada = ingerido, âmbar = oxidado (¹³C), vermelho = no caminho, faixa = teto. Três ECRs cruzados com ¹³C, só glicose (n = 7–8 cada, 150 min a 60–65% do VO₂máx): 0,60 g/min a 48 g/h (Hulston), 1,06 a 72 g/h (Jentjens 2005) e 1,18 a 144 g/h (Jentjens 2004), ≈ 36, 64 e 71 g/h. De 72 para 144 g/h, só +0,12 g/min: fonte única satura em ~1,0–1,1 g/min (Jeukendrup & Jentjens 2000); frutose, galactose e amilose oxidam 25–50% menos. A 144 g/h, 49% do que entra é oxidado na hora; ~73 g/h ficam pelo caminho (cálculo). O gargalo é a absorção (SGLT1, dependente de Na⁺) e o fígado (~1 g/min), não o músculo. Atrito: a revisão de 2000 dizia que o treino não muda o teto; Cox 2010 viu a oxidação exógena subir com 28 dias de dieta rica em carboidrato (slide O Intestino Treina).",
   "pergunta": "Se o músculo não é o limite, o que acontece com o carboidrato que entrou e não foi oxidado?",
   "transicao": "Se a porta da glicose lota, existe outra porta?"
  }

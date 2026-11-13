@@ -44,9 +44,9 @@ const Carrier = ({ x, y, color, on = true }: { x: number; y: number; color: stri
 /** Fila parada na luz, diante do SGLT1 (4 por linha, empilhando para cima). */
 const queue = (n: number): Pt[] => Array.from({ length: n }, (_, i) => [SGLT - 45 + (i % 4) * 30, 96 - Math.floor(i / 4) * 30]);
 
-interface LaneCellProps { queueSize: number; fructose: boolean; apicalGlut2: boolean }
+interface LaneCellProps { queueSize: number; fructose: boolean }
 
-export const LaneCell = ({ queueSize, fructose, apicalGlut2 }: LaneCellProps) => {
+export const LaneCell = ({ queueSize, fructose }: LaneCellProps) => {
     const reduce = useReducedMotion() ?? false;
     const caption = fructose ? 'duas pistas, uma saída' : queueSize > 4 ? 'a fila cresce na porta' : 'uma pista só';
     return (
@@ -58,11 +58,9 @@ export const LaneCell = ({ queueSize, fructose, apicalGlut2 }: LaneCellProps) =>
             <rect x={6} y={BASAL - 4} width={278} height={8} rx={4} fill={C.co2} />
             <SvgText x={14} y={BASAL - 14} text="enterócito" size={16} color={C.caveat} />
             <SvgText x={10} y={414} text="veia porta → fígado" size={16} color={C.caveat} />
-            {!apicalGlut2 && (
-                <motion.g key={caption} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.enter, delay: 0.4 }}>
-                    <SvgText x={GLUT2} y={52} text={caption} size={16} color={C.caveat} anchor="middle" />
-                </motion.g>
-            )}
+            <motion.g key={caption} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: DUR.enter, delay: 0.4 }}>
+                <SvgText x={GLUT2} y={52} text={caption} size={16} color={C.caveat} anchor="middle" />
+            </motion.g>
 
             {/* as duas pistas dentro da célula */}
             <path d={`M ${SGLT} ${APICAL + 20} L ${GLUT2 - 8} ${BASAL - 20}`} stroke={C.glucose} strokeOpacity={0.35} strokeWidth={14} strokeLinecap="round" />
@@ -94,12 +92,6 @@ export const LaneCell = ({ queueSize, fructose, apicalGlut2 }: LaneCellProps) =>
             <Carrier x={GLUT2} y={BASAL} color={C.stone} />
             <SvgText x={GLUT2 + 26} y={BASAL + 32} text="GLUT2" size={18} color={C.stone} weight={800} />
 
-            <motion.g initial={false} animate={{ opacity: apicalGlut2 ? 1 : 0 }} transition={{ duration: DUR.enter, delay: apicalGlut2 ? 0.3 : 0 }}>
-                <rect x={GLUT2 - 18} y={APICAL - 20} width={36} height={40} rx={8} fill="none" stroke={C.stone} strokeWidth={3} strokeDasharray="6 5" />
-                <line x1={GLUT2 - 22} y1={APICAL - 24} x2={GLUT2 + 22} y2={APICAL + 24} stroke={C.risk} strokeWidth={6} strokeLinecap="round" />
-                <line x1={GLUT2 + 22} y1={APICAL - 24} x2={GLUT2 - 22} y2={APICAL + 24} stroke={C.risk} strokeWidth={6} strokeLinecap="round" />
-                <SvgText x={GLUT2} y={52} text="GLUT2 apical?" size={16} color={C.risk} weight={700} anchor="middle" />
-            </motion.g>
         </svg>
     );
 };

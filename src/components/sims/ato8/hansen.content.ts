@@ -21,7 +21,7 @@ export const HANSEN_STEPS: readonly HansenStep[] = [
     {
         tab: 'A 2ª sessão',
         headline: 'O tanque baixo liga o sinal',
-        text: 'A 2ª sessão começa com pouco glicogênio. A AMPK tem um domínio na subunidade β que se liga ao glicogênio e é inibida por ele (in vitro). Em 8 homens treinados, a α2-AMPK só subiu no exercício com o tanque depletado. Com 467 × 103 mmol/kg ps, Bartlett mediu mais p-ACC (o alvo da AMPK) e mais p-p53. No sleep low, AMPK e p38 amanhecem mais fosforiladas.',
+        text: 'A 2ª sessão começa com pouco glicogênio. A AMPK tem um domínio na subunidade β que se liga ao glicogênio e é inibida por ele (in vitro). Em 8 homens treinados, a α2-AMPK só subiu no exercício com o tanque depletado. Bartlett (n = 8): com o glicogênio LOW (103 × 467 mmol/kg ps no HIGH), mais p-ACC, o alvo da AMPK (2,9 × 1,4), e mais p-p53 (2,6 × 0,9). No sleep low, AMPK e p38 amanhecem mais fosforiladas.',
         sources: ['McBride 2009 (Cell Metab, in vitro)', 'MacDonald 2003 (J Appl Physiol)', 'Bartlett 2013 (AJP Regul)', 'Lane 2015 (J Appl Physiol)'],
     },
     {

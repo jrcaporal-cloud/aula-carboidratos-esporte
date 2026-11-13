@@ -116,12 +116,13 @@ const Score = () => (
 const Product = () => (
     <>
         <span className="text-[16px] leading-snug text-gray-100">1967: licença à Stokely-Van Camp</span>
+        {/* o número menor e recuado, com folga em cima e embaixo: o anel do destaque não encosta no "mais de" nem na borda */}
         <div className="mt-auto flex flex-col">
             <span className="text-[16px] text-gray-200">mais de</span>
-            <KeyFact color={C.glucose} delay={0.5}>
-                <CountUp text="US$ 280 mi" delay={0.35} className="font-display text-[38px] font-bold leading-none" style={{ color: C.glucose }} />
+            <KeyFact color={C.glucose} delay={0.5} className="ml-3 mt-2 self-start">
+                <CountUp text="US$ 280 mi" delay={0.35} className="whitespace-nowrap font-display text-[30px] font-bold leading-none" style={{ color: C.glucose }} />
             </KeyFact>
-            <span className="mt-1 text-[16px] leading-snug text-gray-200">em royalties à UF desde 1972</span>
+            <span className="mt-2 text-[16px] leading-snug text-gray-200">em royalties à UF desde 1972</span>
         </div>
     </>
 );

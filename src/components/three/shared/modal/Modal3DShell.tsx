@@ -108,7 +108,7 @@ export const Modal3DShell = (p: Modal3DShellProps) => {
                         />
                         <StepClockDriver clock={clock} step={step} anim={data.anim} settled={settled} reduced={reduced} />
                         {p.scene(state)}
-                        <StepLabels key={step} labels={data.labels} visible={settled} />
+                        <StepLabels key={step} labels={data.labels} visible={settled} instant={reduced} />
                         <ReadySignal onReady={onReady} />
                     </Suspense>
                 </Canvas>

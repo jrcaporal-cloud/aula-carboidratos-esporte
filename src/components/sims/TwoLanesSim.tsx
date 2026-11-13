@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { DUR, EASE_OUT } from '../../lib/motion';
-import { AnimalChip, DesignChip } from './kit/chips';
+import { DesignChip } from './kit/chips';
 import { Model3DHint } from './kit/Model3DHint';
 import { sourcesUpTo } from './kit/sources';
 import { Panel, Source } from './kit/ui';
@@ -12,15 +12,13 @@ import { LANE_LEDGER, LANE_STEPS } from './ato2/twoLanes.content';
 
 /**
  * Slide 26 · Duas Pistas no Intestino, em tríptico: o enterócito com as moléculas fluindo (laço, o fluxo é o
- * conteúdo), o gráfico do Jentjens 2004 (ingerido × oxidado, com a faixa do teto) e o painel do passo com
- * o livro-caixa das conclusões. O último passo acumula tudo.
+ * conteúdo), o gráfico humano do Jentjens 2004 (ingerido × oxidado, g/min, com a faixa do teto) e o painel do passo
+ * com o livro-caixa das conclusões. Fecha no gráfico; o GLUT2 apical (camundongo) é só uma nota no último passo.
  */
 const Chips = ({ step }: { step: number }) => (
     <>
         {step === 0 && <DesignChip>revisão</DesignChip>}
-        {(step === 1 || step === 2) && <DesignChip>cruzado randomizado · n = 8 · sem desempenho</DesignChip>}
-        {step === 3 && <DesignChip>gráfico: n = 8</DesignChip>}
-        {step === 3 && <AnimalChip>camundongo knockout</AnimalChip>}
+        {step >= 1 && <DesignChip>cruzado randomizado · n = 8 · sem desempenho</DesignChip>}
         <Model3DHint label="enterócito" />
     </>
 );
@@ -40,17 +38,25 @@ const Ledger = ({ step }: { step: number }) => (
     </table>
 );
 
+const LAST = LANE_STEPS.length - 1;
+
 export default function TwoLanesSim() {
     const { step, setStep } = useSlideSteps(LANE_STEPS.length);
     const s = LANE_STEPS[step];
     return (
         <AbsorbFrame tabs={LANE_STEPS.map(l => l.tab)} step={step} setStep={setStep} layoutId="lanes-tabs" chips={<Chips step={step} />}>
-            <Panel className="shrink-0 py-1"><LaneCell queueSize={s.queue} fructose={s.fructose} apicalGlut2={s.apicalGlut2} /></Panel>
+            <Panel className="shrink-0 py-1"><LaneCell queueSize={s.queue} fructose={s.fructose} /></Panel>
             <Panel className="shrink-0 py-1"><LaneChart step={step} /></Panel>
             <Panel className="flex min-w-0 flex-1 flex-col gap-2 px-4 py-3">
                 <StepText step={step} headline={s.headline} color={s.color} text={s.text} />
                 <div className="mt-auto flex flex-col gap-2">
                     <Ledger step={step} />
+                    {step === LAST && (
+                        <motion.p className="m-0 text-[16px] leading-snug text-gray-300" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                            transition={{ duration: DUR.enter, delay: 1, ease: EASE_OUT }}>
+                            <b className="text-gray-200">Nota:</b> um GLUT2 apical absorvendo o excesso não se sustentou (camundongo knockout).
+                        </motion.p>
+                    )}
                     <Source>{sourcesUpTo(LANE_STEPS.map(l => l.sources), step)}</Source>
                 </div>
             </Panel>

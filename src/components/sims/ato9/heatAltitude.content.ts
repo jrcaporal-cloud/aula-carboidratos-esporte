@@ -9,11 +9,9 @@ import type { LedgerItem } from './FrameB';
 export const HEAT = {
     cool: { temp: '16 °C', glycogen: 1.66, exo: 0.84 },
     hot: { temp: '35 °C', glycogen: 2.07, exo: 0.76 },
-    /** Febbraio 1996 comparou 33 °C com 5 °C: o termômetro mostra as duas salas. */
-    febbraio: { temp: '33 × 5 °C' },
 } as const;
-/** Fundo de escala do mostrador (g/min): só desenho. */
-export const DIAL_MAX = 2.4;
+/** Febbraio 1996 comparou 33 °C com 5 °C; nas faixas de altitude a temperatura não é dado ("—"). */
+export const FEBBRAIO_TEMP = '33 × 5 °C';
 
 /** Cálculos nossos a partir dos números acima. */
 export const GLY_UP = Math.round((HEAT.hot.glycogen / HEAT.cool.glycogen - 1) * 100); // 25
@@ -29,6 +27,8 @@ export const ALT = {
 } as const;
 
 export const WOMEN_DROP = '−23%'; // Braun 2000: −23,2%, oxidação de CHO corrigida pelo gasto, 4.300 m × nível do mar
+/** Braun 2000 desenhado como índice (nível do mar = 100; 100 − 23,2 = 76,8): cálculo nosso, só para a barra. */
+export const BRAUN_INDEX = { sea: 100, alt: 76.8 } as const;
 
 export interface HeatStep {
     tab: string;
@@ -48,7 +48,7 @@ export const STEPS: readonly HeatStep[] = [
     },
     {
         tab: '35 °C',
-        headline: 'A 35 °C, os ponteiros se afastam',
+        headline: 'A 35 °C: mais estoque, menos copo',
         text: 'Mesmos ciclistas, mesma carga: glicogênio 2,07 g/min (+25%) e glicose bebida 0,76 g/min (−10%). O músculo puxa mais do próprio estoque e aproveita menos o que vem do copo; a explicação proposta é menos sangue para o intestino.',
         design: 'cruzado · n = 9 · 13C',
         source: 'Jentjens 2002 (J Appl Physiol)',
@@ -70,7 +70,7 @@ export const STEPS: readonly HeatStep[] = [
     {
         tab: 'Mulheres',
         headline: 'Em mulheres, o sinal inverte',
-        text: 'Braun 2000: 16 mulheres jovens, traçadores, 4.300 m: a oxidação de CHO corrigida pelo gasto caiu 23,2%. A regra "altitude pede mais CHO" foi feita em homens. Em 1.600–2.400 m, altitude típica de treino, CHO extra é especulação.',
+        text: 'Braun 2000: 16 mulheres jovens, traçadores, 4.300 m: a oxidação de CHO corrigida pelo gasto caiu 23,2%. A regra "altitude pede mais CHO" veio de homens. Em 1.600–2.400 m, altitude típica de treino, CHO extra é especulação.',
         design: '16 mulheres · traçadores',
         source: 'Braun 2000 (J Appl Physiol) · Stellingwerff 2019 (Sports Med)',
     },

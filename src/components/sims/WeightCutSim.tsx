@@ -8,12 +8,12 @@ import { WeightStage } from './ato9/WeightStage';
 import { CALC, CHIPS, LEDGER, STEPS } from './ato9/weightCut.content';
 
 /**
- * Slide 164 · A Balança e a Água, no formato palco + painel. O palco põe o Tiago (caso fictício) na balança, com as
- * alavancas rápidas, e acumula os três estudos: glicogênio leva água (1 : 3 a 1 : 17), essa água não é cantil (2 L × 55 mL),
- * e pouca fibra tira −0,74%. Só dados de estudo, sem protocolo de desidratação.
+ * Slide 164 · A Balança e a Água, no formato palco + painel. Uma cena só: a balança do Tiago (caso fictício) e a conta
+ * em cascata até o alvo — glicogênio com a água dele (piso 1 : 3) → conteúdo do intestino (fibra, −0,74%) → o que falta,
+ * que só sairia como água do corpo (ACSM). Ressalva rotulada: essa água não é cantil (King 2018). Sem protocolo.
  */
 
-const ACCENT = [C.stone, C.glycogenSoft, C.glycogenSoft, C.caveat, C.stone] as const;
+const ACCENT = [C.stone, C.glycogenSoft, C.co2, C.risk, C.caveat] as const;
 
 export default function WeightCutSim() {
     const { step, setStep } = useSlideSteps(STEPS.length);
@@ -28,7 +28,7 @@ export default function WeightCutSim() {
             <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-4">
                 <StepText step={step} color={ACCENT[step]} headline={s.headline} text={s.text} size={17} />
                 <div className="mt-auto flex flex-col gap-3">
-                    <Ledger rows={LEDGER} step={step} />
+                    <Ledger rows={LEDGER} step={step} title="a conta do Tiago" />
                     <Source>{sourcesUpTo(STEPS.map(t => t.sources), step)}</Source>
                 </div>
             </Panel>

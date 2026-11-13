@@ -102,20 +102,29 @@ export const FunnelPlot = ({ step }: { step: number }) => (
     </svg>
 );
 
-/** A linha do tempo "até o nulo": cartões com o n; verde = o desempenho se separou do controle. */
+/**
+ * A linha do tempo "até o nulo", num bloco à parte (fundo próprio, título e legenda): não é coluna do funil.
+ * Cartões com ano · estudo, n e resultado na prova; verde = o desempenho se separou do controle.
+ */
 export const Timeline = ({ step }: { step: number }) => (
-    <div className="flex flex-col gap-2 px-1">
+    <div className="flex flex-col gap-1 rounded-xl px-2 pb-1 pt-1" style={{ background: 'rgba(255,255,255,0.05)' }}>
+        <div className="flex items-center justify-between gap-3 text-[16px] font-semibold">
+            <span className="text-white">Linha do tempo · o que aconteceu na prova</span>
+            <span className="flex items-center gap-3 text-gray-200">
+                <span className="flex items-center gap-1.5"><span className="h-[14px] w-[14px] rounded-[3px] border-2" style={{ borderColor: C.ok, background: `${C.ok}33` }} />separou do controle</span>
+                <span className="flex items-center gap-1.5"><span className="h-[14px] w-[14px] rounded-[3px] border-2" style={{ borderColor: C.stone, background: `${C.stone}22` }} />não separou</span>
+            </span>
+        </div>
         <div className="grid grid-cols-5 gap-2">
             {TIMELINE.map(t => {
                 const show = step >= t.at;
                 const color = t.positive ? C.ok : C.stone;
                 return (
-                    <motion.div key={t.year} className="flex flex-col rounded-xl border-2 px-2.5 py-1 leading-tight"
+                    <motion.div key={t.year} className="flex flex-col rounded-lg border-2 px-2 py-1 leading-tight"
                         style={{ borderColor: `${color}99`, background: `${color}14` }}
                         initial={false} animate={{ opacity: show ? 1 : 0, y: show ? 0 : 8 }}
                         transition={{ duration: DUR.enter, delay: show && step === t.at ? 0.5 + TIMELINE.indexOf(t) * 0.06 : 0, ease: EASE_OUT }}>
-                        <span className="text-[18px] font-bold" style={{ color }}>{t.year}</span>
-                        <span className="text-[17px] font-bold text-white">{t.who}</span>
+                        <span className="whitespace-nowrap text-[17px] font-bold" style={{ color }}>{t.year} <span className="text-white">{t.who}</span></span>
                         <span className="text-[16px] text-gray-300">{t.n}</span>
                         <span className="text-[16px] font-semibold" style={{ color }}>{t.result}</span>
                         {t.extra && (

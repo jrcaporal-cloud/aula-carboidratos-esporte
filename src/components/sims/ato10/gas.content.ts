@@ -83,8 +83,21 @@ export const RER_MAX = 1.15;
 export const NEEDLES = { steady: 0.9, sprint: 1.08 } as const;
 
 export const ISOTOPE_CHAIN = [
-    { title: 'Milho, cana', sub: 'C4: mais ¹³C' },
-    { title: 'Bebida', sub: 'já marcada' },
-    { title: 'Músculo', sub: 'oxida' },
+    { title: 'Milho, cana', sub: 'plantas C4: mais ¹³C' },
+    { title: 'Bebida', sub: 'já sai marcada' },
+    { title: 'Músculo', sub: 'oxida o que bebeu' },
     { title: '¹³CO₂ no ar', sub: 'mede o exógeno' },
+] as const;
+
+/** Saris 1993 (passo 5): oxidação exógena média, g/min. */
+export const SARIS = [
+    { label: 'amido solúvel', value: 0.84, text: '0,84', color: C.glucose },
+    { label: 'amido insolúvel', value: 0.5, text: '0,50', color: C.glucoseDeep },
+] as const;
+
+/** Resumo compacto dos passos 1–4, no alto do passo do isótopo. */
+export const GAS_RECAP = [
+    { term: 'RER 1,00 · 0,70', text: 'glicose · palmitato (VCO₂ ÷ VO₂)', color: C.glucose },
+    { term: '2,48 ± 0,31 g/min', text: 'CHO no exemplo: ≈ ±18 g/h (cálculo)', color: C.glucoseSoft },
+    { term: 'RER > 1,0', text: 'CO₂ do bicarbonato: a conta não vale', color: C.risk },
 ] as const;

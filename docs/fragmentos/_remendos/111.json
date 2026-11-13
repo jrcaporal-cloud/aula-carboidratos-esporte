@@ -9,7 +9,7 @@
  },
  "notas": {
   "minutos": 3,
-  "mensagem": "Brietzke 2019, 13 estudos (16 ensaios, n = 175): o bochecho aumenta a potência média com SMD 0,25 (IC95% 0,04 a 0,46; I² = 0%), efeito pequeno; o tempo para completar não muda (SMD −0,13; p = 0,25; n = 151). A revisão anterior (de Ataide e Silva 2013) achou 9 de 11 estudos positivos, +5,05 W, mas com heterogeneidade alta (I² = 52%). Lane 2013 (duplo-cego, n = 12): +3,4% em jejum (282 × 273 W) e +1,8% alimentado (286 × 281 W); a maior potência foi alimentado + bochecho. Trommelen 2015 (n = 14, sacarose × placebo adoçado): nulo (p = 0,277). Real, pequeno e dependente do contexto.",
+  "mensagem": "Brietzke 2019, 13 estudos (16 ensaios, n = 175): o bochecho aumenta a potência média com SMD 0,25 (IC95% 0,04 a 0,46; I² = 0%), efeito pequeno; o tempo para completar não muda (SMD −0,13; p = 0,25; n = 151). Só na fala (saiu da tela): a revisão anterior (de Ataide e Silva 2013) achou 9 de 11 estudos positivos, +5,05 W, mas com heterogeneidade alta (I² = 52%). Lane 2013 (duplo-cego, n = 12): +3,4% em jejum (282 × 273 W) e +1,8% alimentado (286 × 281 W); a maior potência foi alimentado + bochecho. Trommelen 2015 (n = 14, sacarose × placebo adoçado): nulo (p = 0,277). Na tela, três faixas, um estudo e um eixo cada: real e pequeno → maior em jejum → nem sempre aparece. Real, pequeno e dependente do contexto.",
   "pergunta": "Para uma prova de 1 h às 7 da manhã, vocês trocariam o café da manhã pelo bochecho?",
   "transicao": "Juntando tudo: quanto por hora, para cada duração de prova?"
  }

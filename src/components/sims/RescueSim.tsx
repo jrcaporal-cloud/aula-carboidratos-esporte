@@ -6,12 +6,12 @@ import { Reveal } from './kit/rhythm';
 import { sourcesUpTo } from './kit/sources';
 import { Panel, Source } from './kit/ui';
 import { MotorFrame, StepText } from './ato3/motorB';
-import { RescueLanes, Triptych } from './ato3/RescueLanes';
+import { RescueFlow } from './ato3/RescueFlow';
 import { RESCUE_STEPS } from './ato3/rescue.content';
 
 /**
- * Slide 49 · O Resgate pela Veia, em tríptico. Palco: músculo × sangue × cérebro, cada coluna acumulando o que o estudo
- * mediu nela, e as raias embaixo (tempo extra de Coggan 1987; força de Nybo 2003 no fim). Painel: texto do passo + dado-chave.
+ * Slide 49 · O Resgate pela Veia. Palco: a cadeia de causa em 4 faixas (ato3/RescueFlow): o açúcar do sangue acabou →
+ * três resgates, três tempos → o músculo não era o limite → o cérebro sente a hipoglicemia. Painel: texto do passo + dado-chave.
  */
 
 const ACCENT = [C.risk, C.glucose, C.glycogenSoft, C.stone] as const;
@@ -26,10 +26,7 @@ export default function RescueSim() {
     const s = RESCUE_STEPS[step];
     return (
         <MotorFrame tabs={RESCUE_STEPS.map(r => r.tab)} step={step} setStep={setStep} layoutId="rescue-tabs" chips={CHIPS[step].map(c => <DesignChip key={c}>{c}</DesignChip>)}>
-            <Panel className="flex w-[660px] shrink-0 flex-col gap-4 px-4 py-3">
-                <Triptych step={step} />
-                <RescueLanes step={step} />
-            </Panel>
+            <Panel className="w-[660px] shrink-0 p-2"><RescueFlow step={step} /></Panel>
             <Panel className="flex min-w-0 flex-1 flex-col gap-3 px-5 py-4">
                 <StepText step={step} color={ACCENT[step]} headline={s.headline} text={s.text} />
                 <Reveal key={`lim-${step}`} order={2}>

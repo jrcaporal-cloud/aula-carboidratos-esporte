@@ -1,6 +1,7 @@
 import { useSlideSteps } from '../../store/useSlideSteps';
 import { C } from './kit/palette';
 import { CalcChip, DesignChip } from './kit/chips';
+import { Model3DHint } from './kit/Model3DHint';
 import { sourcesUpTo } from './kit/sources';
 import { CalciumTriad } from './ato4/calciumTriad';
 import { CalciumChart, CHART_W } from './ato4/calciumChart';
@@ -23,7 +24,8 @@ export default function CalciumReleaseSim() {
         <StageLayout tabs={CALCIUM_STEPS.map(c => c.tab)} step={step} onSelect={setStep} layoutId="calcium-tabs" stageWidth={CHART_W}
             chips={<>
                 <DesignChip>{CA_CHIPS[step]}</DesignChip>
-                {step === 3 && <CalcChip>0,30² ≈ 0,09: cálculo</CalcChip>}
+                {step === 3 && <CalcChip>r² ≈ 0,09: cálculo</CalcChip>}
+                <Model3DHint label="tríade 3D" />
             </>}
             stage={<><CalciumTriad step={step} /><CalciumChart step={step} /></>}
             panel={<>

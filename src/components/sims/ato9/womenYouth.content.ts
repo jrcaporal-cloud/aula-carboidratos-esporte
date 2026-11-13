@@ -11,9 +11,9 @@ export const WALLIS = { men: 0.7, women: 0.65 } as const;
 /** McNulty 2020: folicular inicial × demais fases (ES0,5 e intervalo de credibilidade 95%). */
 export const CYCLE = { es: -0.06, lo: -0.16, hi: 0.04 } as const;
 
-/** Tarnopolsky 1995: CHO de 55–60% → 75% da energia; ganho de glicogênio (%). */
+/** Tarnopolsky 1995 (7 H + 8 M): CHO de 55–60% → 75% da energia; ganho de glicogênio (%). */
 export const LOAD_1995 = { men: 41, women: 0 } as const;
-/** James 2001: 12 g/kg de massa magra/d por 3 dias (mmol/kg peso úmido, antes → depois). */
+/** James 2001: 12 g/kg de massa magra/d por 3 dias (mmol/kg peso úmido, antes → depois; mulheres na fase pós-menstrual). */
 export const LOAD_2001 = { men: { before: 109, after: 183 }, women: { before: 108, after: 193 } } as const;
 
 /** Timmons 2003: CHO ingerido oxidado (mg/kg/min). Leites 2016, a 38 °C (mg/kg de massa magra/min). */
@@ -46,11 +46,18 @@ export const STEPS: readonly WomenStep[] = [
         source: 'McNulty 2020 (Sports Med)',
     },
     {
-        tab: 'A carga',
-        headline: '"Mulher não carrega" era dose',
-        text: 'Tarnopolsky 1995 subiu o CHO para 75% da energia: eles ganharam 41% de glicogênio, elas 0%, porque comiam menos CHO por kg. James 2001, com 12 g/kg de massa magra por 3 dias: 108 → 193 nelas e 109 → 183 mmol/kg neles. Tarnopolsky 2001: elas carregaram quando a energia também subiu.',
-        design: 'comparação entre sexos · biópsia',
-        source: 'Tarnopolsky 1995 e 2001 (J Appl Physiol) · James 2001 (Eur J Appl Physiol)',
+        tab: '1995',
+        headline: '"Mulher não carrega" nasceu de uma dose',
+        text: 'Tarnopolsky 1995: 7 homens e 8 mulheres treinados; o CHO subiu de 55–60% para 75% da energia por 4 dias. Eles ganharam 41% de glicogênio, elas 0%. Só que 75% da energia de quem come menos é bem menos CHO por kg: a prescrição em % deu às mulheres uma dose menor.',
+        design: '7 H + 8 M · biópsia',
+        source: 'Tarnopolsky 1995 (J Appl Physiol)',
+    },
+    {
+        tab: '2001',
+        headline: 'Em g/kg, elas carregam igual',
+        text: 'James 2001 deu a mesma dose aos dois sexos, 12 g/kg de massa magra por dia durante 3 dias: elas foram de 108 a 193 mmol/kg, eles de 109 a 183. Tarnopolsky 2001 fechou a conta: com CHO a 75% elas só carregaram quando a energia também subiu. Prescreva em g/kg, nunca em %.',
+        design: 'comparação entre sexos · mesma dose por kg MM',
+        source: 'James 2001 (Eur J Appl Physiol) · Tarnopolsky 2001 (J Appl Physiol)',
     },
     {
         tab: 'Meninos',
@@ -70,8 +77,8 @@ export const STEPS: readonly WomenStep[] = [
 
 export const LEDGER: readonly LedgerItem[] = [
     { at: 0, label: 'pico de oxidação, mulheres × homens', value: '0,65 × 0,70', color: C.glucoseSoft },
-    { at: 1, label: 'fase folicular inicial (ES)', value: '−0,06', color: C.stone },
-    { at: 2, label: 'carga com 12 g/kg MM, mulheres', value: '108 → 193', color: C.glycogenSoft },
-    { at: 3, label: 'CHO ingerido, meninos × homens', value: `+${BOYS_EDGE}%`, color: C.glucoseSoft },
-    { at: 4, label: 'a 38 °C, meninos × homens', value: '2,0 × 2,5', color: C.glucoseSoft },
+    { at: 2, label: 'carga com 75% da energia, mulheres', value: '0%', color: C.glycogenSoft },
+    { at: 3, label: 'carga com 12 g/kg MM, mulheres', value: '108 → 193', color: C.glycogenSoft },
+    { at: 4, label: 'CHO ingerido, meninos × homens', value: `+${BOYS_EDGE}%`, color: C.glucoseSoft },
+    { at: 5, label: 'a 38 °C, meninos × homens', value: '2,0 × 2,5', color: C.glucoseSoft },
 ];
