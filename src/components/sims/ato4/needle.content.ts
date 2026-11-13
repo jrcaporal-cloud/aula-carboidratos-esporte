@@ -54,8 +54,8 @@ export const NEEDLE_LEDGER: readonly LedgerRow[] = [
 /** Linha do tempo do topo do palco; `at` = passo em que o marco acende. */
 export const NEEDLE_MILESTONES = [
     { year: '1959', label: 'a agulha', at: 0 },
-    { year: '1962', label: 'eletrólitos', at: 1 },
     { year: '1959', label: 'dosagem', at: 2 },
+    { year: '1962', label: 'eletrólitos', at: 1 },
     { year: '1966', label: 'uma perna', at: 3 },
     { year: '1967', label: 'três dietas', at: 3 },
 ] as const;
