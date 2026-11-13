@@ -11,7 +11,7 @@
  },
  "notas": {
   "minutos": 3,
-  "mensagem": "A diretriz da SBME de 2009 ainda fala em 60–70% da energia, 5–8 g/kg/d para recuperar, 30–60 g/h durante e diz que o carboidrato “não deve exceder 80g/hora”. Cinco anos antes, Jentjens 2004 deu 1,8 g/min (≈ 108 g/h, cálculo) a 8 ciclistas: glicose + frutose oxidaram 1,26 g/min, contra 0,83 com a mesma dose só de glicose (cruzado, isótopos); com uma fonte, o teto era ~1,0–1,1 g/min (revisão de 2000). Em 2011 o COI troca % por g/kg e aceita até 90 g/h com mistura: a barra atravessa o teto de 80. O % engana: 60% de 2.000 ou 4.000 kcal são 300 ou 600 g, 4,3 ou 8,6 g/kg em 70 kg (cálculo); Burke já pedia g/kg em 2001.",
+  "mensagem": "A diretriz da SBME de 2009 ainda fala em 60–70% da energia, 5–8 g/kg/d para recuperar, 30–60 g/h durante e diz que o carboidrato “não deve exceder 80g/hora”. O gráfico está todo em g/h (g/min × 60, cálculo). Com uma fonte, o teto era ~1,0–1,1 g/min, ≈ 60–66 g/h (revisão de 2000). Cinco anos antes da diretriz, Jentjens 2004 deu 1,8 g/min (≈ 108 g/h) a 8 ciclistas: glicose + frutose oxidaram 1,26 g/min (≈ 76 g/h), contra 0,83 (≈ 50 g/h) com a mesma dose só de glicose (cruzado, isótopos). Em 2011 o COI troca % por g/kg e aceita até 90 g/h com mistura: a barra atravessa o teto de 80. No último passo a tela vira a conta: 60% de 2.000 ou 4.000 kcal são 1.200 ou 2.400 kcal, 300 ou 600 g, 4,3 ou 8,6 g/kg em 70 kg (cálculo) — um dia abaixo e outro acima dos 5–8 g/kg da própria SBME; Burke já pedia g/kg em 2001.",
   "pergunta": "Quem aqui ainda prescreve carboidrato em % da energia? Em que situação isso falha?",
   "transicao": "Se a régua é essa, quanto os atletas comem de verdade?"
  }

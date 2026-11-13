@@ -76,8 +76,8 @@ const MiniCurve = () => {
             <rect x={4} y={Y_TH + 6} width={136} height={22} rx={5} fill="#04080F" stroke={C.caveat} strokeWidth={2} />
             <SvgText x={72} y={Y_TH + 22} text="curva ilustrativa" anchor="middle" color={C.caveat} size={16} />
             <SvgText x={4} y={MH - 2} text="0 h" color="#D1D5DB" />
-            <line x1={34} x2={52} y1={MH - 8} y2={MH - 8} stroke={C.stone} strokeWidth={2} strokeDasharray="5 4" />
-            <SvgText x={56} y={MH - 2} text="6,0 mmol/L" color={C.stone} weight={700} />
+            <line x1={44} x2={62} y1={MH - 8} y2={MH - 8} stroke={C.stone} strokeWidth={2} strokeDasharray="5 4" />
+            <SvgText x={67} y={MH - 2} text="6,0 mmol/L" color={C.stone} weight={700} />
             
             <SvgText x={MW - 4} y={MH - 2} text="24 h" anchor="end" color="#D1D5DB" />
         </svg>
@@ -115,19 +115,19 @@ const Stat = ({ value, caption }: { value: string; caption: string }) => (
 );
 
 export const CgmChain = ({ step }: { step: number }) => (
-    <div className="grid h-full grid-rows-[80px_1fr_72px_88px] gap-2">
+    <div className="grid h-full grid-rows-[80px_1fr_80px_92px] gap-2">
         <Cell n={1} title="O sensor atrasa" note="lê o intersticial, não o sangue" show={step >= 0} born={step === 0}>
             <Sensor />
         </Cell>
         <Cell n={2} title="Saudáveis passam de 6,0" note="Thomas 2016 · 10 subelite · 6 dias" show={step >= 1} born={step === 1}>
             <div className="flex items-center gap-2"><MiniCurve /><People /></div>
         </Cell>
-        <Cell n={3} title="REDs não se separa" note="Matkin-Hussey 2026 · 9 REDs × 9" show={step >= 2} born={step === 2}>
+        <Cell n={3} title="REDs não se separa" note="Matkin-Hussey 2026 · n = 18" show={step >= 2} born={step === 2}>
             <PRow what="glicose noturna" p={MATKIN.night} />
             <PRow what="variabilidade (MAGE)" p={MATKIN.mage} />
         </Cell>
-        <Cell n={4} title="Logo: sem régua para atleta" note="sem consenso (2024) · Bowler 2025, n = 12" show={step >= 3} born={step === 3}>
-            <span className="text-[16px] leading-tight text-gray-200">só há descrição: elite a 8,4 g/kg/d, em mg/dL</span>
+        <Cell n={4} title="Logo: sem régua" note="Flockhart & Larsen 2024" show={step >= 3} born={step === 3}>
+            <span className="text-[16px] leading-tight text-gray-200">só descrição: Bowler 2025, elite a 8,4 g/kg/d (mg/dL)</span>
             <div className="flex gap-5">
                 <Stat value={BOWLER.mean} caption="média 24 h" />
                 <Stat value={BOWLER.night} caption="noturna" />

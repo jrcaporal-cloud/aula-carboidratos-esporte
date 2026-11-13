@@ -86,7 +86,7 @@ const Row = ({ n, title, note, show, children }: RowProps) => (
 
 /** Valor escrito logo depois do fim do segmento. */
 const After = ({ kg, text, show, color = C.text }: { kg: number; text: string; show: boolean; color?: string }) => (
-    <motion.span className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap font-mono text-[18px] font-bold tabular-nums" style={{ left: kx(kg) + 8, color }}
+    <motion.span className="absolute top-1/2 z-10 -translate-y-1/2 whitespace-nowrap rounded px-1 font-mono text-[18px] font-bold tabular-nums" style={{ left: kx(kg) + 6, color, background: '#04080F' }}
         initial={false} animate={{ opacity: show ? 1 : 0 }} transition={{ duration: DUR.enter, delay: show ? 0.7 : 0 }}>{text}</motion.span>
 );
 

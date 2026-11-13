@@ -92,13 +92,40 @@ export const LIVER_STEPS: readonly LiverStep[] = [
     },
 ];
 
-/** Livro-caixa do painel: cada linha entra no passo `at` e fica. */
-export const LIVER_LEDGER: readonly { at: number; label: string; value: string; color: string }[] = [
-    { at: 1, label: 'fígado · Fuchs 2016', value: '+3,4 g/h', color: C.fructoseSoft },
-    { at: 2, label: 'músculo · Fuchs 2016', value: 'igual · P = 0,673', color: C.glycogenSoft },
-    { at: 3, label: 'fígado · Décombaz 2011', value: '8,1 · 8,6 × 3,7 g/h', color: C.fructoseSoft },
-    { at: 3, label: 'fígado · Casey 2000', value: '+25 × +13 g', color: C.fructoseSoft },
-    { at: 4, label: 'síntese · Gonzalez 2017', value: 'fígado ~2×', color: C.text },
+/**
+ * Livro-caixa do painel, agrupado por medida (uma unidade por grupo). Cada linha entra no passo `at` e fica;
+ * `upto` = última etapa em que a linha aparece (quando uma linha mais completa a substitui).
+ */
+export interface LiverRow {
+    at: number;
+    upto?: number;
+    who: string;
+    value: string;
+}
+
+export interface LiverGroup {
+    title: string;
+    color: string;
+    rows: readonly LiverRow[];
+}
+
+export const LIVER_GROUPS: readonly LiverGroup[] = [
+    {
+        title: 'fígado, g/h', color: C.fructoseSoft,
+        rows: [
+            { at: 1, who: 'Fuchs: sacarose a mais', value: '+3,4' },
+            { at: 3, who: 'Décombaz', value: '8,1 · 8,6 × 3,7' },
+        ],
+    },
+    { title: 'fígado, g', color: C.fructoseSoft, rows: [{ at: 3, who: 'Casey', value: '+25 × +13' }] },
+    {
+        title: 'músculo', color: C.glycogenSoft,
+        rows: [
+            { at: 2, upto: 2, who: 'Fuchs', value: 'igual' },
+            { at: 3, who: 'Fuchs, Décombaz, Casey', value: 'igual' },
+        ],
+    },
+    { title: 'revisão', color: C.text, rows: [{ at: 4, who: 'Gonzalez: fígado', value: '~2×' }] },
 ];
 
 /** Selos de desenho por passo (canto superior direito). */

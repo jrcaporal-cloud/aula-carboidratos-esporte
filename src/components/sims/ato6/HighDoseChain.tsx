@@ -52,11 +52,11 @@ const Stores = () => {
     const reduce = useReducedMotion() ?? false;
     const MAX = 4;
     return (
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
             {PODL.map((d, i) => (
                 <div key={d.gh} className="flex items-center gap-2 leading-none">
                     <span className="w-[62px] shrink-0 text-[16px] font-semibold text-gray-200">{d.gh} g/h</span>
-                    <div className="flex h-[22px] flex-1">
+                    <div className="flex h-[20px] flex-1">
                         <motion.div className="flex h-full items-center justify-center rounded-l-md text-[16px] font-bold text-white"
                             style={{ width: `${(d.endo / MAX) * 100}%`, background: C.glycogen, transformOrigin: 'left center' }}
                             initial={reduce ? false : { scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: DUR.bar, delay: stagger(i, 0.2, 0.15), ease: EASE_OUT }}>
@@ -124,7 +124,7 @@ const Verdict = () => {
 };
 
 export const HighDoseChain = ({ step }: { step: number }) => (
-    <div className="grid h-full grid-rows-[100px_104px_110px_1fr] gap-2 p-2">
+    <div className="grid h-full grid-rows-[100px_112px_110px_1fr] gap-2 p-2">
         <Cell n={1} title="Entra e oxida mais" note="Ravikanti 2025 · 8 maratonistas" show={step >= 0} born={step === 0}>
             <Oxidation />
         </Cell>

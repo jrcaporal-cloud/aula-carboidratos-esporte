@@ -10,7 +10,7 @@
  },
  "notas": {
   "minutos": 3,
-  "mensagem": "O CGM mede glicose no líquido intersticial: a glicose difunde do capilar até o filamento, onde uma enzima a oxida; há atraso em relação ao sangue, maior no exercício. A curva do slide é ilustrativa. Thomas 2016: em 10 atletas subelite saudáveis, 4 passaram mais de 70% do tempo acima de 6,0 mmol/L (108 mg/dL) e 3 tinham jejum na faixa de pré-diabetes. Bowler 2025: 12 marchadores de elite com 8,4 g/kg/d tiveram média de 102,6 mg/dL, noturna de 91,8 e MAGE de 36, como pessoas saudáveis. Matkin-Hussey 2026: o CGM não separou atletas com REDs dos controles (P = 0,21 e 0,92). Não há consenso de interpretação (Flockhart & Larsen 2024).",
+  "mensagem": "Cadeia em quatro elos. 1) O CGM mede glicose no líquido intersticial: a glicose difunde do capilar até o filamento, onde uma enzima a oxida; há atraso em relação ao sangue, maior no exercício. 2) Thomas 2016: em 10 atletas subelite saudáveis, 4 passaram mais de 70% do tempo acima de 6,0 mmol/L (108 mg/dL) e 3 tinham jejum na faixa de pré-diabetes; a curva do slide é ilustrativa. 3) Matkin-Hussey 2026: o CGM não separou 9 atletas com REDs das controles (glicose noturna P = 0,21; MAGE P = 0,92). 4) Logo, não há régua para atleta: não há consenso de interpretação (Flockhart & Larsen 2024); o que existe é descrição, como Bowler 2025 — 12 marchadores de elite a 8,4 g/kg/d com média de 102,6 mg/dL, noturna de 91,8 e MAGE de 36, perfil de pessoa saudável.",
   "pergunta": "Se o seu atleta chegar com um pico de 180 mg/dL depois do treino, o que você investiga antes de mudar o plano?",
   "transicao": "Medir também depende do teste de desempenho escolhido. O desenho decide o efeito."
  }
