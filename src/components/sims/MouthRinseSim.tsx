@@ -7,6 +7,7 @@ import { CalcChip, DesignChip, IllustrativeChip } from './kit/chips';
 import { C } from './kit/palette';
 import { sourcesUpTo } from './kit/sources';
 import { KeyFact } from './kit/rhythm';
+import { Model3DHint } from './kit/Model3DHint';
 import { Panel } from './kit/ui';
 import { PbRow, PbShell, PbSidePanel } from './ato6/pbShell';
 import { RinseHead } from './ato6/RinseHead';
@@ -109,7 +110,7 @@ export default function MouthRinseSim() {
     const s = RINSE_STEPS[step];
     return (
         <PbShell tabs={RINSE_STEPS.map(r => r.tab)} step={step} setStep={setStep} layoutId="rinse-tabs"
-            chips={<><DesignChip>{s.chip}</DesignChip>{step >= 1 && <CalcChip>~2,9%: cálculo</CalcChip>}{step === 2 && <IllustrativeChip>cérebro: esquema</IllustrativeChip>}</>}>
+            chips={<><DesignChip>{s.chip}</DesignChip>{step >= 1 && <CalcChip>~2,9%: cálculo</CalcChip>}{step === 2 && <IllustrativeChip>cérebro: esquema</IllustrativeChip>}<Model3DHint label="cérebro" /></>}>
             <Panel className="grid w-[690px] shrink-0 grid-cols-[282px_1fr] gap-4 px-4 py-3">
                 <div className="flex min-w-0 flex-col gap-3 border-r-2 border-white/15 pr-4">
                     {COLUMNS.map((col, i) => (

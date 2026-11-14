@@ -481,6 +481,47 @@ Mapa do dossiê
 - Ponto de ensino: o bochecho tem efeito real, mas pequeno, e aparece na potência e não no tempo.
 - Verificação: `confirmado no abstract`
 
+### Mecanismo potencial do bochecho (boca → tronco → cérebro → comando motor) — fontes conferidas em 14/11/2026 para o modelo 3D "bochecho-cerebro"
+
+#### JEUK2010
+- Citação: Jeukendrup AE, Chambers ES. Oral carbohydrate sensing and exercise performance. Curr Opin Clin Nutr Metab Care 2010;13(4):447-451. DOI 10.1097/MCO.0b013e328339de83 · PMID 20453646
+- Desenho: revisão.
+- Resultado principal: em ~1 h de alta intensidade, o efeito "não é metabólico" e pode estar no sistema nervoso central; o carboidrato é detectado na boca "by unidentified receptors"; efeito específico do carboidrato e independente do gosto. O papel exato de cada área do cérebro ainda não está claro.
+- Ponto de ensino: o receptor ainda não foi identificado — o modelo mostra um sensor hipotético.
+- Verificação: `confirmado no abstract`
+
+#### LAPIS2016
+- Citação: Lapis TJ, Penner MH, Lim J. Humans Can Taste Glucose Oligomers Independent of the hT1R2/hT1R3 Sweet Taste Receptor. Chem Senses 2016;41(9):755-762. DOI 10.1093/chemse/bjw088 · PMID 27553043
+- Desenho: experimento sensorial em humanos.
+- Resultado principal: humanos detectam oligômeros de glicose (grau de polimerização médio 7 e 14) mesmo com o receptor do doce bloqueado por lactisol; descrevem o gosto como "starchy", não doce. Não detectam o polímero maior (GP 44).
+- Ponto de ensino: existe detecção de carboidrato na boca que não passa pelo receptor do doce (T1R2/T1R3). O receptor dessa via segue desconhecido.
+- Verificação: `confirmado no abstract`
+
+#### ROPER2017
+- Citação: Roper SD, Chaudhari N. Taste buds: cells, signals and synapses. Nat Rev Neurosci 2017;18(8):485-497. DOI 10.1038/nrn.2017.68 · PMID 28655883 · PMC5958546
+- Desenho: revisão.
+- Resultado principal: a informação dos botões gustativos é levada por fibras aferentes (gânglios geniculado e petroso; ex.: corda do tímpano) ao sistema nervoso central, "specifically to neurons in the nucleus of the solitary tract".
+- Ponto de ensino: o caminho do gosto vai da boca ao núcleo do trato solitário, no tronco cerebral.
+- Verificação: `confirmado no texto completo (PMC)`
+
+#### GANT2010
+- Citação: Gant N, Stinear CM, Byblow WD. Carbohydrate in the mouth immediately facilitates motor output. Brain Res 2010;1350:151-158. DOI 10.1016/j.brainres.2010.04.004 · PMID 20388497
+- Desenho: duplo-cego cruzado com estimulação magnética transcraniana (TMS) do córtex motor primário (M1).
+- Amostra: 16 (experimento 1, bebida) e 17 (controle, bochecho).
+- Resultado principal: ao beber carboidrato, o potencial evocado motor (MEP) subiu 30% e a força voluntária máxima 2%, sem relação com a glicemia. No bochecho, o MEP subiu 9% com o músculo ativo. Sem mudança no período de silêncio (não foi menos inibição em M1). Os autores propõem que o sinal da boca se integra ao comando motor "perhaps via nuclei in the brainstem".
+- Ponto de ensino: carboidrato na boca aumenta a excitabilidade da via corticomotora antes de ser engolido.
+- Verificação: `confirmado no abstract`
+
+#### TURN2014
+- Citação: Turner CE, Byblow WD, Stinear CM, Gant N. Carbohydrate in the mouth enhances activation of brain circuitry involved in motor performance and sensory perception. Appetite 2014;80:212-219. DOI 10.1016/j.appet.2014.05.020 · PMID 24858834
+- Desenho: fMRI, duplo-cego, contrabalanceado; bochecho recolhido da boca (sem fatores pós-orais), placebo com o mesmo gosto.
+- Amostra: 10 voluntários saudáveis.
+- Resultado principal: durante a tarefa de preensão, o sinal no córtex sensório-motor primário contralateral foi maior com carboidrato; ativação exclusiva do carboidrato no córtex gustativo primário e em áreas de percepção visual; áreas límbicas de recompensa mais ativas.
+- Ponto de ensino: o carboidrato na boca aumenta a ativação do córtex motor durante o esforço.
+- Verificação: `confirmado no abstract`
+
+**Limite do mecanismo (para o slide e o modelo):** cada elo tem fonte, mas a cadeia inteira (receptor → tronco → ínsula/orbitofrontal/estriado/cingulado → córtex motor → potência) é um mecanismo **potencial**: o receptor não foi identificado (JEUK2010), o papel de cada área não está claro (JEUK2010) e os estudos de imagem e TMS não mediram desempenho na mesma sessão. Tálamo não entra no modelo (sem fonte conferida aqui).
+
 ## I. Esportes intermitentes
 
 ### BAKE2015

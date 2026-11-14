@@ -34,6 +34,8 @@ export interface Modal3DShellProps {
     scene: (s: ShellState) => ReactNode;
     hud?: (s: ShellState) => ReactNode;
     panelExtra?: (s: ShellState) => ReactNode;
+    /** Fundo chapado escuro atrás do título (cenas que ocupam o canto de cima, como a cabeça em corte). */
+    headerBackdrop?: boolean;
 }
 
 export const Modal3DShell = (p: Modal3DShellProps) => {
@@ -113,7 +115,7 @@ export const Modal3DShell = (p: Modal3DShellProps) => {
                     </Suspense>
                 </Canvas>
 
-                <header className="pointer-events-none absolute left-7 top-5 z-[45]">
+                <header className={`pointer-events-none absolute z-[45] ${p.headerBackdrop ? 'left-4 top-3 rounded-xl bg-[rgba(4,8,15,0.94)] px-3 pb-3 pt-2' : 'left-7 top-5'}`}>
                     <p className="mb-1 text-[14px] font-mono uppercase tracking-[0.24em]" style={{ color: p.accent }}>{p.kicker}</p>
                     <h2 className="text-[30px] font-semibold leading-tight text-white" style={{ fontFamily: 'var(--font-display)' }}>{p.title}</h2>
                     <div className="mt-2"><Chip color={C.caveat}>{p.scaleNote}</Chip></div>

@@ -10,4 +10,5 @@ export const MODEL_3D_BY_SLIDE: ReadonlyMap<number, Model3D> = new Map<number, M
     [65, 'fibra-glicogenio'],
     [66, 'triade-calcio'],
     [104, 'enterocito'],
+    [110, 'bochecho-cerebro'],
 ]);

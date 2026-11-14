@@ -7,6 +7,7 @@ const ACCENTS: Readonly<Record<string, string>> = {
     'fibra-glicogenio': C.glycogen,
     'biopsia-agulha': C.glycogen,
     'triade-calcio': C.insulinSoft,
+    'bochecho-cerebro': C.glucose,
 };
 
 export const accentOf = (model: string | null): string => (model && ACCENTS[model]) || C.caveat;
