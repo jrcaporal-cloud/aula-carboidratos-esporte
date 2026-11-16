@@ -34,6 +34,10 @@ describe('ordem da aula', () => {
         expect([...seq].sort((a, b) => a - b)).toEqual(seq);
     });
 
+    it.runIf(ASSEMBLED)('fecha com Segunda-feira → cartão → quatro perguntas → frase final', () => {
+        expect(IDS.slice(-4)).toEqual([191, 192, 193, 199]);
+    });
+
     it('abre com a capa', () => {
         expect(IDS[0]).toBe(0);
     });
@@ -102,8 +106,12 @@ describe('versões por tempo', () => {
 
     it.runIf(ASSEMBLED)('nenhuma versão perde as âncoras (capa, votação, Supernova, mitos, planos, fecho)', () => {
         for (const tempo of ['180', '120'] as const) {
-            for (const id of [0, 13, 145, 189, 190, 191, 199]) expect(keepsSlide(tempo, id), `${tempo}: slide ${id}`).toBe(true);
+            for (const id of [0, 13, 145, 189, 190, 191, 192, 199]) expect(keepsSlide(tempo, id), `${tempo}: slide ${id}`).toBe(true);
         }
+    });
+
+    it.runIf(ASSEMBLED)('a de 180 leva também o quadro de decisão de suplementação (193)', () => {
+        expect(keepsSlide('180', 193)).toBe(true);
     });
 
     it.runIf(ASSEMBLED)('a de 120 está contida na de 180', () => {

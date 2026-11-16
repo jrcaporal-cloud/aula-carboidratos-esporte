@@ -37,7 +37,7 @@ export const FUNDING_STEPS: readonly FundingStep[] = [
     {
         tab: 'Como ler',
         headline: 'Financiar não é falsificar',
-        text: 'O problema é o desenho que favorece o produto: jejum, tempo até a exaustão, placebo de água. Smith 2013 tem o 1º autor no Gatorade Sports Science Institute e mesmo assim é duplo-cego, em 4 centros, com 51 atletas. Leia a seção de financiamento, mas julgue pelo método.',
+        text: 'O problema é o desenho que favorece o produto: jejum, tempo até a exaustão, placebo de água. Smith 2013, com 1º autor no Gatorade Sports Science Institute, é duplo-cego e multicêntrico. Julgue pelo método.',
         sources: ['Smith 2013 (dose-resposta)'],
     },
 ];

@@ -46,7 +46,12 @@
 - Resultado principal COM NÚMEROS: abstract classifica suplementos em 4 grupos, entre eles "(2) supply of convenient forms of energy and macronutrients" (onde entram bebidas, géis e barras de carboidrato); só "caffeine, creatine, specific buffering agents and nitrate" têm boa evidência de efeito direto no desempenho
 - Limitações metodológicas: consenso de especialistas
 - Ponto de ensino: para o COI, gel e isotônico são "alimento esportivo de conveniência", não ergogênico mágico; o efeito vem do carboidrato, que pode vir de comida.
-- Verificação: `confirmado no abstract`
+- Texto completo (PMC5867441, lido em 16/11/2026, para os slides «O Cartão do Carboidrato» e «Quatro Perguntas Antes da Prova»):
+  - Tabela 2 (alimentos esportivos, composição típica): **bebida esportiva 5–8% de CHO** (10–35 mmol/L de sódio; 3–5 mmol/L de potássio), "simultaneous delivery of fluid + CHO during exercise"; **gel em sachê de 30–40 g com ~25 g de CHO**; goma ("confectionery", pacote de ~40–50 g) com **~5 g de CHO por unidade**; **barra esportiva 40–50 g de CHO e 5–10 g de proteína**, pouca gordura e fibra, com a nota "may contain other ingredients ... [that] may increase the risk of contamination".
+  - Contaminação: o estudo seminal achou **~15% de mais de 600 produtos** com pró-hormônios não declarados (Geyer 2004, Int J Sports Med 2004;25:124-9 — via esta revisão, não lido no original); amostras raramente aleatórias, a prevalência real é incerta; até vitamina C e multivitamínicos já apareceram contaminados, raramente. Quantidades ínfimas, sem efeito fisiológico, ainda podem dar resultado analítico adverso.
+  - Manejo: "third-party auditing activities" identificam produtos de "baixo risco"; "There can be no absolute guarantee that any product is entirely safe, but these schemes do help the athlete to manage the risk." O atleta deve pesar se o ganho marginal compensa o risco de doping inadvertido.
+  - Uso: suplementos devem ser "trialled thoroughly ... in training that mimics the competition milieu" antes da competição.
+- Verificação: `confirmado no abstract`; tabela 2 e seção de contaminação `confirmadas no texto completo (Europe PMC fullTextXML, PMC5867441)`; o número de Geyer 2004 entra como "via revisão"
 
 ### KERKSICK2017
 - Citação: Kerksick CM, Arent S, Schoenfeld BJ, et al. International Society of Sports Nutrition position stand: nutrient timing. J Int Soc Sports Nutr 2017;14:33. DOI 10.1186/s12970-017-0189-4 · PMID 28919842 · PMC5596471

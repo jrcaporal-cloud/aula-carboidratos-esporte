@@ -573,12 +573,24 @@
     "minutos": 3,
     "mensagem": "O quadro que a turma fotografa: três colunas (o combustível, o prato, a leitura), cada mensagem com o número e a unidade, o que fazer na segunda-feira e o slide de origem. 21,1 × 19,6 kJ/L de O₂ (Scott 2012, «O Preço do Oxigênio»); 28% × 17% bateram no muro (Smyth 2021, «O Muro em Números»); durante, 30–60 e até 90 g/h (Burke 2011, «O Relógio da Prova»); na recuperação longa, sem diferença às 8 e 24 h (Parkin 1997, «A Janela que Fecha Devagar»); treino com pouco: 73% com sinal × 37% com desempenho (Impey 2018, «Do Músculo ao Cronômetro»); CV 26,6% × 3,35% (Jeukendrup 1996, «O Desenho Decide o Efeito»).",
     "pergunta": "Qual dessas seis você vai aplicar primeiro, e com qual atleta?",
-    "transicao": "E uma frase para guardar."
+    "transicao": "Antes da frase final, o cartão: como a meta em g/h vira gel, garrafa e mistura."
   },
   "199": {
     "minutos": 1,
     "mensagem": "Fecho da aula: o carboidrato não é o herói da prova; ele é a condição para o atleta chegar inteiro ao momento que decide.",
     "pergunta": "Perguntas finais no chat.",
     "transicao": "Obrigado; até a próxima aula."
+  },
+  "192": {
+    "minutos": 4,
+    "mensagem": "Complementa o Relógio da Prova: lá, quanto por hora; aqui, como montar. Unidades do consenso do COI (Maughan 2018, tabela 2): gel ~25 g, bebida 5–8%, goma ~5 g, barra 40–50 g; o formato não muda a oxidação (a 120 g/h, 1,56/1,58/1,59 g/min em bebida, gel e goma; Hearris 2022, n = 9). Até ~60 g/h, uma fonte basta (teto de ~1,0–1,1 g/min; Jeukendrup 2000) e a ISSN pede bebida de 6–8% a cada 10–15 min: 500 mL a 6% = 30 g; gel + 500 mL a 7% = 60 g (cálculo). Acima de 60 g/h, só com mistura: 2:1 a 108 g/h foi 8% mais rápido que só glicose (Currell 2008, n = 8); 0,8:1 oxidou 1,14 × 1,04 g/min com menos náusea (O'Brien 2011, n = 10); a ~48 g/h a mistura não acrescenta (Hulston 2009). 90 g/h = 60 + 30 g (2:1) ou 50 + 40 g (1:0,8), cálculo. Só de bebida a 8% seriam ~1,1 L/h; gel com água oxida igual (Pfeiffer 2010). O exemplo de 90 g/h é o protocolo de Costa 2017: gel de 30 g a cada 20 min.",
+    "pergunta": "No chat: monte a hora de 90 g/h do Diego com o que ele já usa no treino. Quantos géis e quanto líquido?",
+    "transicao": "Antes de entregar o cartão ao atleta, quatro perguntas decidem se ele usa, como usa e o que compra."
+  },
+  "193": {
+    "minutos": 4,
+    "mensagem": "Quadro de decisão em 4 linhas. 1) Prova de ~1 h intensa: bochecho de 5–10 s com maltodextrina a 6,4–10%, cuspido a cada 12,5% da prova (Carter 2004: 59,6 × 61,4 min, n = 9); ganho maior em jejum (+3,4%) que alimentado (+1,8%), mas alimentado + bochecho teve a maior potência (Lane 2013, n = 12); meta-análise SMD 0,25 na potência, tempo ns (Brietzke 2019). 2) Meta acima de 60 g/h ou queixa GI: 2 semanas de desafio a 90 g/h (2 h a 60% do VO₂máx, gel de 30 g 2:1 a cada 20 min) cortaram sintomas em 60% e H₂ de 12 para 6 ppm (Costa 2017, n = 25); revisão de 8 estudos, desconforto −47% (Martinez 2023); em elite, sem vantagem extra (King 2022). Testar no treino que imita a prova (COI). 3) Recuperação em menos de 4 h: 1,2 g/kg/h a cada 30 min (ISSN); 2ª corrida 80 × 48 min (Alghannam 2016, n = 10); com essa dose a proteína não soma (van Loon 2000); com 8–24 h, o total do dia (Parkin 1997). 70 kg ≈ 84 g/h é cálculo. 4) Produto pronto em atleta sujeito a antidoping: ~15% de mais de 600 produtos tinham pró-hormônio não declarado (Geyer 2004, via o consenso do COI); traços sem efeito já podem dar teste positivo; auditoria por terceiros reduz o risco, sem garantia absoluta; fórmula simples, sem ingredientes extras.",
+    "pergunta": "Qual das quatro perguntas o seu atleta mais esquece de fazer?",
+    "transicao": "E uma frase para guardar."
   }
 }

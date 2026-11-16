@@ -5,7 +5,10 @@
  */
 export type Tempo = 'completa' | '180' | '120';
 
-/** 120 min: o fio da aula. Capa, abertura, o mecanismo essencial, um estudo-âncora por ato e o fechamento. */
+/**
+ * 120 min: o fio da aula. Capa, abertura, o mecanismo essencial, um estudo-âncora por ato e o fechamento.
+ * O fechamento leva o cartão de suplementação (192): é a recomendação prática que o aluno leva, em qualquer versão.
+ */
 const KEEP_120: readonly number[] = [
     0, 10, 11, 12, 13,
     20, 26, 29,
@@ -16,10 +19,14 @@ const KEEP_120: readonly number[] = [
     120, 123, 126,
     140, 141, 145,
     160, 162, 164,
-    180, 186, 187, 189, 190, 191, 199,
+    180, 186, 187, 189, 190, 191, 192, 199,
 ];
 
-/** 180 min: a de 120 mais os slides de mecanismo e de evidência que sustentam cada recomendação. */
+/**
+ * 180 min: a de 120 mais os slides de mecanismo e de evidência que sustentam cada recomendação, e o quadro
+ * de decisão (193: bochecho, treino intestinal, recuperação curta, certificação). Para caber, sai a meta-análise
+ * de keto/cetonas (148): o veredito do low-carb já fica no Supernova (145).
+ */
 const KEEP_180: readonly number[] = [
     ...KEEP_120,
     22, 24,
@@ -28,9 +35,9 @@ const KEEP_180: readonly number[] = [
     80, 85,
     105, 112,
     121, 124,
-    143, 148, 149,
+    143, 149,
     161, 165, 169,
-    181,
+    181, 193,
 ];
 
 const SHORT_VERSIONS: ReadonlyMap<string, ReadonlySet<number>> = new Map([
