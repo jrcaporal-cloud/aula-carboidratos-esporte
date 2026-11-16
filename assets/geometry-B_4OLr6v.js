@@ -1,0 +1,1 @@
+import{C as t}from"./index-tEXWBQbA.js";const r=(o,a,c)=>Array.from({length:o},(e,s)=>{const n=c+s*2*Math.PI/o;return`${(a*Math.cos(n)).toFixed(1)},${(a*Math.sin(n)).toFixed(1)}`}).join(" "),h=r(6,24,-Math.PI/2),i=r(5,25,-Math.PI/2),M={glc:t.glucose,fru:t.fructose,gal:t.caveat,gyg:t.protein};export{h as H,i as P,M as S};

@@ -1,0 +1,1 @@
+import{K as t,Z as n,t as u}from"./index-tEXWBQbA.js";const y=o=>({from:{...o},cur:{...o},step:-1,keys:Object.keys(o)}),g=(o,f,s,c,m)=>{const a=f[s];if(o.step!==s){for(const e of o.keys)o.from[e]=o.cur[e];o.step=s}for(const e of o.keys){const r=a.win?.[e],k=t(r?n(c,r[0],r[1]):n(c,0,Math.max(m,.001)));o.cur[e]=u(o.from[e],a.to[e],k)}return o.cur};export{g as a,y as m};

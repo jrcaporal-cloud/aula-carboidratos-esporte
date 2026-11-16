@@ -1,0 +1,1 @@
+import{b as n,D as o}from"./index-tEXWBQbA.js";const e=(a,t,i=.5)=>({initial:{opacity:0,y:6},animate:{opacity:1,y:0},transition:{duration:o.enter,delay:a?i+Math.min(t*.12,.4):0,ease:n}});export{e as r};

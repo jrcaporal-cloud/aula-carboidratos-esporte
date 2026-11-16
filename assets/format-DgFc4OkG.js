@@ -1,0 +1,1 @@
+const n=(r,t=1)=>{const e=r.toFixed(t);return`${e.startsWith("-")&&Number(e)!==0?"−":""}${e.replace("-","").replace(".",",")}`},i=(r,t=0)=>{const e=Number(r.toFixed(t));return e===0?n(0,t):`${e>0?"+":"−"}${n(Math.abs(e),t)}`};export{n as b,i as s};

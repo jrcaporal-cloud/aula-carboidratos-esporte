@@ -1,0 +1,1 @@
+import{j as r}from"./index-tEXWBQbA.js";import{S as t,P as l,H as o}from"./geometry-B_4OLr6v.js";const f=({kind:s})=>s==="gyg"?r.jsx("rect",{x:-22,y:-22,width:44,height:44,rx:10,fill:t.gyg}):s==="fru"?r.jsx("polygon",{points:l,fill:t.fru}):r.jsxs("g",{children:[r.jsx("polygon",{points:o,fill:t[s]}),s==="gal"&&r.jsx("circle",{r:8,fill:"#04080F"})]});export{f as S};

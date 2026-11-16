@@ -1,0 +1,1 @@
+import{j as e,e as r}from"./index-tEXWBQbA.js";const a=({label:s})=>e.jsxs("span",{className:"inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg border-2 border-slate-600 px-3 py-1.5 text-[16px] text-gray-200",children:[e.jsx(r,{size:18,"aria-hidden":!0})," tecla 3: ",s]});export{a as M};
